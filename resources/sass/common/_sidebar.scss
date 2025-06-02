@@ -1,0 +1,151 @@
+/*--------------------------------------------------------------
+  10. Sidebar
+----------------------------------------------------------------*/.cs-sidebar_item {
+  &:not(:last-child) {
+    margin-bottom: 70px;
+  }
+}
+
+.cs-sidebar_widget_title {
+  font-size: 30px;
+  margin-bottom: 30px;
+}
+.tagcloud {
+  display: flex;
+  flex-wrap: wrap;
+  margin: -5px;
+}
+.tag-cloud-link {
+  font-size: 14px;
+  line-height: 1.6em;
+  border: 2px solid #fff;
+  padding: 3px 15px;
+  display: inline-block;
+  margin: 5px;
+  border-radius: 2px;
+  &:hover {
+    color: $white;
+    background-color: $accent;
+    border-color: $accent;
+  }
+}
+.widget_archive,
+.widget_categories {
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    li {
+      padding-left: 26px;
+      position: relative;
+      &::before {
+        content: '';
+        width: 14px;
+        height: 12px;
+        background: url('../img/icons/double_arrow_icon.svg');
+        background-position: center;
+        position: absolute;
+        left: 0;
+        top: 8px;
+      }
+      &:not(:last-child) {
+        margin-bottom: 20px;
+      }
+    }
+  }
+}
+
+.cs-recent_posts {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  li {
+    &:not(:last-child) {
+      margin-bottom: 20px;
+    }
+  }
+}
+.cs-recent_post {
+  display: flex;
+  align-items: center;
+}
+.cs-recent_post_thumb {
+  height: 60px;
+  width: 60px;
+  border-radius: 5px;
+  flex: none;
+  overflow: hidden;
+  margin-right: 18px;
+  &:hover {
+    .cs-recent_post_thumb_in {
+      transform: scale(1.06);
+    }
+  }
+}
+.cs-recent_post_thumb_in {
+  height: 100%;
+  width: 100%;
+  border-radius: inherit;
+  transition: all 0.4s ease;
+}
+.cs-recent_post_title {
+  font-size: 18px;
+  margin-bottom: 5px;
+}
+.cs-sidebar_search {
+  position: relative;
+}
+.cs-sidebar_search input {
+  display: block;
+  width: 100%;
+  background-color: transparent;
+  outline: none;
+  border: none;
+  border-bottom: 2px solid #fff;
+  padding: 0px 40px 6px 10px;
+  transition: all 0.3s ease;
+  &:focus {
+    border-color: $accent;
+  }
+}
+.cs-sidebar_search_btn {
+  position: absolute;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  bottom: 0px;
+  right: 0;
+  padding: 10px 10px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  &:hover {
+    color: $accent;
+  }
+}
+.cs-author_card {
+  img {
+    height: 130px;
+    width: 130px;
+    margin-bottom: 22px;
+  }
+  h3 {
+    font-size: 30px;
+    margin-bottom: 14px;
+  }
+  p {
+    margin-bottom: 0;
+  }
+}
+
+@media screen and (max-width: 991px) {
+  .cs-sidebar_widget_title {
+    font-size: 26px;
+    margin-bottom: 20px;
+  }
+  .widget_archive ul li:not(:last-child), .widget_categories ul li:not(:last-child) {
+    margin-bottom: 12px;
+  }
+  .cs-sidebar_item:not(:last-child) {
+      margin-bottom: 40px;
+  }
+}

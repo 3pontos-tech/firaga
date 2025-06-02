@@ -1,0 +1,50 @@
+/*--------------------------------------------------------------
+  17. CTA
+----------------------------------------------------------------*/
+.cs-cta.cs-style1 {
+  padding: 90px 30px;
+  border-radius: 15px;
+  .cs-cta_in {
+    position: relative;
+    z-index: 2;
+  }
+  .cs-cta_title {
+    font-weight: 600;
+    font-size: 50px;
+  }
+  &.cs-type_1 {
+    padding: 140px 30px 145px;
+  }
+}
+@media screen and (max-width: 1300px) {
+  .cs-cta.cs-style1 .cs-cta_title {
+    font-size: 42px;
+  }
+}
+@media screen and (max-width: 991px) {
+  .cs-cta.cs-style1 {
+    padding: 70px 30px;
+    border-radius: 15px;
+    .cs-cta_title {
+      font-size: 36px;
+      br {
+        display: none;
+      }
+    }
+  }
+}
+@media screen and (max-width: 767px) {
+  .cs-cta.cs-style1 {
+    br {
+      display: none;
+    }
+  }
+}
+@media screen and (max-width: 575px) {
+  .cs-cta.cs-style1 {
+    padding: 70px 20px;
+    .cs-cta_title {
+      font-size: 28px;
+    }
+  }
+}

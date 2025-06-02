@@ -1,0 +1,310 @@
+/*--------------------------------------------------------------
+  12. Iconbox
+----------------------------------------------------------------*/
+.cs-iconbox.cs-style1 {
+  padding: 40px;
+  .cs-iconbox_icon {
+    padding: 4px 10px;
+    display: inline-block;
+    background: linear-gradient(
+      90deg,
+      rgba($accent, 0.3) 0%,
+      transparent 95.61%
+    );
+  }
+  &.cs-type1 {
+    .cs-iconbox_icon {
+      padding: 0;
+      background: transparent;
+    }
+  }
+}
+.cs-iconbox.cs-style2 {
+  max-width: 350px;
+  margin: auto;
+  .cs-iconbox_icon {
+    margin-bottom: 25px;
+  }
+  .cs-iconbox_title {
+    font-size: 30px;
+    margin-bottom: 20px;
+  }
+  .cs-iconbox_subtitle {
+    line-height: 1.75em;
+  }
+}
+.cs-iconbox_3_list {
+  position: relative;
+  padding-left: 550px;
+  min-height: 640px;
+  @media (max-width: 1199px) {
+    padding-left: 460px;
+  }
+  @media (max-width: 991px) {
+    padding-left: 0;
+    padding-top: 650px;
+  }
+  > *:not(:last-child) {
+    border-bottom: 1px solid #4d4d4d;
+  }
+  .cs-image_layer {
+    position: absolute;
+    left: 0;
+    top: 25px;
+    pointer-events: none;
+    max-width: 416px;
+    height: 600px;
+    @media (max-width: 991px) {
+      max-width: 100%;
+      width: 100%;
+    }
+    .cs-image_layer_in {
+      height: 100%;
+      width: 100%;
+    }
+    img {
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+      position: relative;
+      clip-path: inset(0 100% 0 0);
+      animation: inactiveImageAnimation1 0.6s forwards ease;
+    }
+  }
+  .cs-hover_tab.active {
+    .cs-image_layer {
+      img {
+        animation: activeImageAnimation1 0.6s forwards ease;
+      }
+    }
+    .cs-iconbox_icon {
+      color: #fff;
+      background-color: $accent;
+      border-color: $accent;
+    }
+  }
+  &.cs-style1 {
+    padding-left: 0;
+    min-height: initial;
+    .cs-iconbox.cs-style3 {
+      .cs-iconbox_in {
+        max-width: 560px;
+      }
+    }
+    @media (max-width: 1199px) {
+      padding: 0;
+    }
+  }
+  &.cs-style2 {
+    padding-left: 110px;
+    counter-reset: number-counter;
+    padding-top: 0;
+    @media (max-width: 991px) {
+      padding-left: 40px;
+    }
+    @media (max-width: 575px) {
+      padding-left: 0px;
+    }
+    .cs-image_layer.cs-style1,
+    .cs-image_layer_in::after {
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.3s ease;
+    }
+    .cs-image_layer.cs-style1 {
+      padding-right: 0;
+      padding-bottom: 0;
+      height: initial;
+      width: 170px;
+      transform: rotate(0deg) translateY(-50%);
+      top: 50%;
+      right: 28%;
+      left: initial;
+      @media (max-width: 1199px) {
+        right: 20%;
+      }
+      @media (max-width: 991px) {
+        display: none;
+      }
+      img {
+        animation: none;
+        clip-path: inset(0% 0% 0 0);
+      }
+    }
+    .cs-hover_tab {
+      position: relative;
+      &::before {
+        counter-increment: number-counter;
+        content: counter(number-counter, decimal-leading-zero) '. ';
+        font-weight: 600;
+        color: #fff;
+        position: absolute;
+        left: -110px;
+        top: 30px;
+        @media (max-width: 991px) {
+          left: -40px;
+        }
+        @media (max-width: 575px) {
+          display: none;
+        }
+      }
+      &.active {
+        .cs-image_layer.cs-style1 {
+          opacity: 1;
+          visibility: visible;
+          transform: rotate(15deg) translateY(-50%);
+        }
+      }
+    }
+  }
+}
+.cs-iconbox.cs-style3 {
+  display: flex;
+  align-items: center;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+  padding-bottom: 25px;
+  padding-top: 25px;
+  color: $secondary;
+  .cs-iconbox_in {
+    margin-right: 30px;
+    max-width: 480px;
+  }
+  .cs-iconbox_icon {
+    color: $ternary;
+    border: 2px solid $ternary;
+    height: 80px;
+    width: 80px;
+    border-radius: 50%;
+    flex: none;
+    transition: all 0.3s ease;
+    &:hover {
+      color: #fff;
+      background-color: $accent;
+      border-color: $accent;
+    }
+  }
+  .cs-iconbox_title {
+    font-size: 30px;
+    margin-bottom: 15px;
+  }
+  .cs-iconbox_subtitle {
+    line-height: 1.75em;
+  }
+  &:hover {
+    .cs-iconbox_icon {
+      color: #fff;
+      background-color: $accent;
+      border-color: $accent;
+    }
+  }
+}
+.cs-iconbox_4_wrap {
+  display: grid;
+  grid-gap: 65px 135px;
+  grid-template-columns: repeat(2, 1fr);
+  @media (max-width: 1400px) {
+    grid-gap: 50px 100px;
+  }
+  @media (max-width: 1199px) {
+    grid-gap: 40px;
+  }
+  @media (max-width: 575px) {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+.cs-iconbox.cs-style4 {
+  .cs-iconbox_icon {
+    margin-bottom: 22px;
+  }
+  .cs-iconbox_title {
+    font-size: 30px;
+    line-height: 1.37em;
+    margin-bottom: 20px;
+    @media (max-width: 1400px) {
+      font-size: 26px;
+      margin-bottom: 15px;
+    }
+  }
+  .cs-iconbox_subtitle {
+    line-height: 1.75em;
+    margin-bottom: 30px;
+    @media (max-width: 1400px) {
+      margin-bottom: 22px;
+    }
+  }
+  .cs_iconbox_btn {
+    display: inline-flex;
+    align-items: center;
+    color: #fff;
+    svg {
+      transition: inherit;
+    }
+    span {
+      margin-right: 0px;
+      max-width: 0;
+      white-space: nowrap;
+      overflow: hidden;
+      transition: all 0.4s ease-in-out;
+    }
+    &:hover {
+      color: $accent;
+      span {
+        margin-right: 10px;
+        max-width: 100px;
+      }
+    }
+  }
+}
+@keyframes inactiveImageAnimation1 {
+  0% {
+    clip-path: inset(0 0 0 0);
+  }
+  100% {
+    clip-path: inset(0 100% 0 0);
+  }
+}
+@keyframes activeImageAnimation1 {
+  0% {
+    clip-path: inset(0 0 0 100%);
+  }
+  100% {
+    clip-path: inset(0 0 0 0);
+  }
+}
+
+@media screen and (max-width: 991px) {
+  .cs-iconbox.cs-style2 {
+    max-width: 100%;
+    .cs-iconbox_title {
+      font-size: 26px;
+      margin-bottom: 10px;
+      margin-bottom: 20px;
+    }
+  }
+  .cs-iconbox.cs-style3 {
+    .cs-iconbox_title {
+      font-size: 26px;
+      margin-bottom: 10px;
+    }
+  }
+}
+@media screen and (max-width: 575px) {
+  .cs-iconbox.cs-style1 {
+    padding: 30px;
+  }
+  .cs-iconbox.cs-style3 {
+    flex-direction: column;
+    align-items: flex-start;
+    .cs-iconbox_icon {
+      position: initial;
+      transform: initial;
+      margin-bottom: 20px;
+      height: 60px;
+      width: 60px;
+      svg {
+        max-height: 22px;
+      }
+    }
+  }
+}

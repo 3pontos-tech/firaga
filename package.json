@@ -15,8 +15,16 @@
         "laravel-vite-plugin": "^1.0.5",
         "postcss": "^8.5.3",
         "postcss-nesting": "^12.1.5",
+        "sass-embedded": "^1.89.1",
         "tailwindcss": "^3.4.17",
         "vite": "^6.3.4"
     },
-    "packageManager": "pnpm@10.6.3+sha512.bb45e34d50a9a76e858a95837301bfb6bd6d35aea2c5d52094fa497a467c43f5c440103ce2511e9e0a2f89c3d6071baac3358fc68ac6fb75e2ceb3d2736065e6"
+    "packageManager": "pnpm@10.6.3+sha512.bb45e34d50a9a76e858a95837301bfb6bd6d35aea2c5d52094fa497a467c43f5c440103ce2511e9e0a2f89c3d6071baac3358fc68ac6fb75e2ceb3d2736065e6",
+    "dependencies": {
+        "animate.css": "^4.1.1",
+        "jquery": "^3.7.1",
+        "lightgallery": "^2.8.3",
+        "slick-carousel": "^1.8.1",
+        "wowjs": "^1.1.3"
+    }
 }

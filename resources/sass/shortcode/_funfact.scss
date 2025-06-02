@@ -1,0 +1,226 @@
+/*--------------------------------------------------------------
+  21. FunFact
+----------------------------------------------------------------*/
+.cs-funfact_wrap {
+  display: flex;
+  align-items: center;
+  background: linear-gradient(267.18deg, #161616 0%, #080808 100%);
+  border-radius: 15px;
+  padding: 60px 80px;
+  position: relative;
+  z-index: 1;
+  .cs-funfact_shape {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    border-radius: inherit;
+    background-position: right bottom;
+    background-repeat: no-repeat;
+  }
+  .cs-funfact_left {
+    flex: none;
+    width: 40%;
+    position: relative;
+    z-index: 2;
+  }
+  .cs-funfact_right {
+    flex: 1;
+    padding-left: 80px;
+    position: relative;
+    z-index: 2;
+  }
+  &.cs-type1 {
+    margin-top: -130px;
+  }
+  &.cs-type2 {
+    background: transparent;
+    padding: 140px 0;
+    @media (max-width: 991px) {
+      padding: 70px 0;
+    }
+    .cs-funfact_left {
+      padding-right: 50px;
+    }
+  }
+  &.cs-type3 {
+    background: transparent;
+    padding: 135px 0;
+    align-items: flex-start;
+  }
+}
+.cs-funfact_heading {
+  h2 {
+    font-size: 50px;
+    margin-bottom: 20px;
+  }
+  p {
+    margin-bottom: 0;
+    line-height: 1.75em;
+  }
+}
+.cs-funfacts {
+  display: grid;
+  grid-gap: 36px 40px;
+  grid-template-columns: repeat(2, 1fr);
+}
+.cs-funfact.cs-style1 {
+  display: flex;
+  align-items: center;
+  .cs-funfact_number {
+    margin: 0 13px 0 0;
+    font-size: 50px;
+    line-height: 1.3em;
+  }
+  .cs-funfact_text {
+    span {
+      font-size: 20px;
+      font-weight: 700;
+      display: block;
+      margin-top: -4px;
+      margin-bottom: -1px;
+    }
+    p {
+      margin: 0;
+    }
+  }
+}
+
+.cs-funfact.cs-style2 {
+  .cs-funfact_number {
+    margin: 0 13px 0 0;
+    font-size: 50px;
+    line-height: 1.3em;
+  }
+  .cs-funfact_title {
+    font-size: 22px;
+    color: $ternary;
+    margin: 0;
+  }
+}
+
+.cs-funfact_wrap_2 {
+  background: linear-gradient(267.18deg, #161616 0%, #080808 100%);
+  box-shadow: 0px 0px 25px rgba(123, 123, 123, 0.1);
+  border-radius: 15px;
+  padding: 90px 90px 100px;
+  position: relative;
+  z-index: 1;
+  &.cs-no_shadow {
+    box-shadow: initial;
+  }
+  .cs-funfact_shape {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    border-radius: inherit;
+    background-position: right bottom;
+    background-repeat: no-repeat;
+    + * {
+      position: relative;
+      z-index: 2;
+    }
+  }
+  .cs-funfacts {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin: -12px;
+    > * {
+      padding: 12px;
+    }
+  }
+  &.cs-type1 {
+    margin-top: -145px;
+  }
+  &.cs-type2 {
+    background: transparent;
+    box-shadow: none;
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+}
+
+@media screen and (max-width: 1399px) {
+  .cs-funfact_wrap,
+  .cs-funfact_wrap_2 {
+    padding: 60px 50px;
+  }
+  .cs-funfact_wrap_2.cs-type1 {
+    margin-top: -102px;
+  }
+  .cs-funfact_wrap {
+    .cs-funfact_left {
+      width: 38%;
+    }
+    .cs-funfact_right {
+      padding-left: 50px;
+      width: 62%;
+    }
+  }
+}
+@media screen and (max-width: 1380px) {
+  .cs-funfact_heading h2 {
+    font-size: 42px;
+    margin-bottom: 10px;
+  }
+  .cs-funfact.cs-style1 {
+    .cs-funfact_number {
+      font-size: 42px;
+    }
+    .cs-funfact_text span {
+      font-size: 18px;
+      margin-top: -8px;
+      margin-bottom: -5px;
+    }
+  }
+  .cs-funfact.cs-style2 {
+    .cs-funfact_number {
+      font-size: 42px;
+    }
+    .cs-funfact_title {
+      font-size: 20px;
+    }
+  }
+}
+@media screen and (max-width: 1199px) {
+  .cs-funfact_wrap {
+    display: block;
+  }
+  .cs-funfact_wrap .cs-funfact_right {
+    padding-left: 0;
+    width: 100%;
+  }
+  .cs-funfact_wrap .cs-funfact_left {
+    width: 100%;
+    margin-bottom: 50px;
+  }
+  .cs-funfact_wrap_2 .cs-funfacts {
+    display: grid;
+    grid-gap: 10px 25px;
+  }
+}
+@media screen and (max-width: 991px) {
+  .cs-funfact_wrap .cs-funfact_left {
+    margin-bottom: 30px;
+  }
+}
+@media screen and (max-width: 767px) {
+  .cs-funfacts {
+    grid-gap: 15px 15px;
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+@media screen and (max-width: 575px) {
+  .cs-funfacts {
+    grid-gap: 15px 15px;
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .cs-funfact_wrap,
+  .cs-funfact_wrap_2 {
+    padding: 40px 30px;
+  }
+}

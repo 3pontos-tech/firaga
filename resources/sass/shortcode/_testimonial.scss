@@ -1,0 +1,116 @@
+/*--------------------------------------------------------------
+  19. Testimonial
+----------------------------------------------------------------*/
+.cs-testimonial.cs-style1,
+.cs-testimonial.cs-style2 {
+  position: relative;
+  padding-left: 70px;
+  padding-top: 70px;
+  .cs-testimonial_quote {
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+  .cs-testimonial_text {
+    font-size: 22px;
+    line-height: 1.5em;
+    font-weight: 600;
+    color: $primary;
+  }
+  .cs-rating {
+    margin-top: 24px;
+  }
+  .cs-testimonial_avatar_name {
+    font-size: 22px;
+    margin-bottom: 0;
+    margin-top: 70px;
+  }
+  .cs-testimonial_avatar_designation {
+    margin-top: 10px;
+    &::before {
+      content: '';
+      height: 2px;
+      width: 20px;
+      background-color: #d9d9d9;
+      display: inline-block;
+      position: relative;
+      top: -4px;
+      border-radius: 3px;
+      margin-right: 10px;
+    }
+  }
+}
+.cs-testimonial.cs-style2 {
+  text-align: center;
+  padding: 0;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 800px;
+  .cs-testimonial_quote {
+    position: initial;
+    margin-bottom: 20px;
+  }
+  .cs-rating {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 30px;
+  }
+  .cs-testimonial_avatar_name {
+    margin-top: 30px;
+  }
+}
+.cs-testimonial.cs-style3 {
+  padding: 50px;
+  border-radius: 5px;
+  background: linear-gradient(267deg, #161616 0%, #080808 100%);
+  @media (max-width: 991px) {
+    padding: 30px;
+  }
+  .cs-client_img {
+    flex: none;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    overflow: hidden;
+    img {
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+    }
+  }
+  .cs-client_info {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 45px;
+  }
+  .cs-client_review {
+    margin-bottom: 40px;
+  }
+  .cs-client_name {
+    font-size: 22px;
+    margin-bottom: 0;
+    line-height: 1.5em;
+  }
+  .cs-client_designation {
+    font-weight: 600;
+  }
+}
+@media screen and (max-width: 1380px) {
+  .cs-testimonial.cs-style1,
+  .cs-testimonial.cs-style2 {
+    .cs-testimonial_text,
+    .cs-testimonial_avatar_name {
+      font-size: 20px;
+    }
+  }
+}
+@media screen and (max-width: 991px) {
+  .cs-testimonial.cs-style1 {
+    padding-left: 20px;
+    padding-top: 60px;
+  }
+  .cs-testimonial.cs-style1 .cs-testimonial_avatar_name {
+    margin-top: 30px;
+  }
+}

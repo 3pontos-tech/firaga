@@ -1,0 +1,79 @@
+/*--------------------------------------------------------------
+  22. Pricing
+----------------------------------------------------------------*/
+.cs-pricing_table.cs-style1 {
+  position: relative;
+  background: linear-gradient(267.18deg, #161616 0%, #080808 100%);
+  border-radius: 15px;
+  overflow: hidden;
+  padding: 0 45px;
+  &::before {
+    content: '';
+    position: absolute;
+    right: -55px;
+    top: -55px;
+    height: 135px;
+    width: 135px;
+    background: $accent;
+    filter: blur(125px);
+    transition: all 0.4s ease;
+    opacity: 0;
+  }
+  .cs-pricing_title {
+    font-size: 30px;
+    padding: 30px 0 30px;
+    border-bottom: 1px solid #302E2E;
+    margin: 0;
+  }
+  .cs-price {
+    display: flex;
+    align-items: flex-end;
+    padding-top: 20px;
+    margin-bottom: 5px;
+    h3 {
+      margin: 0;
+      font-size: 38px;
+    }
+    span {
+      position: relative;
+      bottom: 6px;
+    }
+  }
+  .cs-pricing_info {
+    border-bottom: 1px solid #302E2E;
+    padding-bottom: 23px;
+  }
+  .cs-pricing_feature {
+    padding: 35px 0 25px;
+    border-bottom: 1px solid #302E2E;
+    li {
+      position: relative;
+      padding-left: 35px;
+      &:not(:last-child) {
+        margin-bottom: 16px;
+      }
+    }
+    .cs-feature_icon {
+      position: absolute;
+      left: 0;
+      top: -1px;
+    }
+  }
+  .cs-pricing_btn_wrap {
+    padding: 28px 0;
+  }
+  &:hover {
+    &::before {
+      opacity: 1;
+    }
+  }
+}
+
+@media screen and (max-width: 991px) {
+  .cs-pricing_table.cs-style1 {
+    .cs-pricing_title {
+      font-size: 26px;
+    }
+    padding: 0 30px;
+  }
+}

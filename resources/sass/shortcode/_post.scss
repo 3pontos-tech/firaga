@@ -1,0 +1,277 @@
+/*--------------------------------------------------------------
+  14. Posts
+----------------------------------------------------------------*/
+.cs-post_wrap {
+  width: 54vw;
+}
+.cs-post.cs-style1 {
+  width: 100%;
+  border-radius: 15px;
+  overflow: hidden;
+  position: relative;
+  .cs-post_thumb {
+    position: relative;
+    display: block;
+    img {
+      width: 100%;
+    }
+  }
+  .cs-post_overlay {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    background: linear-gradient(360deg, #000000 0%, rgba(77, 77, 77, 0) 100%);
+  }
+  .cs-posted_by {
+    font-size: 14px;
+    line-height: 1.6em;
+    margin-bottom: 10px;
+  }
+  .cs-post_title {
+    font-size: 22px;
+    margin-bottom: 0;
+    line-height: 1.45em;
+  }
+  .cs-post_info {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 35px 25px;
+  }
+}
+.cs-slider .cs-post.cs-style1 {
+  max-width: 420px;
+}
+
+.cs-post.cs-style2 {
+  .cs-post_thumb {
+    display: block;
+    overflow: hidden;
+    position: relative;
+    margin-bottom: 45px;
+    &::after {
+      content: '';
+      position: absolute;
+      height: 100%;
+      width: 100%;
+      left: 0;
+      top: 0;
+      z-index: 2;
+      background-color: rgba($black, 0.5);
+      opacity: 0;
+      transition: all 0.4s ease;
+    }
+    img {
+      transition: all 0.6s ease;
+    }
+  }
+  a.cs-post_thumb {
+    &:hover {
+      &::after {
+        opacity: 1;
+      }
+      img {
+        transform: scale(1.07);
+      }
+    }
+  }
+  .cs-post_meta {
+    font-size: 18px;
+    margin-bottom: 15px;
+  }
+  .cs-post_title {
+    font-size: 38px;
+    margin-bottom: 30px;
+  }
+  .cs-post_sub_title {
+    margin-bottom: 35px;
+    line-height: 1.75em;
+  }
+  p {
+    margin-bottom: 45px;
+    line-height: 1.75em;
+  }
+  h3 {
+    font-size: 30px;
+    margin-bottom: 25px;
+  }
+  blockquote {
+    font-size: 18px;
+    line-height: 1.9em;
+    border-left: 5px solid $accent;
+    background-color: #000;
+    padding: 40px 35px;
+    font-weight: 600;
+    color: $primary;
+    margin-bottom: 45px;
+    small {
+      display: block;
+      position: relative;
+      color: $secondary;
+      font-size: 16px;
+      line-height: 1.9em;
+      font-style: initial;
+      font-weight: 400;
+      margin-top: 15px;
+      padding-left: 35px;
+      &::before {
+        content: '';
+        height: 2px;
+        width: 20px;
+        border-radius: 2px;
+        position: absolute;
+        left: 0;
+        top: 50%;
+        background-color: $primary;
+      }
+    }
+  }
+}
+.cs-post_3_list li:not(:last-child) {
+  border-bottom: 2px solid #E4E4E4;
+  padding-bottom: 35px;
+  margin-bottom: 26px;
+}
+.cs-post.cs-style3 {
+  display: flex;
+  .cs-post_title {
+    font-size: 30px;
+    margin-bottom: 20px;
+  }
+  .cs-post_meta {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-top: 30px;
+  }
+  .cs-post_avatar {
+    display: flex;
+    align-items: center;
+  }
+  .cs-post_avatar_img {
+    flex: none;
+    max-width: 50px;
+    border-radius: 5px;
+    margin-right: 18px;
+    img {
+      width: 100%;
+      border-radius: inherit;
+    }
+  }
+  .cs-post_avatar_info {
+    h4 {
+      font-size: 16px;
+      margin-bottom: 0;
+    }
+    p {
+      margin: 0;
+      font-size: 14px;
+      line-height: 1.6em;
+    }
+  }
+  .cs-text_btn {
+    color: $accent;
+  }
+  .cs-posted_by {
+    display: flex;
+    align-items: center;
+    flex: none;
+    width: 105px;
+    margin-top: 4px;
+    >span {
+      &:first-child {
+        color: $primary;
+        font-size: 30px;
+        font-weight: 600;
+        margin-right: 12px;
+      }
+      &:last-child {
+        font-size: 14px;
+        line-height: 18px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1550px) {
+  .cs-slider .cs-post.cs-style1 {
+    max-width: 360px;
+  }
+  .cs-shape_wrap_4 .cs-shape_4:nth-child(1) {
+    left: -3%;
+  }
+}
+@media screen and (max-width: 1550px) {
+  .cs-slider .cs-post.cs-style1 {
+    max-width: 360px;
+  }
+  .cs-shape_wrap_4 .cs-shape_4:nth-child(1) {
+    left: -3%;
+  }
+}
+@media screen and (max-width: 1550px) {
+  .cs-post.cs-style1 .cs-post_title {
+    font-size: 20px;
+  }
+}
+@media screen and (max-width: 1199px) {
+  .cs-post_wrap {
+    width: 100%;
+  }
+}
+@media screen and (max-width: 991px) {
+  .cs-post.cs-style2 {
+    .cs-post_title {
+      font-size: 30px;
+      margin-bottom: 15px;
+    }
+    .cs-post_meta {
+      font-size: 16px;
+      margin-bottom: 10px;
+    }
+    .cs-post_sub_title {
+      margin-bottom: 20px;
+    }
+    .cs-post_thumb {
+      margin-bottom: 25px;
+    }
+  }
+  .cs-post.cs-style2 blockquote {
+    font-size: 16px;
+    border-width: 3px;
+    padding: 30px 25px;
+  }
+  .cs-post.cs-style3 .cs-post_title {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+}
+@media screen and (max-width: 575px) {
+  .cs-slider .cs-post.cs-style1 {
+    max-width: 320px;
+  }
+  .cs-post.cs-style3 {
+    display: block;
+    .cs-posted_by {
+      margin-top: 0;
+      margin-bottom: 10px;
+    }
+    .cs-post_meta {
+      flex-direction: column-reverse;
+      align-items: flex-start;
+      margin-top: 20px;
+    }
+    .cs-post_avatar {
+      margin-top: 25px;
+    }
+  }
+}
+@media screen and (max-width: 350px) {
+  .cs-slider .cs-post.cs-style1 {
+    max-width: 300px;
+  }
+}

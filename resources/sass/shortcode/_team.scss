@@ -1,0 +1,80 @@
+/*--------------------------------------------------------------
+  15. Team
+----------------------------------------------------------------*/
+.cs-team.cs-style1 {
+  overflow: hidden;
+  position: relative;
+  .cs-member_thumb {
+    border-radius: 15px;
+    position: relative;
+    overflow: inherit;
+    overflow: hidden;
+    img {
+      width: 100%;
+      position: relative;
+      z-index: 1;
+      border-radius: inherit;
+      transition: all 0.8s ease;
+    }
+  }
+  .cs-member_overlay {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    left: 0;
+    top: 0;
+    border-radius: inherit;
+    background: linear-gradient(360deg, #000000 0%, rgba(77, 77, 77, 0) 100%);
+  }
+  .cs-member_social {
+    svg {
+      height: 20px;
+      width: 20px;
+    }
+  }
+  .cs-member_name {
+    font-size: 22px;
+    margin-bottom: 6px;
+  }
+  .cs-member_info {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    z-index: 3;
+    padding: 30px 25px;
+  }
+  .cs-member_social {
+    position: absolute;
+    z-index: 2;
+    left: 13px;
+    top: 50px;
+    display: flex;
+    flex-direction: column;
+    a {
+      display: flex;
+      margin: 12px;
+      transform: scale(0) rotate(45deg);
+      opacity: 0;
+      transition: all 0.4s ease;
+    }
+  }
+  &:hover {
+    .cs-member_social {
+      a {
+        transform: scale(1) rotate(0deg);
+        opacity: 1;
+      }
+    }
+    .cs-member_thumb {
+      img {
+        transform: scale(1.06) translateY(8px);
+      }
+    }
+  }
+}
+@media screen and (max-width: 1380px) {
+.cs-team.cs-style1 .cs-member_name {
+  font-size: 20px;
+}
+}

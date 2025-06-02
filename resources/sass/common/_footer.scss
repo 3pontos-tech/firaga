@@ -1,0 +1,185 @@
+/*--------------------------------------------------------------
+  8. Footer
+----------------------------------------------------------------*/
+.cs-fooer_main {
+  padding: 95px 0 35px;
+}
+.cs-footer_dark_bg_1 {
+  background-color: #151515;
+}
+.cs-footer_item {
+  margin-bottom: 40px;
+  .cs-newsletter.cs-style1 {
+    margin-top: 6px;
+  }
+}
+
+.cs-widget_title {
+  font-size: 18px;
+  margin-bottom: 35px;
+}
+
+.cs-menu_widget {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  li {
+    &:not(:last-child) {
+      margin-bottom: 20px;
+    }
+  }
+}
+
+.cs-text_widget {
+  p {
+    margin: 0;
+  }
+  img + p {
+    margin-top: 30px;
+  }
+}
+
+.cs-social_btns.cs-style1 {
+  display: flex;
+  flex-wrap: wrap;
+  margin: -7px;
+  a {
+    height: 36px;
+    width: 36px;
+    border-radius: 50%;
+    border: 2px solid $white;
+    margin: 7px;
+    &:hover {
+      border-color: $accent;
+      transform: scale(1.08);
+      svg {
+        fill: $accent;
+      }
+    }
+  }
+}
+
+.cs-newsletter.cs-style1 {
+  .cs-newsletter_form {
+    position: relative;
+  }
+  .cs-newsletter_input {
+    height: 50px;
+    width: 100%;
+    border-radius: 10px;
+    background-color: #000;
+    border: none;
+    padding: 5px 90px 5px 15px;
+    outline: none;
+    color: $white;
+  }
+  .cs-newsletter_btn {
+    padding: 7px 25px;
+    border-radius: 10px;
+    color: $white;
+    background-color: $accent;
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    font-weight: 600;
+    border: none;
+    overflow: hidden;
+    &:before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba($black, 0.4);
+      transform: scaleX(0);
+      transform-origin: 0 50%;
+      transition-property: transform;
+      transition-duration: 0.6s;
+      transition-timing-function: ease-out;
+      border-radius: inherit;
+    }
+    span {
+      position: relative;
+      z-index: 1;
+    }
+    &:hover {
+      &:before {
+        transform: scaleX(1);
+        transition-timing-function: cubic-bezier(0.52, 1.64, 0.37, 0.66);
+      }
+    }
+  }
+  .cs-newsletter_text {
+    margin-top: 25px;
+  }
+}
+.cs-footer_links {
+  display: flex;
+  flex-wrap: wrap;
+  li {
+    &:not(:last-child) {
+      &::after {
+        content: '|';
+        margin: 0 10px;
+        position: relative;
+        top: -1px;
+      }
+    }
+  }
+}
+
+.cs-bottom_footer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 20px 0;
+  border-top: 1px solid $border;
+  > * {
+    padding: 4px 0;
+  }
+}
+
+.cs-text_widget + .cs-social_btns.cs-style1 {
+  margin-top: 25px;
+}
+
+@media screen and (max-width: 1199px) {
+  .cs-newsletter.cs-style1 {
+    .cs-newsletter_btn {
+      padding: 7px 15px;
+    }
+    .cs-newsletter_input {
+      padding: 5px 80px 5px 15px;
+    }
+  }
+}
+@media screen and (max-width: 991px) {
+  .cs-widget_title {
+    margin-bottom: 20px;
+  }
+  .cs-text_widget img + p {
+    margin-top: 20px;
+  }
+  .cs-menu_widget li:not(:last-child) {
+    margin-bottom: 10px;
+  }
+
+  .cs-text_widget + .cs-social_btns.cs-style1,
+  .cs-newsletter.cs-style1 .cs-newsletter_text {
+    margin-top: 15px;
+  }
+  .cs-fooer_main {
+    padding: 60px 0 15px;
+  }
+}
+@media screen and (max-width: 767px) {
+  .cs-bottom_footer {
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+  }
+}
+@media screen and (max-width: 767px) {
+}
