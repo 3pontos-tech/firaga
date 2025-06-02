@@ -16,11 +16,11 @@ class DatabaseSeeder extends Seeder
     public function run(): void
     {
         // User::factory(10)->create();
-        if (app()->environment('local')) {
+        if (app()->environment('local', 'staging')) {
             User::factory()->create([
                 'name' => 'Test User',
                 'email' => 'admin@admin.com',
-                'password' => Hash::make('fodase'),
+                'password' => Hash::make('admin'),
             ]);
         }
     }
