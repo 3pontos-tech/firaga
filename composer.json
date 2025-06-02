@@ -6,7 +6,8 @@
     "keywords": ["laravel", "framework", "glow starter kit", "livewire", "filament"],
     "license": "MIT",
     "require": {
-        "php": "^8.2",
+        "php": "^8.3",
+        "awcodes/filament-curator": "^3.7",
         "bezhansalleh/filament-shield": "^3.3",
         "filament/filament": "^3.2",
         "hasnayeen/themes": "^3.0.24",
@@ -15,6 +16,7 @@
         "laravel/tinker": "^2.10.1",
         "outerweb/filament-settings": "^1.3",
         "swisnl/filament-backgrounds": "^1.1",
+        "webid/druid": "^0.3.2",
         "z3d0x/filament-logger": "^0.8.0"
     },
     "require-dev": {
