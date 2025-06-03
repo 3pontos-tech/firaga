@@ -73,6 +73,7 @@ class AdminPanelProvider extends PanelProvider
                 DruidPlugin::make(),
                 CuratorPlugin::make(),
             ])
+
             ->authMiddleware([
                 Authenticate::class,
             ])

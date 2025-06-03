@@ -92,6 +92,9 @@ return [
             'class' => HintComponent::class,
         ],
         [
+            'class' => \App\Filament\Components\FaqComponent::class,
+        ],
+        [
             'class' => ReusableComponent::class,
             'disabled_for' => [
                 ReusableComponentModel::class,
