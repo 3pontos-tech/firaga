@@ -5,6 +5,7 @@ namespace App\Filament\Pages;
 use BezhanSalleh\FilamentShield\Traits\HasPageShield;
 use Closure;
 use Filament\Forms\Components\Tabs;
+use Filament\Forms\Components\Tabs\Tab;
 use Filament\Forms\Components\TextInput;
 use Outerweb\FilamentSettings\Filament\Pages\Settings as BaseSettings;
 
@@ -19,12 +20,12 @@ class Settings extends BaseSettings
         return [
             Tabs::make('Settings')
                 ->schema([
-                    Tabs\Tab::make('General')
+                    Tab::make('General')
                         ->schema([
                             TextInput::make('general.brand_name')
                                 ->required(),
                         ]),
-                    Tabs\Tab::make('Seo')
+                    Tab::make('Seo')
                         ->schema([
                             TextInput::make('seo.title')
                                 ->required(),

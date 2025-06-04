@@ -3,8 +3,8 @@
 namespace Database\Seeders;
 
 use App\Models\User;
-use Artisan;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Hash;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
@@ -27,7 +27,7 @@ class DatabaseSeeder extends Seeder
 
             Artisan::call('shield:super-admin', [
                 '--user' => $user->getKey(),
-                '--panel' => 'admin'
+                '--panel' => 'admin',
             ]);
 
             Artisan::call('druid:demo');

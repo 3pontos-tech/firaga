@@ -3,9 +3,11 @@
 namespace App\Providers;
 
 use App\Policies\ActivityPolicy;
+use App\View\Components\Navbar;
 use BezhanSalleh\FilamentShield\FilamentShield;
 use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\Blade;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Gate;
 use Illuminate\Support\Facades\URL;
@@ -25,6 +27,8 @@ class AppServiceProvider extends ServiceProvider
 
     public function boot(): void
     {
+        Blade::component('navbar', Navbar::class);
+
         $this->configurePolicies();
 
         $this->configureDB();
@@ -60,6 +64,6 @@ class AppServiceProvider extends ServiceProvider
     {
         FilamentShield::prohibitDestructiveCommands($this->app->isProduction());
 
-        Table::configureUsing(fn (Table $table) => $table->paginationPageOptions([10, 25, 50]));
+        Table::configureUsing(fn (Table $table): Table => $table->paginationPageOptions([10, 25, 50]));
     }
 }

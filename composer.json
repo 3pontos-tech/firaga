@@ -3,7 +3,13 @@
     "name": "ercogx/laravel-filament-starter-kit",
     "type": "project",
     "description": "This is a Filament v3 Starter Kit for Laravel 12, designed to accelerate the development of Filament-powered applications.",
-    "keywords": ["laravel", "framework", "glow starter kit", "livewire", "filament"],
+    "keywords": [
+        "laravel",
+        "framework",
+        "glow starter kit",
+        "livewire",
+        "filament"
+    ],
     "license": "MIT",
     "require": {
         "php": "^8.3",
@@ -22,6 +28,7 @@
     "require-dev": {
         "barryvdh/laravel-debugbar": "^3.15",
         "barryvdh/laravel-ide-helper": "^3.5",
+        "driftingly/rector-laravel": "^2.0.4",
         "fakerphp/faker": "^1.23",
         "larastan/larastan": "^3.0",
         "laravel/pail": "^1.2.2",
@@ -29,7 +36,10 @@
         "laravel/sail": "^1.41",
         "mockery/mockery": "^1.6",
         "nunomaduro/collision": "^8.6",
-        "phpunit/phpunit": "^11.5.3"
+        "pestphp/pest": "^4.0.0",
+        "rector/rector": "^2.0.15",
+        "pestphp/pest-plugin-laravel": "^4.0.0",
+        "pestphp/pest-plugin-type-coverage": "^4.0.0"
     },
     "autoload": {
         "psr-4": {
@@ -69,7 +79,14 @@
         "check": [
             "./vendor/bin/pint --dirty",
             "php artisan test",
-            "./vendor/bin/phpstan analyse --memory-limit=2G"
+            "./vendor/bin/phpstan analysetype --memory-limit=2G"
+        ],
+        "test:arch": "pest --filter=arch",
+        "test:type-coverage": "pest --coverage --min=100",
+        "test:unit": "pest --parallel --coverage --exactly=99.5",
+        "test": [
+            "@test:type-coverage",
+            "@test:unit"
         ]
     },
     "extra": {
@@ -86,6 +103,6 @@
             "php-http/discovery": true
         }
     },
-    "minimum-stability": "stable",
+    "minimum-stability": "dev",
     "prefer-stable": true
 }

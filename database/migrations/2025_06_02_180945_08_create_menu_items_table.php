@@ -8,7 +8,7 @@ return new class extends Migration
 {
     public function up(): void
     {
-        Schema::create('menu_items', function (Blueprint $table) {
+        Schema::create('menu_items', function (Blueprint $table): void {
             $table->id();
             $table->foreignId('menu_id')->constrained('menus')->cascadeOnDelete();
             $table->unsignedInteger('order')->nullable();

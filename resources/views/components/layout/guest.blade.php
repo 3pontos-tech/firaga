@@ -10,9 +10,20 @@
     <!-- Site Title -->
     <title>{{ config('app.name') }}</title>
     @vite(['resources/css/app.css', 'resources/js/app.js'])
-    <!-- Alpine.js CDN removed, now loaded via Vite -->
+
 </head>
 <body>
+     @php
+    $menus = \Webid\Druid\Models\Menu::all()->keyBy('slug');
+    @endphp
+    <x-navbar :menu="$menus['main-menu']">
+        <x-slot name="brand">
+            <span class="text-2xl text-gray-900 dark:text-white">MyCompany</span>
+        </x-slot>
+        <x-slot name="controls">
+
+        </x-slot>
+    </x-navbar>
     {{ $slot }}
 </body>
 </html>

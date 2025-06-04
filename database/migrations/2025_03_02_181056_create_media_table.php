@@ -1,6 +1,5 @@
 <?php
 
-use Awcodes\Curator\Facades\Curator;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -9,7 +8,7 @@ return new class extends Migration
 {
     public function up(): void
     {
-        Schema::create(app(config('curator.model'))->getTable(), function (Blueprint $table) {
+        Schema::create(app(config('curator.model'))->getTable(), function (Blueprint $table): void {
             $table->id();
             $table->string('disk')->default('public');
             $table->string('directory')->default('media');

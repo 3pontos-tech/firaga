@@ -1,26 +1,13 @@
 {
     "preset": "laravel",
+    "cache-file": ".pint.result.cache",
     "exclude": [
-        "bootstrap",
-        "config",
-        "database",
-        "public",
-        "resources",
-        "routes",
-        "storage"
+        ".rector.cache"
     ],
     "rules": {
-        "phpdoc_order": {
-            "order": [
-                "property",
-                "property-read",
-                "property-write",
-                "method",
-
-                "param",
-                "throws",
-                "return"
-            ]
+        "no_unused_imports": true,
+        "concat_space": {
+            "spacing": "one"
         }
     }
 }

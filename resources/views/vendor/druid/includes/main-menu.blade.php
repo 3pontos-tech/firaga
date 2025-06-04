@@ -1,3 +1,7 @@
+@php
+    $menus = \Webid\Druid\Models\Menu::all()->keyBy('slug');
+@endphp
+
 @if (isset($menus['main-menu']))
     <nav class="navbar" role="navigation" aria-label="main navigation">
         <div class="navbar-brand">
@@ -13,6 +17,7 @@
             <div class="navbar-start">
                 @foreach ($menus['main-menu']->items as $menuItem)
                     @if ($menuItem->children && $menuItem->children->isNotEmpty())
+
                         <div class="navbar-item has-dropdown is-hoverable">
                             <a href="#" class="navbar-link">
                                 {{$menuItem->label}}
@@ -20,7 +25,7 @@
 
                             <div class="navbar-dropdown">
                                 @foreach ($menuItem->children as $subMenuItem)
-                                    <a href="{{ $subMenuItem->url }}" target="{{$subMenuItem->target->getHtmlProperty()}}" class="navbar-item">
+                                    <a href="{{ $subMenuItem->custom_url }}" target="{{$subMenuItem->target->getHtmlProperty()}}" class="navbar-item">
                                         {{$subMenuItem->label}}
                                     </a>
                                 @endforeach
@@ -28,7 +33,7 @@
                             </div>
                         </div>
                     @else
-                        <a href="{{ $menuItem->url }}" target="{{$menuItem->target->getHtmlProperty()}}" class="navbar-item">
+                        <a href="{{ $menuItem->custom_url }}" target="{{$menuItem->target->getHtmlProperty()}}" class="navbar-item">
                             {{$menuItem->label}}
                         </a>
                     @endif

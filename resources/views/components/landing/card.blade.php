@@ -1,16 +1,16 @@
 <!-- Card Section: “Se você guarda dinheiro...” -->
 <section class="bg-black dark:bg-gray-900 text-white dark:text-gray-100 py-20">
     <div class="container mx-auto px-6">
-        <div class="flex flex-col lg:flex-row items-center bg-gradient-to-br from-black via-gray-900 to-black dark:from-black dark:via-gray-900 dark:to-black rounded-2xl overflow-hidden shadow-2xl hover:shadow-orange-500/30 transition-shadow duration-300">
+        <div class="flex flex-col lg:flex-row items-center bg-gradient-to-br from-black via-gray-900 to-black dark:from-black dark:via-gray-900 dark:to-black rounded-2xl overflow-hidden shadow-2xl hover:shadow-orange-500/40 transition-shadow duration-300 animate-fade-in">
 
             <!-- Left Content -->
-            <div class="lg:w-1/2 px-8 py-12">
-                <h3 class="text-3xl sm:text-4xl font-extrabold leading-snug mb-6">
+            <div class="lg:w-1/2 px-8 py-12 bg-white/10 dark:bg-black/20 backdrop-blur-xl rounded-3xl shadow-xl border border-white/20 dark:border-gray-800 animate-fade-in">
+                <h3 class="text-3xl sm:text-4xl font-extrabold leading-snug mb-6 tracking-tight">
                     SE VOCÊ GUARDA DINHEIRO,<br>
                     MAS NÃO SABE COMO<br>
-                    <span class="text-orange-500">POTENCIALIZAR</span>
+                    <span class="text-orange-500 animate-pulse">POTENCIALIZAR</span>
                 </h3>
-                <p class="text-gray-300 mb-8 leading-relaxed text-lg">
+                <p class="text-gray-200 mb-8 leading-relaxed text-lg animate-fade-in delay-200">
                     Poupar sem estratégia não te leva a lugar nenhum.
                     Você já guarda dinheiro, mas será que está realmente aproveitando seu potencial?
                     Criamos um planejamento financeiro alinhado com seus objetivos,
@@ -19,11 +19,11 @@
                 </p>
                 <div class="flex items-center space-x-4">
                     <!-- “SAIBA MAIS” Text -->
-                    <span class="uppercase text-sm tracking-widest text-orange-400 hover:text-orange-500 cursor-pointer transition font-semibold">
+                    <span class="uppercase text-sm tracking-widest text-orange-400 hover:text-orange-500 cursor-pointer transition font-semibold animate-fade-in delay-300">
                         Saiba mais
                     </span>
                     <!-- Circular Button with Arrow -->
-                    <a href="#planejamento" class="relative w-12 h-12 border-2 border-orange-500 rounded-full flex items-center justify-center hover:bg-orange-500 group transition shadow-lg">
+                    <a href="#planejamento" class="relative w-12 h-12 border-2 border-orange-500 rounded-full flex items-center justify-center hover:bg-orange-500 group transition shadow-lg animate-pulse">
                         <svg
                             class="w-5 h-5 text-orange-500 group-hover:text-white transition"
                             fill="none"
@@ -39,12 +39,12 @@
             </div>
 
             <!-- Right Image with Curved Edge -->
-            <div class="lg:w-1/2 w-full h-80 lg:h-auto relative overflow-hidden">
-                <div class="absolute inset-0 overflow-hidden rounded-l-[100px] shadow-lg">
+            <div class="lg:w-1/2 w-full h-80 lg:h-auto relative overflow-hidden group">
+                <div class="absolute inset-0 overflow-hidden rounded-l-[100px] shadow-lg border-4 border-orange-500/30 animate-border-glow">
                     <img
                         src="https://github.com/danielhe4rt.png"
                         alt="Planejamento Financeiro"
-                        class="object-cover w-full h-full scale-105 hover:scale-110 transition-transform duration-300"
+                        class="object-cover w-full h-full scale-105 group-hover:scale-110 transition-transform duration-500 ease-in-out animate-fade-in delay-200"
                     />
                 </div>
             </div>
@@ -52,3 +52,37 @@
         </div>
     </div>
 </section>
+
+<style>
+@keyframes border-glow {
+  0%,
+  100% {
+    box-shadow: 0 0 0 0 #ff4a17;
+  }
+  50% {
+    box-shadow: 0 0 40px 10px #ff4a17;
+  }
+}
+.animate-border-glow {
+  animation: border-glow 3s ease-in-out infinite;
+}
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+.animate-fade-in {
+  animation: fade-in 1.2s cubic-bezier(0.4, 0, 0.2, 1) both;
+}
+.animate-fade-in.delay-200 {
+  animation-delay: 0.2s;
+}
+.animate-fade-in.delay-300 {
+  animation-delay: 0.3s;
+}
+</style>

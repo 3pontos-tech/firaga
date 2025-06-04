@@ -8,7 +8,7 @@ return new class extends Migration
 {
     public function up(): void
     {
-        Schema::create('reusable_components', function (Blueprint $table) {
+        Schema::create('reusable_components', function (Blueprint $table): void {
             $table->id();
             $table->string('title');
             $table->longText('content');

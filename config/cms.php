@@ -2,11 +2,21 @@
 
 declare(strict_types=1);
 
+use App\Filament\Components\CodeComponent;
+use App\Filament\Components\FaqComponent;
+use App\Models\User;
+use Awcodes\Curator\Models\Media;
 use Webid\Druid\Components\HintComponent;
 use Webid\Druid\Components\ImageComponent;
 use Webid\Druid\Components\ReusableComponent;
 use Webid\Druid\Components\TextComponent;
 use Webid\Druid\Components\TextImageComponent;
+use Webid\Druid\Filament\Resources\MenuResource\RelationManagers\ItemsRelationManager;
+use Webid\Druid\Models\Category;
+use Webid\Druid\Models\Menu;
+use Webid\Druid\Models\MenuItem;
+use Webid\Druid\Models\Page;
+use Webid\Druid\Models\Post;
 use Webid\Druid\Models\ReusableComponent as ReusableComponentModel;
 use Webid\Druid\Services\ContentRenderer\BladeRenderer;
 
@@ -18,13 +28,13 @@ return [
      */
 
     'models' => [
-        'user' => \App\Models\User::class,
-        'media' => \Awcodes\Curator\Models\Media::class,
-        'page' => \Webid\Druid\Models\Page::class,
-        'post' => \Webid\Druid\Models\Post::class,
-        'category' => \Webid\Druid\Models\Category::class,
-        'menu' => \Webid\Druid\Models\Menu::class,
-        'menu_item' => \Webid\Druid\Models\MenuItem::class,
+        'user' => User::class,
+        'media' => Media::class,
+        'page' => Page::class,
+        'post' => Post::class,
+        'category' => Category::class,
+        'menu' => Menu::class,
+        'menu_item' => MenuItem::class,
         'reusable_component' => \Webid\Druid\Models\ReusableComponent::class,
     ],
 
@@ -36,7 +46,7 @@ return [
 
     'enable_menu_module' => true,
     'menu' => [
-        'menu_items_relation_manager' => \Webid\Druid\Filament\Resources\MenuResource\RelationManagers\ItemsRelationManager::class,
+        'menu_items_relation_manager' => ItemsRelationManager::class,
     ],
 
     /*
@@ -92,7 +102,10 @@ return [
             'class' => HintComponent::class,
         ],
         [
-            'class' => \App\Filament\Components\FaqComponent::class,
+            'class' => CodeComponent::class,
+        ],
+        [
+            'class' => FaqComponent::class,
         ],
         [
             'class' => ReusableComponent::class,
@@ -117,7 +130,7 @@ return [
      |--------------------------------------------------------------------------
      */
     'enable_blog_module' => true,
-    'enable_default_blog_routes' => true,
+    'enable_default_blog_routes' => false,
     'blog' => [
         'posts_per_page' => 10,
         'prefix' => 'blog',

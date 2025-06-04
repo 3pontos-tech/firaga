@@ -3,9 +3,13 @@ includes:
     - vendor/nesbot/carbon/extension.neon
 
 parameters:
-
+    level: max
     paths:
-        - app/
-
-    # Level 10 is the highest level
-    level: 5
+        - app
+        - config
+        - bootstrap
+        - database/factories
+        - routes
+        - tests
+    excludePaths:
+        - bootstrap/cache
