@@ -5,8 +5,10 @@
 <!-- Hero Section -->
 <section class="relative min-h-[80vh] flex items-center justify-center bg-gradient-to-br from-black via-gray-900 to-black dark:from-black dark:via-gray-900 dark:to-black text-white dark:text-white overflow-hidden py-28">
     <!-- Animated Gradient Background -->
-    <div class="absolute inset-0 pointer-events-none animate-gradient-x z-0">
-        <div class="w-full h-full bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-orange-900/20 via-transparent to-transparent dark:from-orange-900/30"></div>
+    <div class="absolute inset-0 pointer-events-none blur-[2px] animate-gradient-x z-0">
+
+        <x-blocks.gridBackground/>
+        <!--<div class="w-full h-full bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-orange-900/20 via-transparent to-transparent dark:from-orange-900/30"></div> -->
     </div>
     <!-- Floating Shapes -->
     <div class="absolute top-10 left-10 w-24 h-24 bg-orange-500/20 rounded-full blur-2xl animate-float-slow z-0"></div>
