@@ -2,8 +2,8 @@
 <section id="nosso-atendimento" class="relative bg-gradient-to-br from-black via-gray-900 to-black dark:from-black dark:via-gray-900 dark:to-black text-white dark:text-white py-28 overflow-hidden">
     <!-- Animated Gradient Overlay -->
     <div class="absolute inset-0 pointer-events-none z-0">
-        <div class="absolute left-1/2 top-0 w-2/3 h-2/3 -translate-x-1/2 blur-3xl opacity-40 animate-gradient-move rounded-full bg-gradient-to-tr from-orange-500 via-pink-500 to-purple-600"></div>
-        <div class="absolute bottom-0 right-0 w-1/4 h-1/4 blur-2xl opacity-30 animate-float-slow bg-gradient-to-br from-orange-400 via-yellow-500 to-pink-500 rounded-full"></div>
+        <!--<div class="absolute left-1/2 top-0 w-2/3 h-2/3 -translate-x-1/2 blur-3xl opacity-40 animate-gradient-move rounded-full bg-gradient-to-tr from-orange-500 via-pink-500 to-purple-600"></div>
+        <div class="absolute bottom-0 right-0 w-1/4 h-1/4 blur-2xl opacity-30 animate-float-slow bg-gradient-to-br from-orange-400 via-yellow-500 to-pink-500 rounded-full"></div>-->
     </div>
     <div class="container mx-auto px-6 lg:flex lg:items-start lg:justify-between lg:space-x-12 relative z-10">
         <!-- Left Column -->
@@ -48,7 +48,7 @@
         <!-- Right Column: Three Steps with Stepper Animation -->
         <div class="lg:w-1/2 space-y-10">
             @foreach($cardData as $index => $card)
-                <x-cards.baseCard :title="$card['title']" :description="$card['description']" :index="str_pad($index + 1, 2, '0', STR_PAD_LEFT)" />
+                <x-cards.baseCard :title="$card['title']" :description="$card['description']" :backgroundImage="$card['backgroundImage']" :index="str_pad($index + 1, 2, '0', STR_PAD_LEFT)" />
             @endforeach
         </div>
     </div>
