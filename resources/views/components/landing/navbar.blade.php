@@ -1,6 +1,6 @@
 <!-- NAVBAR -->
 <nav
-    class="relative bg-white/80 dark:bg-black/60 backdrop-blur-xl  border-gray-100 dark:border-gray-800 sticky top-0 z-50 shadow-lg transition-shadow overflow-visible animate-fade-in-navbar">
+    class="relative bg-black/60 backdrop-blur-xl  border-gray-100 sticky top-0 z-50 shadow-lg transition-shadow overflow-visible animate-fade-in-navbar">
     <div class="container mx-auto px-4 lg:px-8 relative z-10">
         <div class="flex items-center justify-between h-16">
             <!-- Brand / Logo -->

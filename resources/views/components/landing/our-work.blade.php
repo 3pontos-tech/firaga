@@ -47,33 +47,9 @@
         </div>
         <!-- Right Column: Three Steps with Stepper Animation -->
         <div class="lg:w-1/2 space-y-10">
-            <div class="relative border border-orange-500/40 rounded-xl p-8 bg-white/10 dark:bg-gray-900/30 backdrop-blur-xl shadow-lg hover:scale-[1.03] hover:shadow-orange-500/30 transition-transform duration-300 group animate-fade-in">
-                <span class="absolute -top-6 left-6 flex items-center justify-center w-12 h-12 rounded-full bg-gradient-to-tr from-orange-500 via-pink-500 to-yellow-400 text-white text-2xl font-bold shadow-lg animate-stepper"></span>
-                <span class="absolute -top-6 left-6 flex items-center justify-center w-12 h-12 rounded-full bg-gradient-to-tr from-orange-500 via-pink-500 to-yellow-400 text-white text-2xl font-bold shadow-lg animate-stepper">01</span>
-                <h3 class="text-xl font-semibold mb-2 mt-4">ANÁLISE FINANCEIRA</h3>
-                <p class="text-gray-300 leading-relaxed">
-                    O primeiro contato, onde conhecemos melhor suas metas,
-                    seus objetivos e estilo de vida para estruturarmos o seu
-                    planejamento financeiro estratégico.
-                </p>
-            </div>
-            <div class="relative border border-orange-500/40 rounded-xl p-8 bg-white/10 dark:bg-gray-900/30 backdrop-blur-xl shadow-lg hover:scale-[1.03] hover:shadow-orange-500/30 transition-transform duration-300 group animate-fade-in delay-100">
-                <span class="absolute -top-6 left-6 flex items-center justify-center w-12 h-12 rounded-full bg-gradient-to-tr from-orange-500 via-pink-500 to-yellow-400 text-white text-2xl font-bold shadow-lg animate-stepper">02</span>
-                <h3 class="text-xl font-semibold mb-2 mt-4">PLANO DE AÇÃO</h3>
-                <p class="text-gray-300 leading-relaxed">
-                    Nosso segundo encontro, onde trazemos estratégias
-                    detalhadas para começar a colocar em prática todas as
-                    mudanças necessárias e soluções encontradas.
-                </p>
-            </div>
-            <div class="relative border border-orange-500/40 rounded-xl p-8 bg-white/10 dark:bg-gray-900/30 backdrop-blur-xl shadow-lg hover:scale-[1.03] hover:shadow-orange-500/30 transition-transform duration-300 group animate-fade-in delay-200">
-                <span class="absolute -top-6 left-6 flex items-center justify-center w-12 h-12 rounded-full bg-gradient-to-tr from-orange-500 via-pink-500 to-yellow-400 text-white text-2xl font-bold shadow-lg animate-stepper">03</span>
-                <h3 class="text-xl font-semibold mb-2 mt-4">ACOMPANHAMENTO</h3>
-                <p class="text-gray-300 leading-relaxed">
-                    Acompanhamos sua evolução e ajustamos o planejamento
-                    conforme suas mudanças, mantendo você no caminho certo.
-                </p>
-            </div>
+            @foreach($cardData as $index => $card)
+                <x-cards.baseCard :title="$card['title']" :description="$card['description']" :index="str_pad($index + 1, 2, '0', STR_PAD_LEFT)" />
+            @endforeach
         </div>
     </div>
     <!-- Custom Animations -->
