@@ -49,6 +49,55 @@ class LandingController extends Controller
                     'route' => '/debt-management',
                 ],
             ],
+            'plansData' => [
+                [
+                    'name' => 'Gold',
+                    'description' => 'Para quem está começando a organizar sua vida financeira e deseja mais tranquilidade.',
+                    'items' => [
+                        'Mapa financeiro',
+                        'Planilha de fluxo de caixa',
+                        'Planilha de patrimônio',
+                        'Planejamento anual',
+                        'Construção de Reserva',
+                    ],
+                    'button' => [
+                        'text' => 'Quero esse',
+                        'color' => 'bg-yellow-500',
+                    ],
+                ],
+                [
+                    'name' => 'Platinum',
+                    'description' => 'Para quem deseja ter o controle total de suas finanças e ser mais arrojado, além de mais diversidade.',
+                    'note' => '- Itens do Gold',
+                    'items' => [
+                        'Estrutura de aquisição de bens',
+                        'Diagnóstico de carteira',
+                        'Preenchimento Fluxo de Caixa',
+                        'Parceiros de Investimento',
+                        'Custo Oportunidade',
+                    ],
+                    'button' => [
+                        'text' => 'Quero esse',
+                        'color' => 'bg-blue-600',
+                    ],
+                ],
+                [
+                    'name' => 'Black',
+                    'description' => 'Para quem já investe e deseja estratégias personalizadas para potencializar seu patrimônio.',
+                    'note' => '- Itens do Gold & Platinum',
+                    'items' => [
+                        'Revisão de Progresso',
+                        'Carteira Personalizada',
+                        'Reserva Internacional',
+                        'Estratégias Exclusivas',
+                        'Possibilidade Key Account',
+                    ],
+                    'button' => [
+                        'text' => 'Quero esse',
+                        'color' => 'bg-black',
+                    ],
+                ],
+            ],
         ]);
     }
 }

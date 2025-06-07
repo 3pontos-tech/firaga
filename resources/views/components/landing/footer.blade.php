@@ -1,10 +1,10 @@
 <!-- Footer Section -->
 <footer class="relative bg-black dark:bg-gray-900 text-gray-300 dark:text-gray-400 py-16 overflow-hidden">
   <!-- Animated Gradient Border Top -->
-  <div class="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-orange-500 via-pink-500 to-yellow-400 blur-md opacity-60 animate-divider-glow"></div>
+  <!--<div class="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-orange-500 via-pink-500 to-yellow-400 blur-md opacity-60 animate-divider-glow"></div>-->
   <div class="container mx-auto px-6 relative z-10">
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 animate-fade-in">
-      
+
       <!-- Column 1: Logo + Social Icons -->
       <div class="space-y-6">
         <!-- Logo -->
@@ -92,7 +92,7 @@
       <div>
         <h4 class="text-xl font-semibold text-white mb-4">Nossa Newsletter</h4>
         <p class="text-gray-400 mb-6">
-          Envie nos o seu email e receba as melhores notícias e textos sobre o que 
+          Envie nos o seu email e receba as melhores notícias e textos sobre o que
           acontece no mercado financeiro
         </p>
         <form class="flex flex-col sm:flex-row items-center sm:space-x-3 space-y-3 sm:space-y-0">

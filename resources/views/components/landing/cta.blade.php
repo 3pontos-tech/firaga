@@ -2,8 +2,8 @@
 <section class="relative bg-gradient-to-br from-gray-900 via-black to-gray-900 dark:from-gray-900 dark:via-black dark:to-gray-900 text-white dark:text-white py-20 overflow-hidden">
     <!-- Animated Gradient Overlay -->
     <div class="absolute inset-0 pointer-events-none z-0">
-        <div class="absolute left-1/2 top-0 w-2/3 h-2/3 -translate-x-1/2 blur-3xl opacity-40 animate-gradient-move rounded-full bg-gradient-to-tr from-orange-500 via-pink-500 to-purple-600"></div>
-        <div class="absolute bottom-0 right-0 w-1/4 h-1/4 blur-2xl opacity-30 animate-float-slow bg-gradient-to-br from-orange-400 via-yellow-500 to-pink-500 rounded-full"></div>
+        <!--<div class="absolute left-1/2 top-0 w-2/3 h-2/3 -translate-x-1/2 blur-3xl opacity-40 animate-gradient-move rounded-full bg-gradient-to-tr from-orange-500 via-pink-500 to-purple-600"></div>
+        <div class="absolute bottom-0 right-0 w-1/4 h-1/4 blur-2xl opacity-30 animate-float-slow bg-gradient-to-br from-orange-400 via-yellow-500 to-pink-500 rounded-full"></div>-->
     </div>
     <div class="container mx-auto px-6 relative z-10">
         <div class="bg-white/10 dark:bg-gray-900/30 backdrop-blur-xl rounded-2xl p-10 lg:flex lg:items-center lg:justify-between lg:space-x-8 shadow-2xl border border-orange-500/20 animate-fade-in overflow-hidden">
@@ -34,7 +34,7 @@
                     class="relative inline-flex items-center bg-orange-500 text-white font-semibold px-8 py-4 rounded-full shadow-lg hover:bg-orange-600 transition text-lg overflow-hidden group focus:outline-none focus:ring-2 focus:ring-orange-400"
                     aria-label="Ir para o blog"
                 >
-                    <span class="absolute inset-0 bg-gradient-to-r from-orange-400 via-pink-500 to-yellow-400 opacity-0 group-hover:opacity-30 transition-all blur-lg animate-glow-pulse"></span>
+                    <!--<span class="absolute inset-0 bg-gradient-to-r from-orange-400 via-pink-500 to-yellow-400 opacity-0 group-hover:opacity-30 transition-all blur-lg animate-glow-pulse"></span>-->
                     <span class="relative z-10 group-hover:scale-105 transition-transform">IR PARA O BLOG</span>
                     <svg class="w-6 h-6 ml-3 relative z-10 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"></path></svg>
                 </a>
