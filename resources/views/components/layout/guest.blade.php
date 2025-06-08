@@ -12,18 +12,21 @@
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 
 </head>
-<body>
+<body class="bg-gray">
      @php
     $menus = \Webid\Druid\Models\Menu::all()->keyBy('slug');
     @endphp
     <x-navbar :menu="$menus['main-menu']">
         <x-slot name="brand">
-            <span class="text-2xl text-gray-900 dark:text-white">MyCompany</span>
+            <span class="text-2xl text-gray-900 dark:text-white">{{ config('app.name') }}</span>
         </x-slot>
         <x-slot name="controls">
-
+            <x-layout.shared.theme-toggle/>
         </x-slot>
     </x-navbar>
-    {{ $slot }}
+    <main>
+        {{ $slot }}
+    </main>
+     <x-layout.shared.footer />
 </body>
 </html>

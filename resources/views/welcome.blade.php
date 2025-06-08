@@ -1,7 +1,3 @@
-@php
-
-
-@endphp
 <x-layout.guest>
 
     <x-landing.hero :hero-data="$heroData" />
@@ -13,5 +9,4 @@
     <x-landing.plans :plans-data="$plansData" />
     <x-landing.bannerFirece />
     <x-landing.cta />
-    <x-landing.footer />
 </x-layout.guest>

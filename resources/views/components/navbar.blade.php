@@ -14,9 +14,7 @@
             <div class="">
                 {{ $brand ?? '' }}
             </div>
-            <div class="flex items-center gap-4">
-                {{ $controls ?? '' }}
-            </div>
+
             <div class="lg:hidden">
                 <button
                     @click="{{ $mobileVar }} = !{{ $mobileVar }}"
@@ -37,67 +35,72 @@
                     </template>
                 </button>
             </div>
-            <ul class="hidden lg:flex lg:items-center lg:space-x-8">
-                @foreach ($menu->items as $menuItem)
-                    @if ($menuItem->children && $menuItem->children->isNotEmpty())
-                        <li class="relative group" x-data="{ open: false }" @mouseenter="open = true" @mouseleave="open = false">
-                            <a href="#" class="flex items-center text-gray-900 dark:text-gray-200 hover:text-orange-500 dark:hover:text-orange-400 px-3 py-2 rounded-md font-medium transition" @click="open = !open">
-                                {{ $menuItem->label }}
-                                <svg class="ml-1 h-4 w-4 text-gray-500 group-hover:text-indigo-600 transition" fill="currentColor" viewBox="0 0 20 20">
-                                    <path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06-.02L10 10.584l3.71-3.396a.75.75 0 011.04 1.084l-4.25 3.89a.75.75 0 01-1.04 0l-4.25-3.89a.75.75 0 01-.02-1.06z" clip-rule="evenodd" />
-                                </svg>
+            <div class="flex gap-2">
+                <ul class="hidden lg:flex lg:items-center lg:space-x-8">
+                    @foreach ($menu->items as $menuItem)
+                        @if ($menuItem->children && $menuItem->children->isNotEmpty())
+                            <li class="relative group" x-data="{ open: false }" @mouseenter="open = true" @mouseleave="open = false">
+                                <a href="#" class="flex items-center text-gray-900 dark:text-gray-200 hover:text-orange-500 dark:hover:text-orange-400 px-3 py-2 rounded-md font-medium transition" @click="open = !open">
+                                    {{ $menuItem->label }}
+                                    <svg class="ml-1 h-4 w-4 text-gray-500 group-hover:text-indigo-600 transition" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06-.02L10 10.584l3.71-3.396a.75.75 0 011.04 1.084l-4.25 3.89a.75.75 0 01-1.04 0l-4.25-3.89a.75.75 0 01-.02-1.06z" clip-rule="evenodd" />
+                                    </svg>
+                                </a>
+                                <ul class="absolute left-0 mt-2 w-48 bg-white dark:bg-black border border-gray-200 dark:border-gray-800 rounded-md shadow-lg transition-opacity duration-200 z-50"
+                                    x-show="open"
+                                    x-transition:enter="transition ease-out duration-150"
+                                    x-transition:enter-start="opacity-0 scale-95"
+                                    x-transition:enter-end="opacity-100 scale-100"
+                                    x-transition:leave="transition ease-in duration-100"
+                                    x-transition:leave-start="opacity-100 scale-100"
+                                    x-transition:leave-end="opacity-0 scale-95"
+                                    @click.away="open = false">
+                                    @foreach ($menuItem->children as $subMenuItem)
+                                        <li>
+                                            <a href="{{ $subMenuItem->custom_url }}" target="{{ $subMenuItem->target->getHtmlProperty() }}" class="block px-4 py-2 text-gray-900 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-md">
+                                                {{ $subMenuItem->label }}
+                                            </a>
+                                        </li>
+                                    @endforeach
+                                </ul>
+                            </li>
+                        @else
+                            <li>
+                                <a href="{{ $menuItem->custom_url }}" target="{{ $menuItem->target->getHtmlProperty() }}" class="text-gray-900 dark:text-gray-200 hover:text-orange-500 dark:hover:text-orange-400 px-3 py-2 rounded-md font-medium transition">
+                                    {{ $menuItem->label }}
+                                </a>
+                            </li>
+                        @endif
+                    @endforeach
+                    @if (isset($languageSwitcher))
+                        <li class="relative group" x-data="{ openLang: false }" @mouseenter="openLang = true" @mouseleave="openLang = false">
+                            <a href="#" class="flex items-center text-gray-900 dark:text-gray-200 hover:text-orange-500 dark:hover:text-orange-400 px-3 py-2 rounded-md font-medium transition" @click="openLang = !openLang">
+                                {{ \Webid\Druid\Facades\Druid::getCurrentLocaleKey() }}
                             </a>
                             <ul class="absolute left-0 mt-2 w-48 bg-white dark:bg-black border border-gray-200 dark:border-gray-800 rounded-md shadow-lg transition-opacity duration-200 z-50"
-                                x-show="open"
+                                x-show="openLang"
                                 x-transition:enter="transition ease-out duration-150"
                                 x-transition:enter-start="opacity-0 scale-95"
                                 x-transition:enter-end="opacity-100 scale-100"
                                 x-transition:leave="transition ease-in duration-100"
                                 x-transition:leave-start="opacity-100 scale-100"
                                 x-transition:leave-end="opacity-0 scale-95"
-                                @click.away="open = false">
-                                @foreach ($menuItem->children as $subMenuItem)
+                                @click.away="openLang = false">
+                                @foreach ($languageSwitcher as $lang)
                                     <li>
-                                        <a href="{{ $subMenuItem->custom_url }}" target="{{ $subMenuItem->target->getHtmlProperty() }}" class="block px-4 py-2 text-gray-900 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-md">
-                                            {{ $subMenuItem->label }}
+                                        <a href="{{ $lang['url'] }}" class="block px-4 py-2 text-gray-900 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-md">
+                                            {{ $lang['label'] }}
                                         </a>
                                     </li>
                                 @endforeach
                             </ul>
                         </li>
-                    @else
-                        <li>
-                            <a href="{{ $menuItem->custom_url }}" target="{{ $menuItem->target->getHtmlProperty() }}" class="text-gray-900 dark:text-gray-200 hover:text-orange-500 dark:hover:text-orange-400 px-3 py-2 rounded-md font-medium transition">
-                                {{ $menuItem->label }}
-                            </a>
-                        </li>
                     @endif
-                @endforeach
-                @if (isset($languageSwitcher))
-                    <li class="relative group" x-data="{ openLang: false }" @mouseenter="openLang = true" @mouseleave="openLang = false">
-                        <a href="#" class="flex items-center text-gray-900 dark:text-gray-200 hover:text-orange-500 dark:hover:text-orange-400 px-3 py-2 rounded-md font-medium transition" @click="openLang = !openLang">
-                            {{ \Webid\Druid\Facades\Druid::getCurrentLocaleKey() }}
-                        </a>
-                        <ul class="absolute left-0 mt-2 w-48 bg-white dark:bg-black border border-gray-200 dark:border-gray-800 rounded-md shadow-lg transition-opacity duration-200 z-50"
-                            x-show="openLang"
-                            x-transition:enter="transition ease-out duration-150"
-                            x-transition:enter-start="opacity-0 scale-95"
-                            x-transition:enter-end="opacity-100 scale-100"
-                            x-transition:leave="transition ease-in duration-100"
-                            x-transition:leave-start="opacity-100 scale-100"
-                            x-transition:leave-end="opacity-0 scale-95"
-                            @click.away="openLang = false">
-                            @foreach ($languageSwitcher as $lang)
-                                <li>
-                                    <a href="{{ $lang['url'] }}" class="block px-4 py-2 text-gray-900 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-md">
-                                        {{ $lang['label'] }}
-                                    </a>
-                                </li>
-                            @endforeach
-                        </ul>
-                    </li>
-                @endif
-            </ul>
+                </ul>
+                <div class="flex items-center gap-4">
+                    {{ $controls ?? '' }}
+                </div>
+            </div>
         </div>
     </div>
 

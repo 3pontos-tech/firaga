@@ -8,9 +8,8 @@
     <div class="container mx-auto px-6 relative z-10">
         <div class="bg-white/10 dark:bg-gray-900/30 backdrop-blur-xl rounded-2xl p-10 lg:flex lg:items-center lg:justify-between lg:space-x-8 shadow-2xl border border-orange-500/20 animate-fade-in overflow-hidden">
             <!-- Left: Icon -->
-            <div class="flex-shrink-0 mb-8 lg:mb-0 animate-bounce">
+            <div class="flex-shrink-0 mb-8 lg:mb-0">
                 <span class="relative inline-block">
-                    <span class="absolute inset-0 rounded-full bg-gradient-to-tr from-orange-400 via-pink-500 to-yellow-400 blur-md opacity-60 animate-glow"></span>
                     <x-heroicon-c-lock-open class="w-14 h-14 text-orange-500 relative z-10"/>
                 </span>
             </div>

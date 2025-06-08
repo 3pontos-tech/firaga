@@ -18,4 +18,11 @@ class ArticlesController extends Controller
             'categories' => $categories,
         ]);
     }
+
+    public function getArticle(Post $post): View
+    {
+        return view('blog.show', [
+            'post' => $post,
+        ]);
+    }
 }

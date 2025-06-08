@@ -1,5 +1,5 @@
 <!-- “Nosso Atendimento” Section -->
-<section id="nosso-atendimento" class="relative bg-gradient-to-br from-black via-gray-900 to-black dark:from-black dark:via-gray-900 dark:to-black text-white dark:text-white py-28 overflow-hidden">
+<section id="nosso-atendimento" class="max-w-7xl mx-auto bg-gradient-to-br from-black via-gray-900 to-black dark:from-black dark:via-gray-900 dark:to-black text-white dark:text-white py-28 overflow-hidden">
     <!-- Animated Gradient Overlay -->
     <div class="absolute inset-0 pointer-events-none z-0">
         <!--<div class="absolute left-1/2 top-0 w-2/3 h-2/3 -translate-x-1/2 blur-3xl opacity-40 animate-gradient-move rounded-full bg-gradient-to-tr from-orange-500 via-pink-500 to-purple-600"></div>

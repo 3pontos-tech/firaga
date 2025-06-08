@@ -1,67 +1,130 @@
-<!-- “Nossas Soluções” Section -->
-<section id="nossas-solucoes" class="relative bg-gradient-to-br from-black via-gray-900 to-black dark:from-black dark:via-gray-900 dark:to-black text-white dark:text-white py-28 overflow-hidden">
-    <!-- Animated Gradient Overlay -->
-    <div class="absolute inset-0 pointer-events-none z-0">
-        <!--<div class="absolute left-1/2 top-0 w-2/3 h-2/3 -translate-x-1/2 blur-3xl opacity-40 animate-gradient-move rounded-full bg-gradient-to-tr from-orange-500 via-pink-500 to-purple-600"></div>
-        <div class="absolute bottom-0 right-0 w-1/4 h-1/4 blur-2xl opacity-30 animate-float-slow bg-gradient-to-br from-orange-400 via-yellow-500 to-pink-500 rounded-full"></div>-->
-    </div>
-    <div class="container mx-auto px-6 relative z-10">
-        <!-- Header: Title + Intro Text -->
-        <div class="lg:flex lg:items-start lg:justify-between mb-16">
-            <h2 class="text-4xl lg:text-5xl font-extrabold leading-tight tracking-tight">
-                NOSSAS <span class="text-orange-500">SOLUÇÕES</span>
-            </h2>
-            <p class="mt-6 lg:mt-0 lg:w-1/2 text-gray-300 leading-relaxed text-lg">
-                Na Fire|Ce, entendemos que cada pessoa tem desafios únicos e objetivos diferentes.
-                Por isso, oferecemos soluções que se adaptam às suas necessidades,
-                desde o nível básico ao avançado.
-            </p>
+<section class="mx-auto max-w-7xl py-24">
+    <div class="mb-16 px-4 md:px-8" style="opacity: 1; transform: none; will-change: opacity, transform;">
+        <div class="flex items-center gap-4 mb-6">
+            <div class="h-1 w-12 bg-amber-500"></div>
+            <span class="text-sm font-semibold uppercase tracking-wider text-amber-500">Nossas Especialidades</span>
         </div>
-        <!-- Animated Divider Line -->
-        <div class="border-t-2 border-orange-500/30 animate-divider-glow mb-4"></div>
-        <!-- Solution Items -->
-        <div class="divide-y divide-gray-800">
-            <!-- Items -->
-            @foreach($solutionsData as $solution)
-                <x-cards.cardLink :title="$solution['title']" :description="$solution['description']" :route="$solution['route']" />
-            @endforeach
+        <h2 class="text-3xl font-bold mb-4 md:text-4xl lg:text-5xl">Soluções <span
+                class="text-amber-500">Personalizadas</span></h2>
+        <p class="max-w-2xl text-lg text-zinc-400 md:text-xl">Oferecemos serviços financeiros especializados para
+            atender às suas necessidades específicas e acelerar sua jornada rumo à independência financeira.</p></div>
+    <div class="relative overflow-hidden rounded-2xl bg-gradient-to-br from-zinc-950 to-zinc-900 shadow-2xl"
+         style="opacity: 1; transform: none; will-change: opacity, transform;">
+        <div class="absolute inset-0 opacity-5">
+            <div class="absolute inset-0"
+                 style="background-image: radial-gradient(circle at 1px 1px, rgba(255, 255, 255, 0.15) 1px, transparent 0px); background-size: 20px 20px;"></div>
         </div>
+        <div class="relative">
+
+            <x-landing.solution-item
+                title="Planejamento"
+                description="Três pacotes personalizados para organizar, expandir e maximizar suas finanças, garantindo controle e crescimento contínuo."
+                icon="fas-bullseye"
+                link="/solutions/planejamento"
+            />
+            <x-landing.solution-item
+                title="Key Account"
+                description="Atendimento exclusivo para clientes estratégicos, com planejamento sucessório, investimentos internacionais e parcerias de alto impacto."
+                icon="fas-crown"
+                link="/solutions/key-account"
+            />
+            <x-landing.solution-item
+                title="Code Capital"
+                description="Consultoria especializada para profissionais de TI com ganhos em moeda estrangeira, focada em rentabilidade e proteção patrimonial."
+                icon="fas-code"
+                link="/solutions/code-capital"
+            />
+            <x-landing.solution-item
+                title="Educa Fire"
+                description="Vertente educacional para transformar clientes e capacitar consultores com conhecimento aplicado."
+                icon="fas-graduation-cap"
+                link="/solutions/educa-fire"
+            />
+            <x-landing.solution-item
+                title="Parcerias"
+                description="Conexões estratégicas para gerar resultados mais rápidos e eficazes por meio de alianças coorporativas."
+                icon="fas-handshake"
+                link="/solutions/parcerias"
+            />
+        </div>
+        <div
+            class="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-amber-500/50 to-transparent"></div>
     </div>
-    <!-- Custom Animations -->
-    <style>
-        .animate-gradient-move {
-            animation: gradientMove 8s ease-in-out infinite alternate;
-        }
-        @keyframes gradientMove {
-            0% { transform: translate(-50%, 0) scale(1); }
-            100% { transform: translate(-50%, 40px) scale(1.1); }
-        }
-        .animate-float-slow { animation: floatSlow 7s ease-in-out infinite alternate; }
-        @keyframes floatSlow {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-24px); }
-        }
-        .animate-divider-glow { animation: dividerGlow 2.5s infinite alternate; }
-        @keyframes dividerGlow {
-            0% { box-shadow: 0 0 0 0 rgba(255, 165, 0, 0.2); }
-            100% { box-shadow: 0 0 24px 4px rgba(255, 165, 0, 0.15); }
-        }
-        .animate-fade-in { animation: fadeIn 1.2s cubic-bezier(.4,0,.2,1) both; }
-        .animate-fade-in.delay-100 { animation-delay: 0.1s; }
-        .animate-fade-in.delay-200 { animation-delay: 0.2s; }
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(24px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        .animate-icon-float { animation: iconFloat 3s ease-in-out infinite; }
-        @keyframes iconFloat {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-8px) scale(1.08); }
-        }
-        .animate-arrow-glow { animation: arrowGlow 1.5s infinite alternate; }
-        @keyframes arrowGlow {
-            0% { filter: drop-shadow(0 0 0px orange); }
-            100% { filter: drop-shadow(0 0 8px orange); }
-        }
-    </style>
+    <div class="mt-12 text-center" style="opacity: 1; will-change: opacity;"><p class="text-zinc-400 mb-4">Não encontrou
+            exatamente o que procura?</p>
+        <button class="text-amber-500 hover:text-amber-400 font-semibold transition-colors">Fale conosco para uma
+            solução personalizada →
+        </button>
+    </div>
 </section>
+
+<style>
+    .arrow-container {
+        position: relative;
+    }
+
+    .arrow-right {
+        position: absolute;
+        top: 0;
+        left: 0;
+        opacity: 0;
+    }
+
+    .group:hover .arrow-up-right {
+        opacity: 0;
+    }
+
+    .group:hover .arrow-right {
+        opacity: 1;
+    }
+
+    .solution-item .group {
+        transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), background-color 0.3s ease;
+    }
+
+    .solution-item:hover .group {
+        transform: scale(1.01);
+        background-color: rgba(39, 39, 42, 0.5);
+    }
+</style>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const solutionItems = document.querySelectorAll('.solution-item');
+
+        solutionItems.forEach(item => {
+            const arrowUpRight = item.querySelector('.arrow-up-right');
+            const arrowRight = item.querySelector('.arrow-right');
+
+            item.addEventListener('mouseenter', function () {
+                arrowUpRight.style.opacity = '0';
+                arrowRight.style.opacity = '1';
+
+                // Add scale and rotation effects
+                arrowRight.style.transform = 'scale(1.1) rotate(2deg)';
+
+                // Add subtle animation to the icon container
+                const iconContainer = item.querySelector('.flex.h-12.w-12');
+                if (iconContainer) {
+                    iconContainer.style.transform = 'scale(1.1)';
+                    iconContainer.style.backgroundColor = 'rgba(245, 158, 11, 0.2)';
+                }
+            });
+
+            item.addEventListener('mouseleave', function () {
+                arrowUpRight.style.opacity = '1';
+                arrowRight.style.opacity = '0';
+
+                // Reset transform
+                arrowRight.style.transform = 'scale(1) rotate(0)';
+
+                // Reset icon container
+                const iconContainer = item.querySelector('.flex.h-12.w-12');
+                if (iconContainer) {
+                    iconContainer.style.transform = '';
+                    iconContainer.style.backgroundColor = '';
+                }
+            });
+        });
+    });
+</script>
