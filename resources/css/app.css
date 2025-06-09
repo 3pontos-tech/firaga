@@ -1,51 +1,43 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@tailwind variants;
 
 @config '../../tailwind.config.js';
 
-@layer base {
-  @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&family=Poppins:wght@400;600;700&display=swap');
 
-  body {
-    @apply bg-gray text-secondary font-secondary text-base;
-    @apply dark:bg-black dark:text-white;
-  }
+@layer utilities {
+    /* === Light Theme === */
+    :root {
+        --color-bg: #ffffff;
+        --color-surface: #f5f5f5;
+        --color-deep: #c2c2c2;
+        --color-heading: #0f0f0f;
+        --color-body: #333333;
+        --color-muted: #777;
+        --color-border: #e5e5e5;
 
-  h1, h2, h3, h4, h5, h6 {
-    @apply text-primary font-primary font-semibold mb-5;
-    @apply dark:text-white;
-  }
+        --color-brand: #e2410a;
+        --color-brand-hover: #ff6c47;
 
-  h1 {
-    @apply text-h1;
-  }
+        --color-accent-text: #e2410a;
+        --color-accent-bg: #fff3f0;
+    }
 
-  h2 {
-    @apply text-h2;
-  }
+    /* === Dark Theme === */
+    .dark {
+        --color-bg: #0e0e0e;
+        --color-surface: #1a1a1a;
+        --color-deep: #202020;
+        --color-heading: #ffffff;
+        --color-body: #cfcfcf;
+        --color-muted: #888888;
+        --color-border: #2a2a2a;
 
-  h3 {
-    @apply text-h3;
-  }
+        --color-brand: #e2410a;
+        --color-brand-hover: #ff7e47;
 
-  h4 {
-    @apply text-h4;
-  }
-
-  h5 {
-    @apply text-h5;
-  }
-
-  h6 {
-    @apply text-h6;
-  }
-
-  a {
-    @apply transition-colors duration-300;
-  }
-
-  a:hover {
-    @apply text-accent;
-  }
+        --color-accent-text: #ff7e47;
+        --color-accent-bg: #2a120c;
+    }
 }

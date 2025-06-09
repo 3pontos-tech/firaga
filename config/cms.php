@@ -35,7 +35,7 @@ return [
         'category' => Category::class,
         'menu' => Menu::class,
         'menu_item' => MenuItem::class,
-        'reusable_component' => \Webid\Druid\Models\ReusableComponent::class,
+        'reusable_component' => ReusableComponentModel::class,
     ],
 
     /*

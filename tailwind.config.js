@@ -7,29 +7,49 @@ export default {
     theme: {
         extend: {
             colors: {
-                white: '#fff',
-                black: '#161616',
-                primary: '#FEFEFE',
-                secondary: 'rgba(254, 254, 254, 0.7)',
-                ternary: '#999696',
-                border: '#4D4D4D',
-                gray: '#181818',
-                accent: '#FF4A17',
+                bg: 'var(--color-bg)',
+                surface: 'var(--color-surface)',
+                deep: 'var(--color-deep)',
+
+                heading: 'var(--color-heading)',
+                body: 'var(--color-body)',
+                muted: 'var(--color-muted)',
+
+                brand: {
+                    DEFAULT: 'var(--color-brand)',
+                    hover: 'var(--color-brand-hover)',
+                },
+
+                accent: {
+                    text: 'var(--color-accent-text)',
+                    bg: 'var(--color-accent-bg)',
+                },
+
+                base: 'var(--color-border)', // for borders
             },
+
             fontFamily: {
                 primary: ['Poppins', 'sans-serif'],
                 secondary: ['Open Sans', 'sans-serif'],
             },
-            fontSize: {
-                'h1': '56px',
-                'h2': '42px',
-                'h3': '30px',
-                'h4': '24px',
-                'h5': '18px',
-                'h6': '16px',
-                'base': '16px',
+            animation: {
+                marquee: 'marquee 30s linear infinite',
+                'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                'spin-slow': 'spin 8s linear infinite',
+                'float-slow': 'float 6s ease-in-out infinite',
+                'bounce-slow': 'bounce 3s infinite',
+                'glow': 'glow 2s ease-in-out infinite alternate',
             },
-           
+            keyframes: {
+                float: {
+                    '0%, 100%': { transform: 'translateY(0)' },
+                    '50%': { transform: 'translateY(-10px)' },
+                },
+                glow: {
+                    '0%': { opacity: 0.5, transform: 'scale(1)' },
+                    '100%': { opacity: 0.8, transform: 'scale(1.05)' },
+                },
+            },
         },
     },
     plugins: [
