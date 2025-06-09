@@ -1,0 +1,20 @@
+<?php
+
+namespace App\Filament\Resources\CMS\ReusableComponentResource\Pages;
+
+use Filament\Actions;
+use Filament\Resources\Pages\EditRecord;
+use App\Filament\Resources\CMS\ReusableComponentResource;
+
+class EditReusableComponent extends EditRecord
+{
+    protected static string $resource = ReusableComponentResource::class;
+
+    protected function getHeaderActions(): array
+    {
+        return [
+            Actions\ViewAction::make(),
+            Actions\DeleteAction::make(),
+        ];
+    }
+}

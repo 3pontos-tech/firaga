@@ -11,13 +11,13 @@ use Webid\Druid\Components\ImageComponent;
 use Webid\Druid\Components\ReusableComponent;
 use Webid\Druid\Components\TextComponent;
 use Webid\Druid\Components\TextImageComponent;
-use Webid\Druid\Filament\Resources\MenuResource\RelationManagers\ItemsRelationManager;
-use Webid\Druid\Models\Category;
-use Webid\Druid\Models\Menu;
-use Webid\Druid\Models\MenuItem;
-use Webid\Druid\Models\Page;
-use Webid\Druid\Models\Post;
-use Webid\Druid\Models\ReusableComponent as ReusableComponentModel;
+use App\Filament\Resources\CMS\MenuResource\RelationManagers\ItemsRelationManager;
+use App\Models\CMS\Category;
+use App\Models\CMS\Menu;
+use App\Models\CMS\MenuItem;
+use App\Models\CMS\Page;
+use App\Models\CMS\Post;
+use App\Models\CMS\ReusableComponent as ReusableComponentModel;
 use Webid\Druid\Services\ContentRenderer\BladeRenderer;
 
 return [
@@ -35,7 +35,7 @@ return [
         'category' => Category::class,
         'menu' => Menu::class,
         'menu_item' => MenuItem::class,
-        'reusable_component' => ReusableComponentModel::class,
+        'reusable_component' => \Webid\Druid\Models\ReusableComponent::class,
     ],
 
     /*

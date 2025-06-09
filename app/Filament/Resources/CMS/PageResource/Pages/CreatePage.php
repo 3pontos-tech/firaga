@@ -1,0 +1,31 @@
+<?php
+
+namespace App\Filament\Resources\CMS\PageResource\Pages;
+
+use Filament\Resources\Pages\CreateRecord;
+use Webid\Druid\Facades\Druid;
+use App\Filament\Resources\CMS\PageResource;
+use Webid\Druid\Models\Page;
+
+class CreatePage extends CreateRecord
+{
+    protected static string $resource = PageResource::class;
+
+    protected function afterCreate(): void
+    {
+        /** @var Page $page */
+        $page = $this->record;
+
+        if (Druid::isMultilingualEnabled()) {
+            if ($page->lang === Druid::getDefaultLocale()) {
+                $page->update(['translation_origin_model_id' => $page->getKey()]);
+            }
+
+            if ($page->translation_origin_model_id === null) {
+                $page->update(['translation_origin_model_id' => $page->getKey()]);
+            }
+        }
+
+        $page->save();
+    }
+}

@@ -3,8 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\View\View;
-use Webid\Druid\Models\Category;
-use Webid\Druid\Models\Post;
+use App\Models\CMS\Category;
+use App\Models\CMS\Post;
 
 class ArticlesController extends Controller
 {

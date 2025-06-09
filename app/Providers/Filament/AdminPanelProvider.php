@@ -71,7 +71,6 @@ class AdminPanelProvider extends PanelProvider
                     ->myProfile(shouldRegisterUserMenu: true),
                 FilamentBackgroundsPlugin::make(),
                 ThemesPlugin::make(),
-                DruidPlugin::make(),
                 CuratorPlugin::make(),
             ])
 
