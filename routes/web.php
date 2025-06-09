@@ -5,7 +5,7 @@ use App\Http\Controllers\LandingController;
 use App\Http\Controllers\PagesController;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', LandingController::class);
+Route::get('/', LandingController::class)->name('landing');
 
 Route::prefix('blog')->group(function () {
     Route::get('/', [ArticlesController::class, 'getArticles'])

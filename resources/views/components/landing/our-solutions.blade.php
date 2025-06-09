@@ -1,21 +1,16 @@
 <section class="mx-auto max-w-7xl py-24">
     <div class="mb-16 px-4 md:px-8" style="opacity: 1; transform: none; will-change: opacity, transform;">
         <div class="flex items-center gap-4 mb-6">
-            <div class="h-1 w-12 bg-amber-500"></div>
-            <span class="text-sm font-semibold uppercase tracking-wider text-amber-500">Nossas Especialidades</span>
+            <div class="h-1 w-12 bg-brand"></div>
+            <span class="text-sm font-semibold uppercase tracking-wider text-brand">Nossas Especialidades</span>
         </div>
-        <h2 class="text-3xl font-bold mb-4 md:text-4xl lg:text-5xl">Soluções <span
-                class="text-amber-500">Personalizadas</span></h2>
+        <h2 class="text-3xl font-bold text-heading mb-4 md:text-4xl lg:text-5xl">Soluções <span
+                class="text-brand">Personalizadas</span></h2>
         <p class="max-w-2xl text-lg text-zinc-400 md:text-xl">Oferecemos serviços financeiros especializados para
             atender às suas necessidades específicas e acelerar sua jornada rumo à independência financeira.</p></div>
-    <div class="relative overflow-hidden rounded-2xl bg-gradient-to-br from-zinc-950 to-zinc-900 shadow-2xl"
-         style="opacity: 1; transform: none; will-change: opacity, transform;">
-        <div class="absolute inset-0 opacity-5">
-            <div class="absolute inset-0"
-                 style="background-image: radial-gradient(circle at 1px 1px, rgba(255, 255, 255, 0.15) 1px, transparent 0px); background-size: 20px 20px;"></div>
-        </div>
-        <div class="relative">
+    <div class="relative overflow-hidden rounded-2xl bg-gradient-to-br from-surface to-bg shadow-2xl">
 
+        <div class="relative">
             <x-landing.solution-item
                 title="Planejamento"
                 description="Três pacotes personalizados para organizar, expandir e maximizar suas finanças, garantindo controle e crescimento contínuo."
@@ -48,11 +43,11 @@
             />
         </div>
         <div
-            class="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-amber-500/50 to-transparent"></div>
+            class="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-brand/50 to-transparent"></div>
     </div>
     <div class="mt-12 text-center" style="opacity: 1; will-change: opacity;"><p class="text-zinc-400 mb-4">Não encontrou
             exatamente o que procura?</p>
-        <button class="text-amber-500 hover:text-amber-400 font-semibold transition-colors">Fale conosco para uma
+        <button class="text-brand hover:text-brand font-semibold transition-colors">Fale conosco para uma
             solução personalizada →
         </button>
     </div>

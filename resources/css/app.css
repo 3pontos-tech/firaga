@@ -4,3 +4,41 @@
 @tailwind variants;
 
 @config '../../tailwind.config.js';
+
+
+@layer utilities {
+    /* === Light Theme === */
+    :root {
+        --color-bg: #ffffff;
+        --color-surface: #f5f5f5;
+        --color-deep: #c2c2c2;
+        --color-heading: #0f0f0f;
+        --color-body: #333333;
+        --color-muted: #777;
+        --color-border: #e5e5e5;
+
+        --color-brand: #e2410a;
+        --color-brand-hover: #ff6c47;
+
+        --color-accent-text: #e2410a;
+        --color-accent-bg: #fff3f0;
+    }
+
+    /* === Dark Theme === */
+    .dark {
+        --color-bg: #0e0e0e;
+        --color-surface: #1a1a1a;
+        --color-deep: #202020;
+        --color-heading: #ffffff;
+        --color-body: #cfcfcf;
+        --color-muted: #888888;
+        --color-border: #2a2a2a;
+
+        --color-brand: #e2410a;
+        --color-brand-hover: #ff7e47;
+
+        --color-accent-text: #ff7e47;
+        --color-accent-bg: #2a120c;
+    }
+
+}

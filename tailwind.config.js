@@ -7,27 +7,25 @@ export default {
     theme: {
         extend: {
             colors: {
-                white: '#fff',
-                black: '#161616',
-                primary: '#FEFEFE',
-                secondary: 'rgba(254, 254, 254, 0.7)',
-                ternary: '#999696',
-                border: '#4D4D4D',
-                gray: '#181818',
-                accent: '#e2410a',
-                fire: {
-                    50: "#fef2f2",
-                    100: "#fee2e2",
-                    200: "#fecaca",
-                    300: "#fca5a5",
-                    400: "#f87171",
-                    500: "#e2410a",
-                    600: "#dc2626",
-                    700: "#b91c1c",
-                    800: "#991b1b",
-                    900: "#7f1d1d",
-                    950: "#450a0a",
+                bg: 'var(--color-bg)',
+                surface: 'var(--color-surface)',
+                deep: 'var(--color-deep)',
+
+                heading: 'var(--color-heading)',
+                body: 'var(--color-body)',
+                muted: 'var(--color-muted)',
+
+                brand: {
+                    DEFAULT: 'var(--color-brand)',
+                    hover: 'var(--color-brand-hover)',
                 },
+
+                accent: {
+                    text: 'var(--color-accent-text)',
+                    bg: 'var(--color-accent-bg)',
+                },
+
+                base: 'var(--color-border)', // for borders
             },
 
             fontFamily: {
@@ -36,11 +34,20 @@ export default {
             },
             animation: {
                 marquee: 'marquee 30s linear infinite',
+                'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                'spin-slow': 'spin 8s linear infinite',
+                'float-slow': 'float 6s ease-in-out infinite',
+                'bounce-slow': 'bounce 3s infinite',
+                'glow': 'glow 2s ease-in-out infinite alternate',
             },
             keyframes: {
-                marquee: {
-                    '0%': { transform: 'translateX(0%)' },
-                    '100%': { transform: 'translateX(-50%)' },
+                float: {
+                    '0%, 100%': { transform: 'translateY(0)' },
+                    '50%': { transform: 'translateY(-10px)' },
+                },
+                glow: {
+                    '0%': { opacity: 0.5, transform: 'scale(1)' },
+                    '100%': { opacity: 0.8, transform: 'scale(1.05)' },
                 },
             },
         },
