@@ -1,0 +1,160 @@
+name: Continuous Integration
+
+on:
+  push:
+    branches:
+      - main
+      - develop
+  pull_request:
+    branches:
+      - main
+      - develop
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
+env:
+  PHP_VERSION: 8.3
+  PHP_EXTENSIONS: mbstring,pdo,xml,ctype,fileinfo,json,curl,openssl,dom,zip
+  PHP_INI_PROPERTIES: post_max_size=256M,upload_max_filesize=256M
+
+jobs:
+  setup:
+    name: Setup PHP
+    runs-on: ubuntu-latest
+    outputs:
+      combined-key: ${{ steps.prepare-env.outputs.combined-key }}
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+
+      - name: Prepare environment and composer data
+        id: prepare-env
+        run: |
+          composer_hash=${{ hashFiles('**/composer.lock') }}
+          os_lower=$(echo ${{ runner.os }} | tr '[:upper:]' '[:lower:]')
+          arch_lower=$(echo ${{ runner.arch }} | tr '[:upper:]' '[:lower:]')
+          combined_key="${os_lower}-${arch_lower}-composer-${composer_hash}"
+          echo "combined-key=${combined_key}" >> "$GITHUB_OUTPUT"
+
+      - name: Setup PHP
+        uses: shivammathur/setup-php@9e72090525849c5e82e596468b86eb55e9cc5401 # v2.32.0
+        with:
+          php-version: ${{ env.PHP_VERSION }}
+          extensions: ${{ env.PHP_EXTENSIONS }}
+          ini-values: ${{ env.PHP_INI_PROPERTIES }}
+          coverage: xdebug
+          tools: composer:v2
+
+      - name: Install composer dependencies
+        uses: ramsey/composer-install@57532f8be5bda426838819c5ee9afb8af389d51a # v3.0.0
+        with:
+          composer-options: "--prefer-dist"
+          custom-cache-key: ${{ steps.prepare-env.outputs.combined-key }}
+  pint:
+    name: Perform Pint format
+    runs-on: ubuntu-latest
+    needs:
+      - setup
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+
+      - name: Setup PHP
+        uses: shivammathur/setup-php@9e72090525849c5e82e596468b86eb55e9cc5401 # v2.32.0
+        with:
+          php-version: ${{ env.PHP_VERSION }}
+          extensions: ${{ env.PHP_EXTENSIONS }}
+          ini-values: ${{ env.PHP_INI_PROPERTIES }}
+          coverage: xdebug
+          tools: composer:v2
+
+      - name: Install composer dependencies
+        uses: ramsey/composer-install@57532f8be5bda426838819c5ee9afb8af389d51a # v3.0.0
+        with:
+          composer-options: "--prefer-dist"
+          custom-cache-key: ${{ needs.setup.outputs.combined-key }}
+
+      - name: Run Pint
+        env:
+          XDEBUG_MODE: off
+        run: |
+          composer run-script test:pint
+
+  rector:
+    name: Perform Rector Check
+    runs-on: ubuntu-latest
+    needs:
+      - setup
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+
+      - name: Setup PHP
+        uses: shivammathur/setup-php@9e72090525849c5e82e596468b86eb55e9cc5401 # v2.32.0
+        with:
+          php-version: ${{ env.PHP_VERSION }}
+          extensions: ${{ env.PHP_EXTENSIONS }}
+          ini-values: ${{ env.PHP_INI_PROPERTIES }}
+          coverage: xdebug
+          tools: composer:v2
+
+      - name: Install composer dependencies
+        uses: ramsey/composer-install@57532f8be5bda426838819c5ee9afb8af389d51a # v3.0.0
+        with:
+          composer-options: "--prefer-dist"
+          custom-cache-key: ${{ needs.setup.outputs.combined-key }}
+
+      - name: Run Rector
+        run: |
+          composer run-script test:rector
+
+
+
+
+
+  pest:
+    name: Run Pest Tests
+    runs-on: ubuntu-latest
+    needs:
+      - setup
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: ${{ env.PHP_VERSION }}
+          extensions: ${{ env.PHP_EXTENSIONS }}
+          ini-values: ${{ env.PHP_INI_PROPERTIES }}
+          coverage: xdebug
+          tools: composer:v2
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: 'npm'
+
+      - name: Install Node Dependencies
+        run: npm i
+
+      - name: Add Flux Credentials Loaded From ENV
+        run: composer config http-basic.composer.fluxui.dev "${{ secrets.FLUX_USERNAME }}" "${{ secrets.FLUX_LICENSE_KEY }}"
+
+      - name: Install Dependencies
+        run: composer install --no-interaction --prefer-dist --optimize-autoloader
+
+      - name: Copy Environment File
+        run: cp .env.example .env
+
+      - name: Generate Application Key
+        run: php artisan key:generate
+
+      - name: Build Assets
+        run: npm run build
+
+      - name: Run Tests
+        run: composer run-script test
