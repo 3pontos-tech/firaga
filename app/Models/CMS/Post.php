@@ -2,6 +2,7 @@
 
 namespace App\Models\CMS;
 
+use App\Models\User;
 use Awcodes\Curator\Models\Media;
 use Carbon\Carbon;
 use Illuminate\Auth\Authenticatable;
@@ -12,7 +13,6 @@ use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Str;
 use Webid\Druid\Enums\PostStatus;
-use Webid\Druid\Facades\Druid;
 use Webid\Druid\Models\Contracts\IsMenuable;
 use Webid\Druid\Models\Traits\CanRenderContent;
 use Webid\Druid\Models\Traits\IsTranslatable;
@@ -91,11 +91,6 @@ class Post extends Model implements IsMenuable
     {
         $path = '';
 
-        if (Druid::isMultilingualEnabled()) {
-            $path .= $this->lang ?? config('cms.default_locale');
-            $path .= '/';
-        }
-
         $path .= config('cms.blog.prefix') . '/';
 
         return $path . ($this->categories->first()->slug . '/' . $this->slug);
@@ -117,47 +112,27 @@ class Post extends Model implements IsMenuable
 
     public function categories(): BelongsToMany
     {
-        return $this->belongsToMany(Druid::getModel('category'), 'category_post', 'post_id', 'category_id');
+        return $this->belongsToMany(Category::class, 'category_post', 'post_id', 'category_id');
     }
 
     public function thumbnail(): BelongsTo
     {
-        return $this->belongsTo(Druid::getModel('media'), 'thumbnail_id', 'id');
+        return $this->belongsTo(Media::class, 'thumbnail_id', 'id');
     }
 
     public function openGraphPicture(): BelongsTo
     {
-        return $this->belongsTo(Druid::getModel('media'), 'opengraph_picture', 'id');
+        return $this->belongsTo(Media::class, 'opengraph_picture', 'id');
     }
 
     public function users(): BelongsToMany
     {
-        return $this->belongsToMany(Druid::getModel('user'), 'post_user', 'post_id', 'user_id');
+        return $this->belongsToMany(User::class, 'post_user', 'post_id', 'user_id');
     }
 
     public function getMenuLabel(): string
     {
         return $this->title;
-    }
-
-    public function resolveRouteBinding($value, $field = null): Post
-    {
-        return Druid::isMultilingualEnabled() ? $this->where('slug', $value)->where('lang', Druid::getCurrentLocaleKey())->firstOrFail() :
-            $this->where('slug', $value)->firstOrFail();
-    }
-
-    public function incrementSlug(string $slug, ?string $lang = null): string
-    {
-        $original = $slug;
-        $count = 2;
-
-        while (static::query()->where('slug', $slug)->when(Druid::isMultilingualEnabled(), function ($query) use ($lang): void {
-            $query->where('lang', $lang);
-        })->exists()) {
-            $slug = $original . '-' . $count++;
-        }
-
-        return $slug;
     }
 
     public function isPublished(): bool

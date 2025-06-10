@@ -9,7 +9,7 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\MorphTo;
 use Illuminate\Support\Collection;
 use Webid\Druid\Enums\MenuItemTarget;
-use Webid\Druid\Facades\Druid;
+use Webid\Druid\Models\Contracts\IsMenuable;
 
 /**
  * @property int $id
@@ -40,17 +40,11 @@ class MenuItem extends Model
 
     public function menu(): BelongsTo
     {
-        /** @var class-string<Model> $model */
-        $model = Druid::getModel('menu');
-
-        return $this->belongsTo($model);
+        return $this->belongsTo(Menu::class);
     }
 
     public function children(): HasMany
     {
-        /** @var class-string<Model> $model */
-        $model = Druid::getModel('menu_item');
-
-        return $this->hasMany($model, 'parent_item_id');
+        return $this->hasMany(MenuItem::class, 'parent_item_id');
     }
 }

@@ -2,6 +2,7 @@
 
 namespace App\Models\CMS;
 
+use Awcodes\Curator\Models\Media;
 use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
@@ -10,7 +11,6 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Support\Collection;
 use Webid\Druid\Enums\PageStatus;
-use Webid\Druid\Facades\Druid;
 use Webid\Druid\Models\Contracts\IsMenuable;
 use Webid\Druid\Models\Traits\CanRenderContent;
 use Webid\Druid\Models\Traits\IsTranslatable;
@@ -65,26 +65,17 @@ class Page extends Model implements IsMenuable
 
     public function parent(): BelongsTo
     {
-        /** @var class-string<Model> $model */
-        $model = Druid::getModel('page');
-
-        return $this->belongsTo($model, 'parent_page_id');
+        return $this->belongsTo(Page::class, 'parent_page_id');
     }
 
     public function translationOrigin(): BelongsTo
     {
-        /** @var class-string<Model> $model */
-        $model = Druid::getModel('page');
-
-        return $this->belongsTo($model, 'translation_origin_model_id');
+        return $this->belongsTo(Page::class, 'translation_origin_model_id');
     }
 
     public function translations(): HasMany
     {
-        /** @var class-string<Model> $model */
-        $model = Druid::getModel('page');
-
-        return $this->hasMany($model, 'translation_origin_model_id');
+        return $this->hasMany(Page::class, 'translation_origin_model_id');
     }
 
     public function translationForLang(string $locale): Page
@@ -94,11 +85,7 @@ class Page extends Model implements IsMenuable
 
     public function openGraphPicture(): BelongsTo
     {
-        /** @var class-string<Model> $model
-         */
-        $model = Druid::getModel('media');
-
-        return $this->belongsTo($model, 'opengraph_picture', 'id');
+        return $this->belongsTo(Media::class, 'opengraph_picture', 'id');
     }
 
     public function fullUrlPath(): string
@@ -113,10 +100,6 @@ class Page extends Model implements IsMenuable
             }
 
             $parent = $parent->parent;
-        }
-
-        if (Druid::isMultilingualEnabled() && $this->slug !== 'index') {
-            $path .= $this->lang ? $this->lang . '/' : '';
         }
 
         $path .= $parentsPath;
@@ -137,12 +120,6 @@ class Page extends Model implements IsMenuable
         return $this->title;
     }
 
-    public function resolveRouteBinding($value, $field = null): Page
-    {
-        return Druid::isMultilingualEnabled() ? $this->where('slug', $value)->where('lang', Druid::getCurrentLocaleKey())->firstOrFail() :
-            $this->where('slug', $value)->firstOrFail();
-    }
-
     protected static function boot(): void
     {
         parent::boot();
@@ -152,20 +129,6 @@ class Page extends Model implements IsMenuable
 
             $model->searchable_content = $searchableContentExtractor->extractSearchableContentFromBlocks($model->content);
         });
-    }
-
-    public function incrementSlug(string $slug, ?string $lang = null): string
-    {
-        $original = $slug;
-        $count = 2;
-
-        while (static::query()->where('slug', $slug)->when(Druid::isMultilingualEnabled(), function ($query) use ($lang): void {
-            $query->where('lang', $lang);
-        })->exists()) {
-            $slug = $original . '-' . $count++;
-        }
-
-        return $slug;
     }
 
     public function isPublished(): bool
