@@ -2,10 +2,10 @@
 
 namespace App\Models;
 
+use Awcodes\Curator\Models\Media;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\SoftDeletes;
-use Webid\Druid\Facades\Druid;
 
 class Author extends Model
 {
@@ -27,6 +27,6 @@ class Author extends Model
 
     public function thumbnail(): BelongsTo
     {
-        return $this->belongsTo(Druid::getModel('media'), 'thumbnail_id', 'id');
+        return $this->belongsTo(Media::class, 'thumbnail_id', 'id');
     }
 }

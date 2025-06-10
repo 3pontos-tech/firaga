@@ -12,17 +12,12 @@ return new class extends Migration
             $table->id();
             $table->string('slug');
             $table->foreignId('user_id')->constrained('users');
-            $table->foreign('thumbnail_id')->references('id')->on('media');
+            $table->foreignId('thumbnail_id')->constrained('media');
             $table->string('name');
             $table->text('description');
             $table->string('linkedin_url');
             $table->timestamps();
             $table->softDeletes();
         });
-    }
-
-    public function down(): void
-    {
-        Schema::dropIfExists('authors');
     }
 };
