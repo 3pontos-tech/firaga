@@ -38,6 +38,7 @@ return new class extends Migration
                 ->on('media');
             $table->longText('opengraph_picture_alt')->nullable();
 
+            $table->boolean('is_landing')->default(false);
             $table->dateTime('published_at')->nullable();
             $table->softDeletes();
             $table->timestamps();

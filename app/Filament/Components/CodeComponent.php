@@ -22,7 +22,9 @@ class CodeComponent implements ComponentInterface
 
     public static function toBlade(array $data): View
     {
-        return view('welcome', []);
+        return view('filament.components.code', [
+            'content' => $data['content'] ?? '',
+        ]);
     }
 
     public static function toSearchableContent(array $data): string
