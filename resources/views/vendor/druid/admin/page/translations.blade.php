@@ -1,4 +1,4 @@
-<?php /** @var \Webid\Druid\Models\Page $model */
+<?php /** @var \App\Models\CMS\Page $model */
 // @phpstan-ignore-next-line
 $model = $getRecord();
 $model->loadMissing('translationOriginModel.translations');

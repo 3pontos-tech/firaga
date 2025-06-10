@@ -1,4 +1,4 @@
-<?php /** @var \Webid\Druid\Models\Menu $model */
+<?php /** @var \App\Models\CMS\Menu $model */
 // @phpstan-ignore-next-line
 $model = $getRecord();
 $model->refresh();

@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\CMS\Category;
+use App\Models\CMS\Post;
 use Illuminate\View\View;
-use Webid\Druid\Models\Category;
-use Webid\Druid\Models\Post;
 
 class ArticlesController extends Controller
 {

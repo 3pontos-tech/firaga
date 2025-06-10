@@ -1,5 +1,5 @@
 @php
-    $menus = \Webid\Druid\Models\Menu::all()->keyBy('slug');
+    $menus = \App\Models\CMS\Menu::all()->keyBy('slug');
 @endphp
 
 @if (isset($menus['main-menu']))

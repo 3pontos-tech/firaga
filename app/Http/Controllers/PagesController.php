@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use Webid\Druid\Models\Page;
+use App\Models\CMS\Page;
 
 class PagesController extends Controller
 {

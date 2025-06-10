@@ -14,7 +14,7 @@
 </head>
 <body class="bg-bg">
      @php
-    $menus = \Webid\Druid\Models\Menu::all()->keyBy('slug');
+    $menus = \App\Models\CMS\Menu::all()->keyBy('slug');
     @endphp
     <x-navbar :menu="$menus['main-menu']">
 

@@ -25,7 +25,6 @@ use Illuminate\Session\Middleware\StartSession;
 use Illuminate\View\Middleware\ShareErrorsFromSession;
 use Jeffgreco13\FilamentBreezy\BreezyCore;
 use Swis\Filament\Backgrounds\FilamentBackgroundsPlugin;
-use Webid\Druid\DruidPlugin;
 
 class AdminPanelProvider extends PanelProvider
 {
@@ -71,7 +70,6 @@ class AdminPanelProvider extends PanelProvider
                     ->myProfile(shouldRegisterUserMenu: true),
                 FilamentBackgroundsPlugin::make(),
                 ThemesPlugin::make(),
-                DruidPlugin::make(),
                 CuratorPlugin::make(),
             ])
 
