@@ -102,10 +102,10 @@ class PostResource extends Resource
                 ->required()
                 ->relationship('categories', 'name')
                 ->preload(),
-            'users' => Select::make('users')
+            'users' => Select::make('author')
                 ->multiple()
                 ->default([Auth::user()?->getKey()])
-                ->relationship('users', 'name'),
+                ->relationship('authors', 'name'),
         ];
 
         $result = [

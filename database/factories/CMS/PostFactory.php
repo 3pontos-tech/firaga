@@ -95,11 +95,11 @@ class PostFactory extends Factory
         });
     }
 
-    public function forUser(Authenticatable $user): static
+    public function forAuthor(Authenticatable $author): static
     {
-        return $this->afterCreating(function (Model $post) use ($user): void {
+        return $this->afterCreating(function (Model $post) use ($author): void {
             /** @var Post $post */
-            $post->users()->attach($user);
+            $post->authors()->attach($author);
             $post->save();
         });
     }
