@@ -2,8 +2,8 @@
 
 namespace App\Filament\Resources\AuthorResource\Pages;
 
-use Filament\Actions\CreateAction;
 use App\Filament\Resources\AuthorResource;
+use Filament\Actions\CreateAction;
 use Filament\Resources\Pages\ListRecords;
 
 class ListAuthors extends ListRecords

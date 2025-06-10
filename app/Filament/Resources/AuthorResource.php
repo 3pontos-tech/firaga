@@ -2,12 +2,9 @@
 
 namespace App\Filament\Resources;
 
-use Filament\Tables\Actions\EditAction;
-use Filament\Tables\Actions\BulkActionGroup;
-use Filament\Tables\Actions\DeleteBulkAction;
-use App\Filament\Resources\AuthorResource\Pages\ListAuthors;
 use App\Filament\Resources\AuthorResource\Pages\CreateAuthor;
 use App\Filament\Resources\AuthorResource\Pages\EditAuthor;
+use App\Filament\Resources\AuthorResource\Pages\ListAuthors;
 use App\Models\Author;
 use Awcodes\Curator\Components\Forms\CuratorPicker;
 use Filament\Forms\Components\Select;
@@ -15,6 +12,9 @@ use Filament\Forms\Components\TextInput;
 use Filament\Forms\Form;
 use Filament\Forms\Set;
 use Filament\Resources\Resource;
+use Filament\Tables\Actions\BulkActionGroup;
+use Filament\Tables\Actions\DeleteBulkAction;
+use Filament\Tables\Actions\EditAction;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Table;
 use Illuminate\Support\Str;
