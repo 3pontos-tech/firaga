@@ -123,4 +123,10 @@ return [
         'store' => env('APP_MAINTENANCE_STORE', 'database'),
     ],
 
+    /**
+     * Google analytics mode
+     */
+
+    'google_analytics_debug' => env('GOOGLE_ANALYTICS_DEVELOPER_MODE', false),
+
 ];

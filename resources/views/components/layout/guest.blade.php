@@ -17,7 +17,7 @@
         function gtag(){dataLayer.push(arguments);}
         gtag('js', new Date());
 
-        gtag('config', 'G-7DX7K0H0BT', { 'debug_mode':true });
+        gtag('config', 'G-7DX7K0H0BT', { debug_mode: {{ (bool)config('app.google_analytics_debug', false) }} });
     </script>
 
 </head>
