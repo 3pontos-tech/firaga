@@ -8,7 +8,6 @@ use App\Models\CMS\Page;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Webid\Druid\Enums\MenuItemTarget;
 
-
 class MenuItemFactory extends Factory
 {
     protected $model = MenuItem::class;
@@ -27,7 +26,7 @@ class MenuItemFactory extends Factory
 
     public function forMenu(Menu $menu): self
     {
-        return $this->state(function () use ($menu) {
+        return $this->state(function () use ($menu): array {
             return [
                 'menu_id' => $menu->getKey(),
             ];
@@ -39,7 +38,7 @@ class MenuItemFactory extends Factory
      */
     public function withPageItem(array $params = []): self
     {
-        return $this->state(function () use ($params) {
+        return $this->state(function () use ($params): array {
             /** @var Page $page */
             $page = PageFactory::new()->create($params);
 
@@ -53,7 +52,7 @@ class MenuItemFactory extends Factory
 
     public function forExistingPage(Page $page): self
     {
-        return $this->state(function () use ($page) {
+        return $this->state(function () use ($page): array {
             return [
                 'model_id' => $page->getKey(),
                 'model_type' => $page->getMorphClass(),
@@ -65,7 +64,7 @@ class MenuItemFactory extends Factory
 
     public function forCustomUrl(string $url, string $label): self
     {
-        return $this->state(function () use ($url, $label) {
+        return $this->state(function () use ($url, $label): array {
             return [
                 'model_id' => null,
                 'model_type' => null,

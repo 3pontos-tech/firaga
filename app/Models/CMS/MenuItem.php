@@ -11,7 +11,6 @@ use Illuminate\Support\Collection;
 use Webid\Druid\Enums\MenuItemTarget;
 use Webid\Druid\Facades\Druid;
 
-
 /**
  * @property int $id
  * @property string|null $label

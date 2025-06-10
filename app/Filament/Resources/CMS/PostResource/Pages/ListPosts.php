@@ -2,13 +2,13 @@
 
 namespace App\Filament\Resources\CMS\PostResource\Pages;
 
-use Filament\Actions;
+use App\Filament\Resources\CMS\PostResource;
+use Filament\Actions\CreateAction;
 use Filament\Resources\Components\Tab;
 use Filament\Resources\Pages\ListRecords;
 use Illuminate\Contracts\Pagination\Paginator;
 use Illuminate\Database\Eloquent\Builder;
 use Webid\Druid\Facades\Druid;
-use App\Filament\Resources\CMS\PostResource;
 use Webid\Druid\Repositories\PostRepository;
 
 class ListPosts extends ListRecords
@@ -18,7 +18,7 @@ class ListPosts extends ListRecords
     protected function getHeaderActions(): array
     {
         return [
-            Actions\CreateAction::make(),
+            CreateAction::make(),
         ];
     }
 

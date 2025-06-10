@@ -7,7 +7,6 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Webid\Druid\Models\Traits\IsTranslatable;
 
-
 /**
  * @property int $id
  * @property string $title

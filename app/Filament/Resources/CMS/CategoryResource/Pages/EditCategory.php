@@ -2,9 +2,10 @@
 
 namespace App\Filament\Resources\CMS\CategoryResource\Pages;
 
-use Filament\Actions;
-use Filament\Resources\Pages\EditRecord;
 use App\Filament\Resources\CMS\CategoryResource;
+use Filament\Actions\DeleteAction;
+use Filament\Actions\ViewAction;
+use Filament\Resources\Pages\EditRecord;
 
 class EditCategory extends EditRecord
 {
@@ -13,8 +14,8 @@ class EditCategory extends EditRecord
     protected function getHeaderActions(): array
     {
         return [
-            Actions\ViewAction::make(),
-            Actions\DeleteAction::make(),
+            ViewAction::make(),
+            DeleteAction::make(),
         ];
     }
 }

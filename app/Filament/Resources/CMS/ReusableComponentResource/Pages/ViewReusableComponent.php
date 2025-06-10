@@ -2,9 +2,9 @@
 
 namespace App\Filament\Resources\CMS\ReusableComponentResource\Pages;
 
-use Filament\Actions;
-use Filament\Resources\Pages\ViewRecord;
 use App\Filament\Resources\CMS\ReusableComponentResource;
+use Filament\Actions\EditAction;
+use Filament\Resources\Pages\ViewRecord;
 
 class ViewReusableComponent extends ViewRecord
 {
@@ -13,7 +13,7 @@ class ViewReusableComponent extends ViewRecord
     protected function getHeaderActions(): array
     {
         return [
-            Actions\EditAction::make(),
+            EditAction::make(),
         ];
     }
 }

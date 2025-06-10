@@ -2,8 +2,8 @@
 
 namespace App\Filament\Resources\CMS\ReusableComponentResource\Pages;
 
-use Filament\Resources\Pages\CreateRecord;
 use App\Filament\Resources\CMS\ReusableComponentResource;
+use Filament\Resources\Pages\CreateRecord;
 
 class CreateReusableComponent extends CreateRecord
 {

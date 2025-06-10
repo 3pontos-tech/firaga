@@ -2,12 +2,12 @@
 
 namespace App\Filament\Resources\CMS\MenuResource\Pages;
 
-use Filament\Actions;
+use App\Filament\Resources\CMS\MenuResource;
+use Filament\Actions\CreateAction;
 use Filament\Resources\Components\Tab;
 use Filament\Resources\Pages\ListRecords;
 use Illuminate\Database\Eloquent\Builder;
 use Webid\Druid\Facades\Druid;
-use App\Filament\Resources\CMS\MenuResource;
 use Webid\Druid\Repositories\MenuRepository;
 
 class ListMenus extends ListRecords
@@ -17,7 +17,7 @@ class ListMenus extends ListRecords
     protected function getHeaderActions(): array
     {
         return [
-            Actions\CreateAction::make(),
+            CreateAction::make(),
         ];
     }
 

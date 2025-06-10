@@ -12,7 +12,7 @@ class ReusableComponentFactory extends Factory
     public function definition(): array
     {
         return [
-            'title' => 'Reusable component '.$this->faker->word,
+            'title' => 'Reusable component ' . $this->faker->word,
             'content' => $this->fakeContent(),
             'lang' => 'en',
         ];
@@ -27,13 +27,13 @@ class ReusableComponentFactory extends Factory
             [
                 'type' => 'text',
                 'data' => [
-                    'content' => '<p>'.$this->faker->text(300).'</p>',
+                    'content' => '<p>' . $this->faker->text(300) . '</p>',
                 ],
             ],
             [
                 'type' => 'text',
                 'data' => [
-                    'content' => '<h2>'.$this->faker->text(30).'</h2><p>'.$this->faker->text(900).'</p>',
+                    'content' => '<h2>' . $this->faker->text(30) . '</h2><p>' . $this->faker->text(900) . '</p>',
                 ],
             ],
         ];

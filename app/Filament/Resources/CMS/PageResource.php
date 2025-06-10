@@ -2,16 +2,26 @@
 
 namespace App\Filament\Resources\CMS;
 
-use App\Filament\Resources\CMS\PageResource\Pages;
+use App\Filament\Resources\CMS\PageResource\Pages\CreatePage;
+use App\Filament\Resources\CMS\PageResource\Pages\EditPage;
+use App\Filament\Resources\CMS\PageResource\Pages\ListPages;
+use App\Filament\Resources\CMS\PageResource\Pages\ViewPage;
 use Filament\Forms\Components\DatePicker;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\Tabs;
+use Filament\Forms\Components\Tabs\Tab;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Form;
 use Filament\Forms\Get;
 use Filament\Forms\Set;
 use Filament\Resources\Resource;
-use Filament\Tables;
+use Filament\Tables\Actions\BulkActionGroup;
+use Filament\Tables\Actions\DeleteAction;
+use Filament\Tables\Actions\DeleteBulkAction;
+use Filament\Tables\Actions\EditAction;
+use Filament\Tables\Columns\IconColumn;
+use Filament\Tables\Columns\TextColumn;
+use Filament\Tables\Columns\ViewColumn;
 use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Collection;
@@ -45,7 +55,7 @@ class PageResource extends Resource
                 ->label(__('Title'))
                 ->live(onBlur: true)
                 ->afterStateUpdated(
-                    fn (string $operation, string $state, Set $set) => $operation === 'create'
+                    fn (string $operation, string $state, Set $set): mixed => $operation === 'create'
                         ? $set('slug', Str::slug($state)) : null
                 )
                 ->required(),
@@ -97,7 +107,7 @@ class PageResource extends Resource
                                 // @phpstan-ignore-next-line
                                 ->mapWithKeys(fn (Page $mapPage) => [$mapPage->getKey() => $mapPage->title]);
 
-                            if ($page) {
+                            if ($page instanceof Page) {
                                 $allDefaultLanguagePages->put($page->id, __('#No origin model'));
                             }
 
@@ -117,9 +127,9 @@ class PageResource extends Resource
         $result = [
             'tabs' => Tabs::make('Tabs')
                 ->tabs([
-                    'content' => Tabs\Tab::make(__('Content'))->schema($contentTab),
-                    'parameters' => Tabs\Tab::make(__('Parameters'))->schema($parametersTab)->columns(2),
-                    'seo' => Tabs\Tab::make(__('SEO'))->schema(CommonFields::getCommonSeoFields())->columns(2),
+                    'content' => Tab::make(__('Content'))->schema($contentTab),
+                    'parameters' => Tab::make(__('Parameters'))->schema($parametersTab)->columns(2),
+                    'seo' => Tab::make(__('SEO'))->schema(CommonFields::getCommonSeoFields())->columns(2),
                 ])
                 ->activeTab(1)
                 ->columnSpanFull(),
@@ -132,15 +142,15 @@ class PageResource extends Resource
     {
 
         $columns = [
-            Tables\Columns\TextColumn::make('title')
+            TextColumn::make('title')
                 ->label(__('Title'))
                 ->color('primary')
                 ->url(
-                    url: fn (Page $record) => $record->url(),
+                    url: fn (Page $record): string => $record->url(),
                     shouldOpenInNewTab: true
                 )
                 ->searchable(),
-            Tables\Columns\TextColumn::make('status')
+            TextColumn::make('status')
                 ->badge()
                 ->colors([
                     'success' => PageStatus::PUBLISHED,
@@ -148,19 +158,19 @@ class PageResource extends Resource
                     'danger' => PageStatus::ARCHIVED,
                 ])
                 ->label(__('Status')),
-            Tables\Columns\IconColumn::make('disable_indexation')
+            IconColumn::make('disable_indexation')
                 ->label(__('Disable indexation'))
                 ->boolean(),
-            Tables\Columns\TextColumn::make('parent_page_id')
+            TextColumn::make('parent_page_id')
                 ->default('-')
                 ->label(__('Parent page')),
-            Tables\Columns\TextColumn::make('published_at')
+            TextColumn::make('published_at')
                 ->label(__('Published at'))
                 ->sortable(),
         ];
 
         if (Druid::isMultilingualEnabled()) {
-            $columns[] = Tables\Columns\ViewColumn::make('translations')->view('druid::admin.page.translations');
+            $columns[] = ViewColumn::make('translations')->view('druid::admin.page.translations');
         }
 
         return $table
@@ -168,13 +178,13 @@ class PageResource extends Resource
             ->columns($columns)
             ->defaultSort('published_at', 'desc')
             ->actions([
-                Tables\Actions\EditAction::make()->button()->outlined()->icon(''),
-                Tables\Actions\DeleteAction::make(),
+                EditAction::make()->button()->outlined()->icon(''),
+                DeleteAction::make(),
 
             ])
             ->bulkActions([
-                Tables\Actions\BulkActionGroup::make([
-                    Tables\Actions\DeleteBulkAction::make(),
+                BulkActionGroup::make([
+                    DeleteBulkAction::make(),
                 ]),
             ])
             ->selectCurrentPageOnly()
@@ -185,10 +195,10 @@ class PageResource extends Resource
     public static function getPages(): array
     {
         return [
-            'index' => Pages\ListPages::route('/'),
-            'create' => Pages\CreatePage::route('/create'),
-            'view' => Pages\ViewPage::route('/{record}'),
-            'edit' => Pages\EditPage::route('/{record}/edit'),
+            'index' => ListPages::route('/'),
+            'create' => CreatePage::route('/create'),
+            'view' => ViewPage::route('/{record}'),
+            'edit' => EditPage::route('/{record}/edit'),
         ];
     }
 

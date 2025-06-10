@@ -4,13 +4,6 @@ declare(strict_types=1);
 
 use App\Filament\Components\CodeComponent;
 use App\Filament\Components\FaqComponent;
-use App\Models\User;
-use Awcodes\Curator\Models\Media;
-use Webid\Druid\Components\HintComponent;
-use Webid\Druid\Components\ImageComponent;
-use Webid\Druid\Components\ReusableComponent;
-use Webid\Druid\Components\TextComponent;
-use Webid\Druid\Components\TextImageComponent;
 use App\Filament\Resources\CMS\MenuResource\RelationManagers\ItemsRelationManager;
 use App\Models\CMS\Category;
 use App\Models\CMS\Menu;
@@ -18,6 +11,13 @@ use App\Models\CMS\MenuItem;
 use App\Models\CMS\Page;
 use App\Models\CMS\Post;
 use App\Models\CMS\ReusableComponent as ReusableComponentModel;
+use App\Models\User;
+use Awcodes\Curator\Models\Media;
+use Webid\Druid\Components\HintComponent;
+use Webid\Druid\Components\ImageComponent;
+use Webid\Druid\Components\ReusableComponent;
+use Webid\Druid\Components\TextComponent;
+use Webid\Druid\Components\TextImageComponent;
 use Webid\Druid\Services\ContentRenderer\BladeRenderer;
 
 return [

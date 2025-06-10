@@ -2,9 +2,10 @@
 
 namespace App\Filament\Resources\CMS\ReusableComponentResource\Pages;
 
-use Filament\Actions;
-use Filament\Resources\Pages\EditRecord;
 use App\Filament\Resources\CMS\ReusableComponentResource;
+use Filament\Actions\DeleteAction;
+use Filament\Actions\ViewAction;
+use Filament\Resources\Pages\EditRecord;
 
 class EditReusableComponent extends EditRecord
 {
@@ -13,8 +14,8 @@ class EditReusableComponent extends EditRecord
     protected function getHeaderActions(): array
     {
         return [
-            Actions\ViewAction::make(),
-            Actions\DeleteAction::make(),
+            ViewAction::make(),
+            DeleteAction::make(),
         ];
     }
 }

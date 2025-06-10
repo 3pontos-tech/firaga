@@ -96,11 +96,9 @@ class Post extends Model implements IsMenuable
             $path .= '/';
         }
 
-        $path .= config('cms.blog.prefix').'/';
+        $path .= config('cms.blog.prefix') . '/';
 
-        $path .= $this->categories->first()->slug.'/'.$this->slug;
-
-        return $path;
+        return $path . ($this->categories->first()->slug . '/' . $this->slug);
     }
 
     public function url(): string
@@ -153,10 +151,10 @@ class Post extends Model implements IsMenuable
         $original = $slug;
         $count = 2;
 
-        while (static::where('slug', $slug)->when(Druid::isMultilingualEnabled(), function ($query) use ($lang) {
+        while (static::query()->where('slug', $slug)->when(Druid::isMultilingualEnabled(), function ($query) use ($lang): void {
             $query->where('lang', $lang);
         })->exists()) {
-            $slug = "{$original}-".$count++;
+            $slug = $original . '-' . $count++;
         }
 
         return $slug;
@@ -165,5 +163,10 @@ class Post extends Model implements IsMenuable
     public function isPublished(): bool
     {
         return $this->status === PostStatus::PUBLISHED;
+    }
+
+    public function relatedPosts(): BelongsToMany
+    {
+        return $this->belongsToMany(Post::class, 'related_posts', 'post_id', 'related_post_id');
     }
 }

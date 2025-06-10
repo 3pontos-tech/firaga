@@ -2,9 +2,9 @@
 
 namespace App\Filament\Resources\CMS\PageResource\Pages;
 
+use App\Filament\Resources\CMS\PageResource;
 use Filament\Resources\Pages\CreateRecord;
 use Webid\Druid\Facades\Druid;
-use App\Filament\Resources\CMS\PageResource;
 use Webid\Druid\Models\Page;
 
 class CreatePage extends CreateRecord

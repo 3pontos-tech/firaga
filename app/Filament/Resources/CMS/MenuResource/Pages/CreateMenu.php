@@ -2,8 +2,8 @@
 
 namespace App\Filament\Resources\CMS\MenuResource\Pages;
 
-use Filament\Resources\Pages\CreateRecord;
 use App\Filament\Resources\CMS\MenuResource;
+use Filament\Resources\Pages\CreateRecord;
 
 class CreateMenu extends CreateRecord
 {

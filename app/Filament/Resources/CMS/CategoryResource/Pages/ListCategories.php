@@ -2,12 +2,12 @@
 
 namespace App\Filament\Resources\CMS\CategoryResource\Pages;
 
-use Filament\Actions;
+use App\Filament\Resources\CMS\CategoryResource;
+use Filament\Actions\CreateAction;
 use Filament\Resources\Components\Tab;
 use Filament\Resources\Pages\ListRecords;
 use Illuminate\Database\Eloquent\Builder;
 use Webid\Druid\Facades\Druid;
-use App\Filament\Resources\CMS\CategoryResource;
 use Webid\Druid\Repositories\CategoryRepository;
 
 class ListCategories extends ListRecords
@@ -17,7 +17,7 @@ class ListCategories extends ListRecords
     protected function getHeaderActions(): array
     {
         return [
-            Actions\CreateAction::make(),
+            CreateAction::make(),
         ];
     }
 

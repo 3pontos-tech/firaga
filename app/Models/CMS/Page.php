@@ -146,7 +146,7 @@ class Page extends Model implements IsMenuable
     protected static function boot(): void
     {
         parent::boot();
-        static::saving(function (Page $model) {
+        static::saving(function (Page $model): void {
             /** @var ComponentSearchContentExtractor $searchableContentExtractor */
             $searchableContentExtractor = app(ComponentSearchContentExtractor::class);
 
@@ -159,10 +159,10 @@ class Page extends Model implements IsMenuable
         $original = $slug;
         $count = 2;
 
-        while (static::where('slug', $slug)->when(Druid::isMultilingualEnabled(), function ($query) use ($lang) {
+        while (static::query()->where('slug', $slug)->when(Druid::isMultilingualEnabled(), function ($query) use ($lang): void {
             $query->where('lang', $lang);
         })->exists()) {
-            $slug = "{$original}-" . $count++;
+            $slug = $original . '-' . $count++;
         }
 
         return $slug;

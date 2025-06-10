@@ -4,13 +4,19 @@ namespace App\Filament\Resources\CMS\MenuResource\RelationManagers;
 
 use App\Models\CMS\Menu;
 use Filament\Forms\Components\MorphToSelect;
+use Filament\Forms\Components\MorphToSelect\Type;
 use Filament\Forms\Components\Section;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Form;
 use Filament\Forms\Get;
 use Filament\Resources\RelationManagers\RelationManager;
-use Filament\Tables;
+use Filament\Tables\Actions\BulkActionGroup;
+use Filament\Tables\Actions\CreateAction;
+use Filament\Tables\Actions\DeleteAction;
+use Filament\Tables\Actions\DeleteBulkAction;
+use Filament\Tables\Actions\EditAction;
+use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Table;
 use Webid\Druid\Enums\MenuItemTarget;
 use Webid\Druid\Models\Page;
@@ -22,7 +28,7 @@ class ItemsRelationManager extends RelationManager
 
     public function form(Form $form): Form
     {
-           $targetOptions = [];
+        $targetOptions = [];
         foreach (MenuItemTarget::cases() as $target) {
             $targetOptions[$target->value] = $target->getLabel();
         }
@@ -68,16 +74,16 @@ class ItemsRelationManager extends RelationManager
                             ),
                         TextInput::make('custom_url')
                             ->url()
-                            ->required(fn (Get $get) => $get('type') === 'custom')
-                            ->visible(fn (Get $get) => $get('type') === 'custom'),
+                            ->required(fn (Get $get): bool => $get('type') === 'custom')
+                            ->visible(fn (Get $get): bool => $get('type') === 'custom'),
                         MorphToSelect::make('model')
                             ->label(__('Model'))
-                            ->visible(fn (Get $get) => $get('type') === 'page')
-                            ->required(fn (Get $get) => $get('type') === 'page')
+                            ->visible(fn (Get $get): bool => $get('type') === 'page')
+                            ->required(fn (Get $get): bool => $get('type') === 'page')
                             ->types([
-                                MorphToSelect\Type::make(Page::class)
+                                Type::make(Page::class)
                                     ->titleAttribute('title'),
-                                MorphToSelect\Type::make(Post::class)
+                                Type::make(Post::class)
                                     ->titleAttribute('title'),
                             ]),
 
@@ -90,18 +96,18 @@ class ItemsRelationManager extends RelationManager
         return $table
             ->recordTitleAttribute('label')
             ->columns([
-                Tables\Columns\TextColumn::make('label'),
+                TextColumn::make('label'),
             ])
             ->headerActions([
-                Tables\Actions\CreateAction::make(),
+                CreateAction::make(),
             ])
             ->actions([
-                Tables\Actions\EditAction::make(),
-                Tables\Actions\DeleteAction::make(),
+                EditAction::make(),
+                DeleteAction::make(),
             ])
             ->bulkActions([
-                Tables\Actions\BulkActionGroup::make([
-                    Tables\Actions\DeleteBulkAction::make(),
+                BulkActionGroup::make([
+                    DeleteBulkAction::make(),
                 ]),
             ]);
     }

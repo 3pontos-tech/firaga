@@ -2,9 +2,9 @@
 
 namespace App\Filament\Resources\CMS\PageResource\Pages;
 
-use Filament\Actions;
-use Filament\Resources\Pages\EditRecord;
 use App\Filament\Resources\CMS\PageResource;
+use Filament\Actions\DeleteAction;
+use Filament\Resources\Pages\EditRecord;
 
 class EditPage extends EditRecord
 {
@@ -13,7 +13,7 @@ class EditPage extends EditRecord
     protected function getHeaderActions(): array
     {
         return [
-            Actions\DeleteAction::make(),
+            DeleteAction::make(),
         ];
     }
 }

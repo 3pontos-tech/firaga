@@ -2,9 +2,9 @@
 
 namespace App\Filament\Resources\CMS\PageResource\Pages;
 
-use Filament\Actions;
-use Filament\Resources\Pages\ViewRecord;
 use App\Filament\Resources\CMS\PageResource;
+use Filament\Actions\EditAction;
+use Filament\Resources\Pages\ViewRecord;
 
 class ViewPage extends ViewRecord
 {
@@ -13,7 +13,7 @@ class ViewPage extends ViewRecord
     protected function getHeaderActions(): array
     {
         return [
-            Actions\EditAction::make(),
+            EditAction::make(),
         ];
     }
 }

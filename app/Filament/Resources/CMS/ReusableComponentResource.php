@@ -2,19 +2,24 @@
 
 namespace App\Filament\Resources\CMS;
 
-use Filament\Forms\Components\Select;
-use Filament\Forms\Components\Tabs;
-use Filament\Forms\Components\TextInput;
-use Filament\Forms\Form;
-use Filament\Forms\Get;
-use Filament\Resources\Resource;
-use Filament\Tables;
-use Filament\Tables\Table;
-use Webid\Druid\Facades\Druid;
 use App\Filament\Resources\CMS\ReusableComponentResource\Pages\CreateReusableComponent;
 use App\Filament\Resources\CMS\ReusableComponentResource\Pages\EditReusableComponent;
 use App\Filament\Resources\CMS\ReusableComponentResource\Pages\ListReusableComponents;
 use App\Filament\Resources\CMS\ReusableComponentResource\Pages\ViewReusableComponent;
+use Filament\Forms\Components\Select;
+use Filament\Forms\Components\Tabs;
+use Filament\Forms\Components\Tabs\Tab;
+use Filament\Forms\Components\TextInput;
+use Filament\Forms\Form;
+use Filament\Forms\Get;
+use Filament\Resources\Resource;
+use Filament\Tables\Actions\BulkActionGroup;
+use Filament\Tables\Actions\DeleteBulkAction;
+use Filament\Tables\Actions\EditAction;
+use Filament\Tables\Actions\ViewAction;
+use Filament\Tables\Columns\TextColumn;
+use Filament\Tables\Table;
+use Webid\Druid\Facades\Druid;
 use Webid\Druid\Models\ReusableComponent;
 use Webid\Druid\Repositories\ReusableComponentsRepository;
 use Webid\Druid\Services\Admin\FilamentComponentsService;
@@ -68,7 +73,7 @@ class ReusableComponentResource extends Resource
                                 // @phpstan-ignore-next-line
                                 ->mapWithKeys(fn (ReusableComponent $mapReusableComponent) => [$mapReusableComponent->getKey() => $mapReusableComponent->title]);
 
-                            if ($reusableComponent) {
+                            if ($reusableComponent instanceof ReusableComponent) {
                                 $allDefaultLanguageComponents->put($reusableComponent->id, __('#No origin model'));
                             }
 
@@ -86,11 +91,11 @@ class ReusableComponentResource extends Resource
         }
 
         $tabs = [
-            Tabs\Tab::make(__('Content'))->schema($contentTab),
+            Tab::make(__('Content'))->schema($contentTab),
         ];
 
         if (Druid::isMultilingualEnabled()) {
-            $tabs[] = Tabs\Tab::make(__('Parameters'))->schema($parametersTab)->columns(2);
+            $tabs[] = Tab::make(__('Parameters'))->schema($parametersTab)->columns(2);
         }
 
         return $form
@@ -106,24 +111,24 @@ class ReusableComponentResource extends Resource
     {
         return $table
             ->columns([
-                Tables\Columns\TextColumn::make('title')
+                TextColumn::make('title')
                     ->searchable(),
-                Tables\Columns\TextColumn::make('created_at')
+                TextColumn::make('created_at')
                     ->dateTime()
                     ->sortable()
                     ->toggleable(isToggledHiddenByDefault: true),
-                Tables\Columns\TextColumn::make('updated_at')
+                TextColumn::make('updated_at')
                     ->dateTime()
                     ->sortable()
                     ->toggleable(isToggledHiddenByDefault: true),
             ])
             ->actions([
-                Tables\Actions\ViewAction::make(),
-                Tables\Actions\EditAction::make(),
+                ViewAction::make(),
+                EditAction::make(),
             ])
             ->bulkActions([
-                Tables\Actions\BulkActionGroup::make([
-                    Tables\Actions\DeleteBulkAction::make(),
+                BulkActionGroup::make([
+                    DeleteBulkAction::make(),
                 ]),
             ])
             ->striped();

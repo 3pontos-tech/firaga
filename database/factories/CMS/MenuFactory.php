@@ -6,7 +6,6 @@ use App\Models\CMS\Menu;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Database\Eloquent\Model;
 
-
 class MenuFactory extends Factory
 {
     protected $model = Menu::class;
@@ -34,7 +33,7 @@ class MenuFactory extends Factory
 
     public function asATranslationFrom(Menu $menu, string $lang): static
     {
-        return $this->state(function (array $attributes) use ($lang, $menu) {
+        return $this->state(function (array $attributes) use ($lang, $menu): array {
             return [
                 'lang' => $lang,
                 'translation_origin_model_id' => $menu->getKey(),

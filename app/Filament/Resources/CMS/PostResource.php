@@ -2,20 +2,31 @@
 
 namespace App\Filament\Resources\CMS;
 
+use App\Filament\Resources\CMS\PostResource\Pages\CreatePost;
+use App\Filament\Resources\CMS\PostResource\Pages\EditPost;
+use App\Filament\Resources\CMS\PostResource\Pages\ListPosts;
+use App\Filament\Resources\CMS\PostResource\Pages\ViewPost;
+use App\Filament\Resources\CMS\PostResource\RelationManagers\PostsRelationManager;
 use App\Models\CMS\Category;
 use App\Models\CMS\Post;
 use Awcodes\Curator\Components\Forms\CuratorPicker;
 use Filament\Forms\Components\DateTimePicker;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\Tabs;
+use Filament\Forms\Components\Tabs\Tab;
 use Filament\Forms\Components\Textarea;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Components\Toggle;
 use Filament\Forms\Form;
-use Filament\Forms\Get;
 use Filament\Forms\Set;
 use Filament\Resources\Resource;
-use Filament\Tables;
+use Filament\Tables\Actions\BulkActionGroup;
+use Filament\Tables\Actions\DeleteAction;
+use Filament\Tables\Actions\DeleteBulkAction;
+use Filament\Tables\Actions\EditAction;
+use Filament\Tables\Columns\IconColumn;
+use Filament\Tables\Columns\TextColumn;
+use Filament\Tables\Columns\ViewColumn;
 use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Support\Facades\Auth;
@@ -23,7 +34,6 @@ use Illuminate\Support\Str;
 use Webid\Druid\Enums\PostStatus;
 use Webid\Druid\Facades\Druid;
 use Webid\Druid\Filament\Resources\CommonFields;
-use Webid\Druid\Repositories\CategoryRepository;
 use Webid\Druid\Services\Admin\FilamentComponentsService;
 
 class PostResource extends Resource
@@ -49,7 +59,7 @@ class PostResource extends Resource
                 ->label(__('Title'))
                 ->live(onBlur: true)
                 ->afterStateUpdated(
-                    fn (string $operation, string $state, Set $set) => $operation === 'create'
+                    fn (string $operation, string $state, Set $set): mixed => $operation === 'create'
                         ? $set('slug', Str::slug($state)) : null
                 )
                 ->required(),
@@ -101,22 +111,20 @@ class PostResource extends Resource
         $result = [
             'tabs' => Tabs::make('Tabs')
                 ->tabs([
-                    'content' => Tabs\Tab::make(__('Content'))->schema($contentTab),
-                    'parameters' => Tabs\Tab::make(__('Parameters'))->schema($parametersTab)->columns(2),
-                    'seo' => Tabs\Tab::make(__('SEO'))->schema(CommonFields::getCommonSeoFields())->columns(2),
+                    'content' => Tab::make(__('Content'))->schema($contentTab),
+                    'parameters' => Tab::make(__('Parameters'))->schema($parametersTab)->columns(2),
+                    'seo' => Tab::make(__('SEO'))->schema(CommonFields::getCommonSeoFields())->columns(2),
                 ])->columnSpanFull(),
         ];
 
         return $form->schema($result);
     }
 
-
-
     public static function table(Table $table): Table
     {
 
         $columns = [
-            Tables\Columns\TextColumn::make('title')
+            TextColumn::make('title')
                 ->label(__('Title'))
                 ->color('primary')
                 ->url(
@@ -124,7 +132,7 @@ class PostResource extends Resource
                     shouldOpenInNewTab: true
                 )
                 ->searchable(),
-            Tables\Columns\TextColumn::make('status')
+            TextColumn::make('status')
                 ->badge()
                 ->colors([
                     'success' => PostStatus::PUBLISHED,
@@ -132,32 +140,32 @@ class PostResource extends Resource
                     'danger' => PostStatus::ARCHIVED,
                 ])
                 ->label(__('Status')),
-            Tables\Columns\IconColumn::make('is_top_article')
+            IconColumn::make('is_top_article')
                 ->label(__('Top article'))
                 ->boolean(),
-            Tables\Columns\IconColumn::make('disable_indexation')
+            IconColumn::make('disable_indexation')
                 ->label(__('Disable indexation'))
                 ->boolean(),
-            Tables\Columns\TextColumn::make('published_at')
+            TextColumn::make('published_at')
                 ->label(__('Published at'))
                 ->dateTime()
                 ->sortable(),
         ];
 
         if (Druid::isMultilingualEnabled()) {
-            $columns[] = Tables\Columns\ViewColumn::make('translations')->view('druid::admin.post.translations');
+            $columns[] = ViewColumn::make('translations')->view('druid::admin.post.translations');
         }
 
         return $table
             ->columns($columns)
             ->defaultSort('published_at', 'desc')
             ->actions([
-                Tables\Actions\EditAction::make()->button()->outlined()->icon(''),
-                Tables\Actions\DeleteAction::make(),
+                EditAction::make()->button()->outlined()->icon(''),
+                DeleteAction::make(),
             ])
             ->bulkActions([
-                Tables\Actions\BulkActionGroup::make([
-                    Tables\Actions\DeleteBulkAction::make(),
+                BulkActionGroup::make([
+                    DeleteBulkAction::make(),
                 ]),
             ])
             ->selectCurrentPageOnly()
@@ -168,11 +176,16 @@ class PostResource extends Resource
     public static function getPages(): array
     {
         return [
-            'index' => PostResource\Pages\ListPosts::route('/'),
-            'create' => PostResource\Pages\CreatePost::route('/create'),
-            'view' => PostResource\Pages\ViewPost::route('/{record}'),
-            'edit' => PostResource\Pages\EditPost::route('/{record}/edit'),
+            'index' => ListPosts::route('/'),
+            'create' => CreatePost::route('/create'),
+            'view' => ViewPost::route('/{record}'),
+            'edit' => EditPost::route('/{record}/edit'),
         ];
+    }
+
+    public static function getRelations(): array
+    {
+        return [PostsRelationManager::class];
     }
 
     public static function canAccess(): bool

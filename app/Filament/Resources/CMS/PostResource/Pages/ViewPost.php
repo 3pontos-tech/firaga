@@ -2,9 +2,9 @@
 
 namespace App\Filament\Resources\CMS\PostResource\Pages;
 
-use Filament\Actions;
-use Filament\Resources\Pages\ViewRecord;
 use App\Filament\Resources\CMS\PostResource;
+use Filament\Actions\EditAction;
+use Filament\Resources\Pages\ViewRecord;
 
 class ViewPost extends ViewRecord
 {
@@ -13,7 +13,7 @@ class ViewPost extends ViewRecord
     protected function getHeaderActions(): array
     {
         return [
-            Actions\EditAction::make(),
+            EditAction::make(),
         ];
     }
 }

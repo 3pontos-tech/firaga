@@ -1,7 +1,9 @@
 <?php
 
-namespace App\Filament\Resources\CMS\CategoryResource\RelationManagers;
+namespace App\Filament\Resources\CMS\PostResource\RelationManagers;
 
+use App\Models\CMS\Post;
+use Filament\Forms\Components\Select;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Form;
 use Filament\Resources\RelationManagers\RelationManager;
@@ -11,13 +13,14 @@ use Filament\Tables\Actions\CreateAction;
 use Filament\Tables\Actions\DeleteAction;
 use Filament\Tables\Actions\DeleteBulkAction;
 use Filament\Tables\Actions\DetachAction;
+use Filament\Tables\Actions\DetachBulkAction;
 use Filament\Tables\Actions\EditAction;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Table;
 
 class PostsRelationManager extends RelationManager
 {
-    protected static string $relationship = 'posts';
+    protected static string $relationship = 'relatedPosts';
 
     public function form(Form $form): Form
     {
@@ -36,9 +39,26 @@ class PostsRelationManager extends RelationManager
             ->columns([
                 TextColumn::make('title'),
             ])
+            ->filters([
+                //
+            ])
             ->headerActions([
                 CreateAction::make(),
-                AttachAction::make(),
+                AttachAction::make()
+                    ->action(function (array $data): void {
+                        /** @var Post $post */
+                        $post = $this->getOwnerRecord();
+                        $post->relatedPosts()->attach($data['related_posts']);
+                    })
+                    ->form([
+                        Select::make('related_posts')
+                            ->relationship('relatedPosts', 'title')
+                            ->options(function () {
+                                return Post::query()->distinct('title')
+                                    ->pluck('title', 'id')
+                                    ->toArray();
+                            }),
+                    ]),
             ])
             ->actions([
                 EditAction::make(),
@@ -47,6 +67,7 @@ class PostsRelationManager extends RelationManager
             ])
             ->bulkActions([
                 BulkActionGroup::make([
+                    DetachBulkAction::make(),
                     DeleteBulkAction::make(),
                 ]),
             ]);

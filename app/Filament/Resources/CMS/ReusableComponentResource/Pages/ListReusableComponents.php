@@ -2,12 +2,12 @@
 
 namespace App\Filament\Resources\CMS\ReusableComponentResource\Pages;
 
-use Filament\Actions;
+use App\Filament\Resources\CMS\ReusableComponentResource;
+use Filament\Actions\CreateAction;
 use Filament\Resources\Components\Tab;
 use Filament\Resources\Pages\ListRecords;
 use Illuminate\Database\Eloquent\Builder;
 use Webid\Druid\Facades\Druid;
-use App\Filament\Resources\CMS\ReusableComponentResource;
 use Webid\Druid\Repositories\ReusableComponentsRepository;
 
 class ListReusableComponents extends ListRecords
@@ -17,7 +17,7 @@ class ListReusableComponents extends ListRecords
     protected function getHeaderActions(): array
     {
         return [
-            Actions\CreateAction::make(),
+            CreateAction::make(),
         ];
     }
 

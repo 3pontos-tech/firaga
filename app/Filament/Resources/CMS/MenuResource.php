@@ -2,20 +2,23 @@
 
 namespace App\Filament\Resources\CMS;
 
+use App\Filament\Resources\CMS\MenuResource\Pages\CreateMenu;
+use App\Filament\Resources\CMS\MenuResource\Pages\EditMenu;
+use App\Filament\Resources\CMS\MenuResource\Pages\ListMenus;
 use Filament\Forms\Components\Section;
-use Filament\Forms\Components\Select;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Form;
-use Filament\Forms\Get;
 use Filament\Forms\Set;
 use Filament\Resources\Resource;
-use Filament\Tables;
+use Filament\Tables\Actions\BulkActionGroup;
+use Filament\Tables\Actions\DeleteBulkAction;
+use Filament\Tables\Actions\EditAction;
+use Filament\Tables\Columns\TextColumn;
+use Filament\Tables\Columns\ViewColumn;
 use Filament\Tables\Table;
 use Illuminate\Support\Str;
 use Webid\Druid\Facades\Druid;
 use Webid\Druid\Models\Menu;
-use Webid\Druid\Repositories\MenuRepository;
-use Webmozart\Assert\Assert;
 
 class MenuResource extends Resource
 {
@@ -32,13 +35,12 @@ class MenuResource extends Resource
             TextInput::make('title')
                 ->label(__('Title'))
                 ->live(debounce: 500)
-                ->afterStateUpdated(fn (Set $set, ?string $state) => $set('slug', Str::slug(strval($state))))
+                ->afterStateUpdated(fn (Set $set, ?string $state): mixed => $set('slug', Str::slug(strval($state))))
                 ->required(),
             TextInput::make('slug')
                 ->label(__('Slug'))
                 ->required(),
         ];
-
 
         return $form
             ->schema([
@@ -51,12 +53,12 @@ class MenuResource extends Resource
     public static function table(Table $table): Table
     {
         $columns = [
-            Tables\Columns\TextColumn::make('title')
+            TextColumn::make('title')
                 ->label(__('Title')),
         ];
 
         if (Druid::isMultilingualEnabled()) {
-            $columns[] = Tables\Columns\ViewColumn::make('translations')->view('druid::admin.menu.translations');
+            $columns[] = ViewColumn::make('translations')->view('druid::admin.menu.translations');
         }
 
         return $table
@@ -65,11 +67,11 @@ class MenuResource extends Resource
                 //
             ])
             ->actions([
-                Tables\Actions\EditAction::make(),
+                EditAction::make(),
             ])
             ->bulkActions([
-                Tables\Actions\BulkActionGroup::make([
-                    Tables\Actions\DeleteBulkAction::make(),
+                BulkActionGroup::make([
+                    DeleteBulkAction::make(),
                 ]),
             ]);
     }
@@ -84,9 +86,9 @@ class MenuResource extends Resource
     public static function getPages(): array
     {
         return [
-            'index' => MenuResource\Pages\ListMenus::route('/'),
-            'create' => MenuResource\Pages\CreateMenu::route('/create'),
-            'edit' => MenuResource\Pages\EditMenu::route('/{record}/edit'),
+            'index' => ListMenus::route('/'),
+            'create' => CreateMenu::route('/create'),
+            'edit' => EditMenu::route('/{record}/edit'),
         ];
     }
 

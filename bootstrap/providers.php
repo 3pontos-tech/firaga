@@ -7,5 +7,5 @@ use Webid\Druid\DruidServiceProvider;
 return [
     AppServiceProvider::class,
     AdminPanelProvider::class,
-    DruidServiceProvider::class
+    DruidServiceProvider::class,
 ];

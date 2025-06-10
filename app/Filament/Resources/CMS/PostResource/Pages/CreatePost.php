@@ -2,9 +2,9 @@
 
 namespace App\Filament\Resources\CMS\PostResource\Pages;
 
+use App\Filament\Resources\CMS\PostResource;
 use Filament\Resources\Pages\CreateRecord;
 use Webid\Druid\Facades\Druid;
-use App\Filament\Resources\CMS\PostResource;
 use Webid\Druid\Models\Post;
 
 class CreatePost extends CreateRecord
@@ -16,10 +16,8 @@ class CreatePost extends CreateRecord
         /** @var Post $post */
         $post = $this->record;
 
-        if (Druid::isMultilingualEnabled()) {
-            if ($post->lang === Druid::getDefaultLocale()) {
-                $post->update(['translation_origin_model_id' => $post->getKey()]);
-            }
+        if (Druid::isMultilingualEnabled() && $post->lang === Druid::getDefaultLocale()) {
+            $post->update(['translation_origin_model_id' => $post->getKey()]);
         }
 
         $post->save();

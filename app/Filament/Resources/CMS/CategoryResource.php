@@ -2,6 +2,10 @@
 
 namespace App\Filament\Resources\CMS;
 
+use App\Filament\Resources\CMS\CategoryResource\Pages\CreateCategory;
+use App\Filament\Resources\CMS\CategoryResource\Pages\EditCategory;
+use App\Filament\Resources\CMS\CategoryResource\Pages\ListCategories;
+use App\Filament\Resources\CMS\CategoryResource\RelationManagers\PostsRelationManager;
 use Filament\Forms\Components\Section;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\TextInput;
@@ -9,14 +13,13 @@ use Filament\Forms\Form;
 use Filament\Forms\Get;
 use Filament\Forms\Set;
 use Filament\Resources\Resource;
-use Filament\Tables;
+use Filament\Tables\Actions\BulkActionGroup;
+use Filament\Tables\Actions\DeleteBulkAction;
+use Filament\Tables\Actions\EditAction;
+use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Table;
 use Illuminate\Support\Str;
 use Webid\Druid\Facades\Druid;
-use App\Filament\Resources\CMS\CategoryResource\Pages\CreateCategory;
-use App\Filament\Resources\CMS\CategoryResource\Pages\EditCategory;
-use App\Filament\Resources\CMS\CategoryResource\Pages\ListCategories;
-use App\Filament\Resources\CMS\CategoryResource\RelationManagers\PostsRelationManager;
 use Webid\Druid\Models\Category;
 use Webid\Druid\Repositories\CategoryRepository;
 use Webmozart\Assert\Assert;
@@ -43,7 +46,7 @@ class CategoryResource extends Resource
                 ->label(__('Title'))
                 ->live(onBlur: true)
                 ->afterStateUpdated(
-                    fn (string $operation, $state, Set $set) => $operation === 'create'
+                    fn (string $operation, $state, Set $set): mixed => $operation === 'create'
                         ? $set('slug', Str::slug($state)) : null
                 )
                 ->required(),
@@ -74,7 +77,7 @@ class CategoryResource extends Resource
                                 // @phpstan-ignore-next-line
                                 ->mapWithKeys(fn (Category $mapCatagory) => [$mapCatagory->getKey() => $mapCatagory->name]);
 
-                            if ($category) {
+                            if ($category instanceof Category) {
                                 $allDefaultLanguagePosts->put($category->id, __('#No origin model'));
                             }
 
@@ -103,14 +106,14 @@ class CategoryResource extends Resource
     {
         return $table
             ->columns([
-                Tables\Columns\TextColumn::make('name'),
+                TextColumn::make('name'),
             ])
             ->actions([
-                Tables\Actions\EditAction::make(),
+                EditAction::make(),
             ])
             ->bulkActions([
-                Tables\Actions\BulkActionGroup::make([
-                    Tables\Actions\DeleteBulkAction::make(),
+                BulkActionGroup::make([
+                    DeleteBulkAction::make(),
                 ]),
             ])
             ->striped();

@@ -9,7 +9,6 @@ use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Webid\Druid\Facades\Druid;
 use Webid\Druid\Models\Traits\IsTranslatable;
 
-
 /**
  * @property string $name
  * @property string $slug

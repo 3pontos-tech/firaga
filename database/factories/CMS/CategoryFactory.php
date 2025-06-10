@@ -6,7 +6,6 @@ use App\Models\CMS\Category;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Database\Eloquent\Model;
 
-
 class CategoryFactory extends Factory
 {
     protected $model = Category::class;

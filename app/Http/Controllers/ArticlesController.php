@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\View\View;
 use App\Models\CMS\Category;
 use App\Models\CMS\Post;
+use Illuminate\View\View;
 
 class ArticlesController extends Controller
 {
