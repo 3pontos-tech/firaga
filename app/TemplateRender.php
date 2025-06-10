@@ -4,8 +4,9 @@ namespace App;
 
 use App\Filament\Components\CodeComponent;
 use App\Filament\Components\FaqComponent;
-use Illuminate\Support\Facades\Log;
-use Illuminate\View\View;
+use App\Filament\Components\Heroes\MainHeroComponent;
+use Illuminate\Contracts\View\View;
+use Illuminate\View\ViewException;
 use Webid\Druid\Components\ComponentInterface;
 use Webid\Druid\Components\TextComponent;
 
@@ -30,7 +31,8 @@ class TemplateRender
             'text' => app(TextComponent::class),
             'faq' => app(FaqComponent::class),
             'code' => app(CodeComponent::class),
-            default => throw new \InvalidArgumentException(__('Unsupported component type: :type', ['type' => $type])),
+            'main_hero' => app(MainHeroComponent::class),
+            default => throw new ViewException(__('Unsupported component type: :type', ['type' => $type])),
         };
 
     }

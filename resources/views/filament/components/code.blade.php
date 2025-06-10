@@ -1,5 +1,4 @@
 <div>
-    <code>
-        {{ $content }}
-    </code>
+    {!!  str($code)->markdown() !!}
+    Desc: {{  $description }}
 </div>

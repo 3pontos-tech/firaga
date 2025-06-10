@@ -1,7 +1,8 @@
 @props([
     'headline' => '',
     'description' => '',
-    'button' => ''
+    'buttonText' => '',
+    'buttonUrl' => ''
 ])
 
 <div
@@ -13,12 +14,12 @@
         {{ str($description) }}
     </p>
     <a
-        href="#agende"
+        href="{{ $buttonUrl }}"
         class="inline-block border-2 border-brand text-brand uppercase font-semibold py-4 px-8 rounded-full hover:bg-brand hover:text-heading dark:hover:text-heading transition shadow-xl focus:outline-none focus:ring-2 focus:ring-brand-hover backdrop-blur-lg bg-bg/10 dark:bg-surface/20"
         aria-label="Agende sua análise"
     >
         <span class="flex items-center gap-2">
-            Agende sua análise
+            {{ $buttonText }}
         </span>
     </a>
 </div>

@@ -13,7 +13,6 @@ use Filament\Forms\Components\Tabs;
 use Filament\Forms\Components\Tabs\Tab;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Form;
-use Filament\Forms\Get;
 use Filament\Forms\Set;
 use Filament\Resources\Resource;
 use Filament\Tables\Actions\BulkActionGroup;
@@ -22,7 +21,6 @@ use Filament\Tables\Actions\DeleteBulkAction;
 use Filament\Tables\Actions\EditAction;
 use Filament\Tables\Columns\IconColumn;
 use Filament\Tables\Columns\TextColumn;
-use Filament\Tables\Columns\ViewColumn;
 use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Collection;
@@ -31,7 +29,6 @@ use Webid\Druid\Enums\PageStatus;
 use Webid\Druid\Facades\Druid;
 use Webid\Druid\Filament\Resources\CommonFields;
 use Webid\Druid\Services\Admin\FilamentComponentsService;
-use Webmozart\Assert\Assert;
 
 class PageResource extends Resource
 {
@@ -85,7 +82,6 @@ class PageResource extends Resource
                 ->required(),
         ];
 
-
         $result = [
             'tabs' => Tabs::make('Tabs')
                 ->tabs([
@@ -132,7 +128,6 @@ class PageResource extends Resource
                 ->label(__('Published at'))
                 ->sortable(),
         ];
-
 
         return $table
             ->query(fn () => Page::query()->with('parent'))

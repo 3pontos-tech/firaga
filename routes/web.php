@@ -6,7 +6,7 @@ use App\Http\Controllers\MarketingLandingController;
 use App\Http\Controllers\PagesController;
 use Illuminate\Support\Facades\Route;
 
-Route::domain('lp.' . config('app.domain'))->group(function () {
+Route::domain('lp.' . config('app.domain'))->group(function (): void {
 
     Route::redirect('/', config('app.url'));
 
@@ -14,7 +14,7 @@ Route::domain('lp.' . config('app.domain'))->group(function () {
         ->name('landing.lp');
 });
 
-Route::domain(config('app.domain'))->group(function () {
+Route::domain(config('app.domain'))->group(function (): void {
 
     Route::get('/', LandingController::class)->name('landing');
 
