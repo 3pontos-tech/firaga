@@ -37,6 +37,6 @@ return [
 
     'google' => [
         'analytics_debug' => env('GOOGLE_ANALYTICS_DEVELOPER_MODE', true),
-    ]
+    ],
 
 ];
