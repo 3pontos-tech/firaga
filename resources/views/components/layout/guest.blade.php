@@ -11,13 +11,9 @@
     <title>{{ config('app.name') }}</title>
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-7DX7K0H0BT"></script>
+    <script src="{{ asset('js/google/analytics.js') }}"></script>
     <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-
-        gtag('config', 'G-7DX7K0H0BT', { debug_mode: {{ (bool)config('app.google_analytics_debug', false) }} });
+        gtag('config', 'G-7DX7K0H0BT', { debug_mode: {{ (bool)config('services.google.analytics_debug') }} });
     </script>
 
 </head>
