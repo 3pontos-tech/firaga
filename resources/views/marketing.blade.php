@@ -1,6 +1,6 @@
 @php
-    use App\TemplateRender;
-    $builder = TemplateRender::make();
+    use App\View\TemplateRenderer;
+    $builder = TemplateRenderer::make();
 @endphp
 
 <x-layout.guest>

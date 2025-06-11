@@ -13,7 +13,6 @@ use Illuminate\Support\Collection;
 use Webid\Druid\Enums\PageStatus;
 use Webid\Druid\Models\Contracts\IsMenuable;
 use Webid\Druid\Models\Traits\CanRenderContent;
-use Webid\Druid\Services\ComponentSearchContentExtractor;
 
 /**
  * @property int $id
@@ -118,17 +117,6 @@ class Page extends Model implements IsMenuable
     public function getMenuLabel(): string
     {
         return $this->title;
-    }
-
-    protected static function boot(): void
-    {
-        parent::boot();
-        static::saving(function (Page $model): void {
-            /** @var ComponentSearchContentExtractor $searchableContentExtractor */
-            $searchableContentExtractor = app(ComponentSearchContentExtractor::class);
-
-            $model->searchable_content = $searchableContentExtractor->extractSearchableContentFromBlocks($model->content);
-        });
     }
 
     public function isPublished(): bool

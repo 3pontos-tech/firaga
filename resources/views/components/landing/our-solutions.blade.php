@@ -1,46 +1,66 @@
+@props([
+    'section' => 'Nossas Especialidades',
+    'heading' => 'Soluções Personalizadas',
+    'description' => 'Oferecemos serviços financeiros especializados para atender às suas necessidades específicas e acelerar sua jornada rumo à independência financeira.',
+    'solutions' => collect([
+        [
+            'title' => 'Planejamento',
+            'description' => 'Três pacotes personalizados para organizar, expandir e maximizar suas finanças, garantindo controle e crescimento contínuo.',
+            'icon' => 'fas-bullseye',
+            'redirect_url' => '#',
+        ],
+        [
+            'title' => 'Key Account',
+            'description' => 'Atendimento exclusivo para clientes estratégicos, com planejamento sucessório, investimentos internacionais e parcerias de alto impacto.',
+            'icon' => 'fas-crown',
+            'redirect_url' => '#',
+        ],
+        [
+            'title' => 'Code Capital',
+            'description' => 'Consultoria especializada para profissionais de TI com ganhos em moeda estrangeira, focada em rentabilidade e proteção patrimonial.',
+            'icon' => 'fas-code',
+            'redirect_url' => '#',
+        ],
+        [
+            'title' => 'Educa Fire',
+            'description' => 'Vertente educacional para transformar clientes e capacitar consultores com conhecimento aplicado.',
+            'icon' => 'fas-graduation-cap',
+            'redirect_url' => '#',
+        ],
+        [
+            'title' => 'Parcerias',
+            'description' => 'Conexões estratégicas para gerar resultados mais rápidos e eficazes por meio de alianças coorporativas.',
+            'icon' => 'fas-handshake',
+            'redirect_url' => '#',
+        ],
+    ]),
+])
+
 <section class="mx-auto max-w-7xl py-24">
     <div class="mb-16 px-4 md:px-8" style="opacity: 1; transform: none; will-change: opacity, transform;">
         <div class="flex items-center gap-4 mb-6">
             <div class="h-1 w-12 bg-brand"></div>
-            <span class="text-sm font-semibold uppercase tracking-wider text-brand">Nossas Especialidades</span>
+            <span class="text-sm font-semibold uppercase tracking-wider text-brand">{{ $section }}</span>
         </div>
-        <h2 class="text-3xl font-bold text-heading mb-4 md:text-4xl lg:text-5xl">Soluções <span
-                class="text-brand">Personalizadas</span></h2>
-        <p class="max-w-2xl text-lg text-zinc-400 md:text-xl">Oferecemos serviços financeiros especializados para
-            atender às suas necessidades específicas e acelerar sua jornada rumo à independência financeira.</p></div>
+        <h2 class="text-3xl font-bold text-heading mb-4 md:text-4xl lg:text-5xl">
+            {{ $heading }}
+        </h2>
+        <p class="max-w-2xl text-lg text-zinc-400 md:text-xl">
+            {{ $description }}
+        </p>
+    </div>
     <div class="relative overflow-hidden rounded-2xl bg-gradient-to-br from-surface to-bg shadow-2xl">
 
         <div class="relative">
-            <x-landing.solution-item
-                title="Planejamento"
-                description="Três pacotes personalizados para organizar, expandir e maximizar suas finanças, garantindo controle e crescimento contínuo."
-                icon="fas-bullseye"
-                link="/solutions/planejamento"
-            />
-            <x-landing.solution-item
-                title="Key Account"
-                description="Atendimento exclusivo para clientes estratégicos, com planejamento sucessório, investimentos internacionais e parcerias de alto impacto."
-                icon="fas-crown"
-                link="/solutions/key-account"
-            />
-            <x-landing.solution-item
-                title="Code Capital"
-                description="Consultoria especializada para profissionais de TI com ganhos em moeda estrangeira, focada em rentabilidade e proteção patrimonial."
-                icon="fas-code"
-                link="/solutions/code-capital"
-            />
-            <x-landing.solution-item
-                title="Educa Fire"
-                description="Vertente educacional para transformar clientes e capacitar consultores com conhecimento aplicado."
-                icon="fas-graduation-cap"
-                link="/solutions/educa-fire"
-            />
-            <x-landing.solution-item
-                title="Parcerias"
-                description="Conexões estratégicas para gerar resultados mais rápidos e eficazes por meio de alianças coorporativas."
-                icon="fas-handshake"
-                link="/solutions/parcerias"
-            />
+            @foreach($solutions as $solution)
+                <x-landing.solution-item
+                    :title="$solution['title']"
+                    :description="$solution['description']"
+                    :icon="$solution['icon']"
+                    :link="$solution['redirect_url']"
+                />
+            @endforeach
+
         </div>
         <div
             class="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-brand/50 to-transparent"></div>
@@ -54,17 +74,6 @@
 </section>
 
 <style>
-    .arrow-container {
-        position: relative;
-    }
-
-    .arrow-right {
-        position: absolute;
-        top: 0;
-        left: 0;
-        opacity: 0;
-    }
-
     .group:hover .arrow-up-right {
         opacity: 0;
     }

@@ -17,6 +17,7 @@
         "bezhansalleh/filament-shield": "^3.3",
         "blade-ui-kit/blade-icons": "^1.8",
         "filament/filament": "^3.2",
+        "guava/filament-icon-picker": "^2.0",
         "hasnayeen/themes": "^3.0.24",
         "jeffgreco13/filament-breezy": "^2.6",
         "laravel/framework": "^12.0",

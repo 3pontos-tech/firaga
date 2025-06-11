@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Filament\Components\Heroes;
+namespace App\Filament\Components\Landing;
 
 use Filament\Forms\Components\TextInput;
 use Illuminate\Contracts\View\View;

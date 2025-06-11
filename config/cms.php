@@ -2,23 +2,17 @@
 
 declare(strict_types=1);
 
-use App\Filament\Components\CodeComponent;
-use App\Filament\Components\FaqComponent;
-use App\Filament\Components\Heroes\MainHeroComponent;
+use App\Filament\Components\Landing\IconSolutionsComponent;
+use App\Filament\Components\Landing\MainHeroComponent;
 use App\Filament\Resources\CMS\MenuResource\RelationManagers\ItemsRelationManager;
 use App\Models\CMS\Category;
 use App\Models\CMS\Menu;
 use App\Models\CMS\MenuItem;
 use App\Models\CMS\Page;
 use App\Models\CMS\Post;
-use App\Models\CMS\ReusableComponent as ReusableComponentModel;
 use App\Models\User;
 use Awcodes\Curator\Models\Media;
-use Webid\Druid\Components\HintComponent;
-use Webid\Druid\Components\ImageComponent;
-use Webid\Druid\Components\ReusableComponent;
-use Webid\Druid\Components\TextComponent;
-use Webid\Druid\Components\TextImageComponent;
+use Webid\Druid\Models\ReusableComponent;
 use Webid\Druid\Services\ContentRenderer\BladeRenderer;
 
 return [
@@ -36,7 +30,7 @@ return [
         'category' => Category::class,
         'menu' => Menu::class,
         'menu_item' => MenuItem::class,
-        'reusable_component' => \Webid\Druid\Models\ReusableComponent::class,
+        'reusable_component' => ReusableComponent::class,
     ],
 
     /*
@@ -88,35 +82,16 @@ return [
      |--------------------------------------------------------------------------
      | Components
      |--------------------------------------------------------------------------
+     | Components are reusable blocks that can be used in pages or posts.
+     | You can create your own components by implementing the ComponentInterface.
+     |--------------------------------------------------------------------------
      */
     'components' => [
-        [
-            'class' => TextComponent::class,
-        ],
-        [
-            'class' => ImageComponent::class,
-        ],
-        [
-            'class' => TextImageComponent::class,
-        ],
-        [
-            'class' => HintComponent::class,
-        ],
-        [
-            'class' => MainHeroComponent::class,
-        ],
-        [
-            'class' => CodeComponent::class,
-        ],
-        [
-            'class' => FaqComponent::class,
-        ],
-        [
-            'class' => ReusableComponent::class,
-            'disabled_for' => [
-                ReusableComponentModel::class,
-            ],
-        ],
+        // Landing Components
+        ['class' => MainHeroComponent::class],
+        ['class' => IconSolutionsComponent::class],
+
+        // Blog components
     ],
 
     /*
