@@ -13,7 +13,6 @@ use Illuminate\Support\Collection;
 use Webid\Druid\Enums\PageStatus;
 use Webid\Druid\Models\Contracts\IsMenuable;
 use Webid\Druid\Models\Traits\CanRenderContent;
-use Webid\Druid\Models\Traits\IsTranslatable;
 use Webid\Druid\Services\ComponentSearchContentExtractor;
 
 /**
@@ -24,6 +23,7 @@ use Webid\Druid\Services\ComponentSearchContentExtractor;
  * @property string|null $searchable_content
  * @property PageStatus $status
  * @property string|null $lang
+ * @property bool $is_landing
  * @property int|null $parent_page_id
  * @property int|null $translation_origin_model_id
  * @property bool $disable_indexation
@@ -47,7 +47,6 @@ class Page extends Model implements IsMenuable
 {
     use CanRenderContent;
     use HasFactory;
-    use IsTranslatable;
     use SoftDeletes;
 
     protected $table = 'pages';
@@ -61,6 +60,7 @@ class Page extends Model implements IsMenuable
         'content' => 'array',
         'status' => PageStatus::class,
         'disable_indexation' => 'boolean',
+        'is_landing' => 'boolean',
     ];
 
     public function parent(): BelongsTo

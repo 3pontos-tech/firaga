@@ -10,10 +10,10 @@ class LandingController extends Controller
 
         return view('welcome', [
             'heroData' => [
-                'headline' => $heading,
+                'heading' => $heading,
                 'subheading' => 'A simple, beautiful, and fast landing page.',
-                'buttonText' => 'Get Started',
-                'buttonUrl' => '/blog',
+                'button_text' => 'Get Started',
+                'button_url' => '/blog',
             ],
             'cardData' => [
                 [

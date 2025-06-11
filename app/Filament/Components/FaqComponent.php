@@ -32,7 +32,7 @@ class FaqComponent implements ComponentInterface
     public static function toBlade(array $data): View
     {
         return view('filament.components.faq', [
-            'data' => $data['faq'],
+            'data' => 123,
         ]);
     }
 
