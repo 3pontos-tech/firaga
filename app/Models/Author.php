@@ -14,8 +14,8 @@ class Author extends Model
     use SoftDeletes;
 
     protected $fillable = [
-        'slug',
         'user_id',
+        'slug',
         'name',
         'description',
         'thumbnail_id',

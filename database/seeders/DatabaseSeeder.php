@@ -32,7 +32,6 @@ class DatabaseSeeder extends Seeder
                 '--user' => $user->getKey(),
                 '--panel' => 'admin',
             ]);
-            Artisan::call('druid:demo');
 
             $this->call([
                 PostsSeeder::class,
