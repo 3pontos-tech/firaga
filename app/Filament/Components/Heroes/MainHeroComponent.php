@@ -1,32 +1,35 @@
 <?php
 
-namespace App\Filament\Components;
+namespace App\Filament\Components\Heroes;
 
-use Filament\Forms\Components\MarkdownEditor;
 use Filament\Forms\Components\TextInput;
 use Illuminate\Contracts\View\View;
 use Webid\Druid\Components\ComponentInterface;
 
-class CodeComponent implements ComponentInterface
+class MainHeroComponent implements ComponentInterface
 {
     public static function blockSchema(): array
     {
         return [
-            MarkdownEditor::make('code'),
-            TextInput::make('description'),
+            TextInput::make('heading'),
+            TextInput::make('subheading')
+                ->label(__('Subheading'))
+                ->required(),
+            TextInput::make('button_text'),
+            TextInput::make('button_url')
+                ->url(),
         ];
     }
 
     public static function fieldName(): string
     {
-        return 'code';
+        return 'main_hero';
     }
 
     public static function toBlade(array $data): View
     {
-        return view('filament.components.code', [
-            'code' => $data['code'] ?? '',
-            'description' => $data['description'] ?? '',
+        return view('components.landing.hero', [
+            'heroData' => $data,
         ]);
     }
 

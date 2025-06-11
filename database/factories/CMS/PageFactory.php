@@ -17,6 +17,7 @@ class PageFactory extends Factory
         return [
             'title' => $this->faker->name,
             'slug' => $this->faker->slug,
+            'is_landing' => false,
             'status' => PageStatus::PUBLISHED->value,
             'content' => $this->fakeContent(),
             'published_at' => $this->faker->dateTimeBetween('-1 year', 'now'),

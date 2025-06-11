@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 use App\Filament\Components\CodeComponent;
 use App\Filament\Components\FaqComponent;
+use App\Filament\Components\Heroes\MainHeroComponent;
 use App\Filament\Resources\CMS\MenuResource\RelationManagers\ItemsRelationManager;
 use App\Models\CMS\Category;
 use App\Models\CMS\Menu;
@@ -100,6 +101,9 @@ return [
         ],
         [
             'class' => HintComponent::class,
+        ],
+        [
+            'class' => MainHeroComponent::class,
         ],
         [
             'class' => CodeComponent::class,

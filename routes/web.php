@@ -2,18 +2,31 @@
 
 use App\Http\Controllers\ArticlesController;
 use App\Http\Controllers\LandingController;
+use App\Http\Controllers\MarketingLandingController;
 use App\Http\Controllers\PagesController;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', LandingController::class)->name('landing');
+Route::domain('lp.' . config('app.domain'))->group(function (): void {
 
-Route::prefix('blog')->group(function (): void {
-    Route::get('/', [ArticlesController::class, 'getArticles'])
-        ->name('blog.index');
-    Route::get('/{post:slug}', [ArticlesController::class, 'getArticle'])
-        ->name('blog.show');
+    Route::redirect('/', config('app.url'));
+
+    Route::get('/{page:slug}', MarketingLandingController::class)
+        ->name('landing.lp');
 });
 
-Route::get('/{page:slug}', [PagesController::class, 'getPage'])
-    ->name('page.show')
-    ->where('page', '[a-zA-Z0-9\-]+');
+Route::domain(config('app.domain'))->group(function (): void {
+
+    Route::get('/', LandingController::class)->name('landing');
+
+    Route::prefix('blog')->group(function (): void {
+        Route::get('/', [ArticlesController::class, 'getArticles'])
+            ->name('blog.index');
+        Route::get('/{post:slug}', [ArticlesController::class, 'getArticle'])
+            ->name('blog.show');
+    });
+
+    Route::get('/{page:slug}', [PagesController::class, 'getPage'])
+        ->name('page.show')
+        ->where('page', '[a-zA-Z0-9\-]+');
+
+});
