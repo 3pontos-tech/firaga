@@ -37,7 +37,7 @@ class MenusSeeder extends Seeder
                         ->forExistingPage($page)
                         ->forMenu($menu)
                         ->create(['order' => $order]);
-                    $order++;
+                    ++$order;
                 });
 
             /** @phpstan-ignore-next-line */
@@ -70,7 +70,7 @@ class MenusSeeder extends Seeder
                         ->each(function (Page $page) use ($menu, &$order): void {
                             /** @var Menu $menu */
                             MenuItemFactory::new()->forExistingPage($page)->forMenu($menu)->create(['order' => $order]);
-                            $order++;
+                            ++$order;
                         });
 
                     $appUrl = config('app.url');
