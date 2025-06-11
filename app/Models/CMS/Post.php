@@ -2,7 +2,7 @@
 
 namespace App\Models\CMS;
 
-use App\Models\User;
+use App\Models\Author;
 use Awcodes\Curator\Models\Media;
 use Carbon\Carbon;
 use Illuminate\Auth\Authenticatable;
@@ -125,9 +125,9 @@ class Post extends Model implements IsMenuable
         return $this->belongsTo(Media::class, 'opengraph_picture', 'id');
     }
 
-    public function users(): BelongsToMany
+    public function authors(): BelongsToMany
     {
-        return $this->belongsToMany(User::class, 'post_user', 'post_id', 'user_id');
+        return $this->belongsToMany(Author::class, 'post_author', 'post_id', 'author_id');
     }
 
     public function getMenuLabel(): string

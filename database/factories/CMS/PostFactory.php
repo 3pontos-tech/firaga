@@ -2,10 +2,10 @@
 
 namespace Database\Factories\CMS;
 
+use App\Models\Author;
 use App\Models\CMS\Category;
 use App\Models\CMS\Post;
 use Awcodes\Curator\Models\Media;
-use Illuminate\Contracts\Auth\Authenticatable;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Database\Eloquent\Model;
 use Webid\Druid\Enums\PostStatus;
@@ -95,11 +95,11 @@ class PostFactory extends Factory
         });
     }
 
-    public function forUser(Authenticatable $user): static
+    public function forAuthor(Author $author): static
     {
-        return $this->afterCreating(function (Model $post) use ($user): void {
+        return $this->afterCreating(function (Model $post) use ($author): void {
             /** @var Post $post */
-            $post->users()->attach($user);
+            $post->authors()->attach($author);
             $post->save();
         });
     }

@@ -3,6 +3,9 @@
 namespace Database\Seeders;
 
 use App\Models\User;
+use Database\Seeders\CMS\MenusSeeder;
+use Database\Seeders\CMS\PagesSeeder;
+use Database\Seeders\CMS\PostsSeeder;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Hash;
@@ -30,7 +33,11 @@ class DatabaseSeeder extends Seeder
                 '--panel' => 'admin',
             ]);
 
-            Artisan::call('druid:demo');
+            $this->call([
+                PostsSeeder::class,
+                PagesSeeder::class,
+                MenusSeeder::class,
+            ]);
         }
     }
 }
