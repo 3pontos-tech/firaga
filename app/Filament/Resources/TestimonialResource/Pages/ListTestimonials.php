@@ -2,8 +2,8 @@
 
 namespace App\Filament\Resources\TestimonialResource\Pages;
 
-use Filament\Actions\CreateAction;
 use App\Filament\Resources\TestimonialResource;
+use Filament\Actions\CreateAction;
 use Filament\Resources\Pages\ListRecords;
 
 class ListTestimonials extends ListRecords
