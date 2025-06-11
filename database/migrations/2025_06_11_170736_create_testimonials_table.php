@@ -13,20 +13,12 @@ return new class extends Migration
     {
         Schema::create('testimonials', function (Blueprint $table): void {
             $table->bigIncrements('id');
-            $table->foreignId('user_id')->constrained('users');
+            $table->string('name');
             $table->integer('rating');
             $table->longText('comment');
             $table->timestamp('posted_at');
             $table->string('testimonial_url');
             $table->timestamps();
         });
-    }
-
-    /**
-     * Reverse the migrations.
-     */
-    public function down(): void
-    {
-        Schema::dropIfExists('testimonials');
     }
 };

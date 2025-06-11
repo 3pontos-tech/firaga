@@ -31,9 +31,9 @@ class TestimonialResource extends Resource
             ->schema([
                 Section::make()
                     ->schema([
-                        Select::make('user_id')
-                            ->relationship('user', 'name')
-                            ->required(),
+                        TextInput::make('name')
+                            ->required()
+                            ->maxLength(255),
                         Select::make('rating')
                             ->options([
                                 1 => '1',
@@ -57,8 +57,9 @@ class TestimonialResource extends Resource
     {
         return $table
             ->columns([
-                TextColumn::make('user.name')
-                    ->searchable(),
+                TextColumn::make('name')
+                    ->searchable()
+                    ->sortable(),
                 TextColumn::make('rating')
                     ->searchable()
                     ->sortable(),
