@@ -6,7 +6,7 @@
         <div class="container mx-auto px-4 md:px-8">
             <div class="grid grid-cols-1 lg:grid-cols-[300px_1fr] gap-6 lg:gap-12">
                 <aside class="space-y-8">
-                    <x-blog.aside-authors/>
+                    <x-blog.aside-authors :authors="$authors" />
                     <x-blog.aside-categories/>
                 </aside>
                 <div class="space-y-8 lg:space-y-12">

@@ -15,9 +15,6 @@
             <p class="font-medium text-heading text-sm group-hover:text-fire-500 transition-colors">
                 {{ $name }}
             </p>
-            <p class="text-xs text-body truncate">
-                {{ $role }}
-            </p>
         </div>
         <x-heroicon-c-arrow-right
             class="h-4 w-4 text-zinc-400 group-hover:text-brand group-hover:translate-x-1 transition-all"></x-heroicon-c-arrow-right>

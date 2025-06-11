@@ -1,3 +1,5 @@
+@props(['authors'])
+
 <div class="bg-surface rounded-xl p-6 hidden md:block"
      style="opacity: 1; will-change: opacity, transform; transform: none;">
     <div class="flex gap-3 mb-6">
@@ -5,12 +7,11 @@
         <h3 class="text-lg text-brand font-bold">Nossos Especialistas</h3>
     </div>
     <div class="space-y-4">
-        @foreach(range(1,3) as $author)
+        @foreach($authors as $author)
             <x-blog.aside-author-row
-                name="Daniel Reis"
-                role="Developer"
-                avatarUrl="https://github.com/danielhe4rt.png"
-                slug="danielhe4rt"
+                name="{{$author['name']}}"
+                avatarUrl="{{ $author['thumbnail']['url'] }}"
+                slug="{{ $author['slug'] }}"
             />
         @endforeach
     </div>
