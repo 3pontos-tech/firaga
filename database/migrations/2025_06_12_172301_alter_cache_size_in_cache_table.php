@@ -15,14 +15,4 @@ return new class extends Migration
             $table->longText('value')->change();
         });
     }
-
-    /**
-     * Reverse the migrations.
-     */
-    public function down(): void
-    {
-        Schema::table('cache', function (Blueprint $table): void {
-            //
-        });
-    }
 };
