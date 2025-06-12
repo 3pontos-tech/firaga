@@ -6,6 +6,7 @@ use App\Filament\Components\CodeComponent;
 use App\Filament\Components\FaqComponent;
 use App\Filament\Components\Landing\IconSolutionsComponent;
 use App\Filament\Components\Landing\MainHeroComponent;
+use App\Filament\Components\Landing\PlansComponent;
 use Illuminate\Contracts\View\View;
 use Illuminate\View\ViewException;
 use Webid\Druid\Components\ComponentInterface;
@@ -34,6 +35,7 @@ class TemplateRenderer
             'code' => app(CodeComponent::class),
             'main_hero' => app(MainHeroComponent::class),
             'icon_solutions' => app(IconSolutionsComponent::class),
+            'plans' => app(PlansComponent::class),
             default => throw new ViewException(__('Unsupported component type: :type', ['type' => $type])),
         };
 
