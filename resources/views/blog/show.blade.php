@@ -8,7 +8,7 @@
         <meta property="og:type" content="website">
         <meta property="og:url" content="{{ $post?->url() ?? '' }}">
         <meta property="og:description" content="{{ $post?->opengraph_description }}">
-        <meta property="og:image" content="{{ $post?->opengraph_picture?->url }}"/>
+        <meta property="og:image" content="{{ $post?->openGraphPicture?->url ?? 'https://github.com/danielhe4rt.png' }}"/>
         <meta property="og:image:alt" content="{{ $post?->opengraph_picture_alt }}"/>
     </x-slot:metatags>
     <div class="min-h-screen bg-bg pt-10">
