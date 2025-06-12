@@ -30,7 +30,8 @@
             <h1 class="text-3xl text-heading font-bold mb-6 md:text-4xl lg:text-5xl">
                 {{ $post->title }}
             </h1>
-            <div class="flex flex-wrap justify-between  items-center gap-6 text-body mb-8 pb-8 border-b border-zinc-800">
+            <div
+                class="flex flex-wrap justify-between  items-center gap-6 text-body mb-8 pb-8 border-b border-zinc-800">
                 <div class="flex gap-6">
                     <div class="flex items-center gap-2">
                         <x-heroicon-c-calendar class="h-4 w-4"/>
@@ -56,6 +57,27 @@
                     {!! $builder->render($componentPayload['type'], $componentPayload['data']) !!}
                 @endforeach
             </article>
+            <section class="mt-12 p-6 bg-surface rounded-xl flex items-center gap-6">
+                <img
+                    alt="{{ $post->authors[0]->name ?? '' }}"
+                    loading="lazy"
+                    decoding="async"
+                    class="rounded-full w-16 h-16 border-2 border-brand"
+                    src="{{ $post->authors[0]->thumbnail->url }}"
+                >
+                <div class="flex flex-col">
+                    <h2 class="text-lg font-bold text-heading ">Autor</h2>
+                    <div class="flex flex-col">
+                        <p class="text-body font-semibold">
+                            {{ $post->authors[0]->name }}
+                        </p>
+                        <p class="text-muted">
+                            Consultor Financeiro
+                        </p>
+                    </div>
+                    <p class="text-sm text-zinc-400 mt-1">{{ $post->authors[0]->description }}</p>
+                </div>
+            </section>
         </div>
     </div>
 </article>
