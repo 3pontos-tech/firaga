@@ -2,6 +2,8 @@
 
 namespace App\Filament\Components\Landing;
 
+use Filament\Forms\Components\Repeater;
+use Filament\Forms\Components\Select;
 use Filament\Forms\Components\TextInput;
 use Illuminate\Contracts\View\View;
 use Webid\Druid\Components\ComponentInterface;
@@ -18,6 +20,38 @@ class PlansComponent implements ComponentInterface
             TextInput::make('subheading')
                 ->label(__('Subheading'))
                 ->required(),
+            Repeater::make('plansData')
+                ->label(__('Plans'))
+                ->schema([
+                    Select::make('name')
+                        ->label(__('Plan Type'))
+                        ->options([
+                            'Gold' => 'Gold',
+                            'Platinum' => 'Platinum',
+                            'Black' => 'Black',
+                            'Default' => 'Default',
+                        ])
+                        ->required(),
+                    TextInput::make('description')
+                        ->label(__('Description'))
+                        ->required(),
+                    TextInput::make('note')
+                        ->label(__('Note'))
+                        ->nullable(),
+                    Repeater::make('items')
+                        ->label(__('Features'))
+                        ->schema([
+                            TextInput::make('item')
+                                ->label(__('Feature'))
+                                ->required(),
+                        ]),
+                    TextInput::make('button.text')
+                        ->label(__('Button Text'))
+                        ->required(),
+                ])
+                ->defaultItems(3)
+                ->reorderableWithButtons()
+                ->required(),
         ];
     }
 
@@ -28,9 +62,18 @@ class PlansComponent implements ComponentInterface
 
     public static function toBlade(array $data): View
     {
+        if (isset($data['plansData'])) {
+            foreach ($data['plansData'] as &$plan) {
+                if (isset($plan['items'])) {
+                    $plan['items'] = collect($plan['items'])->pluck('item')->toArray();
+                }
+            }
+        }
+
         return view('components.landing.plans', [
             'heading' => $data['heading'],
             'subheading' => $data['subheading'],
+            'plansData' => collect($data['plansData'] ?? []),
         ]);
     }
 
