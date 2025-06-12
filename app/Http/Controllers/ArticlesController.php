@@ -32,7 +32,7 @@ class ArticlesController extends Controller
 
         if ($relatedPosts->empty()) {
             $relatedPosts = Post::query()
-                ->whereHas('categories', function ($query) use ($post) {
+                ->whereHas('categories', function ($query) use ($post): void {
                     $query->whereIn('id', $post->categories->pluck('id'));
                 })
                 ->inRandomOrder()

@@ -29,7 +29,7 @@ class PostFactory extends Factory
                 [
                     'type' => CustomComponent::BlogMarkdownText->value,
                     'data' => [
-                        'content' => '# Some title'
+                        'content' => '# Some title',
                     ],
                 ],
             ],

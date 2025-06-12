@@ -5,8 +5,6 @@ namespace App\View;
 use App\Enums\CustomComponent;
 use App\Filament\Components\Blog\MarkdownTextComponent;
 use App\Filament\Components\Blog\RichTextComponent;
-use App\Filament\Components\CodeComponent;
-use App\Filament\Components\FaqComponent;
 use App\Filament\Components\Landing\IconSolutionsComponent;
 use App\Filament\Components\Landing\MainHeroComponent;
 use Illuminate\Contracts\View\View;
