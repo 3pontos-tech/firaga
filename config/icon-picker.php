@@ -79,7 +79,7 @@ return [
     |
     */
     'cache' => [
-        'enabled' => true,
+        'enabled' => false,
         'duration' => '7 days',
     ],
 
