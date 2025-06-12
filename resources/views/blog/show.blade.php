@@ -11,7 +11,7 @@
         <meta property="og:image" content="{{ $post?->opengraph_picture?->url }}"/>
         <meta property="og:image:alt" content="{{ $post?->opengraph_picture_alt }}"/>
     </x-slot:metatags>
-    <div class="min-h-screen bg-bg pt-20">
+    <div class="min-h-screen bg-bg pt-10">
         <x-blog.article :post="$post"/>
         <x-blog.related-articles :related-posts="$relatedPosts"/>
     </div>

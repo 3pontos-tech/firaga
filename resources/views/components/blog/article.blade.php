@@ -20,7 +20,7 @@
                     class="object-cover"
                     src="{{ $post->thumbnail->url }}">
             </div>
-            <div class="mb-6">
+            <div class="flex gap-2 mb-2">
                 @foreach($post->categories as $category)
                     <span class="bg-brand text-body px-4 py-2 rounded-full text-sm font-semibold">
                         {{ $category->name ?? 'Code' }}
@@ -30,23 +30,26 @@
             <h1 class="text-3xl text-heading font-bold mb-6 md:text-4xl lg:text-5xl">
                 {{ $post->title }}
             </h1>
-            <div class="flex flex-wrap  items-center gap-6 text-body mb-8 pb-8 border-b border-zinc-800">
-                <div class="flex items-center gap-2">
-                    <x-heroicon-c-calendar class="h-4 w-4"/>
-                    {{ $post->published_at->format('d/m/Y') }}
+            <div class="flex flex-wrap justify-between  items-center gap-6 text-body mb-8 pb-8 border-b border-zinc-800">
+                <div class="flex gap-6">
+                    <div class="flex items-center gap-2">
+                        <x-heroicon-c-calendar class="h-4 w-4"/>
+                        {{ $post->published_at->format('d/m/Y') }}
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <x-heroicon-c-clock class="h-3 w-3"/>
+                        {{ $post->read_time_in_minutes }} minutos de leitura
+                    </div>
                 </div>
-                <div class="flex items-center gap-2">
-                    <x-heroicon-c-clock class="h-3 w-3"/>
-                    {{ $post->read_time_in_minutes }} minutos de leitura
+                <div class="flex items-center gap-2 mr-4">
+                    <div class="flex items-center">
+                        <img alt="{{ $post->authors[0]->name ?? '' }}" loading="lazy"
+                             decoding="async" data-nimg="1"
+                             class="rounded-full w-8 h-8"
+                             src="{{ $post->authors[0]->thumbnail->url }}">
+                    </div>
+                    <span class="">Por {{ $post->authors[0]->name }}</span>
                 </div>
-                <div>
-                    Por {{ $post->author->name ?? 'Autor Desconhecido' }}
-                </div>
-                <button
-                    class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 border border-input bg-background hover:bg-accent hover:text-accent-foreground h-9 rounded-md px-3 ml-auto">
-                    <x-heroicon-m-share class="w-4 h-4"/>
-                    Compartilhar
-                </button>
             </div>
             <article class="prose lg:prose-xl max-w-none dark:prose-invert">
                 @foreach($post->content as $componentPayload)

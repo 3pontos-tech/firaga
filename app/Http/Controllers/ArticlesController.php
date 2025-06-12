@@ -35,6 +35,7 @@ class ArticlesController extends Controller
                 ->whereHas('categories', function ($query) use ($post): void {
                     $query->whereIn('id', $post->categories->pluck('id'));
                 })
+                ->where('id', '!=', $post->id)
                 ->inRandomOrder()
                 ->with('categories')
                 ->limit(3)

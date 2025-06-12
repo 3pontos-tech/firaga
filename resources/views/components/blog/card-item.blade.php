@@ -5,7 +5,7 @@
 <div>
     <a href="{{ route('blog.show', ['post' => $post->slug]) }}">
         <article
-            class="group bg-surface rounded-xl overflow-hidden hover:bg-deep transition-all duration-300">
+            class="group bg-surface rounded-xl overflow-hidden hover:bg-bg transition-all duration-300 lg:min-h-[420px] flex flex-col justify-between">
             <div class="relative h-48 overflow-hidden">
                 <img
                     alt="Investimentos Estratégicos para Profissionais de TI" loading="lazy"
@@ -39,14 +39,21 @@
                 <p class="text-body text-sm mb-4 line-clamp-3">
                     {{ $post->excerpt }}
                 </p>
+            </div>
+            <div class="p-6 ">
                 <div class="flex items-center justify-between">
-                    <div class="flex items-center mr-2">
-                        <img alt="{{ $post->authors[0]->name ?? '' }}" loading="lazy"
-                             decoding="async" data-nimg="1"
-                             class="rounded-full w-8 h-8"
-                             src="{{ $post->authors[0]->thumbnail->url }}">
+                    <div class="flex items-center gap-2 mr-4">
+                        <div class="flex items-center">
+                            <img alt="{{ $post->authors[0]->name ?? '' }}" loading="lazy"
+                                 decoding="async" data-nimg="1"
+                                 class="rounded-full w-8 h-8"
+                                 src="{{ $post->authors[0]->thumbnail->url }}">
+                        </div>
+                        <div class="flex flex-col">
+                            <span class="text-xs text-body">{{ $post->authors[0]->name }}</span>
+                            <span class="text-xs text-muted">Consultor Financeiro</span>
+                        </div>
                     </div>
-                    <span class="text-xs text-zinc-500">{{ $post->authors[0]->name }}</span>
                     <x-heroicon-c-arrow-right
                         class="h-5 w-5 text-brand group-hover:translate-x-1 transition-transform"/>
                 </div>

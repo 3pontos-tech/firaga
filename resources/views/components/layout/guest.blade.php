@@ -25,9 +25,9 @@
      @php
     $menus = \App\Models\CMS\Menu::all()->keyBy('slug');
     @endphp
-    <x-navbar :menu="$menus['main-menu']">
+    <x-navbar :menu="$menus['main-menu']" />
 
-    </x-navbar>
+
     <main>
         {{ $slot }}
     </main>

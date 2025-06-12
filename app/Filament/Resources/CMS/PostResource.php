@@ -63,13 +63,15 @@ class PostResource extends Resource
                 )
                 ->required(),
             'excerpt' => Textarea::make('excerpt')
+                ->required()
                 ->label(__('Excerpt')),
-            $filamentComponentService->getFlexibleContentFieldsForModel(\Webid\Druid\Models\Post::class),
+            $filamentComponentService->getFlexibleContentFieldsForModel(Post::class),
         ];
 
         $parametersTab = [
             'thumbnail_id' => CuratorPicker::make('thumbnail_id')
                 ->label(__('Image'))
+                ->required()
                 ->preserveFilenames()
                 ->columnSpanFull(),
             'thumbnail_alt' => TextInput::make('thumbnail_alt')
@@ -103,6 +105,7 @@ class PostResource extends Resource
                 ->preload(),
             'authors' => Select::make('author')
                 ->multiple()
+                ->required()
                 ->preload()
                 ->relationship('authors', 'name'),
         ];
@@ -127,7 +130,7 @@ class PostResource extends Resource
                 ->label(__('Title'))
                 ->color('primary')
                 ->url(
-                    url: fn (Post $record) => url($record->loadMissing('categories')->fullUrlPath()),
+                    url: fn (Post $record) => route('blog.show', ['post' => $record->slug]),
                     shouldOpenInNewTab: true
                 )
                 ->searchable(),

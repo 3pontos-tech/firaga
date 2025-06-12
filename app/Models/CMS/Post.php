@@ -151,7 +151,10 @@ class Post extends Model implements IsMenuable
 
     public function getReadTimeInMinutesAttribute(): int
     {
-        $wordCount = str_word_count(strip_tags($this->searchable_content));
+        $wordCount = collect($this->content)->reduce(function ($carry, array $item): int|array {
+            return $carry + str_word_count(strip_tags($item['data']['content'] ?? ''));
+        }, 0);
+
         $averageReadingSpeed = 200; // Average reading speed in words per minute
 
         return (int) ceil($wordCount / $averageReadingSpeed);
