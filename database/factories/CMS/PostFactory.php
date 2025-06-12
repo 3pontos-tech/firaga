@@ -2,6 +2,7 @@
 
 namespace Database\Factories\CMS;
 
+use App\Enums\CustomComponent;
 use App\Models\Author;
 use App\Models\CMS\Category;
 use App\Models\CMS\Post;
@@ -26,16 +27,9 @@ class PostFactory extends Factory
             'excerpt' => fake()->text,
             'content' => [
                 [
-                    'type' => 'textImage',
+                    'type' => CustomComponent::BlogMarkdownText->value,
                     'data' => [
-                        'content' => '<p>' . $this->faker->text(900) . '</p>',
-                        'image' => Media::factory()->create()->getKey(),
-                    ],
-                ],
-                [
-                    'type' => 'text',
-                    'data' => [
-                        'content' => '<h2>' . $this->faker->text(30) . '</h2><p>' . $this->faker->text(900) . '</p>',
+                        'content' => '# Some title'
                     ],
                 ],
             ],

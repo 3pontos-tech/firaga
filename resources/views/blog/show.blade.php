@@ -13,7 +13,8 @@
         <meta property="og:image:alt" content="{{ $post?->opengraph_picture_alt }}"/>
     </x-slot:metatags>
     <div class="min-h-screen bg-bg pt-20">
-        <x-blog.article/>
+
+        <x-blog.article :post="$post"/>
         <section class="py-24 bg-deep">
             <div class="container mx-auto px-4 md:px-8">
                 <div class="max-w-6xl mx-auto" style="opacity: 1; will-change: opacity, transform; transform: none;">

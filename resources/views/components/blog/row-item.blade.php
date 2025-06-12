@@ -1,28 +1,21 @@
 @props([
-    'title' => 'Investimentos Estratégicos para Profissionais de TI',
-    'subtitle' => 'Como profissionais de tecnologia podem otimizar seus investimentos e aproveitar as oportunidades do mercado digital.',
-    'author' => 'Carlos Silva',
-    'role' => 'Especialista em Planejamento Financeiro',
-    'authorAvatar' => 'https://github.com/danielhe4rt.png',
-    'readTimeInMinutes' => 6,
-    'publishedAt' => now()->subDays(3),
-    'url' => 'investimentos-para-profissionais-de-ti',
+    'post' => null,
 ])
 
 <div>
     <a
-        href="{{ $url }}">
+        href="{{ route('blog.show', ['post' => $post->slug]) }}">
         <article
             class="group bg-gradient-to-br from-bg to-surface hover:from-surface hover:to-bg transition-all duration-500 rounded-xl overflow-hidden"
         >
             <div class="grid md:grid-cols-[200px_1fr_auto] gap-6 p-6">
                 <div class="relative h-48 overflow-hidden rounded-lg">
                     <img
-                        alt="Investimentos Estratégicos para Profissionais de TI"
+                        alt="{{ $post->title }}"
                         loading="lazy" decoding="async" data-nimg="fill"
                         class="object-cover transition-transform duration-300 group-hover:scale-105"
                         style="position: absolute; height: 100%; width: 100%; inset: 0; color: transparent;"
-                        src="{{ $authorAvatar }}">
+                        src="{{ $post->thumbnail->url }}">
                     <div class="absolute top-2 left-2">
                         <span class="bg-brand text-black px-2 py-1 rounded text-xs font-semibold">Code Capital</span>
                     </div>
@@ -31,27 +24,27 @@
                     <div class="flex items-center gap-4 text-xs text-body mb-2">
                         <div class="flex items-center gap-1">
                             <x-heroicon-c-calendar class="h-3 w-3"/>
-                            {{ $publishedAt->format('d/m/Y') }}
+                            {{ $post->published_at->format('d/m/Y') }}
                         </div>
                         <div class="flex items-center gap-1">
                             <x-heroicon-c-clock class="h-3 w-3"/>
-                            {{ $readTimeInMinutes }}
+                            {{ $post->read_time_in_minutes }}
                         </div>
                     </div>
                     <h3 class="text-lg text-heading font-bold mb-2 group-hover:text-brand transition-colors line-clamp-2">
-                        {{ $title }}
+                        {{ $post->title }}
                     </h3>
                     <p class="text-body text-sm mb-3 line-clamp-2">
-                        {{ $subtitle }}
+                        {{ $post->excerpt }}
                     </p>
                     <div class="flex items-center gap-2">
-                        <img alt="{{ $author }}" loading="lazy"
+                        <img alt="{{ $post->authors[0]->name ?? '' }}" loading="lazy"
                              width="24" height="24"
                              decoding="async" data-nimg="1"
                              class="rounded-full"
                              style="color: transparent;"
-                             src="{{ $authorAvatar }}">
-                        <span class="text-xs text-body">{{ $author }}</span>
+                             src="{{ $post->authors[0]->thumbnail->url }}">
+                        <span class="text-xs text-body">{{ $post->authors[0]->name }}</span>
                     </div>
                 </div>
                 <div class="flex items-center">

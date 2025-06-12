@@ -19,13 +19,7 @@
                         <h2 class="text-xl text-heading font-bold mb-8">Últimos Artigos</h2>
                         <div class="space-y-6">
                             @foreach($posts as $post)
-                                <x-blog.row-item
-                                    :title="$post->title"
-                                    :subtitle="$post->excerpt"
-                                    author="Carlos Silva"
-                                    role="Especialista em Planejamento Financeiro"
-                                    :url="route('blog.show', ['post' => $post->slug])"
-                                />
+                                <x-blog.row-item :post="$post"/>
                             @endforeach
                         </div>
                         {{ $posts->links('pagination::tailwind') }}

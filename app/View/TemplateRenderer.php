@@ -2,6 +2,8 @@
 
 namespace App\View;
 
+use App\Enums\CustomComponent;
+use App\Filament\Components\Blog\TextComponent;
 use App\Filament\Components\CodeComponent;
 use App\Filament\Components\FaqComponent;
 use App\Filament\Components\Landing\IconSolutionsComponent;
@@ -9,7 +11,6 @@ use App\Filament\Components\Landing\MainHeroComponent;
 use Illuminate\Contracts\View\View;
 use Illuminate\View\ViewException;
 use Webid\Druid\Components\ComponentInterface;
-use Webid\Druid\Components\TextComponent;
 
 class TemplateRenderer
 {
@@ -29,7 +30,7 @@ class TemplateRenderer
     private function resolveComponent(string $type): ComponentInterface
     {
         return match ($type) {
-            'text' => app(TextComponent::class),
+            CustomComponent::BlogMarkdownText->value => app(TextComponent::class),
             'faq' => app(FaqComponent::class),
             'code' => app(CodeComponent::class),
             'main_hero' => app(MainHeroComponent::class),

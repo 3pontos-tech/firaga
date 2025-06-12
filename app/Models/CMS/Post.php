@@ -87,6 +87,10 @@ class Post extends Model implements IsMenuable
         'disable_indexation' => 'boolean',
     ];
 
+    protected $appends = [
+        'read_time_in_minutes',
+    ];
+
     public function fullUrlPath(): string
     {
         $path = '';
@@ -143,5 +147,13 @@ class Post extends Model implements IsMenuable
     public function relatedPosts(): BelongsToMany
     {
         return $this->belongsToMany(Post::class, 'related_posts', 'post_id', 'related_post_id');
+    }
+
+    public function getReadTimeInMinutesAttribute(): int
+    {
+        $wordCount = str_word_count(strip_tags($this->searchable_content));
+        $averageReadingSpeed = 200; // Average reading speed in words per minute
+
+        return (int) ceil($wordCount / $averageReadingSpeed);
     }
 }
