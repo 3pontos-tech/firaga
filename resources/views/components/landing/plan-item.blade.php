@@ -58,7 +58,7 @@
         @endforeach
     </ul>
 
-    <a href="#" class="w-full {{ $styles['button'] }} transition-colors duration-200 text-white py-3 px-4 rounded-lg font-bold text-center text-lg shadow-md">
+    <a href="{{ $plan['button']['url'] ?? '#' }}" class="w-full {{ $styles['button'] }} transition-colors duration-200 text-white py-3 px-4 rounded-lg font-bold text-center text-lg shadow-md">
         {{ $plan['button']['text'] }}
     </a>
 </div>

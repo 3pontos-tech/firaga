@@ -29,7 +29,6 @@ class PlansComponent implements ComponentInterface
                             'Gold' => 'Gold',
                             'Platinum' => 'Platinum',
                             'Black' => 'Black',
-                            'Default' => 'Default',
                         ])
                         ->required(),
                     TextInput::make('description')
@@ -48,8 +47,10 @@ class PlansComponent implements ComponentInterface
                     TextInput::make('button.text')
                         ->label(__('Button Text'))
                         ->required(),
+                    TextInput::make('button.url')
+                        ->label(__('Button URL'))
+                        ->required(),
                 ])
-                ->defaultItems(3)
                 ->reorderableWithButtons()
                 ->required(),
         ];
