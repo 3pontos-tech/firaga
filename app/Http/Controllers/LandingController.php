@@ -2,11 +2,14 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Testimonial;
+
 class LandingController extends Controller
 {
     public function __invoke()
     {
         $heading = 'Viva melhor com educação financeira';
+        $testimonials = Testimonial::query()->inRandomOrder()->limit(4)->get();
 
         return view('welcome', [
             'heroData' => [
@@ -98,6 +101,8 @@ class LandingController extends Controller
                     ],
                 ],
             ],
-        ]);
+            'testimonialData' => $testimonials,
+        ],
+        );
     }
 }

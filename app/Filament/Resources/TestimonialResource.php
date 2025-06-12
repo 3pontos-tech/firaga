@@ -6,6 +6,7 @@ use App\Filament\Resources\TestimonialResource\Pages\CreateTestimonial;
 use App\Filament\Resources\TestimonialResource\Pages\EditTestimonial;
 use App\Filament\Resources\TestimonialResource\Pages\ListTestimonials;
 use App\Models\Testimonial;
+use Awcodes\Curator\Components\Forms\CuratorPicker;
 use Filament\Forms\Components\DateTimePicker;
 use Filament\Forms\Components\Section;
 use Filament\Forms\Components\Select;
@@ -34,6 +35,9 @@ class TestimonialResource extends Resource
                         TextInput::make('name')
                             ->required()
                             ->maxLength(255),
+                        TextInput::make('role')
+                            ->required()
+                            ->maxLength(255),
                         Select::make('rating')
                             ->options([
                                 1 => '1',
@@ -46,9 +50,10 @@ class TestimonialResource extends Resource
                             ->required(),
                         DateTimePicker::make('posted_at')
                             ->required(),
-                        TextInput::make('testimonial_url')
-                            ->required()
-                            ->url(),
+                        CuratorPicker::make('thumbnail_id')
+                            ->label(__('Image'))
+                            ->preserveFilenames()
+                            ->columnSpanFull(),
                     ]),
             ]);
     }
@@ -64,8 +69,6 @@ class TestimonialResource extends Resource
                     ->searchable()
                     ->sortable(),
                 TextColumn::make('comment')
-                    ->searchable(),
-                TextColumn::make('testimonial_url')
                     ->searchable(),
                 TextColumn::make('posted_at')
                     ->searchable()

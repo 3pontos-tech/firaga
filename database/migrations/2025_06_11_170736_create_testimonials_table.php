@@ -14,10 +14,11 @@ return new class extends Migration
         Schema::create('testimonials', function (Blueprint $table): void {
             $table->bigIncrements('id');
             $table->string('name');
+            $table->string('role');
             $table->integer('rating');
             $table->longText('comment');
             $table->timestamp('posted_at');
-            $table->string('testimonial_url');
+            $table->foreignId('thumbnail_id')->constrained('media');
             $table->timestamps();
         });
     }
