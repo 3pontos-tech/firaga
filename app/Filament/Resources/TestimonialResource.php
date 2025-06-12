@@ -25,6 +25,13 @@ class TestimonialResource extends Resource
 
     protected static ?string $navigationIcon = 'heroicon-o-chat-bubble-left-ellipsis';
 
+    protected static ?string $label = null;
+
+    public static function getLabel(): ?string
+    {
+        return __('filament.testimonial');
+    }
+
     public static function form(Form $form): Form
     {
         return $form

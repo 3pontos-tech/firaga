@@ -34,11 +34,23 @@ class PageResource extends Resource
 {
     protected static ?string $model = Page::class;
 
-    protected static ?string $modelLabel = 'Page';
+    //protected static ?string $modelLabel = 'Page';
 
     protected static ?string $navigationIcon = 'heroicon-o-document-text';
 
-    protected static ?string $navigationGroup = 'Pages';
+    protected static ?string $navigationGroup = null;//'Pages';
+
+    protected static ?string $label = null;
+
+    public static function getLabel(): ?string
+    {
+        return __('filament.page');
+    }
+
+    public static function getNavigationGroup(): ?string
+    {
+        return __('filament.pages');
+    }
 
     public static function form(Form $form): Form
     {

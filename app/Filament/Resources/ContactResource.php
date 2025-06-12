@@ -27,38 +27,52 @@ class ContactResource extends Resource
 
     protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
 
+    protected static ?string $label = null;
+
+    public static function getLabel(): ?string
+    {
+        return __('filament.contact');
+    }
+
     public static function form(Form $form): Form
     {
         return $form
             ->schema([
                 TextInput::make('name')
+                    ->label(__('filament.name'))
                     ->required(),
 
                 TextInput::make('email')
+                    ->label(__('filament.email'))
                     ->required(),
 
                 TextInput::make('phone_number')
+                    ->label(__('filament.phoneNumber'))
                     ->required(),
 
                 TextInput::make('ip_address')
+                    ->label(__('filament.ipAddress'))
                     ->required(),
 
                 TextInput::make('message')
+                    ->label(__('filament.message'))
                     ->required(),
 
                 Select::make('message_intent')
+                    ->label(__('filament.messageIntent'))
                     ->options(MessageIntent::class)
                     ->required(),
 
                 TextInput::make('contact_prereference')
+                    ->label(__('filament.contactPreference'))
                     ->required(),
 
                 Placeholder::make('created_at')
-                    ->label('Created Date')
+                    ->label(__('filament.createdDate'))
                     ->content(fn (?Contact $record): string => $record?->created_at?->diffForHumans() ?? '-'),
 
                 Placeholder::make('updated_at')
-                    ->label('Last Modified Date')
+                    ->label(__('filament.lastModified'))
                     ->content(fn (?Contact $record): string => $record?->updated_at?->diffForHumans() ?? '-'),
             ]);
     }

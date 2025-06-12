@@ -39,7 +39,7 @@ class PostResource extends Resource
 {
     protected static ?string $model = Post::class;
 
-    protected static ?string $modelLabel = 'Post';
+    //protected static ?string $modelLabel = 'Post';
 
     protected static ?string $navigationIcon = 'heroicon-o-newspaper';
 
@@ -48,6 +48,13 @@ class PostResource extends Resource
     protected static ?string $navigationGroup = 'Blog';
 
     protected static ?int $navigationSort = 0;
+
+    protected static ?string $label = null;
+
+    public static function getLabel(): ?string
+    {
+        return __('filament.blog_posts');
+    }
 
     public static function form(Form $form): Form
     {

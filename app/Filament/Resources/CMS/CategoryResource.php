@@ -36,6 +36,13 @@ class CategoryResource extends Resource
 
     protected static ?int $navigationSort = 1;
 
+    protected static ?string $label = null;
+
+    public static function getLabel(): ?string
+    {
+        return __('filament.category');
+    }
+
     public static function form(Form $form): Form
     {
         /** @var CategoryRepository $categoryRepository */
