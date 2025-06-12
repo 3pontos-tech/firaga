@@ -2,14 +2,14 @@
 
 namespace App\View;
 
-use App\Filament\Components\CodeComponent;
-use App\Filament\Components\FaqComponent;
+use App\Enums\CustomComponent;
+use App\Filament\Components\Blog\MarkdownTextComponent;
+use App\Filament\Components\Blog\RichTextComponent;
 use App\Filament\Components\Landing\IconSolutionsComponent;
 use App\Filament\Components\Landing\MainHeroComponent;
 use Illuminate\Contracts\View\View;
 use Illuminate\View\ViewException;
 use Webid\Druid\Components\ComponentInterface;
-use Webid\Druid\Components\TextComponent;
 
 class TemplateRenderer
 {
@@ -29,9 +29,8 @@ class TemplateRenderer
     private function resolveComponent(string $type): ComponentInterface
     {
         return match ($type) {
-            'text' => app(TextComponent::class),
-            'faq' => app(FaqComponent::class),
-            'code' => app(CodeComponent::class),
+            CustomComponent::BlogMarkdownText->value => app(MarkdownTextComponent::class),
+            CustomComponent::BlogRichText->value => app(RichTextComponent::class),
             'main_hero' => app(MainHeroComponent::class),
             'icon_solutions' => app(IconSolutionsComponent::class),
             default => throw new ViewException(__('Unsupported component type: :type', ['type' => $type])),

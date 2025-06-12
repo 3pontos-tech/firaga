@@ -2,6 +2,8 @@
 
 declare(strict_types=1);
 
+use App\Filament\Components\Blog\MarkdownTextComponent;
+use App\Filament\Components\Blog\RichTextComponent;
 use App\Filament\Components\Landing\IconSolutionsComponent;
 use App\Filament\Components\Landing\MainHeroComponent;
 use App\Filament\Resources\CMS\MenuResource\RelationManagers\ItemsRelationManager;
@@ -92,6 +94,8 @@ return [
         ['class' => IconSolutionsComponent::class],
 
         // Blog components
+        ['class' => MarkdownTextComponent::class],
+        ['class' => RichTextComponent::class],
     ],
 
     /*
