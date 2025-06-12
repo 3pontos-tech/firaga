@@ -30,7 +30,7 @@ class ArticlesController extends Controller
         $post = $post->load('categories', 'relatedPosts');
         $relatedPosts = $post->relatedPosts;
 
-        if ($relatedPosts->empty()) {
+        if ($relatedPosts->isEmpty()) {
             $relatedPosts = Post::query()
                 ->whereHas('categories', function ($query) use ($post): void {
                     $query->whereIn('id', $post->categories->pluck('id'));
