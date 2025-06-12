@@ -7,8 +7,10 @@
         activeSlide: 0,
         totalSlides: {{ count($testimonials) }},
         autoplayInterval: null,
+        slidesPerView: 1,
 
         init() {
+            this.updateSlidesPerView();
             this.startAutoplay();
 
             // Pause autoplay on hover
@@ -27,6 +29,15 @@
                 touchEndX = e.changedTouches[0].screenX;
                 this.handleSwipe(touchStartX, touchEndX);
             }, { passive: true });
+
+            // Update slides per view on window resize
+            window.addEventListener('resize', () => {
+                this.updateSlidesPerView();
+            });
+        },
+
+        updateSlidesPerView() {
+            this.slidesPerView = window.innerWidth >= 768 ? 2 : 1;
         },
 
         startAutoplay() {
@@ -65,24 +76,46 @@
     class="relative"
 >
     <!-- Testimonials Container -->
-    <div class="relative overflow-hidden">
+    <div class="overflow-hidden">
         <div
-            class="flex transition-transform duration-700 ease-out"
-            :style="{ transform: `translateX(-${activeSlide * 100}%)` }"
+            class="flex -ml-4 transition-transform duration-700 ease-out"
+            :style="{ transform: `translate3d(-${activeSlide * 100 / slidesPerView}%, 0px, 0px)` }"
         >
             @foreach ($testimonials as $index => $testimonial)
-                <div class="w-full flex-shrink-0 px-4 md:px-0">
-                    <div
-                        class="flex justify-center items-center transition-all duration-700"
-                        :class="{ 'opacity-100 scale-100': activeSlide === {{ $index }}, 'opacity-0 scale-95': activeSlide !== {{ $index }} }"
-                    >
-                        <x-landing.testimonial-item
-                            :quote="$testimonial['quote']"
-                            :author="$testimonial['author']"
-                            :role="$testimonial['role']"
-                            :image="$testimonial['image']"
-                            :highlighted="true"
-                        />
+                <div
+                    aria-roledescription="slide"
+                    role="group"
+                    class="min-w-0 shrink-0 grow-0 pl-4 basis-full md:basis-1/2"
+                    :style="{ transform: 'translate3d(0px, 0px, 0px)' }"
+                >
+                    <div class="rounded-lg border border-brand-hover bg-surface text-body shadow-sm h-full" data-v0-t="card">
+                        <div class="p-8 flex flex-col h-full relative">
+                            <!-- Star Rating -->
+                            <div class="absolute top-6 right-6">
+                                <div class="flex gap-1">
+                                    @for ($i = 0; $i < 5; $i++)
+                                        <x-heroicon-c-star class="lucide lucide-star w-4 h-4 fill-brand text-brand" />
+                                    @endfor
+                                </div>
+                            </div>
+
+                            <!-- Author Info -->
+                            <div class="flex items-center gap-4 mb-6 pr-20">
+                                <span class="relative flex shrink-0 overflow-hidden rounded-full w-14 h-14">
+                                    <img class="aspect-square h-full w-full" alt="{{ $testimonial['author'] }}" src="{{ $testimonial['image'] }}">
+                                </span>
+                                <div class="flex-1">
+                                    <h3 class="font-semibold text-heading text-lg">{{ $testimonial['author'] }}</h3>
+                                    <p class="text-sm text-brand font-medium">{{ $testimonial['role'] }}</p>
+                                    <p class="text-sm text-muted">{{ $testimonial['company'] ?? '' }}</p>
+                                </div>
+                            </div>
+
+                            <div class="flex-1 relative">
+                                <x-filament::icon icon="fas-quote-left" class="w-8 h-8 text-brand-hover absolute -top-2 z-10 "/>
+                                <p class="text-body  leading-relaxed pl-12 text-base">{{ $testimonial['quote'] }}</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             @endforeach
@@ -94,12 +127,10 @@
         <!-- Previous Button -->
         <button
             @click="prev()"
-            class="bg-surface/90 backdrop-blur-xl text-heading p-3 rounded-full shadow-xl border border-brand/20 hover:border-brand/40 hover:bg-brand/20 hover:scale-110 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-brand"
+            class="bg-surface backdrop-blur-xl text-heading p-3 rounded-full shadow-xl border border-brand hover:border-brand-hover hover:bg-deep hover:scale-110 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-brand"
             aria-label="Previous testimonial"
         >
-            <svg class="w-6 h-6 text-brand" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
-            </svg>
+            <x-heroicon-m-chevron-left class="w-6 h-6 text-brand" />
         </button>
 
         <!-- Indicators -->
@@ -108,10 +139,10 @@
                 <button
                     @click="goToSlide({{ $index }})"
                     :class="{
-                        'w-10 bg-brand shadow-md shadow-brand/30 scale-110': activeSlide === {{ $index }},
-                        'w-3 bg-brand/30 hover:bg-brand/50 hover:scale-110': activeSlide !== {{ $index }}
+                        'w-10 shadow-md shadow-brand/30 scale-110': activeSlide === {{ $index }},
+                        'w-3 hover:bg-brand/50 hover:scale-110': activeSlide !== {{ $index }}
                     }"
-                    class="h-3 rounded-full transition-all duration-300 focus:outline-none"
+                    class="h-3 bg-brand rounded-full transition-all duration-300 focus:outline-none"
                     aria-label="Go to slide {{ $index + 1 }}"
                 ></button>
             @endforeach
@@ -120,12 +151,10 @@
         <!-- Next Button -->
         <button
             @click="next()"
-            class="bg-surface/90 backdrop-blur-xl text-heading p-3 rounded-full shadow-xl border border-brand/20 hover:border-brand/40 hover:bg-brand/20 hover:scale-110 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-brand"
+            class="bg-surface backdrop-blur-xl text-heading p-3 rounded-full shadow-xl border border-brand hover:border-brand-hover hover:bg-deep hover:scale-110 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-brand"
             aria-label="Next testimonial"
         >
-            <svg class="w-6 h-6 text-brand" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-            </svg>
+            <x-heroicon-m-chevron-right class="w-6 h-6 text-brand" />
         </button>
     </div>
 </div>

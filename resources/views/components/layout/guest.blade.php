@@ -1,5 +1,7 @@
-<!DOCTYPE html>
-<html  lang="en" x-data x-bind:class="document.documentElement.className" x-init="if(localStorage.getItem('theme')==='dark'){document.documentElement.classList.add('dark')}" >
+@php use App\Models\CMS\Menu; @endphp
+    <!DOCTYPE html>
+<html lang="en" x-data x-bind:class="document.documentElement.className"
+      x-init="if(localStorage.getItem('theme')==='dark'){document.documentElement.classList.add('dark')}">
 <head>
     <!-- Meta Tags -->
     <meta charset="utf-8">
@@ -11,26 +13,50 @@
     <title>{{ config('app.name') }}</title>
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-7DX7K0H0BT"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
+    <script>(function (w, d, s, l, i) {
+            w[l] = w[l] || [];
+            w[l].push({
+                'gtm.start':
+                    new Date().getTime(), event: 'gtm.js'
+            });
+            var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : '';
+            j.async = true;
+            j.src =
+                'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+            f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-KTVLGCHG');</script>
 
-        gtag('config', 'G-7DX7K0H0BT', { debug_mode: {{ (bool)config('services.google.analytics_debug') }} });
+    <script>
+        (function (w, d, s, l, i) {
+            w[l] = w[l] || [];
+            w[l].push({
+                'gtm.start':
+                    new Date().getTime(), event: 'gtm.js'
+            });
+            var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : '';
+            j.async = true;
+            j.src =
+                'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+            f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-KTVLGCHG');
     </script>
 
 </head>
 <body class="bg-bg">
-     @php
-    $menus = \App\Models\CMS\Menu::all()->keyBy('slug');
-    @endphp
-    <x-navbar :menu="$menus['main-menu']" />
+<noscript>
+    <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KTVLGCHG" class="hidden h-0 w-0"></iframe>
+</noscript>
+@php
+    $menus = Menu::all()->keyBy('slug');
+@endphp
+<x-navbar :menu="$menus['main-menu']"/>
 
 
-    <main>
-        {{ $slot }}
-    </main>
-     <x-layout.shared.footer />
+<main>
+    {{ $slot }}
+</main>
+<x-layout.shared.footer/>
 </body>
 </html>
