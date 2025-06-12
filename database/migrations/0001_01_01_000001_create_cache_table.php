@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('cache', function (Blueprint $table): void {
             $table->string('key')->primary();
-            $table->mediumText('value');
+            $table->longText('value');
             $table->integer('expiration');
         });
 
