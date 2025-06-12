@@ -1,5 +1,4 @@
 <x-layout.guest>
-
     <x-slot:metatags>
         <title>{{ $post->meta_title . ' - ' . config('app.name', 'Laravel') }}</title>
         <link rel="canonical" href="{{ $post?->canonical ?? '' }}"/>
@@ -13,27 +12,7 @@
         <meta property="og:image:alt" content="{{ $post?->opengraph_picture_alt }}"/>
     </x-slot:metatags>
     <div class="min-h-screen bg-bg pt-20">
-
         <x-blog.article :post="$post"/>
-        <section class="py-24 bg-deep">
-            <div class="container mx-auto px-4 md:px-8">
-                <div class="max-w-6xl mx-auto" style="opacity: 1; will-change: opacity, transform; transform: none;">
-                    <h2 class="text-2xl font-bold mb-12 text-center md:text-3xl">
-                        Artigos <span class="text-brand">Relacionados</span>
-                    </h2>
-                    <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-                        @foreach(collect([$post]) as $relatedPost)
-                            <x-blog.card-item
-                                :title="$relatedPost->title"
-                                :subtitle="$relatedPost->excerpt"
-                                :url="route('blog.show', ['post' => $relatedPost->slug])"
-                            />
-                        @endforeach
-                    </div>
-                </div>
-            </div>
-        </section>
+        <x-blog.related-articles :related-posts="$relatedPosts"/>
     </div>
-
-
 </x-layout.guest>

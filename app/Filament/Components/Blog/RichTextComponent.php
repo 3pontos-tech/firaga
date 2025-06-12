@@ -3,27 +3,27 @@
 namespace App\Filament\Components\Blog;
 
 use App\Enums\CustomComponent;
-use Filament\Forms\Components\MarkdownEditor;
+use Filament\Forms\Components\RichEditor;
 use Illuminate\Contracts\View\View;
 use Webid\Druid\Components\ComponentInterface;
 
-class TextComponent implements ComponentInterface
+class RichTextComponent implements ComponentInterface
 {
     public static function blockSchema(): array
     {
         return [
-            'content' => MarkdownEditor::make('content'),
+            RichEditor::make('content'),
         ];
     }
 
     public static function fieldName(): string
     {
-        return CustomComponent::BlogMarkdownText->value;
+        return CustomComponent::BlogRichText->value;
     }
 
     public static function toBlade(array $data): View
     {
-        return view('components.blog.partials.text', [
+        return view('components.blog.partials.rich-text', [
             'content' => $data['content'] ?? '',
         ]);
     }
@@ -35,6 +35,6 @@ class TextComponent implements ComponentInterface
 
     public static function imagePreview(): string
     {
-        return 'https://http.cat/201.png';
+        return 'https://http.cat/204.png';
     }
 }

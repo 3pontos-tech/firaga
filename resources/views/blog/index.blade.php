@@ -9,11 +9,11 @@
                     <x-blog.aside-authors/>
                     <x-blog.aside-categories/>
                 </aside>
-                <div class="space-y-8 lg:space-y-12">
-                    <section class="relative">
-                        <div>
-                            <x-blog.featured-item :url="route('blog.show', ['post' => $posts[0]->slug])"/>
-                        </div>
+                <div class="flex flex-col gap-8">
+                    <section>
+                        @if($featuredPost)
+                            <x-blog.featured-item :post="$featuredPost"/>
+                        @endif
                     </section>
                     <section>
                         <h2 class="text-xl text-heading font-bold mb-8">Últimos Artigos</h2>

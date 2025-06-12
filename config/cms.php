@@ -92,7 +92,8 @@ return [
         ['class' => IconSolutionsComponent::class],
 
         // Blog components
-        ['class' => \App\Filament\Components\Blog\TextComponent::class],
+        ['class' => \App\Filament\Components\Blog\MarkdownTextComponent::class],
+        ['class' => \App\Filament\Components\Blog\RichTextComponent::class],
     ],
 
     /*
@@ -109,7 +110,7 @@ return [
      | Blog
      |--------------------------------------------------------------------------
      */
-    'enable_blog_module' => false,
+    'enable_blog_module' => true,
     'enable_default_blog_routes' => false,
     'blog' => [
         'posts_per_page' => 10,

@@ -1,17 +1,9 @@
 @props([
-    'title' => 'Investimentos Estratégicos para Profissionais de TI',
-    'subtitle' => 'Como profissionais de tecnologia podem otimizar seus investimentos e aproveitar as oportunidades do mercado digital.',
-    'author' => 'Carlos Silva',
-    'role' => 'Especialista em Planejamento Financeiro',
-    'authorAvatar' => 'https://github.com/danielhe4rt.png',
-    'readTimeInMinutes' => 6,
-    'publishedAt' => now()->subDays(3),
-    'url' => 'investimentos-para-profissionais-de-ti',
-    'cover' => 'https://github.com/danielhe4rt.png'
+    'post' => null,
 ])
 
-<div style="opacity: 1; will-change: opacity, transform; transform: none;">
-    <a href="/blog/investimentos-para-profissionais-de-ti">
+<div>
+    <a href="{{ route('blog.show', ['post' => $post->slug]) }}">
         <article
             class="group bg-surface rounded-xl overflow-hidden hover:bg-deep transition-all duration-300">
             <div class="relative h-48 overflow-hidden">
@@ -20,41 +12,43 @@
                     decoding="async" data-nimg="fill"
                     class="object-cover transition-transform duration-300 group-hover:scale-105"
                     style="position: absolute; height: 100%; width: 100%; inset: 0; color: transparent;"
-                    src="{{ $cover }}">
+                    src="{{ $post->thumbnail->url }}">
                 <div class="absolute top-4 left-4">
-                    <span class="bg-fire-500 text-black px-3 py-1 rounded-full text-xs font-semibold">
-                        Code Capital
-                    </span>
+                    @foreach($post->categories as $category)
+                        <span
+                            class="bg-brand-hover mx-1 text-heading px-3 py-1 rounded-full text-xs font-semibold">
+                            {{ $category->name ?? 'Code' }}
+                        </span>
+                    @endforeach
                 </div>
             </div>
             <div class="p-6">
                 <div class="flex items-center gap-4 text-xs text-zinc-400 mb-3">
                     <div class="flex items-center gap-1">
                         <x-heroicon-c-calendar class="h-3 w-3"/>
-                        09/01/2024
+                        {{ $post->published_at->format('d/m/Y') }}
                     </div>
                     <div class="flex items-center gap-1">
                         <x-heroicon-c-clock class="h-3 w-3"/>
-                        6 min
+                        {{ $post->read_time_in_minutes }} min
                     </div>
                 </div>
                 <h3 class="text-lg text-heading font-bold mb-3 group-hover:text-fire-500 transition-colors">
-                    Investimentos Estratégicos para Profissionais de TI
+                    {{ $post->title }}
                 </h3>
-                <p class="text- text-sm mb-4 line-clamp-3">
-                    Como profissionais de
-                    tecnologia podem otimizar seus investimentos e aproveitar as oportunidades
-                    do mercado digital.
+                <p class="text-body text-sm mb-4 line-clamp-3">
+                    {{ $post->excerpt }}
                 </p>
-                <div class="flex items-center justify-between"><span
-                        class="text-xs text-zinc-500">Por </span>
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                         viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                         stroke-linecap="round" stroke-linejoin="round"
-                         class="lucide lucide-arrow-right h-4 w-4 text-fire-500 group-hover:translate-x-1 transition-transform">
-                        <path d="M5 12h14"></path>
-                        <path d="m12 5 7 7-7 7"></path>
-                    </svg>
+                <div class="flex items-center justify-between">
+                    <div class="flex items-center mr-2">
+                        <img alt="{{ $post->authors[0]->name ?? '' }}" loading="lazy"
+                             decoding="async" data-nimg="1"
+                             class="rounded-full w-8 h-8"
+                             src="{{ $post->authors[0]->thumbnail->url }}">
+                    </div>
+                    <span class="text-xs text-zinc-500">{{ $post->authors[0]->name }}</span>
+                    <x-heroicon-c-arrow-right
+                        class="h-5 w-5 text-brand group-hover:translate-x-1 transition-transform"/>
                 </div>
             </div>
         </article>

@@ -3,7 +3,8 @@
 namespace App\View;
 
 use App\Enums\CustomComponent;
-use App\Filament\Components\Blog\TextComponent;
+use App\Filament\Components\Blog\MarkdownTextComponent;
+use App\Filament\Components\Blog\RichTextComponent;
 use App\Filament\Components\CodeComponent;
 use App\Filament\Components\FaqComponent;
 use App\Filament\Components\Landing\IconSolutionsComponent;
@@ -30,9 +31,8 @@ class TemplateRenderer
     private function resolveComponent(string $type): ComponentInterface
     {
         return match ($type) {
-            CustomComponent::BlogMarkdownText->value => app(TextComponent::class),
-            'faq' => app(FaqComponent::class),
-            'code' => app(CodeComponent::class),
+            CustomComponent::BlogMarkdownText->value => app(MarkdownTextComponent::class),
+            CustomComponent::BlogRichText->value => app(RichTextComponent::class),
             'main_hero' => app(MainHeroComponent::class),
             'icon_solutions' => app(IconSolutionsComponent::class),
             default => throw new ViewException(__('Unsupported component type: :type', ['type' => $type])),

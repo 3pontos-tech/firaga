@@ -20,28 +20,29 @@
                         <span class="bg-brand text-black px-2 py-1 rounded text-xs font-semibold">Code Capital</span>
                     </div>
                 </div>
-                <div class="flex-1 min-w-0">
-                    <div class="flex items-center gap-4 text-xs text-body mb-2">
-                        <div class="flex items-center gap-1">
-                            <x-heroicon-c-calendar class="h-3 w-3"/>
-                            {{ $post->published_at->format('d/m/Y') }}
+                <div class="flex-1 flex flex-col justify-between min-w-0">
+                    <div class="">
+                        <div class="flex items-center gap-4 text-xs text-body mb-2">
+                            <div class="flex items-center gap-1">
+                                <x-heroicon-c-calendar class="h-3 w-3"/>
+                                {{ $post->published_at->format('d/m/Y') }}
+                            </div>
+                            <div class="flex items-center gap-1">
+                                <x-heroicon-c-clock class="h-3 w-3"/>
+                                {{ $post->read_time_in_minutes }}
+                            </div>
                         </div>
-                        <div class="flex items-center gap-1">
-                            <x-heroicon-c-clock class="h-3 w-3"/>
-                            {{ $post->read_time_in_minutes }}
-                        </div>
+                        <h3 class="text-lg text-heading font-bold mb-2 group-hover:text-brand transition-colors line-clamp-2">
+                            {{ $post->title }}
+                        </h3>
+                        <p class="text-body text-sm mb-3 line-clamp-2">
+                            {{ $post->excerpt }}
+                        </p>
                     </div>
-                    <h3 class="text-lg text-heading font-bold mb-2 group-hover:text-brand transition-colors line-clamp-2">
-                        {{ $post->title }}
-                    </h3>
-                    <p class="text-body text-sm mb-3 line-clamp-2">
-                        {{ $post->excerpt }}
-                    </p>
                     <div class="flex items-center gap-2">
                         <img alt="{{ $post->authors[0]->name ?? '' }}" loading="lazy"
-                             width="24" height="24"
                              decoding="async" data-nimg="1"
-                             class="rounded-full"
+                             class="rounded-full w-10 h-10"
                              style="color: transparent;"
                              src="{{ $post->authors[0]->thumbnail->url }}">
                         <span class="text-xs text-body">{{ $post->authors[0]->name }}</span>
