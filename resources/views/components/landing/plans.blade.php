@@ -1,9 +1,9 @@
 @props([
     'heading' => 'Investimento Diversos Pacotes na medida',
     'subheading' => 'Escolha o plano ideal para o seu momento financeiro',
-    'plansData' => collect([
-    ])
+    'plansData' => collect()
 ])
+
 
 <div class="bg-surface py-16">
     <div class="max-w-6xl mx-auto px-4">

@@ -1,20 +1,20 @@
 @php
     $styles = match ($plan['name']) {
-        'Gold' => [
+        'gold' => [
             'card' => 'bg-yellow-600 text-white',
             'badge' => '',
             'border' => 'border-b-2 border-yellow-400',
             'icon' => 'text-yellow-300',
             'button' => 'bg-yellow-500 hover:bg-yellow-400',
         ],
-        'Platinum' => [
+        'platinum' => [
             'card' => 'bg-blue-700 text-white md:scale-105 md:-mt-4 md:mb-4 z-10',
             'badge' => 'Mais Popular',
             'border' => 'border-b-2 border-blue-400',
             'icon' => 'text-blue-300',
             'button' => 'bg-blue-500 hover:bg-blue-400',
         ],
-        'Black' => [
+        'black' => [
             'card' => 'bg-gray-800 text-white',
             'badge' => '',
             'border' => 'border-b-2 border-gray-400',
@@ -29,6 +29,7 @@
             'button' => 'bg-gray-100 hover:bg-gray-200',
         ]
     };
+
 @endphp
 <div class="rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 p-8 flex flex-col relative {{ $styles['card'] }}">
     @if($styles['badge'])
@@ -38,7 +39,7 @@
     @endif
 
     <div class="{{ $styles['border'] }} pb-4 mb-4">
-        <h3 class="text-3xl font-bold mb-2">{{ $plan['name'] }}</h3>
+        <h3 class="text-3xl font-bold mb-2">{{ str($plan['name'])->ucfirst() }}</h3>
         <p class="text-white/90 font-medium">
             {{ $plan['description'] }}
             @if(isset($plan['note']))

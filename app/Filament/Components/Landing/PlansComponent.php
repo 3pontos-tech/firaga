@@ -20,15 +20,15 @@ class PlansComponent implements ComponentInterface
             TextInput::make('subheading')
                 ->label(__('Subheading'))
                 ->required(),
-            Repeater::make('plansData')
+            Repeater::make('plans')
                 ->label(__('Plans'))
                 ->schema([
                     Select::make('name')
                         ->label(__('Plan Type'))
                         ->options([
-                            'Gold' => 'Gold',
-                            'Platinum' => 'Platinum',
-                            'Black' => 'Black',
+                            'gold' => 'Gold',
+                            'platinum' => 'Platinum',
+                            'black' => 'Black',
                         ])
                         ->required(),
                     TextInput::make('description')
@@ -40,7 +40,7 @@ class PlansComponent implements ComponentInterface
                     Repeater::make('items')
                         ->label(__('Features'))
                         ->schema([
-                            TextInput::make('item')
+                            TextInput::make('feature')
                                 ->label(__('Feature'))
                                 ->required(),
                         ]),
@@ -63,10 +63,11 @@ class PlansComponent implements ComponentInterface
 
     public static function toBlade(array $data): View
     {
-        if (isset($data['plansData'])) {
-            foreach ($data['plansData'] as &$plan) {
+
+        if (isset($data['plans'])) {
+            foreach ($data['plans'] as &$plan) {
                 if (isset($plan['items'])) {
-                    $plan['items'] = collect($plan['items'])->pluck('item')->toArray();
+                    $plan['items'] = collect($plan['items'])->pluck('feature')->toArray();
                 }
             }
         }
@@ -74,7 +75,7 @@ class PlansComponent implements ComponentInterface
         return view('components.landing.plans', [
             'heading' => $data['heading'],
             'subheading' => $data['subheading'],
-            'plansData' => collect($data['plansData'] ?? []),
+            'plansData' => collect($data['plans'] ?? []),
         ]);
     }
 
