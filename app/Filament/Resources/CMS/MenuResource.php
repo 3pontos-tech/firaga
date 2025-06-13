@@ -33,12 +33,12 @@ class MenuResource extends Resource
 
         $parametersTab = [
             TextInput::make('title')
-                ->label(__('Title'))
+                ->label(__('filament.menuTitle'))
                 ->live(debounce: 500)
                 ->afterStateUpdated(fn (Set $set, ?string $state): mixed => $set('slug', Str::slug(strval($state))))
                 ->required(),
             TextInput::make('slug')
-                ->label(__('Slug'))
+                ->label(__('filament.menuSlug'))
                 ->required(),
         ];
 
@@ -54,7 +54,7 @@ class MenuResource extends Resource
     {
         $columns = [
             TextColumn::make('title')
-                ->label(__('Title')),
+                ->label(__('filament.menuTitle')),
         ];
 
         if (Druid::isMultilingualEnabled()) {
@@ -67,11 +67,11 @@ class MenuResource extends Resource
                 //
             ])
             ->actions([
-                EditAction::make(),
+                EditAction::make()->label(__('filament.edit')),
             ])
             ->bulkActions([
                 BulkActionGroup::make([
-                    DeleteBulkAction::make(),
+                    DeleteBulkAction::make()->label(__('filament.delete')),
                 ]),
             ]);
     }

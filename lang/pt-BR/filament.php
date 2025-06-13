@@ -73,4 +73,9 @@ return [
     'newCategory' => 'Nova Categoria',
     'categoryName' => 'Nome da Categoria',
     'categorySlug' => 'Identificador da categoria (slug)',
+
+    /** Menu resource */
+    'newMenu' => 'Novo Menu',
+    'menuTitle' => 'Título do Menu',
+    'menuSlug' => 'Identificador do Menu (slug)',
 ];
