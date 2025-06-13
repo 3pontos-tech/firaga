@@ -51,7 +51,7 @@ class LandingController extends Controller
             ],
             'plansData' => [
                 [
-                    'name' => 'Gold',
+                    'name' => 'gold',
                     'description' => 'Para quem está começando a organizar sua vida financeira e deseja mais tranquilidade.',
                     'items' => [
                         'Mapa financeiro',
@@ -66,7 +66,7 @@ class LandingController extends Controller
                     ],
                 ],
                 [
-                    'name' => 'Platinum',
+                    'name' => 'platinum',
                     'description' => 'Para quem deseja ter o controle total de suas finanças e ser mais arrojado, além de mais diversidade.',
                     'note' => '- Itens do Gold',
                     'items' => [
@@ -82,7 +82,7 @@ class LandingController extends Controller
                     ],
                 ],
                 [
-                    'name' => 'Black',
+                    'name' => 'black',
                     'description' => 'Para quem já investe e deseja estratégias personalizadas para potencializar seu patrimônio.',
                     'note' => '- Itens do Gold & Platinum',
                     'items' => [

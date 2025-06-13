@@ -6,6 +6,7 @@ use App\Filament\Components\Blog\MarkdownTextComponent;
 use App\Filament\Components\Blog\RichTextComponent;
 use App\Filament\Components\Landing\IconSolutionsComponent;
 use App\Filament\Components\Landing\MainHeroComponent;
+use App\Filament\Components\Landing\PlansComponent;
 use App\Filament\Resources\CMS\MenuResource\RelationManagers\ItemsRelationManager;
 use App\Models\CMS\Category;
 use App\Models\CMS\Menu;
@@ -92,6 +93,7 @@ return [
         // Landing Components
         ['class' => MainHeroComponent::class],
         ['class' => IconSolutionsComponent::class],
+        ['class' => PlansComponent::class],
 
         // Blog components
         ['class' => MarkdownTextComponent::class],
