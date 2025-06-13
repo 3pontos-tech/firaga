@@ -7,43 +7,9 @@
     </div>
 
     <div class="container mx-auto px-6 relative z-10">
-        @php
-            $testimonials = [
-                [
-                    'quote' => 'A abordagem prática da plataforma me ajudou a sair das dívidas em menos de 6 meses!',
-                    'author' => 'Carlos Silva',
-                    'role' => 'Cliente',
-                    'image' => 'https://randomuser.me/api/portraits/men/32.jpg',
-                ],
-                [
-                    'quote' => 'Sou apaixonado como a Fire|Ce tem me ajudado a mudar a minha vida financeira de uma forma simples, educativa e com resultados positivos expressivos desde o início.',
-                    'author' => 'Marcos Henrique Diogenes',
-                    'role' => 'Cliente Premium',
-                    'image' => 'https://github.com/danielhe4rt.png',
-                ],
-                [
-                    'quote' => 'Nunca imaginei que aprender sobre finanças seria tão fácil. O suporte da equipe é incrível!',
-                    'author' => 'Ana Souza',
-                    'role' => 'Cliente',
-                    'image' => 'https://randomuser.me/api/portraits/women/44.jpg',
-                ],
-                [
-                    'quote' => 'A plataforma transformou minha relação com o dinheiro. Recomendo a todos!',
-                    'author' => 'João Pereira',
-                    'role' => 'Cliente Premium',
-                    'image' => 'https://randomuser.me/api/portraits/men/45.jpg',
-                ],
-                [
-                    'quote' => 'Finalmente consegui organizar minhas finanças e começar a investir graças aos conselhos da equipe.',
-                    'author' => 'Mariana Costa',
-                    'role' => 'Cliente',
-                    'image' => 'https://randomuser.me/api/portraits/women/33.jpg',
-                ],
-            ];
-        @endphp
 
         <!-- Testimonials Carousel -->
-        <x-landing.testimonial-carousel :testimonials="$testimonials" />
+        <x-landing.testimonial-carousel :testimonials="$testimonialData" />
 
         <!-- "Todos os Reviews" Button centralizado abaixo dos cards -->
         <div class="flex justify-center mt-12">

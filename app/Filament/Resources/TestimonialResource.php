@@ -43,6 +43,9 @@ class TestimonialResource extends Resource
                             ->label(__('filament.testimonial_name'))
                             ->required()
                             ->maxLength(255),
+                        TextInput::make('role')
+                            ->required()
+                            ->maxLength(255),
                         Select::make('rating')
                             ->label(__('filament.testimonial_rating'))
                             ->options([

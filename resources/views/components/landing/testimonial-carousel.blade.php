@@ -93,7 +93,7 @@
                             <!-- Star Rating -->
                             <div class="absolute top-6 right-6">
                                 <div class="flex gap-1">
-                                    @for ($i = 0; $i < 5; $i++)
+                                    @for ($i = 0; $i < $testimonial->rating; $i++)
                                         <x-heroicon-c-star class="lucide lucide-star w-4 h-4 fill-brand text-brand" />
                                     @endfor
                                 </div>
@@ -102,18 +102,18 @@
                             <!-- Author Info -->
                             <div class="flex items-center gap-4 mb-6 pr-20">
                                 <span class="relative flex shrink-0 overflow-hidden rounded-full w-14 h-14">
-                                    <img class="aspect-square h-full w-full" alt="{{ $testimonial['author'] }}" src="{{ $testimonial['image'] }}">
+                                    <img class="aspect-square h-full w-full" alt="{{ $testimonial->name }}" src="{{ asset($testimonial->thumbnail->thumbnail_url) }}">
                                 </span>
                                 <div class="flex-1">
-                                    <h3 class="font-semibold text-heading text-lg">{{ $testimonial['author'] }}</h3>
-                                    <p class="text-sm text-brand font-medium">{{ $testimonial['role'] }}</p>
-                                    <p class="text-sm text-muted">{{ $testimonial['company'] ?? '' }}</p>
+                                    <h3 class="font-semibold text-heading text-lg">{{ $testimonial->name }}</h3>
+                                    <p class="text-sm text-brand font-medium">{{ $testimonial->role }}</p>
+                                    <p class="text-sm text-muted">{{ $testimonial->posted_at->format('d/m/Y H:i') }}</p>
                                 </div>
                             </div>
 
                             <div class="flex-1 relative">
                                 <x-filament::icon icon="fas-quote-left" class="w-8 h-8 text-brand-hover absolute -top-2 z-10 "/>
-                                <p class="text-body  leading-relaxed pl-12 text-base">{{ $testimonial['quote'] }}</p>
+                                <p class="text-body  leading-relaxed pl-12 text-base">{{ $testimonial->comment }}</p>
                             </div>
                         </div>
                     </div>

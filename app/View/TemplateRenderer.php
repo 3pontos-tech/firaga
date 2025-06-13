@@ -7,6 +7,7 @@ use App\Filament\Components\Blog\MarkdownTextComponent;
 use App\Filament\Components\Blog\RichTextComponent;
 use App\Filament\Components\Landing\IconSolutionsComponent;
 use App\Filament\Components\Landing\MainHeroComponent;
+use App\Filament\Components\Landing\PlansComponent;
 use Illuminate\Contracts\View\View;
 use Illuminate\View\ViewException;
 use Webid\Druid\Components\ComponentInterface;
@@ -33,6 +34,7 @@ class TemplateRenderer
             CustomComponent::BlogRichText->value => app(RichTextComponent::class),
             'main_hero' => app(MainHeroComponent::class),
             'icon_solutions' => app(IconSolutionsComponent::class),
+            'plans' => app(PlansComponent::class),
             default => throw new ViewException(__('Unsupported component type: :type', ['type' => $type])),
         };
 
