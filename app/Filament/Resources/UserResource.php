@@ -54,7 +54,7 @@ class UserResource extends Resource
                     ->dehydrated(fn ($state) => filled($state))
                     ->required(fn (string $context): bool => $context === 'create'),
                 TextInput::make('password_confirmation')
-                    ->label(__('filament.passwordConfirmation'))
+                    ->label(__('filament.password_confirmation'))
                     ->required(fn (string $context): bool => $context === 'create')
                     ->columnSpan(1)
                     ->password()
@@ -66,7 +66,7 @@ class UserResource extends Resource
                     ->required()
                     ->multiple()
                     ->relationship('roles', 'name')
-                    ->label('filament.userRole'),
+                    ->label('filament.user_role'),
             ]);
     }
 
@@ -80,15 +80,15 @@ class UserResource extends Resource
                 TextColumn::make('email')
                     ->searchable(),
                 TextColumn::make('roles.name')
-                    ->label(__('filament.userRole'))
+                    ->label(__('filament.user_role'))
                     ->searchable(),
                 TextColumn::make('created_at')
-                    ->label(__('filament.createdDate'))
+                    ->label(__('filament.created_date'))
                     ->dateTime()
                     ->sortable()
                     ->toggleable(isToggledHiddenByDefault: true),
                 TextColumn::make('updated_at')
-                    ->label(__('filament.lastModified'))
+                    ->label(__('filament.last_modified'))
                     ->dateTime()
                     ->sortable()
                     ->toggleable(isToggledHiddenByDefault: true),
@@ -97,11 +97,11 @@ class UserResource extends Resource
                 //
             ])
             ->actions([
-                EditAction::make()->label(__('filament.edit')),
+                EditAction::make(),
             ])
             ->bulkActions([
                 BulkActionGroup::make([
-                    DeleteBulkAction::make()->label(__('filament.bulkDelete')),
+                    DeleteBulkAction::make(),
                 ]),
             ]);
     }

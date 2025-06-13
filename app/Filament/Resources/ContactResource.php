@@ -47,11 +47,11 @@ class ContactResource extends Resource
                     ->required(),
 
                 TextInput::make('phone_number')
-                    ->label(__('filament.phoneNumber'))
+                    ->label(__('filament.phone_number'))
                     ->required(),
 
                 TextInput::make('ip_address')
-                    ->label(__('filament.ipAddress'))
+                    ->label(__('filament.ip_address'))
                     ->required(),
 
                 TextInput::make('message')
@@ -59,20 +59,20 @@ class ContactResource extends Resource
                     ->required(),
 
                 Select::make('message_intent')
-                    ->label(__('filament.messageIntent'))
+                    ->label(__('filament.message_intent'))
                     ->options(MessageIntent::class)
                     ->required(),
 
                 TextInput::make('contact_prereference')
-                    ->label(__('filament.contactPreference'))
+                    ->label(__('filament.contact_preference'))
                     ->required(),
 
                 Placeholder::make('created_at')
-                    ->label(__('filament.createdDate'))
+                    ->label(__('filament.created_date'))
                     ->content(fn (?Contact $record): string => $record?->created_at?->diffForHumans() ?? '-'),
 
                 Placeholder::make('updated_at')
-                    ->label(__('filament.lastModified'))
+                    ->label(__('filament.last_modified'))
                     ->content(fn (?Contact $record): string => $record?->updated_at?->diffForHumans() ?? '-'),
             ]);
     }

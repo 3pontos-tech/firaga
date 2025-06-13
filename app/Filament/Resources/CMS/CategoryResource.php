@@ -50,7 +50,7 @@ class CategoryResource extends Resource
 
         $schema = [
             TextInput::make('name')
-                ->label(__('filament.categoryName'))
+                ->label(__('filament.category_name'))
                 ->live(onBlur: true)
                 ->afterStateUpdated(
                     fn (string $operation, $state, Set $set): mixed => $operation === 'create'
@@ -58,7 +58,7 @@ class CategoryResource extends Resource
                 )
                 ->required(),
             TextInput::make('slug')
-                ->label(__('filament.categorySlug'))
+                ->label(__('filament.category_slug'))
                 ->required(),
         ];
 
@@ -113,14 +113,14 @@ class CategoryResource extends Resource
     {
         return $table
             ->columns([
-                TextColumn::make('name')->label(__('filament.categoryName')),
+                TextColumn::make('name')->label(__('filament.category_name')),
             ])
             ->actions([
-                EditAction::make()->label(__('filament.edit')),
+                EditAction::make(),
             ])
             ->bulkActions([
                 BulkActionGroup::make([
-                    DeleteBulkAction::make()->label(__('filament.bulkDelete')),
+                    DeleteBulkAction::make(),
                 ]),
             ])
             ->striped();

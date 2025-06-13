@@ -73,7 +73,7 @@ class PostResource extends Resource
             'excerpt' => Textarea::make('excerpt')
                 ->required()
                 ->label(__('filament.excerpt')),
-            $filamentComponentService->getFlexibleContentFieldsForModel(Post::class)->label(__('filament.contentPost')),
+            $filamentComponentService->getFlexibleContentFieldsForModel(Post::class)->label(__('filament.content_post')),
         ];
 
         $parametersTab = [
@@ -92,15 +92,15 @@ class PostResource extends Resource
                 ->live()
                 ->required(),
             'published_at' => DateTimePicker::make('published_at')
-                ->label(__('filament.publishedAt'))
+                ->label(__('filament.published_at'))
                 ->native(false)
                 ->default(now())
                 ->required(),
             'slug' => TextInput::make('slug')
-                ->label(__('filament.blogSlug'))
+                ->label(__('filament.blog_slug'))
                 ->required(),
             'is_top_article' => Toggle::make('is_top_article')
-                ->label(__('filament.topArticle'))
+                ->label(__('filament.top_article'))
                 ->helperText(__('Display this article in the top article section')),
             'categories' => Select::make('categories')
                 ->label(__('filament.category'))
@@ -123,8 +123,8 @@ class PostResource extends Resource
         $result = [
             'tabs' => Tabs::make('Tabs')
                 ->tabs([
-                    'content' => Tab::make(__('Content'))->label(__('filament.contentPost'))->schema($contentTab),
-                    'parameters' => Tab::make(__('Parameters'))->label(__('filament.ParametersPost'))->schema($parametersTab)->columns(2),
+                    'content' => Tab::make(__('Content'))->label(__('filament.content_post'))->schema($contentTab),
+                    'parameters' => Tab::make(__('Parameters'))->label(__('filament.parameters_post'))->schema($parametersTab)->columns(2),
                     'seo' => Tab::make(__('SEO'))->schema(CommonFields::getCommonSeoFields())->columns(2),
                 ])->columnSpanFull(),
         ];
@@ -153,13 +153,13 @@ class PostResource extends Resource
                 ])
                 ->label(__('Status')),
             IconColumn::make('is_top_article')
-                ->label(__('filament.topArticle'))
+                ->label(__('filament.top_article'))
                 ->boolean(),
             IconColumn::make('disable_indexation')
                 ->label(__('filament.disableIndex'))
                 ->boolean(),
             TextColumn::make('published_at')
-                ->label(__('filament.publishedAt'))
+                ->label(__('filament.published_at'))
                 ->dateTime()
                 ->sortable(),
         ];
@@ -172,7 +172,7 @@ class PostResource extends Resource
             ->columns($columns)
             ->defaultSort('published_at', 'desc')
             ->actions([
-                EditAction::make()->label(__('filament.edit'))->button()->outlined()->icon(''),
+                EditAction::make()->button()->outlined()->icon(''),
                 DeleteAction::make()->label(__('filament.delete')),
             ])
             ->bulkActions([

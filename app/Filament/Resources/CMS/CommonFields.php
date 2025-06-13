@@ -21,29 +21,29 @@ class CommonFields
                 ->label(__('filament.seo'))
                 ->schema([
                     TextInput::make('meta_title')
-                        ->label(__('filament.metaTitle')),
+                        ->label(__('filament.meta_title')),
                     Textarea::make('meta_description')
-                        ->label(__('filament.metaDescription')),
+                        ->label(__('filament.meta_description')),
                     TextInput::make('meta_keywords')
-                        ->label(__('filament.metaKeywords')),
+                        ->label(__('filament.meta_keywords')),
                     Toggle::make('disable_indexation')
-                        ->label(__('filament.disableIndexation'))
-                        ->helperText(__('filament.disableIndexationHelper')),
+                        ->label(__('filament.disable_indexation'))
+                        ->helperText(__('filament.disable_indexation_helper')),
                 ])
                 ->columns(1),
 
             Section::make(__('Open Graph Information'))
-                ->label(__('filament.openGraph'))
+                ->label(__('filament.open_graph'))
                 ->schema([
                     TextInput::make('opengraph_title')
-                        ->label(__('filament.openGraphTitle')),
+                        ->label(__('filament.open_graph_title')),
                     Textarea::make('opengraph_description')
-                        ->label(__('filament.openGraphDescription')),
+                        ->label(__('filament.open_graph_description')),
                     CuratorPicker::make('opengraph_picture')
-                        ->label(__('filament.openGraphPicture'))
+                        ->label(__('filament.open_graph_picture'))
                         ->preserveFilenames(),
                     TextInput::make('opengraph_picture_alt')
-                        ->label(__('filament.openGraphPictureAlt')),
+                        ->label(__('filament.open_graph_picture_alt')),
                 ])
                 ->columns(1),
         ];

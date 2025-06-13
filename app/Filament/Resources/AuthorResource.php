@@ -49,7 +49,7 @@ class AuthorResource extends Resource
                     ->live(debounce: 500)
                     ->afterStateUpdated(fn (string $operation, $state, Set $set): mixed => $operation === 'create' ? $set('slug', Str::slug($state)) : null),
                 TextInput::make('slug')
-                    ->label(__('filament.slugAuthor'))
+                    ->label(__('filament.slug_author'))
                     ->required()
                     ->hint('*Deve conter apenas nome e sobrenome. Ex: maria-silva-lima -> maria-silva')
                     ->hintColor('info')
@@ -57,7 +57,7 @@ class AuthorResource extends Resource
                     ->unique(Author::class, 'slug', ignoreRecord: true)
                     ->disabledOn('edit'),
                 TextInput::make('description')
-                    ->label(__('filament.roleAuthor'))
+                    ->label(__('filament.role_author'))
                     ->required(),
                 TextInput::make('linkedin_url')
                     ->label(__('filament.linkedin_url'))
@@ -77,13 +77,13 @@ class AuthorResource extends Resource
                 TextColumn::make('user.name')
                     ->searchable(),
                 TextColumn::make('slug')
-                    ->label(__('filament.slugAuthor'))
+                    ->label(__('filament.slug_author'))
                     ->searchable(),
                 TextColumn::make('name')
                     ->label(__('filament.name'))
                     ->searchable(),
                 TextColumn::make('description')
-                    ->label(__('filament.roleAuthor'))
+                    ->label(__('filament.role_author'))
                     ->searchable(),
                 TextColumn::make('linkedin_url')
                     ->label(__('filament.linkedin_url'))

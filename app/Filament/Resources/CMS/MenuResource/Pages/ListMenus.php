@@ -17,7 +17,7 @@ class ListMenus extends ListRecords
     protected function getHeaderActions(): array
     {
         return [
-            CreateAction::make()->label(__('filament.newMenu')),
+            CreateAction::make(),
         ];
     }
 

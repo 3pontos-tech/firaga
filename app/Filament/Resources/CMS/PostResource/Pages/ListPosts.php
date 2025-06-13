@@ -18,7 +18,7 @@ class ListPosts extends ListRecords
     protected function getHeaderActions(): array
     {
         return [
-            CreateAction::make()->label(__('filament.newPost')),
+            CreateAction::make(),
         ];
     }
 

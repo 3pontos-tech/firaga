@@ -18,7 +18,7 @@ class ListPages extends ListRecords
     protected function getHeaderActions(): array
     {
         return [
-            CreateAction::make()->label(__('filament.newPage')),
+            CreateAction::make(),
         ];
     }
 

@@ -6,6 +6,7 @@ use App\Filament\Resources\TestimonialResource\Pages\CreateTestimonial;
 use App\Filament\Resources\TestimonialResource\Pages\EditTestimonial;
 use App\Filament\Resources\TestimonialResource\Pages\ListTestimonials;
 use App\Models\Testimonial;
+use Awcodes\Curator\Components\Forms\CuratorPicker;
 use Filament\Forms\Components\DateTimePicker;
 use Filament\Forms\Components\Section;
 use Filament\Forms\Components\Select;
@@ -39,11 +40,11 @@ class TestimonialResource extends Resource
                 Section::make()
                     ->schema([
                         TextInput::make('name')
-                            ->label(__('filament.testimonialName'))
+                            ->label(__('filament.testimonial_name'))
                             ->required()
                             ->maxLength(255),
                         Select::make('rating')
-                            ->label(__('filament.testimonialRating'))
+                            ->label(__('filament.testimonial_rating'))
                             ->options([
                                 1 => '1',
                                 2 => '2',
@@ -52,15 +53,15 @@ class TestimonialResource extends Resource
                                 5 => '5',
                             ]),
                         Textarea::make('comment')
-                            ->label(__('filament.testimonialComment'))
+                            ->label(__('filament.testimonial_comment'))
                             ->required(),
                         DateTimePicker::make('posted_at')
-                            ->label(__('filament.publishedAt'))
+                            ->label(__('filament.published_at'))
                             ->required(),
-                        TextInput::make('testimonial_url')
-                            ->label(__('filament.testimonialUrl'))
-                            ->required()
-                            ->url(),
+                        CuratorPicker::make('thumbnail_id')
+                            ->label(__('filament.testimonial_avatar'))
+                            ->preserveFilenames()
+                            ->columnSpanFull(),
                     ]),
             ]);
     }
@@ -70,21 +71,18 @@ class TestimonialResource extends Resource
         return $table
             ->columns([
                 TextColumn::make('name')
-                    ->label(__('filament.testimonialName'))
+                    ->label(__('filament.testimonial_name'))
                     ->searchable()
                     ->sortable(),
                 TextColumn::make('rating')
-                    ->label(__('filament.testimonialRating'))
+                    ->label(__('filament.testimonial_rating'))
                     ->searchable()
                     ->sortable(),
                 TextColumn::make('comment')
-                    ->label(__('filament.testimonialComment'))
-                    ->searchable(),
-                TextColumn::make('testimonial_url')
-                    ->label(__('filament.testimonialUrl'))
+                    ->label(__('filament.testimonial_comment'))
                     ->searchable(),
                 TextColumn::make('posted_at')
-                    ->label(__('filament.publishedAt'))
+                    ->label(__('filament.published_at'))
                     ->searchable()
                     ->sortable(),
             ])
@@ -92,11 +90,11 @@ class TestimonialResource extends Resource
                 //
             ])
             ->actions([
-                EditAction::make()->label(__('filament.edit')),
+                EditAction::make(),
             ])
             ->bulkActions([
                 BulkActionGroup::make([
-                    DeleteBulkAction::make()->label(__('filament.bulkDelete')),
+                    DeleteBulkAction::make(),
                 ]),
             ]);
     }
