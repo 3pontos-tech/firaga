@@ -39,9 +39,11 @@ class TestimonialResource extends Resource
                 Section::make()
                     ->schema([
                         TextInput::make('name')
+                            ->label(__('filament.testimonialName'))
                             ->required()
                             ->maxLength(255),
                         Select::make('rating')
+                            ->label(__('filament.testimonialRating'))
                             ->options([
                                 1 => '1',
                                 2 => '2',
@@ -50,10 +52,13 @@ class TestimonialResource extends Resource
                                 5 => '5',
                             ]),
                         Textarea::make('comment')
+                            ->label(__('filament.testimonialComment'))
                             ->required(),
                         DateTimePicker::make('posted_at')
+                            ->label(__('filament.publishedAt'))
                             ->required(),
                         TextInput::make('testimonial_url')
+                            ->label(__('filament.testimonialUrl'))
                             ->required()
                             ->url(),
                     ]),
@@ -65,16 +70,21 @@ class TestimonialResource extends Resource
         return $table
             ->columns([
                 TextColumn::make('name')
+                    ->label(__('filament.testimonialName'))
                     ->searchable()
                     ->sortable(),
                 TextColumn::make('rating')
+                    ->label(__('filament.testimonialRating'))
                     ->searchable()
                     ->sortable(),
                 TextColumn::make('comment')
+                    ->label(__('filament.testimonialComment'))
                     ->searchable(),
                 TextColumn::make('testimonial_url')
+                    ->label(__('filament.testimonialUrl'))
                     ->searchable(),
                 TextColumn::make('posted_at')
+                    ->label(__('filament.publishedAt'))
                     ->searchable()
                     ->sortable(),
             ])
@@ -82,11 +92,11 @@ class TestimonialResource extends Resource
                 //
             ])
             ->actions([
-                EditAction::make(),
+                EditAction::make()->label(__('filament.edit')),
             ])
             ->bulkActions([
                 BulkActionGroup::make([
-                    DeleteBulkAction::make(),
+                    DeleteBulkAction::make()->label(__('filament.bulkDelete')),
                 ]),
             ]);
     }

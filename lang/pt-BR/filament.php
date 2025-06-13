@@ -89,5 +89,18 @@ return [
     'pageContent' => 'Conteúdo da Página',
     'pageParameters' => 'Parâmetros da Página',
 
+    /** User resource */
+    'newUser' => 'Novo Usuário',
+    'username' => 'Nome de usuário',
+    'userRole' => 'Função do usuário',
+    'password' => 'Senha',
+    'passwordConfirmation' => 'Confirmação de Senha',
+
+    /** Testimonial resource */
+    'newTestimonial' => 'Novo Depoimento',
+    'testimonialName' => 'Nome do Depoimento',
+    'testimonialRating' => 'Avaliação do Depoimento',
+    'testimonialComment' => 'Comentário do Depoimento',
+    'testimonialUrl' => 'URL do Depoimento',
 
 ];
