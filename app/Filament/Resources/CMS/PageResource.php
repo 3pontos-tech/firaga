@@ -58,7 +58,7 @@ class PageResource extends Resource
 
         $contentTab = [
             'title' => TextInput::make('title')
-                ->label(__('Title'))
+                ->label(__('filament.pageTitle'))
                 ->live(debounce: 400)
                 ->afterStateUpdated(
                     fn (string $operation, string $state, Set $set): mixed => $operation === 'create'
@@ -70,13 +70,13 @@ class PageResource extends Resource
 
         $parametersTab = [
             'slug' => TextInput::make('slug')
-                ->label(__('Slug')),
+                ->label(__('filament.pageSlug')),
             'is_landing' => Select::make('is_landing')
-                ->label(__('Landing Page'))
+                ->label(__('filament.isLandingPage'))
                 ->boolean()
                 ->default(false),
             'parent_page_id' => Select::make('parent_page_id')
-                ->label(__('Parent page'))
+                ->label(__('filament.parentPage'))
                 ->placeholder(__('Select a parent page'))
                 // @phpstan-ignore-next-line
                 ->options(fn (?Model $record): Collection => Page::query()->get()->pluck('title', 'id'))
@@ -88,7 +88,7 @@ class PageResource extends Resource
                 ->default(PageStatus::PUBLISHED)
                 ->required(),
             'published_at' => DatePicker::make('published_at')
-                ->label(__('Published at'))
+                ->label(__('filament.publishedAt'))
                 ->native(false)
                 ->default(now())
                 ->required(),
@@ -97,8 +97,8 @@ class PageResource extends Resource
         $result = [
             'tabs' => Tabs::make('Tabs')
                 ->tabs([
-                    'content' => Tab::make(__('Content'))->schema($contentTab),
-                    'parameters' => Tab::make(__('Parameters'))->schema($parametersTab)->columns(2),
+                    'content' => Tab::make(__('Content'))->label(__('filament.pageContent'))->schema($contentTab),
+                    'parameters' => Tab::make(__('Parameters'))->label(__('filament.pageParameters'))->schema($parametersTab)->columns(2),
                     'seo' => Tab::make(__('SEO'))->schema(CommonFields::getCommonSeoFields())->columns(2),
                 ])
                 ->activeTab(1)
@@ -113,9 +113,9 @@ class PageResource extends Resource
         $columns = [
             IconColumn::make('is_landing')
                 ->boolean()
-                ->label(__('Landing Page')),
+                ->label(__('filament.ladingPage')),
             TextColumn::make('title')
-                ->label(__('Title'))
+                ->label(__('filament.pageTitle'))
                 ->color('primary')
                 ->url(
                     url: fn (Page $record): string => $record->url(),
@@ -131,13 +131,13 @@ class PageResource extends Resource
                 ])
                 ->label(__('Status')),
             IconColumn::make('disable_indexation')
-                ->label(__('Disable indexation'))
+                ->label(__('filament.disabledIndex'))
                 ->boolean(),
             TextColumn::make('parent_page_id')
                 ->default('-')
-                ->label(__('Parent page')),
+                ->label(__('filament.parentPage')),
             TextColumn::make('published_at')
-                ->label(__('Published at'))
+                ->label(__('filament.publishedAt'))
                 ->sortable(),
         ];
 
@@ -146,12 +146,12 @@ class PageResource extends Resource
             ->columns($columns)
             ->defaultSort('published_at', 'desc')
             ->actions([
-                EditAction::make()->button()->outlined()->icon(''),
-                DeleteAction::make(),
+                EditAction::make()->label(__('filament.edit'))->button()->outlined()->icon(''),
+                DeleteAction::make()->label(__('filament.delete')),
             ])
             ->bulkActions([
                 BulkActionGroup::make([
-                    DeleteBulkAction::make(),
+                    DeleteBulkAction::make()->label(__('filament.bulkDelete')),
                 ]),
             ])
             ->selectCurrentPageOnly()

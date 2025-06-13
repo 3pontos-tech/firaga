@@ -78,4 +78,16 @@ return [
     'newMenu' => 'Novo Menu',
     'menuTitle' => 'Título do Menu',
     'menuSlug' => 'Identificador do Menu (slug)',
+
+    /** Page resource */
+    'newPage' => 'Nova Página',
+    'pageTitle' => 'Título da Página',
+    'pageSlug' => 'Identificador da página (slug)',
+    'ladingPage' => 'landing page',
+    'isLandingPage' => 'É uma pagina landing page?',
+    'parentPage' => 'Página relacionada',
+    'pageContent' => 'Conteúdo da Página',
+    'pageParameters' => 'Parâmetros da Página',
+
+
 ];
