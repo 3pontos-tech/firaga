@@ -3,6 +3,7 @@
 namespace Database\Factories;
 
 use App\Models\Testimonial;
+use Awcodes\Curator\Models\Media;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -16,10 +17,11 @@ class TestimonialFactory extends Factory
     {
         return [
             'name' => $this->faker->name(),
+            'role' => $this->faker->word(),
             'rating' => $this->faker->numberBetween(1, 5),
             'comment' => $this->faker->paragraph(),
             'posted_at' => $this->faker->dateTime(),
-            'testimonial_url' => $this->faker->url(),
+            'thumbnail_id' => Media::factory()->create(),
         ];
     }
 }

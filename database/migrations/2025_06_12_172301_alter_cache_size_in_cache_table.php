@@ -11,18 +11,8 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::table('cache', function (Blueprint $table) {
+        Schema::table('cache', function (Blueprint $table): void {
             $table->longText('value')->change();
-        });
-    }
-
-    /**
-     * Reverse the migrations.
-     */
-    public function down(): void
-    {
-        Schema::table('cache', function (Blueprint $table) {
-            //
         });
     }
 };
