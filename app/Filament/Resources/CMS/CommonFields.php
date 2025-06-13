@@ -28,7 +28,7 @@ class CommonFields
                         ->label(__('filament.metaKeywords')),
                     Toggle::make('disable_indexation')
                         ->label(__('filament.disableIndexation'))
-                        ->helperText(__('filament.disableIndexationHelperText')),
+                        ->helperText(__('filament.disableIndexationHelper')),
                 ])
                 ->columns(1),
 

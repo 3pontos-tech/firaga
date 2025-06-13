@@ -58,7 +58,7 @@ return [
     'seo' => 'Dados para SEO',
     'metaTitle' => 'Meta Título',
     'metaDescription' => 'Meta Descrição',
-    'metaKeywords' => 'Meta Palavras-chave',
+    'metaKeywords' => 'Palavras-chave',
     'disableIndexation' => 'Desativar Indexação',
     'disableIndexationHelper' => 'Desativa a indexação por mecanismos de busca para esta página',
 
