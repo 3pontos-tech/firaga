@@ -37,7 +37,7 @@ return [
     /** Author resource */
     'newAuthor' => 'Novo Autor',
     'roleAuthor' => 'Departamento',
-    'linkedin_url'=> 'URL do LinkedIn',
+    'linkedin_url' => 'URL do LinkedIn',
     'slugAuthor' => 'Identificador do Autor (slug)',
     'avatar' => 'Foto de perfil',
 

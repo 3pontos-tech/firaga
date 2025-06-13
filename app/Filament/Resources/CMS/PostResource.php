@@ -39,7 +39,7 @@ class PostResource extends Resource
 {
     protected static ?string $model = Post::class;
 
-    //protected static ?string $modelLabel = 'Post';
+    // protected static ?string $modelLabel = 'Post';
 
     protected static ?string $navigationIcon = 'heroicon-o-newspaper';
 

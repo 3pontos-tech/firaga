@@ -11,7 +11,6 @@ class CreatePost extends CreateRecord
 {
     protected static string $resource = PostResource::class;
 
-
     protected function afterCreate(): void
     {
         /** @var Post $post */

@@ -18,11 +18,9 @@ use Filament\Tables\Actions\EditAction;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Table;
 use Illuminate\Support\Str;
-use const _PHPStan_ac6dae9b0\__;
 
 class AuthorResource extends Resource
 {
-
     protected static ?string $label = null;
 
     protected static ?string $model = Author::class;
