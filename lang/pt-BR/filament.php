@@ -68,4 +68,9 @@ return [
     'openGraphDescription' => 'Descrição Open Graph',
     'openGraphPicture' => 'Imagem Open Graph',
     'openGraphPictureAlt' => 'Texto alternativo da imagem Open Graph',
+
+    /** Category resource */
+    'newCategory' => 'Nova Categoria',
+    'categoryName' => 'Nome da Categoria',
+    'categorySlug' => 'Identificador da categoria (slug)',
 ];
