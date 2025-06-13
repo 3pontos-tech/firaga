@@ -25,11 +25,19 @@ class UserResource extends Resource
 
     protected static ?string $navigationGroup = 'Administration';
 
+    protected static ?string $label = null;
+
+    public static function getLabel(): ?string
+    {
+        return __('filament.user');
+    }
+
     public static function form(Form $form): Form
     {
         return $form
             ->schema([
                 TextInput::make('name')
+                    ->label(__('filament.username'))
                     ->required()
                     ->maxLength(255),
                 TextInput::make('email')
@@ -38,6 +46,7 @@ class UserResource extends Resource
                     ->maxLength(255),
 
                 TextInput::make('password')
+                    ->label(__('filament.password'))
                     ->password()
                     ->confirmed()
                     ->columnSpan(1)
@@ -45,6 +54,7 @@ class UserResource extends Resource
                     ->dehydrated(fn ($state) => filled($state))
                     ->required(fn (string $context): bool => $context === 'create'),
                 TextInput::make('password_confirmation')
+                    ->label(__('filament.password_confirmation'))
                     ->required(fn (string $context): bool => $context === 'create')
                     ->columnSpan(1)
                     ->password()
@@ -56,7 +66,7 @@ class UserResource extends Resource
                     ->required()
                     ->multiple()
                     ->relationship('roles', 'name')
-                    ->label('Roles'),
+                    ->label('filament.user_role'),
             ]);
     }
 
@@ -65,16 +75,20 @@ class UserResource extends Resource
         return $table
             ->columns([
                 TextColumn::make('name')
+                    ->label(__('filament.username'))
                     ->searchable(),
                 TextColumn::make('email')
                     ->searchable(),
                 TextColumn::make('roles.name')
+                    ->label(__('filament.user_role'))
                     ->searchable(),
                 TextColumn::make('created_at')
+                    ->label(__('filament.created_date'))
                     ->dateTime()
                     ->sortable()
                     ->toggleable(isToggledHiddenByDefault: true),
                 TextColumn::make('updated_at')
+                    ->label(__('filament.last_modified'))
                     ->dateTime()
                     ->sortable()
                     ->toggleable(isToggledHiddenByDefault: true),

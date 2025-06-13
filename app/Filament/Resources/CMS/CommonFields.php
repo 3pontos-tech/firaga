@@ -18,30 +18,32 @@ class CommonFields
     {
         return [
             Section::make(__('SEO Information'))
+                ->label(__('filament.seo'))
                 ->schema([
                     TextInput::make('meta_title')
-                        ->label(__('Meta title')),
+                        ->label(__('filament.meta_title')),
                     Textarea::make('meta_description')
-                        ->label(__('Meta description')),
+                        ->label(__('filament.meta_description')),
                     TextInput::make('meta_keywords')
-                        ->label(__('Meta keywords')),
+                        ->label(__('filament.meta_keywords')),
                     Toggle::make('disable_indexation')
-                        ->label(__('Disable indexation'))
-                        ->helperText(__('Disable search engines indexation for this page')),
+                        ->label(__('filament.disable_indexation'))
+                        ->helperText(__('filament.disable_indexation_helper')),
                 ])
                 ->columns(1),
 
             Section::make(__('Open Graph Information'))
+                ->label(__('filament.open_graph'))
                 ->schema([
                     TextInput::make('opengraph_title')
-                        ->label(__('Opengraph title')),
+                        ->label(__('filament.open_graph_title')),
                     Textarea::make('opengraph_description')
-                        ->label(__('Opengraph description')),
+                        ->label(__('filament.open_graph_description')),
                     CuratorPicker::make('opengraph_picture')
-                        ->label(__('Opengraph picture'))
+                        ->label(__('filament.open_graph_picture'))
                         ->preserveFilenames(),
                     TextInput::make('opengraph_picture_alt')
-                        ->label(__('Opengraph picture alt')),
+                        ->label(__('filament.open_graph_picture_alt')),
                 ])
                 ->columns(1),
         ];

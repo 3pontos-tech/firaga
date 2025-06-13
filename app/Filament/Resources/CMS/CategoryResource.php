@@ -36,6 +36,13 @@ class CategoryResource extends Resource
 
     protected static ?int $navigationSort = 1;
 
+    protected static ?string $label = null;
+
+    public static function getLabel(): ?string
+    {
+        return __('filament.category');
+    }
+
     public static function form(Form $form): Form
     {
         /** @var CategoryRepository $categoryRepository */
@@ -43,7 +50,7 @@ class CategoryResource extends Resource
 
         $schema = [
             TextInput::make('name')
-                ->label(__('Title'))
+                ->label(__('filament.category_name'))
                 ->live(onBlur: true)
                 ->afterStateUpdated(
                     fn (string $operation, $state, Set $set): mixed => $operation === 'create'
@@ -51,7 +58,7 @@ class CategoryResource extends Resource
                 )
                 ->required(),
             TextInput::make('slug')
-                ->label(__('Slug'))
+                ->label(__('filament.category_slug'))
                 ->required(),
         ];
 
@@ -106,7 +113,7 @@ class CategoryResource extends Resource
     {
         return $table
             ->columns([
-                TextColumn::make('name'),
+                TextColumn::make('name')->label(__('filament.category_name')),
             ])
             ->actions([
                 EditAction::make(),
