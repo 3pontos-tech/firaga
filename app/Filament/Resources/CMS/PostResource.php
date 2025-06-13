@@ -62,7 +62,7 @@ class PostResource extends Resource
 
         $contentTab = [
             'title' => TextInput::make('title')
-                ->label(__('Title'))
+                ->label(__('filament.title'))
                 ->live(onBlur: true)
                 ->afterStateUpdated(
                     fn (string $operation, string $state, Set $set): mixed => $operation === 'create'
@@ -71,18 +71,18 @@ class PostResource extends Resource
                 ->required(),
             'excerpt' => Textarea::make('excerpt')
                 ->required()
-                ->label(__('Excerpt')),
-            $filamentComponentService->getFlexibleContentFieldsForModel(Post::class),
+                ->label(__('filament.excerpt')),
+            $filamentComponentService->getFlexibleContentFieldsForModel(Post::class)->label(__('filament.contentPost')),
         ];
 
         $parametersTab = [
             'thumbnail_id' => CuratorPicker::make('thumbnail_id')
-                ->label(__('Image'))
+                ->label(__('filament.thumbnail'))
                 ->required()
                 ->preserveFilenames()
                 ->columnSpanFull(),
             'thumbnail_alt' => TextInput::make('thumbnail_alt')
-                ->label(__('Image alt'))
+                ->label(__('filament.thumbnail_alt'))
                 ->columnSpanFull(),
             'status' => Select::make('status')
                 ->label(__('Status'))
@@ -91,17 +91,18 @@ class PostResource extends Resource
                 ->live()
                 ->required(),
             'published_at' => DateTimePicker::make('published_at')
-                ->label(__('Published at'))
+                ->label(__('filament.publishedAt'))
                 ->native(false)
                 ->default(now())
                 ->required(),
             'slug' => TextInput::make('slug')
-                ->label(__('Slug'))
+                ->label(__('filament.blogSlug'))
                 ->required(),
             'is_top_article' => Toggle::make('is_top_article')
-                ->label(__('Top article'))
+                ->label(__('filament.topArticle'))
                 ->helperText(__('Display this article in the top article section')),
             'categories' => Select::make('categories')
+                ->label(__('filament.category'))
                 ->options(Category::query()->where(['lang' => Druid::getDefaultLocale()])
                     ->whereDoesntHave('translations', fn (Builder $query) => $query
                         ->where('lang', Druid::getDefaultLocale()))
@@ -111,6 +112,7 @@ class PostResource extends Resource
                 ->relationship('categories', 'name')
                 ->preload(),
             'authors' => Select::make('author')
+                ->label(__('filament.author'))
                 ->multiple()
                 ->required()
                 ->preload()
@@ -120,8 +122,8 @@ class PostResource extends Resource
         $result = [
             'tabs' => Tabs::make('Tabs')
                 ->tabs([
-                    'content' => Tab::make(__('Content'))->schema($contentTab),
-                    'parameters' => Tab::make(__('Parameters'))->schema($parametersTab)->columns(2),
+                    'content' => Tab::make(__('Content'))->label(__('filament.contentPost'))->schema($contentTab),
+                    'parameters' => Tab::make(__('Parameters'))->label(__('filament.ParametersPost'))->schema($parametersTab)->columns(2),
                     'seo' => Tab::make(__('SEO'))->schema(CommonFields::getCommonSeoFields())->columns(2),
                 ])->columnSpanFull(),
         ];
@@ -134,7 +136,7 @@ class PostResource extends Resource
 
         $columns = [
             TextColumn::make('title')
-                ->label(__('Title'))
+                ->label(__('filament.title'))
                 ->color('primary')
                 ->url(
                     url: fn (Post $record) => route('blog.show', ['post' => $record->slug]),
@@ -150,13 +152,13 @@ class PostResource extends Resource
                 ])
                 ->label(__('Status')),
             IconColumn::make('is_top_article')
-                ->label(__('Top article'))
+                ->label(__('filament.topArticle'))
                 ->boolean(),
             IconColumn::make('disable_indexation')
-                ->label(__('Disable indexation'))
+                ->label(__('filament.disableIndex'))
                 ->boolean(),
             TextColumn::make('published_at')
-                ->label(__('Published at'))
+                ->label(__('filament.publishedAt'))
                 ->dateTime()
                 ->sortable(),
         ];
@@ -169,12 +171,12 @@ class PostResource extends Resource
             ->columns($columns)
             ->defaultSort('published_at', 'desc')
             ->actions([
-                EditAction::make()->button()->outlined()->icon(''),
-                DeleteAction::make(),
+                EditAction::make()->label(__('filament.edit'))->button()->outlined()->icon(''),
+                DeleteAction::make()->label(__('filament.delete')),
             ])
             ->bulkActions([
                 BulkActionGroup::make([
-                    DeleteBulkAction::make(),
+                    DeleteBulkAction::make()->label('filament.bulkDelete'),
                 ]),
             ])
             ->selectCurrentPageOnly()

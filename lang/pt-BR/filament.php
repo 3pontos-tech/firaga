@@ -17,6 +17,10 @@ return [
     'page' => 'Página',
     'pages' => 'Páginas',
     'user' => 'Usuário',
+    'edit' => 'Editar',
+    'delete' => 'Excluir',
+    'bulkDelete' => 'Excluir em Massa',
+    'create' => 'Criar',
 
     /** Contact resource */
     'newContact' => 'Novo Contato',
@@ -35,5 +39,33 @@ return [
     'roleAuthor' => 'Departamento',
     'linkedin_url'=> 'URL do LinkedIn',
     'slugAuthor' => 'Identificador do Autor (slug)',
-    'avatar' => 'Foto de perfil'
+    'avatar' => 'Foto de perfil',
+
+    /** Blog post resource */
+    'newPost' => 'Nova Postagem',
+    'title' => 'Título',
+    'thumbnail' => 'Capa',
+    'thumbnail_alt' => 'Texto alternativo para a capa',
+    'topArticle' => 'Artigo Principal',
+    'disabledIndex' => 'Indexação Desativada',
+    'publishedAt' => 'Publicado em',
+    'contentPost' => 'Conteúdo da Postagem',
+    'ParametersPost' => 'Parâmetros da Postagem',
+    'excerpt' => 'Resumo',
+    'blogSlug' => 'Identificador da postagem (slug)',
+
+    /** SEO fields */
+    'seo' => 'Dados para SEO',
+    'metaTitle' => 'Meta Título',
+    'metaDescription' => 'Meta Descrição',
+    'metaKeywords' => 'Meta Palavras-chave',
+    'disableIndexation' => 'Desativar Indexação',
+    'disableIndexationHelper' => 'Desativa a indexação por mecanismos de busca para esta página',
+
+    /** Open Graph */
+    'openGraph' => 'dados para Open Graph',
+    'openGraphTitle' => 'Título Open Graph',
+    'openGraphDescription' => 'Descrição Open Graph',
+    'openGraphPicture' => 'Imagem Open Graph',
+    'openGraphPictureAlt' => 'Texto alternativo da imagem Open Graph',
 ];
