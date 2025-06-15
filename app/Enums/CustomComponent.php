@@ -10,4 +10,6 @@ enum CustomComponent: string
 
     case PartialGridHero = 'partials-grid-hero';
 
+    case PartialFaq = 'partials-faq';
+
 }

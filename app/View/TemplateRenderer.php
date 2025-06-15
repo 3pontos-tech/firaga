@@ -8,6 +8,7 @@ use App\Filament\Components\Blog\RichTextComponent;
 use App\Filament\Components\Landing\IconSolutionsComponent;
 use App\Filament\Components\Landing\MainHeroComponent;
 use App\Filament\Components\Landing\PlansComponent;
+use App\Filament\Components\Partials\FaqComponent;
 use App\Filament\Components\Partials\GridHeroComponent;
 use Illuminate\Contracts\View\View;
 use Illuminate\View\ViewException;
@@ -34,6 +35,7 @@ class TemplateRenderer
             CustomComponent::BlogMarkdownText->value => app(MarkdownTextComponent::class),
             CustomComponent::BlogRichText->value => app(RichTextComponent::class),
             CustomComponent::PartialGridHero->value => app(GridHeroComponent::class),
+            CustomComponent::PartialFaq->value => app(FaqComponent::class),
             'main_hero' => app(MainHeroComponent::class),
             'icon_solutions' => app(IconSolutionsComponent::class),
             'plans' => app(PlansComponent::class),

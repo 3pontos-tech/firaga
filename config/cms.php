@@ -2,6 +2,8 @@
 
 declare(strict_types=1);
 
+use App\Filament\Components\Partials\GridHeroComponent;
+use App\Filament\Components\Partials\FaqComponent;
 use App\Filament\Components\Blog\MarkdownTextComponent;
 use App\Filament\Components\Blog\RichTextComponent;
 use App\Filament\Components\Landing\IconSolutionsComponent;
@@ -100,7 +102,8 @@ return [
         ['class' => RichTextComponent::class],
 
         // Partial components
-        ['class' => \App\Filament\Components\Partials\GridHeroComponent::class],
+        ['class' => GridHeroComponent::class],
+        ['class' => FaqComponent::class],
     ],
 
     /*
