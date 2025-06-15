@@ -27,8 +27,7 @@ use Illuminate\Support\Collection;
 use Illuminate\Support\Str;
 use Webid\Druid\Enums\PageStatus;
 use Webid\Druid\Facades\Druid;
-//use Webid\Druid\Filament\Resources\CommonFields;
-use App\Filament\Resources\CMS\CommonFields;
+// use Webid\Druid\Filament\Resources\CommonFields;
 use Webid\Druid\Services\Admin\FilamentComponentsService;
 
 class PageResource extends Resource
