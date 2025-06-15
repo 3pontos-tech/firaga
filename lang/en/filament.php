@@ -36,7 +36,7 @@ return [
 
     /** Author resource */
     'new_author' => 'New Author',
-    'role_author' => 'Department',
+    'biography' => 'Biography',
     'linkedin_url' => 'LinkedIn URL',
     'slug_author' => 'Author Slug',
     'avatar' => 'Profile Picture',

@@ -5,9 +5,9 @@
  */
 
 return [
-    'author' => 'Autor',
+    'author' => 'Autores',
     'blog' => 'Blog',
-    'blog_posts' => 'Postagens do Blog',
+    'blog_posts' => 'Artigos',
     'posts' => 'Postagens',
     'post' => 'Postagem',
     'contact' => 'Contato',
@@ -36,9 +36,9 @@ return [
 
     /** Author resource */
     'new_author' => 'Novo Autor',
-    'role_author' => 'Departamento',
+    'biography' => 'Biografia',
     'linkedin_url' => 'URL do LinkedIn',
-    'slug_author' => 'Identificador do Autor (slug)',
+    'slug_author' => 'Identificador',
     'avatar' => 'Foto de perfil',
 
     /** Blog post resource */

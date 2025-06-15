@@ -34,6 +34,11 @@ class ContactResource extends Resource
         return __('filament.contact');
     }
 
+    public static function getNavigationGroup(): ?string
+    {
+        return __('filament.pages');
+    }
+
     public static function form(Form $form): Form
     {
         return $form

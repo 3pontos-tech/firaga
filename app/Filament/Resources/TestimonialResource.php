@@ -28,6 +28,11 @@ class TestimonialResource extends Resource
 
     protected static ?string $label = null;
 
+    public static function getNavigationGroup(): ?string
+    {
+        return __('filament.pages');
+    }
+
     public static function getLabel(): ?string
     {
         return __('filament.testimonial');

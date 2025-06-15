@@ -26,7 +26,10 @@ class MenuResource extends Resource
 
     protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
 
-    protected static ?string $navigationGroup = 'Menus';
+    public static function getNavigationGroup(): ?string
+    {
+        return __('filament.pages');
+    }
 
     public static function form(Form $form): Form
     {

@@ -27,9 +27,9 @@ class UserResource extends Resource
 
     protected static ?string $label = null;
 
-    public static function getLabel(): ?string
+    public static function getNavigationGroup(): ?string
     {
-        return __('filament.user');
+        return __('Administration');
     }
 
     public static function form(Form $form): Form
