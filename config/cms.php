@@ -53,7 +53,7 @@ return [
      |--------------------------------------------------------------------------
      */
 
-    'enable_page_module' => true,
+    'enable_page_module' => false,
 
     /*
      |--------------------------------------------------------------------------
@@ -98,6 +98,9 @@ return [
         // Blog components
         ['class' => MarkdownTextComponent::class],
         ['class' => RichTextComponent::class],
+
+        // Partial components
+        ['class' => \App\Filament\Components\Partials\GridHeroComponent::class],
     ],
 
     /*

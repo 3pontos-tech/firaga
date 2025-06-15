@@ -8,8 +8,7 @@
 ])
 
 <article class="pb-8">
-    <div class="container mx-auto px-4 md:px-8">
-        <div class="max-w-4xl mx-auto" style="opacity: 1; will-change: opacity, transform; transform: none;">
+        <div class="max-w-4xl mx-auto px-4 md:px-8" style="opacity: 1; will-change: opacity, transform; transform: none;">
             <a href="/blog" class="inline-flex items-center gap-2 text-brand hover:text-brand-hover mb-8">
                 <x-heroicon-c-arrow-left class="h-4 w-4"/>
                 Voltar ao Blog
@@ -79,5 +78,4 @@
                 </div>
             </section>
         </div>
-    </div>
 </article>

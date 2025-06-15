@@ -8,4 +8,6 @@ enum CustomComponent: string
 
     case BlogRichText = 'blog-rich-text';
 
+    case PartialGridHero = 'partials-grid-hero';
+
 }

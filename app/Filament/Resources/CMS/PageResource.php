@@ -171,6 +171,6 @@ class PageResource extends Resource
 
     public static function canAccess(): bool
     {
-        return Druid::isPageModuleEnabled();
+        return true;
     }
 }

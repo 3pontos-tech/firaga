@@ -1,7 +1,7 @@
 <x-layout.guest>
-    <!-- Blog Section with Enhanced Styling -->
-    <x-blog.hero/>
-
+    <x-partials.grid-hero>
+            Blog <span class="text-brand">{{ config('app.name') }}</span>
+    </x-partials.grid-hero>
     <section class="py-6 lg:py-12">
         <div class="container mx-auto px-4 md:px-8">
             <div class="grid grid-cols-1 lg:grid-cols-[300px_1fr] gap-6 lg:gap-12">
