@@ -26,6 +26,13 @@ class TestimonialResource extends Resource
 
     protected static ?string $navigationIcon = 'heroicon-o-chat-bubble-left-ellipsis';
 
+    protected static ?string $label = null;
+
+    public static function getLabel(): ?string
+    {
+        return __('filament.testimonial');
+    }
+
     public static function form(Form $form): Form
     {
         return $form
@@ -33,12 +40,14 @@ class TestimonialResource extends Resource
                 Section::make()
                     ->schema([
                         TextInput::make('name')
+                            ->label(__('filament.testimonial_name'))
                             ->required()
                             ->maxLength(255),
                         TextInput::make('role')
                             ->required()
                             ->maxLength(255),
                         Select::make('rating')
+                            ->label(__('filament.testimonial_rating'))
                             ->options([
                                 1 => '1',
                                 2 => '2',
@@ -47,11 +56,13 @@ class TestimonialResource extends Resource
                                 5 => '5',
                             ]),
                         Textarea::make('comment')
+                            ->label(__('filament.testimonial_comment'))
                             ->required(),
                         DateTimePicker::make('posted_at')
+                            ->label(__('filament.published_at'))
                             ->required(),
                         CuratorPicker::make('thumbnail_id')
-                            ->label(__('Image'))
+                            ->label(__('filament.testimonial_avatar'))
                             ->preserveFilenames()
                             ->columnSpanFull(),
                     ]),
@@ -63,14 +74,18 @@ class TestimonialResource extends Resource
         return $table
             ->columns([
                 TextColumn::make('name')
+                    ->label(__('filament.testimonial_name'))
                     ->searchable()
                     ->sortable(),
                 TextColumn::make('rating')
+                    ->label(__('filament.testimonial_rating'))
                     ->searchable()
                     ->sortable(),
                 TextColumn::make('comment')
+                    ->label(__('filament.testimonial_comment'))
                     ->searchable(),
                 TextColumn::make('posted_at')
+                    ->label(__('filament.published_at'))
                     ->searchable()
                     ->sortable(),
             ])
