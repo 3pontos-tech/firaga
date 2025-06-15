@@ -1,3 +1,17 @@
+@props([
+    'testimonials' => [],
+])
+
+@php
+    use App\Models\Testimonial;
+    if (count($testimonials) == 0) {
+        $testimonials = Testimonial::query()
+        ->inRandomOrder()
+        ->limit(4)
+        ->get();
+    }
+@endphp
+
 <!-- Testimonial Section -->
 <section id="depoimentos" class="relative bg-gradient-to-br from-bg via-surface to-bg text-heading py-24 md:py-28 overflow-hidden">
     <!-- Animated Gradient Overlay -->
@@ -9,7 +23,7 @@
     <div class="container mx-auto px-6 relative z-10">
 
         <!-- Testimonials Carousel -->
-        <x-landing.testimonial-carousel :testimonials="$testimonialData" />
+        <x-landing.testimonial-carousel :testimonials="$testimonials" />
 
         <!-- "Todos os Reviews" Button centralizado abaixo dos cards -->
         <div class="flex justify-center mt-12">

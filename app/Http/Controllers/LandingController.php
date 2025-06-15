@@ -22,17 +22,17 @@ class LandingController extends Controller
                 [
                     'title' => 'Learn',
                     'description' => 'Discover the basics of financial education.',
-                    'backgroundImage' => 'https://images.unsplash.com/photo-1504384308090-c894fdcc538d',
+                    'backgroundImage' => 'https://github.com/danielhe4rt.png',
                 ],
                 [
                     'title' => 'Save',
                     'description' => 'Find out how to save money effectively.',
-                    'backgroundImage' => 'https://images.unsplash.com/photo-1504384308090-c894fdcc538d',
+                    'backgroundImage' => 'https://github.com/danielhe4rt.png',
                 ],
                 [
                     'title' => 'Invest',
                     'description' => 'Learn about investment strategies.',
-                    'backgroundImage' => 'https://images.unsplash.com/photo-1504384308090-c894fdcc538d',
+                    'backgroundImage' => 'https://github.com/danielhe4rt.png',
                 ],
             ],
             'solutionsData' => [

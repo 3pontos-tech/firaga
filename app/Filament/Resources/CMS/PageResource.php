@@ -146,7 +146,7 @@ class PageResource extends Resource
             ->columns($columns)
             ->defaultSort('published_at', 'desc')
             ->actions([
-                EditAction::make()->button()->outlined()->icon(''),
+                EditAction::make()->button()->outlined(),
                 DeleteAction::make()->label(__('filament.delete')),
             ])
             ->bulkActions([
