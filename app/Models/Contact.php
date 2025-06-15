@@ -17,7 +17,7 @@ class Contact extends Model
         'ip_address',
         'message',
         'message_intent',
-        'contact_prereference',
+        'contact_preference',
     ];
 
     protected $casts = [

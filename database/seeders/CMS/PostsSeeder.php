@@ -88,4 +88,60 @@ class PostsSeeder extends Seeder
             ],
         ];
     }
+
+    public function pages(): array
+    {
+        return [
+            'budget-planning' => [
+                'meta_title' => 'Orçamento Individual e Familiar',
+                'meta_description' => 'Página sobre Orçamento Individual e Familiar da Fire|ce.',
+                'meta_keywords' => 'orçamento, financeiro, planejamento, familiar',
+                'opengraph_title' => 'Orçamento Individual e Familiar',
+                'slug' => 'orcamento-individual-familiar',
+                'opengraph_description' => 'Planejamento de orçamento para indivíduos e famílias que desejam controlar, organizar e direcionar melhor seus recursos.',
+                'content' => [
+                    [
+                        'type' => 'partials-grid-hero',
+                        'data' => [
+                            'subheading' => 'Serviços',
+                            'heading' => 'Orçamento Individual e Familiar',
+                            'description' => 'Recupere o controle da sua vida financeira com planejamento, clareza e estrutura.',
+                        ],
+                    ],
+                    [
+                        'type' => 'blog-markdown-text',
+                        'data' => [
+                            'content' => file_get_contents(resource_path('markdown/pages/budget-planning.md')),
+                        ],
+                    ],
+                    [
+                        'type' => 'partials-faq',
+                        'data' => [
+                            'thumbnail' => MediaFactory::new()->create()->getKey(),
+                            'solutions' => [
+                                [
+                                    'question' => 'Para quem é indicado o serviço de orçamento individual e familiar?',
+                                    'answer' => 'Para pessoas que desejam estruturar sua vida financeira, ganhar clareza sobre gastos, organizar prioridades e alcançar objetivos com mais segurança.',
+                                ],
+                                [
+                                    'question' => 'Como funciona o acompanhamento?',
+                                    'answer' => 'Você terá reuniões para diagnóstico, estruturação do orçamento e orientações práticas para manter o plano no dia a dia. É um processo educativo e estratégico.',
+                                ],
+                                [
+                                    'question' => 'Posso contratar esse serviço mesmo já tendo renda estável?',
+                                    'answer' => 'Sim. Mesmo com renda, muitas pessoas perdem dinheiro por falta de estrutura e estratégia. O orçamento bem feito otimiza seu uso do dinheiro e gera mais tranquilidade.',
+                                ],
+                                [
+                                    'question' => 'Esse serviço pode ajudar quem está endividado?',
+                                    'answer' => 'Sim. O planejamento orçamentário é essencial para quem deseja sair do vermelho e retomar o controle financeiro com responsabilidade.',
+                                ],
+                            ],
+                        ],
+                    ],
+                ],
+                'status' => 'published',
+            ],
+
+        ];
+    }
 }

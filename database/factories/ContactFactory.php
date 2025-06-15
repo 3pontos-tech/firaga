@@ -19,7 +19,7 @@ class ContactFactory extends Factory
             'ip_address' => $this->faker->ipv4(),
             'message' => $this->faker->word(),
             'message_intent' => $this->faker->word(),
-            'contact_prereference' => $this->faker->word(),
+            'contact_preference' => $this->faker->word(),
             'created_at' => Carbon::now(),
             'updated_at' => Carbon::now(),
         ];

@@ -22,7 +22,7 @@ class ContactExporter extends Exporter
             ExportColumn::make('ip_address'),
             ExportColumn::make('message'),
             ExportColumn::make('message_intent'),
-            ExportColumn::make('contact_prereference'),
+            ExportColumn::make('contact_preference'),
             ExportColumn::make('created_at'),
             ExportColumn::make('updated_at'),
         ];
