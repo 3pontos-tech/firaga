@@ -10,7 +10,8 @@ class ArticlesController extends Controller
 {
     public function getArticles(): View
     {
-        $posts = Post::query()->paginate();
+        $posts = Post::query()
+            ->paginate(5);
         $featuredPost = Post::query()
             ->where('is_top_article', true)
             ->where('status', 'published')

@@ -6,11 +6,12 @@
     <!-- Meta Tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+
     {{ $metatags ?? '' }}
     <!-- Favicon Icon -->
-    <link rel="icon" href="assets/img/favicon.png">
+    <link rel="icon" href="{{ asset('favicon.png') }}">
     <!-- Site Title -->
-    <title>{{ config('app.name') }}</title>
+    <title>@yield('title', config('app.name'))</title>
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 
     <script>(function (w, d, s, l, i) {
@@ -52,8 +53,6 @@
     $menus = Menu::all()->keyBy('slug');
 @endphp
 <x-navbar :menu="$menus['main-menu']"/>
-
-
 <main>
     {{ $slot }}
 </main>
