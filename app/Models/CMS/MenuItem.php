@@ -29,8 +29,12 @@ class MenuItem extends Model
         'target' => MenuItemTarget::class,
     ];
 
-    protected $guarded = [
-        'id',
+    protected $fillable = [
+        'menu_id',
+        'label',
+        'custom_url',
+        'target',
+        'type',
     ];
 
     public function model(): MorphTo
