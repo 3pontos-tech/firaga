@@ -4,12 +4,12 @@ return [
     'pages' => [
         [
             'title' => 'Planejamento',
-            'meta_title' => 'Planejamento Personalizado',
-            'meta_description' => 'Página de Planejamento Personalizado.',
-            'meta_keywords' => 'planejamento, personalizado',
-            'opengraph_title' => 'Planejamento Personalizado',
-            'slug' => 'planejamento-personalizado',
-            'opengraph_description' => 'Página de Planejamento Personalizado.',
+            'meta_title' => 'Planejamento Personalizado – Consultoria Financeira sob Medida | Fire|ce',
+            'meta_description' => 'Transforme sua vida financeira com os pacotes personalizados da Fire|ce. Do plano Gold ao Black, oferecemos organização, estratégia e performance para cada etapa da sua jornada.',
+            'meta_keywords' => 'planejamento financeiro, planejamento personalizado, consultoria financeira, organização financeira, consultoria Fire|ce',
+            'opengraph_title' => 'Planejamento Financeiro Personalizado para Cada Fase da Sua Vida | Fire|ce',
+            'opengraph_description' => 'Descubra os pacotes exclusivos da Fire|ce para organizar, proteger e expandir seu patrimônio com inteligência e clareza.',
+            'slug' => 'planejamento',
             'content' => [
                 [
                     'type' => 'partials-grid-hero',
@@ -54,12 +54,12 @@ return [
         ],
         [
             'title' => 'Key Account',
-            'meta_title' => 'Key Account',
-            'meta_description' => 'Página de Key Account.',
-            'meta_keywords' => 'planejamento, personalizado',
-            'opengraph_title' => 'Key Account',
+            'meta_title' => 'Key Account – Consultoria Financeira Premium | Fire|ce',
+            'meta_description' => 'Conheça o Key Account da Fire|ce: atendimento financeiro premium para proteger, consolidar e expandir seu patrimônio com estratégia, discrição e excelência.',
+            'meta_keywords' => 'key account, consultoria financeira, planejamento patrimonial, blindagem patrimonial, atendimento personalizado, planejamento sucessório, investimento premium, gestão financeira de alto nível',
+            'opengraph_title' => 'Key Account – Consultoria Financeira Premium | Fire|ce',
+            'opengraph_description' => 'Atendimento exclusivo e altamente estratégico para clientes que exigem inteligência, proteção e performance na gestão de seu patrimônio.',
             'slug' => 'key-account',
-            'opengraph_description' => 'Página de Key Account.',
             'content' => [
                 [
                     'type' => 'partials-grid-hero',
@@ -104,12 +104,12 @@ return [
         ],
         [
             'title' => 'Educa Fire',
-            'meta_title' => 'Educa Fire',
-            'meta_description' => 'Página de Educa Fire.',
-            'meta_keywords' => 'planejamento, personalizado',
-            'opengraph_title' => 'Educa Fire',
+            'meta_title' => 'Educa Fire – Educação Financeira para Clientes e Profissionais | Fire|ce',
+            'meta_description' => 'O Educa Fire é a vertente educacional da Fire|ce que capacita clientes e profissionais com conhecimento prático para decisões financeiras mais inteligentes.',
+            'meta_keywords' => 'educação financeira, workshops, palestras, formação profissional, capacitação financeira, consultoria financeira, conhecimento financeiro, Fire|ce',
+            'opengraph_title' => 'Educa Fire – Conhecimento para Transformar Finanças | Fire|ce',
+            'opengraph_description' => 'Workshops, palestras e formações práticas para democratizar o acesso à inteligência financeira. Conheça o Educa Fire e comece a transformar sua vida.',
             'slug' => 'educa-fire',
-            'opengraph_description' => 'Página de Educa Fire.',
             'content' => [
                 [
                     'type' => 'partials-grid-hero',
@@ -150,12 +150,12 @@ return [
         ],
         [
             'title' => 'Parcerias',
-            'meta_title' => 'Parcerias',
-            'meta_description' => 'Página de Parcerias.',
-            'meta_keywords' => 'planejamento, personalizado',
-            'opengraph_title' => 'Parcerias',
+            'meta_title' => 'Parcerias Estratégicas – Iniciativas Colaborativas com Propósito | Fire|ce',
+            'meta_description' => 'Conecte-se à Fire|ce por meio de parcerias estratégicas. Criamos projetos colaborativos com empresas e instituições que desejam gerar impacto real por meio da educação financeira.',
+            'meta_keywords' => 'parcerias estratégicas, projetos educacionais, joint venture, educação corporativa, inovação financeira, colaboração, Fire|ce, integração de expertise, inteligência financeira',
+            'opengraph_title' => 'Parcerias Estratégicas com a Fire|ce – Juntos Pela Transformação Financeira',
+            'opengraph_description' => 'Empresas, especialistas e instituições podem se conectar à Fire|ce para criar soluções financeiras inovadoras com propósito e impacto.',
             'slug' => 'parcerias',
-            'opengraph_description' => 'Página de Parcerias.',
             'content' => [
                 [
                     'type' => 'partials-grid-hero',
@@ -200,12 +200,12 @@ return [
         ],
         [
             'title' => 'Code Capital',
-            'meta_title' => 'Code Capital',
-            'meta_description' => 'Página de Code Capital.',
-            'meta_keywords' => 'planejamento, personalizado',
-            'opengraph_title' => 'Code Capital',
+            'meta_title' => 'Code Capital – Investimentos Internacionais para Desenvolvedores | Fire|ce',
+            'meta_description' => 'A Fire|ce oferece soluções financeiras globais para profissionais de tecnologia. Invista com segurança e performance no exterior com planejamento personalizado.',
+            'meta_keywords' => 'investimento internacional, desenvolvedores, profissionais de tecnologia, Fire|ce, code capital, tesouro internacional, planejamento financeiro, carteira global, dólar, investimentos no exterior',
+            'opengraph_title' => 'Code Capital – Investimento Inteligente para Profissionais de Tecnologia | Fire|ce',
+            'opengraph_description' => 'Seu talento é global — seus investimentos também podem ser. Conheça o Code Capital da Fire|ce e invista com inteligência no mercado internacional.',
             'slug' => 'code-capital',
-            'opengraph_description' => 'Página de Code Capital.',
             'content' => [
                 [
                     'type' => 'partials-grid-hero',

@@ -1,5 +1,3 @@
-# Nossos Pacotes
-
 Cada pessoa está em um estágio diferente da vida financeira, por isso, nossos pacotes foram criados para se adaptarem a realidades distintas.  
 Do básico ao avançado, oferecemos **organização, estratégia e performance** para que você tome decisões mais inteligentes com seu dinheiro.
 
