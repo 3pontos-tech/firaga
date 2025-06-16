@@ -113,10 +113,9 @@ class PostResource extends Resource
                 ->preload(),
             'authors' => Select::make('author')
                 ->label(__('filament.author'))
-                ->multiple()
                 ->required()
                 ->preload()
-                ->relationship('authors', 'name'),
+                ->relationship('author', 'name'),
         ];
 
         $result = [
