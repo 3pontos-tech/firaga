@@ -18,7 +18,7 @@
             {{ $description }}
         </p>
     </div>
-    <div class="relative overflow-hidden rounded-2xl bg-gradient-to-br from-surface to-bg shadow-2xl">
+    <div class="relative mx-5 overflow-hidden rounded-2xl bg-gradient-to-br from-surface to-bg shadow-2xl">
 
         <div class="relative">
             @foreach($solutions as $solution)
