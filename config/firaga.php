@@ -1,5 +1,7 @@
 <?php
 
+use Carbon\Carbon;
+
 return [
     'pages' => [
         [
@@ -320,7 +322,7 @@ Com o apoio da empresa Fire|ce e da assessoria da Glaucia estou conseguindo ter 
 Só tenho a agradecer por tanto aprendizado!!
 Com certeza passarei para meus filhos essa educação financeira tão importante nos dias atuais.
 TEXT,
-            'posted_at' => \Carbon\Carbon::now()->subWeek(),
+            'posted_at' => Carbon::now()->subWeek(),
         ],
         [
             'name' => 'Lucas Santos',
@@ -329,7 +331,7 @@ TEXT,
             'comment' => <<<'TEXT'
 Há poucos meses, eu praticamente não sabia nada sobre o universo financeiro. Na verdade, achava que apenas poupar dinheiro era suficiente para garantir estabilidade e segurança no futuro, eu estava profundamente enganado. O Sidão me fez perceber que estratégia e experiência fazem bastante diferença nessas coisas. Com apenas algumas reuniões ele me ajudou a ter controle sobre o meus gastos, ganhos e diferente de antes, posso ter agora uma perspectiva de futuro. Vlw Sidney!
 TEXT,
-            'posted_at' => \Carbon\Carbon::now()->subDays(6),
+            'posted_at' => Carbon::now()->subDays(6),
         ],
         [
             'name' => 'Tomás Fagundes',
@@ -339,7 +341,7 @@ TEXT,
 Comecei a consultoria com a Fire|ce há pouco mais de 1 mês, e já percebi que fiz um ótimo investimento, pois se trata de pessoas muito honestas e que de fato se preocupam em me proporcionar um controle melhor de meus gastos e como devo investir meu dinheiro para aumentar meu patrimônio (eles literalmente te informam qual fundo você deve investir e a quantia, baseado no que você tem disponível), e te trazem um planejamento futuro muito bem embasado e realista com o seu estilo de vida. Devo mencionar, especialmente, o Pedro Micheleto, que é meu consultor, e é uma pessoa que eu posso entrar em contato a qualquer horário do qualquer dia que ele irá me responder.
 Recomendo fortemente!!!
 TEXT,
-            'posted_at' => \Carbon\Carbon::now()->subMonth(),
+            'posted_at' => Carbon::now()->subMonth(),
         ],
         [
             'name' => 'EDCARLOS RODRIGUES CARNEIRO SILVA',
@@ -349,7 +351,7 @@ TEXT,
 Comecei na consultoria da Fire|ce há 3 meses e tem sido um processo de aprendizado muito gratificante, pois com a ajuda da consultoria do Leonardo Siqueira, tenho conseguido organizar minhas finanças de forma consciente e simples. Além disso, o Leonardo tem me ajudado diariamente com estratégias financeiras, alinhadas com a minha realidade, com o objetivo de atingir meus objetivos de médio/longo prazo.
 Sou muito grato à Fire|ce pelos serviços de consultoria prestados com excelência!!!
 TEXT,
-            'posted_at' => \Carbon\Carbon::now()->subWeeks(4),
+            'posted_at' => Carbon::now()->subWeeks(4),
         ],
         [
             'name' => 'André Kimura',
@@ -359,7 +361,7 @@ TEXT,
 Comecei no fim do ano passado a consultoria na Finance, meu objetivo inicial era apenas um controle melhor dos gastos, imaginava que o resto da minha vida financeira estava muito boa, mas meu consultor Matheus Oka mostrou que havia muito que poderia melhorar. Foi muito atencioso e mostrou muitas melhorias que poderiam ser feitas em meus investimentos, me ensinando muito sobre essa área, também gostei muito abordagem sobre o controle de gastos, com pequenas mudanças progressivas para atingir os objetivos e ainda reuniões frequentes para acompanhar o andamento do mês.
 A minha experiência com a Finance está sendo muito boa e recomendo muito para quem tem interesse em uma consultoria desse tipo.
 TEXT,
-            'posted_at' => \Carbon\Carbon::now()->subMonths(4),
+            'posted_at' => Carbon::now()->subMonths(4),
         ],
         [
             'name' => 'Sam Assunção',
@@ -368,7 +370,7 @@ TEXT,
             'comment' => <<<'TEXT'
 A Fire Ce me apresentou que é possível aderir a uma educação financeira de forma realista e consistente. Ainda mais com a contribuição imensurável de um dos seus consultores, Pedro Micheleto. Até o momento estou satisfeito com os serviços prestados pela empresa e vejo que já não é mais tão abstrato alcançar objetivos financeiros.
 TEXT,
-            'posted_at' => \Carbon\Carbon::now()->subMonth(),
+            'posted_at' => Carbon::now()->subMonth(),
         ],
         [
             'name' => 'Felipe Rosa',
@@ -377,7 +379,7 @@ TEXT,
             'comment' => <<<'TEXT'
 Nunca fui uma pessoa organizada financeiramente e começar a consultoria com o Matheus Oka transformou, no sentido mais literal da palavra, minha vida pra melhor! Venho desenvolvendo consciência, entendendo como funcionam meus gastos, conseguindo estruturar meus objetivos de maneira clara e funcional, e pela primeira vez consigo guardar dinheiro. Muito além de só planejar, o Matheus me ajuda a conquistar coisas que eram só uma ideia. Muito grato e muito feliz de ter feito essa escolha!
 TEXT,
-            'posted_at' => \Carbon\Carbon::now()->subMonths(4),
+            'posted_at' => Carbon::now()->subMonths(4),
         ],
         [
             'name' => 'victoria deep',
@@ -386,7 +388,7 @@ TEXT,
             'comment' => <<<'TEXT'
 Tenho tido uma experiência ótima na Finance&Co. e que tem sido fundamental para o meu planejamento financeiro. Com a ajuda do Matheus Oka consegui manter um planejamento financeiro sólido, melhorar meus investimentos e tomar decisões informadas. Agradeço por toda expertise e dedicação da equipe, e recomendo a empresa para quem busca uma consultoria financeira confiável e eficaz.
 TEXT,
-            'posted_at' => \Carbon\Carbon::now()->subMonths(4),
+            'posted_at' => Carbon::now()->subMonths(4),
         ],
         [
             'name' => 'Raquel Hipolito',
@@ -395,7 +397,7 @@ TEXT,
             'comment' => <<<'TEXT'
 A Finance foi, sem dúvida, a empresa que mais me trouxe aquele sentimento de "UAU". A combinação entre estratégia bem definida e plano de ação sólido proporcionou uma sensação de segurança única. Ter o Matheus Cruz como consultor reforçou ainda mais essa confiança, transmitindo credibilidade em cada orientação. Sua capacidade de adaptação e atualização constante sobre os melhores investimentos me impressionou tanto que fiz questão de recomendar a empresa para vários amigos.
 TEXT,
-            'posted_at' => \Carbon\Carbon::now()->subMonths(3),
+            'posted_at' => Carbon::now()->subMonths(3),
         ],
     ],
 ];
