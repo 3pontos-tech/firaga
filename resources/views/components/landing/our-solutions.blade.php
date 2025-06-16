@@ -2,38 +2,7 @@
     'section' => 'Nossas Especialidades',
     'heading' => 'Soluções Personalizadas',
     'description' => 'Oferecemos serviços financeiros especializados para atender às suas necessidades específicas e acelerar sua jornada rumo à independência financeira.',
-    'solutions' => collect([
-        [
-            'title' => 'Planejamento',
-            'description' => 'Três pacotes personalizados para organizar, expandir e maximizar suas finanças, garantindo controle e crescimento contínuo.',
-            'icon' => 'fas-bullseye',
-            'redirect_url' => '#',
-        ],
-        [
-            'title' => 'Key Account',
-            'description' => 'Atendimento exclusivo para clientes estratégicos, com planejamento sucessório, investimentos internacionais e parcerias de alto impacto.',
-            'icon' => 'fas-crown',
-            'redirect_url' => '#',
-        ],
-        [
-            'title' => 'Code Capital',
-            'description' => 'Consultoria especializada para profissionais de TI com ganhos em moeda estrangeira, focada em rentabilidade e proteção patrimonial.',
-            'icon' => 'fas-code',
-            'redirect_url' => '#',
-        ],
-        [
-            'title' => 'Educa Fire',
-            'description' => 'Vertente educacional para transformar clientes e capacitar consultores com conhecimento aplicado.',
-            'icon' => 'fas-graduation-cap',
-            'redirect_url' => '#',
-        ],
-        [
-            'title' => 'Parcerias',
-            'description' => 'Conexões estratégicas para gerar resultados mais rápidos e eficazes por meio de alianças coorporativas.',
-            'icon' => 'fas-handshake',
-            'redirect_url' => '#',
-        ],
-    ]),
+    'solutions' => collect(),
 ])
 
 <section class="mx-auto max-w-7xl py-24">

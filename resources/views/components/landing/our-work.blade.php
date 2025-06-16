@@ -8,17 +8,17 @@
         [
             'title' => 'Análise de Perfil',
             'description' => 'Entendemos seu perfil financeiro e objetivos.',
-            'backgroundImage' => 'bg-hero-pattern-1',
+            'backgroundImage' => asset('images/stock/office-coworkers.png'),
         ],
         [
             'title' => 'Planejamento Estratégico',
             'description' => 'Criamos um plano personalizado para você.',
-            'backgroundImage' => 'bg-hero-pattern-2',
+            'backgroundImage' => asset('images/stock/office-coworkers.png'),
         ],
         [
             'title' => 'Execução e Suporte',
             'description' => 'Acompanhamos a execução do plano com suporte contínuo.',
-            'backgroundImage' => 'bg-hero-pattern-3',
+            'backgroundImage' => asset('images/stock/office-coworkers.png'),
         ],
     ],
 ])

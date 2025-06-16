@@ -14,7 +14,7 @@
         <meta property="og:type" content="website">
         <meta property="og:url" content="{{ $page?->url() ?? '' }}">
         <meta property="og:description" content="{{ $page?->opengraph_description }}">
-        <meta property="og:image" content="{{ $page?->openGraphPicture?->url ?? 'https://github.com/danielhe4rt.png' }}"/>
+        <meta property="og:image" content="{{ $page?->openGraphPicture?->getSignedUrl() ?? asset('images/meta-logo.png') }}"/>
         <meta property="og:image:alt" content="{{ $page?->opengraph_picture_alt }}"/>
     </x-slot:metatags>
 

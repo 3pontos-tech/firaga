@@ -14,42 +14,40 @@ class LandingController extends Controller
         return view('welcome', [
             'heroData' => [
                 'heading' => $heading,
-                'subheading' => 'A simple, beautiful, and fast landing page.',
-                'button_text' => 'Get Started',
+                'subheading' => 'Transformamos a forma como as pessoas lidam com dinheiro, capacitando-as a conquistar liberdade, segurança e crescimento financeiro sustentável.',
+                'button_text' => 'Agende uma consultoria',
                 'button_url' => '/blog',
             ],
-            'cardData' => [
+            'solutions' => [
                 [
-                    'title' => 'Learn',
-                    'description' => 'Discover the basics of financial education.',
-                    'backgroundImage' => 'https://github.com/danielhe4rt.png',
+                    'title' => 'Planejamento',
+                    'description' => 'Três pacotes personalizados para organizar, expandir e maximizar suas finanças, garantindo controle e crescimento contínuo.',
+                    'icon' => 'fas-bullseye',
+                    'redirect_url' => route('page.show', ['page' => 'planejamento-personalizado']),
                 ],
                 [
-                    'title' => 'Save',
-                    'description' => 'Find out how to save money effectively.',
-                    'backgroundImage' => 'https://github.com/danielhe4rt.png',
+                    'title' => 'Key Account',
+                    'description' => 'Atendimento exclusivo para clientes estratégicos, com planejamento sucessório, investimentos internacionais e parcerias de alto impacto.',
+                    'icon' => 'fas-crown',
+                    'redirect_url' => route('page.show', ['page' => 'key-account']),
                 ],
                 [
-                    'title' => 'Invest',
-                    'description' => 'Learn about investment strategies.',
-                    'backgroundImage' => 'https://github.com/danielhe4rt.png',
-                ],
-            ],
-            'solutionsData' => [
-                [
-                    'title' => 'Personal Finance',
-                    'description' => 'Manage your personal finances with ease.',
-                    'route' => '/personal-finance',
+                    'title' => 'Code Capital',
+                    'description' => 'Consultoria especializada para profissionais de TI com ganhos em moeda estrangeira, focada em rentabilidade e proteção patrimonial.',
+                    'icon' => 'fas-code',
+                    'redirect_url' => route('page.show', ['page' => 'code-capital']),
                 ],
                 [
-                    'title' => 'Budgeting',
-                    'description' => 'Create and stick to a budget that works for you.',
-                    'route' => '/budgeting',
+                    'title' => 'Educa Fire',
+                    'description' => 'Vertente educacional para transformar clientes e capacitar consultores com conhecimento aplicado.',
+                    'icon' => 'fas-graduation-cap',
+                    'redirect_url' => route('page.show', ['page' => 'educa-fire']),
                 ],
                 [
-                    'title' => 'Debt Management',
-                    'description' => 'Learn how to manage and reduce your debt.',
-                    'route' => '/debt-management',
+                    'title' => 'Parcerias',
+                    'description' => 'Conexões estratégicas para gerar resultados mais rápidos e eficazes por meio de alianças coorporativas.',
+                    'icon' => 'fas-handshake',
+                    'redirect_url' => route('page.show', ['page' => 'parcerias']),
                 ],
             ],
             'plansData' => [

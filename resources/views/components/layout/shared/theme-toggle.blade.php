@@ -21,6 +21,7 @@
     x-init="
         if (typeof $store !== 'undefined' && $store.theme) {
             isDark = $store.theme.dark;
+            console.log('Theme store detected:', isDark);
             $watch('$store.theme.dark', value => {
                 isDark = value;
             });

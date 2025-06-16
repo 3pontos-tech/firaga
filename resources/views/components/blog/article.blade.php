@@ -8,8 +8,8 @@
 ])
 
 <article class="pb-8">
-        <div class="max-w-4xl mx-auto px-4 md:px-8" style="opacity: 1; will-change: opacity, transform; transform: none;">
-            <a href="/blog" class="inline-flex items-center gap-2 text-brand hover:text-brand-hover mb-8">
+        <div class="max-w-4xl mx-auto px-4 md:px-8">
+            <a href="{{ route('blog.index') }}" class="inline-flex items-center gap-2 text-brand hover:text-brand-hover mb-8">
                 <x-heroicon-c-arrow-left class="h-4 w-4"/>
                 Voltar ao Blog
             </a>
@@ -62,7 +62,7 @@
                     loading="lazy"
                     decoding="async"
                     class="rounded-full w-16 h-16 border-2 border-brand"
-                    src="{{ $post->author->thumbnail->url }}"
+                    src="{{ $post->author->thumbnail->getSignedUrl() }}"
                 >
                 <div class="flex flex-col">
                     <h2 class="text-lg font-bold text-heading ">Autor</h2>

@@ -252,14 +252,14 @@ return [
     ],
     'articles' => [
         'budget-planning' => [
-            'title' => 'Planejamento de Orçamento',
-            'excerpt' => 'Planejamento de orçamento é essencial para o controle financeiro.',
-            'meta_title' => 'Orçamento Individual e Familiar',
-            'meta_description' => 'Página sobre Orçamento Individual e Familiar da Fire|ce.',
-            'meta_keywords' => 'orçamento, financeiro, planejamento, familiar',
-            'opengraph_title' => 'Orçamento Individual e Familiar',
+            'title' => 'Orçamento Individual e Familiar',
+            'excerpt' => 'Controle, organização e consciência para sua vida financeira com apoio especializado.',
+            'meta_title' => 'Orçamento Individual e Familiar – Fire|ce',
+            'meta_description' => 'Organize sua vida financeira com estrutura, clareza e acompanhamento personalizado da Fire|ce.',
+            'meta_keywords' => 'orçamento familiar, orçamento pessoal, controle financeiro, planejamento financeiro, finanças pessoais, consultoria financeira',
+            'opengraph_title' => 'Como organizar seu orçamento – Fire|ce',
+            'opengraph_description' => 'Aprenda com a Fire|ce a estruturar um orçamento funcional para evitar dívidas e alcançar seus objetivos com confiança.',
             'slug' => 'orcamento-individual-familiar',
-            'opengraph_description' => 'Planejamento de orçamento para indivíduos e famílias que desejam controlar, organizar e direcionar melhor seus recursos.',
             'content' => [
                 [
                     'type' => 'blog-markdown-text',
@@ -273,12 +273,12 @@ return [
         'short-medium-long-term' => [
             'title' => 'Curto, Médio e Longo Prazo',
             'excerpt' => 'Aprenda como organizar suas finanças em curto, médio e longo prazo com estratégias que fazem o tempo trabalhar a seu favor.',
-            'meta_title' => 'Curto, Médio e Longo Prazo',
-            'meta_description' => 'Aprenda como organizar suas finanças em curto, médio e longo prazo com estratégias que fazem o tempo trabalhar a seu favor.',
+            'meta_title' => 'Curto, Médio e Longo Prazo – Fire|ce',
+            'meta_description' => 'Aprenda a organizar suas finanças com a Fire|ce em curto, médio e longo prazo com estratégias alinhadas aos seus objetivos.',
             'meta_keywords' => 'planejamento financeiro, curto prazo, médio prazo, longo prazo, investimentos, metas financeiras, reserva de emergência, aposentadoria, educação financeira, organização financeira, estratégia de investimentos',
-            'opengraph_title' => 'Orçamento Individual e Familiar',
+            'opengraph_title' => 'Como se organizar financeiramente – Fire|ce',
+            'opengraph_description' => 'Descubra como alinhar seus investimentos com cada fase da sua vida com o suporte da Fire|ce e construa um futuro mais seguro.',
             'slug' => 'se-organizando-no-curto-medio-longo-prazo',
-            'opengraph_description' => 'Aprenda como organizar suas finanças em curto, médio e longo prazo com estratégias que fazem o tempo trabalhar a seu favor.',
             'content' => [
                 [
                     'type' => 'blog-markdown-text',
@@ -292,12 +292,12 @@ return [
         'inflacao-e-como-se-proteger' => [
             'title' => 'Inflação e Como se Proteger',
             'excerpt' => 'Entenda o impacto da inflação no seu dia a dia e descubra estratégias práticas para proteger seu poder de compra.',
-            'meta_title' => 'Inflação e Como se Proteger',
-            'meta_description' => 'Entenda o impacto da inflação no seu dia a dia e descubra estratégias práticas para proteger seu poder de compra.',
-            'meta_keywords' => 'inflação, planejamento financeiro, IPCA, taxa de juros, economia, investimentos, poder de compra, tesouro direto, tesouro IPCA, proteção financeira',
-            'opengraph_title' => 'Inflação e Como se Proteger',
+            'meta_title' => 'Inflação: O Que É e Como se Proteger – Fire|ce',
+            'meta_description' => 'Entenda como a inflação afeta sua vida financeira e descubra como proteger seu dinheiro com a orientação da Fire|ce.',
+            'meta_keywords' => 'inflação, IPCA, proteção financeira, tesouro direto, taxa de juros, economia, investimentos, poder de compra, planejamento financeiro',
+            'opengraph_title' => 'Como a inflação afeta sua vida – Fire|ce',
+            'opengraph_description' => 'Aprenda com a Fire|ce a proteger seu patrimônio em cenários inflacionários com estratégias reais e acessíveis.',
             'slug' => 'inflacao-e-como-se-proteger',
-            'opengraph_description' => 'Entenda o impacto da inflação no seu dia a dia e descubra estratégias práticas para proteger seu poder de compra.',
             'content' => [
                 [
                     'type' => 'blog-markdown-text',
