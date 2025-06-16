@@ -3,7 +3,6 @@
 namespace Database\Factories\CMS;
 
 use App\Models\CMS\Page;
-use Awcodes\Curator\Models\Media;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Database\Eloquent\Model;
 use Webid\Druid\Enums\PageStatus;
@@ -59,33 +58,5 @@ class PageFactory extends Factory
                 'translation_origin_model_id' => $page->getKey(),
             ];
         });
-    }
-
-    /**
-     * @return array<int, array<string, mixed>>
-     */
-    private function fakeContent(): array
-    {
-        return [
-            [
-                'type' => 'text',
-                'data' => [
-                    'content' => '<p>' . $this->faker->text(300) . '</p>',
-                ],
-            ],
-            [
-                'type' => 'textImage',
-                'data' => [
-                    'content' => '<p>' . $this->faker->text(900) . '</p>',
-                    'image' => Media::factory()->create()->getKey(),
-                ],
-            ],
-            [
-                'type' => 'text',
-                'data' => [
-                    'content' => '<h2>' . $this->faker->text(30) . '</h2><p>' . $this->faker->text(900) . '</p>',
-                ],
-            ],
-        ];
     }
 }

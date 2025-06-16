@@ -85,6 +85,6 @@ class PostFactory extends Factory
 
     public function forAuthor(Author $author): static
     {
-        return $this->state(fn () => ['author_id' => $author->getKey()]);
+        return $this->state(fn (): array => ['author_id' => $author->getKey()]);
     }
 }
