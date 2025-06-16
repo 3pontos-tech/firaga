@@ -24,7 +24,7 @@ use Filament\Tables\Actions\BulkActionGroup;
 use Filament\Tables\Actions\DeleteAction;
 use Filament\Tables\Actions\DeleteBulkAction;
 use Filament\Tables\Actions\EditAction;
-use Filament\Tables\Columns\IconColumn;
+use Filament\Tables\Columns\ImageColumn;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Columns\ViewColumn;
 use Filament\Tables\Table;
@@ -135,6 +135,10 @@ class PostResource extends Resource
     {
 
         $columns = [
+            ImageColumn::make('author.thumbnail.url')
+                ->label(__('filament.avatar'))
+                ->circular(),
+
             TextColumn::make('title')
                 ->label(__('filament.title'))
                 ->color('primary')
@@ -151,12 +155,7 @@ class PostResource extends Resource
                     'danger' => PostStatus::ARCHIVED,
                 ])
                 ->label(__('Status')),
-            IconColumn::make('is_top_article')
-                ->label(__('filament.top_article'))
-                ->boolean(),
-            IconColumn::make('disable_indexation')
-                ->label(__('filament.disableIndex'))
-                ->boolean(),
+
             TextColumn::make('published_at')
                 ->label(__('filament.published_at'))
                 ->dateTime()

@@ -20,6 +20,7 @@ class PostFactory extends Factory
         return [
             'title' => fake()->words(3, true),
             'slug' => fake()->slug,
+            'author_id' => Author::factory(),
             'thumbnail_id' => Media::factory()->create()->getKey(),
             'thumbnail_alt' => fake()->words(3, true),
             'status' => PostStatus::PUBLISHED,
@@ -47,13 +48,6 @@ class PostFactory extends Factory
     public function configure(): static
     {
         return $this->afterCreating(function (Model $post): void {
-            /** @var Post $post */
-            if ($post->translation_origin_model_id) {
-                return;
-            }
-
-            $post->update(['translation_origin_model_id' => $post->getKey()]);
-
             if ($post->categories()->count() === 0) {
                 $category = CategoryFactory::new()->create();
                 $post->categories()->attach($category);
@@ -91,10 +85,6 @@ class PostFactory extends Factory
 
     public function forAuthor(Author $author): static
     {
-        return $this->afterCreating(function (Model $post) use ($author): void {
-            /** @var Post $post */
-            $post->authors()->attach($author);
-            $post->save();
-        });
+        return $this->state(fn () => ['author_id' => $author->getKey()]);
     }
 }

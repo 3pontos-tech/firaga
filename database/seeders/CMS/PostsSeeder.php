@@ -25,16 +25,17 @@ class PostsSeeder extends Seeder
             }
 
             /** @var Category $category */
-            $category = CategoryFactory::new()->create([
+            CategoryFactory::new()->create([
                 ...$categoryByLocale[Druid::getDefaultLocale()],
                 'lang' => Druid::getDefaultLocale(),
             ]);
+        }
 
+        foreach ($this->pages() as $article) {
             PostFactory::new()
-                ->count(5)
-                ->forCategory($category)
+                ->forCategory(Category::query()->inRandomOrder()->first())
                 ->forAuthor($user)
-                ->create();
+                ->create($article);
         }
     }
 
@@ -93,6 +94,8 @@ class PostsSeeder extends Seeder
     {
         return [
             'budget-planning' => [
+                'title' => 'Planejamento de Orçamento',
+                'excerpt' => 'Planejamento de orçamento é essencial para o controle financeiro.',
                 'meta_title' => 'Orçamento Individual e Familiar',
                 'meta_description' => 'Página sobre Orçamento Individual e Familiar da Fire|ce.',
                 'meta_keywords' => 'orçamento, financeiro, planejamento, familiar',
@@ -101,41 +104,47 @@ class PostsSeeder extends Seeder
                 'opengraph_description' => 'Planejamento de orçamento para indivíduos e famílias que desejam controlar, organizar e direcionar melhor seus recursos.',
                 'content' => [
                     [
-                        'type' => 'partials-grid-hero',
+                        'type' => 'blog-markdown-text',
                         'data' => [
-                            'subheading' => 'Serviços',
-                            'heading' => 'Orçamento Individual e Familiar',
-                            'description' => 'Recupere o controle da sua vida financeira com planejamento, clareza e estrutura.',
+                            'content' => file_get_contents(resource_path('markdown/articles/family-individual-budget.md')),
                         ],
                     ],
+                ],
+                'status' => 'published',
+            ],
+            'short-medium-long-term' => [
+                'title' => 'Curto, Médio e Longo Prazo',
+                'excerpt' => 'Aprenda como organizar suas finanças em curto, médio e longo prazo com estratégias que fazem o tempo trabalhar a seu favor.',
+                'meta_title' => 'Curto, Médio e Longo Prazo',
+                'meta_description' => 'Aprenda como organizar suas finanças em curto, médio e longo prazo com estratégias que fazem o tempo trabalhar a seu favor.',
+                'meta_keywords' => 'planejamento financeiro, curto prazo, médio prazo, longo prazo, investimentos, metas financeiras, reserva de emergência, aposentadoria, educação financeira, organização financeira, estratégia de investimentos',
+                'opengraph_title' => 'Orçamento Individual e Familiar',
+                'slug' => 'se-organizando-no-curto-medio-longo-prazo',
+                'opengraph_description' => 'Aprenda como organizar suas finanças em curto, médio e longo prazo com estratégias que fazem o tempo trabalhar a seu favor.',
+                'content' => [
                     [
                         'type' => 'blog-markdown-text',
                         'data' => [
-                            'content' => file_get_contents(resource_path('markdown/pages/budget-planning.md')),
+                            'content' => file_get_contents(resource_path('markdown/articles/short-medium-long-term.md')),
                         ],
                     ],
+                ],
+                'status' => 'published',
+            ],
+            'inflacao-e-como-se-proteger' => [
+                'title' => 'Inflação e Como se Proteger',
+                'excerpt' => 'Entenda o impacto da inflação no seu dia a dia e descubra estratégias práticas para proteger seu poder de compra.',
+                'meta_title' => 'Inflação e Como se Proteger',
+                'meta_description' => 'Entenda o impacto da inflação no seu dia a dia e descubra estratégias práticas para proteger seu poder de compra.',
+                'meta_keywords' => 'inflação, planejamento financeiro, IPCA, taxa de juros, economia, investimentos, poder de compra, tesouro direto, tesouro IPCA, proteção financeira',
+                'opengraph_title' => 'Inflação e Como se Proteger',
+                'slug' => 'inflacao-e-como-se-proteger',
+                'opengraph_description' => 'Entenda o impacto da inflação no seu dia a dia e descubra estratégias práticas para proteger seu poder de compra.',
+                'content' => [
                     [
-                        'type' => 'partials-faq',
+                        'type' => 'blog-markdown-text',
                         'data' => [
-                            'thumbnail' => MediaFactory::new()->create()->getKey(),
-                            'solutions' => [
-                                [
-                                    'question' => 'Para quem é indicado o serviço de orçamento individual e familiar?',
-                                    'answer' => 'Para pessoas que desejam estruturar sua vida financeira, ganhar clareza sobre gastos, organizar prioridades e alcançar objetivos com mais segurança.',
-                                ],
-                                [
-                                    'question' => 'Como funciona o acompanhamento?',
-                                    'answer' => 'Você terá reuniões para diagnóstico, estruturação do orçamento e orientações práticas para manter o plano no dia a dia. É um processo educativo e estratégico.',
-                                ],
-                                [
-                                    'question' => 'Posso contratar esse serviço mesmo já tendo renda estável?',
-                                    'answer' => 'Sim. Mesmo com renda, muitas pessoas perdem dinheiro por falta de estrutura e estratégia. O orçamento bem feito otimiza seu uso do dinheiro e gera mais tranquilidade.',
-                                ],
-                                [
-                                    'question' => 'Esse serviço pode ajudar quem está endividado?',
-                                    'answer' => 'Sim. O planejamento orçamentário é essencial para quem deseja sair do vermelho e retomar o controle financeiro com responsabilidade.',
-                                ],
-                            ],
+                            'content' => file_get_contents(resource_path('markdown/articles/short-medium-long-term.md')),
                         ],
                     ],
                 ],

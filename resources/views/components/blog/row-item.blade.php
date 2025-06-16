@@ -40,17 +40,21 @@
                         </p>
                     </div>
                     <div class="flex items-center gap-2">
-                        <img alt="{{ $post->authors[0]->name ?? '' }}" loading="lazy"
+                        <img alt="{{ $post->author->name ?? '' }}" loading="lazy"
                              decoding="async" data-nimg="1"
                              class="rounded-full w-10 h-10"
                              style="color: transparent;"
-                             src="{{ $post->authors[0]->thumbnail->url }}">
-                        <span class="text-xs text-body">{{ $post->authors[0]->name }}</span>
+                             src="{{ $post->author->thumbnail->url }}">
+                        <span class="text-xs text-body">{{ $post->author->name }}</span>
                     </div>
                 </div>
                 <div class="flex items-center">
                     <x-heroicon-c-arrow-right
-                        class="h-5 w-5 text-brand group-hover:translate-x-1 transition-transform"/>
+                        class="h-5 w-5 text-brand group-hover:translate-x-1 transition-transform hidden md:block"/>
+                    <button class="w-full md:hidden flex items-center justify-between flex-row bg-brand text-heading font-semibold p-3 rounded hover:bg-brand-hover ">
+                        Ir para Artigo
+                        <x-heroicon-c-arrow-right class="h-5 w-5 text-body group-hover:translate-x-1 transition-transform"/>
+                    </button>
                 </div>
             </div>
         </article>

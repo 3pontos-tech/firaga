@@ -16,6 +16,7 @@ use Filament\Resources\Resource;
 use Filament\Tables\Actions\BulkActionGroup;
 use Filament\Tables\Actions\DeleteBulkAction;
 use Filament\Tables\Actions\EditAction;
+use Filament\Tables\Columns\ImageColumn;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Table;
 use Illuminate\Support\Str;
@@ -32,14 +33,13 @@ class AuthorResource extends Resource
 
     public static function getLabel(): ?string
     {
-        return __('filament.author');
+        return __('filament.authors');
     }
 
     public static function form(Form $form): Form
     {
         return $form
             ->schema([
-
                 TextInput::make('slug')
                     ->label(__('filament.slug_author'))
                     ->required()
@@ -79,19 +79,16 @@ class AuthorResource extends Resource
     {
         return $table
             ->columns([
-                TextColumn::make('user.name')
-                    ->searchable(),
-                TextColumn::make('slug')
-                    ->label(__('filament.slug_author'))
-                    ->searchable(),
+                ImageColumn::make('thumbnail.url')
+                    ->label(__('filament.avatar'))
+                    ->circular()
+                    ->columnSpanFull(),
                 TextColumn::make('name')
                     ->label(__('filament.name'))
                     ->searchable(),
-                TextColumn::make('description')
-                    ->label(__('filament.role_author'))
-                    ->searchable(),
-                TextColumn::make('linkedin_url')
-                    ->label(__('filament.linkedin_url'))
+                TextColumn::make('posts_count')
+                    ->badge()
+                    ->counts('posts')
                     ->searchable(),
             ])
             ->filters([

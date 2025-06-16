@@ -14,6 +14,7 @@ return new class extends Migration
             $table->foreignId('user_id')->constrained('users');
             $table->foreignId('thumbnail_id')->constrained('media');
             $table->string('name');
+            $table->string('role')->nullable();
             $table->text('description');
             $table->string('linkedin_url');
             $table->timestamps();

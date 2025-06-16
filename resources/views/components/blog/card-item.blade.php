@@ -44,13 +44,13 @@
                 <div class="flex items-center justify-between">
                     <div class="flex items-center gap-2 mr-4">
                         <div class="flex items-center">
-                            <img alt="{{ $post->authors[0]->name ?? '' }}" loading="lazy"
+                            <img alt="{{ $post->author->name ?? '' }}" loading="lazy"
                                  decoding="async" data-nimg="1"
                                  class="rounded-full w-8 h-8"
-                                 src="{{ $post->authors[0]->thumbnail->url }}">
+                                 src="{{ $post->author->thumbnail->url }}">
                         </div>
                         <div class="flex flex-col">
-                            <span class="text-xs text-body">{{ $post->authors[0]->name }}</span>
+                            <span class="text-xs text-body">{{ $post->author->name }}</span>
                             <span class="text-xs text-muted">Consultor Financeiro</span>
                         </div>
                     </div>

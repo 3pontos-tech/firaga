@@ -1,5 +1,7 @@
 <?php
 
+use App\Models\Author;
+use Awcodes\Curator\Models\Media;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -13,19 +15,16 @@ return new class extends Migration
     {
         Schema::create('posts', function (Blueprint $table): void {
             $table->bigIncrements('id');
+            $table->foreignIdFor(Media::class, 'thumbnail_id')->nullable();
+            $table->foreignIdFor(Author::class, 'author_id');
+
             $table->string('title');
             $table->string('slug', 255);
-            $table->unsignedBigInteger('thumbnail_id')->nullable();
-            $table->foreign('thumbnail_id')
-                ->references('id')
-                ->on('media');
+
             $table->longText('thumbnail_alt')->nullable();
             $table->string('lang', 20)->nullable();
-            $table->foreignId('translation_origin_model_id')
-                ->nullable()
-                ->constrained('posts')
-                ->cascadeOnDelete();
             $table->string('status');
+
             $table->text('excerpt')->nullable();
             $table->longText('content');
             $table->longText('searchable_content')->nullable();
@@ -37,10 +36,8 @@ return new class extends Migration
             $table->longText('meta_keywords')->nullable();
             $table->longText('opengraph_title')->nullable();
             $table->longText('opengraph_description')->nullable();
-            $table->unsignedBigInteger('opengraph_picture')->nullable();
-            $table->foreign('opengraph_picture')
-                ->references('id')
-                ->on('media');
+
+            $table->foreignIdFor(Media::class, 'opengraph_picture')->nullable();
             $table->longText('opengraph_picture_alt')->nullable();
 
             $table->dateTime('published_at')->nullable();

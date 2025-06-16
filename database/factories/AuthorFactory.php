@@ -21,6 +21,7 @@ class AuthorFactory extends Factory
             'slug' => Str::slug(fake()->name()),
             'user_id' => User::factory(),
             'name' => fake()->name(),
+            'role' => fake()->randomElement(['Financial Consultant', 'Developer']),
             'description' => fake()->paragraph(),
             'thumbnail_id' => Media::factory()->create(), // Assuming you will handle media separately
             'linkedin_url' => fake()->url(),

@@ -6,6 +6,7 @@
 
 return [
     'author' => 'Author',
+    'authors' => 'Authors',
     'blog' => 'Blog',
     'blog_posts' => 'Blog Posts',
     'posts' => 'Posts',
