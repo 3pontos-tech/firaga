@@ -11,12 +11,54 @@
 >
     <div class="container mx-auto px-4 py-3 lg:px-8 relative z-10">
         <div class="flex items-center justify-between ">
-            <div class="flex items-center gap-3">
-                <x-logo :minimal="true" class="w-8 h-8" />
-                <a href="{{ route('landing') }}" class="text-2xl font-bold text-heading">{{ config('app.name') }}</a>
+            <div class="flex items-center justify-between w-full lg:w-auto space-x-4 lg:space-x-6">
+                {{-- Logo and Brand Name --}}
+                <div class="flex items-center gap-3">
+                    <x-logo :minimal="true" class="w-8 h-8" />
+                    <a href="{{ route('landing') }}" class="text-2xl font-bold text-heading">{{ config('app.name') }}</a>
+                </div>
             </div>
+            <ul class="hidden lg:flex lg:items-center lg:space-x-6">
+                @foreach ($menu->items as $menuItem)
+                    @if ($menuItem->children && $menuItem->children->isNotEmpty())
+                        <li class="relative group" x-data="{ open: false }" @mouseenter="open = true" @mouseleave="open = false">
+                            <a href="{{ $menuItem->model?->url() ?? $menuItem->custom_url  }}" class="flex items-center text-body hover:text-brand dark:hover:text-brand-hover px-3 py-2 rounded-lg font-medium transition-colors duration-200" @click="open = !open">
+                                {{ $menuItem->label }}
+                                <svg class="ml-1 h-4 w-4 text-muted group-hover:text-brand transition-colors duration-200" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06-.02L10 10.584l3.71-3.396a.75.75 0 011.04 1.084l-4.25 3.89a.75.75 0 01-1.04 0l-4.25-3.89a.75.75 0 01-.02-1.06z" clip-rule="evenodd" />
+                                </svg>
+                            </a>
+                            <ul class="absolute left-0 mt-1 w-48 bg-bg dark:bg-surface border border-base rounded-lg shadow-lg transition-all duration-200 z-50"
+                                x-show="open"
+                                x-transition:enter="transition ease-out duration-200"
+                                x-transition:enter-start="opacity-0 translate-y-1"
+                                x-transition:enter-end="opacity-100 translate-y-0"
+                                x-transition:leave="transition ease-in duration-150"
+                                x-transition:leave-start="opacity-100 translate-y-0"
+                                x-transition:leave-end="opacity-0 translate-y-1"
+                                @click.away="open = false">
+                                @foreach ($menuItem->children as $subMenuItem)
+                                    <li>
+                                        <a href="{{ $subMenuItem->custom_url  }}" target="{{ $subMenuItem->target->getHtmlProperty() }}" class="block px-4 py-2 text-body hover:text-brand hover:bg-accent-bg dark:hover:bg-gray-800 rounded-md transition-colors duration-200">
+                                            {{ $subMenuItem->label }}
+                                        </a>
+                                    </li>
+                                @endforeach
+                            </ul>
+                        </li>
+                    @else
+                        <li>
+                            <a href="{{ $menuItem->model?->url() ?? $menuItem->custom_url }}" target="{{ $menuItem->target->getHtmlProperty() }}" class="text-body hover:text-brand dark:hover:text-brand-hover px-3 py-2 rounded-lg font-medium transition-colors duration-200">
+                                {{ $menuItem->label }}
+                            </a>
+                        </li>
+                    @endif
+                @endforeach
 
-            <div class="flex md:hidden">
+            </ul>
+            <x-layout.shared.theme-toggle class="hidden lg:flex"/>
+
+            <div class="flex lg:hidden gap-3">
                 <x-layout.shared.theme-toggle />
                 <button
                     @click="{{ $mobileVar }} = !{{ $mobileVar }}"
@@ -37,49 +79,8 @@
                         </svg>
                     </template>
                 </button>
-
             </div>
-            <div class="gap-4 hidden lg:flex">
-                <ul class="hidden lg:flex lg:items-center lg:space-x-6">
-                    @foreach ($menu->items as $menuItem)
-                        @if ($menuItem->children && $menuItem->children->isNotEmpty())
-                            <li class="relative group" x-data="{ open: false }" @mouseenter="open = true" @mouseleave="open = false">
-                                <a href="{{ $menuItem->model?->url() ?? $menuItem->custom_url  }}" class="flex items-center text-body hover:text-brand dark:hover:text-brand-hover px-3 py-2 rounded-lg font-medium transition-colors duration-200" @click="open = !open">
-                                    {{ $menuItem->label }}
-                                    <svg class="ml-1 h-4 w-4 text-muted group-hover:text-brand transition-colors duration-200" fill="currentColor" viewBox="0 0 20 20">
-                                        <path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06-.02L10 10.584l3.71-3.396a.75.75 0 011.04 1.084l-4.25 3.89a.75.75 0 01-1.04 0l-4.25-3.89a.75.75 0 01-.02-1.06z" clip-rule="evenodd" />
-                                    </svg>
-                                </a>
-                                <ul class="absolute left-0 mt-1 w-48 bg-bg dark:bg-surface border border-base rounded-lg shadow-lg transition-all duration-200 z-50"
-                                    x-show="open"
-                                    x-transition:enter="transition ease-out duration-200"
-                                    x-transition:enter-start="opacity-0 translate-y-1"
-                                    x-transition:enter-end="opacity-100 translate-y-0"
-                                    x-transition:leave="transition ease-in duration-150"
-                                    x-transition:leave-start="opacity-100 translate-y-0"
-                                    x-transition:leave-end="opacity-0 translate-y-1"
-                                    @click.away="open = false">
-                                    @foreach ($menuItem->children as $subMenuItem)
-                                        <li>
-                                            <a href="{{ $subMenuItem->custom_url  }}" target="{{ $subMenuItem->target->getHtmlProperty() }}" class="block px-4 py-2 text-body hover:text-brand hover:bg-accent-bg dark:hover:bg-gray-800 rounded-md transition-colors duration-200">
-                                                {{ $subMenuItem->label }}
-                                            </a>
-                                        </li>
-                                    @endforeach
-                                </ul>
-                            </li>
-                        @else
-                            <li>
-                                <a href="{{ $menuItem->model?->url() ?? $menuItem->custom_url }}" target="{{ $menuItem->target->getHtmlProperty() }}" class="text-body hover:text-brand dark:hover:text-brand-hover px-3 py-2 rounded-lg font-medium transition-colors duration-200">
-                                    {{ $menuItem->label }}
-                                </a>
-                            </li>
-                        @endif
-                    @endforeach
 
-                </ul>
-                <x-layout.shared.theme-toggle class="hidden md:flex"/>
-            </div>
         </div>
     </div>
 

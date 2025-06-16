@@ -87,7 +87,7 @@
                     acontece no mercado financeiro
                 </p>
                 <form class="flex flex-col sm:flex-row items-center sm:space-x-3 space-y-3 sm:space-y-0">
-                    <input type="email" placeholder="Seu email"
+                    <input type="email" placeholder="Seu email" id="email"
                            class=" px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand transition-colors ">
                     <button type="submit"
                             class="bg-brand text-body px-1 py-2 rounded-lg hover:bg-brand-hover transition-colors">
