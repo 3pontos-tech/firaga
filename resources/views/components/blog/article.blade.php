@@ -13,11 +13,11 @@
                 <x-heroicon-c-arrow-left class="h-4 w-4"/>
                 Voltar ao Blog
             </a>
-            <div class="relative h-64 md:h-96 mb-12 rounded-xl overflow-hidden">
+            <div class="relative mb-12 rounded-xl overflow-hidden">
                 <img
                     alt="{{ $post->title }}" loading="lazy" decoding="async"
                     class="object-cover"
-                    src="{{ $post->thumbnail->url }}">
+                    src="{{ $post->thumbnail->getSignedUrl() }}">
             </div>
             <div class="flex gap-2 mb-2">
                 @foreach($post->categories as $category)

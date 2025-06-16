@@ -15,9 +15,13 @@
                         loading="lazy" decoding="async" data-nimg="fill"
                         class="object-cover transition-transform duration-300 group-hover:scale-105"
                         style="position: absolute; height: 100%; width: 100%; inset: 0; color: transparent;"
-                        src="{{ $post->thumbnail->url }}">
+                        src="{{ $post->thumbnail->getSignedUrl() }}">
                     <div class="absolute top-2 left-2">
-                        <span class="bg-brand text-black px-2 py-1 rounded text-xs font-semibold">Code Capital</span>
+                        @foreach($post->categories as $category)
+                            <span class="bg-brand-hover mx-1 text-heading px-3 py-1 rounded-full text-xs font-semibold">
+                                {{ $category->name ?? 'Code' }}
+                            </span>
+                        @endforeach
                     </div>
                 </div>
                 <div class="flex-1 flex flex-col justify-between min-w-0">
@@ -51,9 +55,11 @@
                 <div class="flex items-center">
                     <x-heroicon-c-arrow-right
                         class="h-5 w-5 text-brand group-hover:translate-x-1 transition-transform hidden md:block"/>
-                    <button class="w-full md:hidden flex items-center justify-between flex-row bg-brand text-heading font-semibold p-3 rounded hover:bg-brand-hover ">
+                    <button
+                        class="w-full md:hidden flex items-center justify-between flex-row bg-brand text-heading font-semibold p-3 rounded hover:bg-brand-hover ">
                         Ir para Artigo
-                        <x-heroicon-c-arrow-right class="h-5 w-5 text-body group-hover:translate-x-1 transition-transform"/>
+                        <x-heroicon-c-arrow-right
+                            class="h-5 w-5 text-body group-hover:translate-x-1 transition-transform"/>
                     </button>
                 </div>
             </div>

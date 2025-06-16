@@ -12,7 +12,7 @@
                     decoding="async" data-nimg="fill"
                     class="object-cover transition-transform duration-300 group-hover:scale-105"
                     style="position: absolute; height: 100%; width: 100%; inset: 0; color: transparent;"
-                    src="{{ $post->thumbnail->url }}">
+                    src="{{ $post->thumbnail->getSignedUrl() }}">
                 <div class="absolute top-4 left-4">
                     @foreach($post->categories as $category)
                         <span
@@ -47,7 +47,7 @@
                             <img alt="{{ $post->author->name ?? '' }}" loading="lazy"
                                  decoding="async" data-nimg="1"
                                  class="rounded-full w-8 h-8"
-                                 src="{{ $post->author->thumbnail->url }}">
+                                 src="{{ $post->author->thumbnail->getSignedUrl() }}">
                         </div>
                         <div class="flex flex-col">
                             <span class="text-xs text-body">{{ $post->author->name }}</span>

@@ -8,11 +8,11 @@
         style="will-change: transform; transform: translateY(0.1vw);">
         <div class="grid md:grid-cols-2 gap-0">
             <div class="relative h-32 md:h-80 overflow-hidden"><img
-                    alt="Como Alcançar a Independência Financeira em 5 Passos" loading="lazy"
+                    alt="{{ $post->title }} Cover" loading="lazy"
                     decoding="async" data-nimg="fill"
                     class="object-cover transition-transform duration-300 group-hover:scale-105"
                     style="position: absolute; height: 100%; width: 100%; inset: 0; color: transparent;"
-                    src="{{ $post->thumbnail->url }}">
+                    src="{{ $post->thumbnail->getSignedUrl() }}">
                 <div class="absolute top-4 left-4">
                     @foreach($post->categories as $category)
                         <span
@@ -45,7 +45,7 @@
                          decoding="async" data-nimg="1"
                          class="rounded-full w-10 h-10"
                          style="color: transparent;"
-                         src="{{ $post->author->thumbnail->url }}">
+                         src="{{ $post->author->thumbnail->getSignedUrl() }}">
                     <div>
                         <p class="text-sm text-heading font-medium">{{ $post->author->name }}</p>
                         <p class="text-xs text-body">{{ "Consultor Financeiro" }}</p>
