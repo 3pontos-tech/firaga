@@ -56,7 +56,7 @@ class MenuItemFactory extends Factory
             return [
                 'model_id' => $page->getKey(),
                 'model_type' => $page->getMorphClass(),
-                'label' => null,
+                'label' => $page->getMenuLabel(),
                 'type' => 'page',
             ];
         });

@@ -11,8 +11,9 @@ class PagesSeeder extends Seeder
 {
     public function run(): void
     {
-        PageFactory::new()
-            ->count(5)
-            ->create();
+
+        foreach (config('firaga.pages') as $page) {
+            PageFactory::new()->create($page);
+        }
     }
 }

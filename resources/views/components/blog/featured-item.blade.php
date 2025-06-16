@@ -45,9 +45,9 @@
                          decoding="async" data-nimg="1"
                          class="rounded-full w-10 h-10"
                          style="color: transparent;"
-                         src="{{ $post->authors[0]->thumbnail->url }}">
+                         src="{{ $post->author->thumbnail->url }}">
                     <div>
-                        <p class="text-sm text-heading font-medium">{{ $post->authors[0]->name }}</p>
+                        <p class="text-sm text-heading font-medium">{{ $post->author->name }}</p>
                         <p class="text-xs text-body">{{ "Consultor Financeiro" }}</p>
                     </div>
                 </div>

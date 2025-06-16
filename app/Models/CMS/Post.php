@@ -59,6 +59,7 @@ class Post extends Model implements IsMenuable
     protected $table = 'posts';
 
     protected $fillable = [
+        'author_id',
         'title',
         'slug',
         'thumbnail_id',
@@ -129,9 +130,9 @@ class Post extends Model implements IsMenuable
         return $this->belongsTo(Media::class, 'opengraph_picture', 'id');
     }
 
-    public function authors(): BelongsToMany
+    public function author(): BelongsTo
     {
-        return $this->belongsToMany(Author::class, 'post_author', 'post_id', 'author_id');
+        return $this->belongsTo(Author::class, 'author_id', 'id');
     }
 
     public function getMenuLabel(): string

@@ -16,7 +16,7 @@ return new class extends Migration
             $table->string('ip_address');
             $table->string('message');
             $table->string('message_intent');
-            $table->string('contact_prereference');
+            $table->string('contact_preference');
             $table->timestamps();
         });
     }

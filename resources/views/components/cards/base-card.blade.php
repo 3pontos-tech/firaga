@@ -1,7 +1,6 @@
 @props([
     'title' => '',
     'description' => '',
-    'index' => '',
     'backgroundImage' => 'null'
 ])
 

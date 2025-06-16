@@ -10,31 +10,29 @@ use Database\Factories\CMS\CategoryFactory;
 use Database\Factories\CMS\PostFactory;
 use Illuminate\Database\Seeder;
 use Webid\Druid\Facades\Druid;
-use Webmozart\Assert\Assert;
 
 class PostsSeeder extends Seeder
 {
     public function run(): void
     {
         $user = AuthorFactory::new()->create();
-        Assert::notNull($user);
 
         foreach ($this->getCategoriesStructure() as $categoryByLocale) {
             if (! isset($categoryByLocale[Druid::getDefaultLocale()])) {
                 return;
             }
 
-            /** @var Category $category */
-            $category = CategoryFactory::new()->create([
+            CategoryFactory::new()->create([
                 ...$categoryByLocale[Druid::getDefaultLocale()],
                 'lang' => Druid::getDefaultLocale(),
             ]);
+        }
 
+        foreach (config('firaga.articles') as $article) {
             PostFactory::new()
-                ->count(5)
-                ->forCategory($category)
+                ->forCategory(Category::query()->inRandomOrder()->first())
                 ->forAuthor($user)
-                ->create();
+                ->create($article);
         }
     }
 

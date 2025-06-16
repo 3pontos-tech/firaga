@@ -4,6 +4,7 @@ namespace App\Models;
 
 use App\Models\CMS\Post;
 use Awcodes\Curator\Models\Media;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
@@ -11,6 +12,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Author extends Model
 {
+    use HasFactory;
     use SoftDeletes;
 
     protected $fillable = [
@@ -34,6 +36,6 @@ class Author extends Model
 
     public function posts(): HasMany
     {
-        return $this->hasMany(Post::class);
+        return $this->hasMany(Post::class, '');
     }
 }

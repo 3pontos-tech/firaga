@@ -7,6 +7,8 @@ use App\Filament\Components\Blog\RichTextComponent;
 use App\Filament\Components\Landing\IconSolutionsComponent;
 use App\Filament\Components\Landing\MainHeroComponent;
 use App\Filament\Components\Landing\PlansComponent;
+use App\Filament\Components\Partials\FaqComponent;
+use App\Filament\Components\Partials\GridHeroComponent;
 use App\Filament\Resources\CMS\MenuResource\RelationManagers\ItemsRelationManager;
 use App\Models\CMS\Category;
 use App\Models\CMS\Menu;
@@ -53,7 +55,7 @@ return [
      |--------------------------------------------------------------------------
      */
 
-    'enable_page_module' => true,
+    'enable_page_module' => false,
 
     /*
      |--------------------------------------------------------------------------
@@ -98,6 +100,10 @@ return [
         // Blog components
         ['class' => MarkdownTextComponent::class],
         ['class' => RichTextComponent::class],
+
+        // Partial components
+        ['class' => GridHeroComponent::class],
+        ['class' => FaqComponent::class],
     ],
 
     /*

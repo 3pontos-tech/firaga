@@ -2,6 +2,7 @@
     'testimonials' => [],
 ])
 
+
 <div
     x-data="{
         activeSlide: 0,
@@ -88,13 +89,14 @@
                     class="min-w-0 shrink-0 grow-0 pl-4 basis-full md:basis-1/2"
                     :style="{ transform: 'translate3d(0px, 0px, 0px)' }"
                 >
-                    <div class="rounded-lg border border-brand-hover bg-surface text-body shadow-sm h-full" data-v0-t="card">
+                    <div class="rounded-lg border border-brand-hover bg-surface text-body shadow-sm h-full"
+                         data-v0-t="card">
                         <div class="p-8 flex flex-col h-full relative">
                             <!-- Star Rating -->
                             <div class="absolute top-6 right-6">
                                 <div class="flex gap-1">
                                     @for ($i = 0; $i < $testimonial->rating; $i++)
-                                        <x-heroicon-c-star class="lucide lucide-star w-4 h-4 fill-brand text-brand" />
+                                        <x-heroicon-c-star class="lucide lucide-star w-4 h-4 fill-brand text-brand"/>
                                     @endfor
                                 </div>
                             </div>
@@ -102,7 +104,8 @@
                             <!-- Author Info -->
                             <div class="flex items-center gap-4 mb-6 pr-20">
                                 <span class="relative flex shrink-0 overflow-hidden rounded-full w-14 h-14">
-                                    <img class="aspect-square h-full w-full" alt="{{ $testimonial->name }}" src="{{ asset($testimonial->thumbnail->thumbnail_url) }}">
+                                    <img class="aspect-square h-full w-full" alt="{{ $testimonial->name }}"
+                                         src="{{ asset($testimonial->thumbnail->thumbnail_url) }}">
                                 </span>
                                 <div class="flex-1">
                                     <h3 class="font-semibold text-heading text-lg">{{ $testimonial->name }}</h3>
@@ -112,7 +115,8 @@
                             </div>
 
                             <div class="flex-1 relative">
-                                <x-filament::icon icon="fas-quote-left" class="w-8 h-8 text-brand-hover absolute -top-2 z-10 "/>
+                                <x-filament::icon icon="fas-quote-left"
+                                                  class="w-8 h-8 text-brand-hover absolute -top-2 z-10 "/>
                                 <p class="text-body  leading-relaxed pl-12 text-base">{{ $testimonial->comment }}</p>
                             </div>
                         </div>
@@ -130,7 +134,7 @@
             class="bg-surface backdrop-blur-xl text-heading p-3 rounded-full shadow-xl border border-brand hover:border-brand-hover hover:bg-deep hover:scale-110 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-brand"
             aria-label="Previous testimonial"
         >
-            <x-heroicon-m-chevron-left class="w-6 h-6 text-brand" />
+            <x-heroicon-m-chevron-left class="w-6 h-6 text-brand"/>
         </button>
 
         <!-- Indicators -->
@@ -154,7 +158,7 @@
             class="bg-surface backdrop-blur-xl text-heading p-3 rounded-full shadow-xl border border-brand hover:border-brand-hover hover:bg-deep hover:scale-110 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-brand"
             aria-label="Next testimonial"
         >
-            <x-heroicon-m-chevron-right class="w-6 h-6 text-brand" />
+            <x-heroicon-m-chevron-right class="w-6 h-6 text-brand"/>
         </button>
     </div>
 </div>

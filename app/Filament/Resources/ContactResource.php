@@ -68,7 +68,7 @@ class ContactResource extends Resource
                     ->options(MessageIntent::class)
                     ->required(),
 
-                TextInput::make('contact_prereference')
+                TextInput::make('contact_preference')
                     ->label(__('filament.contact_preference'))
                     ->required(),
 
@@ -102,7 +102,7 @@ class ContactResource extends Resource
 
                 TextColumn::make('message'),
 
-                TextColumn::make('contact_prereference'),
+                TextColumn::make('contact_preference'),
             ])
             ->filters([
                 //

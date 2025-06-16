@@ -8,8 +8,7 @@
 ])
 
 <article class="pb-8">
-    <div class="container mx-auto px-4 md:px-8">
-        <div class="max-w-4xl mx-auto" style="opacity: 1; will-change: opacity, transform; transform: none;">
+        <div class="max-w-4xl mx-auto px-4 md:px-8" style="opacity: 1; will-change: opacity, transform; transform: none;">
             <a href="/blog" class="inline-flex items-center gap-2 text-brand hover:text-brand-hover mb-8">
                 <x-heroicon-c-arrow-left class="h-4 w-4"/>
                 Voltar ao Blog
@@ -44,12 +43,12 @@
                 </div>
                 <div class="flex items-center gap-2 mr-4">
                     <div class="flex items-center">
-                        <img alt="{{ $post->authors[0]->name ?? '' }}" loading="lazy"
+                        <img alt="{{ $post->author->name ?? '' }}" loading="lazy"
                              decoding="async" data-nimg="1"
                              class="rounded-full w-8 h-8"
-                             src="{{ $post->authors[0]->thumbnail->url }}">
+                             src="{{ $post->author->thumbnail->url }}">
                     </div>
-                    <span class="">Por {{ $post->authors[0]->name }}</span>
+                    <span class="">Por {{ $post->author->name }}</span>
                 </div>
             </div>
             <article class="prose lg:prose-xl max-w-none dark:prose-invert">
@@ -59,25 +58,24 @@
             </article>
             <section class="mt-12 p-6 bg-surface rounded-xl flex items-center gap-6">
                 <img
-                    alt="{{ $post->authors[0]->name ?? '' }}"
+                    alt="{{ $post->author->name ?? '' }}"
                     loading="lazy"
                     decoding="async"
                     class="rounded-full w-16 h-16 border-2 border-brand"
-                    src="{{ $post->authors[0]->thumbnail->url }}"
+                    src="{{ $post->author->thumbnail->url }}"
                 >
                 <div class="flex flex-col">
                     <h2 class="text-lg font-bold text-heading ">Autor</h2>
                     <div class="flex flex-col">
                         <p class="text-body font-semibold">
-                            {{ $post->authors[0]->name }}
+                            {{ $post->author->name }}
                         </p>
                         <p class="text-muted">
                             Consultor Financeiro
                         </p>
                     </div>
-                    <p class="text-sm text-zinc-400 mt-1">{{ $post->authors[0]->description }}</p>
+                    <p class="text-sm text-zinc-400 mt-1">{{ $post->author->description }}</p>
                 </div>
             </section>
         </div>
-    </div>
 </article>

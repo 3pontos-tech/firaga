@@ -26,7 +26,6 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Str;
 use Webid\Druid\Enums\PageStatus;
-use Webid\Druid\Facades\Druid;
 // use Webid\Druid\Filament\Resources\CommonFields;
 use Webid\Druid\Services\Admin\FilamentComponentsService;
 
@@ -146,7 +145,7 @@ class PageResource extends Resource
             ->columns($columns)
             ->defaultSort('published_at', 'desc')
             ->actions([
-                EditAction::make()->button()->outlined()->icon(''),
+                EditAction::make()->button()->outlined(),
                 DeleteAction::make()->label(__('filament.delete')),
             ])
             ->bulkActions([
@@ -171,6 +170,6 @@ class PageResource extends Resource
 
     public static function canAccess(): bool
     {
-        return Druid::isPageModuleEnabled();
+        return true;
     }
 }
