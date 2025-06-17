@@ -7,9 +7,8 @@
 
 <section class="mx-auto max-w-7xl py-24">
     <div class="mb-16 px-4 md:px-8" style="opacity: 1; transform: none; will-change: opacity, transform;">
-        <div class="flex items-center gap-4 mb-6">
-            <div class="h-1 w-12 bg-brand"></div>
-            <span class="text-sm font-semibold uppercase tracking-wider text-brand">{{ $section }}</span>
+        <div class="flex items-center gap-4 mb-6 bg-brand p-3 rounded-md w-fit">
+            <span class="text-sm font-semibold uppercase tracking-wider text-white">{{ $section }}</span>
         </div>
         <h2 class="text-3xl font-bold text-heading mb-4 md:text-4xl lg:text-5xl">
             {{ $heading }}

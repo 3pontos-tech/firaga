@@ -29,8 +29,12 @@ export default {
             },
 
             fontFamily: {
-                primary: ['Poppins', 'sans-serif'],
-                secondary: ['Open Sans', 'sans-serif'],
+                sans: ['Syne', 'sans-serif'],
+                primary: ['Syne', 'sans-serif'],
+                secondary: ['Syne', 'sans-serif'],
+                extrabold: ['Syne', 'sans-serif'],
+                bold: ['Syne', 'sans-serif'],
+                semibold: ['Syne', 'sans-serif'],
             },
             animation: {
                 marquee: 'marquee 30s linear infinite',
