@@ -59,7 +59,33 @@
         @endforeach
     </ul>
 
-    <a href="{{ $plan['button']['url'] ?? '#' }}" class="w-full {{ $styles['button'] }} transition-colors duration-200 text-white py-3 px-4 rounded-lg font-bold text-center text-lg shadow-md">
-        {{ $plan['button']['text'] }}
-    </a>
+    <x-popup.popup title="Captação marketing - Formulário" width="max-w-2xl">
+        <x-slot:trigger>
+            <div class="w-full {{ $styles['button'] }} transition-colors duration-200 text-white py-3 px-4 rounded-lg font-bold text-center text-lg shadow-md cursor-pointer">
+                {{ $plan['button']['text'] }}
+            </div>
+        </x-slot:trigger>
+
+        <div class="w-full h-full">
+            <iframe
+                src="https://api.leadconnectorhq.com/widget/form/ArK1qasjxfpHOXHxtsSl"
+                style="width:100%;height:100%;border:none;border-radius:0px"
+                id="inline-ArK1qasjxfpHOXHxtsSl"
+                data-layout="{'id':'INLINE'}"
+                data-trigger-type="alwaysShow"
+                data-trigger-value=""
+                data-activation-type="alwaysActivated"
+                data-activation-value=""
+                data-deactivation-type="neverDeactivate"
+                data-deactivation-value=""
+                data-form-name="Captação marketing - Formulário do site"
+                data-height="400"
+                data-layout-iframe-id="inline-ArK1qasjxfpHOXHxtsSl"
+                data-form-id="ArK1qasjxfpHOXHxtsSl"
+                title="Captação marketing - Formulário do site">
+            </iframe>
+        </div>
+    </x-popup.popup>
 </div>
+
+<script src="https://link.msgsndr.com/js/form_embed.js"></script>
