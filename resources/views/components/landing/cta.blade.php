@@ -7,7 +7,7 @@
             <!-- Left: Icon -->
             <div class="flex-shrink-0 mb-8 lg:mb-0">
                 <span class="relative inline-block">
-                    <x-heroicon-c-academic-cap class="w-14 h-14 text-brand relative z-10"/>
+                    <img src="{{ asset('images/blog_element.svg') }}" alt="Blog Icon" class="w-20 h-20 text-brand relative z-10"/>
                 </span>
             </div>
             <!-- Middle: Text Content -->

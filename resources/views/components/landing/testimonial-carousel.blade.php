@@ -34,7 +34,13 @@
         },
 
         updateSlidesPerView() {
+            const oldView = this.slidesPerView;
             this.slidesPerView = window.innerWidth >= 768 ? 2 : 1;
+
+            // Ajustar activeSlide quando mudar o número de slides por visualização
+            if (oldView !== this.slidesPerView) {
+                this.activeSlide = Math.min(this.activeSlide, Math.max(0, this.totalSlides - this.slidesPerView));
+            }
         },
 
         startAutoplay() {
@@ -48,25 +54,26 @@
         },
 
         next() {
-            const maxSlide = this.totalSlides - this.slidesPerView;
-            if (this.activeSlide < maxSlide) {
-                this.activeSlide += this.slidesPerView;
-            } else {
+            if (this.activeSlide + this.slidesPerView >= this.totalSlides) {
                 this.activeSlide = 0; // Loop back to the beginning
+            } else {
+                this.activeSlide += this.slidesPerView;
+                // Garantir que não ultrapassamos o limite
+                this.activeSlide = Math.min(this.activeSlide, this.totalSlides - this.slidesPerView);
             }
         },
 
         prev() {
-            if (this.activeSlide > 0) {
-                this.activeSlide -= this.slidesPerView;
+            if (this.activeSlide <= 0) {
+                // Loop to the end, ensuring we don't go past available slides
+                this.activeSlide = Math.max(0, this.totalSlides - this.slidesPerView);
             } else {
-                // Loop to the end, showing the last full set of slides
-                this.activeSlide = Math.floor((this.totalSlides - 1) / this.slidesPerView) * this.slidesPerView;
+                this.activeSlide = Math.max(0, this.activeSlide - this.slidesPerView);
             }
         },
 
         goToSlide(index) {
-            this.activeSlide = Math.floor(index / this.slidesPerView) * this.slidesPerView;
+            this.activeSlide = Math.min(index, this.totalSlides - this.slidesPerView);
         },
 
         handleSwipe(startX, endX) {
@@ -76,6 +83,13 @@
             } else if (endX - startX > threshold) {
                 this.prev();
             }
+        },
+
+        getSlidePosition() {
+            // Calcular posição considerando a largura do slide + gap
+            const slideWidth = 100 / this.slidesPerView;
+            const gapAdjustment = this.activeSlide * 1; // 1rem gap entre slides
+            return `translateX(calc(-${this.activeSlide * slideWidth}% - ${gapAdjustment}rem))`;
         }
     }"
     class="py-12 px-6 relative pb-20"
@@ -92,8 +106,8 @@
         {{-- Testimonials Container --}}
         <div class="relative overflow-hidden">
             <div
-                class="flex transition-transform duration-700 ease-out gap-4"
-                :style="`transform: translateX(calc(-${activeSlide * (100 / slidesPerView)}% - ${activeSlide / slidesPerView * 1rem}));`"
+                class="flex transition-transform duration-700 ease-in-out gap-4"
+                x-bind:style="`transform: ${getSlidePosition()}`"
             >
                 @foreach ($testimonials as $index => $testimonial)
                     <div
@@ -137,15 +151,19 @@
         <div class="flex justify-center items-center mt-12">
             {{-- Indicators --}}
             <div class="flex space-x-3">
-                @for ($i = 0; $i < count($testimonials); $i += 2) {{-- Usando 2 diretamente para desktop --}}
+                @php
+                    // Calcular o número correto de indicadores com base no slidesPerView
+                    $numIndicators = ceil(count($testimonials) / 2);
+                @endphp
+                @for ($i = 0; $i < count($testimonials); $i += 2)
                 <button
                     @click="goToSlide({{ $i }})"
                     :class="{
-                            'w-10 shadow-md shadow-brand/30 scale-110': activeSlide === {{ $i }},
-                            'w-3 hover:bg-brand/50 hover:scale-110': activeSlide !== {{ $i }}
-                        }"
+                        'w-10 shadow-md shadow-brand/30 scale-110': activeSlide === {{ $i }} || (activeSlide === {{ $i }} - 1 && {{ $i }} === totalSlides - 1 && slidesPerView === 2),
+                        'w-3 hover:bg-brand/50 hover:scale-110': activeSlide !== {{ $i }} && !(activeSlide === {{ $i }} - 1 && {{ $i }} === totalSlides - 1 && slidesPerView === 2)
+                    }"
                     class="h-3 bg-orange-500 rounded-full transition-all duration-300 focus:outline-none"
-                    aria-label="Go to slide {{ ($i / 2) + 1 }}"
+                    aria-label="Go to slide {{ floor($i / 2) + 1 }}"
                 ></button>
                 @endfor
             </div>
@@ -168,5 +186,3 @@
         <x-heroicon-m-chevron-right class="w-6 h-6" />
     </button>
 </div>
-
-

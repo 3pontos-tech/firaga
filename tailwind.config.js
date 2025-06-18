@@ -18,6 +18,8 @@ export default {
                 brand: {
                     DEFAULT: 'var(--color-brand)',
                     hover: 'var(--color-brand-hover)',
+                    darker: 'var(--color-brand-darker)',
+                    light: 'var(--color-brand-light)',
                 },
 
                 accent: {

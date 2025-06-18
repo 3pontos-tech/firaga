@@ -13,12 +13,10 @@
 @endphp
 
 <!-- Testimonial Section -->
-<section id="depoimentos" class="relative bg-gradient-to-br from-bg via-surface to-bg text-heading py-24 md:py-28 overflow-hidden">
+<section id="depoimentos" class="relative bg-gradient-to-br from-brand-darker via-brand to-brand-hover text-heading py-24 md:py-28 overflow-hidden">
     <!-- Animated Gradient Overlay -->
-    <div class="absolute inset-0 pointer-events-none z-0">
-        <div class="absolute top-0 left-1/2 w-[80vw] h-[80vw] -translate-x-1/2 blur-3xl opacity-40 animate-gradient-move rounded-full bg-gradient-to-tr from-brand via-accent-text to-accent-bg"></div>
-        <div class="absolute bottom-0 right-0 w-1/3 h-1/3 blur-2xl opacity-30 animate-float-slow bg-gradient-to-br from-brand via-brand-hover to-accent-text rounded-full"></div>
-    </div>
+    <!-- Animated Gradient Overlay -->
+    <div class="absolute inset-0 bg-gradient-to-r from-brand-darker to-transparent opacity-50 animate-pulse"></div>
 
     <div class="container mx-auto px-6 relative z-10">
 

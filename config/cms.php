@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 use App\Filament\Components\Blog\MarkdownTextComponent;
 use App\Filament\Components\Blog\RichTextComponent;
+use App\Filament\Components\Landing\HeroWithImageComponent;
 use App\Filament\Components\Landing\IconSolutionsComponent;
 use App\Filament\Components\Landing\MainHeroComponent;
 use App\Filament\Components\Landing\PlansComponent;
@@ -96,6 +97,7 @@ return [
         ['class' => MainHeroComponent::class],
         ['class' => IconSolutionsComponent::class],
         ['class' => PlansComponent::class],
+        ['class' => HeroWithImageComponent::class],
 
         // Blog components
         ['class' => MarkdownTextComponent::class],

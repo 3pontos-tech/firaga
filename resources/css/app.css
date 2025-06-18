@@ -19,6 +19,8 @@
 
         --color-brand: #e2410a;
         --color-brand-hover: #ff6c47;
+        --color-brand-darker: #b32c00;
+        --color-brand-light: #ffb3a1;
 
         --color-accent-text: #e2410a;
         --color-accent-bg: #fff3f0;
@@ -36,6 +38,8 @@
 
         --color-brand: #e2410a;
         --color-brand-hover: #ff7e47;
+        --color-brand-darker: #b32c00;
+        --color-brand-light: #ffb3a1;
 
         --color-accent-text: #ff7e47;
         --color-accent-bg: #2a120c;
