@@ -35,6 +35,7 @@ export default {
                 extrabold: ['Syne', 'sans-serif'],
                 bold: ['Syne', 'sans-serif'],
                 semibold: ['Syne', 'sans-serif'],
+                outlined: ['Syne', 'sans-serif'],
             },
             animation: {
                 marquee: 'marquee 30s linear infinite',
