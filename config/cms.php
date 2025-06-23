@@ -106,6 +106,7 @@ return [
         // Partial components
         ['class' => GridHeroComponent::class],
         ['class' => FaqComponent::class],
+        ['class' => \App\Filament\Components\Partials\QuoteComponent::class],
     ],
 
     /*

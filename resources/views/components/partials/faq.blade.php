@@ -20,7 +20,7 @@
     ])
 ])
 
-<div class="grid lg:grid-cols-2 gap-12 items-start container p-6  mx-auto">
+<div class="grid lg:grid-cols-2 max-w-5xl gap-12 items-start container p-6  mx-auto">
     <div class="relative hidden lg:block">
         <img alt="Customer support representative helping customers"
              loading="lazy" width="500" height="600"
