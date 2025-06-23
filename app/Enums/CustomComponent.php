@@ -12,4 +12,6 @@ enum CustomComponent: string
 
     case PartialFaq = 'partials-faq';
 
+    case PartialQuote = 'partials-quote';
+
 }

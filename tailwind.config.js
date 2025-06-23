@@ -10,6 +10,7 @@ export default {
                 bg: 'var(--color-bg)',
                 surface: 'var(--color-surface)',
                 deep: 'var(--color-deep)',
+                hero: 'var(--color-hero)',
 
                 heading: 'var(--color-heading)',
                 body: 'var(--color-body)',
@@ -18,6 +19,8 @@ export default {
                 brand: {
                     DEFAULT: 'var(--color-brand)',
                     hover: 'var(--color-brand-hover)',
+                    darker: 'var(--color-brand-darker)',
+                    light: 'var(--color-brand-light)',
                 },
 
                 accent: {
@@ -29,8 +32,13 @@ export default {
             },
 
             fontFamily: {
-                primary: ['Poppins', 'sans-serif'],
-                secondary: ['Open Sans', 'sans-serif'],
+                sans: ['Syne', 'sans-serif'],
+                primary: ['Syne', 'sans-serif'],
+                secondary: ['Syne', 'sans-serif'],
+                extrabold: ['Syne', 'sans-serif'],
+                bold: ['Syne', 'sans-serif'],
+                semibold: ['Syne', 'sans-serif'],
+                outlined: ['Syne', 'sans-serif'],
             },
             animation: {
                 marquee: 'marquee 30s linear infinite',
