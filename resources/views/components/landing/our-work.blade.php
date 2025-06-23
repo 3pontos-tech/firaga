@@ -49,9 +49,9 @@
                                 </div>
 
                                 <!-- Coluna da Direita: Cards -->
-                                <div class="lg:w-1/2 relative pb-10 pl-10">
+                                <div class="lg:w-1/2 relative pb-10 md:pl-10">
                                     <!-- Um único elemento L para toda a seção -->
-                                    <div class="absolute bottom-0 left-0">
+                                    <div class="hidden md:block md:absolute bottom-0 left-0">
                                         <div class="w-32 h-[13px] bg-brand rounded-bl-md"></div>
                                         <div class="absolute bottom-0 left-0 h-32 w-[13px] bg-brand rounded-bl-md"></div>
                                     </div>

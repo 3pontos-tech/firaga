@@ -1,36 +1,40 @@
 @php
-    $styles = match ($plan['name']) {
+    $styles = match (strtolower($plan['name'])) {
         'gold' => [
-            'card' => 'bg-white text-brand',
+            'card' => 'bg-gradient-to-br from-yellow-300 to-yellow-500 bg-yellow-400 text-yellow-900',
             'badge' => '',
-            'border' => 'border-b-2 border-brand',
-            'icon' => 'text-brand-300',
-            'button' => 'bg-brand text-white',
+            'body' => 'text-yellow-900',
+            'border' => 'border-b-2 border-yellow-600',
+            'icon' => 'text-yellow-900',
+            'button' => ' bg-gradient-to-br from-yellow-700 to-yellow-600 text-white hover:bg-yellow-600',
         ],
         'platinum' => [
-            'card' => 'bg-brand text-white',
+            'card' => 'bg-gradient-to-br from-emerald-700 to-emerald-900 text-white',
+            'body' => 'text-white',
             'badge' => '',
             'border' => 'border-b-2 border-white',
             'icon' => 'text-white',
-            'button' => 'bg-white text-brand',
+            'button' => 'bg-gradient-to-br from-emerald-900 to-emerald-700 text-white hover:bg-gray-100',
         ],
         'black' => [
-            'card' => 'bg-black text-white',
+            'card' => 'bg-gradient-to-br from-black to-hero text-white',
+            'body' => 'text-white',
             'badge' => '',
-            'border' => 'border-b-2 border-gray-400',
-            'icon' => 'text-gray-300',
-            'button' => 'bg-black border border-gray-400',
+            'border' => 'border-b-2 border-neutral-600',
+            'icon' => 'text-neutral-300',
+            'button' => 'bg-gradient-to-br from-hero to-black text-white border border-neutral-600 hover:bg-neutral-700',
         ],
         default => [
-            'card' => 'bg-white text-black',
+            'card' => 'bg-white text-neutral-900',
             'badge' => '',
-            'border' => 'border-b border-gray-300',
-            'icon' => 'text-gray-500',
-            'button' => 'bg-gray-100 hover:bg-gray-200',
+            'body' => 'text-neutral-900',
+            'border' => 'border-b border-neutral-300',
+            'icon' => 'text-neutral-500',
+            'button' => 'bg-neutral-100 text-neutral-900 hover:bg-neutral-200',
         ]
     };
-
 @endphp
+
 <div class="rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 p-8 flex flex-col relative {{ $styles['card'] }}">
     @if($styles['badge'])
         <div class="absolute -top-4 left-0 right-0 mx-auto w-max px-4 py-1 bg-white text-blue-700 text-sm font-bold rounded-full shadow-md">
@@ -40,10 +44,10 @@
 
     <div class="{{ $styles['border'] }} pb-4 mb-4">
         <h3 class="text-3xl font-bold mb-2">{{ str($plan['name'])->ucfirst() }}</h3>
-        <p class="text-{{ $plan['name'] === 'gold' ? 'black' : 'white' }} font-medium">
+        <p class="{{ $styles['body'] }} font-medium">
             {{ $plan['description'] }}
             @if(isset($plan['note']))
-                <br><span class="italic text-sm font-medium text-{{ $plan['name'] === 'gold' ? 'black' : 'white' }}/75 mt-2 block">{{ $plan['note'] }}</span>
+                <br><span class="italic text-sm font-medium {{ $styles['body'] }} mt-2 block">{{ $plan['note'] }}</span>
             @endif
         </p>
     </div>
@@ -54,7 +58,7 @@
                 <svg class="w-5 h-5 mr-3 mt-0.5 flex-shrink-0 {{ $styles['icon'] }}" fill="currentColor" viewBox="0 0 20 20">
                     <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
                 </svg>
-                <span class="font-medium text-{{ $plan['name'] === 'gold' ? 'black' : 'white' }}">{{ $item }}</span>
+                <span class="font-medium {{ $styles['body'] }}">{{ $item }}</span>
             </li>
         @endforeach
     </ul>

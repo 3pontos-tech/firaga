@@ -12,8 +12,9 @@
         --color-bg: #ffffff;
         --color-surface: #f5f5f5;
         --color-deep: #c2c2c2;
+        --color-hero: #303030;
         --color-heading: #0f0f0f;
-        --color-body: #333333;
+        --color-body: #303030;
         --color-muted: #777;
         --color-border: #e5e5e5;
 
@@ -31,6 +32,7 @@
         --color-bg: #0e0e0e;
         --color-surface: #1a1a1a;
         --color-deep: #202020;
+        --color-hero: #303030;
         --color-heading: #ffffff;
         --color-body: #cfcfcf;
         --color-muted: #888888;

@@ -3,15 +3,15 @@
         <style>
             .omg {
                 fill: none;
-                stroke: var(--color-deep);
+                stroke: var(--color-hero);
             }
 
             .thats-it {
                 fill: none;
-                stroke: var(--color-surface);
+                stroke: var(--color-hero);
             }
             .work-please {
-                fill: var(--color-bg);
+                fill: var(--color-hero);
             }
         </style>
 

@@ -22,6 +22,7 @@
     </x-slot:metatags>
 
     <x-landing.hero :hero-data="$heroData"/>
+
     <x-landing.banner/>
     <x-landing.our-work/>
     <x-landing.our-solutions :solutions="$solutions"/>

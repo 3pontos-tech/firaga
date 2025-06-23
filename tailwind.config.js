@@ -10,6 +10,7 @@ export default {
                 bg: 'var(--color-bg)',
                 surface: 'var(--color-surface)',
                 deep: 'var(--color-deep)',
+                hero: 'var(--color-hero)',
 
                 heading: 'var(--color-heading)',
                 body: 'var(--color-body)',
