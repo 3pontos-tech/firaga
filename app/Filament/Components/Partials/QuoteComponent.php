@@ -9,7 +9,6 @@ use Webid\Druid\Components\ComponentInterface;
 
 class QuoteComponent implements ComponentInterface
 {
-
     public static function blockSchema(): array
     {
         return [

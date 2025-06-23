@@ -10,6 +10,7 @@ use App\Filament\Components\Landing\MainHeroComponent;
 use App\Filament\Components\Landing\PlansComponent;
 use App\Filament\Components\Partials\FaqComponent;
 use App\Filament\Components\Partials\GridHeroComponent;
+use App\Filament\Components\Partials\QuoteComponent;
 use App\Filament\Resources\CMS\MenuResource\RelationManagers\ItemsRelationManager;
 use App\Models\CMS\Category;
 use App\Models\CMS\Menu;
@@ -106,7 +107,7 @@ return [
         // Partial components
         ['class' => GridHeroComponent::class],
         ['class' => FaqComponent::class],
-        ['class' => \App\Filament\Components\Partials\QuoteComponent::class],
+        ['class' => QuoteComponent::class],
     ],
 
     /*

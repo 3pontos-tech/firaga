@@ -10,7 +10,6 @@ use Webid\Druid\Components\ComponentInterface;
 
 class HeroWithImageComponent implements ComponentInterface
 {
-
     public static function blockSchema(): array
     {
         return [
@@ -33,6 +32,7 @@ class HeroWithImageComponent implements ComponentInterface
     public static function toBlade(array $data): View
     {
         $image = Media::query()->find($data['image'])->getSignedUrl();
+
         return view('components.landing.heroWithImage', [
             'heroWithImageData' => $data,
             'urlImage' => $image,
