@@ -7,7 +7,7 @@ use Illuminate\Contracts\View\View;
 
 class PagesController extends Controller
 {
-    public function getPage(Page $page): View
+    public function show(Page $page): View
     {
         return view('pages.index', [
             'page' => $page,

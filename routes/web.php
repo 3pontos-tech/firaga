@@ -19,13 +19,13 @@ Route::domain(config('app.domain'))->group(function (): void {
     Route::get('/', LandingController::class)->name('landing');
 
     Route::prefix('blog')->group(function (): void {
-        Route::get('/', [ArticlesController::class, 'getArticles'])
+        Route::get('/', [ArticlesController::class, 'index'])
             ->name('blog.index');
-        Route::get('/{post:slug}', [ArticlesController::class, 'getArticle'])
+        Route::get('/{post:slug}', [ArticlesController::class, 'show'])
             ->name('blog.show');
     });
 
-    Route::get('/{page:slug}', [PagesController::class, 'getPage'])
+    Route::get('/{page:slug}', [PagesController::class, 'show'])
         ->name('page.show')
         ->where('page', '[a-zA-Z0-9\-]+');
 
