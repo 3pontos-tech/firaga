@@ -17,12 +17,12 @@
             'button' => 'bg-linear-to-br from-emerald-900 to-emerald-700 text-white hover:bg-gray-100',
         ],
         'black' => [
-            'card' => 'bg-linear-to-br from-black to-hero text-white',
+            'card' => 'bg-linear-to-br from-black to-zinc-900 text-white',
             'body' => 'text-white',
             'badge' => '',
             'border' => 'border-b-2 border-neutral-600',
             'icon' => 'text-neutral-300',
-            'button' => 'bg-linear-to-br from-hero to-black text-white border border-neutral-600 hover:bg-neutral-700',
+            'button' => 'bg-linear-to-br from-zinc-900 to-black text-white border border-neutral-600 hover:bg-neutral-700',
         ],
         default => [
             'card' => 'bg-white text-neutral-900',
