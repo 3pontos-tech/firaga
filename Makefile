@@ -36,7 +36,6 @@ test-phpstan: ## Run PHPStan in test mode
 .PHONY: test-pest
 test-pest: ## Run Pest tests
 	@$(CURDIR)/vendor/bin/pest
-	@$(CURDIR)/vendor/bin/pest --group=arch
 
 .PHONY: test-rector
 test-rector: ## Run Rector in test mode
