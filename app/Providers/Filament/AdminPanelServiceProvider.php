@@ -26,7 +26,7 @@ use Illuminate\View\Middleware\ShareErrorsFromSession;
 use Jeffgreco13\FilamentBreezy\BreezyCore;
 use Swis\Filament\Backgrounds\FilamentBackgroundsPlugin;
 
-class AdminPanelProvider extends PanelProvider
+class AdminPanelServiceProvider extends PanelProvider
 {
     public function panel(Panel $panel): Panel
     {

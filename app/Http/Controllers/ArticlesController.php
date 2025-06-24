@@ -8,7 +8,7 @@ use Illuminate\View\View;
 
 class ArticlesController extends Controller
 {
-    public function getArticles(): View
+    public function index(): View
     {
         $posts = Post::query()
             ->paginate(5);
@@ -26,7 +26,7 @@ class ArticlesController extends Controller
         ]);
     }
 
-    public function getArticle(Post $post): View
+    public function show(Post $post): View
     {
         $post = $post->load('categories', 'relatedPosts');
         $relatedPosts = $post->relatedPosts;
