@@ -152,6 +152,10 @@ docker-compose exec php php artisan view:clear
 
 If you face any permission denied errors (e.g., related to logs or cache), ensure your `entrypoint.sh` is correctly applying permissions as `root`.
 
+### 7. X Debug
+
+Check xdebug.launch.json on examples folder, if you are a VSCode user this is may be helpful to run X Debug in Docker + Vscode.
+
 ## Troubleshooting
 
 * **"Permission denied" errors:** Ensure you've followed the UID/GID synchronization steps in the `Dockerfile.dev` and that your `entrypoint.sh` handles `chown` and `chmod` as `root` before switching users. Rebuild the `php` image (`docker-compose build --no-cache php`) if you make changes to the Dockerfile.
