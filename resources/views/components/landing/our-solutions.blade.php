@@ -5,19 +5,19 @@
     'solutions' => collect(),
 ])
 
-<section class="mx-auto max-w-7xl py-24">
+<section class="mx-auto bg-base-200/80 max-w-7xl py-24">
     <div class="mb-16 px-4 md:px-8" style="opacity: 1; transform: none; will-change: opacity, transform;">
-        <div class="flex items-center gap-4 mb-6 bg-neutral p-3 rounded-md w-fit">
+        <div class="flex items-center gap-4 mb-6 bg-primary p-3 rounded-md w-fit">
             <span class="text-sm font-semibold uppercase tracking-wider text-white">{{ $section }}</span>
         </div>
-        <h2 class="text-3xl font-bold text-heading mb-4 md:text-4xl lg:text-5xl">
+        <h2 class="text-3xl font-bold text-base-content mb-4 md:text-4xl lg:text-5xl">
             {{ $heading }}
         </h2>
         <p class="max-w-2xl text-lg text-zinc-400 md:text-xl">
             {{ $description }}
         </p>
     </div>
-    <div class="relative mx-5 overflow-hidden rounded-2xl bg-linear-to-br from-surface to-bg shadow-2xl">
+    <div class="relative mx-5 overflow-hidden rounded-2xl bg-linear-to-br from-base-100 to-base-200">
 
         <div class="relative">
             @foreach($solutions as $solution)
@@ -35,7 +35,7 @@
     </div>
     <div class="mt-12 text-center" style="opacity: 1; will-change: opacity;"><p class="text-zinc-400 mb-4">Não encontrou
             exatamente o que procura?</p>
-        <button class="textneutral hover:textneutral font-semibold transition-colors">Fale conosco para uma
+        <button class="text-primary hover:text-primary font-semibold transition-colors">Fale conosco para uma
             solução personalizada →
         </button>
     </div>
