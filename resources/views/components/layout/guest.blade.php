@@ -50,7 +50,7 @@
 
 
 </head>
-<body class="bg-bg">
+<body class="bg-base-100">
 <noscript>
     <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KTVLGCHG" class="hidden h-0 w-0"></iframe>
 </noscript>

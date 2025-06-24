@@ -9,7 +9,7 @@
 
 <article class="pb-8">
         <div class="max-w-4xl mx-auto px-4 md:px-8">
-            <a href="{{ route('blog.index') }}" class="inline-flex items-center gap-2 text-brand hover:text-brand-hover mb-8">
+            <a href="{{ route('blog.index') }}" class="inline-flex items-center gap-2 textneutral hover:textneutral-hover mb-8">
                 <x-heroicon-c-arrow-left class="h-4 w-4"/>
                 Voltar ao Blog
             </a>
@@ -21,7 +21,7 @@
             </div>
             <div class="flex gap-2 mb-2">
                 @foreach($post->categories as $category)
-                    <span class="bg-brand text-body px-4 py-2 rounded-full text-sm font-semibold">
+                    <span class="bg-neutral text-primary-content px-4 py-2 rounded-full text-sm font-semibold">
                         {{ $category->name ?? 'Code' }}
                     </span>
                 @endforeach
@@ -30,7 +30,7 @@
                 {{ $post->title }}
             </h1>
             <div
-                class="flex flex-wrap justify-between  items-center gap-6 text-body mb-8 pb-8 border-b border-zinc-800">
+                class="flex flex-wrap justify-between  items-center gap-6 text-primary-content mb-8 pb-8 border-b border-zinc-800">
                 <div class="flex gap-6">
                     <div class="flex items-center gap-2">
                         <x-heroicon-c-calendar class="h-4 w-4"/>
@@ -61,13 +61,13 @@
                     alt="{{ $post->author->name ?? '' }}"
                     loading="lazy"
                     decoding="async"
-                    class="rounded-full w-16 h-16 border-2 border-brand"
+                    class="rounded-full w-16 h-16 border-2 borderneutral"
                     src="{{ $post->author->thumbnail->getSignedUrl() }}"
                 >
                 <div class="flex flex-col">
                     <h2 class="text-lg font-bold text-heading ">Autor</h2>
                     <div class="flex flex-col">
-                        <p class="text-body font-semibold">
+                        <p class="text-primary-content font-semibold">
                             {{ $post->author->name }}
                         </p>
                         <p class="text-muted">

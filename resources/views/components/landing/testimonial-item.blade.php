@@ -7,18 +7,18 @@
 ])
 
 <div class="{{ $highlighted
-    ? 'w-full max-w-3xl mx-auto shadow-xl hover:shadow-2xl hover:shadow-brand/30 hover:scale-[1.02] z-10 relative transition-all duration-500 flex-shrink-0'
-    : 'w-full max-w-sm md:w-1/4 lg:w-1/5 scale-90 opacity-80 blur-[1px] md:blur-0 md:opacity-80 md:scale-90 transition-all duration-300 flex-shrink-0 md:mt-8' }}">
+    ? 'w-full max-w-3xl mx-auto shadow-xl hover:shadow-2xl hover:shadowneutral/30 hover:scale-[1.02] z-10 relative transition-all duration-500 shrink-0'
+    : 'w-full max-w-sm md:w-1/4 lg:w-1/5 scale-90 opacity-80 blur-[1px] md:blur-0 md:opacity-80 md:scale-90 transition-all duration-300 shrink-0 md:mt-8' }}">
 
     <!-- Decorative elements -->
     @if ($highlighted)
-    <div class="absolute -top-6 -right-6 w-24 h-24 bg-gradient-to-br from-brand/20 to-accent-text/20 rounded-full blur-xl opacity-70 animate-pulse-slow"></div>
-    <div class="absolute -bottom-4 -left-4 w-20 h-20 bg-gradient-to-tr from-brand-hover/20 to-brand/20 rounded-full blur-lg opacity-60 animate-float-slow"></div>
+    <div class="absolute -top-6 -right-6 w-24 h-24 bg-linear-to-br fromneutral/20 to-accent-text/20 rounded-full blur-xl opacity-70 animate-pulse-slow"></div>
+    <div class="absolute -bottom-4 -left-4 w-20 h-20 bg-linear-to-tr fromneutral-hover/20 toneutral/20 rounded-full blur-lg opacity-60 animate-float-slow"></div>
     @endif
 
     <blockquote class="{{ $highlighted
-        ? 'relative bg-surface/90 backdrop-blur-xl rounded-3xl shadow-xl border border-brand/30 hover:border-brand/50 px-10 py-12 mb-10 overflow-hidden animate-fade-in transition-all duration-300'
-        : 'relative bg-surface/80 backdrop-blur-xl rounded-2xl shadow-lg border border-brand/20 px-6 py-8 mb-6 overflow-hidden animate-fade-in' }}">
+        ? 'relative bg-surface/90 backdrop-blur-xl rounded-3xl shadow-xl border borderneutral/30 hover:borderneutral/50 px-10 py-12 mb-10 overflow-hidden animate-fade-in transition-all duration-300'
+        : 'relative bg-surface/80 backdrop-blur-xl rounded-2xl shadow-lg border borderneutral/20 px-6 py-8 mb-6 overflow-hidden animate-fade-in' }}">
 
         <!-- Decorative pattern -->
         @if ($highlighted)
@@ -29,24 +29,24 @@
 
         <!-- Quote mark -->
         <svg class="{{ $highlighted
-            ? 'absolute -top-8 -left-6 w-24 h-24 text-brand/20 animate-bounce-slow'
-            : 'absolute -top-4 -left-4 w-10 h-10 text-brand/20' }}"
+            ? 'absolute -top-8 -left-6 w-24 h-24 textneutral/20 animate-bounce-slow'
+            : 'absolute -top-4 -left-4 w-10 h-10 textneutral/20' }}"
             fill="none" viewBox="0 0 48 48"><text x="0" y="40" font-size="48" font-family="serif">"</text></svg>
 
         <!-- Quote text with enhanced styling -->
         <div class="relative z-10">
             @if ($highlighted)
-            <div class="w-1/4 h-1 bg-gradient-to-r from-brand/40 to-transparent rounded-full mb-6"></div>
+            <div class="w-1/4 h-1 bg-linear-to-r fromneutral/40 to-transparent rounded-full mb-6"></div>
             @endif
 
             <p class="{{ $highlighted
-                ? 'italic text-body text-2xl leading-relaxed font-light tracking-wide'
-                : 'italic text-body text-base leading-relaxed' }}">
+                ? 'italic text-primary-content text-2xl leading-relaxed font-light tracking-wide'
+                : 'italic text-primary-content text-base leading-relaxed' }}">
                 {{ $quote }}
             </p>
 
             @if ($highlighted)
-            <div class="w-1/3 h-1 bg-gradient-to-r from-transparent to-brand/40 rounded-full mt-6 ml-auto"></div>
+            <div class="w-1/3 h-1 bg-linear-to-r from-transparent toneutral/40 rounded-full mt-6 ml-auto"></div>
             @endif
         </div>
     </blockquote>
@@ -56,11 +56,11 @@
         <div class="flex items-center mb-1 {{ $highlighted ? 'order-2 md:order-1' : '' }}">
             <!-- Animated Stars -->
             <div class="flex space-x-2 mb-6 {{ $highlighted ? 'animate-pulse-slow' : 'animate-pulse' }}">
-                <span class="text-brand-hover {{ $highlighted ? 'text-3xl' : 'text-2xl' }} drop-shadow animate-float">★</span>
-                <span class="text-brand-hover {{ $highlighted ? 'text-3xl' : 'text-2xl' }} drop-shadow animate-float delay-100">★</span>
-                <span class="text-brand-hover {{ $highlighted ? 'text-3xl' : 'text-2xl' }} drop-shadow animate-float delay-200">★</span>
-                <span class="text-brand-hover {{ $highlighted ? 'text-3xl' : 'text-2xl' }} drop-shadow animate-float delay-300">★</span>
-                <span class="text-brand-hover {{ $highlighted ? 'text-3xl' : 'text-2xl' }} drop-shadow animate-float delay-400">★</span>
+                <span class="textneutral-hover {{ $highlighted ? 'text-3xl' : 'text-2xl' }} drop-shadow animate-float">★</span>
+                <span class="textneutral-hover {{ $highlighted ? 'text-3xl' : 'text-2xl' }} drop-shadow animate-float delay-100">★</span>
+                <span class="textneutral-hover {{ $highlighted ? 'text-3xl' : 'text-2xl' }} drop-shadow animate-float delay-200">★</span>
+                <span class="textneutral-hover {{ $highlighted ? 'text-3xl' : 'text-2xl' }} drop-shadow animate-float delay-300">★</span>
+                <span class="textneutral-hover {{ $highlighted ? 'text-3xl' : 'text-2xl' }} drop-shadow animate-float delay-400">★</span>
             </div>
         </div>
 
@@ -69,27 +69,27 @@
             @if ($highlighted)
                 <div class="relative">
                     <!-- Glowing effect behind avatar -->
-                    <span class="absolute inset-0 rounded-full bg-gradient-to-tr from-brand via-accent-text to-brand-hover blur-md opacity-70 animate-glow"></span>
+                    <span class="absolute inset-0 rounded-full bg-linear-to-tr fromneutral via-accent-text toneutral-hover blur-md opacity-70 animate-glow"></span>
 
                     <!-- Decorative ring -->
-                    <div class="absolute -inset-2 rounded-full border-2 border-dashed border-brand/30 animate-spin-slow"></div>
+                    <div class="absolute -inset-2 rounded-full border-2 border-dashed borderneutral/30 animate-spin-slow"></div>
 
                     <!-- Avatar image -->
                     <img
                         src="{{ $image }}"
                         alt="{{ $author }}"
-                        class="w-20 h-20 rounded-full object-cover border-4 border-brand shadow-lg relative z-10 hover:scale-110 transition-all duration-300"
+                        class="w-20 h-20 rounded-full object-cover border-4 borderneutral shadow-lg relative z-10 hover:scale-110 transition-all duration-300"
                         loading="lazy"
                     />
                 </div>
             @else
-                <img src="{{ $image }}" alt="{{ $author }}" class="w-10 h-10 rounded-full border-2 border-brand object-cover hover:scale-110 transition-all duration-300" loading="lazy" />
+                <img src="{{ $image }}" alt="{{ $author }}" class="w-10 h-10 rounded-full border-2 borderneutral object-cover hover:scale-110 transition-all duration-300" loading="lazy" />
             @endif
 
             <!-- Author details with enhanced styling -->
             <div class="{{ $highlighted ? 'text-center md:text-left' : '' }}">
                 <div class="text-heading font-bold {{ $highlighted ? 'text-2xl mb-1' : 'text-sm' }}">{{ $author }}</div>
-                <div class="{{ $highlighted ? 'text-brand text-base font-medium px-4 py-1 bg-brand/10 rounded-full inline-block' : 'text-brand text-xs font-medium' }}">
+                <div class="{{ $highlighted ? 'textneutral text-base font-medium px-4 py-1 bg-neutral/10 rounded-full inline-block' : 'textneutral text-xs font-medium' }}">
                     {{ $role }}
                 </div>
             </div>

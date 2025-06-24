@@ -1,6 +1,6 @@
 <x-layout.guest>
     <x-partials.grid-hero>
-        Blog <span class="text-brand">{{ config('app.name') }}</span>
+        Blog <span class="textneutral">{{ config('app.name') }}</span>
     </x-partials.grid-hero>
     <section class="py-6 lg:py-12">
         <div class="container mx-auto ">

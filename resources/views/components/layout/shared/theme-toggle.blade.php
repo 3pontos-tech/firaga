@@ -29,8 +29,7 @@
     "
     @click="toggle()"
 
-    :class="isDark ? 'bg-surface text-heading' : 'bg-bg text-body'"
-    class="rounded-lg p-2 transition-all duration-300 border border-base hover:border-brand hover:text-brand shadow-sm {{ $class }}"
+    class="rounded-lg p-2 transition-all duration-300 border text-neutral-content border-neutral-content hover:border-primary hover:text-primary shadow-sm {{ $class }}"
     aria-label="Toggle theme"
 >
     <span x-show="!isDark" x-transition:enter="transition-opacity duration-300" x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-100">

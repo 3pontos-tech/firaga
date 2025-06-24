@@ -24,13 +24,13 @@
                         ])
 
                         <!-- "Nosso Atendimento" Section -->
-                        <section id="nosso-atendimento" class="mx-auto bg-gradient-to-br from-surface via-bg to-surface text-heading py-28 overflow-hidden">
+                        <section id="nosso-atendimento" class="mx-auto bg-linear-to-br from-surface via-bg to-surface text-heading py-28 overflow-hidden">
                             <div class="container mx-auto max-w-7xl px-6 lg:flex lg:items-start lg:justify-between lg:space-x-12 relative z-10">
                                 <!-- Coluna da Esquerda -->
                                 <div class="lg:w-1/2 mb-12 lg:mb-0">
                                     <!-- Small Label -->
-                                    <div class="inline-block bg-bg backdrop-blur-xl px-4 py-1 rounded-md mb-4 shadow border border-brand fadeIn">
-                                        <span class="text-sm text-brand font-semibold">{{ $subheading }}</span>
+                                    <div class="inline-block bg-base-200 backdrop-blur-xl px-4 py-1 rounded-md mb-4 shadow border borderneutral fadeIn">
+                                        <span class="text-sm textneutral font-semibold">{{ $subheading }}</span>
                                     </div>
                                     <!-- Main Heading -->
                                     <h2 class="font-primary text-4xl sm:text-5xl font-extrabold leading-tight mb-6 tracking-tight">
@@ -41,7 +41,7 @@
                                         {{ $description }}
                                     </p>
                                     <!-- CTA: "Saiba Mais" with Circle + Arrow -->
-                                    <a href="{{ $cta_link }}" class="inline-flex items-center space-x-3 group mt-4 bg-brand pl-10 pr-10 pt-3 pb-3 rounded-md shadow-md">
+                                    <a href="{{ $cta_link }}" class="inline-flex items-center space-x-3 group mt-4 bg-neutral pl-10 pr-10 pt-3 pb-3 rounded-md shadow-md">
                                         <span class="uppercase text-md tracking-widest text-white transition font-semibold">
                                             {{ $cta_label }}
                                         </span>
@@ -52,8 +52,8 @@
                                 <div class="lg:w-1/2 relative pb-10 md:pl-10">
                                     <!-- Um único elemento L para toda a seção -->
                                     <div class="hidden md:block md:absolute bottom-0 left-0">
-                                        <div class="w-32 h-[13px] bg-brand rounded-bl-md"></div>
-                                        <div class="absolute bottom-0 left-0 h-32 w-[13px] bg-brand rounded-bl-md"></div>
+                                        <div class="w-32 h-[13px] bg-neutral rounded-bl-md"></div>
+                                        <div class="absolute bottom-0 left-0 h-32 w-[13px] bg-neutral rounded-bl-md"></div>
                                     </div>
 
                                     <!-- Área dos cards -->

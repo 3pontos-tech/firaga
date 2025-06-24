@@ -28,7 +28,7 @@
              class="rounded-lg object-cover w-full h-auto"
              style="color: transparent;"
              src="{{ $thumbnail->url }}">
-        <div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent rounded-lg"></div>
+        <div class="absolute inset-0 bg-linear-to-t from-black/20 to-transparent rounded-lg"></div>
     </div>
     <div class="space-y-4">
         <h2 class="text-3xl font-bold text-heading mb-8">Perguntas Frequentes</h2>
@@ -39,7 +39,7 @@
                         <button type="button"
                                 @click="open = !open"
                                 :aria-expanded="open"
-                                class="flex flex-1 items-center justify-between py-4 font-medium transition-all hover:text-brand text-left text-heading"
+                                class="flex flex-1 items-center justify-between py-4 font-medium transition-all hover:textneutral text-left text-heading"
                                 aria-controls="faq-content-{{ $index }}">
                             {{ $solution['question'] ?? '' }}
                             <svg class="h-5 w-5 text-muted transition-transform duration-200"
@@ -53,7 +53,7 @@
                          x-collapse
                          id="faq-content-{{ $index }}"
                          class="pb-4">
-                        <div class="text-body text-sm leading-relaxed">
+                        <div class="text-primary-content text-sm leading-relaxed">
                             {{ $solution['answer'] ?? '' }}
                         </div>
                     </div>

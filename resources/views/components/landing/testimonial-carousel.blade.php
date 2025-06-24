@@ -139,7 +139,7 @@
 
                             {{-- Speech Bubble Tail --}}
                             <div class="absolute -bottom-4 left-12">
-                                <div class="w-0 h-0 border-l-[20px] border-l-transparent border-r-[20px] border-r-transparent border-t-[20px] border-t-white"></div>
+                                <div class="w-0 h-0 border-l-20 border-l-transparent border-r-20 border-r-transparent border-t-20 border-t-white"></div>
                             </div>
                         </div>
                     </div>
@@ -159,8 +159,8 @@
                 <button
                     @click="goToSlide({{ $i }})"
                     :class="{
-                        'w-10 shadow-md shadow-brand/30 scale-110': activeSlide === {{ $i }} || (activeSlide === {{ $i }} - 1 && {{ $i }} === totalSlides - 1 && slidesPerView === 2),
-                        'w-3 hover:bg-brand/50 hover:scale-110': activeSlide !== {{ $i }} && !(activeSlide === {{ $i }} - 1 && {{ $i }} === totalSlides - 1 && slidesPerView === 2)
+                        'w-10 shadow-md shadowneutral/30 scale-110': activeSlide === {{ $i }} || (activeSlide === {{ $i }} - 1 && {{ $i }} === totalSlides - 1 && slidesPerView === 2),
+                        'w-3 hover:bg-neutral/50 hover:scale-110': activeSlide !== {{ $i }} && !(activeSlide === {{ $i }} - 1 && {{ $i }} === totalSlides - 1 && slidesPerView === 2)
                     }"
                     class="h-3 bg-orange-500 rounded-full transition-all duration-300 focus:outline-none"
                     aria-label="Go to slide {{ floor($i / 2) + 1 }}"

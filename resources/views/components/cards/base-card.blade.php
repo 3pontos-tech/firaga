@@ -11,11 +11,11 @@
     </div>
 
     <!-- Filtro colorido que será aplicado sobre a imagem no hover -->
-    <div class="absolute inset-0 bg-brand opacity-0 group-hover:opacity-60 transition-opacity duration-500"></div>
+    <div class="absolute inset-0 bg-neutral opacity-0 group-hover:opacity-60 transition-opacity duration-500"></div>
 
     <div class="relative z-10">
         <h3 class="text-xl font-semibold mb-2 mt-4">{{ str($title) }}</h3>
-        <p class="text-body leading-relaxed">
+        <p class="text-primary-content leading-relaxed">
             {{ str($description)->wordWrap(8) }}
         </p>
     </div>
