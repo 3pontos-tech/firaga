@@ -18,6 +18,7 @@ document.addEventListener('alpine:init', () => {
         }
     });
 
-    const savedTheme = Alpine.store('theme').dark || true;
-    document.documentElement.classList.toggle('dark', savedTheme);
+    // Apply on load to prevent FOUC
+
+    document.documentElement.classList.toggle('dark', Alpine.store('theme').dark);
 });
