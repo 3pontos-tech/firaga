@@ -29,8 +29,6 @@
 
     <div class="container max-w-6xl mx-auto px-4 md:px-6 relative z-10">
         <div class="text-center mb-8 md:mb-16">
-
-
             <h2 class="text-2xl md:text-4xl lg:text-5xl xl:text-6xl font-bold tracking-tight text-base-content mb-4 md:mb-6 px-2">
                 Mudamos vidas através da
                 <span class="block bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">

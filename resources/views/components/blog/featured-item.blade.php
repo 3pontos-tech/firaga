@@ -16,7 +16,7 @@
                 <div class="absolute top-4 left-4">
                     @foreach($post->categories as $category)
                         <span
-                            class="bg-neutral-hover mx-1 text-heading px-3 py-1 rounded-full text-xs font-semibold">
+                            class="bg-neutral mx-1 text-base-content px-3 py-1 rounded-full text-xs font-semibold">
                             {{ $category->name ?? 'Code' }}
                         </span>
                     @endforeach
@@ -33,7 +33,7 @@
                         {{ $post->read_time_in_minutes }} minutos de leitura
                     </div>
                 </div>
-                <h3 class="text-2xl text-heading group-hover:textneutral font-bold mb-4  transition-colors">
+                <h3 class="text-2xl text-base-content group-hover:text-primary font-bold mb-4  transition-colors">
                     {{ $post->title }}
                 </h3>
                 <p class="text-primary-content mb-6 line-clamp-3">
@@ -47,7 +47,7 @@
                          style="color: transparent;"
                          src="{{ $post->author->thumbnail->getSignedUrl() }}">
                     <div>
-                        <p class="text-sm text-heading font-medium">{{ $post->author->name }}</p>
+                        <p class="text-sm text-base-content font-medium">{{ $post->author->name }}</p>
                         <p class="text-xs text-primary-content">{{ "Consultor Financeiro" }}</p>
                     </div>
                 </div>

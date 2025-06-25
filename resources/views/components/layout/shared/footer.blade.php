@@ -90,7 +90,7 @@
                     <input type="email" placeholder="Seu email" id="email"
                            class="px-4 py-3 border border-base-200/70 bg-base-200/50 rounded-lg focus:border-primary focus:outline-none">
                     <button type="submit"
-                            class="bg-neutral text-primary-content px-4 py-3 rounded-lg hover:bg-neutral-hover transition-colors hover:bg-primary hover:text-primary-content focus:border-primary focus:ring-2 focus:ring-primary focus:outline-none">
+                            class="bg-neutral text-primary-content px-4 py-3 rounded-lg hover:bg-neutral transition-colors hover:bg-primary hover:text-primary-content focus:border-primary focus:ring-2 focus:ring-primary focus:outline-none">
                         Ok
                     </button>
                 </form>

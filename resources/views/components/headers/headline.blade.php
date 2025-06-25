@@ -15,7 +15,7 @@
     </p>
     <a
         href="{{ $buttonUrl }}"
-        class="block sm:inline-block w-full sm:w-auto border-2 border-primary text-primary uppercase font-semibold py-2 px-4 sm:py-3 sm:px-4 rounded-4 hover:bg-primary hover:text-primary-content  transition shadow-lg sm:shadow-xl focus:outline-none focus:ring-2 focus:ringneutral-hover backdrop-blur-lg bg-base-200 text-center"
+        class="block sm:inline-block w-full sm:w-auto border-2 border-primary text-primary uppercase font-semibold py-2 px-4 sm:py-3 sm:px-4 rounded-4 hover:bg-primary hover:text-primary-content  transition shadow-lg sm:shadow-xl focus:outline-none focus:ring-2 focus:ringneutral backdrop-blur-lg bg-base-200 text-center"
         aria-label="Agende sua análise"
     >
         <span class="flex justify-center sm:justify-start items-center gap-2">

@@ -13,7 +13,7 @@
     <!-- Decorative elements -->
     @if ($highlighted)
     <div class="absolute -top-6 -right-6 w-24 h-24 bg-linear-to-br fromneutral/20 to-accent-text/20 rounded-full blur-xl opacity-70 animate-pulse-slow"></div>
-    <div class="absolute -bottom-4 -left-4 w-20 h-20 bg-linear-to-tr fromneutral-hover/20 toneutral/20 rounded-full blur-lg opacity-60 animate-float-slow"></div>
+    <div class="absolute -bottom-4 -left-4 w-20 h-20 bg-linear-to-tr fromneutral/20 toneutral/20 rounded-full blur-lg opacity-60 animate-float-slow"></div>
     @endif
 
     <blockquote class="{{ $highlighted
@@ -29,8 +29,8 @@
 
         <!-- Quote mark -->
         <svg class="{{ $highlighted
-            ? 'absolute -top-8 -left-6 w-24 h-24 textneutral/20 animate-bounce-slow'
-            : 'absolute -top-4 -left-4 w-10 h-10 textneutral/20' }}"
+            ? 'absolute -top-8 -left-6 w-24 h-24 text-primary/20 animate-bounce-slow'
+            : 'absolute -top-4 -left-4 w-10 h-10 text-primary/20' }}"
             fill="none" viewBox="0 0 48 48"><text x="0" y="40" font-size="48" font-family="serif">"</text></svg>
 
         <!-- Quote text with enhanced styling -->
@@ -56,11 +56,11 @@
         <div class="flex items-center mb-1 {{ $highlighted ? 'order-2 md:order-1' : '' }}">
             <!-- Animated Stars -->
             <div class="flex space-x-2 mb-6 {{ $highlighted ? 'animate-pulse-slow' : 'animate-pulse' }}">
-                <span class="textneutral-hover {{ $highlighted ? 'text-3xl' : 'text-2xl' }} drop-shadow animate-float">★</span>
-                <span class="textneutral-hover {{ $highlighted ? 'text-3xl' : 'text-2xl' }} drop-shadow animate-float delay-100">★</span>
-                <span class="textneutral-hover {{ $highlighted ? 'text-3xl' : 'text-2xl' }} drop-shadow animate-float delay-200">★</span>
-                <span class="textneutral-hover {{ $highlighted ? 'text-3xl' : 'text-2xl' }} drop-shadow animate-float delay-300">★</span>
-                <span class="textneutral-hover {{ $highlighted ? 'text-3xl' : 'text-2xl' }} drop-shadow animate-float delay-400">★</span>
+                <span class="text-primary-hover {{ $highlighted ? 'text-3xl' : 'text-2xl' }} drop-shadow animate-float">★</span>
+                <span class="text-primary-hover {{ $highlighted ? 'text-3xl' : 'text-2xl' }} drop-shadow animate-float delay-100">★</span>
+                <span class="text-primary-hover {{ $highlighted ? 'text-3xl' : 'text-2xl' }} drop-shadow animate-float delay-200">★</span>
+                <span class="text-primary-hover {{ $highlighted ? 'text-3xl' : 'text-2xl' }} drop-shadow animate-float delay-300">★</span>
+                <span class="text-primary-hover {{ $highlighted ? 'text-3xl' : 'text-2xl' }} drop-shadow animate-float delay-400">★</span>
             </div>
         </div>
 
@@ -69,7 +69,7 @@
             @if ($highlighted)
                 <div class="relative">
                     <!-- Glowing effect behind avatar -->
-                    <span class="absolute inset-0 rounded-full bg-linear-to-tr fromneutral via-accent-text toneutral-hover blur-md opacity-70 animate-glow"></span>
+                    <span class="absolute inset-0 rounded-full bg-linear-to-tr fromneutral via-accent-text toneutral blur-md opacity-70 animate-glow"></span>
 
                     <!-- Decorative ring -->
                     <div class="absolute -inset-2 rounded-full border-2 border-dashed borderneutral/30 animate-spin-slow"></div>
@@ -88,8 +88,8 @@
 
             <!-- Author details with enhanced styling -->
             <div class="{{ $highlighted ? 'text-center md:text-left' : '' }}">
-                <div class="text-heading font-bold {{ $highlighted ? 'text-2xl mb-1' : 'text-sm' }}">{{ $author }}</div>
-                <div class="{{ $highlighted ? 'textneutral text-base font-medium px-4 py-1 bg-neutral/10 rounded-full inline-block' : 'textneutral text-xs font-medium' }}">
+                <div class="text-base-content font-bold {{ $highlighted ? 'text-2xl mb-1' : 'text-sm' }}">{{ $author }}</div>
+                <div class="{{ $highlighted ? 'text-primary text-base font-medium px-4 py-1 bg-neutral/10 rounded-full inline-block' : 'text-primary text-xs font-medium' }}">
                     {{ $role }}
                 </div>
             </div>

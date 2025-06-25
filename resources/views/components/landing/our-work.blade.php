@@ -25,7 +25,7 @@
 
 <!-- "Nosso Atendimento" Section -->
 <section id="nosso-atendimento"
-         class="mx-auto bg-linear-to-br from-base-100 via-base-200 to-base-100 text-heading py-28 overflow-hidden">
+         class="mx-auto bg-linear-to-br from-base-100 via-base-200 to-base-100 text-base-content py-28 overflow-hidden">
     <div class="container mx-auto max-w-7xl px-6 lg:flex lg:items-start lg:justify-between lg:space-x-12 relative z-10">
         <!-- Coluna da Esquerda -->
         <div class="lg:w-1/2 mb-12 lg:mb-0">

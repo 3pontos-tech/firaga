@@ -11,7 +11,7 @@
         <meta property="og:image" content="{{ $post?->openGraphPicture?->getSignedUrl() ?? asset('images/meta-logo.png') }}"/>
         <meta property="og:image:alt" content="{{ $post?->opengraph_picture_alt }}"/>
     </x-slot:metatags>
-    <div class="min-h-screen bg-base-200 pt-10">
+    <div class="min-h-screen  bg-base-100 ">
         <x-blog.article :post="$post"/>
         <x-blog.related-articles :related-posts="$relatedPosts"/>
     </div>

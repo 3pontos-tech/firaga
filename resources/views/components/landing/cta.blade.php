@@ -1,5 +1,5 @@
 <section
-    class="bg-base-200 text-heading px-10 py-10 overflow-hidden">
+    class="bg-base-200 text-base-content px-10 py-10 overflow-hidden">
 
     <div class="container mx-auto">
         <div
@@ -7,7 +7,7 @@
             <!-- Left: Icon -->
             <div class="shrink-0 mb-8 lg:mb-0">
                 <span class="relative inline-block">
-                    <img src="{{ asset('images/blog_element.svg') }}" alt="Blog Icon" class="w-20 h-20 textneutral relative z-10"/>
+                    <img src="{{ asset('images/blog_element.svg') }}" alt="Blog Icon" class="w-20 h-20 text-primary relative z-10"/>
                 </span>
             </div>
             <!-- Middle: Text Content -->
@@ -26,7 +26,7 @@
             <div class="">
                 <a
                     href="{{ route('blog.index') }}"
-                    class="flex items-center gap-3 justify-around w-full sm:w-auto bg-primary text-primary-content font-semibold px-6 sm:px-8 py-3 sm:py-4 rounded-full shadow-lg hover:bg-neutral-hover transition text-base sm:text-lg overflow-hidden group focus:outline-none focus:ring-2 focus:ring-orange-400 "
+                    class="flex items-center gap-3 justify-around w-full sm:w-auto bg-primary text-primary-content font-semibold px-6 sm:px-8 py-3 sm:py-4 rounded-full shadow-lg hover:bg-neutral transition text-base sm:text-lg overflow-hidden group focus:outline-none focus:ring-2 focus:ring-orange-400 "
                     aria-label="Ir para o blog"
                 >
                     <span class=" group-hover:scale-105 transition-transform">IR PARA O BLOG</span>

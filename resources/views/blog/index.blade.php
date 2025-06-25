@@ -1,6 +1,6 @@
 <x-layout.guest>
     <x-partials.grid-hero>
-        Blog <span class="textneutral">{{ config('app.name') }}</span>
+        Blog <span class="text-primary">{{ config('app.name') }}</span>
     </x-partials.grid-hero>
     <section class="py-6 lg:py-12">
         <div class="container mx-auto ">
@@ -12,7 +12,7 @@
                         </section>
                     @endif
                     <section>
-                        <h2 class="text-xl text-heading font-bold mb-8">Últimos Artigos</h2>
+                        <h2 class="text-xl text-base-content font-bold mb-8">Últimos Artigos</h2>
                         <div class="space-y-6">
                             @foreach($posts as $post)
                                 <x-blog.row-item :post="$post"/>

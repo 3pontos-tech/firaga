@@ -20,7 +20,7 @@
     ])
 ])
 
-<div class="grid lg:grid-cols-2 max-w-5xl gap-12 items-start container p-6  mx-auto">
+<div class="grid lg:grid-cols-2 max-w-5xl gap-12 items-start container p-6 mx-auto">
     <div class="relative hidden lg:block">
         <img alt="Customer support representative helping customers"
              loading="lazy" width="500" height="600"
@@ -31,7 +31,7 @@
         <div class="absolute inset-0 bg-linear-to-t from-black/20 to-transparent rounded-lg"></div>
     </div>
     <div class="space-y-4">
-        <h2 class="text-3xl font-bold text-heading mb-8">Perguntas Frequentes</h2>
+        <h2 class="text-3xl font-bold text-base-content mb-8">Perguntas Frequentes</h2>
         <div class="w-full space-y-2">
             @forelse($solutions as $index => $solution)
                 <div class="border-b border-base" x-data="{ open: false }">
@@ -39,7 +39,7 @@
                         <button type="button"
                                 @click="open = !open"
                                 :aria-expanded="open"
-                                class="flex flex-1 items-center justify-between py-4 font-medium transition-all hover:textneutral text-left text-heading"
+                                class="flex flex-1 items-center justify-between py-4 font-medium transition-all hover:text-primary text-left text-base-content"
                                 aria-controls="faq-content-{{ $index }}">
                             {{ $solution['question'] ?? '' }}
                             <svg class="h-5 w-5 text-muted transition-transform duration-200"
@@ -53,7 +53,7 @@
                          x-collapse
                          id="faq-content-{{ $index }}"
                          class="pb-4">
-                        <div class="text-primary-content text-sm leading-relaxed">
+                        <div class="text-base-content/90 text-sm leading-relaxed">
                             {{ $solution['answer'] ?? '' }}
                         </div>
                     </div>

@@ -27,7 +27,7 @@
         }
     </style>
 
-    <div class="text-heading overflow-hidden text-center banner-container">
+    <div class="text-base-content overflow-hidden text-center banner-container">
         <div class="banner-track">
             <!-- Duplicamos os itens para criar o efeito de loop infinito -->
             <div class="banner-item">
