@@ -8,11 +8,11 @@
     <defs>
         <style>
             .st0 {
-                fill: var(--color-brand);
+                fill: var(--color-primary);
             }
 
             .st1 {
-                fill: var(--color-brand);
+                fill: var(--color-primary);
             }
         </style>
     </defs>

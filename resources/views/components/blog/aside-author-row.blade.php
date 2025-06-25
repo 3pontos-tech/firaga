@@ -11,15 +11,15 @@
             alt="Carlos Silva" loading="lazy" width="40" height="40" decoding="async"
             class="rounded-full" style="color: transparent;"
             src="{{ $avatarUrl }}">
-        <div class="flex-1 text-heading min-w-0">
-            <p class="font-medium text-heading text-sm group-hover:text-fire-500 transition-colors">
+        <div class="flex-1 text-base-content min-w-0">
+            <p class="font-medium text-base-content text-sm group-hover:text-primary transition-colors">
                 {{ $name }}
             </p>
-            <p class="text-xs text-body truncate">
+            <p class="text-xs text-primary-content truncate">
                 {{ $role }}
             </p>
         </div>
         <x-heroicon-c-arrow-right
-            class="h-4 w-4 text-zinc-400 group-hover:text-brand group-hover:translate-x-1 transition-all"></x-heroicon-c-arrow-right>
+            class="h-4 w-4 text-zinc-400 group-hover:text-primary group-hover:translate-x-1 transition-all"></x-heroicon-c-arrow-right>
     </a>
 </div>

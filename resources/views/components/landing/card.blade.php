@@ -1,7 +1,7 @@
 <!-- Card Section: “Se você guarda dinheiro...” -->
 <section class="bg-black dark:bg-gray-900 text-white dark:text-gray-100 py-20">
     <div class="container mx-auto px-6">
-        <div class="flex flex-col lg:flex-row items-center bg-gradient-to-br from-black via-gray-900 to-black dark:from-black dark:via-gray-900 dark:to-black rounded-2xl overflow-hidden animate-shadow-pulse transition-shadow duration-300 animate-fade-in">
+        <div class="flex flex-col lg:flex-row items-center bg-linear-to-br from-black via-gray-900 to-black dark:from-black dark:via-gray-900 dark:to-black rounded-2xl overflow-hidden animate-shadow-pulse transition-shadow duration-300 animate-fade-in">
             <!-- Left Content -->
             <div class="lg:w-1/2 px-8 py-12 bg-white/10 dark:bg-black/20 backdrop-blur-xl rounded-3xl border border-white/20 dark:border-gray-800 animate-fade-in">
                 <h3 class="text-3xl sm:text-4xl font-extrabold leading-snug mb-6 tracking-tight">

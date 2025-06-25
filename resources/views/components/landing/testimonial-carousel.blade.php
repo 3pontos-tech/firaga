@@ -95,15 +95,12 @@
     class="py-12 px-6 relative pb-20"
 >
     <div class="max-w-5xl mx-auto relative">
-        {{-- Header --}}
         <div class="flex justify-between items-start mb-16">
-            <div class="bg-black text-white px-8 py-4 rounded-xl">
+            <div class="bg-black text-primary border-primary border-2 px-8 py-4 rounded-xl">
                 <h2 class="text-3xl font-bold">Avaliações</h2>
             </div>
-            {{-- Removed Google Button --}}
         </div>
 
-        {{-- Testimonials Container --}}
         <div class="relative overflow-hidden">
             <div
                 class="flex transition-transform duration-700 ease-in-out gap-4"
@@ -125,7 +122,9 @@
                                     class="w-12 h-12 rounded-full object-cover"
                                 />
                                 <div>
-                                    <h3 class="font-bold text-gray-900 text-lg">{{ $testimonial->name }}</h3>
+                                    <h3 class="font-bold text-gray-900 text-lg overflow-hidden text-ellipsis whitespace-nowrap max-w-[150px] md:max-w-[200px] lg:max-w-[250px]">
+                                        {{ $testimonial->name }}
+                                    </h3>
                                     <div class="flex gap-1 mt-1">
                                         @for ($i = 0; $i < 5; $i++)
                                             <x-heroicon-c-star class="w-4 h-4 {{ $i < $testimonial->rating ? 'fill-yellow-400 text-yellow-400' : 'text-gray-300' }}" />
@@ -139,7 +138,7 @@
 
                             {{-- Speech Bubble Tail --}}
                             <div class="absolute -bottom-4 left-12">
-                                <div class="w-0 h-0 border-l-[20px] border-l-transparent border-r-[20px] border-r-transparent border-t-[20px] border-t-white"></div>
+                                <div class="w-0 h-0 border-l-20 border-l-transparent border-r-20 border-r-transparent border-t-20 border-t-white"></div>
                             </div>
                         </div>
                     </div>
@@ -159,10 +158,10 @@
                 <button
                     @click="goToSlide({{ $i }})"
                     :class="{
-                        'w-10 shadow-md shadow-brand/30 scale-110': activeSlide === {{ $i }} || (activeSlide === {{ $i }} - 1 && {{ $i }} === totalSlides - 1 && slidesPerView === 2),
-                        'w-3 hover:bg-brand/50 hover:scale-110': activeSlide !== {{ $i }} && !(activeSlide === {{ $i }} - 1 && {{ $i }} === totalSlides - 1 && slidesPerView === 2)
+                        'w-10 shadow-md shadow-neutral/30 scale-110': activeSlide === {{ $i }} || (activeSlide === {{ $i }} - 1 && {{ $i }} === totalSlides - 1 && slidesPerView === 2),
+                        'w-3 hover:bg-neutral/50 hover:scale-110': activeSlide !== {{ $i }} && !(activeSlide === {{ $i }} - 1 && {{ $i }} === totalSlides - 1 && slidesPerView === 2)
                     }"
-                    class="h-3 bg-orange-500 rounded-full transition-all duration-300 focus:outline-none"
+                    class="h-3 bg-white rounded-full transition-all duration-300 focus:outline-none"
                     aria-label="Go to slide {{ floor($i / 2) + 1 }}"
                 ></button>
                 @endfor

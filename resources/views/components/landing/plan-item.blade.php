@@ -1,28 +1,28 @@
 @php
     $styles = match (strtolower($plan['name'])) {
         'gold' => [
-            'card' => 'bg-gradient-to-br from-yellow-300 to-yellow-500 bg-yellow-400 text-yellow-900',
+            'card' => 'bg-linear-to-br from-yellow-600 to-yellow-700 bg-yellow-400 text-white',
             'badge' => '',
-            'body' => 'text-yellow-900',
-            'border' => 'border-b-2 border-yellow-600',
-            'icon' => 'text-yellow-900',
-            'button' => ' bg-gradient-to-br from-yellow-700 to-yellow-600 text-white hover:bg-yellow-600',
+            'body' => 'text-white',
+            'border' => 'border-b-2 border-yellow-900',
+            'icon' => 'text-white',
+            'button' => 'bg-linear-to-br from-yellow-700 to-yellow-600 text-white hover:bg-yellow-600 hover:from-yellow-800 hover:via-yellow-600 hover:to-yellow-800',
         ],
         'platinum' => [
-            'card' => 'bg-gradient-to-br from-emerald-700 to-emerald-900 text-white',
+            'card' => 'bg-linear-to-br from-emerald-700 to-emerald-900 text-white',
             'body' => 'text-white',
             'badge' => '',
             'border' => 'border-b-2 border-white',
             'icon' => 'text-white',
-            'button' => 'bg-gradient-to-br from-emerald-900 to-emerald-700 text-white hover:bg-gray-100',
+            'button' => 'bg-linear-to-br from-emerald-900 to-emerald-700 text-white hover:from-emerald-800 hover:via-emerald-600 hover:to-emerald-800',
         ],
         'black' => [
-            'card' => 'bg-gradient-to-br from-black to-hero text-white',
+            'card' => 'bg-linear-to-br from-black to-zinc-900 text-white',
             'body' => 'text-white',
             'badge' => '',
             'border' => 'border-b-2 border-neutral-600',
             'icon' => 'text-neutral-300',
-            'button' => 'bg-gradient-to-br from-hero to-black text-white border border-neutral-600 hover:bg-neutral-700',
+            'button' => 'bg-linear-to-br from-neutral-900 to-black text-white border border-neutral-600 hover:from-neutral-800 hover:via-black hover:to-neutral',
         ],
         default => [
             'card' => 'bg-white text-neutral-900',
@@ -52,10 +52,10 @@
         </p>
     </div>
 
-    <ul class="mb-8 space-y-4 flex-grow">
+    <ul class="mb-8 space-y-4 grow">
         @foreach($plan['items'] as $item)
             <li class="flex items-start">
-                <svg class="w-5 h-5 mr-3 mt-0.5 flex-shrink-0 {{ $styles['icon'] }}" fill="currentColor" viewBox="0 0 20 20">
+                <svg class="w-5 h-5 mr-3 mt-0.5 shrink-0 {{ $styles['icon'] }}" fill="currentColor" viewBox="0 0 20 20">
                     <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
                 </svg>
                 <span class="font-medium {{ $styles['body'] }}">{{ $item }}</span>
@@ -63,7 +63,7 @@
         @endforeach
     </ul>
 
-    <a href="{{ $plan['button']['url'] ?? '#' }}" class="w-full {{ $styles['button'] }} transition-colors duration-200 py-3 px-4 rounded-lg font-bold text-center text-lg shadow-md">
+    <a href="{{ $plan['button']['url'] ?? '#' }}" class="w-full {{ $styles['button'] }} transition-colors duration-500 py-3 px-4 rounded-lg font-bold text-center text-lg shadow-md">
         {{ $plan['button']['text'] }}
     </a>
 </div>

@@ -28,6 +28,6 @@
     <x-landing.our-solutions :solutions="$solutions"/>
     <x-landing.plans :plans-data="$plansData"/>
     <x-landing.testimonial :testimonials="$testimonialData"/>
-    <x-landing.bannerFirece/>
+    <x-landing.video-stats />
     <x-landing.cta/>
 </x-layout.guest>

@@ -1,7 +1,18 @@
 @php use App\Models\CMS\Menu; @endphp
     <!DOCTYPE html>
 <html lang="en" x-data x-bind:class="document.documentElement.className"
-      x-init="if(localStorage.getItem('theme')==='dark'){document.documentElement.classList.add('dark')}">
+      x-init="
+            let theme = localStorage.getItem('theme')
+            // check if its null
+            if (theme === null) {
+                theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+                localStorage.setItem('theme', theme);
+            }
+
+            if(theme ==='dark'){
+                document.documentElement.classList.add('dark')
+            }
+      ">
 <head>
     <!-- Meta Tags -->
     <meta charset="utf-8">
@@ -13,7 +24,6 @@
     <!-- Site Title -->
     <title>@yield('title', config('app.name'))</title>
     @vite(['resources/css/app.css', 'resources/js/app.js'])
-
     <script>(function (w, d, s, l, i) {
             w[l] = w[l] || [];
             w[l].push({
@@ -50,7 +60,7 @@
 
 
 </head>
-<body class="bg-bg">
+<body class="bg-base-100">
 <noscript>
     <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KTVLGCHG" class="hidden h-0 w-0"></iframe>
 </noscript>

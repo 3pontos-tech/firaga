@@ -5,60 +5,44 @@
     'solutions' => collect(),
 ])
 
-<section class="mx-auto max-w-7xl py-24">
-    <div class="mb-16 px-4 md:px-8" style="opacity: 1; transform: none; will-change: opacity, transform;">
-        <div class="flex items-center gap-4 mb-6 bg-brand p-3 rounded-md w-fit">
-            <span class="text-sm font-semibold uppercase tracking-wider text-white">{{ $section }}</span>
+<section class="bg-base-200/80 ">
+    <div class="max-w-7xl py-24 mx-auto ">
+        <div class="mb-16 px-4 md:px-8" style="opacity: 1; transform: none; will-change: opacity, transform;">
+            <div class="flex items-center gap-4 mb-6 bg-primary p-3 rounded-md w-fit">
+                <span class="text-sm font-semibold uppercase tracking-wider text-white">{{ $section }}</span>
+            </div>
+            <h2 class="text-3xl font-bold text-base-content mb-4 md:text-4xl lg:text-5xl">
+                {{ $heading }}
+            </h2>
+            <p class="max-w-2xl text-lg text-zinc-400 md:text-xl">
+                {{ $description }}
+            </p>
         </div>
-        <h2 class="text-3xl font-bold text-heading mb-4 md:text-4xl lg:text-5xl">
-            {{ $heading }}
-        </h2>
-        <p class="max-w-2xl text-lg text-zinc-400 md:text-xl">
-            {{ $description }}
-        </p>
-    </div>
-    <div class="relative mx-5 overflow-hidden rounded-2xl bg-gradient-to-br from-surface to-bg shadow-2xl">
+        <div class="relative mx-5 overflow-hidden rounded-2xl bg-linear-to-br from-base-100 to-base-200">
 
-        <div class="relative">
-            @foreach($solutions as $solution)
-                <x-landing.solution-item
-                    :title="$solution['title']"
-                    :description="$solution['description']"
-                    :icon="$solution['icon']"
-                    :link="$solution['redirect_url']"
-                />
-            @endforeach
+            <div class="relative">
+                @foreach($solutions as $solution)
+                    <x-landing.solution-item
+                        :title="$solution['title']"
+                        :description="$solution['description']"
+                        :icon="$solution['icon']"
+                        :link="$solution['redirect_url']"
+                    />
+                @endforeach
 
+            </div>
+            <div
+                class="absolute bottom-0 left-0 right-0 h-px bg-linear-to-r from-transparent vianeutral/50 to-transparent"></div>
         </div>
-        <div
-            class="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-brand/50 to-transparent"></div>
-    </div>
-    <div class="mt-12 text-center" style="opacity: 1; will-change: opacity;"><p class="text-zinc-400 mb-4">Não encontrou
-            exatamente o que procura?</p>
-        <button class="text-brand hover:text-brand font-semibold transition-colors">Fale conosco para uma
-            solução personalizada →
-        </button>
+        <div class="mt-12 text-center" style="opacity: 1; will-change: opacity;"><p class="text-zinc-400 mb-4">Não encontrou
+                exatamente o que procura?</p>
+            <button class="text-primary hover:text-primary font-semibold transition-colors">Fale conosco para uma
+                solução personalizada →
+            </button>
+        </div>
     </div>
 </section>
 
-<style>
-    .group:hover .arrow-up-right {
-        opacity: 0;
-    }
-
-    .group:hover .arrow-right {
-        opacity: 1;
-    }
-
-    .solution-item .group {
-        transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), background-color 0.3s ease;
-    }
-
-    .solution-item:hover .group {
-        transform: scale(1.01);
-        background-color: rgba(39, 39, 42, 0.5);
-    }
-</style>
 
 <script>
     document.addEventListener('DOMContentLoaded', function () {

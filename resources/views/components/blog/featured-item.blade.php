@@ -4,7 +4,7 @@
 
 <a href="{{ route('blog.show', ['post' => $post->slug]) }}">
     <article
-        class="group bg-gradient-to-br from-bg to-surface hover:from-surface hover:to-bg transition-all duration-500 rounded-2xl overflow-hidden "
+        class="group bg-linear-to-br from-bg to-surface hover:from-surface hover:to-bg transition-all duration-500 rounded-2xl overflow-hidden "
         style="will-change: transform; transform: translateY(0.1vw);">
         <div class="grid md:grid-cols-2 gap-0">
             <div class="relative h-32 md:h-80 overflow-hidden"><img
@@ -16,14 +16,14 @@
                 <div class="absolute top-4 left-4">
                     @foreach($post->categories as $category)
                         <span
-                            class="bg-brand-hover mx-1 text-heading px-3 py-1 rounded-full text-xs font-semibold">
+                            class="bg-neutral mx-1 text-base-content px-3 py-1 rounded-full text-xs font-semibold">
                             {{ $category->name ?? 'Code' }}
                         </span>
                     @endforeach
                 </div>
             </div>
             <div class="p-8 flex flex-col justify-center">
-                <div class="flex items-center text-body gap-4 text-xs  mb-4">
+                <div class="flex items-center text-primary-content gap-4 text-xs  mb-4">
                     <div class="flex items-center gap-1">
                         <x-heroicon-c-calendar class="h-3 w-3"/>
                         {{ $post->published_at->format('d/m/Y') }}
@@ -33,10 +33,10 @@
                         {{ $post->read_time_in_minutes }} minutos de leitura
                     </div>
                 </div>
-                <h3 class="text-2xl text-heading group-hover:text-brand font-bold mb-4  transition-colors">
+                <h3 class="text-2xl text-base-content group-hover:text-primary font-bold mb-4  transition-colors">
                     {{ $post->title }}
                 </h3>
-                <p class="text-body mb-6 line-clamp-3">
+                <p class="text-primary-content mb-6 line-clamp-3">
                     {{ $post->excerpt }}
                 </p>
                 <div class="flex items-center gap-3">
@@ -47,8 +47,8 @@
                          style="color: transparent;"
                          src="{{ $post->author->thumbnail->getSignedUrl() }}">
                     <div>
-                        <p class="text-sm text-heading font-medium">{{ $post->author->name }}</p>
-                        <p class="text-xs text-body">{{ "Consultor Financeiro" }}</p>
+                        <p class="text-sm text-base-content font-medium">{{ $post->author->name }}</p>
+                        <p class="text-xs text-primary-content">{{ "Consultor Financeiro" }}</p>
                     </div>
                 </div>
             </div>
