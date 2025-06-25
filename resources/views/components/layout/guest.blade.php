@@ -58,7 +58,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Syne&display=swap" rel="stylesheet">
 
-
+@livewireStyles
 </head>
 <body class="bg-base-100">
 <noscript>
@@ -72,5 +72,6 @@
     {{ $slot }}
 </main>
 <x-layout.shared.footer/>
+@livewireScripts
 </body>
 </html>
