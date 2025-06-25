@@ -2,7 +2,8 @@
 
 namespace App\Models;
 
-use App\Enums\MessageIntent;
+use App\Enums\ContactIntent;
+use App\Enums\ContactPreference;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
@@ -21,6 +22,7 @@ class Contact extends Model
     ];
 
     protected $casts = [
-        'message_intent' => MessageIntent::class,
+        'message_intent' => ContactIntent::class,
+        'contact_preference' => ContactPreference::class,
     ];
 }
