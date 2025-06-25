@@ -5,6 +5,7 @@ use App\Http\Controllers\LandingController;
 use App\Http\Controllers\MarketingLandingController;
 use App\Http\Controllers\PagesController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ContactController;
 
 Route::domain('lp.' . config('app.domain'))->group(function (): void {
 
@@ -17,6 +18,9 @@ Route::domain('lp.' . config('app.domain'))->group(function (): void {
 Route::domain(config('app.domain'))->group(function (): void {
 
     Route::get('/', LandingController::class)->name('landing');
+
+    Route::get('/contact', ContactController::class)
+        ->name('contact');
 
     Route::prefix('blog')->group(function (): void {
         Route::get('/', [ArticlesController::class, 'index'])
