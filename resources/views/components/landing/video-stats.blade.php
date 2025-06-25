@@ -27,7 +27,7 @@
 <section
         class=" py-12 md:py-16 lg:py-32 xl:py-40 bg-gradient-to-br from-base-100 via-base-200 to-base-100">
 
-    <div class="container max-w-6xl mx-auto px-4 md:px-6 relative z-10">
+    <div class="container max-w-7xl mx-auto px-4 md:px-6 relative z-10">
         <div class="text-center mb-8 md:mb-16">
             <h2 class="text-2xl md:text-4xl lg:text-5xl xl:text-6xl font-bold tracking-tight text-base-content mb-4 md:mb-6 px-2">
                 Mudamos vidas através da
@@ -40,20 +40,19 @@
                 suas decisões financeiras mais importantes.
             </p>
         </div>
-        <div class="relative max-w-5xl mx-auto group">
-            <div class="absolute -inset-2 md:-inset-4 bg-gradient-to-r from-primary/20 to-secondary/20 rounded-xl md:rounded-2xl blur-lg md:blur-xl group-hover:blur-xl md:group-hover:blur-2xl transition-all duration-500"></div>
-            <div class="relative">
-                <video class="w-full h-full object-cover" autoplay muted loop playsinline>
-                    <source src="{{ asset('video/firece_video.webm') }}" type="video/mp4">
-                    Your browser does not support the video tag.
-                </video>
-                <div class="bg-base-100 rounded-b-xl md:rounded-b-2xl shadow-xl md:shadow-2xl border-t border-base-200 md:border-t-2 relative overflow-hidden">
-                    <div class="absolute inset-0 bg-gradient-to-r from-base-100 via-transparent to-base-100"></div>
-                    <div class="grid grid-cols-2 md:grid-cols-4 divide-x divide-base-300 md:divide-y-0 divide-y md:divide-y-0 relative z-10">
-                        @foreach($stats as $stat)
-                            <x-landing.statistics-item :has-icon="false" :stat="$stat"/>
-                        @endforeach
-                    </div>
+    </div>
+    <video class="w-11/12 mx-auto h-full object-cover" autoplay muted loop playsinline>
+        <source src="{{ asset('video/firece_video.webm') }}" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+    <div>
+        <div class="relative w-11/12 mx-auto group">
+            <div class="bg-base-100 rounded-b-xl md:rounded-b-2xl shadow-xl md:shadow-2xl border-t border-base-200 md:border-t-2 relative overflow-hidden">
+                <div class="absolute inset-0 bg-gradient-to-r from-base-100 via-transparent to-base-100"></div>
+                <div class="grid grid-cols-2 md:grid-cols-4 divide-x divide-base-300 md:divide-y-0 divide-y md:divide-y-0 relative z-10">
+                    @foreach($stats as $stat)
+                        <x-landing.statistics-item :has-icon="false" :stat="$stat"/>
+                    @endforeach
                 </div>
             </div>
         </div>
