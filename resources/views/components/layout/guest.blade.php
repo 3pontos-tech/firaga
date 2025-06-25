@@ -13,7 +13,6 @@
     <!-- Site Title -->
     <title>@yield('title', config('app.name'))</title>
     @vite(['resources/css/app.css', 'resources/js/app.js'])
-
     <script>(function (w, d, s, l, i) {
             w[l] = w[l] || [];
             w[l].push({

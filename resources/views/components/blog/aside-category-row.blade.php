@@ -11,7 +11,7 @@
         <x-filament::icon icon="fas-user" class="w-4 h-4 textneutral"/>
         <span>{{ $name }}</span>
     </div>
-    <div class="flex items-center justify-center bg-surface text-xs  rounded-full px-2 py-1">
+    <div class="flex items-center justify-center bg-base-200 text-xs  rounded-full px-2 py-1">
         {{ $count }}
     </div>
 </div>

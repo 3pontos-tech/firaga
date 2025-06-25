@@ -1,12 +1,12 @@
 @php
     $styles = match (strtolower($plan['name'])) {
         'gold' => [
-            'card' => 'bg-linear-to-br from-yellow-300 to-yellow-500 bg-yellow-400 text-yellow-900',
+            'card' => 'bg-linear-to-br from-yellow-600 to-yellow-700 bg-yellow-400 text-white',
             'badge' => '',
-            'body' => 'text-yellow-900',
-            'border' => 'border-b-2 border-yellow-600',
-            'icon' => 'text-yellow-900',
-            'button' => ' bg-linear-to-br from-yellow-700 to-yellow-600 text-white hover:bg-yellow-600',
+            'body' => 'text-white',
+            'border' => 'border-b-2 border-yellow-900',
+            'icon' => 'text-white',
+            'button' => 'bg-linear-to-br from-yellow-700 to-yellow-600 text-white hover:bg-yellow-600 hover:from-yellow-800 hover:via-yellow-600 hover:to-yellow-800',
         ],
         'platinum' => [
             'card' => 'bg-linear-to-br from-emerald-700 to-emerald-900 text-white',
@@ -14,7 +14,7 @@
             'badge' => '',
             'border' => 'border-b-2 border-white',
             'icon' => 'text-white',
-            'button' => 'bg-linear-to-br from-emerald-900 to-emerald-700 text-white hover:bg-gray-100',
+            'button' => 'bg-linear-to-br from-emerald-900 to-emerald-700 text-white hover:from-emerald-800 hover:via-emerald-600 hover:to-emerald-800',
         ],
         'black' => [
             'card' => 'bg-linear-to-br from-black to-zinc-900 text-white',
@@ -22,7 +22,7 @@
             'badge' => '',
             'border' => 'border-b-2 border-neutral-600',
             'icon' => 'text-neutral-300',
-            'button' => 'bg-linear-to-br from-zinc-900 to-black text-white border border-neutral-600 hover:bg-neutral-700',
+            'button' => 'bg-linear-to-br from-neutral-900 to-black text-white border border-neutral-600 hover:from-neutral-800 hover:via-black hover:to-neutral',
         ],
         default => [
             'card' => 'bg-white text-neutral-900',
@@ -63,7 +63,7 @@
         @endforeach
     </ul>
 
-    <a href="{{ $plan['button']['url'] ?? '#' }}" class="w-full {{ $styles['button'] }} transition-colors duration-200 py-3 px-4 rounded-lg font-bold text-center text-lg shadow-md">
+    <a href="{{ $plan['button']['url'] ?? '#' }}" class="w-full {{ $styles['button'] }} transition-colors duration-500 py-3 px-4 rounded-lg font-bold text-center text-lg shadow-md">
         {{ $plan['button']['text'] }}
     </a>
 </div>

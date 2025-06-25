@@ -34,12 +34,13 @@
 @layer base {
     :root {
         --base-100: oklch(96% 0.001 286.375);
-        --base-200: oklch(98% 0.002 247.839);
-        --base-300: oklch(87% 0.006 286.286);
+        --base-200: oklch(90% 0.003 247.839);
+        --base-300: oklch(80% 0.006 286.286);
         --base-content: oklch(14% 0.004 49.25);
 
         --primary: oklch(60.75% 0.205 35.77);
-        --primary-content: oklch(100% 0 0);
+        --primary-content: oklch(1 0 89.876);
+
         --secondary: oklch(71.53% 0.186 41.92);
         --secondary-content: oklch(100% 0 0);
 
@@ -67,13 +68,13 @@
         --base-content: oklch(96% 0.001 286);
 
         --primary: oklch(60.75% 0.205 35.77);
-        --primary-content: oklch(97.807% 0.029 256.847);
+        --primary-content: oklch(96.807% 0.029 256.847);
 
         --secondary: oklch(71.53% 0.186 41.92);
-        --primary-content: oklch(98% 0.001 286);
+        --secondary-content: oklch(98% 0.001 286);
 
         --accent: oklch(60% 0.1 49.25);
-        --primary-content: oklch(98% 0.001 286);
+        --accent-content: oklch(98% 0.001 286);
 
         --neutral: oklch(14% 0.005 285.823);
         --neutral-content: oklch(87% 0.006 286.286);

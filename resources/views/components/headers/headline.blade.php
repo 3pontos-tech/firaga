@@ -6,11 +6,11 @@
 ])
 
 <div
-    class="w-full max-w-full sm:max-w-xl md:max-w-2xl lg:w-1/2  p-6 sm:p-10 animate-fade-in mx-auto">
-    <h1 class="text-base-content text-2xl sm:text-3xl md:text-4xl lg:text-4xl font-semibold leading-tight mb-4 sm:mb-6 drop-shadow-lg tracking-tight text-center sm:text-left">
+    class="w-full max-w-full lg:text-left text-center  sm:max-w-xl md:max-w-2xl lg:w-1/2  p-6 sm:p-10 animate-fade-in mx-auto">
+    <h1 class="text-base-content text-2xl sm:text-3xl md:text-4xl lg:text-4xl font-semibold leading-tight mb-4 sm:mb-6 drop-shadow-lg tracking-tight md:text-left text-center">
         {{ str($headline) }}
     </h1>
-    <p class="max-w-full sm:max-w-lg text-base sm:text-md text-base-content/90 mb-6 sm:mb-8 text-center sm:text-left animate-fade-in delay-200">
+    <p class="max-w-full md:text-left text-center sm:max-w-lg text-base sm:text-md text-base-content/90 mb-6 sm:mb-8  animate-fade-in delay-200">
         {{ str($description) }}
     </p>
     <a

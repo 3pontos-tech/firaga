@@ -56,7 +56,7 @@
                     {!! $builder->render($componentPayload['type'], $componentPayload['data']) !!}
                 @endforeach
             </article>
-            <section class="mt-12 p-6 bg-surface rounded-xl flex items-center gap-6">
+            <section class="mt-12 p-6 bg-base-200 rounded-xl flex items-center gap-6">
                 <img
                     alt="{{ $post->author->name ?? '' }}"
                     loading="lazy"

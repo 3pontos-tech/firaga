@@ -17,8 +17,8 @@
     @endif
 
     <blockquote class="{{ $highlighted
-        ? 'relative bg-surface/90 backdrop-blur-xl rounded-3xl shadow-xl border borderneutral/30 hover:borderneutral/50 px-10 py-12 mb-10 overflow-hidden animate-fade-in transition-all duration-300'
-        : 'relative bg-surface/80 backdrop-blur-xl rounded-2xl shadow-lg border borderneutral/20 px-6 py-8 mb-6 overflow-hidden animate-fade-in' }}">
+        ? 'relative bg-base-200/90 backdrop-blur-xl rounded-3xl shadow-xl border borderneutral/30 hover:borderneutral/50 px-10 py-12 mb-10 overflow-hidden animate-fade-in transition-all duration-300'
+        : 'relative bg-base-200/80 backdrop-blur-xl rounded-2xl shadow-lg border borderneutral/20 px-6 py-8 mb-6 overflow-hidden animate-fade-in' }}">
 
         <!-- Decorative pattern -->
         @if ($highlighted)

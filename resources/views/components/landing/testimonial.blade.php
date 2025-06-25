@@ -14,8 +14,17 @@
 
     <!-- Testimonial Section -->
 <section id="testimonials"
-         class="relative bg-linear-to-br from-primary/90 via-primary/70 to-primary/90 py-24 md:py-28 overflow-hidden">
-    <div class="absolute inset-0 bg-linear-to-r from-primary to-transparent opacity-50 animate-pulse"></div>
+         class="relative bg-linear-to-br from-slate-900 via-orange-900 to-amber-900 py-24 md:py-28 overflow-hidden">
+    <div class="absolute inset-0">
+        <div class="absolute inset-0 bg-gradient-to-r from-orange-600/20 via-transparent to-amber-600/20"></div>
+        <div class="absolute top-0 left-0 w-full h-full opacity-10">
+            <div class="absolute top-20 left-20 w-32 h-32 border border-white/20 rounded-full animate-pulse"></div>
+            <div class="absolute top-40 right-32 w-24 h-24 border border-white/30 rounded-full animate-pulse delay-1000"></div>
+            <div class="absolute bottom-32 left-40 w-28 h-28 border border-white/25 rounded-full animate-pulse delay-500"></div>
+            <div class="absolute bottom-20 right-20 w-20 h-20 border border-white/30 rounded-full animate-pulse delay-700"></div>
+        </div>
+        <div class="absolute inset-0 bg-gradient-to-r from-orange-600/10 to-amber-600/10 animate-pulse"></div>
+    </div>
 
     <div class="container mx-auto px-6 relative z-10">
 

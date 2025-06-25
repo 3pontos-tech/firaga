@@ -96,7 +96,7 @@
 >
     <div class="max-w-5xl mx-auto relative">
         <div class="flex justify-between items-start mb-16">
-            <div class="bg-neutral text-neutral-content px-8 py-4 rounded-xl">
+            <div class="bg-black text-primary border-primary border-2 px-8 py-4 rounded-xl">
                 <h2 class="text-3xl font-bold">Avaliações</h2>
             </div>
         </div>

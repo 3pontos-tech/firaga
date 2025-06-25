@@ -1,4 +1,4 @@
-<div class="bg-surface rounded-xl p-6 hidden md:block"
+<div class="bg-base-200 rounded-xl p-6 hidden md:block"
      style="opacity: 1; will-change: opacity, transform; transform: none;">
     <div class="flex gap-3 mb-6">
         <x-heroicon-s-users class="h-5 w-5 my-1 textneutral"/>

@@ -5,7 +5,7 @@
 <div>
     <a href="{{ route('blog.show', ['post' => $post->slug]) }}">
         <article
-            class="group bg-surface rounded-xl overflow-hidden hover:bg-base-200 transition-all duration-300 lg:min-h-[420px] flex flex-col justify-between">
+            class="group bg-base-200 rounded-xl overflow-hidden hover:bg-base-200 transition-all duration-300 lg:min-h-[420px] flex flex-col justify-between">
             <div class="relative h-48 overflow-hidden">
                 <img
                     alt="Investimentos Estratégicos para Profissionais de TI" loading="lazy"
