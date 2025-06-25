@@ -14,7 +14,7 @@ it('should implement the interface methods')
     ->expect('app\Filament\Components')
     ->toHaveMethods(['blockSchema', 'fieldName', 'toBlade', 'toSearchableContent', 'imagePreview']);
 
-test('component should be registered at config/cms', function () {
+test('component should be registered at config/cms', function (): void {
     $componentsConfig = Config::get('cms.components');
     expect($componentsConfig)
         ->toBeArray()
@@ -27,12 +27,12 @@ test('component should be registered at config/cms', function () {
 
         expect(class_exists($componentClass))
             ->and($componentClass)
-            ->toStartWith('App\Filament\Components' . '\\')
+            ->toStartWith('App\Filament\Components\\')
             ->toHaveSuffix('Component');
     }
 });
 
-test('component should be registered at TemplateRendererClass', function () {
+test('component should be registered at TemplateRendererqqClass', function (): void {
     $templateRenderer = app(TemplateRenderer::class);
     $templateRenderer->render('Component That is not Registered');
 })->throws(ViewException::class);
