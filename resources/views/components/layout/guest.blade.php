@@ -60,7 +60,7 @@
 
 
 </head>
-<body class="bg-base-100">
+<body class="bg-base-100 font-syne">
 <noscript>
     <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KTVLGCHG" class="hidden h-0 w-0"></iframe>
 </noscript>
