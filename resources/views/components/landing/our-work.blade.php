@@ -35,7 +35,7 @@
                 <span class="text-sm text-primary font-semibold">{{ $subheading }}</span>
             </div>
             <!-- Main Heading -->
-            <h2 class="text-base-content text-4xl sm:text-5xl font-extrabold leading-tight mb-6 tracking-tight">
+            <h2 class="text-base-content font-bold text-4xl sm:text-5xl  leading-tight mb-6 tracking-tight">
                 {{ $heading }}
             </h2>
             <!-- Descriptive Paragraph -->

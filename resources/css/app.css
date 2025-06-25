@@ -1,5 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Syne:wght@400..800&display=swap');
 @import 'tailwindcss';
 @plugin '@tailwindcss/typography';
+
+@theme {
+    --font-syne: "Syne", sans-serif;
+}
 
 @theme inline {
     --color-base-100: var(--base-100);
