@@ -8,11 +8,11 @@ use App\Models\Contact;
 use function Pest\Laravel\assertDatabaseCount;
 use function Pest\Laravel\assertDatabaseHas;
 
-it('renders successfully', function () {
+it('renders successfully', function (): void {
     Livewire::test(ContactForm::class)
         ->assertSuccessful();
 });
-it('should be able to register a contact', function () {
+it('should be able to register a contact', function (): void {
     Livewire::test(ContactForm::class)
         ->set('name', 'John Doe Da Silva')
         ->set('email', 'john@doe.com')
@@ -31,7 +31,7 @@ it('should be able to register a contact', function () {
         'contact_preference' => ContactPreference::whatsapp->value,
     ]);
 });
-test('successful message should be displayed after the form submission', function () {
+test('successful message should be displayed after the form submission', function (): void {
     $component = Livewire::test(ContactForm::class)
         ->set('name', 'John Doe Da Silva')
         ->set('email', 'john@doe.com')
@@ -43,9 +43,9 @@ test('successful message should be displayed after the form submission', functio
     $component->assertSee('Sua mensagem foi enviada com sucesso!');
 });
 
-describe('validation tests', function () {
+describe('validation tests', function (): void {
 
-    test('name::validations', function ($value, $rule) {
+    test('name::validations', function ($value, $rule): void {
         Livewire::test(ContactForm::class)
             ->set('name', $value)
             ->call('submit')
@@ -55,7 +55,7 @@ describe('validation tests', function () {
         'min:10' => ['abc', 'O nome deve ter no mínimo 10 caracteres.'],
     ]);
 
-    test('email::validations', function ($value, $rule) {
+    test('email::validations', function ($value, $rule): void {
         Livewire::test(ContactForm::class)
             ->set('email', $value)
             ->call('submit')
@@ -65,7 +65,7 @@ describe('validation tests', function () {
         'email' => ['abc', 'O e-mail deve ser um e-mail válido.'],
     ]);
 
-    test('userMessage::validations', function ($value, $rule) {
+    test('userMessage::validations', function ($value, $rule): void {
         Livewire::test(ContactForm::class)
             ->set('userMessage', $value)
             ->call('submit')
@@ -75,7 +75,7 @@ describe('validation tests', function () {
         'min:10' => ['abc', 'A mensagem deve ter no mínimo 10 caracteres.'],
     ]);
 
-    test('phoneNumber::validations', function ($value, $rule) {
+    test('phoneNumber::validations', function ($value, $rule): void {
         Livewire::test(ContactForm::class)
             ->set('phoneNumber', $value)
             ->call('submit')
