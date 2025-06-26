@@ -64,6 +64,7 @@ describe('validation tests', function (): void {
     })->with([
         'required' => [null, 'O e-mail é obrigatório.'],
         'email' => ['abc', 'O e-mail deve ser um e-mail válido.'],
+        'max:100' => [str_repeat('*', 101), 'O e-mail deve ter no máximo 100 caracteres.'],
     ]);
 
     test('userMessage::validations', function ($value, $rule): void {
