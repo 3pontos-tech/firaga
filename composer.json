@@ -33,6 +33,7 @@
         "barryvdh/laravel-ide-helper": "^3.5",
         "driftingly/rector-laravel": "^2.0.4",
         "fakerphp/faker": "^1.23",
+        "filament/upgrade": "^4.0",
         "larastan/larastan": "^3.0",
         "laravel/pail": "^1.2.2",
         "laravel/pint": "^1.13",
@@ -40,9 +41,9 @@
         "mockery/mockery": "^1.6",
         "nunomaduro/collision": "^8.6",
         "pestphp/pest": "^v3.8.2",
-        "rector/rector": "^2.0.15",
         "pestphp/pest-plugin-laravel": "^v3.2.0",
-        "pestphp/pest-plugin-type-coverage": "^v3.5.1"
+        "pestphp/pest-plugin-type-coverage": "^v3.5.1",
+        "rector/rector": "^2.0.15"
     },
     "autoload": {
         "psr-4": {
@@ -108,6 +109,6 @@
             "php-http/discovery": true
         }
     },
-    "minimum-stability": "stable",
+    "minimum-stability": "beta",
     "prefer-stable": true
 }
