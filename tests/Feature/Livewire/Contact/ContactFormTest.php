@@ -42,3 +42,16 @@ test('successful message should be displayed after the form submission', functio
 
     $component->assertSee('Sua mensagem foi enviada com sucesso!');
 });
+
+describe('validation tests', function () {
+
+    test('name::validations', function ($value, $rule) {
+        Livewire::test(ContactForm::class)
+            ->set('name', $value)
+            ->call('submit')
+            ->assertHasErrors(['name' => $rule]);
+    })->with([
+        'required' => [null, 'O nome é obrigatório.'],
+        'min:10' => ['abc', 'O nome deve ter no mínimo 10 caracteres.'],
+    ]);
+});

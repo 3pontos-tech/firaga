@@ -32,6 +32,7 @@ class ContactForm extends Component
 
     public function submit(): void
     {
+        $this->validate();
         $this->ipAddress = Request::ip() ?? '';
 
         Contact::query()->create([
