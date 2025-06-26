@@ -74,4 +74,15 @@ describe('validation tests', function () {
         'required' => [null, 'A mensagem é obrigatória.'],
         'min:10' => ['abc', 'A mensagem deve ter no mínimo 10 caracteres.'],
     ]);
+
+    test('phoneNumber::validations', function ($value, $rule) {
+        Livewire::test(ContactForm::class)
+            ->set('phoneNumber', $value)
+            ->call('submit')
+            ->assertHasErrors(['phoneNumber' => $rule]);
+    })->with([
+        'required' => [null, 'O telefone é obrigatório.'],
+        'regex:numbers' => ['abcdefghi', 'O telefone deve conter apenas números e ter entre 10 e 11 dígitos.'],
+        'regex:digits' => [str_repeat('9', 12), 'O telefone deve conter apenas números e ter entre 10 e 11 dígitos.'],
+    ]);
 });
