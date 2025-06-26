@@ -54,4 +54,14 @@ describe('validation tests', function () {
         'required' => [null, 'O nome é obrigatório.'],
         'min:10' => ['abc', 'O nome deve ter no mínimo 10 caracteres.'],
     ]);
+
+    test('email::validations', function ($value, $rule) {
+        Livewire::test(ContactForm::class)
+            ->set('email', $value)
+            ->call('submit')
+            ->assertHasErrors(['email' => $rule]);
+    })->with([
+        'required' => [null, 'O e-mail é obrigatório.'],
+        'email' => ['abc', 'O e-mail deve ser um e-mail válido.'],
+    ]);
 });

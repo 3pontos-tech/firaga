@@ -59,6 +59,7 @@ class ContactForm extends Component
             'name.required' => 'O nome é obrigatório.',
             'name.min' => 'O nome deve ter no mínimo 10 caracteres.',
             'email.required' => 'O e-mail é obrigatório.',
+            'email.email' => 'O e-mail deve ser um e-mail válido.',
             'userMessage.required' => 'A mensagem é obrigatória.',
             'userMessage.min' => 'A mensagem deve ter no mínimo 10 caracteres.',
             'phoneNumber.required' => 'O telefone é obrigatório.',
