@@ -1,11 +1,11 @@
 <?php
 
 use App\Http\Controllers\ArticlesController;
+use App\Http\Controllers\ContactController;
 use App\Http\Controllers\LandingController;
 use App\Http\Controllers\MarketingLandingController;
 use App\Http\Controllers\PagesController;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\ContactController;
 
 Route::domain('lp.' . config('app.domain'))->group(function (): void {
 

@@ -8,6 +8,6 @@ class ContactController extends Controller
 {
     public function __invoke(): View
     {
-     return view('contact.index');
+        return view('contact.index');
     }
 }

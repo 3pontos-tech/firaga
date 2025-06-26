@@ -14,6 +14,7 @@ class ContactForm extends Component
 {
     #[Validate('required|min:10')]
     public string $name = '';
+
     #[Validate('required|email')]
     public string $email = '';
 
@@ -33,7 +34,7 @@ class ContactForm extends Component
     {
         $this->ipAddress = Request::ip() ?? '';
 
-        Contact::create([
+        Contact::query()->create([
             'name' => $this->name,
             'email' => $this->email,
             'phone_number' => $this->phoneNumber,
