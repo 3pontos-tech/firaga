@@ -75,6 +75,7 @@ describe('validation tests', function (): void {
     })->with([
         'required' => [null, 'A mensagem é obrigatória.'],
         'min:10' => ['abc', 'A mensagem deve ter no mínimo 10 caracteres.'],
+        'max:255' => [str_repeat('*', 256), 'A mensagem deve ter no máximo 255 caracteres.'],
     ]);
 
     test('phoneNumber::validations', function ($value, $rule): void {
