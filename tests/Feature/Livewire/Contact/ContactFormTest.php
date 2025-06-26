@@ -53,6 +53,7 @@ describe('validation tests', function (): void {
     })->with([
         'required' => [null, 'O nome é obrigatório.'],
         'min:10' => ['abc', 'O nome deve ter no mínimo 10 caracteres.'],
+        'max:100' => [str_repeat('*', 101), 'O nome deve ter no máximo 100 caracteres.'],
     ]);
 
     test('email::validations', function ($value, $rule): void {

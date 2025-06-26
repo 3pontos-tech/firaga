@@ -12,7 +12,7 @@ use Livewire\Component;
 
 class ContactForm extends Component
 {
-    #[Validate('required|min:10')]
+    #[Validate('required|min:10|max:100')]
     public string $name = '';
 
     #[Validate('required|email')]
@@ -58,6 +58,7 @@ class ContactForm extends Component
         return [
             'name.required' => 'O nome é obrigatório.',
             'name.min' => 'O nome deve ter no mínimo 10 caracteres.',
+            'name.max' => 'O nome deve ter no máximo 100 caracteres.',
             'email.required' => 'O e-mail é obrigatório.',
             'email.email' => 'O e-mail deve ser um e-mail válido.',
             'userMessage.required' => 'A mensagem é obrigatória.',
