@@ -4,6 +4,7 @@ use App\Enums\ContactIntent;
 use App\Enums\ContactPreference;
 use App\Livewire\ContactForm;
 use App\Models\Contact;
+
 use function Pest\Laravel\assertDatabaseCount;
 use function Pest\Laravel\assertDatabaseHas;
 
@@ -30,4 +31,14 @@ it('should be able to register a contact', function () {
         'contact_preference' => ContactPreference::whatsapp->value,
     ]);
 });
+test('successful message should be displayed after the form submission', function () {
+    $component = Livewire::test(ContactForm::class)
+        ->set('name', 'John Doe Da Silva')
+        ->set('email', 'john@doe.com')
+        ->set('phoneNumber', '11400289221')
+        ->set('userMessage', 'Message from contact Form')
+        ->call('submit')
+        ->assertHasNoErrors();
 
+    $component->assertSee('Sua mensagem foi enviada com sucesso!');
+});
