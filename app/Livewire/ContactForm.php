@@ -12,16 +12,16 @@ use Livewire\Component;
 
 class ContactForm extends Component
 {
-    #[Validate('required|min:10')]
+    #[Validate('required|min:10|max:100')]
     public string $name = '';
 
-    #[Validate('required|email')]
+    #[Validate('required|email|max:100')]
     public string $email = '';
 
     #[Validate('required|regex:/^\d{10,11}$/')]
     public string $phoneNumber = '';
 
-    #[Validate('required|min:10')]
+    #[Validate('required|min:10|max:255')]
     public string $userMessage = '';
 
     public ContactIntent $messageIntent = ContactIntent::askQuestions;
@@ -32,6 +32,7 @@ class ContactForm extends Component
 
     public function submit(): void
     {
+        $this->validate();
         $this->ipAddress = Request::ip() ?? '';
 
         Contact::query()->create([
@@ -57,9 +58,13 @@ class ContactForm extends Component
         return [
             'name.required' => 'O nome é obrigatório.',
             'name.min' => 'O nome deve ter no mínimo 10 caracteres.',
+            'name.max' => 'O nome deve ter no máximo 100 caracteres.',
             'email.required' => 'O e-mail é obrigatório.',
+            'email.email' => 'O e-mail deve ser um e-mail válido.',
+            'email.max' => 'O e-mail deve ter no máximo 100 caracteres.',
             'userMessage.required' => 'A mensagem é obrigatória.',
             'userMessage.min' => 'A mensagem deve ter no mínimo 10 caracteres.',
+            'userMessage.max' => 'A mensagem deve ter no máximo 255 caracteres.',
             'phoneNumber.required' => 'O telefone é obrigatório.',
             'phoneNumber.regex' => 'O telefone deve conter apenas números e ter entre 10 e 11 dígitos.',
         ];
