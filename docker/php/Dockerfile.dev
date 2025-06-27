@@ -1,0 +1,43 @@
+FROM php:8.3-fpm-alpine3.18
+
+RUN apk add --no-cache \
+    $PHPIZE_DEPS \
+    libtool \
+    linux-headers \
+    bash \
+    curl \
+    git \
+    sqlite \
+    sqlite-dev \
+    npm \
+    yarn \
+    oniguruma-dev \
+    libzip-dev \
+    unzip \
+    shadow \
+    icu-dev \
+    freetype-dev \
+    libjpeg-turbo-dev \
+    libwebp-dev \
+    libxpm-dev \
+    libpng-dev \
+    pkgconfig \
+  && pecl install xdebug \
+  && docker-php-ext-enable xdebug
+
+RUN docker-php-ext-configure intl \
+    && docker-php-ext-configure gd --with-freetype --with-jpeg --with-webp --with-xpm \
+    && docker-php-ext-install intl zip pdo pdo_sqlite gd
+
+COPY --from=composer:2 /usr/bin/composer /usr/bin/composer
+
+WORKDIR /var/www/app
+
+COPY . .
+
+COPY docker/php/conf.d/xdebug.ini /usr/local/etc/php/conf.d/xdebug.ini
+COPY docker/php/entrypoint.sh /usr/local/bin/
+RUN chmod +x /usr/local/bin/entrypoint.sh
+
+ENTRYPOINT ["entrypoint.sh"]
+CMD ["php-fpm"]
