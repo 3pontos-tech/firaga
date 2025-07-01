@@ -5,7 +5,10 @@ it('creates a new component', function () {
     $classPath = app_path('Filament/Components/Landing/MainHero2Component.php');
     $viewPath = resource_path('views/components/landing/main-hero2.blade.php');
 
-    $this->artisan('make:cms-component', ['name' => 'MainHero2'])
+    $this->artisan('make:cms-component', [
+        'name' => 'MainHero2',
+        '--section' => 'landing',
+    ])
         ->expectsOutput('✅ Class and Blade successfully created.')
         ->assertExitCode(0);
 
@@ -16,7 +19,10 @@ it('creates a new component', function () {
 });
 
 it('should not create a component that already exists', function () {
-    $this->artisan('make:cms-component', ['name' => 'MainHero'])
+    $this->artisan('make:cms-component', [
+        'name' => 'MainHero',
+        '--section' => 'landing',
+    ])
         ->expectsOutput('❌ The Component MainHeroComponent already exists.')
         ->assertExitCode(1);
 });

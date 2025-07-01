@@ -14,7 +14,7 @@ class CreateCmsComponentCommand extends Command
      *
      * @var string
      */
-    protected $signature = 'make:cms-component {name} {--section=landing}';
+    protected $signature = 'make:cms-component {name} {--section=}';
 
     /**
      * The console command description.
@@ -31,11 +31,18 @@ class CreateCmsComponentCommand extends Command
     public function handle(): int
     {
         $name = trim($this->argument('name'));
-        $section = strtolower($this->option('section'));
 
         $parts = explode('/', $name);
         $classBase = Str::studly(array_pop($parts));
-        $subfolder = Str::studly($parts[0] ?? $section);
+        $subfolder = isset($parts[0]) && $parts[0] !== ''
+            ? Str::studly($parts[0])
+            : null;
+
+        if (! $subfolder) {
+            $subfolder = $this->option('section')
+                ? Str::studly($this->option('section'))
+                : $this->askForSection();
+        }
 
         $className = "{$classBase}Component";
         $namespace = "App\\Filament\\Components\\{$subfolder}";
@@ -69,6 +76,7 @@ class CreateCmsComponentCommand extends Command
         File::put($bladePath, $viewContent);
 
         $this->info('✅ Class and Blade successfully created.');
+
         return self::SUCCESS;
     }
 
@@ -76,4 +84,33 @@ class CreateCmsComponentCommand extends Command
     {
         return str_replace(array_keys($replacements), array_values($replacements), $stub);
     }
+    private function askForSection(): string
+    {
+        $existing = collect(File::directories(app_path('Filament/Components')))
+            ->map(fn ($dir) => Str::studly(basename($dir)))
+            ->filter()
+            ->values()
+            ->all();
+
+        if (! in_array('Landing', $existing)) {
+            array_unshift($existing, 'Landing');
+        }
+
+        $existing[] = 'Other (type manually)';
+
+        $choice = $this->choice(
+            'Select the section (subfolder) for this component:',
+            $existing,
+            array_search('Landing', $existing)
+        );
+
+        if ($choice === 'Other (type manually)') {
+            $choice = Str::studly(
+                $this->ask('Type the new section name (e.g. Marketing)')
+            );
+        }
+
+        return $choice;
+    }
+
 }
