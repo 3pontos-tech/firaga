@@ -39,7 +39,6 @@ class CreateCmsComponentCommand extends Command
 
         $className = "{$classBase}Component";
         $namespace = "App\\Filament\\Components\\{$subfolder}";
-        $classFQCN = "{$namespace}\\{$className}";
 
         $classPath = app_path("Filament/Components/{$subfolder}/{$className}.php");
         $bladeFolder = resource_path('views/components/' . strtolower($subfolder));

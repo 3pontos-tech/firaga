@@ -13,3 +13,9 @@ it('creates a new component', function () {
     unlink($classPath);
     unlink($viewPath);
 });
+
+it('should not create a component that already exists', function () {
+    $this->artisan('make:cms-component', ['name' => 'MainHero'])
+        ->expectsOutput('❌ The Component MainHeroComponent already exists.')
+        ->assertExitCode(1);
+});
