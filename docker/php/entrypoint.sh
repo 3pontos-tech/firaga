@@ -15,10 +15,12 @@ if [ "$DB_CONNECTION" = "sqlite" ]; then
     echo "Creating SQLite database file..."
     touch database/database.sqlite
   fi
+  # Ensure the database file is writable by the web server, if it exists.
+  chown www-data:www-data database/database.sqlite
 fi
 
-chown -R www-data:www-data database storage bootstrap/cache vendor
-chmod -R 775 database storage bootstrap/cache
+chown -R www-data:www-data storage bootstrap/cache
+chmod -R 775 storage bootstrap/cache
 
 php artisan key:generate
 
