@@ -6,10 +6,11 @@ it('creates a new component', function () {
     $viewPath = resource_path('views/components/landing/main-hero2.blade.php');
 
     $this->artisan('make:cms-component', ['name' => 'MainHero2'])
-        ->expectsOutput('✅ Classe and Blade successfully created.');
+        ->expectsOutput('✅ Class and Blade successfully created.')
+        ->assertExitCode(0);
 
-    expect(file_exists($classPath))->toBeTrue();
-    expect(file_exists($viewPath))->toBeTrue();
+    expect(file_exists($classPath))->toBeTrue()
+        ->and(file_exists($viewPath))->toBeTrue();
     unlink($classPath);
     unlink($viewPath);
 });

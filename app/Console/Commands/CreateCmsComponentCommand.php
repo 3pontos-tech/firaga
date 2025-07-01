@@ -68,7 +68,7 @@ class CreateCmsComponentCommand extends Command
 
         File::put($bladePath, $viewContent);
 
-        $this->info('✅ Classe and Blade successfully created.');
+        $this->info('✅ Class and Blade successfully created.');
         return self::SUCCESS;
     }
 
