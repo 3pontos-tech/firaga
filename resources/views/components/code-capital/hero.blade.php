@@ -46,18 +46,14 @@
                         :class="{ 'opacity-0': isChanging, 'opacity-100': !isChanging }"
                         class="transition-all duration-900 ease-in-out mx-8 w-full"
                     ></div>
-
-
                 </div>
-
-
             </div>
         </div>
     </div>
 </section>
 
 @push("styles")
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/styles/default.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/styles/default.min.css"/>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/highlight.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/highlight.js@11.1.1/lib/languages/javascript.min.js"></script>
@@ -104,7 +100,7 @@
     </style>
     <script>
         document.addEventListener("alpine:init", () => {
-            Alpine.data("snippetCarousel", function(snippets) {
+            Alpine.data("snippetCarousel", function (snippets) {
                 return {
                     snippets: snippets,
                     currentIndex: 0,
