@@ -4,7 +4,7 @@ services:
       context: .
       dockerfile: docker/php/Dockerfile.dev
     volumes:
-      - ./:/var/www/app:cached
+      - ./:/var/www:cached
     extra_hosts:
       - "host.docker.internal:host-gateway"
 
@@ -15,7 +15,7 @@ services:
     ports:
       - "80:80"
     volumes:
-      - ./:/var/www/app:cached
+      - ./:/var/www:cached
     depends_on:
       - php
 
