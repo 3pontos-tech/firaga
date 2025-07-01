@@ -37,6 +37,152 @@
     --color-error-content: var(--error-content);
 }
 
+@layer components {
+    code.hljs {
+        display: block;
+        overflow-x: auto;
+        padding: 1em;
+        background: var(--base-100) !important;
+        color: var(--base-content);
+        border-radius: 0.5rem;
+        font-family: Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+    }
+
+    /* Inline code */
+    code.hljs.inline {
+        padding: 0.2em 0.4em;
+        font-size: 85%;
+        background-color: var(--base-200);
+        border-radius: 0.3rem;
+    }
+
+    /* Comment */
+    .hljs-comment {
+        color: var(--neutral-content);
+        opacity: 0.6;
+    }
+
+    /* Tags & punctuation */
+    .hljs-punctuation,
+    .hljs-tag {
+        color: var(--base-content);
+        opacity: 0.7;
+    }
+
+    .hljs-tag .hljs-name,
+    .hljs-tag .hljs-attr {
+        color: var(--base-content);
+    }
+
+    /* Keywords, meta, selectors */
+    .hljs-keyword,
+    .hljs-selector-tag,
+    .hljs-meta .hljs-keyword,
+    .hljs-name,
+    .hljs-doctag,
+    .hljs-attribute {
+        font-weight: bold;
+        color: var(--primary);
+    }
+
+    /* Strings, numbers, class selectors */
+    .hljs-string,
+    .hljs-number,
+    .hljs-quote,
+    .hljs-selector-id,
+    .hljs-selector-class,
+    .hljs-template-tag,
+    .hljs-type {
+        color: var(--error);
+    }
+
+    /* Built-ins, additions, bullets */
+    .hljs-built_in,
+    .hljs-bullet,
+    .hljs-code,
+    .hljs-addition {
+        color: var(--success);
+    }
+
+    /* Literals */
+    .hljs-literal {
+        color: var(--warning);
+    }
+
+    /* Meta info */
+    .hljs-meta {
+        color: var(--info);
+    }
+
+    .hljs-meta .hljs-string {
+        color: var(--info-content);
+    }
+
+    /* Regex, operator, links */
+    .hljs-regexp,
+    .hljs-symbol,
+    .hljs-operator,
+    .hljs-link,
+    .hljs-template-variable,
+    .hljs-variable,
+    .hljs-selector-attr,
+    .hljs-selector-pseudo {
+        color: var(--secondary);
+    }
+
+    /* Sections and titles */
+    .hljs-section,
+    .hljs-title {
+        font-weight: bold;
+        color: var(--accent);
+    }
+
+    /* Emphasis & Strong */
+    .hljs-emphasis {
+        font-style: italic;
+    }
+
+    .hljs-strong {
+        font-weight: bold;
+    }
+
+
+
+    .dark .hljs-comment {
+        color: var(--neutral-content);
+        opacity: 0.6;
+    }
+    .dark .hljs-title  {
+        color: var(--secondary) !important;
+    }
+
+    .dark .hljs-number {
+        color: var(--info) !important;
+    }
+
+    .dark .hljs-variable {
+        color: var(--neutral-content) !important;
+    }
+
+    .dark .hljs-string,
+    .dark .hljs-number,
+    .dark .hljs-quote,
+    .dark .hljs-selector-id,
+    .dark .hljs-selector-class,
+    .dark .hljs-template-tag,
+    .dark .hljs-type {
+        color: var(--error);
+    }
+
+    .dark .hljs-built_in,
+    .dark .hljs-bullet,
+    .dark .hljs-code,
+    .dark .hljs-addition {
+        color: var(--success);
+    }
+
+}
+
 @layer base {
     :root {
         --base-100: oklch(100% 0 0);
