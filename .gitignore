@@ -21,8 +21,8 @@ yarn-error.log
 /.nova
 /.vscode
 /.zed
-
 .phpstorm.meta.php
 _ide_helper.php
 .pint.result.cache
 .rector.cache
+.DS_Store

@@ -2,7 +2,6 @@
     'testimonials' => [],
 ])
 
-
 <div
     x-data="{
         activeSlide: 0,
@@ -14,11 +13,9 @@
             this.updateSlidesPerView();
             this.startAutoplay();
 
-            // Pause autoplay on hover
             this.$el.addEventListener('mouseenter', () => this.stopAutoplay());
             this.$el.addEventListener('mouseleave', () => this.startAutoplay());
 
-            // Handle swipe events for mobile
             let touchStartX = 0;
             let touchEndX = 0;
 
@@ -31,14 +28,19 @@
                 this.handleSwipe(touchStartX, touchEndX);
             }, { passive: true });
 
-            // Update slides per view on window resize
             window.addEventListener('resize', () => {
                 this.updateSlidesPerView();
             });
         },
 
         updateSlidesPerView() {
+            const oldView = this.slidesPerView;
             this.slidesPerView = window.innerWidth >= 768 ? 2 : 1;
+
+            // Ajustar activeSlide quando mudar o número de slides por visualização
+            if (oldView !== this.slidesPerView) {
+                this.activeSlide = Math.min(this.activeSlide, Math.max(0, this.totalSlides - this.slidesPerView));
+            }
         },
 
         startAutoplay() {
@@ -52,113 +54,134 @@
         },
 
         next() {
-            this.activeSlide = (this.activeSlide + 1) % this.totalSlides;
+            if (this.activeSlide + this.slidesPerView >= this.totalSlides) {
+                this.activeSlide = 0; // Loop back to the beginning
+            } else {
+                this.activeSlide += this.slidesPerView;
+                // Garantir que não ultrapassamos o limite
+                this.activeSlide = Math.min(this.activeSlide, this.totalSlides - this.slidesPerView);
+            }
         },
 
         prev() {
-            this.activeSlide = (this.activeSlide - 1 + this.totalSlides) % this.totalSlides;
+            if (this.activeSlide <= 0) {
+                // Loop to the end, ensuring we don't go past available slides
+                this.activeSlide = Math.max(0, this.totalSlides - this.slidesPerView);
+            } else {
+                this.activeSlide = Math.max(0, this.activeSlide - this.slidesPerView);
+            }
         },
 
         goToSlide(index) {
-            this.activeSlide = index;
+            this.activeSlide = Math.min(index, this.totalSlides - this.slidesPerView);
         },
 
         handleSwipe(startX, endX) {
             const threshold = 50;
             if (startX - endX > threshold) {
-                // Swiped left
                 this.next();
             } else if (endX - startX > threshold) {
-                // Swiped right
                 this.prev();
             }
+        },
+
+        getSlidePosition() {
+            // Calcular posição considerando a largura do slide + gap
+            const slideWidth = 100 / this.slidesPerView;
+            const gapAdjustment = this.activeSlide * 1; // 1rem gap entre slides
+            return `translateX(calc(-${this.activeSlide * slideWidth}% - ${gapAdjustment}rem))`;
         }
     }"
-    class="relative"
+    class="py-12 px-6 relative pb-20"
 >
-    <!-- Testimonials Container -->
-    <div class="overflow-hidden">
-        <div
-            class="flex -ml-4 transition-transform duration-700 ease-out"
-            :style="{ transform: `translate3d(-${activeSlide * 100 / slidesPerView}%, 0px, 0px)` }"
-        >
-            @foreach ($testimonials as $index => $testimonial)
-                <div
-                    aria-roledescription="slide"
-                    role="group"
-                    class="min-w-0 shrink-0 grow-0 pl-4 basis-full md:basis-1/2"
-                    :style="{ transform: 'translate3d(0px, 0px, 0px)' }"
-                >
-                    <div class="rounded-lg border border-brand-hover bg-surface text-body shadow-sm h-full"
-                         data-v0-t="card">
-                        <div class="p-8 flex flex-col h-full relative">
-                            <!-- Star Rating -->
-                            <div class="absolute top-6 right-6">
-                                <div class="flex gap-1">
-                                    @for ($i = 0; $i < $testimonial->rating; $i++)
-                                        <x-heroicon-c-star class="lucide lucide-star w-4 h-4 fill-brand text-brand"/>
-                                    @endfor
+    <div class="max-w-5xl mx-auto relative">
+        <div class="flex justify-between items-start mb-16">
+            <div class="bg-black text-primary border-primary border-2 px-8 py-4 rounded-xl">
+                <h2 class="text-3xl font-bold">Avaliações</h2>
+            </div>
+        </div>
+
+        <div class="relative overflow-hidden">
+            <div
+                class="flex transition-transform duration-700 ease-in-out gap-4"
+                x-bind:style="`transform: ${getSlidePosition()}`"
+            >
+                @foreach ($testimonials as $index => $testimonial)
+                    <div
+                        aria-roledescription="slide"
+                        role="group"
+                        class="min-w-0 shrink-0 grow-0 pb-16 w-full md:w-[calc(50%-0.5rem)]"
+                    >
+                        {{-- Speech Bubble --}}
+                        <div class="bg-white rounded-xl p-8 relative shadow-lg flex flex-col border border-gray-200 h-[400px]">
+                            {{-- Profile Section --}}
+                            <div class="flex items-center gap-4 mb-6">
+                                <img
+                                    src="{{ asset($testimonial->thumbnail->thumbnail_url ?? '/placeholder.svg') }}"
+                                    alt="{{ $testimonial->name }}"
+                                    class="w-12 h-12 rounded-full object-cover"
+                                />
+                                <div>
+                                    <h3 class="font-bold text-gray-900 text-lg overflow-hidden text-ellipsis whitespace-nowrap max-w-[150px] md:max-w-[200px] lg:max-w-[250px]">
+                                        {{ $testimonial->name }}
+                                    </h3>
+                                    <div class="flex gap-1 mt-1">
+                                        @for ($i = 0; $i < 5; $i++)
+                                            <x-heroicon-c-star class="w-4 h-4 {{ $i < $testimonial->rating ? 'fill-yellow-400 text-yellow-400' : 'text-gray-300' }}" />
+                                        @endfor
+                                    </div>
                                 </div>
                             </div>
 
-                            <!-- Author Info -->
-                            <div class="flex items-center gap-4 mb-6 pr-20">
-                                <span class="relative flex shrink-0 overflow-hidden rounded-full w-14 h-14">
-                                    <img class="aspect-square h-full w-full" alt="{{ $testimonial->name }}"
-                                         src="{{ asset($testimonial->thumbnail->thumbnail_url) }}">
-                                </span>
-                                <div class="flex-1">
-                                    <h3 class="font-semibold text-heading text-lg">{{ $testimonial->name }}</h3>
-                                    <p class="text-sm text-brand font-medium">{{ $testimonial->role }}</p>
-                                    <p class="text-sm text-muted">{{ $testimonial->posted_at->format('d/m/Y H:i') }}</p>
-                                </div>
-                            </div>
+                            {{-- Testimonial Text --}}
+                            <p class="text-gray-700 text-base leading-relaxed flex-1 overflow-y-auto">{{ $testimonial->comment }}</p>
 
-                            <div class="flex-1 relative">
-                                <x-filament::icon icon="fas-quote-left"
-                                                  class="w-8 h-8 text-brand-hover absolute -top-2 z-10 "/>
-                                <p class="text-body  leading-relaxed pl-12 text-base">{{ $testimonial->comment }}</p>
+                            {{-- Speech Bubble Tail --}}
+                            <div class="absolute -bottom-4 left-12">
+                                <div class="w-0 h-0 border-l-20 border-l-transparent border-r-20 border-r-transparent border-t-20 border-t-white"></div>
                             </div>
                         </div>
                     </div>
-                </div>
-            @endforeach
+                @endforeach
+            </div>
         </div>
-    </div>
 
-    <!-- Navigation Controls -->
-    <div class="flex justify-between items-center mt-12">
-        <!-- Previous Button -->
-        <button
-            @click="prev()"
-            class="bg-surface backdrop-blur-xl text-heading p-3 rounded-full shadow-xl border border-brand hover:border-brand-hover hover:bg-deep hover:scale-110 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-brand"
-            aria-label="Previous testimonial"
-        >
-            <x-heroicon-m-chevron-left class="w-6 h-6 text-brand"/>
-        </button>
-
-        <!-- Indicators -->
-        <div class="flex space-x-3">
-            @foreach ($testimonials as $index => $testimonial)
+        {{-- Navigation Controls --}}
+        <div class="flex justify-center items-center mt-12">
+            {{-- Indicators --}}
+            <div class="flex space-x-3">
+                @php
+                    // Calcular o número correto de indicadores com base no slidesPerView
+                    $numIndicators = ceil(count($testimonials) / 2);
+                @endphp
+                @for ($i = 0; $i < count($testimonials); $i += 2)
                 <button
-                    @click="goToSlide({{ $index }})"
+                    @click="goToSlide({{ $i }})"
                     :class="{
-                        'w-10 shadow-md shadow-brand/30 scale-110': activeSlide === {{ $index }},
-                        'w-3 hover:bg-brand/50 hover:scale-110': activeSlide !== {{ $index }}
+                        'w-10 shadow-md shadow-neutral/30 scale-110': activeSlide === {{ $i }} || (activeSlide === {{ $i }} - 1 && {{ $i }} === totalSlides - 1 && slidesPerView === 2),
+                        'w-3 hover:bg-neutral/50 hover:scale-110': activeSlide !== {{ $i }} && !(activeSlide === {{ $i }} - 1 && {{ $i }} === totalSlides - 1 && slidesPerView === 2)
                     }"
-                    class="h-3 bg-brand rounded-full transition-all duration-300 focus:outline-none"
-                    aria-label="Go to slide {{ $index + 1 }}"
+                    class="h-3 bg-white rounded-full transition-all duration-300 focus:outline-none"
+                    aria-label="Go to slide {{ floor($i / 2) + 1 }}"
                 ></button>
-            @endforeach
+                @endfor
+            </div>
         </div>
-
-        <!-- Next Button -->
-        <button
-            @click="next()"
-            class="bg-surface backdrop-blur-xl text-heading p-3 rounded-full shadow-xl border border-brand hover:border-brand-hover hover:bg-deep hover:scale-110 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-brand"
-            aria-label="Next testimonial"
-        >
-            <x-heroicon-m-chevron-right class="w-6 h-6 text-brand"/>
-        </button>
     </div>
+
+    {{-- Previous Button --}}
+    <button
+        @click="prev()"
+        class="absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-orange-500 p-3 rounded-full shadow-md text-white hover:bg-orange-600 transition-colors"
+    >
+        <x-heroicon-m-chevron-left class="w-6 h-6" />
+    </button>
+
+    {{-- Next Button --}}
+    <button
+        @click="next()"
+        class="absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-orange-500 p-3 rounded-full shadow-md text-white hover:bg-orange-600 transition-colors"
+    >
+        <x-heroicon-m-chevron-right class="w-6 h-6" />
+    </button>
 </div>

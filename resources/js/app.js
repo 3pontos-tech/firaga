@@ -1,9 +1,6 @@
 import './bootstrap';
 import Alpine from 'alpinejs';
 
-window.Alpine = Alpine;
-Alpine.start();
-
 
 document.addEventListener('alpine:init', () => {
     Alpine.store('theme', {
@@ -18,7 +15,6 @@ document.addEventListener('alpine:init', () => {
         }
     });
 
-    // Apply on load to prevent FOUC
-
-    document.documentElement.classList.toggle('dark', Alpine.store('theme').dark);
+    const savedTheme = Alpine.store('theme').dark || true;
+    document.documentElement.classList.toggle('dark', savedTheme);
 });

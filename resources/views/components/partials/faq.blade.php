@@ -19,27 +19,27 @@
         ]
     ])
 ])
-
-<div class="grid lg:grid-cols-2 gap-12 items-start container p-6  mx-auto">
-    <div class="relative hidden lg:block">
+<div class="bg-base-200 py-10">
+<div class="flex max-w-7xl gap-12 justify-between items-start container p-6 mx-auto ">
+    <div class="relative hidden md:block max-w-1/2">
         <img alt="Customer support representative helping customers"
-             loading="lazy" width="500" height="600"
+             loading="lazy"
              decoding="async" data-nimg="1"
-             class="rounded-lg object-cover w-full h-auto"
+             class="rounded-lg object-cover "
              style="color: transparent;"
-             src="{{ $thumbnail->url }}">
-        <div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent rounded-lg"></div>
+             src="{{ $thumbnail->url ?? $thumbnail }}">
+
     </div>
-    <div class="space-y-4">
-        <h2 class="text-3xl font-bold text-heading mb-8">Perguntas Frequentes</h2>
+    <div class="min-w-full md:min-w-1/2 md:max-w-1/2">
+        <h2 class="text-3xl font-bold text-base-content mb-8">Perguntas Frequentes</h2>
         <div class="w-full space-y-2">
             @forelse($solutions as $index => $solution)
-                <div class="border-b border-base" x-data="{ open: false }">
+                <div class="border-b border-base-100 bg-base-100/50 px-3" x-data="{ open: false }">
                     <h3 class="flex">
                         <button type="button"
                                 @click="open = !open"
                                 :aria-expanded="open"
-                                class="flex flex-1 items-center justify-between py-4 font-medium transition-all hover:text-brand text-left text-heading"
+                                class="flex flex-1 items-center justify-between py-4 font-medium transition-all hover:text-primary text-left text-base-content"
                                 aria-controls="faq-content-{{ $index }}">
                             {{ $solution['question'] ?? '' }}
                             <svg class="h-5 w-5 text-muted transition-transform duration-200"
@@ -53,7 +53,7 @@
                          x-collapse
                          id="faq-content-{{ $index }}"
                          class="pb-4">
-                        <div class="text-body text-sm leading-relaxed">
+                        <div class="text-base-content/90 bg-base-100 p-3 text-sm leading-relaxed">
                             {{ $solution['answer'] ?? '' }}
                         </div>
                     </div>
@@ -65,4 +65,5 @@
             @endforelse
         </div>
     </div>
+</div>
 </div>

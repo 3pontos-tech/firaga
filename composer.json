@@ -40,9 +40,10 @@
         "mockery/mockery": "^1.6",
         "nunomaduro/collision": "^8.6",
         "pestphp/pest": "^v3.8.2",
-        "rector/rector": "^2.0.15",
         "pestphp/pest-plugin-laravel": "^v3.2.0",
-        "pestphp/pest-plugin-type-coverage": "^v3.5.1"
+        "pestphp/pest-plugin-livewire": "^3.0",
+        "pestphp/pest-plugin-type-coverage": "^v3.5.1",
+        "rector/rector": "^2.0.15"
     },
     "autoload": {
         "psr-4": {

@@ -4,7 +4,7 @@
 
 @if (isset($menus['main-menu']))
     <nav class="navbar" role="navigation" aria-label="main navigation">
-        <div class="navbar-brand">
+        <div class="navbarneutral">
             <h1 class="title m-5"><a href="/">{{ config('app.name') }}</a></h1>
             <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
                 <span aria-hidden="true"></span>

@@ -1,43 +1,100 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-@tailwind variants;
+@import url('https://fonts.googleapis.com/css2?family=Syne:wght@400..800&display=swap');
+@import 'tailwindcss';
+@plugin '@tailwindcss/typography';
 
-@config '../../tailwind.config.js';
+@theme {
+    --font-syne: "Syne", sans-serif;
+}
 
+@theme inline {
+    --color-base-100: var(--base-100);
+    --color-base-200: var(--base-200);
+    --color-base-300: var(--base-300);
+    --color-base-content: var(--base-content);
 
-@layer utilities {
-    /* === Light Theme === */
+    --color-primary: var(--primary);
+    --color-primary-content: var(--primary-content);
+
+    --color-secondary: var(--secondary);
+    --color-secondary-content: var(--secondary-content);
+
+    --color-accent: var(--accent);
+    --color-accent-content: var(--accent-content);
+
+    --color-neutral: var(--neutral);
+    --color-neutral-content: var(--neutral-content);
+
+    --color-info: var(--info);
+    --color-info-content: var(--info-content);
+
+    --color-success: var(--success);
+    --color-success-content: var(--success-content);
+
+    --color-warning: var(--warning);
+    --color-warning-content: var(--warning-content);
+
+    --color-error: var(--error);
+    --color-error-content: var(--error-content);
+}
+
+@layer base {
     :root {
-        --color-bg: #ffffff;
-        --color-surface: #f5f5f5;
-        --color-deep: #c2c2c2;
-        --color-heading: #0f0f0f;
-        --color-body: #333333;
-        --color-muted: #777;
-        --color-border: #e5e5e5;
+        --base-100: oklch(100% 0 0);
+        --base-200: oklch(86.445% 0.002 17.197);
+        --base-300: oklch(79.938% 0.001 17.197);
+        --base-content: oklch(22.389% 0.031 278.072);
 
-        --color-brand: #e2410a;
-        --color-brand-hover: #ff6c47;
+        --primary: oklch(60.75% 0.205 35.77);
+        --primary-content: oklch(1 0 89.876);
 
-        --color-accent-text: #e2410a;
-        --color-accent-bg: #fff3f0;
+        --secondary: oklch(71.53% 0.186 41.92);
+        --secondary-content: oklch(100% 0 0);
+
+        --accent: oklch(14% 0.004 49.25);
+        --accent-content: oklch(98% 0.003 247.858);]
+
+        --neutral: oklch(26% 0 0);
+        --neutral-content: oklch(98% 0 0);
+
+        --info: oklch(71% 0.143 215.221);
+        --info-content: oklch(98% 0.003 247.858);
+        --success: oklch(69% 0.17 162.48);
+        --success-content: oklch(98% 0.003 247.858);
+        --warning: oklch(37% 0.013 285.805);
+        --warning-content: oklch(98% 0.022 95.277);
+        --error: oklch(57% 0.245 27.325);
+        --error-content: oklch(97% 0.013 17.38);
+
     }
 
-    /* === Dark Theme === */
     .dark {
-        --color-bg: #0e0e0e;
-        --color-surface: #1a1a1a;
-        --color-deep: #202020;
-        --color-heading: #ffffff;
-        --color-body: #cfcfcf;
-        --color-muted: #888888;
-        --color-border: #2a2a2a;
+        --base-100: oklch(20% 0.002 285.885);
+        --base-200: oklch(15% 0.002 285.823);
+        --base-300: oklch(10% 0.002 285.823);
+        --base-content: oklch(96% 0.001 286);
 
-        --color-brand: #e2410a;
-        --color-brand-hover: #ff7e47;
+        --primary: oklch(60.75% 0.205 35.77);
+        --primary-content: oklch(96.807% 0.029 256.847);
 
-        --color-accent-text: #ff7e47;
-        --color-accent-bg: #2a120c;
+        --secondary: oklch(71.53% 0.186 41.92);
+        --secondary-content: oklch(98% 0.001 286);
+
+        --accent: oklch(60% 0.1 49.25);
+        --accent-content: oklch(98% 0.001 286);
+
+        --neutral: oklch(14% 0.005 285.823);
+        --neutral-content: oklch(87% 0.006 286.286);
+
+        --info: oklch(65% 0.13 215.221);
+        --info-content: oklch(10% 0.001 210);
+
+        --success: oklch(60% 0.15 162.48);
+        --success-content: oklch(10% 0.001 160);
+
+        --warning: oklch(60% 0.1 85);
+        --warning-content: oklch(10% 0.001 80);
+
+        --error: oklch(55% 0.25 27.325);
+        --error-content: oklch(98% 0.002 10);
     }
 }
