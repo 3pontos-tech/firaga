@@ -5,41 +5,51 @@ namespace App\Livewire;
 use App\Enums\ContactIntent;
 use App\Enums\ContactPreference;
 use App\Models\Contact;
-use Illuminate\Support\Facades\Request;
+use DanHarrin\LivewireRateLimiting\Exceptions\TooManyRequestsException;
+use DanHarrin\LivewireRateLimiting\WithRateLimiting;
+use Illuminate\Validation\ValidationException;
 use Illuminate\View\View;
 use Livewire\Attributes\Validate;
 use Livewire\Component;
 
 class ContactForm extends Component
 {
-    #[Validate('required|min:10|max:100')]
+    use WithRateLimiting;
+
+    #[Validate('required|min:2|max:100')]
     public string $name = '';
 
-    #[Validate('required|email|max:100')]
+    #[Validate('required|email')]
     public string $email = '';
 
-    #[Validate('required|regex:/^\d{10,11}$/')]
+    #[Validate('required|max:19')]
     public string $phoneNumber = '';
 
     #[Validate('required|min:10|max:255')]
     public string $userMessage = '';
 
-    public ContactIntent $messageIntent = ContactIntent::askQuestions;
+    public ContactIntent $messageIntent = ContactIntent::AskQuestions;
 
-    public ContactPreference $contactPreference = ContactPreference::whatsapp;
+    public ContactPreference $contactPreference = ContactPreference::Whatsapp;
 
-    public string $ipAddress = '';
 
     public function submit(): void
     {
+        try {
+            $this->rateLimit(3, 60 * 5);
+        } catch (TooManyRequestsException $exception) {
+            throw ValidationException::withMessages([
+                'error' => "Por favor aguarde {$exception->secondsUntilAvailable} segundos e tente novamente.",
+            ]);
+        }
+
         $this->validate();
-        $this->ipAddress = Request::ip() ?? '';
 
         Contact::query()->create([
             'name' => $this->name,
             'email' => $this->email,
             'phone_number' => $this->phoneNumber,
-            'ip_address' => $this->ipAddress,
+            'ip_address' => request()->ip() ?? '',
             'message' => $this->userMessage,
             'message_intent' => $this->messageIntent->value,
             'contact_preference' => $this->contactPreference->value,

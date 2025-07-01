@@ -4,18 +4,18 @@ namespace App\Enums;
 
 enum ContactIntent: string
 {
-    case scheduleAnalysis = 'Agendar uma análise';
-    case joinTeam = 'Quero fazer parte do time';
-    case askQuestions = 'Tirar dúvidas';
-    case other = 'Outro';
+    case ScheduleAnalysis = 'schedule-analysis';
+    case JoinTeam = 'join-team';
+    case AskQuestions = 'ask-questions';
+    case Others = 'others';
 
     public function label(): string
     {
         return match ($this) {
-            self::scheduleAnalysis => 'Agendar uma análise',
-            self::joinTeam => 'Quero fazer parte do time',
-            self::askQuestions => 'Tirar dúvidas',
-            self::other => 'Outro',
+            self::ScheduleAnalysis => 'Agendar uma análise',
+            self::JoinTeam => 'Quero fazer parte do time',
+            self::AskQuestions => 'Tirar dúvidas',
+            self::Others => 'Outro',
         };
     }
 }

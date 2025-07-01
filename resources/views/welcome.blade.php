@@ -29,5 +29,6 @@
     <x-landing.plans :plans-data="$plansData"/>
     <x-landing.testimonial :testimonials="$testimonialData"/>
     <x-landing.video-stats />
+    <x-landing.contact-form />
     <x-landing.cta/>
 </x-layout.guest>

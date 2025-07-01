@@ -27,7 +27,7 @@ it('should be able to register a contact', function (): void {
         'email' => 'john@doe.com',
         'phone_number' => '11400289221',
         'message' => 'Message from contact Form',
-        'message_intent' => ContactIntent::askQuestions->value,
+        'message_intent' => ContactIntent::AskQuestions->value,
         'contact_preference' => ContactPreference::whatsapp->value,
     ]);
 });

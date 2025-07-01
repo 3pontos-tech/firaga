@@ -1,7 +1,5 @@
 <form method="POST" class="space-y-6" wire:submit.prevent="submit">
 
-    <input type="hidden" name="ip_address" value="{{ $ipAddress }}">
-
     <div class="grid grid-cols-1 gap-6">
         <div class="space-y-2">
             <label for="name" class="text-base font-medium text-base-content">Seu nome*</label>
@@ -22,7 +20,7 @@
 
         <div class="space-y-2">
             <label for="phoneNumber" class="text-base font-medium text-base-content">Seu telefone*</label>
-            <input id="phoneNumber" type="tel" inputmode="numeric" placeholder="11912345678"
+            <input id="phoneNumber" type="tel" max="19" inputmode="numeric" placeholder="11912345678"
                 wire:model.lazy="phoneNumber"
                 class="bg-gray-100 border-0 h-12 w-full rounded-md px-4 text-base focus:outline-none focus:ring-2 focus:ring-gray-300 mt-[15px]">
             @error('phoneNumber') <span class="error text-error">{{ $message }}</span> @enderror
@@ -66,6 +64,12 @@
         @error('userMessage') <span class="error text-error">{{ $message }}</span> @enderror
 
     </div>
+
+    @if (session()->has('error'))
+        <div class="bg-error text-error-content px-4 py-2 rounded">
+            {{ session('error') }}
+        </div>
+    @endif
 
     @if (session()->has('message'))
         <div class="bg-success text-success-content px-4 py-2 rounded">
