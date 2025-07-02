@@ -1,9 +1,12 @@
 <?php
+
 it('creates a new component', function () {
+    $cmsPath = config_path('cms.php');
+    $cmsBackup = File::get($cmsPath);
+    $originalConfig = config('cms');
 
     $classPath = app_path('Filament/Components/Blog/MainHero2Component.php');
     $viewPath = resource_path('views/components/blog/main-hero2.blade.php');
-    $originalCmsArray = config('cms.components');
 
     $this->artisan('make:cms-component', [
         'name' => 'MainHero2',
@@ -17,7 +20,8 @@ it('creates a new component', function () {
     unlink($classPath);
     unlink($viewPath);
 
-    config()->set('cms.components', $originalCmsArray);
+    File::put($cmsPath, $cmsBackup);
+    config()->set('cms', $originalConfig);
 });
 
 it('should not create a component that already exists', function () {
