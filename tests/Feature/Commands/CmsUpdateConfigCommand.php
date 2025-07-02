@@ -31,3 +31,12 @@ it('should fail if component already registered ', function () {
         ->assertExitCode(1);
 });
 
+it('should fail if is an invalid section', function () {
+    $this->artisan('cms:update-config', [
+        'class' => 'App\Filament\Components\Blog\MarkdownTextComponent2',
+        'section' => 'aaaa',
+    ])
+        ->expectsOutput('Invalid aaaa section.')
+        ->assertExitCode(1);
+});
+
