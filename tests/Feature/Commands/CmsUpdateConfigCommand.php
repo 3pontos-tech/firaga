@@ -22,3 +22,12 @@ test('should add the component created at cms components array', function () {
     config()->set('cms', require config_path('cms.php'));
     assertSame(config('cms.components')[0]['class'], 'App\Filament\Components\Landing\MainHeroComponent2');
 });
+it('should fail if component already registered ', function () {
+    $this->artisan('cms:update-config', [
+        'class' => 'App\Filament\Components\Blog\MarkdownTextComponent',
+        'section' => 'blog',
+    ])
+        ->expectsOutput('Class App\Filament\Components\Blog\MarkdownTextComponent already registered at config.')
+        ->assertExitCode(1);
+});
+
