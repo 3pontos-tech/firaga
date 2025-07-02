@@ -77,6 +77,13 @@ class CreateCmsComponentCommand extends Command
 
         $this->info('✅ Class and Blade successfully created.');
 
+        $section = $subfolder;
+        $class = "{$namespace}\\{$className}";
+        $this->call('cms:update-config', [
+            'class' => $class,
+            'section' => $section,
+        ]);
+
         return self::SUCCESS;
     }
 
@@ -84,6 +91,7 @@ class CreateCmsComponentCommand extends Command
     {
         return str_replace(array_keys($replacements), array_values($replacements), $stub);
     }
+
     private function askForSection(): string
     {
         $existing = collect(File::directories(app_path('Filament/Components')))
@@ -96,21 +104,10 @@ class CreateCmsComponentCommand extends Command
             array_unshift($existing, 'Landing');
         }
 
-        $existing[] = 'Other (type manually)';
-
-        $choice = $this->choice(
+        return $this->choice(
             'Select the section (subfolder) for this component:',
             $existing,
             array_search('Landing', $existing)
         );
-
-        if ($choice === 'Other (type manually)') {
-            $choice = Str::studly(
-                $this->ask('Type the new section name (e.g. Marketing)')
-            );
-        }
-
-        return $choice;
     }
-
 }
