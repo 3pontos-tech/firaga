@@ -94,7 +94,7 @@
     <div class="lg:hidden">
         <div
             x-show="{{ $mobileVar }}"
-            class="border-t border-base bg-base-200 dark:bg-base-200/95 shadow-md"
+            class="border-t border-outline-light dark:border-outline-dark bg-elevation-02dp dark:bg-elevation-03dp shadow-md"
             x-transition:enter="transition ease-out duration-200"
             x-transition:enter-start="opacity-0 -translate-y-2"
             x-transition:enter-end="opacity-100 translate-y-0"
@@ -103,10 +103,10 @@
             x-transition:leave-end="opacity-0 -translate-y-2"
             x-cloak
         >
-            <ul class="px-4 py-4 space-y-2 bg-neutral">
+            <ul class="px-4 py-4 space-y-2 bg-elevation-02dp dark:bg-elevation-03dp">
                 @foreach($menu->items as $menuItem)
                     <a href="{{ $menuItem->model?->url() ?? $menuItem->custom_url }}"
-                       class="block text-text-light dark:text-text-dark hover:text-secondary px-4 py-2 rounded-lg transition-colors duration-200">
+                       class="block text-text-light dark:text-text-dark hover:text-brand-primary px-4 py-2 rounded-lg transition-colors duration-200">
                         {{  $menuItem->label  }}
                     </a>
                 @endforeach
