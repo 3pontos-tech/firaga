@@ -18,7 +18,7 @@ Route::domain('lp.' . config('app.domain'))->group(function (): void {
 Route::domain(config('app.domain'))->group(function (): void {
 
     Route::get('/', LandingController::class)->name('landing');
-    Route::view('/code-capital', 'code-capital')->name('landing');
+    Route::view('/code-capital', 'code-capital')->name('code-capital');
 
     Route::get('/contact', ContactController::class)
         ->name('contact');

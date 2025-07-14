@@ -13,13 +13,13 @@
 
     <!-- Hero Section -->
 <section
-    class="from-base-200 to-base-300 relative gap-5 flex min-h-1/2 items-center overflow-hidden bg-gradient-to-br py-20 md:min-h-[50vh]">
+    class="bg-base-100 relative gap-5 flex min-h-1/2 items-center overflow-hidden  py-20 md:min-h-[50vh]">
     <!-- Animated Gradient Background -->
 
     <div class="relative z-10 container mx-auto px-6 lg:flex  lg:items-center lg:justify-between">
         <!-- Right: Circular Logo (Mobile Only) -->
         <div class="mb-8 lg:hidden">
-            <h2 class="text-primary text-center animate-pulse text-5xl font-bold">&lt;code-capital/&gt;</h2>
+            <h2 class="text-primary text-center animate-pulse text-4xl font-bold">&lt;code-capital/&gt;</h2>
         </div>
         <!-- Left: Headline + Copy + CTA -->
         <x-headers.headline
@@ -27,6 +27,7 @@
             :description="$heroData['subheading']"
             :button-text="$heroData['button_text']"
             :button-url="$heroData['button_url']"
+            :badge="$heroData['badge']"
         />
 
         <div class="mt-12  hidden h-24 items-center justify-center md:flex lg:mt-0 lg:flex lg:w-1/2">

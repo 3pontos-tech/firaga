@@ -72,6 +72,10 @@
         @livewireStyles
     </head>
     <body class="bg-base-100 font-syne">
+
+    <!-- Gradient Overlay Layer -->
+    <div class="fixed inset-0 z-[9999] pointer-events-none bg-gradient-to-b from-primary/3 to-base-100/3 mix-blend-normal"></div>
+
         <noscript>
             <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KTVLGCHG" class="hidden h-0 w-0"></iframe>
         </noscript>

@@ -4,6 +4,7 @@
         "subheading" => "Estratégias internacionais de investimento personalizadas para engenheiros de software, designers e profissionais de tecnologia. Faça seu patrimônio crescer globalmente com orientação especializada.",
         "button_text" => "Comece Agora",
         "button_url" => "#",
+        "badge" => "Serviços",
     ];
 
     $solutions = [
@@ -32,7 +33,7 @@
             {{ config("app.name", "Laravel") }} – Planejamento Financeiro
             Inteligente e Personalizado
         </title>
-        <link rel="canonical" href="{{ config("app.url") }}" />
+        <link rel="canonical" href="{{ config("app.url") }}"/>
         <meta
             name="description"
             content="Organize, proteja e expanda seu patrimônio com quem entende de estratégia. Conheça a Fire|ce e viva uma nova relação com o dinheiro."
@@ -46,8 +47,8 @@
             property="og:title"
             content="Fire|ce – Consultoria Financeira de Alta Performance"
         />
-        <meta property="og:type" content="website" />
-        <meta property="og:url" content="{{ config("app.url") }}" />
+        <meta property="og:type" content="website"/>
+        <meta property="og:url" content="{{ config("app.url") }}"/>
         <meta
             property="og:description"
             content="Organize, proteja e expanda seu patrimônio com quem entende de estratégia. Conheça a Fire|ce e viva uma nova relação com o dinheiro."
@@ -62,7 +63,7 @@
         />
 
         <!-- ✅ Twitter Cards -->
-        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:card" content="summary_large_image"/>
         <meta
             name="twitter:title"
             content="Fire|ce – Planejamento Financeiro Inteligente"
@@ -77,13 +78,14 @@
         />
     </x-slot>
 
-    <x-code-capital.hero :hero-data="$herodata" />
+    <x-code-capital.hero :hero-data="$herodata"/>
 
-    <x-code-capital.why-code-capital />
-    <x-code-capital.process />
-    <x-code-capital.testimonial />
+    <x-code-capital.why-code-capital/>
+    <x-code-capital.process/>
+    <x-code-capital.testimonial/>
     <x-partials.faq
         :solutions="$solutions"
         :thumbnail="asset('images/stock/code-capital-person.png')"
     />
+
 </x-layout.guest>

@@ -13,11 +13,13 @@
         <div class="flex items-center justify-between ">
             <div class="flex items-center justify-between w-full lg:w-auto space-x-4 lg:space-x-6">
                 {{-- Logo and Brand Name --}}
-                <div class="flex items-center gap-3">
-                    <x-logo :minimal="true" class="w-8 h-8"/>
-                    <a href="{{ route('landing') }}"
-                       class="text-2xl font-bold text-primary-content">{{ config('app.name') }}</a>
-                </div>
+                <a href="{{ route('landing') }}">
+                    <div class="flex items-center gap-3">
+                        <x-logo :minimal="true" class="w-8 h-8"/>
+
+                        <h2 class="text-2xl font-bold text-primary-content">{{ config('app.name') }}</h2>
+                    </div>
+                </a>
             </div>
             <ul class="hidden lg:flex lg:items-center lg:space-x-6">
                 @foreach ($menu->items as $menuItem)

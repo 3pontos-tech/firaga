@@ -42,7 +42,7 @@
         display: block;
         overflow-x: auto;
         padding: 1em;
-        background: var(--base-100) !important;
+        background: var(--base-200) !important;
         color: var(--base-content);
         border-radius: 0.5rem;
         font-family: Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
@@ -214,8 +214,8 @@
     }
 
     .dark {
-        --base-100: oklch(20% 0.002 285.885);
-        --base-200: oklch(15% 0.002 285.823);
+        --base-100: oklch(0.14 0.002 286.109);
+        --base-200: oklch(0.169 0.002 286.177);
         --base-300: oklch(10% 0.002 285.823);
         --base-content: oklch(96% 0.001 286);
 

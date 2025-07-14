@@ -3,9 +3,17 @@
     "description" => "",
     "buttonText" => "",
     "buttonUrl" => "",
+    "badge" => null
 ])
 
-<div class="animate-fade-in mx-auto w-full max-w-full p-6 text-center sm:max-w-xl sm:p-10 md:max-w-2xl lg:w-1/2 lg:text-left">
+<div
+    class="animate-fade-in mx-auto w-full max-w-full p-6 text-center sm:max-w-xl sm:p-10 md:max-w-7xl lg:w-1/2 lg:text-left">
+    @if($badge)
+        <div class="hidden border-primary mb-3 inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold text-primary transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 text-foreground">
+            {{ $badge }}
+        </div>
+    @endif
+
     <h1
         class="text-base-content mb-4 text-center text-2xl leading-tight font-semibold tracking-tight drop-shadow-lg sm:mb-6 sm:text-3xl md:text-4xl lg:text-left lg:text-4xl"
     >
