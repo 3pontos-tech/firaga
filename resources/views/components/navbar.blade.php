@@ -7,17 +7,16 @@
 
 <nav
     x-data="{ {{ $mobileVar }}: false }"
-    class="xs:relative bg-neutral backdrop-blur-xl border-b border-base sticky top-0 z-50 shadow-sm transition-all duration-300 overflow-visible animate-fade-in-navbar"
+    class="xs:relative bg-elevation-02dp backdrop-blur-xl border-b border-outline-light dark:border-outline-dark sticky top-0 z-50 shadow-sm transition-all duration-300 overflow-visible animate-fade-in-navbar"
 >
-    <div class="container mx-auto px-4 py-3 lg:px-8 relative z-10">
+    <div class="mx-auto px-4 py-3 lg:px-8 relative z-10">
         <div class="flex items-center justify-between ">
             <div class="flex items-center justify-between w-full lg:w-auto space-x-4 lg:space-x-6">
                 {{-- Logo and Brand Name --}}
                 <a href="{{ route('landing') }}">
                     <div class="flex items-center gap-3">
                         <x-logo :minimal="true" class="w-8 h-8"/>
-
-                        <h2 class="text-2xl font-bold text-primary-content">{{ config('app.name') }}</h2>
+                        <h2 class="text-2xl font-bold text-text-dark dark:text-text-light">{{ config('app.name') }}</h2>
                     </div>
                 </a>
             </div>
@@ -27,18 +26,18 @@
                         <li class="relative group" x-data="{ open: false }" @mouseenter="open = true"
                             @mouseleave="open = false">
                             <a href="{{ $menuItem->model?->url() ?? $menuItem->custom_url  }}"
-                               class="flex items-center  px-3 py-2 rounded-lg font-medium transition-colors duration-200"
+                               class="flex items-center px-3 py-2 rounded-lg font-medium transition-colors duration-200"
                                @click="open = !open">
                                 {{ $menuItem->label }}
                                 <svg
-                                    class="ml-1 h-4 w-4 text-muted group-hover:text-secondary transition-colors duration-200"
+                                    class="ml-1 h-4 w-4 text-text-light group-hover:text-secondary transition-colors duration-200"
                                     fill="currentColor" viewBox="0 0 20 20">
                                     <path fill-rule="evenodd"
                                           d="M5.23 7.21a.75.75 0 011.06-.02L10 10.584l3.71-3.396a.75.75 0 011.04 1.084l-4.25 3.89a.75.75 0 01-1.04 0l-4.25-3.89a.75.75 0 01-.02-1.06z"
                                           clip-rule="evenodd"/>
                                 </svg>
                             </a>
-                            <ul class="absolute left-0 mt-1 w-48 bg-base-200 dark:bg-base-200 border border-base rounded-lg shadow-lg transition-all duration-200 z-50"
+                            <ul class="absolute left-0 mt-1 w-48 bg-elevation-02dp dark:bg-base-200 border border-base rounded-lg shadow-lg transition-all duration-200 z-50"
                                 x-show="open"
                                 x-transition:enter="transition ease-out duration-200"
                                 x-transition:enter-start="opacity-0 translate-y-1"
@@ -51,7 +50,7 @@
                                     <li>
                                         <a href="{{ $subMenuItem->custom_url  }}"
                                            target="{{ $subMenuItem->target->getHtmlProperty() }}"
-                                           class="block px-4 py-2 text-primary-content hover:text-primary hover:bg-accent-bg dark:hover:bg-gray-800 rounded-md transition-colors duration-200">
+                                           class="block px-4 py-2 text-text-dark dark:text-text-light hover:text-primary hover:bg-accent-bg dark:hover:bg-gray-800 rounded-md transition-colors duration-200">
                                             {{ $subMenuItem->label }}
                                         </a>
                                     </li>
@@ -62,7 +61,7 @@
                         <li>
                             <a href="{{ $menuItem->model?->url() ?? $menuItem->custom_url }}"
                                target="{{ $menuItem->target->getHtmlProperty() }}"
-                               class="text-neutral-content hover:text-primary px-3 py-2 rounded-lg font-medium transition-colors duration-200">
+                               class="text-text-dark dark:text-text-light hover:text-primary px-3 py-2 rounded-lg font-medium transition-colors duration-200">
                                 {{ $menuItem->label }}
                             </a>
                         </li>
@@ -107,7 +106,7 @@
             <ul class="px-4 py-4 space-y-2 bg-neutral">
                 @foreach($menu->items as $menuItem)
                     <a href="{{ $menuItem->model?->url() ?? $menuItem->custom_url }}"
-                       class="block text-neutral-content hover:text-secondary px-4 py-2 rounded-lg transition-colors duration-200">
+                       class="block text-text-light dark:text-text-dark hover:text-secondary px-4 py-2 rounded-lg transition-colors duration-200">
                         {{  $menuItem->label  }}
                     </a>
                 @endforeach
