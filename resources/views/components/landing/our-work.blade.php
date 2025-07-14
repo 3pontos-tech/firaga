@@ -25,7 +25,7 @@
 
 <!-- "Nosso Atendimento" Section -->
 <section id="nosso-atendimento"
-         class="mx-auto bg-linear-to-br from-base-100 via-base-200 to-base-100 text-base-content py-28 overflow-hidden">
+         class="mx-auto bg-linear-to-br from-elevation-02dp via-elevation-03dp to-elevation-02dp text-text-dark dark:text-text-light py-28 overflow-hidden">
     <div class="container mx-auto max-w-7xl px-6 lg:flex lg:items-start lg:justify-between lg:space-x-12 relative z-10">
         <!-- Coluna da Esquerda -->
         <div class="lg:w-1/2 mb-12 lg:mb-0">
@@ -35,18 +35,18 @@
                 <span class="text-sm text-primary font-semibold">{{ $subheading }}</span>
             </div>
             <!-- Main Heading -->
-            <h2 class="text-base-content font-bold text-4xl sm:text-5xl  leading-tight mb-6 tracking-tight">
+            <h2 class="text-text-dark dark:text-text-light font-bold text-4xl sm:text-5xl  leading-tight mb-6 tracking-tight">
                 {{ $heading }}
             </h2>
             <!-- Descriptive Paragraph -->
-            <p class="text-base-content/90 mb-8 max-w-xl leading-relaxed">
+            <p class="text-text-medium/90 mb-8 max-w-xl leading-relaxed">
                 {{ $description }}
             </p>
             <!-- CTA: "Saiba Mais" with Circle + Arrow -->
             <a href="{{ $cta_link }}"
-               class="inline-flex items-center space-x-3 group mt-4 bg-primary pl-10 pr-10 pt-3 pb-3 rounded-md shadow-md">
+               class="inline-flex items-center space-x-3 group mt-4 bg-brand-primary pl-10 pr-10 pt-3 pb-3 rounded-md shadow-md">
                                         <span
-                                            class="uppercase text-md tracking-widest text-primary-content transition font-semibold">
+                                            class="uppercase text-md tracking-widest text-text-light transition font-semibold">
                                             {{ $cta_label }}
                                         </span>
             </a>
@@ -56,8 +56,8 @@
         <div class="lg:w-1/2 relative pb-10 md:pl-10">
             <!-- Um único elemento L para toda a seção -->
             <div class="hidden md:block md:absolute bottom-0 left-0">
-                <div class="w-32 h-[13px] bg-primary rounded-bl-md"></div>
-                <div class="absolute bottom-0 left-0 h-32 w-[13px] bg-primary rounded-bl-md"></div>
+                <div class="w-32 h-[13px] bg-brand-primary rounded-bl-md"></div>
+                <div class="absolute bottom-0 left-0 h-32 w-[13px] bg-brand-primary rounded-bl-md"></div>
             </div>
 
             <!-- Área dos cards -->
