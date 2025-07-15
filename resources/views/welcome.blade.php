@@ -17,19 +17,21 @@
         <meta name="twitter:title" content="Fire|ce – Planejamento Financeiro Inteligente">
         <meta name="twitter:description" content="Transforme sua vida financeira com clareza, estratégia e propósito.">
         <meta name="twitter:image" content="{{ asset('images/meta-logo.png')  }}">
-
-
     </x-slot:metatags>
 
     <x-landing.hero :hero-data="$heroData"/>
     <div class="flex flex-col gap-y-60">
-    <x-landing.our-work/>
-    <x-landing.solution-section />
-    <x-landing.our-solutions :solutions="$solutions"/>
-    <x-landing.plans :plans-data="$plansData"/>
-    <x-landing.testimonial :testimonials="$testimonialData"/>
-    <x-landing.video-stats />
-    <x-landing.contact-form />
-    <x-landing.cta/>
- </div>
+        <x-landing.our-work/>
+        <x-landing.solution-section />
+        <x-landing.our-solutions :solutions="$solutions"/>
+        <x-landing.plan-section
+            :heading="$plansData['heading']"
+            :description="$plansData['description']"
+            :plans="collect($plansData['plans'])"
+        />
+        <x-landing.testimonial :testimonials="$testimonialData"/>
+        <x-landing.video-stats />
+        <x-landing.contact-form />
+        <x-landing.cta/>
+    </div>
 </x-layout.guest>

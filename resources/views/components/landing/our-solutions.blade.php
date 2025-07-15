@@ -1,86 +1,39 @@
 @props([
-    'section' => 'Nossas Especialidades',
     'heading' => 'Soluções Personalizadas',
-    'description' => 'Oferecemos serviços financeiros especializados para atender às suas necessidades específicas e acelerar sua jornada rumo à independência financeira.',
+    'description' =>
+        'Na nossa consultoria, entendemos que cada cliente é único. Por isso, desenvolvemos uma metodologia personalizada que se adapta às suas necessidades e objetivos financeiros. Nossa abordagem é baseada em três pilares fundamentais: Análise de Perfil, Planejamento Estratégico e Execução com Suporte Contínuo.',
     'solutions' => collect(),
 ])
 
 <section class="bg-base-200/80 ">
-    <div class="max-w-7xl py-24 mx-auto ">
+    <div class=" py-24 mx-auto flex flex-col items-center">
         <div class="mb-16 px-4 md:px-8" style="opacity: 1; transform: none; will-change: opacity, transform;">
-            <div class="flex items-center gap-4 mb-6 bg-primary p-3 rounded-md w-fit">
-                <span class="text-sm font-semibold uppercase tracking-wider text-white">{{ $section }}</span>
-            </div>
-            <h2 class="text-3xl font-bold text-base-content mb-4 md:text-4xl lg:text-5xl">
-                {{ $heading }}
-            </h2>
-            <p class="max-w-2xl text-lg text-zinc-400 md:text-xl">
-                {{ $description }}
-            </p>
+            <x-landing.section-header :heading="$heading" :description="$description" />
         </div>
-        <div class="relative mx-5 overflow-hidden rounded-2xl bg-linear-to-br from-base-100 to-base-200">
-
-            <div class="relative">
-                @foreach($solutions as $solution)
-                    <x-landing.solution-item
-                        :title="$solution['title']"
-                        :description="$solution['description']"
-                        :icon="$solution['icon']"
-                        :link="$solution['redirect_url']"
-                    />
-                @endforeach
-
+        <div class="mx-5 overflow-hidden rounded-2xl">
+            <div class="grid grid-cols-1 md:grid-cols-5 gap-8 p-8 items-start">
+                <x-landing.solution-card title="Planejamento Estratégico"
+                    description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris eu augue erat. Duis velit eros, suscipit at nisi vitae, faucibus hendrerit turpis." />
+                <x-landing.solution-card title="Planejamento Estratégico"
+                    description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris eu augue erat. Duis velit eros, suscipit at nisi vitae, faucibus hendrerit turpis." />
+                <div class="px-8 py-15 bg-brand-primary rounded">
+                    <div class="flex flex-col gap-y-4">
+                        <h6 class="font-semibold text-text-light">Code Capital</h6>
+                        <p class="text-text-light font-medium">Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                            Mauris eu augue erat. Duis velit eros, suscipit at nisi vitae, faucibus hendrerit turpis.
+                        </p>
+                        <a href="#" class="font-bold text-text-light">Visitar ></a>
+                    </div>
+                </div>
+                <x-landing.solution-card title="Planejamento Estratégico"
+                    description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris eu augue erat. Duis velit eros, suscipit at nisi vitae, faucibus hendrerit turpis." />
+                <x-landing.solution-card title="Planejamento Estratégico"
+                    description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris eu augue erat. Duis velit eros, suscipit at nisi vitae, faucibus hendrerit turpis." />
             </div>
-            <div
-                class="absolute bottom-0 left-0 right-0 h-px bg-linear-to-r from-transparent vianeutral/50 to-transparent"></div>
         </div>
-        <div class="mt-12 text-center" style="opacity: 1; will-change: opacity;"><p class="text-zinc-400 mb-4">Não encontrou
-                exatamente o que procura?</p>
-            <button class="text-primary hover:text-primary font-semibold transition-colors">Fale conosco para uma
-                solução personalizada →
-            </button>
+        <div class="flex flex-col items-center gap-y-4 mt-16">
+            <p class="font-bold text-text-medium">Não encontrou o que procura?</p>
+            <a href="" class="font-bold text-brand-primary flex items-center gap-x-2">Fale conosco para uma sugestão personalizada <x-lucide-chevron-right class="w-4 h-4" /></a>
         </div>
     </div>
 </section>
-
-
-<script>
-    document.addEventListener('DOMContentLoaded', function () {
-        const solutionItems = document.querySelectorAll('.solution-item');
-
-        solutionItems.forEach(item => {
-            const arrowUpRight = item.querySelector('.arrow-up-right');
-            const arrowRight = item.querySelector('.arrow-right');
-
-            item.addEventListener('mouseenter', function () {
-                arrowUpRight.style.opacity = '0';
-                arrowRight.style.opacity = '1';
-
-                // Add scale and rotation effects
-                arrowRight.style.transform = 'scale(1.1) rotate(2deg)';
-
-                // Add subtle animation to the icon container
-                const iconContainer = item.querySelector('.flex.h-12.w-12');
-                if (iconContainer) {
-                    iconContainer.style.transform = 'scale(1.1)';
-                    iconContainer.style.backgroundColor = 'rgba(245, 158, 11, 0.2)';
-                }
-            });
-
-            item.addEventListener('mouseleave', function () {
-                arrowUpRight.style.opacity = '1';
-                arrowRight.style.opacity = '0';
-
-                // Reset transform
-                arrowRight.style.transform = 'scale(1) rotate(0)';
-
-                // Reset icon container
-                const iconContainer = item.querySelector('.flex.h-12.w-12');
-                if (iconContainer) {
-                    iconContainer.style.transform = '';
-                    iconContainer.style.backgroundColor = '';
-                }
-            });
-        });
-    });
-</script>
