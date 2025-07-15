@@ -13,7 +13,7 @@
 
     <!-- Hero Section -->
 <section
-    class="bg-base-100 relative gap-5 flex min-h-1/2 items-center overflow-hidden  py-20 md:min-h-[50vh]">
+    class="bg-elevation-03dp relative gap-5 flex min-h-1/2 items-center overflow-hidden  py-20 md:min-h-[50vh]">
     <!-- Animated Gradient Background -->
 
     <div class="relative z-10 container mx-auto px-6 lg:flex  lg:items-center lg:justify-between">

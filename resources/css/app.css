@@ -1,11 +1,12 @@
-@import url('https://fonts.googleapis.com/css2?family=Syne:wght@400..800&display=swap');
 @import 'tailwindcss';
 @plugin '@tailwindcss/typography';
+@import './fonts.css';
 
 @custom-variant dark (&:where(.dark, .dark *));
 
 @theme inline {
-    --font-syne: "Syne", sans-serif;
+    --font-sans: "Syne", sans-serif;
+    --font-smooth: never;
     --color-brand-primary: var(--brand-primary);
     --color-red-primary: var(--red-primary);
     --color-red-900: var(--red-900);

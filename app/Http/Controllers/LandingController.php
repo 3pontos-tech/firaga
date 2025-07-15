@@ -8,7 +8,7 @@ class LandingController extends Controller
 {
     public function __invoke()
     {
-        $heading = 'Viva melhor com educação financeira';
+        $heading = 'Invista no futuro com inteligência e precisão';
         $testimonials = Testimonial::query()->inRandomOrder()->limit(4)->get();
 
         return view('welcome', [

@@ -18,7 +18,7 @@
                 </p>
                 <div class="flex items-center space-x-4">
                     <!-- “SAIBA MAIS” Text -->
-                    <span class="uppercase text-sm tracking-widest text-orange-400 hover:text-orange-500 cursor-pointer transition font-semibold animate-fade-in delay-300">
+                    <span class="text-sm text-orange-400 hover:text-orange-500 cursor-pointer transition font-semibold animate-fade-in delay-300">
                         Saiba mais
                     </span>
                     <!-- Circular Button with Arrow -->

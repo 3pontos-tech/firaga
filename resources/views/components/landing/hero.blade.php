@@ -3,7 +3,7 @@
 ])
 
 <!-- Hero Section -->
-<section class="relative min-h-screen md:min-h-[75vh] flex items-center overflow-hidden py-28 bg-gradient-to-br from-base-200 to-base-300">
+<section class="relative min-h-screen md:min-h-[75vh] flex flex-col items-center overflow-hidden py-28 px-16 bg-gradient-to-br from-elevation-03dp to-elevation-03dp gap-y-20">
     <!-- Animated Gradient Background -->
 
     <div class="relative mx-auto lg:flex lg:items-center lg:justify-between z-10">
@@ -24,5 +24,11 @@
                 <img src="{{ asset('images/stock/hero-stock.png') }}" alt="Fire|ce Logo" class=" object-cover">
             </div>
         </div>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 w-full">
+        <x-landing.card-info class="rounded-lg" title="R$ 120M+" description="Captados" icon="icon-1"/>
+        <x-landing.card-info class="rounded-lg" title="100+" description="Captados" icon="icon-2"/>
+        <x-landing.card-info class="rounded-lg" title="100+" description="Captados" icon="icon-3"/>
+        <x-landing.card-info class="rounded-lg" title="100+" description="Captados" icon="icon-4"/>
     </div>
 </section>
