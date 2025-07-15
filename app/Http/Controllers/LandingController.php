@@ -51,56 +51,74 @@ class LandingController extends Controller
                 ],
             ],
             'plansData' => [
-                [
-                    'name' => 'gold',
-                    'description' => 'Para quem está começando a organizar sua vida financeira e deseja mais tranquilidade.',
-                    'items' => [
-                        'Mapa financeiro',
-                        'Planilha de fluxo de caixa',
-                        'Planilha de patrimônio',
-                        'Planejamento anual',
-                        'Construção de Reserva',
+                'heading' => 'Planos e preços',
+                'description' => 'Na nossa consultoria, entendemos que cada cliente é único. Por isso, desenvolvemos uma metodologia personalizada que se adapta às suas necessidades e objetivos financeiros.',
+                'plans' => [
+                    [
+                        'name' => 'gold',
+                        'display_name' => 'Gold',
+                        'price' => 'R$ 2.500',
+                        'description' => 'Para quem está começando a organizar sua vida financeira e deseja mais tranquilidade.',
+                        'items' => [
+                            'Mapa financeiro completo',
+                            'Planilha de fluxo de caixa',
+                            'Planilha de patrimônio',
+                            'Planejamento anual detalhado',
+                            'Construção de Reserva de Emergência',
+                            'Até 8 reuniões de acompanhamento',
+                            'Suporte via WhatsApp',
+                        ],
+                        'button' => [
+                            'text' => 'Escolher Gold',
+                            'url' => '#contact',
+                        ],
+                        'popular' => 0, // 0 = normal, 1 = popular, 2 = melhor plano
                     ],
-                    'button' => [
-                        'text' => 'Quero esse',
-                        'color' => 'bg-yellow-500',
+                    [
+                        'name' => 'platinum',
+                        'display_name' => 'Platinum',
+                        'price' => 'R$ 4.500',
+                        'description' => 'Para quem deseja ter o controle total de suas finanças e ser mais arrojado, além de mais diversidade.',
+                        'note' => '+ Todos os itens do Gold',
+                        'items' => [
+                            'Estrutura de aquisição de bens',
+                            'Diagnóstico de carteira de investimentos',
+                            'Preenchimento de Fluxo de Caixa',
+                            'Parceiros de Investimento exclusivos',
+                            'Análise de Custo de Oportunidade',
+                            'Planejamento tributário básico',
+                            'Revisões trimestrais',
+                        ],
+                        'button' => [
+                            'text' => 'Escolher Platinum',
+                            'url' => '#contact',
+                        ],
+                        'popular' => 1, // 0 = normal, 1 = popular, 2 = melhor plano
                     ],
-                ],
-                [
-                    'name' => 'platinum',
-                    'description' => 'Para quem deseja ter o controle total de suas finanças e ser mais arrojado, além de mais diversidade.',
-                    'note' => '- Itens do Gold',
-                    'items' => [
-                        'Estrutura de aquisição de bens',
-                        'Diagnóstico de carteira',
-                        'Preenchimento Fluxo de Caixa',
-                        'Parceiros de Investimento',
-                        'Custo Oportunidade',
+                    [
+                        'name' => 'black',
+                        'display_name' => 'Black',
+                        'price' => 'R$ 8.500',
+                        'description' => 'Para quem já investe e deseja estratégias personalizadas para potencializar seu patrimônio.',
+                        'note' => '+ Todos os itens do Gold & Platinum',
+                        'items' => [
+                            'Revisão de Progresso mensal',
+                            'Carteira Personalizada exclusiva',
+                            'Reserva Internacional',
+                            'Estratégias Exclusivas avançadas',
+                            'Possibilidade de upgrade para Key Account',
+                            'Planejamento sucessório básico',
+                            'Acesso prioritário a oportunidades',
+                        ],
+                        'button' => [
+                            'text' => 'CTA Button',
+                            'url' => '#contact',
+                        ],
+                        'popular' => 2, // 0 = normal, 1 = popular, 2 = melhor plano
                     ],
-                    'button' => [
-                        'text' => 'Quero esse',
-                        'color' => 'bg-blue-600',
-                    ],
-                ],
-                [
-                    'name' => 'black',
-                    'description' => 'Para quem já investe e deseja estratégias personalizadas para potencializar seu patrimônio.',
-                    'note' => '- Itens do Gold & Platinum',
-                    'items' => [
-                        'Revisão de Progresso',
-                        'Carteira Personalizada',
-                        'Reserva Internacional',
-                        'Estratégias Exclusivas',
-                        'Possibilidade Key Account',
-                    ],
-                    'button' => [
-                        'text' => 'Quero esse',
-                        'color' => 'bg-black',
-                    ],
-                ],
+                ]
             ],
             'testimonialData' => $testimonials,
-        ],
-        );
+        ]);
     }
 }
