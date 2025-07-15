@@ -22,11 +22,14 @@
     </x-slot:metatags>
 
     <x-landing.hero :hero-data="$heroData"/>
+    <div class="flex flex-col gap-y-60">
     <x-landing.our-work/>
+    <x-landing.solution-section />
     <x-landing.our-solutions :solutions="$solutions"/>
     <x-landing.plans :plans-data="$plansData"/>
     <x-landing.testimonial :testimonials="$testimonialData"/>
     <x-landing.video-stats />
     <x-landing.contact-form />
     <x-landing.cta/>
+ </div>
 </x-layout.guest>

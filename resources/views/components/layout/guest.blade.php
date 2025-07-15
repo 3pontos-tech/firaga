@@ -84,7 +84,7 @@
         @endphp
 
         <x-navbar :menu="$menus['main-menu']" />
-        <main>
+        <main class="bg-gradient-to-b from-elevation-02dp to-elevation-03dp">
             {{ $slot }}
         </main>
         <x-layout.shared.footer />
