@@ -1,6 +1,6 @@
 @props([
     'href' => '#',
-    'variant' => 'filled',
+    'variant' => '',
     'class' => '',
 ])
 
@@ -11,9 +11,9 @@
         'outline' => 'bg-transparent border border-outline-light dark:border-outline-dark hover:bg-brand-primary/10',
     ];
 
-    $variantClasses = $variants[$variant] ?? $variants['filled'];
+    $variantClasses = $variants[$variant] ?? $variants['primary'];
     $baseClasses =
-        'inline-flex items-center justify-center  rounded-lg font-medium transition-all duration-200';
+        'inline-flex items-center justify-center rounded-lg transition-all duration-200';
     $finalClasses = $baseClasses . ' ' . $variantClasses . ' ' . $class;
 @endphp
 
