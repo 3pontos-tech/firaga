@@ -34,8 +34,8 @@
             />
         </div>
         <x-landing.video-stats />
+        <x-landing.cta-section/>
         <x-landing.clients-review :cards="$clientReviews"/>
-        <x-landing.contact-form />
         <x-landing.cta/>
     </div>
 </x-layout.guest>
