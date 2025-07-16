@@ -72,28 +72,7 @@ class LandingController extends Controller
                             'text' => 'Escolher Gold',
                             'url' => '#contact',
                         ],
-                        'popular' => 0, // 0 = normal, 1 = popular, 2 = melhor plano
-                    ],
-                    [
-                        'name' => 'platinum',
-                        'display_name' => 'Platinum',
-                        'price' => 'R$ 4.500',
-                        'description' => 'Para quem deseja ter o controle total de suas finanças e ser mais arrojado, além de mais diversidade.',
-                        'note' => '+ Todos os itens do Gold',
-                        'items' => [
-                            'Estrutura de aquisição de bens',
-                            'Diagnóstico de carteira de investimentos',
-                            'Preenchimento de Fluxo de Caixa',
-                            'Parceiros de Investimento exclusivos',
-                            'Análise de Custo de Oportunidade',
-                            'Planejamento tributário básico',
-                            'Revisões trimestrais',
-                        ],
-                        'button' => [
-                            'text' => 'Escolher Platinum',
-                            'url' => '#contact',
-                        ],
-                        'popular' => 1, // 0 = normal, 1 = popular, 2 = melhor plano
+                        'popular' => 1, // 1 = popular, 2 = melhor plano
                     ],
                     [
                         'name' => 'black',
@@ -114,7 +93,28 @@ class LandingController extends Controller
                             'text' => 'CTA Button',
                             'url' => '#contact',
                         ],
-                        'popular' => 2, // 0 = normal, 1 = popular, 2 = melhor plano
+                        'popular' => 2, // 1 = popular, 2 = melhor plano
+                    ],
+                    [
+                        'name' => 'platinum',
+                        'display_name' => 'Platinum',
+                        'price' => 'R$ 4.500',
+                        'description' => 'Para quem deseja ter o controle total de suas finanças e ser mais arrojado, além de mais diversidade.',
+                        'note' => '+ Todos os itens do Gold',
+                        'items' => [
+                            'Estrutura de aquisição de bens',
+                            'Diagnóstico de carteira de investimentos',
+                            'Preenchimento de Fluxo de Caixa',
+                            'Parceiros de Investimento exclusivos',
+                            'Análise de Custo de Oportunidade',
+                            'Planejamento tributário básico',
+                            'Revisões trimestrais',
+                        ],
+                        'button' => [
+                            'text' => 'Escolher Platinum',
+                            'url' => '#contact',
+                        ],
+                        'popular' => 1, // 1 = popular, 2 = melhor plano
                     ],
                 ]
             ],

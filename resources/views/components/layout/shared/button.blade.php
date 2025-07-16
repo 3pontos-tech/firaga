@@ -8,7 +8,7 @@
     $variants = [
         'primary' => 'bg-brand-primary hover:bg-brand-primary/90 text-white',
         'secondary' => 'bg-icon-light hover:bg-brand-secondary/90 text-brand-primary',
-        'outline' => 'bg-transparent border border-outline-light dark:border-outline-dark hover:bg-brand-primary/10',
+        'outline' => 'bg-transparent border border-outline-light dark:border-outline-low hover:bg-brand-primary/10',
     ];
 
     $variantClasses = $variants[$variant] ?? $variants['primary'];
