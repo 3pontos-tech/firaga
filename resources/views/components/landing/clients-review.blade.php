@@ -36,10 +36,10 @@
             class="w-full px-4 md:px-6">
                 <div class="relative overflow-hidden w-full">
                     <div
-                        class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 lg:gap-8 transition-all duration-500 ease-in-out min-h-[400px] md:min-h-[500px] lg:h-[600px]">
+                        class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 lg:gap-8 min-h-[400px] md:min-h-[500px] lg:h-[600px]">
                         <template x-for="(card, index) in currentCards" :key="card.id">
                             <div x-bind:class="index === activeIndexInGrid ? 'bg-brand-primary h-fit relative px-4 md:px-6 lg:px-8 pt-6 md:pt-8 pb-3' : 'bg-outline-dark h-[320px] md:h-[340px] p-4 md:p-6 lg:p-8'"
-                                class="rounded-xl transition-all duration-500 ease-in-out space-y-6 md:space-y-8 text-white w-full max-w-[424px] mx-auto">
+                                class="rounded-xl space-y-6 md:space-y-8 text-white w-full max-w-[424px] mx-auto">
                                 <div class="flex flex-col gap-6 md:gap-8">
                                     <div class="flex items-center">
                                         <div class="rounded-full w-12 h-12 md:w-16 md:h-16 bg-outline-light flex items-center justify-center">

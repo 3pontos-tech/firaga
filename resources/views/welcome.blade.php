@@ -33,9 +33,8 @@
                 :plans="collect($plansData['plans'])"
             />
         </div>
-        <x-landing.clients-review :cards="$clientReviews"/>
-        <x-landing.testimonial :testimonials="$testimonialData"/>
         <x-landing.video-stats />
+        <x-landing.clients-review :cards="$clientReviews"/>
         <x-landing.contact-form />
         <x-landing.cta/>
     </div>

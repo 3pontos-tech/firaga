@@ -19,56 +19,58 @@
             'icon' => 'heroicon-o-banknotes',
             'value' => '300%',
             'label' => 'Crescimento Anual',
-        ]
+        ],
     ];
 
 @endphp
 
-<section
-        class=" py-12 md:py-16 lg:py-32 xl:py-40 bg-gradient-to-br from-base-100 via-base-200 to-base-100">
-
+<section class=" py-12 md:py-16 lg:py-32 xl:py-40">
     <div class="container max-w-7xl mx-auto px-4 md:px-6 relative z-10">
-        <div class="text-center mb-8 md:mb-16">
-            <h2 class="text-2xl md:text-4xl lg:text-5xl xl:text-6xl font-bold tracking-tight text-base-content mb-4 md:mb-6 px-2">
-                Mudamos vidas através da
-                <span class="block bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
-                    Educação Financeira
-                </span>
-            </h2>
-            <p class="text-base md:text-xl text-base-content/90 max-w-3xl mx-auto leading-relaxed px-4">
-                Veja como transformamos futuros financeiros e descubra por que milhares de clientes confiam em nós para
-                suas decisões financeiras mais importantes.
-            </p>
+        <div class="text-center mb-8 md:mb-16 flex flex-col items-center gap-y-6">
+            <x-layout.shared.chip>Estatísticas</x-layout.shared.chip>
+            <x-landing.section-header heading="Nossa história"
+                description="Na nossa consultoria, entendemos que cada cliente é único. Por isso, desenvolvemos uma metodologia personalizada que se adapta às suas necessidades e objetivos financeiros. Nossa abordagem é baseada em três pilares fundamentais: Análise de Perfil, Planejamento Estratégico e Execução com Suporte Contínuo." />
         </div>
     </div>
-    <video class="w-11/12 mx-auto h-full object-cover" autoplay muted loop playsinline>
-        <source src="{{ asset('video/firece_video.webm') }}" type="video/mp4">
-        Your browser does not support the video tag.
-    </video>
-    <div>
-        <div class="relative w-11/12 mx-auto group">
-            <div class="bg-base-100 rounded-b-xl md:rounded-b-2xl shadow-xl md:shadow-2xl border-t border-base-200 md:border-t-2 relative overflow-hidden">
-                <div class="absolute inset-0 bg-gradient-to-r from-base-100 via-transparent to-base-100"></div>
-                <div class="grid grid-cols-2 md:grid-cols-4 divide-x divide-base-300 md:divide-y-0 divide-y md:divide-y-0 relative z-10">
-                    @foreach($stats as $stat)
-                        <x-landing.statistics-item :has-icon="false" :stat="$stat"/>
-                    @endforeach
-                </div>
-            </div>
+    <div class="relative max-w-[1485px] h-[780px] mx-auto">
+        <video id="firece-video" class="w-full h-full object-cover rounded-4xl" muted loop playsinline>
+            <source src="{{ asset('video/firece_video.webm') }}" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <button
+            id="play-button"
+            class="absolute inset-0 flex items-center justify-center hover:scale-105 transition-transform duration-200"
+            onclick="playVideo()"
+        >
+            <svg width="147" height="148" viewBox="0 0 147 148" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="73.4995" cy="73.9995" r="73.062" fill="#E2410A"/>
+                <path d="M99.1719 68.8024C103.172 71.1118 103.172 76.8853 99.1719 79.1947L65.1663 98.8278C61.1663 101.137 56.1663 98.2505 56.1663 93.6317L56.1663 54.3654C56.1663 49.7466 61.1663 46.8598 65.1663 49.1692L99.1719 68.8024Z" fill="#FDFDFD"/>
+            </svg>
+        </button>
+
+         <div class="flex flex-col items-center gap-y-4 mt-16">
+            <p class="font-bold text-text-medium text-xl">Não encontrou o que procura?</p>
+            <a href="" class="font-bold text-brand-primary flex items-center gap-x-2 text-xl py-3 px-8">Fale
+                conosco para uma sugestão personalizada <x-lucide-chevron-right class="w-4 h-4" /></a>
         </div>
+
     </div>
-    <div class="text-center mt-12 md:mt-20">
-        <div class="lg:max-w-4xl max-w-md mx-auto px-4">
-            <p class="text-base md:text-xl text-base-content/80 mb-6 md:mb-8 leading-relaxed">
-                Join thousands of
-                satisfied clients who trust us with their financial future and experience the difference of working
-                with industry leaders.
-            </p>
-            <div class="flex flex-col sm:flex-row gap-3 md:gap-4 justify-center items-center">
-                <button class="inline-flex items-center justify-center gap-2 whitespace-nowrap ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 bg-primary hover:bg-primary/90 h-11 rounded-md w-full sm:w-auto bg-gradient-to-r from-primary/95 to-secondary/95 hover:primary hover:to-secondary text-primary-content px-6 md:px-8 py-3 md:py-4 text-base md:text-lg font-semibold shadow-lg md:shadow-xl hover:shadow-xl md:hover:shadow-2xl transition-all duration-300 hover:scale-105">
-                    Start Your Success Story
-                </button>
-            </div>
-        </div>
-    </div>
+
+    <script>
+        function playVideo() {
+            const video = document.getElementById('firece-video');
+            const playButton = document.getElementById('play-button');
+
+            video.play();
+            playButton.style.display = 'none';
+
+            video.addEventListener('pause', function() {
+                playButton.style.display = 'flex';
+            });
+
+            video.addEventListener('ended', function() {
+                playButton.style.display = 'flex';
+            });
+        }
+    </script>
 </section>
