@@ -1,10 +1,18 @@
 <?php
 
+use App\Console\Commands\CmsUpdateConfigCommand;
+use Mockery\MockInterface;
+
 it('creates a new component', function () {
     $cmsPath = config_path('cms.php');
     $cmsBackup = File::get($cmsPath);
     $originalConfig = config('cms');
-
+    $this->instance(
+        CmsUpdateConfigCommand::class,
+        Mockery::mock(new CmsUpdateConfigCommand, function (MockInterface $mock) {
+            $mock->shouldReceive('run')->once()->andReturn(0);
+        })->makePartial()
+    );
     $classPath = app_path('Filament/Components/Blog/MainHero2Component.php');
     $viewPath = resource_path('views/components/blog/main-hero2.blade.php');
 
@@ -19,9 +27,6 @@ it('creates a new component', function () {
         ->and(file_exists($viewPath))->toBeTrue();
     unlink($classPath);
     unlink($viewPath);
-
-    File::put($cmsPath, $cmsBackup);
-    config()->set('cms', $originalConfig);
 });
 
 it('should not create a component that already exists', function () {
