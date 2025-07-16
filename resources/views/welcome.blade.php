@@ -29,6 +29,7 @@
             :description="$plansData['description']"
             :plans="collect($plansData['plans'])"
         />
+        <x-landing.clients-review :cards="$clientReviews"/>
         <x-landing.testimonial :testimonials="$testimonialData"/>
         <x-landing.video-stats />
         <x-landing.contact-form />

@@ -118,6 +118,50 @@ class LandingController extends Controller
                     ],
                 ]
             ],
+            'clientReviews' => [
+                [
+                    'id' => 1,
+                    'name' => 'NexTuR',
+                    'role' => 'UI/UX Designer',
+                    'content' => 'Sempre me considerei um cara cético com respeito a consultorias, não acreditava que realmente poderia mudar minha vida. Conheci a Finance & Co atraves do consultor Matheus Oka e me provaram estar equivocado. Me mostraram como podia realmente fazer diferenças significantes na minha vida [...]',
+                ],
+                [
+                    'id' => 2,
+                    'name' => 'NexTuR',
+                    'role' => 'UI/UX Designer',
+                    'content' => 'Sempre me considerei um cara cético com respeito a consultorias, não acreditava que realmente poderia mudar minha vida. Conheci a Finance & Co atraves do consultor Matheus Oka e me provaram estar equivocado. Me mostraram como podia realmente fazer diferenças significantes na minha vida [...]',
+                ],
+                [
+                    'id' => 3,
+                    'name' => 'NexTuR',
+                    'role' => 'UI/UX Designer',
+                    'content' => 'Sempre me considerei um cara cético com respeito a consultorias, não acreditava que realmente poderia mudar minha vida. Conheci a Finance & Co atraves do consultor Matheus Oka e me provaram estar equivocado. Me mostraram como podia realmente fazer diferenças significantes na minha vida [...]',
+                ],
+                [
+                    'id' => 4,
+                    'name' => 'NexTuR',
+                    'role' => 'UI/UX Designer',
+                    'content' => 'Sempre me considerei um cara cético com respeito a consultorias, não acreditava que realmente poderia mudar minha vida. Conheci a Finance & Co atraves do consultor Matheus Oka e me provaram estar equivocado. Me mostraram como podia realmente fazer diferenças significantes na minha vida [...]',
+                ],
+                [
+                    'id' => 5,
+                    'name' => 'NexTuR',
+                    'role' => 'UI/UX Designer',
+                    'content' => 'Sempre me considerei um cara cético com respeito a consultorias, não acreditava que realmente poderia mudar minha vida. Conheci a Finance & Co atraves do consultor Matheus Oka e me provaram estar equivocado. Me mostraram como podia realmente fazer diferenças significantes na minha vida [...]',
+                ],
+                [
+                    'id' => 6,
+                    'name' => 'NexTuR',
+                    'role' => 'UI/UX Designer',
+                    'content' => 'Sempre me considerei um cara cético com respeito a consultorias, não acreditava que realmente poderia mudar minha vida. Conheci a Finance & Co atraves do consultor Matheus Oka e me provaram estar equivocado. Me mostraram como podia realmente fazer diferenças significantes na minha vida [...]',
+                ],
+                [
+                    'id' => 7,
+                    'name' => 'NexTuR',
+                    'role' => 'UI/UX Designer',
+                    'content' => 'Sempre me considerei um cara cético com respeito a consultorias, não acreditava que realmente poderia mudar minha vida. Conheci a Finance & Co atraves do consultor Matheus Oka e me provaram estar equivocado. Me mostraram como podia realmente fazer diferenças significantes na minha vida [...]',
+                ],
+            ],
             'testimonialData' => $testimonials,
         ]);
     }
