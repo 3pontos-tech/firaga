@@ -24,6 +24,7 @@
         <x-landing.our-work/>
         <div class="h-[1px] bg-outline-light dark:bg-outline-high container mx-auto"></div>
         <x-landing.solution-section />
+        <x-landing.cta-section/>
         <x-landing.our-solutions :solutions="$solutions"/>
         <x-landing.plan-section
             :heading="$plansData['heading']"
