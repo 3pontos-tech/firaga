@@ -26,11 +26,11 @@
         <x-landing.solution-section />
         <x-landing.cta-section/>
         <x-landing.our-solutions :solutions="$solutions"/>
-        <x-landing.plan-section
-            :heading="$plansData['heading']"
-            :description="$plansData['description']"
-            :plans="collect($plansData['plans'])"
-        />
+            <x-landing.plan-section
+                :heading="$plansData['heading']"
+                :description="$plansData['description']"
+                :plans="collect($plansData['plans'])"
+            />
         <x-landing.clients-review :cards="$clientReviews"/>
         <x-landing.testimonial :testimonials="$testimonialData"/>
         <x-landing.video-stats />
