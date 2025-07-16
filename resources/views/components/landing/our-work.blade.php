@@ -28,7 +28,6 @@
         <div class="lg:w-1/2 mb-12 lg:mb-0 space-y-10">
             <!-- Small Label -->
             <x-layout.shared.chip>
-                <x-lucide-sun class="w-4 h-4 text-brand-primary" />
                 {{ $subheading }}
             </x-layout.shared.chip>
             <!-- Main Heading -->

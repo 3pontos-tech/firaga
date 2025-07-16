@@ -6,10 +6,9 @@
     'badge' => null,
 ])
 
-<div class="animate-fade-in mx-auto w-full max-w-full text-center sm:max-w-xl md:max-w-7xl lg:w-2/3 lg:text-left">
+<div class="animate-fade-in mx-auto w-full max-w-full text-center sm:max-w-xl md:max-w-7xl lg:w-2/3 lg:text-left space-y-8">
     @if ($badge)
     <x-layout.shared.chip>
-        <x-lucide-sun class="w-4 h-4 text-brand-primary" />
         {{ $badge }}
     </x-layout.shared.chip>
     @endif

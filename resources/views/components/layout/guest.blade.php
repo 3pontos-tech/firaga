@@ -71,10 +71,10 @@
         @stack('styles')
         @livewireStyles
     </head>
-    <body class="bg-base-100 antialiased">
+    <body class="bg-[#232323] antialiased">
 
     <!-- Gradient Overlay Layer -->
-    <div class="fixed inset-0 z-[9999] pointer-events-none bg-gradient-to-b from-primary/3 to-base-100/3 mix-blend-normal"></div>
+    <!-- <div class="fixed inset-0 z-[9999] pointer-events-none bg-gradient-to-b from-primary/3 to-base-100/3 mix-blend-normal"></div> -->
 
         <noscript>
             <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KTVLGCHG" class="hidden h-0 w-0"></iframe>
@@ -84,7 +84,7 @@
         @endphp
 
         <x-navbar :menu="$menus['main-menu']" />
-        <main class="bg-gradient-to-b from-elevation-02dp to-elevation-03dp">
+        <main class="bg-elevation-02dp dark:bg-[#232323]">
             {{ $slot }}
         </main>
         <x-layout.shared.footer />

@@ -7,7 +7,7 @@
 
 <nav
     x-data="{ {{ $mobileVar }}: false }"
-    class="xs:relative bg-elevation-02dp backdrop-blur-xl border-b border-outline-light dark:border-outline-dark sticky top-0 z-50 shadow-sm transition-all duration-300 overflow-visible animate-fade-in-navbar"
+    class="xs:relative bg-elevation-02dp dark:bg-[#272727] backdrop-blur-xl border-b border-outline-light dark:border-outline-dark sticky top-0 z-50 shadow-sm transition-all duration-300 overflow-visible animate-fade-in-navbar"
 >
     <div class="mx-auto px-4 py-4 lg:px-16 relative z-10">
         <div class="flex items-center justify-between ">

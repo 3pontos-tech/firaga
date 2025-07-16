@@ -22,6 +22,7 @@
     <x-landing.hero :hero-data="$heroData"/>
     <div class="flex flex-col gap-y-60">
         <x-landing.our-work/>
+        <div class="h-[1px] bg-outline-light dark:bg-outline-high container mx-auto"></div>
         <x-landing.solution-section />
         <x-landing.our-solutions :solutions="$solutions"/>
         <x-landing.plan-section
