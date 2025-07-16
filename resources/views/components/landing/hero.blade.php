@@ -12,11 +12,12 @@
             <x-logo :minimal="true" class="w-32"></x-logo>
         </div>
         <!-- Left: Headline + Copy + CTA -->
-        <x-headers.headline
+         <x-headers.headline
             :headline="$heroData['heading']"
             :description="$heroData['subheading']"
             :button-text="$heroData['button_text']"
             :button-url="$heroData['button_url']"
+            badge="Lorem ipsum  dolor sit amet"
         />
         <!-- Right: Circular Logo (Desktop Only) -->
         <div class="mt-12 lg:mt-0 lg:w-1/2 md:flex justify-center items-center hidden lg:flex">

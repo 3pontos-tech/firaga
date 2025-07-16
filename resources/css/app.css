@@ -8,6 +8,7 @@
     --font-sans: "Syne", sans-serif;
     --font-smooth: never;
     --color-brand-primary: var(--brand-primary);
+    --color-brand-50: var(--brand-50);
     --color-red-primary: var(--red-primary);
     --color-red-900: var(--red-900);
     --color-red-800: var(--red-800);
@@ -316,6 +317,7 @@
 @layer base {
  :root {
         --brand-primary: #E2410A;
+        --brand-50: #FFEFE7;
         --red-primary: #ff3838;
         --red-900: #870000;
         --red-800: #a6000a;
@@ -477,6 +479,7 @@
 
     .dark {
         --brand-primary: #E2410A;
+        --brand-50: #FFD9A0;
         --red-primary: #ff3838;
         --red-900: #870000;
         --red-800: #a6000a;

@@ -25,12 +25,12 @@
 <section id="nosso-atendimento" class="mx-auto text-text-dark dark:text-text-light  overflow-hidden">
     <div class="mx-auto px-16  lg:flex lg:items-center lg:justify-between lg:space-x-12 relative z-10">
         <!-- Coluna da Esquerda -->
-        <div class="lg:w-1/2 mb-12 lg:mb-0">
+        <div class="lg:w-1/2 mb-12 lg:mb-0 space-y-10">
             <!-- Small Label -->
-            <div
-                class="inline-block bg-base-200 backdrop-blur-xl px-4 py-1 rounded-md mb-4 shadow border border-primary fadeIn">
-                <span class="text-sm text-primary font-semibold">{{ $subheading }}</span>
-            </div>
+            <x-layout.shared.chip>
+                <x-lucide-sun class="w-4 h-4 text-brand-primary" />
+                {{ $subheading }}
+            </x-layout.shared.chip>
             <!-- Main Heading -->
             <h2
                 class="text-text-dark dark:text-text-light font-bold text-4xl sm:text-5xl  leading-tight mb-6 tracking-tight">
@@ -41,7 +41,7 @@
                 {{ $description }}
             </p>
             <!-- CTA: "Saiba Mais" with Circle + Arrow -->
-            <x-layout.shared.button :href="$cta_link" variant="primary" class="mt-4 px-8 py-3">
+            <x-layout.shared.button :href="$cta_link" variant="primary" class="px-8 py-3">
                 {{ $cta_label }}
             </x-layout.shared.button>
         </div>
