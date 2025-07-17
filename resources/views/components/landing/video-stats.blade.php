@@ -24,7 +24,7 @@
 
 @endphp
 
-<section class=" py-12 md:py-16 lg:py-32 xl:py-40">
+<section class="py-12 md:py-16 lg:py-32 xl:py-40">
     <div class="container max-w-7xl mx-auto px-4 md:px-6 relative z-10">
         <div class="text-center mb-8 md:mb-16 flex flex-col items-center gap-y-6">
             <x-layout.shared.chip>Estatísticas</x-layout.shared.chip>

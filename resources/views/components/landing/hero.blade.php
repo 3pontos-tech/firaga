@@ -3,10 +3,10 @@
 ])
 
 <!-- Hero Section -->
-<section class="relative min-h-screen md:min-h-[75vh] flex flex-col items-center overflow-hidden py-28 px-16 gap-y-20">
+<section class="relative min-h-screen md:min-h-[75vh] flex flex-col items-center overflow-hidden py-28 gap-y-20">
     <!-- Animated Gradient Background -->
 
-    <div class="relative mx-auto lg:flex lg:items-center lg:justify-between z-10">
+    <div class="relative mx-auto lg:flex lg:items-center lg:justify-between z-10 container">
         <!-- Right: Circular Logo (Mobile Only) -->
         <div class="flex justify-center items-center mb-8 lg:hidden">
             <x-logo :minimal="true" class="w-32"></x-logo>
@@ -27,7 +27,7 @@
         </div>
     </div>
     <!-- TODO: Add animation of numbers increasing -->
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 w-full">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 w-full container">
         <x-landing.card-info class="rounded-lg border dark:border-outline-low border-outline-light" title="R$ 120M+" description="Captados" icon="icon-1"/>
         <x-landing.card-info class="rounded-lg border dark:border-outline-low border-outline-light" title="100+" description="Captados" icon="icon-2"/>
         <x-landing.card-info class="rounded-lg border dark:border-outline-low border-outline-light" title="100+" description="Captados" icon="icon-3"/>

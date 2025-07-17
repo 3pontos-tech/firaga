@@ -23,7 +23,7 @@
 
 <!-- "Nosso Atendimento" Section -->
 <section id="nosso-atendimento" class="mx-auto text-text-dark dark:text-text-light  overflow-hidden">
-    <div class="mx-auto px-16  lg:flex lg:items-center lg:justify-between lg:space-x-12 relative z-10">
+    <div class="mx-auto container lg:flex lg:items-center lg:justify-between lg:space-x-12 relative z-10">
         <!-- Coluna da Esquerda -->
         <div class="lg:w-1/2 mb-12 lg:mb-0 space-y-10">
             <!-- Small Label -->

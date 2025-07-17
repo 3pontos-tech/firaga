@@ -6,7 +6,7 @@
 ])
 
 <section>
-    <div class=" py-24 mx-auto flex flex-col items-center">
+    <div class=" py-24 mx-auto flex flex-col items-center container">
         <div class="mb-16 px-4 md:px-8 flex flex-col items-center gap-y-6"
             style="opacity: 1; transform: none; will-change: opacity, transform;">
             <x-layout.shared.chip>Nossas especialidades</x-layout.shared.chip>

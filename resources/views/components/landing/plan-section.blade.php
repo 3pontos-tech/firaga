@@ -5,7 +5,7 @@
     'plans' => collect(),
 ])
 
-<section class="py-24 mx-auto flex flex-col items-center">
+<section class="py-24 mx-auto flex flex-col items-center container">
     <div class="mb-16 px-4 md:px-8" style="opacity: 1; transform: none; will-change: opacity, transform;">
         <x-landing.section-header :heading="$heading" :description="$description" />
     </div>

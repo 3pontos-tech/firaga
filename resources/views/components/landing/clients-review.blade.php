@@ -1,7 +1,7 @@
 @props(['cards' => []])
 
 <section class="bg-base-200/80 ">
-    <div class="py-12 md:py-24 mx-auto flex flex-col gap-y-8 md:gap-y-11">
+    <div class="py-12 md:py-24 mx-auto flex flex-col gap-y-8 md:gap-y-11 container">
         <div class="px-4 md:px-8" style="opacity: 1; transform: none; will-change: opacity, transform;">
             <h2 class="text-text-high text-3xl md:text-4xl lg:text-5xl font-bold">Escute de nossos clientes</h2>
         </div>

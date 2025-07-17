@@ -9,7 +9,7 @@
     x-data="{ {{ $mobileVar }}: false }"
     class="xs:relative bg-elevation-02dp dark:bg-[#272727] backdrop-blur-xl border-b border-outline-light dark:border-outline-dark sticky top-0 z-50 shadow-sm transition-all duration-300 overflow-visible animate-fade-in-navbar"
 >
-    <div class="mx-auto px-4 py-4 lg:px-16 relative z-10">
+    <div class="mx-auto py-4 relative z-10 container">
         <div class="flex items-center justify-between ">
             <div class="flex items-center justify-between w-full lg:w-auto space-x-4 lg:space-x-6">
                 {{-- Logo and Brand Name --}}

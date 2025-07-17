@@ -1,6 +1,5 @@
-<section class="text-base-content px-10 py-30 overflow-hidden bg-[#272727]">
-    <div
-        class="container bg-[#303030] rounded-3xl p-6 sm:p-10  mx-auto flex flex-col lg:flex-row lg:items-center lg:justify-between">
+<section class="text-base-content py-30 overflow-hidden bg-[#272727]">
+    <div class="bg-[#303030] rounded-3xl p-6 sm:p-10  mx-auto flex flex-col lg:flex-row lg:items-center lg:justify-between container">
         <div class="flex items-center justify-between gap-x-48 px-32 py-28">
             <div class="shrink-0 mb-8 lg:mb-0">
                 <span class="relative inline-block">

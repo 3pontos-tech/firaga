@@ -26,7 +26,7 @@ suscipit at nisi vitae, faucibus hendrerit turpis. ',
 ])
 
 <section class="mx-auto text-text-dark dark:text-text-light overflow-hidden">
-    <div class="mx-auto px-16 flex flex-col ">
+    <div class="mx-auto flex flex-col container">
         <div class="flex flex-col items-center gap-y-6">
             <x-layout.shared.chip>Escolha a Firelce</x-layout.shared.chip>
             <x-landing.section-header :heading="$heading" :description="$description" />
