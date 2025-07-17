@@ -68,7 +68,7 @@ class CmsUpdateTemplateRenderCommand extends Command
 
         $lines = explode("\n", $cases);
         $inserted = false;
-        $newCase = "            '{$field}' => app({$class}::class),";
+        $newCase = "            '{$field}' => app(\\{$class}::class),";
 
         foreach ($lines as $index => $line) {
             if (str_contains($line, 'default')) {
