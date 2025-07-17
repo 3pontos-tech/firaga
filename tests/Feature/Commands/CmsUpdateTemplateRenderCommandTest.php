@@ -15,7 +15,9 @@ it('should add the component to the template render ', function () {
         ->assertExitCode(0);
 
     $modifiedTemplateRender = File::get($templateRenderPath);
-    $expectedStringInFile = "            'list-authors' => app(App\Filament\Resources\AuthorResource\Pages\ListAuthors::class),";
+    $expectedStringInFile = "            'list-authors' => app(ListAuthors::class),";
+    $importedClass = "use App\Filament\Resources\AuthorResource\Pages\ListAuthors;";
     $this->assertStringContainsString($expectedStringInFile, $modifiedTemplateRender);
+    $this->assertStringContainsString($importedClass, $modifiedTemplateRender);
     File::put($templateRenderPath, $originalTemplateRender);
 });
