@@ -1,9 +1,9 @@
 <?php
 
-use Illuminate\Support\Facades\File;
 use App\Filament\Components\Landing\MainHeroComponent;
 use App\Filament\Resources\AuthorResource\Pages\ListAuthors;
 use App\View\TemplateRenderer;
+use Illuminate\Support\Facades\File;
 
 it('should add the component to the template render ', function (): void {
     $templateRenderPath = (new ReflectionClass(TemplateRenderer::class))->getFileName();
