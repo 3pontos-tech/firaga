@@ -72,10 +72,9 @@ class AdminPanelServiceProvider extends PanelProvider
                 ThemesPlugin::make(),
                 CuratorPlugin::make(),
             ])
-
+            ->theme(asset('css/filament/admin/theme.css'))
             ->authMiddleware([
                 Authenticate::class,
-            ])
-            ->viteTheme('resources/css/filament/admin/theme.css');
+            ]);
     }
 }
