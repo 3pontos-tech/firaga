@@ -32,14 +32,13 @@ class ContactForm extends Component
 
     public ContactPreference $contactPreference = ContactPreference::Whatsapp;
 
-
     public function submit(): void
     {
         try {
             $this->rateLimit(3, 60 * 5);
-        } catch (TooManyRequestsException $exception) {
+        } catch (TooManyRequestsException $tooManyRequestsException) {
             throw ValidationException::withMessages([
-                'error' => "Por favor aguarde {$exception->secondsUntilAvailable} segundos e tente novamente.",
+                'error' => sprintf('Por favor aguarde %s segundos e tente novamente.', $tooManyRequestsException->secondsUntilAvailable),
             ]);
         }
 
@@ -67,16 +66,14 @@ class ContactForm extends Component
     {
         return [
             'name.required' => 'O nome é obrigatório.',
-            'name.min' => 'O nome deve ter no mínimo 10 caracteres.',
+            'name.min' => 'O nome deve ter no mínimo 2 caracteres.',
             'name.max' => 'O nome deve ter no máximo 100 caracteres.',
             'email.required' => 'O e-mail é obrigatório.',
             'email.email' => 'O e-mail deve ser um e-mail válido.',
-            'email.max' => 'O e-mail deve ter no máximo 100 caracteres.',
             'userMessage.required' => 'A mensagem é obrigatória.',
             'userMessage.min' => 'A mensagem deve ter no mínimo 10 caracteres.',
             'userMessage.max' => 'A mensagem deve ter no máximo 255 caracteres.',
             'phoneNumber.required' => 'O telefone é obrigatório.',
-            'phoneNumber.regex' => 'O telefone deve conter apenas números e ter entre 10 e 11 dígitos.',
         ];
     }
 
