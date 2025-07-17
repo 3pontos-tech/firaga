@@ -1,16 +1,20 @@
 <?php
 
 use App\Console\Commands\CmsUpdateConfigCommand;
+use App\Console\Commands\CmsUpdateTemplateRenderCommand;
 use Mockery\MockInterface;
 
 it('creates a new component', function () {
-    $cmsPath = config_path('cms.php');
-    $cmsBackup = File::get($cmsPath);
-    $originalConfig = config('cms');
     $this->instance(
         CmsUpdateConfigCommand::class,
         Mockery::mock(new CmsUpdateConfigCommand, function (MockInterface $mock) {
-            $mock->shouldReceive('run')->once()->andReturn(0);
+            $mock->expects('run')->andReturns(0);
+        })->makePartial()
+    );
+    $this->instance(
+        CmsUpdateTemplateRenderCommand::class,
+        Mockery::mock(new CmsUpdateTemplateRenderCommand, function (MockInterface $mock) {
+            $mock->expects('run')->andReturns(0);
         })->makePartial()
     );
     $classPath = app_path('Filament/Components/Blog/MainHero2Component.php');

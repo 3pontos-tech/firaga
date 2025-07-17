@@ -83,6 +83,10 @@ class CreateCmsComponentCommand extends Command
             'class' => $class,
             'section' => $section,
         ]);
+        $this->call('cms:update-templaterender', [
+            'class' => $class,
+            'field' => strtolower($classBase),
+        ]);
 
         return self::SUCCESS;
     }
