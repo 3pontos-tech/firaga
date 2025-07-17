@@ -3,7 +3,7 @@
 use App\Filament\Resources\AuthorResource\Pages\ListAuthors;
 use App\View\TemplateRenderer;
 
-it('should add the component to the template render ', function () {
+it('should add the component to the template render ', function (): void {
     $templateRenderPath = (new ReflectionClass(TemplateRenderer::class))->getFileName();
     $originalTemplateRender = File::get($templateRenderPath);
 
@@ -21,3 +21,11 @@ it('should add the component to the template render ', function () {
     $this->assertStringContainsString($importedClass, $modifiedTemplateRender);
     File::put($templateRenderPath, $originalTemplateRender);
 });
+
+it('should throws exception if file does not exists', function (): void {
+    $this->artisan('cms:update-templaterender', [
+        'class' => 'class-that-does-not-exists',
+        'field' => 'list-authors',
+    ]);
+})->throws(Exception::class);
+
