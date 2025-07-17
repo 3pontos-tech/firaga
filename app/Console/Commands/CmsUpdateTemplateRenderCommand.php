@@ -38,7 +38,7 @@ class CmsUpdateTemplateRenderCommand extends Command
         $filePath = $reflector->getFileName();
 
         if (! File::exists($filePath)) {
-            $this->info("Class {$class} not found");
+            $this->info(sprintf('Class %s not found', $class));
 
             return self::FAILURE;
         }
@@ -47,13 +47,13 @@ class CmsUpdateTemplateRenderCommand extends Command
 
         $content = File::get($templateRenderPath);
 
-        if (str_contains($content, "'{$field}'")) {
-            $this->info("Component {$field} already registered at TemplateRender.");
+        if (str_contains($content, sprintf("'%s'", $field))) {
+            $this->info(sprintf('Component %s already registered at TemplateRender.', $field));
 
             return self::FAILURE;
         }
 
-        $useStatement = "use {$class};";
+        $useStatement = sprintf('use %s;', $class);
 
         if (! str_contains($content, $useStatement)) {
             $content = preg_replace(
@@ -67,7 +67,7 @@ class CmsUpdateTemplateRenderCommand extends Command
         // Regex to found match statement inside resolveComponent method
         $pattern = '/(private function resolveComponent\(string \$type\): ComponentInterface\s*{.*?return match\s*\(\$type\)\s*{)(.*?)(};\s*})/s';
 
-        if (! preg_match($pattern, $content, $matches)) {
+        if (in_array(preg_match($pattern, $content, $matches), [0, false], true)) {
             $this->error('Match statement was not found at resolveComponent method.');
 
             return self::FAILURE;
@@ -81,7 +81,7 @@ class CmsUpdateTemplateRenderCommand extends Command
         $inserted = false;
         $classParts = explode('\\', $class);
         $shortClassName = end($classParts);
-        $newCase = "            '{$field}' => app({$shortClassName}::class),";
+        $newCase = sprintf("            '%s' => app(%s::class),", $field, $shortClassName);
 
         foreach ($lines as $index => $line) {
             if (str_contains($line, 'default')) {
@@ -104,7 +104,7 @@ class CmsUpdateTemplateRenderCommand extends Command
 
         File::put($templateRenderPath, $content);
 
-        $this->info("{$field} Component successfully added into TemplateRender.");
+        $this->info($field . ' Component successfully added into TemplateRender.');
 
         return self::SUCCESS;
     }

@@ -39,7 +39,7 @@ class CmsUpdateConfigCommand extends Command
         $content = File::get($configPath);
 
         if (str_contains($content, $class)) {
-            $this->info("Class {$class} already registered at config.");
+            $this->info(sprintf('Class %s already registered at config.', $class));
 
             return self::FAILURE;
         }
@@ -51,7 +51,7 @@ class CmsUpdateConfigCommand extends Command
         ];
 
         if (! isset($sectionComments[$section])) {
-            $this->error("Invalid {$section} section.");
+            $this->error(sprintf('Invalid %s section.', $section));
 
             return self::FAILURE;
         }
@@ -62,21 +62,21 @@ class CmsUpdateConfigCommand extends Command
 
         foreach ($lines as $i => $line) {
             if (str_contains($line, $comment)) {
-                array_splice($lines, $i + 1, 0, "        ['class' => {$class}::class],");
+                array_splice($lines, $i + 1, 0, sprintf("        ['class' => %s::class],", $class));
                 $inserted = true;
                 break;
             }
         }
 
         if (! $inserted) {
-            $this->error("There is no comment named {$section} at config/cms.");
+            $this->error(sprintf('There is no comment named %s at config/cms.', $section));
 
             return self::FAILURE;
         }
 
         File::put($configPath, implode("\n", $lines));
 
-        $this->info("Class {$class} appended at config/cms.php under {$section} section.");
+        $this->info(sprintf('Class %s appended at config/cms.php under %s section.', $class, $section));
 
         return self::SUCCESS;
     }

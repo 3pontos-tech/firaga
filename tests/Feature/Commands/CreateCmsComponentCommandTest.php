@@ -4,17 +4,17 @@ use App\Console\Commands\CmsUpdateConfigCommand;
 use App\Console\Commands\CmsUpdateTemplateRenderCommand;
 use Mockery\MockInterface;
 
-describe('tests that need mocking', function () {
-    beforeEach(function () {
+describe('tests that need mocking', function (): void {
+    beforeEach(function (): void {
         $this->instance(
             CmsUpdateConfigCommand::class,
-            Mockery::mock(new CmsUpdateConfigCommand, function (MockInterface $mock) {
+            Mockery::mock(new CmsUpdateConfigCommand, function (MockInterface $mock): void {
                 $mock->expects('run')->andReturns(0);
             })->makePartial()
         );
         $this->instance(
             CmsUpdateTemplateRenderCommand::class,
-            Mockery::mock(new CmsUpdateTemplateRenderCommand, function (MockInterface $mock) {
+            Mockery::mock(new CmsUpdateTemplateRenderCommand, function (MockInterface $mock): void {
                 $mock->expects('run')->andReturns(0);
             })->makePartial()
         );

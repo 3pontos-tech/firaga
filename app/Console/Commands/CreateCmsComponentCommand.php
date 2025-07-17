@@ -44,15 +44,15 @@ class CreateCmsComponentCommand extends Command
                 : $this->askForSection();
         }
 
-        $className = "{$classBase}Component";
-        $namespace = "App\\Filament\\Components\\{$subfolder}";
+        $className = $classBase . 'Component';
+        $namespace = 'App\Filament\Components\\' . $subfolder;
 
-        $classPath = app_path("Filament/Components/{$subfolder}/{$className}.php");
+        $classPath = app_path(sprintf('Filament/Components/%s/%s.php', $subfolder, $className));
         $bladeFolder = resource_path('views/components/' . strtolower($subfolder));
-        $bladePath = "{$bladeFolder}/" . Str::kebab($classBase) . '.blade.php';
+        $bladePath = $bladeFolder . '/' . Str::kebab($classBase) . '.blade.php';
 
         if (File::exists($classPath)) {
-            $this->error("❌ The Component {$className} already exists.");
+            $this->error(sprintf('❌ The Component %s already exists.', $className));
 
             return self::FAILURE;
         }
@@ -78,7 +78,7 @@ class CreateCmsComponentCommand extends Command
         $this->info('✅ Class and Blade successfully created.');
 
         $section = $subfolder;
-        $class = "{$namespace}\\{$className}";
+        $class = sprintf('%s\%s', $namespace, $className);
         $this->call('cms:update-config', [
             'class' => $class,
             'section' => $section,
@@ -111,7 +111,7 @@ class CreateCmsComponentCommand extends Command
         return $this->choice(
             'Select the section (subfolder) for this component:',
             $existing,
-            array_search('Landing', $existing)
+            array_search('Landing', $existing, true)
         );
     }
 }

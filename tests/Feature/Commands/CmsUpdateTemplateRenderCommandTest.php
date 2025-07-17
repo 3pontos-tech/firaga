@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Support\Facades\File;
 use App\Filament\Components\Landing\MainHeroComponent;
 use App\Filament\Resources\AuthorResource\Pages\ListAuthors;
 use App\View\TemplateRenderer;

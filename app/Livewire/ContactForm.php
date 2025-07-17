@@ -36,9 +36,9 @@ class ContactForm extends Component
     {
         try {
             $this->rateLimit(3, 60 * 5);
-        } catch (TooManyRequestsException $exception) {
+        } catch (TooManyRequestsException $tooManyRequestsException) {
             throw ValidationException::withMessages([
-                'error' => "Por favor aguarde {$exception->secondsUntilAvailable} segundos e tente novamente.",
+                'error' => sprintf('Por favor aguarde %s segundos e tente novamente.', $tooManyRequestsException->secondsUntilAvailable),
             ]);
         }
 
