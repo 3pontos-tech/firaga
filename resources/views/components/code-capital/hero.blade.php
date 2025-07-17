@@ -1,60 +1,45 @@
 @props([
-    "heroData" => [],
+    'heroData' => [],
 ])
 
 @php
-    $snippets = str(file_get_contents(resource_path("markdown/code-capital/snippets.md")))
-        ->explode("-----")
+    $snippets = str(file_get_contents(resource_path('markdown/code-capital/snippets.md')))
+        ->explode('-----')
         ->map(function ($snippet) {
             return str($snippet)->markdown();
         });
     $snippetsJson = json_encode($snippets);
 @endphp
 
-    <!-- Hero Section -->
-<section
-    class="bg-elevation-03dp relative gap-5 flex min-h-1/2 items-center overflow-hidden  py-20 md:min-h-[50vh]">
-    <!-- Animated Gradient Background -->
-
-    <div class="relative z-10 container mx-auto px-6 lg:flex  lg:items-center lg:justify-between">
-        <!-- Right: Circular Logo (Mobile Only) -->
+<!-- Hero Section -->
+<section class="gap-5 flex min-h-1/2 items-center overflow-hidden py-20 md:min-h-[50vh]">
+    <div class="container mx-auto px-6 lg:flex  lg:items-center lg:justify-between">
         <div class="mb-8 lg:hidden">
             <h2 class="text-primary text-center animate-pulse text-4xl font-bold">&lt;code-capital/&gt;</h2>
         </div>
-        <!-- Left: Headline + Copy + CTA -->
-        <x-headers.headline
-            :headline="$heroData['heading']"
-            :description="$heroData['subheading']"
-            :button-text="$heroData['button_text']"
-            :button-url="$heroData['button_url']"
-            :badge="$heroData['badge']"
-        />
-
-        <div class="mt-12  hidden h-24 items-center justify-center md:flex lg:mt-0 lg:flex lg:w-1/2">
-            <div
-                x-data="snippetCarousel({{ $snippetsJson }})"
-                class="animate-fade-in flex flex-col items-center justify-center rounded-full transition-all delay-300 duration-300 relative snippet-carousel"
-            >
-                <div class="flex items-center justify-center w-full">
-                    <div
-                        x-html="snippets[currentIndex]"
-                        x-transition:enter="transition ease-out duration-300"
-                        x-transition:enter-start="opacity-0 transform scale-95"
-                        x-transition:enter-end="opacity-100 transform scale-100"
-                        x-transition:leave="transition ease-in duration-300"
-                        x-transition:leave-start="opacity-100 transform scale-100"
-                        x-transition:leave-end="opacity-0 transform scale-95"
-                        :class="{ 'opacity-0': isChanging, 'opacity-100': !isChanging }"
-                        class="transition-all duration-900 ease-in-out mx-8 w-full"
-                    ></div>
+        <x-headers.headline :headline="$heroData['heading']" :description="$heroData['subheading']" :button-text="$heroData['button_text']" :button-url="$heroData['button_url']" :badge="$heroData['badge']" />
+        <div class="mt-12 hidden items-center md:flex lg:mt-0 lg:flex lg:w-1/3">
+            <div x-data="snippetCarousel({{ $snippetsJson }})"
+                class="animate-fade-in flex flex-col items-center justify-center ">
+                <div class="flex items-center gap-3 justify-between w-full bg-[#272727] rounded-t-xl p-4">
+                    <div class="flex items-center gap-3">
+                        <div class="w-2 h-2 rounded-full bg-helper-error"></div>
+                        <div class="w-2 h-2 rounded-full bg-helper-warning"></div>
+                        <div class="w-2 h-2 rounded-full bg-helper-success"></div>
+                    </div>
+                    <div>
+                        <h2 class="font-semibold text-text-light">invest.php</h2>
+                    </div>
+                    <div class="w-6 h-2"></div>
                 </div>
+                <div x-html="snippets[currentIndex]" ></div>
             </div>
         </div>
     </div>
 </section>
 
-@push("styles")
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/styles/default.min.css"/>
+@push('styles')
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/styles/default.min.css" />
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/highlight.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/highlight.js@11.1.1/lib/languages/javascript.min.js"></script>
@@ -101,7 +86,7 @@
     </style>
     <script>
         document.addEventListener("alpine:init", () => {
-            Alpine.data("snippetCarousel", function (snippets) {
+            Alpine.data("snippetCarousel", function(snippets) {
                 return {
                     snippets: snippets,
                     currentIndex: 0,
@@ -138,7 +123,8 @@
                         if (this.isChanging) return;
                         this.isChanging = true;
                         setTimeout(() => {
-                            this.currentIndex = (this.currentIndex - 1 + this.snippets.length) % this.snippets.length;
+                            this.currentIndex = (this.currentIndex - 1 + this.snippets.length) %
+                                this.snippets.length;
                             setTimeout(() => {
                                 this.isChanging = false;
                                 hljs.highlightAll();
