@@ -53,6 +53,17 @@ class CmsUpdateTemplateRenderCommand extends Command
             return self::FAILURE;
         }
 
+        $useStatement = "use {$class};";
+
+        if (! str_contains($content, $useStatement)) {
+            $content = preg_replace(
+                '/^(namespace\s+[^\s;]+;\s*)/m',
+                "$1\n{$useStatement}\n",
+                $content,
+                1
+            );
+        }
+
         // Regex to found match statement inside resolveComponent method
         $pattern = '/(private function resolveComponent\(string \$type\): ComponentInterface\s*{.*?return match\s*\(\$type\)\s*{)(.*?)(};\s*})/s';
 
@@ -68,7 +79,10 @@ class CmsUpdateTemplateRenderCommand extends Command
 
         $lines = explode("\n", $cases);
         $inserted = false;
-        $newCase = "            '{$field}' => app(\\{$class}::class),";
+        $classParts = explode('\\', $class);
+        $shortClassName = end($classParts);
+        $newCase = "            '{$field}' => app({$shortClassName}::class),";
+
 
         foreach ($lines as $index => $line) {
             if (str_contains($line, 'default')) {
