@@ -38,4 +38,3 @@ it('should fail if the component is already registered', function (): void {
         ->expectsOutput('Component main_hero already registered at TemplateRender.')
         ->assertExitCode(1);
 });
-

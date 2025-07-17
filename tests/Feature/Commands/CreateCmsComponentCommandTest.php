@@ -49,7 +49,6 @@ describe('tests that need mocking', function () {
     });
 });
 
-
 it('should not create a component that already exists', function (): void {
     $this->artisan('make:cms-component', [
         'name' => 'MainHero',

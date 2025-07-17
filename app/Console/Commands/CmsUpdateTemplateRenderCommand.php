@@ -83,7 +83,6 @@ class CmsUpdateTemplateRenderCommand extends Command
         $shortClassName = end($classParts);
         $newCase = "            '{$field}' => app({$shortClassName}::class),";
 
-
         foreach ($lines as $index => $line) {
             if (str_contains($line, 'default')) {
                 array_splice($lines, $index, 0, $newCase);

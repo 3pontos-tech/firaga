@@ -39,4 +39,3 @@ it('should fail if is an invalid section', function () {
         ->expectsOutput('Invalid aaaa section.')
         ->assertExitCode(1);
 });
-

@@ -32,7 +32,6 @@ class ContactForm extends Component
 
     public ContactPreference $contactPreference = ContactPreference::Whatsapp;
 
-
     public function submit(): void
     {
         try {
