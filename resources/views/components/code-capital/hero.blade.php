@@ -11,16 +11,14 @@
     $snippetsJson = json_encode($snippets);
 @endphp
 
-<!-- Hero Section -->
 <section class="gap-5 flex min-h-1/2 items-center overflow-hidden py-20 md:min-h-[50vh]">
     <div class="container mx-auto lg:flex lg:items-center lg:justify-between">
         <div class="mb-8 lg:hidden">
             <h2 class="text-primary text-center animate-pulse text-4xl font-bold">&lt;code-capital/&gt;</h2>
         </div>
         <x-headers.headline :headline="$heroData['heading']" :description="$heroData['subheading']" :button-text="$heroData['button_text']" :button-url="$heroData['button_url']" :badge="$heroData['badge']" />
-        <div class="mt-12 hidden items-center md:flex lg:mt-0 lg:flex lg:w-1/3">
-            <div x-data="snippetCarousel({{ $snippetsJson }})"
-                class="animate-fade-in flex flex-col items-center justify-center ">
+        <div class="mt-12 hidden items-center md:flex lg:mt-0 lg:flex lg:w-2/4">
+            <div x-data="snippetCarousel({{ $snippetsJson }})" class="animate-fade-in flex flex-col items-center justify-center w-full">
                 <div class="flex items-center gap-3 justify-between w-full bg-[#272727] rounded-t-xl p-4">
                     <div class="flex items-center gap-3">
                         <div class="w-2 h-2 rounded-full bg-helper-error"></div>
@@ -32,7 +30,7 @@
                     </div>
                     <div class="w-6 h-2"></div>
                 </div>
-                <div x-html="snippets[currentIndex]" ></div>
+                <div x-html="snippets[currentIndex]" class="w-full"></div>
             </div>
         </div>
     </div>
