@@ -81,7 +81,6 @@
     <x-code-capital.hero :hero-data="$herodata"/>
     <x-code-capital.process/>
     <x-code-capital.cta-section/>
-    <x-code-capital.why-code-capital/>
     <x-code-capital.testimonial/>
     <x-partials.faq
         :solutions="$solutions"
