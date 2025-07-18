@@ -1,5 +1,5 @@
 @props([
-    'icon' => 'heroicon-o-user-group',
+    'icon' => 'goal',
     'number' => 1,
     'badge' => '30 Minutes • Free',
     'title' => 'Personalized Initial Consultation',
@@ -8,17 +8,17 @@
 ])
 
 <div
-    class="relative z-10 bg-base-100 flex flex-col  space-y-8 relative p-8 rounded-xl">
+    class="z-10 flex flex-col  space-y-8 relative p-8 rounded-xl">
     <div class="flex flex-row gap-2 items-center">
         <div
-            class="flex h-8 w-8 items-center justify-center rounded-full bg-secondary shadow-lg text-secondary-content group">
+            class="flex h-11 w-11 items-center justify-center rounded-full bg-brand-primary shadow-lg text-text-high text-2xl">
             <span>{{ $number }}</span>
         </div>
         <div class="flex flex-col text-left">
-            <h4 class="text-base-content">
+            <h4 class="text-text-high font-medium text-2xl">
                 {{ $badge }}
             </h4>
-            <p class="text-base-content/90">
+            <p class="text-text-medium font-medium">
                 dasdasdas
             </p>
         </div>

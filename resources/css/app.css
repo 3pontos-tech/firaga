@@ -4,6 +4,12 @@
 
 @custom-variant dark (&:where(.dark, .dark *));
 
+@utility container {
+    padding-inline: 64px;
+  @variant xl {
+    max-width: 1856px;
+  }
+}
 
 @theme inline {
     --font-sans: "Syne", sans-serif;

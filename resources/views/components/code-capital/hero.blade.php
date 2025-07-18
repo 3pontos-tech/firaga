@@ -13,7 +13,7 @@
 
 <!-- Hero Section -->
 <section class="gap-5 flex min-h-1/2 items-center overflow-hidden py-20 md:min-h-[50vh]">
-    <div class="container mx-auto px-6 lg:flex  lg:items-center lg:justify-between">
+    <div class="container mx-auto lg:flex lg:items-center lg:justify-between">
         <div class="mb-8 lg:hidden">
             <h2 class="text-primary text-center animate-pulse text-4xl font-bold">&lt;code-capital/&gt;</h2>
         </div>

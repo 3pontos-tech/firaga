@@ -9,9 +9,8 @@
     x-data="{ {{ $mobileVar }}: false }"
     class="xs:relative bg-elevation-02dp dark:bg-[#272727] backdrop-blur-xl border-b border-outline-light dark:border-outline-dark sticky top-0 z-50 shadow-sm transition-all duration-300 overflow-visible animate-fade-in-navbar"
 >
-    <div class="mx-auto py-4 relative z-10 container">
-        <div class="flex items-center justify-between ">
-            <div class="flex items-center justify-between w-full lg:w-auto space-x-4 lg:space-x-6">
+    <div class="py-4 relative z-10 container flex items-center justify-between mx-auto">
+            <div class="flex items-center w-full lg:w-auto space-x-4 lg:space-x-6">
                 {{-- Logo and Brand Name --}}
                 <a href="{{ route('landing') }}">
                     <div class="flex items-center gap-3">
@@ -25,19 +24,19 @@
                     @if ($menuItem->children && $menuItem->children->isNotEmpty())
                         <li class="relative group" x-data="{ open: false }" @mouseenter="open = true"
                             @mouseleave="open = false">
-                            <a href="{{ $menuItem->model?->url() ?? $menuItem->custom_url  }}"
-                               class="flex items-center px-3 py-2 rounded-lg font-medium transition-colors duration-200"
+                            <a href="{{ $menuItem->model?->url() ?? $menuItem->custom_url}}"
+                               class="flex items-center px-3 py-2 rounded-lg font-medium transition-colors duration-200 text-text-dark dark:text-text-light hover:text-primary"
                                @click="open = !open">
                                 {{ $menuItem->label }}
                                 <svg
-                                    class="ml-1 h-4 w-4 text-text-light group-hover:text-secondary transition-colors duration-200"
+                                    class="ml-1 h-4 w-4 text-text-medium group-hover:text-primary transition-colors duration-200"
                                     fill="currentColor" viewBox="0 0 20 20">
                                     <path fill-rule="evenodd"
                                           d="M5.23 7.21a.75.75 0 011.06-.02L10 10.584l3.71-3.396a.75.75 0 011.04 1.084l-4.25 3.89a.75.75 0 01-1.04 0l-4.25-3.89a.75.75 0 01-.02-1.06z"
                                           clip-rule="evenodd"/>
                                 </svg>
                             </a>
-                            <ul class="absolute left-0 mt-1 w-48 bg-elevation-02dp dark:bg-base-200 border border-base rounded-lg shadow-lg transition-all duration-200 z-50"
+                            <ul class="absolute left-0 mt-1 w-48 bg-elevation-02dp dark:bg-elevation-03dp border border-outline-light dark:border-outline-dark rounded-lg shadow-lg transition-all duration-200 z-50"
                                 x-show="open"
                                 x-transition:enter="transition ease-out duration-200"
                                 x-transition:enter-start="opacity-0 translate-y-1"
@@ -75,7 +74,7 @@
                 <x-layout.shared.theme-toggle/>
                 <button
                     @click="{{ $mobileVar }} = !{{ $mobileVar }}"
-                    class="p-2 text-neutral-content border-neutral-content/20 rounded-lg  focus:outline-none relative group hover:text-primary hover:border-primary border-1"
+                    class="p-2 text-text-dark dark:text-text-light border border-outline-light dark:border-outline-dark rounded-lg focus:outline-none relative group hover:text-primary hover:border-primary"
                     aria-label="Toggle menu"
                 >
                     <span class="sr-only">Open main menu</span>
@@ -86,8 +85,6 @@
                     />
                 </button>
             </div>
-
-        </div>
     </div>
 
     {{-- === Mobile Menu (toggleable) === --}}
@@ -105,13 +102,15 @@
         >
             <ul class="px-4 py-4 space-y-2 bg-elevation-02dp dark:bg-elevation-03dp">
                 @foreach($menu->items as $menuItem)
-                    <a href="{{ $menuItem->model?->url() ?? $menuItem->custom_url }}"
-                       class="block text-text-light dark:text-text-dark hover:text-brand-primary px-4 py-2 rounded-lg transition-colors duration-200">
-                        {{  $menuItem->label  }}
-                    </a>
+                    <li>
+                        <a href="{{ $menuItem->model?->url() ?? $menuItem->custom_url }}"
+                           target="{{ $menuItem->target->getHtmlProperty() }}"
+                           class="block text-text-dark dark:text-text-light hover:text-primary px-4 py-2 rounded-lg transition-colors duration-200">
+                            {{  $menuItem->label  }}
+                        </a>
+                    </li>
                 @endforeach
             </ul>
         </div>
     </div>
-
 </nav>
