@@ -83,6 +83,7 @@
     <x-code-capital.cta-section/>
     <x-code-capital.testimonial/>
     <x-code-capital.our-approach/>
+    <x-code-capital.consultant/>
     <x-partials.faq
         :solutions="$solutions"
         :thumbnail="asset('images/stock/code-capital-person.png')"
