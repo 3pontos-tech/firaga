@@ -11,22 +11,22 @@
     $snippetsJson = json_encode($snippets);
 @endphp
 
-<section class="gap-5 flex min-h-1/2 items-center overflow-hidden py-20 md:min-h-[50vh]">
-    <div class="container mx-auto lg:flex lg:items-center lg:justify-between">
+<section class="gap-5 flex min-h-1/2 items-center overflow-hidden py-12 sm:py-16 md:py-20 lg:py-24 md:min-h-[50vh]">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8 lg:flex lg:items-center lg:justify-between">
         <div class="mb-8 lg:hidden">
-            <h2 class="text-primary text-center animate-pulse text-4xl font-bold">&lt;code-capital/&gt;</h2>
+            <h2 class="text-brand-primary text-center text-2xl sm:text-3xl md:text-4xl font-bold">&lt;code-capital/&gt;</h2>
         </div>
         <x-headers.headline :headline="$heroData['heading']" :description="$heroData['subheading']" :button-text="$heroData['button_text']" :button-url="$heroData['button_url']" :badge="$heroData['badge']" />
-        <div class="mt-12 hidden items-center md:flex lg:mt-0 lg:flex lg:w-2/4">
+        <div class="mt-8 sm:mt-10 md:mt-12 hidden lg:flex items-center lg:mt-0 lg:w-2/4">
             <div x-data="snippetCarousel({{ $snippetsJson }})" class="animate-fade-in flex flex-col items-center justify-center w-full">
-                <div class="flex items-center gap-3 justify-between w-full bg-[#272727] rounded-t-xl p-4">
-                    <div class="flex items-center gap-3">
+                <div class="flex items-center gap-2 sm:gap-3 justify-between w-full bg-[#272727] rounded-t-xl p-3 sm:p-4">
+                    <div class="flex items-center gap-2 sm:gap-3">
                         <div class="w-2 h-2 rounded-full bg-helper-error"></div>
                         <div class="w-2 h-2 rounded-full bg-helper-warning"></div>
                         <div class="w-2 h-2 rounded-full bg-helper-success"></div>
                     </div>
                     <div>
-                        <h2 class="font-semibold text-text-light">invest.php</h2>
+                        <h2 class="font-semibold text-text-light text-sm sm:text-base">invest.php</h2>
                     </div>
                     <div class="w-6 h-2"></div>
                 </div>
@@ -76,9 +76,27 @@
             opacity: 1;
         }
 
-        @media (max-width: 768px) {
+        @media (min-width: 1024px) {
             .snippet-carousel {
-                min-height: 200px;
+                min-height: 350px;
+                max-width: 650px;
+            }
+
+            .snippet-carousel code {
+                font-size: 1rem;
+                line-height: 1.6;
+            }
+        }
+
+        @media (min-width: 1280px) {
+            .snippet-carousel {
+                min-height: 400px;
+                max-width: 700px;
+            }
+
+            .snippet-carousel code {
+                font-size: 1.1rem;
+                line-height: 1.7;
             }
         }
     </style>

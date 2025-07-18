@@ -39,8 +39,8 @@
                     description="We guide you through every step of your international investment journey with a proven 3-step process designed specifically for tech professionals." />
             </div>
         </div>
-        <!-- TODO: Responsividade não confiável -->
-        <div class="mx-auto py-16 relative">
+
+        <div class="hidden lg:block mx-auto py-16 relative">
             <img src="{{ asset('images/dashed-line-1.svg') }}" alt="Process Background" class="absolute top-[314px] left-[80px]">
             <img src="{{ asset('images/dashed-line-2.svg') }}" alt="Process Background" class="absolute top-[769px] left-[780px]">
             <div class="grid grid-cols-16 gap-4">
@@ -59,11 +59,20 @@
             </div>
         </div>
 
+        <div class="lg:hidden py-8 sm:py-12 md:py-16">
+            <div class="flex flex-col space-y-8 sm:space-y-12">
+                @foreach ($cards as $card)
+                    <x-code-capital.partials.process-card :icon="$card['icon']" :number="$card['number']" :badge="$card['badge']"
+                        :title="$card['title']" :description="$card['description']" class="justify-center" />
+                @endforeach
+            </div>
+        </div>
+
         <div class="flex flex-col items-center justify-center space-y-6 text-center">
-            <p class="text-text-medium">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris eu augue erat. Duis velit eros, suscipit at nisi vitae, faucibus hendrerit turpis. 
+            <p class="text-text-medium max-w-3xl mx-auto text-sm sm:text-base">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris eu augue erat. Duis velit eros, suscipit at nisi vitae, faucibus hendrerit turpis.
             </p>
-            <x-layout.shared.button class="px-8 py-4 font-semibold">
+            <x-layout.shared.button class="px-6 sm:px-8 py-3 sm:py-4 font-semibold w-full sm:w-auto">
                 CTA Button
             </x-layout.shared.button>
         </div>
