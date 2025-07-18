@@ -21,48 +21,37 @@
     ],
 ])
 
-<!-- "Nosso Atendimento" Section -->
-<section id="nosso-atendimento" class="mx-auto text-text-dark dark:text-text-light  overflow-hidden">
-    <div class="mx-auto container lg:flex lg:items-center lg:justify-between lg:space-x-12 relative z-10">
-        <!-- Coluna da Esquerda -->
-        <div class="lg:w-1/2 mb-12 lg:mb-0 space-y-10">
-            <!-- Small Label -->
+<section id="nosso-atendimento" class="mx-auto text-text-dark dark:text-text-light overflow-hidden py-8 md:py-16 lg:py-20">
+    <div class="mx-auto container px-4 md:px-6 lg:flex lg:items-center lg:justify-between lg:space-x-12 relative z-10">
+        <div class="lg:w-1/2 mb-8 md:mb-12 lg:mb-0 space-y-6 md:space-y-8 lg:space-y-10">
             <x-layout.shared.chip>
                 {{ $subheading }}
             </x-layout.shared.chip>
-            <!-- Main Heading -->
             <h2
-                class="text-text-dark dark:text-text-light font-bold text-4xl sm:text-5xl  leading-tight mb-6 tracking-tight">
+                class="text-text-dark dark:text-text-light font-bold text-2xl sm:text-3xl md:text-4xl lg:text-5xl leading-tight tracking-tight">
                 {{ $heading }}
             </h2>
-            <!-- Descriptive Paragraph -->
-            <p class="text-text-medium mb-8 max-w-2xl leading-relaxed">
+            <p class="text-text-medium text-sm sm:text-base md:text-lg max-w-2xl leading-relaxed">
                 {{ $description }}
             </p>
-            <!-- CTA: "Saiba Mais" with Circle + Arrow -->
-            <x-layout.shared.button :href="$cta_link" variant="primary" class="px-8 py-3">
+            <x-layout.shared.button :href="$cta_link" variant="primary" class="w-full sm:w-auto px-6 md:px-8 py-3">
                 {{ $cta_label }}
             </x-layout.shared.button>
         </div>
 
-        <!-- Coluna da Direita: Cards -->
-        <div class="lg:w-1/2 relative pb-10 md:pt-10 md:pr-10 md:pl-10">
-            <!-- Um único elemento L para toda a seção -->
+        <div class="lg:w-1/2 relative pb-6 md:pb-10 md:pt-10 md:pr-10 md:pl-10">
             <div class="hidden md:block md:absolute bottom-0 left-0">
-                <div class="w-32 h-[13px] bg-brand-primary"></div>
-                <div class="absolute bottom-0 left-0 h-32 w-[13px] bg-brand-primary"></div>
+                <div class="w-20 md:w-32 h-[8px] md:h-[13px] bg-brand-primary"></div>
+                <div class="absolute bottom-0 left-0 h-20 md:h-32 w-[8px] md:w-[13px] bg-brand-primary"></div>
             </div>
-            <!-- Coluna da cima esquerda -->
             <div class="hidden md:block md:absolute top-0 right-0">
-                <div class="w-32 h-[13px] bg-brand-primary"></div>
-                <div class="absolute top-0 right-0 h-32 w-[13px] bg-brand-primary"></div>
+                <div class="w-20 md:w-32 h-[8px] md:h-[13px] bg-brand-primary"></div>
+                <div class="absolute top-0 right-0 h-20 md:h-32 w-[8px] md:w-[13px] bg-brand-primary"></div>
             </div>
 
-
-            <!-- Área dos cards -->
-            <div class="space-y-10">
+            <div class="space-y-4 md:space-y-6 lg:space-y-10">
                 @foreach ($cards as $index => $card)
-                    <x-landing.card-info class="py-8 rounded-[20px]" :title="$card['title']" :description="$card['description']" />
+                    <x-landing.card-info class="py-4 md:py-6 lg:py-8 rounded-lg md:rounded-[20px]" :title="$card['title']" :description="$card['description']" />
                 @endforeach
             </div>
         </div>

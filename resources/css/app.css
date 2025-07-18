@@ -5,8 +5,18 @@
 @custom-variant dark (&:where(.dark, .dark *));
 
 @utility container {
-    padding-inline: 64px;
+    padding-inline: 16px;
+  @variant sm {
+    padding-inline: 24px;
+  }
+  @variant md {
+    padding-inline: 32px;
+  }
+  @variant lg {
+    padding-inline: 48px;
+  }
   @variant xl {
+    padding-inline: 64px;
     max-width: 1856px;
   }
 }

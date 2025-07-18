@@ -29,9 +29,9 @@ suscipit at nisi vitae, faucibus hendrerit turpis. ',
     <div class="mx-auto flex flex-col container">
         <div class="flex flex-col items-center gap-y-6">
             <x-layout.shared.chip>Escolha a Firelce</x-layout.shared.chip>
-            <x-landing.section-header :heading="$heading" :description="$description" />
+            <x-layout.shared.section-header :heading="$heading" :description="$description" />
         </div>
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
             <x-landing.card-cta :title="$cards[0]['title']" :description="$cards[0]['description']" />
             <x-landing.card-cta :title="$cards[1]['title']" :description="$cards[1]['description']" />
             <x-landing.card-cta :title="$cards[2]['title']" :description="$cards[2]['description']" :hasCTAButton="true" :cta_label="$cta_label"

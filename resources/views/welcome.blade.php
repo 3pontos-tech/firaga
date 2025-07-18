@@ -21,7 +21,7 @@
 
     <div class="bg-elevation-02dp dark:bg-[#232323]">
         <x-landing.hero :hero-data="$heroData"/>
-        <div class="flex flex-col gap-y-60">
+        <div class="flex flex-col gap-y-16 sm:gap-y-24 md:gap-y-32 lg:gap-y-40 xl:gap-y-60">
             <x-landing.our-work/>
             <div class="h-[1px] bg-outline-light dark:bg-outline-high container mx-auto"></div>
             <x-landing.solution-section />
