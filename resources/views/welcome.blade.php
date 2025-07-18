@@ -19,23 +19,25 @@
         <meta name="twitter:image" content="{{ asset('images/meta-logo.png')  }}">
     </x-slot:metatags>
 
-    <x-landing.hero :hero-data="$heroData"/>
-    <div class="flex flex-col gap-y-60">
-        <x-landing.our-work/>
-        <div class="h-[1px] bg-outline-light dark:bg-outline-high container mx-auto"></div>
-        <x-landing.solution-section />
-        <x-landing.cta-section/>
-        <x-landing.our-solutions :solutions="$solutions"/>
-        <div class="bg-[#2C2C2C] dark:bg-[#2C2C2C]">
-            <x-landing.plan-section
-                :heading="$plansData['heading']"
-                :description="$plansData['description']"
-                :plans="collect($plansData['plans'])"
-            />
+    <div class="bg-elevation-02dp dark:bg-[#232323]">
+        <x-landing.hero :hero-data="$heroData"/>
+        <div class="flex flex-col gap-y-60">
+            <x-landing.our-work/>
+            <div class="h-[1px] bg-outline-light dark:bg-outline-high container mx-auto"></div>
+            <x-landing.solution-section />
+            <x-landing.cta-section/>
+            <x-landing.our-solutions :solutions="$solutions"/>
+            <div class="bg-[#2C2C2C] dark:bg-[#2C2C2C]">
+                <x-landing.plan-section
+                    :heading="$plansData['heading']"
+                    :description="$plansData['description']"
+                    :plans="collect($plansData['plans'])"
+                />
+            </div>
+            <x-landing.video-stats />
+            <x-landing.cta-section/>
+            <x-landing.clients-review :cards="$clientReviews"/>
+            <x-landing.cta/>
         </div>
-        <x-landing.video-stats />
-        <x-landing.cta-section/>
-        <x-landing.clients-review :cards="$clientReviews"/>
-        <x-landing.cta/>
     </div>
 </x-layout.guest>

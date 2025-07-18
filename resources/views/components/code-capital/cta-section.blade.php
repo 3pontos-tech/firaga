@@ -1,4 +1,4 @@
-<section class="mt-60">
+<section>
     <div class="relative text-center flex flex-col items-center justify-center">
         <img src="{{ asset('images/globe.png') }}" alt="CTA Section" class="w-full h-full object-cover">
         <div class="absolute top-8 left-8">

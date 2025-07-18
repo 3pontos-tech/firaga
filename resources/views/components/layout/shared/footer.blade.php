@@ -1,5 +1,5 @@
-<footer class="relative bg-base-300 text-base-content py-16 ">
-    <div class="mx-auto relative z-10 container">
+<footer class=" bg-[#272727] text-base-content py-16 ">
+    <div class="mx-auto container">
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-12 animate-fade-in items-start">
 
             <div class="space-y-11 col-span-2">
