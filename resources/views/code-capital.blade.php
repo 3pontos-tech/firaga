@@ -79,7 +79,6 @@
     </x-slot>
 
     <x-code-capital.hero :hero-data="$herodata"/>
-
     <x-code-capital.process/>
     <x-code-capital.why-code-capital/>
     <x-code-capital.testimonial/>

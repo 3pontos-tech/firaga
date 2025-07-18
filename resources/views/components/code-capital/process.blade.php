@@ -39,23 +39,33 @@
                     description="We guide you through every step of your international investment journey with a proven 3-step process designed specifically for tech professionals." />
             </div>
         </div>
-        <div class="mx-auto py-16">
-            <div class="">
-
-                @foreach ($cards as $index => $card)
-                    <div class="relative">
-                        <div id="processCard"
-                            class="relative z-10 flex-1 flex items-center justify-center px-4 {{ $card['class'] }} mb-16">
-
-                            <x-code-capital.partials.process-card :icon="$card['icon']" :number="$card['number']" :badge="$card['badge']"
-                                :title="$card['title']" :description="$card['description']" :class="$index == 1 ? 'bg-gradient-to-r from-primary/5 to-transparent' : null" />
-                        </div>
-                    </div>
-                @endforeach
+        <!-- TODO: Responsividade não confiável -->
+        <div class="mx-auto py-16 relative">
+            <img src="{{ asset('images/dashed-line-1.svg') }}" alt="Process Background" class="absolute top-[314px] left-[80px]">
+            <img src="{{ asset('images/dashed-line-2.svg') }}" alt="Process Background" class="absolute top-[769px] left-[780px]">
+            <div class="grid grid-cols-16 gap-4">
+                <div class="col-span-7">
+                    <x-code-capital.partials.process-card :icon="$cards[0]['icon']" :number="$cards[0]['number']" :badge="$cards[0]['badge']"
+                        :title="$cards[0]['title']" :description="$cards[0]['description']" :class="$cards[0]['class']" />
+                </div>
+                <div class="col-start-6 col-span-7">
+                    <x-code-capital.partials.process-card :icon="$cards[1]['icon']" :number="$cards[1]['number']" :badge="$cards[1]['badge']"
+                        :title="$cards[1]['title']" :description="$cards[1]['description']" :class="$cards[1]['class']" />
+                </div>
+                <div class="col-start-10 col-span-7">
+                    <x-code-capital.partials.process-card :icon="$cards[2]['icon']" :number="$cards[2]['number']" :badge="$cards[2]['badge']"
+                        :title="$cards[2]['title']" :description="$cards[2]['description']" :class="$cards[2]['class']" />
+                </div>
             </div>
-
         </div>
 
-
+        <div class="flex flex-col items-center justify-center space-y-6 text-center">
+            <p class="text-text-medium">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris eu augue erat. Duis velit eros, suscipit at nisi vitae, faucibus hendrerit turpis. 
+            </p>
+            <x-layout.shared.button class="px-8 py-4 font-semibold">
+                CTA Button
+            </x-layout.shared.button>
+        </div>
     </div>
 </section>

@@ -8,8 +8,8 @@
 ])
 
 <div
-    class="z-10 flex flex-col  space-y-8 relative p-8 rounded-xl">
-    <div class="flex flex-row gap-2 items-center">
+    class="z-10 flex flex-col space-y-8 relative p-8 rounded-xl">
+    <div class="flex flex-row gap-y-0.5 gap-x-4 items-center">
         <div
             class="flex h-11 w-11 items-center justify-center rounded-full bg-brand-primary shadow-lg text-text-high text-2xl">
             <span>{{ $number }}</span>
