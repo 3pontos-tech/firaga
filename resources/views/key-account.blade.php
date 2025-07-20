@@ -81,8 +81,7 @@
     <x-key-account.hero :hero-data="$herodata"/>
 
     <x-key-account.why-code-capital/>
-    <x-code-capital.process/>
-    <x-code-capital.testimonial/>
+    <x-key-account.our-work/>
     <x-partials.faq
         :solutions="$solutions"
         :thumbnail="asset('images/stock/code-capital-person.png')"
