@@ -18,7 +18,7 @@
                 <x-layout.shared.button class="bg-brand-primary text-white p-3 sm:p-4 w-full sm:w-auto">
                     Agende uma consulta gratuita
                 </x-layout.shared.button>
-                <x-layout.shared.button variant="outline" class="text-text-high p-3 sm:p-4 w-full sm:w-auto">
+                <x-layout.shared.button variant="outlined" class="text-text-high p-3 sm:p-4 w-full sm:w-auto">
                     Saiba mais
                 </x-layout.shared.button>
             </div>

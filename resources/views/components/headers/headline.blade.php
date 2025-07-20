@@ -1,18 +1,16 @@
 @props([
     'headline' => '',
     'description' => '',
-    'buttonText' => '',
-    'buttonUrl' => '',
     'badge' => null,
+    'ctaButton' => null,
 ])
 
-<div class="animate-fade-in mx-auto w-full max-w-full text-center sm:max-w-xl md:max-w-7xl lg:w-2/3 lg:text-left space-y-4 md:space-y-6 lg:space-y-8">
+<div
+    class="animate-fade-in mx-auto w-full max-w-full text-center sm:max-w-xl md:max-w-7xl lg:w-2/3 lg:text-left space-y-4 md:space-y-6 lg:space-y-8">
     @if ($badge)
-    <div class="flex justify-center lg:justify-start">
-        <x-layout.shared.chip>
+        <div class="flex justify-center lg:justify-start">
             {{ $badge }}
-        </x-layout.shared.chip>
-    </div>
+        </div>
     @endif
 
     <h1
@@ -24,11 +22,6 @@
         {{ str($description) }}
     </p>
     <div class="flex flex-col sm:flex-row gap-3 sm:gap-x-4 items-center lg:items-start justify-center lg:justify-start">
-        <x-layout.shared.button :href="$buttonUrl" variant="primary" class="w-full sm:w-auto px-4 py-3 sm:p-4 font-bold text-sm sm:text-base">
-            Agende uma consulta
-        </x-layout.shared.button>
-        <x-layout.shared.button :href="$buttonUrl" variant="outline" class="w-full sm:w-auto px-4 py-3 sm:p-4 text-text-high font-bold text-sm sm:text-base lg:text-lg">
-            Button
-        </x-layout.shared.button>
+        {{ $ctaButton }}
     </div>
 </div>

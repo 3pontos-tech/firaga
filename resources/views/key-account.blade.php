@@ -1,7 +1,7 @@
 @php
     $herodata = [
-        "heading" => "Planejamento Financeiro para Profissionais de TI",
-        "subheading" => "Estratégias internacionais de investimento personalizadas para engenheiros de software, designers e profissionais de tecnologia. Faça seu patrimônio crescer globalmente com orientação especializada.",
+        "heading" => "Key account",
+        "subheading" => "O Key Account é a solução premium da Fire|ce para clientes que desejam um atendimento diferenciado e altamente personalizado. Nosso foco é fornecer consultoria financeira de alto nível para aqueles que buscam proteger, consolidar e expandir seu patrimônio de forma estratégica.",
         "button_text" => "Comece Agora",
         "button_url" => "#",
         "badge" => "Serviços",
@@ -78,7 +78,7 @@
         />
     </x-slot>
 
-    <x-code-capital.hero :hero-data="$herodata"/>
+    <x-key-account.hero :hero-data="$herodata"/>
 
     <x-code-capital.why-code-capital/>
     <x-code-capital.process/>

@@ -73,7 +73,7 @@
                     <x-layout.shared.button variant="primary" class="px-6 sm:px-8 py-3 sm:py-4 w-full sm:w-auto">
                         CTA Button
                     </x-layout.shared.button>
-                    <x-layout.shared.button variant="outline" class="px-6 sm:px-8 py-3 sm:py-4 w-full sm:w-auto">
+                    <x-layout.shared.button variant="outlined" class="px-6 sm:px-8 py-3 sm:py-4 w-full sm:w-auto">
                         CTA Button
                     </x-layout.shared.button>
                 </div>
