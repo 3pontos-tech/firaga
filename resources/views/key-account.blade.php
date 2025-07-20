@@ -77,14 +77,15 @@
             content="{{ asset("images/meta-logo.png") }}"
         />
     </x-slot>
-
+<div class="bg-elevation-02dp">
     <x-key-account.hero :hero-data="$herodata"/>
-
     <x-key-account.why-code-capital/>
     <x-key-account.our-work/>
+    <x-key-account.our-work-2/>
+    <x-code-capital.cta-section />
     <x-partials.faq
         :solutions="$solutions"
         :thumbnail="asset('images/stock/code-capital-person.png')"
     />
-
+</div>
 </x-layout.guest>

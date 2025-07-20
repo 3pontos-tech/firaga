@@ -15,6 +15,6 @@
     $finalClasses = $baseClasses . ' ' . $variantClasses . ' ' . $class;
 @endphp
 
-<div class="px-4 py-2 border border-brand-primary  text-text-high font-bold flex items-center gap-[10px] w-fit rounded-full {{ $finalClasses }}">
+<div class="px-2 sm:px-3 lg:px-4 py-1 sm:py-1.5 lg:py-2 border border-brand-primary text-text-high font-bold flex items-center gap-2 sm:gap-2.5 lg:gap-[10px] w-fit rounded-full text-xs sm:text-sm lg:text-base {{ $finalClasses }}">
     {{ $slot }}
 </div>
