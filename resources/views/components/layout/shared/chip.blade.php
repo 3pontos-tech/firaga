@@ -11,7 +11,7 @@
 
     $variantClasses = $variants[$variant] ?? $variants['primary'];
     $baseClasses =
-        'inline-flex items-center justify-center rounded-lg transition-all duration-200';
+        'inline-flex items-center justify-center transition-all duration-200';
     $finalClasses = $baseClasses . ' ' . $variantClasses . ' ' . $class;
 @endphp
 

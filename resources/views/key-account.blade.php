@@ -80,7 +80,7 @@
 
     <x-key-account.hero :hero-data="$herodata"/>
 
-    <x-code-capital.why-code-capital/>
+    <x-key-account.why-code-capital/>
     <x-code-capital.process/>
     <x-code-capital.testimonial/>
     <x-partials.faq
