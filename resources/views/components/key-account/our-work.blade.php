@@ -1,4 +1,4 @@
-<section class="py-8 sm:py-12 md:py-16 lg:py-20 xl:py-30 ">
+<section class="min-h-screen py-60 flex items-center">
     <div class="container mx-auto">
         <div class="flex flex-col lg:flex-row gap-8 lg:gap-12 items-center justify-between">
             <div class="w-full lg:w-1/2 xl:w-[806px] relative order-2 lg:order-1">

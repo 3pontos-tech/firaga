@@ -3,7 +3,7 @@
 ])
 
 <!-- Hero Section -->
-<section class="relative min-h-screen flex flex-col items-center overflow-hidden py-16 md:py-28 gap-y-12 md:gap-y-20 bg-gradient-to-b from-[#131314] to-[#09090A]">
+<section class="relative min-h-[75vh] flex flex-col items-center overflow-hidden py-16 md:py-28 gap-y-12 md:gap-y-20 bg-gradient-to-b from-[#131314] to-[#09090A]">
 
     <div class="relative mx-auto lg:flex lg:items-center lg:justify-between z-10 container px-4 md:px-6">
         <div class="flex justify-center items-center mb-8 lg:hidden">
@@ -35,4 +35,5 @@
             </div>
         </div>
     </div>
+
 </section>
