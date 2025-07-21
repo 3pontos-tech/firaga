@@ -5,7 +5,7 @@
 
 @php
     $variants = [
-        'primary' => 'bg-brand-primary/40 hover:bg-brand-primary/90 text-white ',
+        'primary' => 'bg-brand-primary/40 hover:bg-brand-primary/90 text-white border border-brand-primary ',
         'metalic' => 'border border-white/30 text-white',
         'custom' => '',
     ];
@@ -16,6 +16,6 @@
     $finalClasses = $baseClasses . ' ' . $variantClasses . ' ' . $class;
 @endphp
 
-<div class="border border-brand-primary text-text-high font-bold flex items-center gap-2 sm:gap-2.5 lg:gap-[10px] w-fit rounded-full {{ $finalClasses }}">
+<div class="font-bold flex items-center gap-2 sm:gap-2.5 lg:gap-[10px] w-fit rounded-full {{ $finalClasses }}">
     {{ $slot }}
 </div>
