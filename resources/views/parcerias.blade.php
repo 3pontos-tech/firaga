@@ -78,14 +78,10 @@
         />
     </x-slot>
 
-    <x-code-capital.hero :hero-data="$herodata"/>
-
-    <x-code-capital.why-code-capital/>
-    <x-code-capital.process/>
-    <x-code-capital.testimonial/>
-    <x-partials.faq
-        :solutions="$solutions"
-        :thumbnail="asset('images/stock/code-capital-person.png')"
-    />
-
+    <x-partners.hero/>
+    <x-partners.our-work/>
+    <x-partners.our-work2/>
+    <x-partners.about-us/>
+    <x-partners.synergy/>
+    <x-partials.faq :solutions="$solutions" :thumbnail="asset('images/stock/partner-faq.png')"/>
 </x-layout.guest>

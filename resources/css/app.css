@@ -648,11 +648,11 @@
         --helper-warning: var(--yellow-300);
         --helper-error: var(--red-300);
         --helper-neutral: var(--brand-300);
-        --elevation-surface: #09090a;
-        --elevation-01dp: #0f0f10;
-        --elevation-02dp: #131314;
-        --elevation-03dp: #151516;
-        --elevation-04dp: #181819;
-        --elevation-05dp: #1c1c1f;
+        --elevation-surface: #232323;
+        --elevation-01dp: #272727;
+        --elevation-02dp: #2C2C2C;
+        --elevation-03dp: #303030;
+        --elevation-04dp: #343434;
+        --elevation-05dp: #393939;
     }
 }

@@ -5,8 +5,8 @@
 
 @php
     $variants = [
-        'primary' => 'bg-brand-primary hover:bg-brand-primary/90 text-white ',
-        'metalic' => 'border border-white bg-white/20 text-white'
+        'primary' => 'bg-brand-primary/40 hover:bg-brand-primary/90 text-white ',
+        'metalic' => 'border border-white/30  text-white'
     ];
 
     $variantClasses = $variants[$variant] ?? $variants['primary'];
