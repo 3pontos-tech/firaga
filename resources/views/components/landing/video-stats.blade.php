@@ -27,7 +27,7 @@
 <section class="py-12 md:py-16 lg:py-32 xl:py-40">
     <div class="container max-w-7xl mx-auto px-4 md:px-6 relative z-10">
         <div class="text-center mb-8 md:mb-16 flex flex-col items-center gap-y-6">
-            <x-layout.shared.chip>Estatísticas</x-layout.shared.chip>
+            <x-layout.shared.chip class="px-4 py-2">Estatísticas</x-layout.shared.chip>
             <x-layout.shared.section-header heading="Nossa história"
                 description="Na nossa consultoria, entendemos que cada cliente é único. Por isso, desenvolvemos uma metodologia personalizada que se adapta às suas necessidades e objetivos financeiros. Nossa abordagem é baseada em três pilares fundamentais: Análise de Perfil, Planejamento Estratégico e Execução com Suporte Contínuo." />
         </div>

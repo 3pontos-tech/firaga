@@ -5,7 +5,7 @@
 ])
 
 
-<div class="bg-gradient-to-tr from-base-200 to-base-300 py-16">
+<div class="bg-pink-500 py-16">
     <div class="max-w-6xl mx-auto px-4">
         <h2 class="text-4xl font-bold text-center mb-3 text-base-content">{{ $heading }}</h2>
         <p class="text-base-content/90 text-center mb-16 max-w-3xl mx-auto">{{ $subheading }}</p>

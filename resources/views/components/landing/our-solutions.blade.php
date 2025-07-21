@@ -40,7 +40,7 @@
     <div class="py-12 sm:py-16 md:py-20 lg:py-24 mx-auto flex flex-col items-center container">
         <div class="mb-8 sm:mb-12 md:mb-16 px-4 md:px-8 flex flex-col items-center justify-center gap-y-4 sm:gap-y-6"
              style="opacity: 1; transform: none; will-change: opacity, transform;">
-            <x-layout.shared.chip>Nossas especialidades</x-layout.shared.chip>
+            <x-layout.shared.chip class="px-4 py-2">Nossas especialidades</x-layout.shared.chip>
             <x-layout.shared.section-header :heading="$heading" :description="$description"/>
         </div>
         <div class="mx-4 sm:mx-5 overflow-hidden rounded-xl sm:rounded-2xl">

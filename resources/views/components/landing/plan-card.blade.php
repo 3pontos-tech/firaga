@@ -2,7 +2,7 @@
 
 @php
     $isPopular = $plan['popular'] ?? false;
-    $buttonVariant = $isPopular == 2 ? 'secondary' : 'outline';
+    $buttonVariant = $isPopular == 2 ? 'secondary' : 'outlined';
     $mainTextColor = $isPopular == 2 ? 'text-text-light' : 'text-text-medium';
 @endphp
 
