@@ -8,9 +8,7 @@
 <div
     class="animate-fade-in mx-auto w-full max-w-full text-center sm:max-w-xl md:max-w-7xl lg:w-2/3 lg:text-left space-y-4 md:space-y-6 lg:space-y-8">
     @if ($badge)
-        <div class="flex justify-center lg:justify-start">
-            {{ $badge }}
-        </div>
+        <x-layout.shared.chip class="px-2">{{ $badge }}</x-layout.shared.chip>
     @endif
 
     <h1

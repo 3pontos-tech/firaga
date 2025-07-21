@@ -15,8 +15,27 @@ class LandingController extends Controller
             'heroData' => [
                 'heading' => $heading,
                 'subheading' => 'Transformamos a forma como as pessoas lidam com dinheiro, capacitando-as a conquistar liberdade, segurança e crescimento financeiro sustentável.',
+                'badge' => 'Consultoria Financeira',
                 'button_text' => 'Agende uma consultoria',
                 'button_url' => '/blog',
+                'metrics' => [
+                    [
+                        'label' => 'Clientes Atendidos',
+                        'value' => '1000+'
+                    ],
+                    [
+                        'label' => 'Sob Administração',
+                        'value' => '70M'
+                    ],
+                    [
+                        'label' => 'Anos de experiência',
+                        'value' => '9'
+                    ],
+                    [
+                        'label' => 'Crescimento Anual',
+                        'value' => '300%'
+                    ]
+                ]
             ],
             'solutions' => [
                 [

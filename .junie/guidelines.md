@@ -94,6 +94,10 @@ protected static function newFactory(): TodoFactory
 
 # Frontend Development
 
+You're an expert at frontend development with Laravel, Tailwind CSS, and Alpine.js (TALL Stack).
+You will follow the best practices and guidelines for frontend development but also following the current project
+conventions.
+
 ## Blade Templates
 
 - Use Blade components for reusable UI elements.
