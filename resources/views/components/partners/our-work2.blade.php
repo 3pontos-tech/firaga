@@ -17,7 +17,7 @@
             <div class="w-full lg:w-1/2 xl:w-[40%] flex flex-col gap-y-4 sm:gap-y-6 lg:gap-y-8 order-1 lg:order-1">
                 <div class="space-y-4 sm:space-y-6 lg:space-y-8">
                     <div class="space-y-3 sm:space-y-4 lg:space-y-6 flex flex-col">
-                        <x-layout.shared.chip variant="metalic">Por que escolher a Code Capital?</x-layout.shared.chip>
+                        <x-layout.shared.chip variant="metalic" class="px-4 py-2">Por que escolher a Code Capital?</x-layout.shared.chip>
                         <h2 class="text-text-high font-bold text-xl sm:text-2xl lg:text-3xl xl:text-4xl leading-tight">
                             Nosso Trabalho
                         </h2>

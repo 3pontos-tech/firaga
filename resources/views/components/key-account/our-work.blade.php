@@ -15,7 +15,7 @@
                     description="O Key Account é o modelo de atendimento premium da Fire|ce, pensado para clientes que exigem um nível mais alto de personalização, estratégia e confidencialidade.
 Aqui, o planejamento financeiro vai além da organização: ele se transforma em um instrumento de segurança, expansão e legado.">
                     <x-slot name="badge">
-                        <x-layout.shared.chip variant="metalic">
+                        <x-layout.shared.chip variant="metalic" class="px-4 py-2">
                             Por que escolher a Code Capital?
                         </x-layout.shared.chip>
                     </x-slot>

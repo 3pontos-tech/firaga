@@ -4,7 +4,7 @@
     <div
         class="py-12 sm:py-16 md:py-20 lg:py-24 mx-auto flex flex-col container px-4 sm:px-6 lg:px-8">
         <div class="w-full" style="opacity: 1; transform: none; will-change: opacity, transform;">
-            <x-layout.shared.chip variant="metalic">
+            <x-layout.shared.chip variant="metalic" class="px-4 py-2">
                 Avaliações
             </x-layout.shared.chip>
             <h2 class="text-text-high text-xl sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl font-bold leading-tight mt-4">

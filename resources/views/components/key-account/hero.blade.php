@@ -13,7 +13,7 @@
         <x-headers.headline :headline="$heroData['heading']" :description="$heroData['subheading']">
 
             <x-slot name="badge">
-                <x-layout.shared.chip variant="metalic">
+                <x-layout.shared.chip variant="metalic" class="px-4 py-2">
                     {{ $heroData['badge'] }}
                 </x-layout.shared.chip>
             </x-slot>

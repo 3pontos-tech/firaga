@@ -1,6 +1,6 @@
 <section class="bg-elevation-02dp border-y border-outline-dark min-h-screen py-16 flex items-center">
     <div class="container mx-auto px-4 sm:px-6 lg:px-8 flex flex-col gap-y-8 sm:gap-y-12 md:gap-y-16 justify-center items-center w-full">
-        <x-layout.shared.chip variant="metalic">
+        <x-layout.shared.chip variant="metalic" class="px-4 py-2">
             Por que escolher a Code Capital?
         </x-layout.shared.chip>
         <x-layout.shared.section-header heading="Lorem Ipsum dolor sit amet"
