@@ -62,13 +62,15 @@
 
     <div class="bg-elevation-surface">
         <x-work-with-us.hero />
-        <x-work-with-us.solution-section />
-        <x-work-with-us.our-work />
-        <x-code-capital.testimonial />
-        <x-code-capital.cta-section />
-        <x-landing.contact-form />
-        <x-partials.faq :solutions="$solutions" :thumbnail="asset('images/stock/faq-work-with-us.png')" />
-        <x-landing.cta />
+        <div class="flex flex-col gap-y-6 sm:gap-y-8 md:gap-y-12 lg:gap-y-16 xl:gap-y-20 mt-6 sm:mt-8 md:mt-12 lg:mt-16 xl:mt-20">
+            <x-work-with-us.solution-section />
+            <x-work-with-us.our-work />
+            <x-code-capital.testimonial />
+            <x-code-capital.cta-section />
+            <x-landing.contact-form />
+            <x-partials.faq :solutions="$solutions" :thumbnail="asset('images/stock/faq-work-with-us.png')" />
+            <x-landing.cta />
+        </div>
     </div>
 
 </x-layout.guest>
