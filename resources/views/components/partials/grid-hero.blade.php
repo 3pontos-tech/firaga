@@ -1,25 +1,23 @@
 @props([
     'subheading' => 'Conhecimento Financeiro',
-    'heading' => 'Blog',
-    'description' => 'Insights, estratégias e conhecimento especializado para acelerar sua jornada rumo à independência financeira.',
+    'heading' => 'Blog Fire|ce',
+    'description' => 'Transformamos a forma como as pessoas lidam com dinheiro, capacitando-as a conquistar liberdade, segurança e crescimento financeiro sustentável.',
 ])
-<section class="relative overflow-hidden py-20 bg-linear-to-br from-base-200 via-base-300 to-base-200">
+<section class="relative overflow-hidden min-h-[55vh] flex items-center justify-center bg-elevation-02dp">
     <div class="max-w-4xl mx-auto text-center">
         <div class="flex items-center justify-center gap-4 mb-6">
             <div class="h-1 w-12 bg-primary"></div>
-            <span
-                class="text-sm font-semibold uppercase tracking-wider text-base-content">
+                <x-layout.shared.chip class="px-4 py-2">
                     {{ $subheading }}
-                </span>
+                </x-layout.shared.chip>
             <div class="h-1 w-12 bg-primary"></div>
         </div>
 
-        <h1 class="text-4xl font-bold text-base-content mb-6 md:text-5xl lg:text-6xl">
+        <h1 class="text-7xl font-bold text-text-high mb-6 md:text-5xl lg:text-6xl">
             {{ $slot ?? $heading }}
         </h1>
-        <p class="text-lg text-base-content/90 md:text-xl max-w-2xl mx-auto">
+        <p class="text-text-medium text-lg max-w-5xl mx-auto">
             {{ $description }}
         </p>
     </div>
-
 </section>

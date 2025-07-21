@@ -71,7 +71,7 @@
         @stack('styles')
         @livewireStyles
     </head>
-    <body class="bg-[#232323] antialiased">
+    <body>
 
     <!-- Gradient Overlay Layer -->
     <!-- <div class="fixed inset-0 z-[9999] pointer-events-none bg-gradient-to-b from-primary/3 to-base-100/3 mix-blend-normal"></div> -->
