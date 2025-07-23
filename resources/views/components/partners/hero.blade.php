@@ -5,7 +5,7 @@
 <section class="min-h-[125vh] flex flex-col items-center justify-center">
     <div class="container">
         <div class="flex flex-col items-center justify-center gap-y-6">
-            <x-layout.shared.chip variant="primary">
+            <x-layout.shared.chip variant="primary" class="px-4 py-2">
                 Serviços
             </x-layout.shared.chip>
             <h1 class="font-bold text-text-high text-[80px]">Parcerias</h1>

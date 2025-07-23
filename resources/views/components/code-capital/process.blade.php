@@ -31,10 +31,10 @@
 @endphp
 
 <section class="w-full">
-    <div class="container px-4 md:px-6 mx-auto">
+    <div class="container mx-auto">
         <div class="flex flex-col items-center justify-center space-y-6 text-center">
             <div class="space-y-4 max-w-5xl flex flex-col items-center justify-center">
-                <x-layout.shared.chip>Por que escolher a Code Capital?</x-layout.shared.chip>
+                <x-layout.shared.chip class="px-4 py-2">Por que escolher a Code Capital?</x-layout.shared.chip>
                 <x-layout.shared.section-header heading="Your Journey to International Investment Success"
                     description="We guide you through every step of your international investment journey with a proven 3-step process designed specifically for tech professionals." />
             </div>

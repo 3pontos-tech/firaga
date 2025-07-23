@@ -77,11 +77,12 @@
             content="{{ asset("images/meta-logo.png") }}"
         />
     </x-slot>
-
+<div class="bg-elevation-surface">
     <x-partners.hero/>
     <x-partners.our-work/>
     <x-partners.our-work2/>
     <x-partners.about-us/>
     <x-partners.synergy/>
     <x-partials.faq :solutions="$solutions" :thumbnail="asset('images/stock/partner-faq.png')"/>
+</div>
 </x-layout.guest>

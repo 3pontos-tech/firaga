@@ -1,8 +1,8 @@
-<div class="container mx-auto px-4 md:px-6">
+<div class="container mx-auto">
     <div class="flex flex-col lg:flex-row lg:justify-between lg:items-end gap-8 lg:gap-12">
         <div class="w-full lg:w-4/6 flex flex-col">
             <div class="flex flex-col gap-y-6 sm:gap-y-8 md:gap-y-10">
-                <x-layout.shared.chip>
+                <x-layout.shared.chip class="px-4 py-2">
                     Por que escolher a Code Capital?
                 </x-layout.shared.chip>
                 <h2 class="text-text-high font-bold text-2xl sm:text-3xl md:text-4xl lg:text-5xl leading-tight">

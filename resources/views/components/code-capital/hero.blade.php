@@ -12,14 +12,34 @@
 @endphp
 
 <section class="gap-5 flex min-h-1/2 items-center overflow-hidden py-12 sm:py-16 md:py-20 lg:py-24 md:min-h-[50vh]">
-    <div class="container mx-auto px-4 sm:px-6 lg:px-8 lg:flex lg:items-center lg:justify-between">
+    <div class="container mx-auto lg:flex lg:items-center lg:justify-between">
         <div class="mb-8 lg:hidden">
-            <h2 class="text-brand-primary text-center text-2xl sm:text-3xl md:text-4xl font-bold">&lt;code-capital/&gt;</h2>
+            <h2 class="text-brand-primary text-center text-2xl sm:text-3xl md:text-4xl font-bold">&lt;code-capital/&gt;
+            </h2>
         </div>
-        <x-headers.headline :headline="$heroData['heading']" :description="$heroData['subheading']" :button-text="$heroData['button_text']" :button-url="$heroData['button_url']" :badge="$heroData['badge']" />
-        <div class="mt-8 sm:mt-10 md:mt-12 hidden lg:flex items-center lg:mt-0 lg:w-2/4">
+
+        <x-headers.headline :headline="$heroData['heading']" :description="$heroData['subheading']" :button-text="$heroData['button_text']" :button-url="$heroData['button_url']">
+            <x-slot name="badge">
+                <x-layout.shared.chip class="px-4 py-2">
+                    {{ $heroData['badge'] }}
+                </x-layout.shared.chip>
+            </x-slot>
+
+            <x-slot name="ctaButton">
+                <x-layout.shared.button :href="$heroData['button_url']" variant="primary"
+                    class="w-full sm:w-auto px-4 py-3 sm:p-4 font-bold text-sm sm:text-base">
+                    Agende uma consulta
+                </x-layout.shared.button>
+                <x-layout.shared.button :href="$heroData['button_url']" variant="outlined"
+                    class="w-full sm:w-auto px-4 py-3 sm:p-4 font-bold text-sm sm:text-base text-text-high">
+                    CTA Button
+                </x-layout.shared.button>
+            </x-slot>
+        </x-headers.headline>
+        <div class="mt-8 sm:mt-10 md:mt-12 hidden lg:flex items-center lg:mt-0 lg:w-2/5">
             <div x-data="snippetCarousel({{ $snippetsJson }})" class="animate-fade-in flex flex-col items-center justify-center w-full">
-                <div class="flex items-center gap-2 sm:gap-3 justify-between w-full bg-[#272727] rounded-t-xl p-3 sm:p-4">
+                <div
+                    class="flex items-center gap-2 sm:gap-3 justify-between w-full bg-elevation-01dp rounded-t-xl p-3 sm:p-4">
                     <div class="flex items-center gap-2 sm:gap-3">
                         <div class="w-2 h-2 rounded-full bg-helper-error"></div>
                         <div class="w-2 h-2 rounded-full bg-helper-warning"></div>

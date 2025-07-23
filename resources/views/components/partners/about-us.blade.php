@@ -1,4 +1,4 @@
-<div class="container mx-auto px-4 md:px-6">
+<div class="container mx-auto">
     <div class="flex flex-col lg:flex-row lg:justify-around lg:items-center gap-8 lg:gap-12">
         <div class="w-full  flex flex-col">
             <div class="flex flex-col gap-y-6 sm:gap-y-8 md:gap-y-10">

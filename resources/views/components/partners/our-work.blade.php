@@ -21,10 +21,10 @@
     ],
 ])
 
-<section id="nosso-atendimento" class="mx-auto text-text-dark dark:text-text-light overflow-hidden py-8 md:py-16 lg:py-20">
-    <div class="mx-auto container px-4 md:px-6 lg:flex lg:items-center lg:justify-between lg:space-x-12 relative z-10">
+<section id="nosso-atendimento" class="mx-auto text-text-dark dark:text-text-light overflow-hidden py-8 md:py-16 lg:py-20 container  ">
+    <div class="lg:flex lg:items-center lg:justify-between lg:space-x-12 relative z-10">
         <div class="lg:w-1/2 mb-8 md:mb-12 lg:mb-0 space-y-6 md:space-y-8 lg:space-y-10">
-            <x-layout.shared.chip>
+            <x-layout.shared.chip class="px-4 py-2">
                 {{ $subheading }}
             </x-layout.shared.chip>
             <h2

@@ -6,7 +6,7 @@
 ])
 
 <div
-    class="animate-fade-in mx-auto w-full max-w-full text-center sm:max-w-xl md:max-w-7xl lg:w-2/3 lg:text-left space-y-4 md:space-y-6 lg:space-y-8">
+    class="animate-fade-in mx-auto container w-full max-w-full text-center sm:max-w-xl md:max-w-7xl lg:w-2/3 lg:text-left space-y-4 md:space-y-6 lg:space-y-8">
     {{ $badge }}
     <h1
         class="text-text-high mb-2 sm:mb-4 text-center text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl 2xl:text-[80px] font-bold drop-shadow-lg lg:text-left leading-tight">

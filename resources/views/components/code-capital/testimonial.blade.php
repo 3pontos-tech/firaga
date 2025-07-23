@@ -10,7 +10,7 @@
 ])
 
 <section class="py-8 sm:py-12 md:py-16 text-white">
-    <div class="container mx-auto px-4 md:px-6">
+    <div class="container mx-auto">
         <div class="grid gap-8 lg:gap-12 lg:grid-cols-16">
             <div class="flex flex-col items-center overflow-hidden rounded-xl lg:col-span-7 gap-y-6 sm:gap-y-8">
                 <iframe class="h-full w-full aspect-video" src="{{ $video_url }}" title="YouTube video player"
@@ -36,7 +36,7 @@
             </div>
             <div class="space-y-6 sm:space-y-8 lg:col-start-9 lg:col-span-8">
                 <div class="space-y-4 flex flex-col gap-y-4">
-                    <x-layout.shared.chip>Histórias que Inspiram</x-layout.shared.chip>
+                    <x-layout.shared.chip class="px-4 py-2">Histórias que Inspiram</x-layout.shared.chip>
                     <h2 class="text-text-high font-bold text-3xl sm:text-4xl lg:text-5xl leading-tight">
                         {{ $heading }}
                     </h2>

@@ -1,8 +1,8 @@
-<section class="container min-h-[50vh] mx-auto px-4 md:px-6 flex items-center justify-center">
+<section class="container min-h-[50vh] mx-auto flex items-center justify-center">
     <div class="flex flex-col lg:flex-row lg:justify-around lg:items-center gap-8 lg:gap-12">
         <div class="w-full flex flex-col">
             <div class="flex flex-col gap-y-6 sm:gap-y-8 md:gap-y-10">
-                <x-layout.shared.chip variant="primary">
+                <x-layout.shared.chip variant="primary" class="px-4 py-2">
                     Sinergia
                 </x-layout.shared.chip>
                 <h1 class="font-bold text-text-high text-5xl">Title</h1>

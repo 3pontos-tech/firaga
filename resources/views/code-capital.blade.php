@@ -60,7 +60,7 @@
         <meta name="twitter:image" content="{{ asset('images/meta-logo.png') }}" />
     </x-slot>
 
-    <div class="bg-elevation-02dp dark:bg-[#232323] flex flex-col space-y-60 last:mb-60">
+    <div class="bg-elevation-02dp dark:bg-[#232323] flex flex-col space-y-60 ">
         <x-code-capital.hero :hero-data="$herodata" />
         <x-code-capital.process />
         <x-code-capital.cta-section />

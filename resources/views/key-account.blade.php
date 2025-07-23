@@ -97,7 +97,7 @@
             content="Transforme sua vida financeira com clareza, estratégia e propósito." />
         <meta name="twitter:image" content="{{ asset('images/meta-logo.png') }}" />
     </x-slot>
-    <div class="bg-elevation-surface">
+    <div class="bg-[#09090A]">
         <x-key-account.hero :hero-data="$herodata" />
         <x-key-account.why-code-capital />
         <x-key-account.our-work />

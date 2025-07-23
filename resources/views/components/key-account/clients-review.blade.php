@@ -1,8 +1,8 @@
 @props(['cards' => []])
 
-<section class="bg-elevation-02dp border-y border-outline-dark">
+<section class="bg-[#131314] border-y border-outline-dark">
     <div
-        class="py-12 sm:py-16 md:py-20 lg:py-24 mx-auto flex flex-col container px-4 sm:px-6 lg:px-8">
+        class="py-12 sm:py-16 md:py-20 lg:py-24 mx-auto flex flex-col container">
         <div class="w-full" style="opacity: 1; transform: none; will-change: opacity, transform;">
             <x-layout.shared.chip variant="metalic" class="px-4 py-2">
                 Avaliações
