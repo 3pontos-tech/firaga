@@ -7,7 +7,7 @@
     <!-- Background Image with Shadow -->
     <div class="absolute inset-0 z-0">
         <img src="{{ asset('images/stock/work-with-us-hero.jpg') }}" alt="Trabalhe conosco" class="w-full h-full object-cover object-top">
-        <div class="absolute inset-0 bg-gradient-to-t from-elevation-surface via-elevation-surface/40 bg-elevation-surface/50"></div>
+        <div class="absolute inset-0 bg-gradient-to-t from-elevation-surface to-elevation-surface/20 bg-elevation-surface/50"></div>
     </div>
 
     <div class="max-w-4xl mx-auto text-center relative z-10">

@@ -10,24 +10,24 @@
 
     $solutions = [
         [
-            'question' => 'Nossa Missão',
+            'question' => 'Qual o perfil ideal para o Key Account?',
             'answer' =>
-                'Poder auxiliar profissionais que já recebem em moeda estrangeira e que desejam investir também fora do Brasil, entendendo a instabilidade comum do Real. Tudo isso de forma online, sem perder o contato humano e o entendimento do mercado de TI, tornando a experiência única e imersiva em investimentos diferentes do comum.',
+                'Pessoas com patrimônio relevante que buscam estratégias avançadas de proteção e crescimento, com atendimento altamente personalizado.',
         ],
         [
-            'question' => 'Para clientes diferenciados',
+            'question' => 'É possível contratar o Key Account para gestão internacional?',
             'answer' =>
-                'Se você já realiza tarefas online para qualquer país e gosta de ganhar em dólar, vai gostar ainda mais de ver sua rentabilidade crescer em moeda estrangeira. Nossa equipe entende a rotina de profissionais de TI e se adapta à sua realidade.',
+                'Sim. O Key Account inclui estratégias de blindagem patrimonial e alocação internacional, respeitando o perfil do cliente e as normas regulatórias.',
         ],
         [
-            'question' => 'Segurança para você e quem você ama',
+            'question' => 'Com que frequência acontecem as reuniões?',
             'answer' =>
-                'Todos os investimentos são de caráter sucessório, garantindo que, mesmo diante de eventualidades, sua família terá tranquilidade e acesso aos recursos.',
+                'O acompanhamento é contínuo, com revisões periódicas e disponibilidade para reuniões emergenciais sempre que necessário.',
         ],
         [
-            'question' => 'Investimento fora do tradicional',
+            'question' => 'O serviço também cobre sucessão familiar e herança?',
             'answer' =>
-                'Além dos investimentos tradicionais, oferecemos opções em NY e UK, com instituições como BNY Mellon, UBS, BNP Paribas, Credit Suisse, entre outros.',
+                'Sim. Planejamos a sucessão de forma estratégica para garantir tranquilidade, segurança e continuidade para seu legado.',
         ],
     ];
 

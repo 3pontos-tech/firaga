@@ -8,14 +8,12 @@ fundamentais: Análise de Perfil, Planejamento Estratégico e Execução com Sup
     'cta_link' => 'https://example.com/saiba-mais',
     'cards' => [
         [
-            'title' => 'Planejamento Estratégico',
-            'description' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris eu augue erat. Duis velit eros,
-suscipit at nisi vitae, faucibus hendrerit turpis. ',
+            'title' => 'Seja um parceiro',
+            'description' => 'Seja para trabalhar lado a lado da gente, gostamos de pessoas muito dispostas e motivadas. Nenhuma ideia é ignorada aqui, amamos fazer negócio e o mais importante amamos pessoas que amam fazer negócios de alto impacto.',
         ],
         [
-            'title' => 'Planejamento Estratégico',
-            'description' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris eu augue erat. Duis velit eros,
-suscipit at nisi vitae, faucibus hendrerit turpis. ',
+            'title' => 'Faça parte do time',
+            'description' => 'Plano de Carreira, estudo, idependencia financeira, e crescimento pessoal, todas essas são vertentes a qual baseamos nossa cultura e filosofia, gostou? Preencha o formulário e venha nos conhecer, iremos amar conhecer você também. ',
         ],
     ],
 ])

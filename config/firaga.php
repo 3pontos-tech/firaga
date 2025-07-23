@@ -16,7 +16,7 @@ return [
                 [
                     'type' => 'partials-grid-hero',
                     'data' => [
-                        'subheading' => 'Serviços',
+                        'subheading' => 'Fire',
                         'heading' => 'Planejamento Personalizado',
                         'description' => 'Descubra o plano ideal para organizar, crescer e proteger seu patrimônio com inteligência.',
                     ],

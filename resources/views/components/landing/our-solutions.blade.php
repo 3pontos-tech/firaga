@@ -44,7 +44,7 @@
             <x-layout.shared.section-header :heading="$heading" :description="$description"/>
         </div>
         <div class="mx-4 sm:mx-5 overflow-hidden rounded-xl sm:rounded-2xl">
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-4 sm:gap-6 md:gap-8 p-4 sm:p-6 md:p-8 min-h-[420px]">
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-4 sm:gap-6 md:gap-8 p-4 sm:p-6 md:p-8 min-h-[420px] items-end">
                 @foreach($solutions as $solution)
                     <x-landing.solution-card
                             :title="$solution['title']"

@@ -34,36 +34,6 @@
             </div>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <div class="space-y-2">
-                <label for="intent" class="font-medium text-text-high">Qual o intuito desta mensagem?</label>
-                <select id="intent" name="messageIntent" required wire:model.lazy="messageIntent"
-                    class="bg-elevation-01dp border border-outline-low h-12 w-full rounded-md px-4 text-base focus:outline-none focus:ring-2 focus:ring-brand-primary mt-[15px] text-text-medium">
-                    <option value="" disabled>Selecione uma opção</option>
-                    @foreach ($intents as $intent)
-                        <option value="{{ $intent->value }}" {{ $intent === $messageIntent ? 'selected' : '' }}>
-                            {{ $intent->label() }}
-                        </option>
-                    @endforeach
-                </select>
-            </div>
-
-            <div class="space-y-2">
-                <label for="preference" class="font-medium text-text-high">Como prefere que entremos em
-                    contato?</label>
-                <select id="preference" name="contactPreference" wire:model.lazy="contactPreference"
-                    class="bg-elevation-01dp border border-outline-low h-12 w-full rounded-md px-6 text-base focus:outline-none focus:ring-2 focus:ring-brand-primary mt-[15px] text-text-medium">
-                    <option value="" disabled>Selecione uma opção</option>
-                    @foreach ($preferences as $preference)
-                        <option value="{{ $preference->value }}"
-                            {{ $preference === $contactPreference ? 'selected' : '' }}>
-                            {{ $preference->label() }}
-                        </option>
-                    @endforeach
-                </select>
-            </div>
-        </div>
-
         <div class="space-y-2">
             <label for="userMessage" class="font-medium text-text-high">Mensagem</label>
             <textarea id="userMessage" name="userMessage" required wire:model.lazy="userMessage"
