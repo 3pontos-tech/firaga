@@ -5,11 +5,11 @@ namespace App\Enums;
 use App\Filament\Components\Blog\MarkdownTextComponent;
 use App\Filament\Components\Blog\RichTextComponent;
 use App\Filament\Components\Heroes\HeroWithStatsAndImageComponent;
-use App\Filament\Components\Landing\PlansComponent;
 use App\Filament\Components\Partials\CtaComponent;
 use App\Filament\Components\Partials\FaqComponent;
 use App\Filament\Components\Partials\GridHeroComponent;
 use App\Filament\Components\Partials\HorizontalScrollerHighlightComponent;
+use App\Filament\Components\Partials\PlansComponent;
 use App\Filament\Components\Partials\QuoteComponent;
 use App\Filament\Components\Partials\SplitWithHorizontalStepsComponent;
 use App\Filament\Components\Partials\SplitWithVerticalStepsComponent;
@@ -37,7 +37,7 @@ enum CustomComponent: string
     case Plans = 'plans';
 
 
-    case HorizntalScrollerHighlight = 'horizontal-scroller-highlight';
+    case HorizontalScrollerHighlight = 'horizontal-scroller-highlight';
 
     public function getComponentClass(): string
     {
@@ -50,8 +50,7 @@ enum CustomComponent: string
             self::CallToActionSection => CtaComponent::class,
             self::SplitWithVerticalSteps => SplitWithVerticalStepsComponent::class,
             self::SplitWithHorizontalSteps => SplitWithHorizontalStepsComponent::class,
-            self::HorizntalScrollerHighlight => HorizontalScrollerHighlightComponent::class,
-
+            self::HorizontalScrollerHighlight => HorizontalScrollerHighlightComponent::class,
             self::Plans => PlansComponent::class,
             self::HeroWithStatsAndImage => HeroWithStatsAndImageComponent::class,
         };

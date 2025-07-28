@@ -58,7 +58,7 @@ class HorizontalScrollerHighlightComponent implements ComponentInterface
 
     public static function fieldName(): string
     {
-        return CustomComponent::HorizntalScrollerHighlight->value;
+        return CustomComponent::HorizontalScrollerHighlight->value;
     }
 
     public static function toBlade(array $data): View

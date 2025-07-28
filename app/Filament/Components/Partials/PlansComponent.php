@@ -2,10 +2,12 @@
 
 namespace App\Filament\Components\Partials;
 
+use Filament\Forms\Components\Checkbox;
 use Filament\Forms\Components\Repeater;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\TextInput;
 use Illuminate\Contracts\View\View;
+use Illuminate\Support\Fluent;
 use Webid\Druid\Components\ComponentInterface;
 
 class PlansComponent implements ComponentInterface
@@ -21,7 +23,12 @@ class PlansComponent implements ComponentInterface
                 ->required(),
             Repeater::make('plans')
                 ->label(__('Plans'))
+                ->cloneable()
                 ->schema([
+                    Select::make('best_plan')
+                        ->label(__('Best Plan?'))
+                        ->boolean()
+                        ->required(),
                     Select::make('name')
                         ->label(__('Plan Type'))
                         ->options([
@@ -43,10 +50,10 @@ class PlansComponent implements ComponentInterface
                                 ->label(__('Feature'))
                                 ->required(),
                         ]),
-                    TextInput::make('button.text')
+                    TextInput::make('cta_text')
                         ->label(__('Button Text'))
                         ->required(),
-                    TextInput::make('button.url')
+                    TextInput::make('cta_url')
                         ->label(__('Button URL'))
                         ->required(),
                 ])
@@ -62,19 +69,20 @@ class PlansComponent implements ComponentInterface
 
     public static function toBlade(array $data): View
     {
-
-        if (isset($data['plans'])) {
-            foreach ($data['plans'] as &$plan) {
-                if (isset($plan['items'])) {
-                    $plan['items'] = collect($plan['items'])->pluck('feature')->toArray();
-                }
-            }
-        }
-
-        return view('components.landing.plans', [
+        return view('components.sections.plans', [
             'heading' => $data['heading'],
             'subheading' => $data['subheading'],
-            'plansData' => collect($data['plans'] ?? []),
+            'plans' => collect($data['plans'] ?? [])->map(fn($plan) => Fluent::make([
+                'best_plan' => $plan['best_plan'] ?? false,
+                'name' => $plan['name'],
+                'description' => $plan['description'],
+                'note' => $plan['note'] ?? null,
+                'items' => collect($plan['items'])
+                    ->pluck('feature')
+                    ->toArray(),
+                'cta_text' => $plan['cta_text'],
+                'cta_url' => $plan['cta_url'],
+            ])),
         ]);
     }
 
