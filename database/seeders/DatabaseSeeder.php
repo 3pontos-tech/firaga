@@ -34,10 +34,10 @@ class DatabaseSeeder extends Seeder
             ]);
 
             $this->call([
+                TestimonialsSeeder::class,
                 PostsSeeder::class,
                 PagesSeeder::class,
                 MenusSeeder::class,
-                TestimonialsSeeder::class,
             ]);
         }
     }

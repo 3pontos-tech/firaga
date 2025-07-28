@@ -17,8 +17,8 @@
                         :name="$plan['name']"
                         :description="$plan['description']"
                         :note="$plan['note'] ?? null"
-                        :items="$plan['items']"
-                        :cta_text="$plan['cta_text']"
+                        :benefits="$plan['benefits']"
+                        :cta_label="$plan['cta_label']"
                         :cta_url="$plan['cta_url']"
                     />
                 @endforeach

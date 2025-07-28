@@ -2,7 +2,6 @@
 
 namespace App\Filament\Components\Partials;
 
-use Filament\Forms\Components\Checkbox;
 use Filament\Forms\Components\Repeater;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\TextInput;
@@ -43,7 +42,7 @@ class PlansComponent implements ComponentInterface
                     TextInput::make('note')
                         ->label(__('Note'))
                         ->nullable(),
-                    Repeater::make('items')
+                    Repeater::make('benefits')
                         ->label(__('Features'))
                         ->schema([
                             TextInput::make('feature')
@@ -77,11 +76,9 @@ class PlansComponent implements ComponentInterface
                 'name' => $plan['name'],
                 'description' => $plan['description'],
                 'note' => $plan['note'] ?? null,
-                'items' => collect($plan['items'])
-                    ->pluck('feature')
-                    ->toArray(),
-                'cta_text' => $plan['cta_text'],
-                'cta_url' => $plan['cta_url'],
+                'benefits' => collect($plan['benefits']),
+                'cta_label' => $plan['cta_label'],
+                'cta_link' => $plan['cta_link'],
             ])),
         ]);
     }

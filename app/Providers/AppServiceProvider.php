@@ -57,6 +57,8 @@ class AppServiceProvider extends ServiceProvider
     {
         Model::preventAccessingMissingAttributes();
 
+        Model::automaticallyEagerLoadRelationships();
+
         Model::unguard();
     }
 

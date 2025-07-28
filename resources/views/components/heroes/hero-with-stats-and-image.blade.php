@@ -15,7 +15,7 @@
             <x-logo :minimal="true" class="w-24 sm:w-32"></x-logo>
         </div>
         <x-headers.headline :headline="$heading" :description="$subheading"
-                            :button-text="$cta_text" :button-url="$cta_url">
+                            :button-text="$cta_label" :button-url="$cta_url">
             <x-slot name="badge">
                 <x-layout.shared.chip class="px-4 py-2">
                     {{ $badge }}

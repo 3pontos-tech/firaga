@@ -1,5 +1,6 @@
 <?php
 
+use App\Enums\CustomComponent;
 use Carbon\Carbon;
 
 return [
@@ -11,56 +12,61 @@ return [
             'meta_keywords' => 'planejamento financeiro, planejamento personalizado, consultoria financeira, organização financeira, consultoria Fire|ce',
             'opengraph_title' => 'Planejamento Financeiro Personalizado para Cada Fase da Sua Vida | Fire|ce',
             'opengraph_description' => 'Descubra os pacotes exclusivos da Fire|ce para organizar, proteger e expandir seu patrimônio com inteligência e clareza.',
-            'slug' => '',
+            'slug' => '/',
             'content' => [
                 [
-                    'type' => 'partials-grid-hero',
+                    'type' => CustomComponent::HeroWithStatsAndImage->value,
                     'data' => [
                         'heading' => 'Viva melhor com Educação Financeira',
                         'subheading' => 'Transformamos a forma como as pessoas lidam com dinheiro, capacitando-as a conquistar liberdade, segurança e crescimento financeiro sustentável.',
-                        'button_text' => 'Agende uma análise',
-                        'button_url' => '#',
+                        'cta_label' => 'Agende uma análise',
+                        'badge' => null,
+                        'cta_url' => 'https://firece.com.br',
                         'metrics' => [
                             [
                                 'label' => 'Clientes Atendidos',
-                                'value' => '+2.000'
+                                'value' => '+2.000',
+                                'icon' => 'firece-star'
                             ],
                             [
                                 'label' => 'Consultores Financeiros',
-                                'value' => '+10'
+                                'value' => '+10',
+                                'icon' => 'firece-star'
                             ],
                             [
                                 'label' => 'Anos de experiência',
-                                'value' => '+10'
+                                'value' => '+10',
+                                'icon' => 'firece-star'
                             ],
                             [
                                 'label' => 'Crescimento Anual',
-                                'value' => '+300%'
+                                'value' => '+300%',
+                                'icon' => 'firece-star'
                             ]
                         ]
                     ],
                 ],
                 [
-                    'type' => '',
+                    'type' => CustomComponent::SplitWithVerticalSteps->value,
                     'data' => [
                         'badge' => 'Nosso trabalho',
-                        'title' => 'Transformamos a complexidade em clareza com nossa metodologia.',
+                        'heading' => 'Transformamos a complexidade em clareza com nossa metodologia.',
                         'description' => 'Levamos você da análise de perfil à execução estratégica, com suporte contínuo para maximizar seus resultados. Nossa metodologia foi desenvolvida para transformar a sua relação com o dinheiro em 3 etapas fundamentais:',
-                        'button_link' => '#',
-                        'button_text' => 'Saiba mais',
+                        'cta_link' => '#',
+                        'cta_label' => 'Saiba mais',
                         'cards' => [
                             [
-                                'img_link' => '',
+                                'icon' => 'firece-star',
                                 'title' => 'Análise Financeira',
                                 'description' => 'O primeiro contato, onde conhecemos melhor suas metas, seus objetivos e estilo de vida para estruturarmos o seu planejamento financeiro estratégico.'
                             ],
                             [
-                                'img_link' => '',
+                                'icon' => 'firece-star',
                                 'title' => 'Plano de Ação',
                                 'description' => 'Nosso segundo encontro, onde trazemos estratégias detalhadas para começar a colocar em prática todas as mudanças necessárias e soluções encontradas.'
                             ],
                             [
-                                'img_link' => '',
+                                'icon' => 'firece-star',
                                 'title' => 'Acompanhamento',
                                 'description' => 'No terceiro momento, acompanhamos sua evolução e ajustamos o planejamento conforme sua vida muda. Estamos ao seu lado para que você se mantenha no caminho certo.'
                             ],
@@ -69,105 +75,104 @@ return [
                     ],
                 ],
                 [
-                    'type' => '',
+                    'type' => CustomComponent::SplitWithHorizontalSteps->value,
                     'data' => [
-                        'badge' => 'Escolha a FireIce',
+                        'badge' => 'Escolha a Fire|Ce',
                         'heading' => 'Perfis e necessidades',
-                        'subheading' => 'Saber se você é endividado, desorganizado ou poupador faz toda a diferença: é com esse entendimento que conseguimos traçar estratégias financeiras personalizadas, que respeitam sua realidade e aceleram seus resultados.',
+                        'description' => 'Saber se você é endividado, desorganizado ou poupador faz toda a diferença: é com esse entendimento que conseguimos traçar estratégias financeiras personalizadas, que respeitam sua realidade e aceleram seus resultados.',
                         'cards' => [
                             [
-                                'img_link' => '',
+                                'icon' => 'firece-star',
                                 'title' => 'Se você sente que poderia estar melhor',
                                 'description' => 'Seu dinheiro some sem que perceba? Sente que poderia estar guardando mais, gastando melhor e tendo mais controle financeiro? Agende sua consultoria que nós vamos te ajudar!',
-                                'button_link' => '#',
-                                'button_text' => 'Agendar análise'
+                                'cta_link' => '#',
+                                'cta_label' => 'Agendar análise'
                             ],
                             [
-                                'img_link' => '',
+                                'icon' => 'firece-star',
                                 'title' => 'Se você guarda dinheiro, mas não sabe como potencializar',
                                 'description' => 'Criamos um planejamento financeiro alinhado com seus objetivos, transformando sua reserva em um plano sólido de crescimento. Chegou a hora de fazer suas economias trabalharem para você.',
-                                'button_link' => '#',
-                                'button_text' => 'Agendar análise'
+                                'cta_link' => '#',
+                                'cta_label' => 'Agendar análise'
                             ],
                             [
-                                'img_link' => '',
+                                'icon' => 'firece-star',
                                 'title' => 'Se você já investe e quer ir mais longe',
                                 'description' => 'Talvez sua carteira não seja tão diversificada ou seus rendimentos não estejam alinhados com seus objetivos. Está na hora de otimizar sua estratégia.',
-                                'button_link' => '#',
-                                'button_text' => 'Agendar análise'
+                                'cta_link' => '#',
+                                'cta_label' => 'Agendar análise'
                             ],
                         ]
-                    ],
-                    [
-                        'type' => '',
-                        'data' => [
-                            'heading' => 'Não tema a faísca da mudança ele forja sua evolução.',
-                            'button_link' => '#',
-                            'button_text' => 'Agende sua análise'
-                        ]
-                    ],
-                    [
-                        'type' => '',
-                        'data' => [
-                            'badge' => 'Nossas especialidades',
-                            'heading' => 'Soluções personalizadas',
-                            'subheading' => 'Na nossa consultoria, entendemos que cada cliente é único. Por isso, desenvolvemos uma metodologia personalizada que se adapta às suas necessidades e objetivos financeiros.',
-                            'question' => 'Não encontrou exatamente o que procura?',
-                            'message_help' => [
-                                'text' => 'Fale conosco para uma solução personalizada',
-                                'link' => '#'
+                    ]
+                ],
+                [
+                    'type' => CustomComponent::CallToActionFullWidthSection->value,
+                    'data' => [
+                        'title' => 'Não tema a faísca da mudança ele forja sua evolução.',
+                        'cta_url' => '#',
+                        'cta_label' => 'Agende sua análise'
+                    ]
+                ],
+                [
+                    'type' => CustomComponent::HorizontalScrollerHighlight->value,
+                    'data' => [
+                        'badge' => 'Nossas especialidades',
+                        'heading' => 'Soluções personalizadas',
+                        'description' => 'Na nossa consultoria, entendemos que cada cliente é único. Por isso, desenvolvemos uma metodologia personalizada que se adapta às suas necessidades e objetivos financeiros.',
+                        'cta_link' => '#',
+                        'cards' => [
+                            [
+                                'icon' => 'firece-star',
+                                'title' => 'Planejamento Estratégico',
+                                'description' => 'Diagnóstico e plano financeiro personalizado para cada fase da sua vida.',
+                                'cta_link' => '#',
+                                'cta_label' => 'Visitar'
                             ],
-                            'cards' => [
-                                [
-                                    'icon' => '',
-                                    'title' => 'Planejamento Estratégico',
-                                    'description' => 'Diagnóstico completo e plano financeiro...',
-                                    'button_link' => '#',
-                                    'button_text' => 'Visitar'
-                                ],
-                                [
-                                    'icon' => '',
-                                    'title' => 'Key Account',
-                                    'description' => 'Consultoria exclusiva e contínua para quem bus...',
-                                    'button_link' => '#',
-                                    'button_text' => 'Visitar'
-                                ],
-                                [
-                                    'icon' => '',
-                                    'title' => 'Educa Fire',
-                                    'description' => 'Conteúdos, cursos e eventos para transfo...',
-                                    'button_link' => '#',
-                                    'button_text' => 'Visitar'
-                                ],
-                                [
-                                    'icon' => '',
-                                    'title' => 'Parcerias',
-                                    'description' => 'Soluções integradas com especialistas e marcas...',
-                                    'button_link' => '#',
-                                    'button_text' => 'Visitar'
-                                ],
-                                [
-                                    'icon' => '',
-                                    'title' => 'Code Capital',
-                                    'description' => 'Consultoria financeira especializada para profissionais do mercado tech.',
-                                    'button_link' => '#',
-                                    'button_text' => 'Visitar'
-                                ]
+                            [
+                                'icon' => 'firece-star',
+                                'title' => 'Key Account',
+                                'description' => 'Consultoria exclusiva e contínua para quem busca alta performance financeira.',
+                                'cta_link' => '#',
+                                'cta_label' => 'Visitar'
+                            ],
+                            [
+                                'icon' => 'firece-star',
+                                'title' => 'Educa Fire',
+                                'description' => 'Conteúdos, cursos e eventos para transformar sua carreira dentro do mercado financeiro.',
+                                'cta_link' => '#',
+                                'cta_label' => 'Visitar'
+                            ],
+                            [
+                                'icon' => 'firece-star',
+                                'title' => 'Parcerias',
+                                'description' => 'Soluções integradas com especialistas e marcas que compartilham nossos valores.',
+                                'cta_link' => '#',
+                                'cta_label' => 'Visitar'
+                            ],
+                            [
+                                'icon' => 'firece-star',
+                                'title' => 'Code Capital',
+                                'description' => 'Consultoria financeira especializada para profissionais do mercado tech.',
+                                'cta_link' => '#',
+                                'cta_label' => 'Visitar'
                             ]
-
                         ]
-                    ],
-                    [
+
+                    ]
+                ],
+                [
+                    'type' => CustomComponent::Plans->value,
+                    'data' => [
                         'badge' => 'Investimento',
-                        'headling' => 'Conheça nossos planos',
-                        'subheadling' => 'Conheça os palnos da Fire|ce e entenda como a gente transforma a vida financeira de quem quer mais clareza, controle e crescimento',
+                        'heading' => 'Conheça nossos planos',
+                        'subheading' => 'Conheça os planos da Fire|ce e entenda como a gente transforma a vida financeira de quem quer mais clareza, controle e crescimento',
                         'plans' => [
                             [
-                                'title' => 'Gold',
-                                'badge' => 'Popular',
+                                'name' => 'gold',
+                                'best_plan' => false,
                                 'description' => 'Para quem está começando a organizar sua vida financeira e deseja mais tranquilidade.',
-                                'button_text' => 'Saiba mais',
-                                'button_link' => '#',
+                                'cta_label' => 'Saiba mais',
+                                'cta_link' => '#',
                                 'benefits' => [
                                     'Organização Anual',
                                     'Mapa financeiro',
@@ -177,12 +182,12 @@ return [
                                 ],
                             ],
                             [
-                                'title' => 'Platinum',
-                                'badge' => 'Melhor Plano',
+                                'name' => 'platinum',
+                                'best_plan' => true,
                                 'description' => 'Para quem deseja ter o controle total de suas finanças e ser mais arrojado, além de mais diversidade.',
                                 'includes' => 'Itens do Gold',
-                                'button_text' => 'Saiba mais',
-                                'button_link' => '#',
+                                'cta_label' => 'Saiba mais',
+                                'cta_link' => '#',
                                 'benefits' => [
                                     'Preenchimento de Fluxo de Caixa',
                                     'Diagnóstico de carteira',
@@ -192,12 +197,12 @@ return [
                                 ],
                             ],
                             [
-                                'title' => 'Black',
-                                'badge' => 'Popular',
+                                'name' => 'black',
+                                'best_plan' => false,
                                 'description' => 'Para quem já investe e deseja estratégias personalizadas para potencializar seu patrimônio.',
                                 'includes' => 'Itens do Gold & Platinum',
-                                'button_text' => 'Saiba mais',
-                                'button_link' => '#',
+                                'cta_label' => 'Saiba mais',
+                                'cta_link' => '#',
                                 'benefits' => [
                                     'Revisão de Progresso',
                                     'Carteira Personalizada',
@@ -207,18 +212,42 @@ return [
                                 ],
                             ],
                         ],
-                    ],
-                    [
+                    ]
+
+                ],
+                [
+                    'type' => CustomComponent::FullWidthVideo->value,
+                    'data' => [
                         'badge' => 'Lorem ipsum  dolor sit amet',
-                        'headling' => 'Nos conheça melhor',
-                        'subheadling' => 'Você não precisa enfrentar sua vida financeira sozinho. Descubra como a Fire|ce pode caminhar com você — do caos à conquista.',
-                        'video_link' => '',
-                        'video_iframe' => '',
-                        'question' => 'Não encontrou exatamente o que procura?',
-                        'message_help' => [
-                            'text' => 'Fale conosco para uma solução personalizada',
-                            'link' => '#'
-                        ],
+                        'heading' => 'Nos conheça melhor',
+                        'description' => 'Você não precisa enfrentar sua vida financeira sozinho. Descubra como a Fire|ce pode caminhar com você — do caos à conquista.',
+                        'video_url' => '#',
+                    ]
+                ],
+                [
+                    'type' => CustomComponent::CallToActionFullWidthSection->value,
+                    'data' => [
+                        'title' => 'Tem jeito, tem plano e tem apoio. A Firece está com você nessa virada financeira.',
+                        'cta_url' => '#',
+                        'cta_label' => 'Agende sua análise'
+                    ]
+                ],
+                [
+                    'type' => CustomComponent::Testimonials->value,
+                    'data' => [
+                        'heading' => 'Escute de nossos clientes',
+                        'badge' => 'Depoimentos',
+                        'testimonials' => [1, 2, 3]
+                    ]
+                ],
+                [
+                    'type' => CustomComponent::CallToActionWithIconSection->value,
+                    'data' => [
+                        'title' => 'Visite nosso Blog e tenha acesso à conteúdos exclusivos',
+                        'description' => 'Nosso blog é o lugar ideal para quem busca conhecimento e insights sobre o mercado financeiro, nacional e global.',
+                        'cta_label' => 'Visitar Blog',
+                        'cta_url' => 'https://firece.com.br/blog',
+                        'icon' => 'firece-star',
                     ]
                 ],
             ],

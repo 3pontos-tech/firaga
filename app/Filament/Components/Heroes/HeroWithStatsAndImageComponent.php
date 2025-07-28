@@ -28,10 +28,10 @@ class HeroWithStatsAndImageComponent implements ComponentInterface
 
             TextInput::make('badge')
                 ->label('Badge')
-                ->required()
+                ->nullable()
                 ->default('Consultoria Financeira'),
 
-            TextInput::make('cta_text')
+            TextInput::make('cta_label')
                 ->label('Button Text')
                 ->required()
                 ->default('Agende uma consultoria'),
@@ -75,7 +75,7 @@ class HeroWithStatsAndImageComponent implements ComponentInterface
             'heading' => $data['heading'],
             'subheading' => $data['subheading'],
             'badge' => $data['badge'],
-            'cta_text' => $data['cta_text'],
+            'cta_label' => $data['cta_label'],
             'cta_url' => $data['cta_url'],
             'metrics' => collect($data['metrics'] ?? [])->map(fn($metric) => Fluent::make([
                 'label' => $metric['label'] ?? '',

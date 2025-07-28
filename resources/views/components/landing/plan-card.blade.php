@@ -3,10 +3,8 @@
     'name',
     'description',
     'note',
-    'items' => collect($items)
-        ->pluck('feature')
-        ->toArray(),
-    'cta_text',
+    'benefits',
+    'cta_label',
     'cta_url',
 ])
 
@@ -38,7 +36,7 @@
         <div class="h-[1px] {{ $bestPlan ? 'bg-outline-light' : 'bg-outline-low' }}"></div>
         <div class="flex flex-col gap-y-4 sm:gap-y-6">
             <ul class="flex flex-col gap-y-4 sm:gap-y-6 md:gap-y-8">
-                @foreach ($items as $item)
+                @foreach ($benefits as $item)
                     <li class="flex items-start gap-x-2 sm:gap-x-3">
                         <x-lucide-check class="w-4 h-4 sm:w-5 sm:h-5 {{ $bestPlan ? 'text-white' : 'text-brand-primary' }} flex-shrink-0 mt-0.5"/>
                         <span class="{{ $mainTextColor }} font-medium text-sm sm:text-base">{{ $item }}</span>
@@ -53,7 +51,7 @@
                 :variant="$buttonVariant"
                 class="w-full font-semibold py-3 sm:py-4 text-sm sm:text-base {{ $bestPlan  ? 'text-brand-primary' : 'text-text-light border border-outline-low' }}"
             >
-                {{ $cta_text }}
+                {{ $cta_label }}
             </x-layout.shared.button>
         </div>
     </div>

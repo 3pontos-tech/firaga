@@ -4,13 +4,12 @@ namespace App\Filament\Components\Partials;
 
 use App\Enums\CustomComponent;
 use App\Models\Testimonial;
-use Filament\Forms\Components\Repeater;
 use Filament\Forms\Components\Select;
-use Filament\Forms\Components\Textarea;
 use Filament\Forms\Components\TextInput;
 use Illuminate\Contracts\View\View;
+use Webid\Druid\Components\ComponentInterface;
 
-class TestimonialsComponent implements \Webid\Druid\Components\ComponentInterface
+class TestimonialsComponent implements ComponentInterface
 {
 
     public static function blockSchema(): array
@@ -22,12 +21,9 @@ class TestimonialsComponent implements \Webid\Druid\Components\ComponentInterfac
             'heading' => TextInput::make('heading')
                 ->label(__('Heading'))
                 ->required(),
-            'subheading' => TextInput::make('subheading')
-                ->label(__('Subheading'))
-                ->required(),
             'testimonials' => Select::make('testimonials')
                 ->label(__('Testimonials'))
-                ->options(fn () => Testimonial::all()->pluck('name', 'id'))
+                ->options(fn() => Testimonial::all()->pluck('name', 'id'))
                 ->multiple()
         ];
     }
@@ -42,7 +38,6 @@ class TestimonialsComponent implements \Webid\Druid\Components\ComponentInterfac
         return view('components.sections.testimonials', [
             'heading' => $data['heading'],
             'badge' => $data['badge'],
-            'subheading' => $data['subheading'],
             'testimonials' => Testimonial::whereIn('id', $data['testimonials'])->get(),
         ]);
     }
