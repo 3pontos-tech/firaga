@@ -9,6 +9,7 @@ use App\Filament\Components\Landing\HeroWithImageComponent;
 use App\Filament\Components\Landing\IconSolutionsComponent;
 use App\Filament\Components\Landing\MainHeroComponent;
 use App\Filament\Components\Landing\PlansComponent;
+use App\Filament\Components\Partials\CtaComponent;
 use App\Filament\Components\Partials\FaqComponent;
 use App\Filament\Components\Partials\GridHeroComponent;
 use App\Filament\Components\Partials\QuoteComponent;
@@ -39,6 +40,7 @@ class TemplateRenderer
             CustomComponent::PartialGridHero->value => app(GridHeroComponent::class),
             CustomComponent::PartialFaq->value => app(FaqComponent::class),
             CustomComponent::PartialQuote->value => app(QuoteComponent::class),
+            CustomComponent::CallToActionSection->value => app(CtaComponent::class),
             'main_hero' => app(MainHeroComponent::class),
             'hero_with_image' => app(HeroWithImageComponent::class),
             'icon_solutions' => app(IconSolutionsComponent::class),

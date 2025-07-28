@@ -14,4 +14,6 @@ enum CustomComponent: string
 
     case PartialQuote = 'partials-quote';
 
+    case CallToActionSection = 'call-to-action-section';
+
 }
