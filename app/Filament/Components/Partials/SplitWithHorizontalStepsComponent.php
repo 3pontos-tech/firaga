@@ -11,7 +11,7 @@ use Illuminate\Contracts\View\View;
 use Illuminate\Support\Fluent;
 use Webid\Druid\Components\ComponentInterface;
 
-class SplitWithVerticalStepsComponent implements ComponentInterface
+class SplitWithHorizontalStepsComponent implements ComponentInterface
 {
 
     public static function blockSchema(): array
@@ -52,12 +52,12 @@ class SplitWithVerticalStepsComponent implements ComponentInterface
 
     public static function fieldName(): string
     {
-        return CustomComponent::SplitWithVerticalSteps->value;
+        return CustomComponent::SplitWithHorizontalSteps->value;
     }
 
     public static function toBlade(array $data): View
     {
-        return view('components.sections.split-vertical-three-steps', [
+        return view('components.sections.split-horizontal-three-steps', [
             'badge' => $data['badge'],
             'heading' => $data['heading'],
             'description' => $data['description'],
@@ -80,4 +80,5 @@ class SplitWithVerticalStepsComponent implements ComponentInterface
     {
         return 'https://http.cat/500';
     }
+
 }

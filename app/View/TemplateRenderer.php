@@ -25,9 +25,11 @@ class TemplateRenderer
         return new self;
     }
 
+    /**
+     * @throws ViewException
+     */
     public function render(string $type, array $data = []): View
     {
-
         $component = $this->resolveComponent($type);
 
         return $component->toBlade($data);
@@ -35,20 +37,10 @@ class TemplateRenderer
 
     private function resolveComponent(string $type): ComponentInterface
     {
-        return match ($type) {
-            CustomComponent::BlogMarkdownText->value => app(MarkdownTextComponent::class),
-            CustomComponent::BlogRichText->value => app(RichTextComponent::class),
-            CustomComponent::PartialGridHero->value => app(GridHeroComponent::class),
-            CustomComponent::PartialFaq->value => app(FaqComponent::class),
-            CustomComponent::PartialQuote->value => app(QuoteComponent::class),
-            CustomComponent::CallToActionSection->value => app(CtaComponent::class),
-            CustomComponent::SplitWithVerticalSteps->value => app(SplitWithVerticalStepsComponent::class),
-            'main_hero' => app(MainHeroComponent::class),
-            'hero_with_image' => app(HeroWithImageComponent::class),
-            'icon_solutions' => app(IconSolutionsComponent::class),
-            'plans' => app(PlansComponent::class),
-            default => throw new ViewException(__('Unsupported component type: :type', ['type' => $type])),
-        };
+        if (!CustomComponent::tryFrom($type)) {
+            throw new ViewException("Component type '{$type}' is not recognized.");
+        }
 
+        return CustomComponent::from($type)->getComponent();
     }
 }

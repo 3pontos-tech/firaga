@@ -17,9 +17,10 @@
         <meta property="og:image" content="{{ $page?->openGraphPicture?->getSignedUrl() ?? asset('images/meta-logo.png') }}"/>
         <meta property="og:image:alt" content="{{ $page?->opengraph_picture_alt }}"/>
     </x-slot:metatags>
-
+    <div class="bg-elevation-02dp dark:bg-[#232323]">
     @foreach($page->content as $componentPayload)
         {!! $builder->render($componentPayload['type'], $componentPayload['data']) !!}
     @endforeach
-    <br>
+
+    </div>
 </x-layout.guest>

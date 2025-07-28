@@ -13,7 +13,7 @@ class LandingController extends Controller
 
         return view('welcome', [
             'heroData' => [
-                'heading' => $heading,
+                'heading' => 'Invista no futuro com inteligência e precisão',
                 'subheading' => 'Transformamos a forma como as pessoas lidam com dinheiro, capacitando-as a conquistar liberdade, segurança e crescimento financeiro sustentável.',
                 'badge' => 'Consultoria Financeira',
                 'button_text' => 'Agende uma consultoria',

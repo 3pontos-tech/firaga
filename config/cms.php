@@ -94,23 +94,7 @@ return [
      | You can create your own components by implementing the ComponentInterface.
      |--------------------------------------------------------------------------
      */
-    'components' => [
-        // Landing Components
-        ['class' => MainHeroComponent::class],
-        ['class' => IconSolutionsComponent::class],
-        ['class' => PlansComponent::class],
-        ['class' => HeroWithImageComponent::class],
-
-        // Blog components
-        ['class' => MarkdownTextComponent::class],
-        ['class' => RichTextComponent::class],
-
-        // Partial components
-        ['class' => CtaComponent::class],
-        ['class' => GridHeroComponent::class],
-        ['class' => FaqComponent::class],
-        ['class' => QuoteComponent::class],
-    ],
+    'components' => \App\Enums\CustomComponent::allComponents(),
 
     /*
      |--------------------------------------------------------------------------

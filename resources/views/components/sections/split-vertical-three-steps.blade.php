@@ -5,7 +5,7 @@
         'Na nossa consultoria, entendemos que cada cliente é único. Por isso, desenvolvemos uma metodologia personalizada que se adapta às suas necessidades e objetivos financeiros. Nossa abordagem é baseada em três pilares fundamentais: Análise de Perfil, Planejamento Estratégico e Execução com Suporte Contínuo.',
     'cta_label' => 'Saiba Mais',
     'cta_link' => 'https://example.com/saiba-mais',
-    'cards' => [
+    'cards' => collect([
         [
             'title' => 'Análise de Perfil',
             'description' => 'Entendemos seu perfil financeiro e objetivos.',
@@ -18,10 +18,11 @@
             'title' => 'Execução e Suporte',
             'description' => 'Acompanhamos a execução do plano com suporte contínuo.',
         ],
-    ],
+    ]),
 ])
 
-<section id="nosso-atendimento" class="mx-auto text-text-dark dark:text-text-light overflow-hidden py-8 md:py-16 lg:py-20">
+<section id="nosso-atendimento"
+         class="mx-auto text-text-dark dark:text-text-light overflow-hidden py-8 md:py-16 lg:py-20">
     <div class="mx-auto container px-4 md:px-6 lg:flex lg:items-center lg:justify-between lg:space-x-12 relative z-10">
         <div class="lg:w-1/2 mb-8 md:mb-12 lg:mb-0 space-y-6 md:space-y-8 lg:space-y-10">
             <x-layout.shared.chip class="px-4 py-2">
@@ -51,7 +52,12 @@
 
             <div class="space-y-4 md:space-y-6 lg:space-y-10">
                 @foreach ($cards as $index => $card)
-                    <x-cards.card-slim class="py-4 md:py-6 lg:py-8 rounded-lg md:rounded-[20px]" :title="$card['title']" :description="$card['description']" />
+                    <x-cards.card-slim
+                        class="py-4 md:py-6 lg:py-8 rounded-lg md:rounded-[20px]"
+                        :title="$card['title']"
+                        :description="$card['description']"
+                        :icon="$card['icon'] ?? 'heroicon-o-check-circle'"
+                    />
                 @endforeach
             </div>
         </div>
