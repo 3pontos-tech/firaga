@@ -36,8 +36,9 @@ enum CustomComponent: string
 
     case Plans = 'plans';
 
-
     case HorizontalScrollerHighlight = 'horizontal-scroller-highlight';
+
+    case FullWidthVideo = 'full-width-video';
 
     public function getComponentClass(): string
     {
@@ -53,6 +54,7 @@ enum CustomComponent: string
             self::HorizontalScrollerHighlight => HorizontalScrollerHighlightComponent::class,
             self::Plans => PlansComponent::class,
             self::HeroWithStatsAndImage => HeroWithStatsAndImageComponent::class,
+            self::FullWidthVideo => \App\Filament\Components\Media\FullWidthVideoComponent::class,
         };
     }
 
