@@ -18,27 +18,208 @@ return [
                     'data' => [
                         'heading' => 'Viva melhor com Educação Financeira',
                         'subheading' => 'Transformamos a forma como as pessoas lidam com dinheiro, capacitando-as a conquistar liberdade, segurança e crescimento financeiro sustentável.',
-                        'button_text' => 'Agende uma consultoria',
+                        'button_text' => 'Agende uma análise',
                         'button_url' => '#',
                         'metrics' => [
                             [
                                 'label' => 'Clientes Atendidos',
-                                'value' => '1000+'
+                                'value' => '+2.000'
                             ],
                             [
-                                'label' => 'Sob Administração',
-                                'value' => '70M'
+                                'label' => 'Consultores Financeiros',
+                                'value' => '+10'
                             ],
                             [
                                 'label' => 'Anos de experiência',
-                                'value' => '9'
+                                'value' => '+10'
                             ],
                             [
                                 'label' => 'Crescimento Anual',
-                                'value' => '300%'
+                                'value' => '+300%'
                             ]
                         ]
                     ],
+                ],
+                [
+                    'type' => '',
+                    'data' => [
+                        'badge' => 'Nosso trabalho',
+                        'title' => 'Transformamos a complexidade em clareza com nossa metodologia.',
+                        'description' => 'Levamos você da análise de perfil à execução estratégica, com suporte contínuo para maximizar seus resultados. Nossa metodologia foi desenvolvida para transformar a sua relação com o dinheiro em 3 etapas fundamentais:',
+                        'button_link' => '#',
+                        'button_text' => 'Saiba mais',
+                        'cards' => [
+                            [
+                                'img_link' => '',
+                                'title' => 'Análise Financeira',
+                                'description' => 'O primeiro contato, onde conhecemos melhor suas metas, seus objetivos e estilo de vida para estruturarmos o seu planejamento financeiro estratégico.'
+                            ],
+                            [
+                                'img_link' => '',
+                                'title' => 'Plano de Ação',
+                                'description' => 'Nosso segundo encontro, onde trazemos estratégias detalhadas para começar a colocar em prática todas as mudanças necessárias e soluções encontradas.'
+                            ],
+                            [
+                                'img_link' => '',
+                                'title' => 'Acompanhamento',
+                                'description' => 'No terceiro momento, acompanhamos sua evolução e ajustamos o planejamento conforme sua vida muda. Estamos ao seu lado para que você se mantenha no caminho certo.'
+                            ],
+                        ]
+
+                    ],
+                ],
+                [
+                    'type' => '',
+                    'data' => [
+                        'badge' => 'Escolha a FireIce',
+                        'heading' => 'Perfis e necessidades',
+                        'subheading' => 'Saber se você é endividado, desorganizado ou poupador faz toda a diferença: é com esse entendimento que conseguimos traçar estratégias financeiras personalizadas, que respeitam sua realidade e aceleram seus resultados.',
+                        'cards' => [
+                            [
+                                'img_link' => '',
+                                'title' => 'Se você sente que poderia estar melhor',
+                                'description' => 'Seu dinheiro some sem que perceba? Sente que poderia estar guardando mais, gastando melhor e tendo mais controle financeiro? Agende sua consultoria que nós vamos te ajudar!',
+                                'button_link' => '#',
+                                'button_text' => 'Agendar análise'
+                            ],
+                            [
+                                'img_link' => '',
+                                'title' => 'Se você guarda dinheiro, mas não sabe como potencializar',
+                                'description' => 'Criamos um planejamento financeiro alinhado com seus objetivos, transformando sua reserva em um plano sólido de crescimento. Chegou a hora de fazer suas economias trabalharem para você.',
+                                'button_link' => '#',
+                                'button_text' => 'Agendar análise'
+                            ],
+                            [
+                                'img_link' => '',
+                                'title' => 'Se você já investe e quer ir mais longe',
+                                'description' => 'Talvez sua carteira não seja tão diversificada ou seus rendimentos não estejam alinhados com seus objetivos. Está na hora de otimizar sua estratégia.',
+                                'button_link' => '#',
+                                'button_text' => 'Agendar análise'
+                            ],
+                        ]
+                    ],
+                    [
+                        'type' => '',
+                        'data' => [
+                            'heading' => 'Não tema a faísca da mudança ele forja sua evolução.',
+                            'button_link' => '#',
+                            'button_text' => 'Agende sua análise'
+                        ]
+                    ],
+                    [
+                        'type' => '',
+                        'data' => [
+                            'badge' => 'Nossas especialidades',
+                            'heading' => 'Soluções personalizadas',
+                            'subheading' => 'Na nossa consultoria, entendemos que cada cliente é único. Por isso, desenvolvemos uma metodologia personalizada que se adapta às suas necessidades e objetivos financeiros.',
+                            'question' => 'Não encontrou exatamente o que procura?',
+                            'message_help' => [
+                                'text' => 'Fale conosco para uma solução personalizada',
+                                'link' => '#'
+                            ],
+                            'cards' => [
+                                [
+                                    'icon' => '',
+                                    'title' => 'Planejamento Estratégico',
+                                    'description' => 'Diagnóstico completo e plano financeiro...',
+                                    'button_link' => '#',
+                                    'button_text' => 'Visitar'
+                                ],
+                                [
+                                    'icon' => '',
+                                    'title' => 'Key Account',
+                                    'description' => 'Consultoria exclusiva e contínua para quem bus...',
+                                    'button_link' => '#',
+                                    'button_text' => 'Visitar'
+                                ],
+                                [
+                                    'icon' => '',
+                                    'title' => 'Educa Fire',
+                                    'description' => 'Conteúdos, cursos e eventos para transfo...',
+                                    'button_link' => '#',
+                                    'button_text' => 'Visitar'
+                                ],
+                                [
+                                    'icon' => '',
+                                    'title' => 'Parcerias',
+                                    'description' => 'Soluções integradas com especialistas e marcas...',
+                                    'button_link' => '#',
+                                    'button_text' => 'Visitar'
+                                ],
+                                [
+                                    'icon' => '',
+                                    'title' => 'Code Capital',
+                                    'description' => 'Consultoria financeira especializada para profissionais do mercado tech.',
+                                    'button_link' => '#',
+                                    'button_text' => 'Visitar'
+                                ]
+                            ]
+
+                        ]
+                    ],
+                    [
+                        'badge' => 'Investimento',
+                        'headling' => 'Conheça nossos planos',
+                        'subheadling' => 'Conheça os palnos da Fire|ce e entenda como a gente transforma a vida financeira de quem quer mais clareza, controle e crescimento',
+                        'plans' => [
+                            [
+                                'title' => 'Gold',
+                                'badge' => 'Popular',
+                                'description' => 'Para quem está começando a organizar sua vida financeira e deseja mais tranquilidade.',
+                                'button_text' => 'Saiba mais',
+                                'button_link' => '#',
+                                'benefits' => [
+                                    'Organização Anual',
+                                    'Mapa financeiro',
+                                    'Construção de Reserva',
+                                    'Planilha de fluxo de caixa',
+                                    'Planilha de patrimônio',
+                                ],
+                            ],
+                            [
+                                'title' => 'Platinum',
+                                'badge' => 'Melhor Plano',
+                                'description' => 'Para quem deseja ter o controle total de suas finanças e ser mais arrojado, além de mais diversidade.',
+                                'includes' => 'Itens do Gold',
+                                'button_text' => 'Saiba mais',
+                                'button_link' => '#',
+                                'benefits' => [
+                                    'Preenchimento de Fluxo de Caixa',
+                                    'Diagnóstico de carteira',
+                                    'Estruturar aquisição de bens',
+                                    'Parceiros de investimentos',
+                                    'Custo Oportunidade',
+                                ],
+                            ],
+                            [
+                                'title' => 'Black',
+                                'badge' => 'Popular',
+                                'description' => 'Para quem já investe e deseja estratégias personalizadas para potencializar seu patrimônio.',
+                                'includes' => 'Itens do Gold & Platinum',
+                                'button_text' => 'Saiba mais',
+                                'button_link' => '#',
+                                'benefits' => [
+                                    'Revisão de Progresso',
+                                    'Carteira Personalizada',
+                                    'Reserva Internacional',
+                                    'Estratégias Exclusivas',
+                                    'Possibilidade Key Account',
+                                ],
+                            ],
+                        ],
+                    ],
+                    [
+                        'badge' => 'Lorem ipsum  dolor sit amet',
+                        'headling' => 'Nos conheça melhor',
+                        'subheadling' => 'Você não precisa enfrentar sua vida financeira sozinho. Descubra como a Fire|ce pode caminhar com você — do caos à conquista.',
+                        'video_link' => '',
+                        'video_iframe' => '',
+                        'question' => 'Não encontrou exatamente o que procura?',
+                        'message_help' => [
+                            'text' => 'Fale conosco para uma solução personalizada',
+                            'link' => '#'
+                        ],
+                    ]
                 ],
             ],
             'status' => 'published',
