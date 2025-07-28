@@ -9,7 +9,6 @@ use Webid\Druid\Components\ComponentInterface;
 
 class FullWidthVideoComponent implements ComponentInterface
 {
-
     public static function blockSchema(): array
     {
         return [

@@ -11,7 +11,6 @@ use Webid\Druid\Components\ComponentInterface;
 
 class TestimonialsComponent implements ComponentInterface
 {
-
     public static function blockSchema(): array
     {
         return [
@@ -23,8 +22,8 @@ class TestimonialsComponent implements ComponentInterface
                 ->required(),
             'testimonials' => Select::make('testimonials')
                 ->label(__('Testimonials'))
-                ->options(fn() => Testimonial::all()->pluck('name', 'id'))
-                ->multiple()
+                ->options(fn () => Testimonial::all()->pluck('name', 'id'))
+                ->multiple(),
         ];
     }
 
@@ -38,7 +37,7 @@ class TestimonialsComponent implements ComponentInterface
         return view('components.sections.testimonials', [
             'heading' => $data['heading'],
             'badge' => $data['badge'],
-            'testimonials' => Testimonial::whereIn('id', $data['testimonials'])->get(),
+            'testimonials' => Testimonial::query()->whereIn('id', $data['testimonials'])->get(),
         ]);
     }
 

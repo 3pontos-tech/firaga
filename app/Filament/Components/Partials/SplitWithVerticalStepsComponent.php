@@ -13,7 +13,6 @@ use Webid\Druid\Components\ComponentInterface;
 
 class SplitWithVerticalStepsComponent implements ComponentInterface
 {
-
     public static function blockSchema(): array
     {
         return [
@@ -63,7 +62,7 @@ class SplitWithVerticalStepsComponent implements ComponentInterface
             'description' => $data['description'],
             'cta_label' => $data['cta_label'],
             'cta_link' => $data['cta_link'],
-            'cards' => collect($data['cards'])->map(fn($card) => Fluent::make([
+            'cards' => collect($data['cards'])->map(fn ($card) => Fluent::make([
                 'title' => $card['title'],
                 'description' => $card['description'],
                 'icon' => $card['icon'],

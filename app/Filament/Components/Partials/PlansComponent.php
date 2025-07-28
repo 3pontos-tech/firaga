@@ -71,7 +71,7 @@ class PlansComponent implements ComponentInterface
         return view('components.sections.plans', [
             'heading' => $data['heading'],
             'subheading' => $data['subheading'],
-            'plans' => collect($data['plans'] ?? [])->map(fn($plan) => Fluent::make([
+            'plans' => collect($data['plans'] ?? [])->map(fn ($plan) => Fluent::make([
                 'best_plan' => $plan['best_plan'] ?? false,
                 'name' => $plan['name'],
                 'description' => $plan['description'],

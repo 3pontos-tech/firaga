@@ -13,7 +13,6 @@ use Webid\Druid\Components\ComponentInterface;
 
 class HorizontalScrollerHighlightComponent implements ComponentInterface
 {
-
     public static function blockSchema(): array
     {
         return [
@@ -68,7 +67,7 @@ class HorizontalScrollerHighlightComponent implements ComponentInterface
             'heading' => $data['heading'],
             'description' => $data['description'],
             'cta_link' => $data['cta_link'],
-            'cards' => collect($data['cards'])->map(fn($card) => Fluent::make([
+            'cards' => collect($data['cards'])->map(fn ($card) => Fluent::make([
                 'title' => $card['title'],
                 'description' => $card['description'],
                 'icon' => $card['icon'],

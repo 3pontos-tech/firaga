@@ -13,7 +13,6 @@ use Webid\Druid\Components\ComponentInterface;
 
 class SplitWithHorizontalStepsComponent implements ComponentInterface
 {
-
     public static function blockSchema(): array
     {
         return [
@@ -61,7 +60,7 @@ class SplitWithHorizontalStepsComponent implements ComponentInterface
             'badge' => $data['badge'],
             'heading' => $data['heading'],
             'description' => $data['description'],
-            'cards' => collect($data['cards'])->map(fn($card) => Fluent::make([
+            'cards' => collect($data['cards'])->map(fn ($card) => Fluent::make([
                 'title' => $card['title'],
                 'description' => $card['description'],
                 'icon' => $card['icon'],
@@ -80,5 +79,4 @@ class SplitWithHorizontalStepsComponent implements ComponentInterface
     {
         return 'https://http.cat/500';
     }
-
 }

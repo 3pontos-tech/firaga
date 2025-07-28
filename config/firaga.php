@@ -26,24 +26,24 @@ return [
                             [
                                 'label' => 'Clientes Atendidos',
                                 'value' => '+2.000',
-                                'icon' => 'firece-star'
+                                'icon' => 'firece-star',
                             ],
                             [
                                 'label' => 'Consultores Financeiros',
                                 'value' => '+10',
-                                'icon' => 'firece-star'
+                                'icon' => 'firece-star',
                             ],
                             [
                                 'label' => 'Anos de experiência',
                                 'value' => '+10',
-                                'icon' => 'firece-star'
+                                'icon' => 'firece-star',
                             ],
                             [
                                 'label' => 'Crescimento Anual',
                                 'value' => '+300%',
-                                'icon' => 'firece-star'
-                            ]
-                        ]
+                                'icon' => 'firece-star',
+                            ],
+                        ],
                     ],
                 ],
                 [
@@ -58,19 +58,19 @@ return [
                             [
                                 'icon' => 'firece-star',
                                 'title' => 'Análise Financeira',
-                                'description' => 'O primeiro contato, onde conhecemos melhor suas metas, seus objetivos e estilo de vida para estruturarmos o seu planejamento financeiro estratégico.'
+                                'description' => 'O primeiro contato, onde conhecemos melhor suas metas, seus objetivos e estilo de vida para estruturarmos o seu planejamento financeiro estratégico.',
                             ],
                             [
                                 'icon' => 'firece-star',
                                 'title' => 'Plano de Ação',
-                                'description' => 'Nosso segundo encontro, onde trazemos estratégias detalhadas para começar a colocar em prática todas as mudanças necessárias e soluções encontradas.'
+                                'description' => 'Nosso segundo encontro, onde trazemos estratégias detalhadas para começar a colocar em prática todas as mudanças necessárias e soluções encontradas.',
                             ],
                             [
                                 'icon' => 'firece-star',
                                 'title' => 'Acompanhamento',
-                                'description' => 'No terceiro momento, acompanhamos sua evolução e ajustamos o planejamento conforme sua vida muda. Estamos ao seu lado para que você se mantenha no caminho certo.'
+                                'description' => 'No terceiro momento, acompanhamos sua evolução e ajustamos o planejamento conforme sua vida muda. Estamos ao seu lado para que você se mantenha no caminho certo.',
                             ],
-                        ]
+                        ],
 
                     ],
                 ],
@@ -86,32 +86,32 @@ return [
                                 'title' => 'Se você sente que poderia estar melhor',
                                 'description' => 'Seu dinheiro some sem que perceba? Sente que poderia estar guardando mais, gastando melhor e tendo mais controle financeiro? Agende sua consultoria que nós vamos te ajudar!',
                                 'cta_link' => '#',
-                                'cta_label' => 'Agendar análise'
+                                'cta_label' => 'Agendar análise',
                             ],
                             [
                                 'icon' => 'firece-star',
                                 'title' => 'Se você guarda dinheiro, mas não sabe como potencializar',
                                 'description' => 'Criamos um planejamento financeiro alinhado com seus objetivos, transformando sua reserva em um plano sólido de crescimento. Chegou a hora de fazer suas economias trabalharem para você.',
                                 'cta_link' => '#',
-                                'cta_label' => 'Agendar análise'
+                                'cta_label' => 'Agendar análise',
                             ],
                             [
                                 'icon' => 'firece-star',
                                 'title' => 'Se você já investe e quer ir mais longe',
                                 'description' => 'Talvez sua carteira não seja tão diversificada ou seus rendimentos não estejam alinhados com seus objetivos. Está na hora de otimizar sua estratégia.',
                                 'cta_link' => '#',
-                                'cta_label' => 'Agendar análise'
+                                'cta_label' => 'Agendar análise',
                             ],
-                        ]
-                    ]
+                        ],
+                    ],
                 ],
                 [
                     'type' => CustomComponent::CallToActionFullWidthSection->value,
                     'data' => [
                         'title' => 'Não tema a faísca da mudança ele forja sua evolução.',
                         'cta_url' => '#',
-                        'cta_label' => 'Agende sua análise'
-                    ]
+                        'cta_label' => 'Agende sua análise',
+                    ],
                 ],
                 [
                     'type' => CustomComponent::HorizontalScrollerHighlight->value,
@@ -126,39 +126,39 @@ return [
                                 'title' => 'Planejamento Estratégico',
                                 'description' => 'Diagnóstico e plano financeiro personalizado para cada fase da sua vida.',
                                 'cta_link' => '#',
-                                'cta_label' => 'Visitar'
+                                'cta_label' => 'Visitar',
                             ],
                             [
                                 'icon' => 'firece-star',
                                 'title' => 'Key Account',
                                 'description' => 'Consultoria exclusiva e contínua para quem busca alta performance financeira.',
                                 'cta_link' => '#',
-                                'cta_label' => 'Visitar'
+                                'cta_label' => 'Visitar',
                             ],
                             [
                                 'icon' => 'firece-star',
                                 'title' => 'Educa Fire',
                                 'description' => 'Conteúdos, cursos e eventos para transformar sua carreira dentro do mercado financeiro.',
                                 'cta_link' => '#',
-                                'cta_label' => 'Visitar'
+                                'cta_label' => 'Visitar',
                             ],
                             [
                                 'icon' => 'firece-star',
                                 'title' => 'Parcerias',
                                 'description' => 'Soluções integradas com especialistas e marcas que compartilham nossos valores.',
                                 'cta_link' => '#',
-                                'cta_label' => 'Visitar'
+                                'cta_label' => 'Visitar',
                             ],
                             [
                                 'icon' => 'firece-star',
                                 'title' => 'Code Capital',
                                 'description' => 'Consultoria financeira especializada para profissionais do mercado tech.',
                                 'cta_link' => '#',
-                                'cta_label' => 'Visitar'
-                            ]
-                        ]
+                                'cta_label' => 'Visitar',
+                            ],
+                        ],
 
-                    ]
+                    ],
                 ],
                 [
                     'type' => CustomComponent::Plans->value,
@@ -212,7 +212,7 @@ return [
                                 ],
                             ],
                         ],
-                    ]
+                    ],
 
                 ],
                 [
@@ -222,23 +222,23 @@ return [
                         'heading' => 'Nos conheça melhor',
                         'description' => 'Você não precisa enfrentar sua vida financeira sozinho. Descubra como a Fire|ce pode caminhar com você — do caos à conquista.',
                         'video_url' => '#',
-                    ]
+                    ],
                 ],
                 [
                     'type' => CustomComponent::CallToActionFullWidthSection->value,
                     'data' => [
                         'title' => 'Tem jeito, tem plano e tem apoio. A Firece está com você nessa virada financeira.',
                         'cta_url' => '#',
-                        'cta_label' => 'Agende sua análise'
-                    ]
+                        'cta_label' => 'Agende sua análise',
+                    ],
                 ],
                 [
                     'type' => CustomComponent::Testimonials->value,
                     'data' => [
                         'heading' => 'Escute de nossos clientes',
                         'badge' => 'Depoimentos',
-                        'testimonials' => [1, 2, 3]
-                    ]
+                        'testimonials' => [1, 2, 3],
+                    ],
                 ],
                 [
                     'type' => CustomComponent::CallToActionWithIconSection->value,
@@ -248,7 +248,7 @@ return [
                         'cta_label' => 'Visitar Blog',
                         'cta_url' => 'https://firece.com.br/blog',
                         'icon' => 'firece-star',
-                    ]
+                    ],
                 ],
             ],
             'status' => 'published',

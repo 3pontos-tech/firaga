@@ -2,16 +2,7 @@
 
 declare(strict_types=1);
 
-use App\Filament\Components\Blog\MarkdownTextComponent;
-use App\Filament\Components\Blog\RichTextComponent;
-use App\Filament\Components\Landing\HeroWithImageComponent;
-use App\Filament\Components\Landing\IconSolutionsComponent;
-use App\Filament\Components\Landing\MainHeroComponent;
-use App\Filament\Components\Landing\PlansComponent;
-use App\Filament\Components\Partials\CtaFullWidthComponent;
-use App\Filament\Components\Partials\FaqComponent;
-use App\Filament\Components\Partials\GridHeroComponent;
-use App\Filament\Components\Partials\QuoteComponent;
+use App\Enums\CustomComponent;
 use App\Filament\Resources\CMS\MenuResource\RelationManagers\ItemsRelationManager;
 use App\Models\CMS\Category;
 use App\Models\CMS\Menu;
@@ -94,7 +85,7 @@ return [
      | You can create your own components by implementing the ComponentInterface.
      |--------------------------------------------------------------------------
      */
-    'components' => \App\Enums\CustomComponent::allComponents(),
+    'components' => CustomComponent::allComponents(),
 
     /*
      |--------------------------------------------------------------------------

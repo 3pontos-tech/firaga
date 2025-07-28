@@ -55,7 +55,7 @@ enum CustomComponent: string
             self::PartialFaq => FaqComponent::class,
             self::PartialQuote => QuoteComponent::class,
             self::CallToActionFullWidthSection => CtaFullWidthComponent::class,
-            self::CallToActionWithIconSection =>  CtaWithIconComponent::class,
+            self::CallToActionWithIconSection => CtaWithIconComponent::class,
             self::SplitWithVerticalSteps => SplitWithVerticalStepsComponent::class,
             self::SplitWithHorizontalSteps => SplitWithHorizontalStepsComponent::class,
             self::HorizontalScrollerHighlight => HorizontalScrollerHighlightComponent::class,
@@ -73,6 +73,6 @@ enum CustomComponent: string
 
     public static function allComponents(): array
     {
-        return array_map(fn($component) => ['class' => $component->getComponent()], self::cases());
+        return array_map(fn ($component): array => ['class' => $component->getComponent()], self::cases());
     }
 }

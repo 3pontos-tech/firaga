@@ -10,7 +10,6 @@ use Webid\Druid\Components\ComponentInterface;
 
 class CtaWithIconComponent implements ComponentInterface
 {
-
     public static function blockSchema(): array
     {
         return [

@@ -8,7 +8,6 @@ class LandingController extends Controller
 {
     public function __invoke()
     {
-        $heading = 'Invista no futuro com inteligência e precisão';
         $testimonials = Testimonial::query()->inRandomOrder()->limit(4)->get();
 
         return view('welcome', [
@@ -21,21 +20,21 @@ class LandingController extends Controller
                 'metrics' => [
                     [
                         'label' => 'Clientes Atendidos',
-                        'value' => '1000+'
+                        'value' => '1000+',
                     ],
                     [
                         'label' => 'Sob Administração',
-                        'value' => '70M'
+                        'value' => '70M',
                     ],
                     [
                         'label' => 'Anos de experiência',
-                        'value' => '9'
+                        'value' => '9',
                     ],
                     [
                         'label' => 'Crescimento Anual',
-                        'value' => '300%'
-                    ]
-                ]
+                        'value' => '300%',
+                    ],
+                ],
             ],
             'solutions' => [
                 [
@@ -135,7 +134,7 @@ class LandingController extends Controller
                         ],
                         'popular' => 1, // 1 = popular, 2 = melhor plano
                     ],
-                ]
+                ],
             ],
             'clientReviews' => [
                 [

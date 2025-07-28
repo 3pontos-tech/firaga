@@ -2,7 +2,6 @@
 
 use App\Http\Controllers\ArticlesController;
 use App\Http\Controllers\ContactController;
-use App\Http\Controllers\LandingController;
 use App\Http\Controllers\MarketingLandingController;
 use App\Http\Controllers\PagesController;
 use Illuminate\Support\Facades\Route;
@@ -32,7 +31,5 @@ Route::domain(config('app.domain'))->group(function (): void {
         Route::get('/{post:slug}', [ArticlesController::class, 'show'])
             ->name('blog.show');
     });
-
-
 
 });

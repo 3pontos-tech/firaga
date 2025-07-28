@@ -9,7 +9,6 @@ use Webid\Druid\Components\ComponentInterface;
 
 class CtaFullWidthComponent implements ComponentInterface
 {
-
     public static function blockSchema(): array
     {
         return [

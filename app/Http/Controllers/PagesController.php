@@ -13,7 +13,7 @@ class PagesController extends Controller
             $page = '/';
         }
 
-        $page = Page::where('slug', $page)
+        $page = Page::query()->where('slug', $page)
             ->where('status', 'published')
             ->whereNull('deleted_at')
             ->firstOrFail();

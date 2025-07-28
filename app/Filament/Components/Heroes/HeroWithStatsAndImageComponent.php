@@ -12,7 +12,6 @@ use Webid\Druid\Components\ComponentInterface;
 
 class HeroWithStatsAndImageComponent implements ComponentInterface
 {
-
     public static function blockSchema(): array
     {
         return [
@@ -77,7 +76,7 @@ class HeroWithStatsAndImageComponent implements ComponentInterface
             'badge' => $data['badge'],
             'cta_label' => $data['cta_label'],
             'cta_url' => $data['cta_url'],
-            'metrics' => collect($data['metrics'] ?? [])->map(fn($metric) => Fluent::make([
+            'metrics' => collect($data['metrics'] ?? [])->map(fn ($metric) => Fluent::make([
                 'label' => $metric['label'] ?? '',
                 'value' => $metric['value'] ?? '',
                 'icon' => $metric['icon'] ?? 'heroicon-o-tag',
