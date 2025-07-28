@@ -7,7 +7,7 @@ use Filament\Forms\Components\TextInput;
 use Illuminate\Contracts\View\View;
 use Webid\Druid\Components\ComponentInterface;
 
-class CtaComponent implements ComponentInterface
+class CtaFullWidthComponent implements ComponentInterface
 {
 
     public static function blockSchema(): array
@@ -28,12 +28,12 @@ class CtaComponent implements ComponentInterface
 
     public static function fieldName(): string
     {
-        return CustomComponent::CallToActionSection->value;
+        return CustomComponent::CallToActionFullWidthSection->value;
     }
 
     public static function toBlade(array $data): View
     {
-        return view('components.sections.cta', [
+        return view('components.sections.cta-full-width', [
             'title' => $data['title'],
             'cta_label' => $data['cta_label'],
             'cta_url' => $data['cta_url'],
