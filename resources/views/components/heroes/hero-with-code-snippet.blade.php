@@ -4,27 +4,21 @@
     'cta_label' => 'Comece Agora',
     'cta_url' => '#',
     'badge' => 'Serviços',
+    'snippet' => ''
 ])
 
-@php
-    $snippets = str(file_get_contents(resource_path('markdown/code-capital/snippets.md')))
-        ->explode('-----')
-        ->map(function ($snippet) {
-            return str($snippet)->markdown();
-        });
-    $snippetsJson = json_encode($snippets);
-@endphp
 
 <section class="gap-5 flex min-h-1/2 items-center overflow-hidden py-12 sm:py-16 md:py-20 lg:py-24 md:min-h-[50vh]">
     <div class="container mx-auto lg:flex lg:items-center lg:justify-between">
         <div class="mb-8 lg:hidden">
-            <h2 class="text-brand-primary text-center text-2xl sm:text-3xl md:text-4xl font-bold">&lt;code-capital/&gt;
+            <h2 class="text-brand-primary text-center text-2xl sm:text-3xl md:text-4xl font-bold">
+                {{ $badge }}
             </h2>
         </div>
 
         <x-headers.headline
             :headline="$heading"
-            :$description
+            :description="$subheading"
         >
             <x-slot name="badge">
                 @if($badge)
@@ -45,8 +39,7 @@
             </x-slot>
         </x-headers.headline>
         <div class="mt-8 sm:mt-10 md:mt-12 hidden lg:flex items-center lg:mt-0 lg:w-2/5">
-            <div x-data="snippetCarousel({{ $snippetsJson }})"
-                 class="animate-fade-in flex flex-col items-center justify-center w-full">
+            <div class="animate-fade-in flex flex-col items-center justify-center w-full">
                 <div
                     class="flex items-center gap-2 sm:gap-3 justify-between w-full bg-elevation-01dp rounded-t-xl p-3 sm:p-4">
                     <div class="flex items-center gap-2 sm:gap-3">
@@ -59,7 +52,9 @@
                     </div>
                     <div class="w-6 h-2"></div>
                 </div>
-                <div x-html="snippets[currentIndex]" class="w-full"></div>
+                <div class="w-full">
+                    {!! str($snippet)->markdown() !!}
+                </div>
             </div>
         </div>
     </div>
@@ -130,56 +125,7 @@
         }
     </style>
     <script>
-        document.addEventListener("alpine:init", () => {
-            Alpine.data("snippetCarousel", function (snippets) {
-                return {
-                    snippets: snippets,
-                    currentIndex: 0,
-                    isChanging: false,
-                    timer: null,
-                    init() {
-                        this.startRotation();
-                        this.$nextTick(() => {
-                            hljs.highlightAll();
-                        });
-                    },
-                    startRotation() {
-                        this.timer = setInterval(() => {
-                            this.nextSnippet();
-                        }, 100000);
-                    },
-                    resetTimer() {
-                        clearInterval(this.timer);
-                        this.startRotation();
-                    },
-                    nextSnippet() {
-                        if (this.isChanging) return;
-                        this.isChanging = true;
-                        setTimeout(() => {
-                            this.currentIndex = (this.currentIndex + 1) % this.snippets.length;
-                            setTimeout(() => {
-                                this.isChanging = false;
-                                hljs.highlightAll();
-                            }, 100);
-                        }, 500);
-                        this.resetTimer();
-                    },
-                    prevSnippet() {
-                        if (this.isChanging) return;
-                        this.isChanging = true;
-                        setTimeout(() => {
-                            this.currentIndex = (this.currentIndex - 1 + this.snippets.length) %
-                                this.snippets.length;
-                            setTimeout(() => {
-                                this.isChanging = false;
-                                hljs.highlightAll();
-                            }, 100);
-                        }, 500);
-                        this.resetTimer();
-                    }
-                };
-            });
-        });
+
 
         hljs.highlightAll();
     </script>

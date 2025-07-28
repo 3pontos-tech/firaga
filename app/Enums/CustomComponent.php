@@ -4,6 +4,7 @@ namespace App\Enums;
 
 use App\Filament\Components\Blog\MarkdownTextComponent;
 use App\Filament\Components\Blog\RichTextComponent;
+use App\Filament\Components\Heroes\HeroWithCodeSnippetComponent;
 use App\Filament\Components\Heroes\HeroWithStatsAndImageComponent;
 use App\Filament\Components\Media\FullWidthVideoComponent;
 use App\Filament\Components\Partials\CtaFullWidthComponent;
@@ -36,6 +37,7 @@ enum CustomComponent: string
     case SplitWithVerticalSteps = 'split-with-vertical-steps';
 
     case HeroWithStatsAndImage = 'hero-with-stats-and-image';
+    case HeroWithCodeSnippet = 'hero-with-code-snippet';
     case SplitWithHorizontalSteps = 'split-with-horizontal-steps';
 
     case Plans = 'plans';
@@ -46,6 +48,7 @@ enum CustomComponent: string
 
     case Testimonials = 'testimonials';
 
+    case Roadmap = 'roadmap';
     public function getComponentClass(): string
     {
         return match ($this) {
@@ -63,6 +66,8 @@ enum CustomComponent: string
             self::HeroWithStatsAndImage => HeroWithStatsAndImageComponent::class,
             self::FullWidthVideo => FullWidthVideoComponent::class,
             self::Testimonials => TestimonialsComponent::class,
+            self::HeroWithCodeSnippet => HeroWithCodeSnippetComponent::class,
+            self::Roadmap => App\Filament\Components\Partials\RoadmapComponent::class,
         };
     }
 

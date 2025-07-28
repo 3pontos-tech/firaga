@@ -9,9 +9,9 @@
 <div
     class="hover:bg-brand-primary bg-elevation-04dp flex flex-col gap-4 border border-outline-light dark:border-outline-dark rounded-lg p-8 {{ $class }} group transition-all duration-300 ease-in-out transform hover:shadow-xl">
     <x-lucide-goal class="w-8 h-8 text-brand-primary group-hover:text-white transition-colors duration-300" />
-    <h3 class="font-semibold text-text-high transition-colors duration-300">
-        {{ $title }}
-    </h3>
+{{--    <h3 class="font-semibold text-text-high transition-colors duration-300">--}}
+{{--        {{ $title }}--}}
+{{--    </h3>--}}
     <p class="text-text-medium leading-relaxed group-hover:text-text-high transition-colors duration-300">
         {{ $description }}
     </p>

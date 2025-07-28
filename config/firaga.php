@@ -254,6 +254,94 @@ return [
             'status' => 'published',
         ],
         [
+            'title' => 'Code Capital',
+            'meta_title' => 'Code Capital – Investimentos Internacionais para Desenvolvedores | Fire|ce',
+            'meta_description' => 'A Fire|ce oferece soluções financeiras globais para profissionais de tecnologia. Invista com segurança e performance no exterior com planejamento personalizado.',
+            'meta_keywords' => 'investimento internacional, desenvolvedores, profissionais de tecnologia, Fire|ce, code capital, tesouro internacional, planejamento financeiro, carteira global, dólar, investimentos no exterior',
+            'opengraph_title' => 'Code Capital – Investimento Inteligente para Profissionais de Tecnologia | Fire|ce',
+            'opengraph_description' => 'Seu talento é global — seus investimentos também podem ser. Conheça o Code Capital da Fire|ce e invista com inteligência no mercado internacional.',
+            'slug' => 'code-capital',
+            'content' => [
+                [
+                    'type' => CustomComponent::HeroWithCodeSnippet->value,
+                    'data' => [
+                        'heading' => 'Consultoria exclusiva e diferenciada para profissionais de tecnologia.',
+                        'subheading' => 'Com uma abordagem personalizada, focamos em ajudar pessoas a organizarem suas finanças, evitarem decisões impulsivas e alocarem seu dinheiro de forma estratégica e com diversidade protegendo o patrimônio. O propósito da Code é transformar a relação com o dinheiro trazendo mais controle, confiança e liberdade para o futuro.',
+                        'badge' => 'Code Capital',
+                        'cta_label' => 'Agende uma análise',
+                        'cta_url' => '#',
+                        'snippet' => file_get_contents(resource_path('markdown/code-capital/snippets.md')),
+                    ],
+                ],
+                [
+                    'type' => CustomComponent::Roadmap->value,
+                    'data' => [
+                        'heading' => 'Por que investir com a Code Capital?',
+                        'subheading' => 'Você é atendido por quem fala a sua língua — especialistas que entendem sua realidade e estão prontos para te ajudar a crescer, recomeçar ou expandir seus horizontes financeiros.',
+                        'cta_text' => 'Nossa equipe é formada por especialistas que conhecem os desafios da sua profissão e estão prontos para caminhar ao seu lado, com respeito, clareza e soluções sob medida.',
+                        'cta_label' => 'Saiba mais',
+                        'cta_link' => '#',
+                        'steps' => [
+                            [
+                                'icon' => 'firece-star',
+                                'title' => 'Expertise',
+                                'description' => 'Consultores capacitados para direcionar sua vida financeira e sua profissão para um novo nível, atrelando seus objetivos pessoas e profissionais.',
+                                'class' => 'justify-start',
+                                'has_cta' => false,
+                            ],
+                            [
+                                'icon' => 'firece-star',
+                                'title' => 'Planejamento financeiro sob medida',
+                                'description' => 'Estratégias personalizadas para maximizar sua remuneração, impulsionar seus investimentos e alcançar objetivos com segurança.',
+                                'class' => 'justify-center',
+                                'has_cta' => true,
+                                'cta_label' => 'Agende uma análise',
+                                'cta_url' => '#',
+                            ],
+                            [
+                                'icon' => 'firece-star',
+                                'title' => 'Resultados Comprovados',
+                                'description' => 'Desde 2023, ajudando profissionais de tecnologia a construírem patrimônio de forma inteligente e global.',
+                                'class' => 'justify-end',
+                                'has_cta' => false,
+                            ],
+                        ],
+                    ],
+                ],
+                [
+                    'type' => 'blog-markdown-text',
+                    'data' => [
+                        'content' => file_get_contents(resource_path('markdown/pages/code-capital.md')),
+                    ],
+                ],
+                [
+                    'type' => 'partials-faq',
+                    'data' => [
+                        'thumbnail' => 1,
+                        'solutions' => [
+                            [
+                                'question' => 'Nossa Missão',
+                                'answer' => 'Poder auxiliar profissionais que já recebem em moeda estrangeira e que desejam investir também fora do Brasil, entendendo a instabilidade comum do Real. Tudo isso de forma online, sem perder o contato humano e o entendimento do mercado de TI, tornando a experiência única e imersiva em investimentos diferentes do comum.',
+                            ],
+                            [
+                                'question' => 'Para clientes diferenciados',
+                                'answer' => 'Se você já realiza tarefas online para qualquer país e gosta de ganhar em dólar, vai gostar ainda mais de ver sua rentabilidade crescer em moeda estrangeira. Nossa equipe entende a rotina de profissionais de TI e se adapta à sua realidade.',
+                            ],
+                            [
+                                'question' => 'Segurança para você e quem você ama',
+                                'answer' => 'Todos os investimentos são de caráter sucessório, garantindo que, mesmo diante de eventualidades, sua família terá tranquilidade e acesso aos recursos.',
+                            ],
+                            [
+                                'question' => 'Investimento fora do tradicional',
+                                'answer' => 'Além dos investimentos tradicionais, oferecemos opções em NY e UK, com instituições como BNY Mellon, UBS, BNP Paribas, Credit Suisse, entre outros.',
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+            'status' => 'published',
+        ],
+        [
             'title' => 'Planejamento',
             'meta_title' => 'Planejamento Personalizado – Consultoria Financeira sob Medida | Fire|ce',
             'meta_description' => 'Transforme sua vida financeira com os pacotes personalizados da Fire|ce. Do plano Gold ao Black, oferecemos organização, estratégia e performance para cada etapa da sua jornada.',
@@ -449,56 +537,7 @@ return [
             ],
             'status' => 'published',
         ],
-        [
-            'title' => 'Code Capital',
-            'meta_title' => 'Code Capital – Investimentos Internacionais para Desenvolvedores | Fire|ce',
-            'meta_description' => 'A Fire|ce oferece soluções financeiras globais para profissionais de tecnologia. Invista com segurança e performance no exterior com planejamento personalizado.',
-            'meta_keywords' => 'investimento internacional, desenvolvedores, profissionais de tecnologia, Fire|ce, code capital, tesouro internacional, planejamento financeiro, carteira global, dólar, investimentos no exterior',
-            'opengraph_title' => 'Code Capital – Investimento Inteligente para Profissionais de Tecnologia | Fire|ce',
-            'opengraph_description' => 'Seu talento é global — seus investimentos também podem ser. Conheça o Code Capital da Fire|ce e invista com inteligência no mercado internacional.',
-            'slug' => 'code-capital',
-            'content' => [
-                [
-                    'type' => 'partials-grid-hero',
-                    'data' => [
-                        'subheading' => 'Serviços',
-                        'heading' => 'Code Capital',
-                        'description' => 'Invista onde seu talento já chega',
-                    ],
-                ],
-                [
-                    'type' => 'blog-markdown-text',
-                    'data' => [
-                        'content' => file_get_contents(resource_path('markdown/pages/code-capital.md')),
-                    ],
-                ],
-                [
-                    'type' => 'partials-faq',
-                    'data' => [
-                        'thumbnail' => 1,
-                        'solutions' => [
-                            [
-                                'question' => 'Nossa Missão',
-                                'answer' => 'Poder auxiliar profissionais que já recebem em moeda estrangeira e que desejam investir também fora do Brasil, entendendo a instabilidade comum do Real. Tudo isso de forma online, sem perder o contato humano e o entendimento do mercado de TI, tornando a experiência única e imersiva em investimentos diferentes do comum.',
-                            ],
-                            [
-                                'question' => 'Para clientes diferenciados',
-                                'answer' => 'Se você já realiza tarefas online para qualquer país e gosta de ganhar em dólar, vai gostar ainda mais de ver sua rentabilidade crescer em moeda estrangeira. Nossa equipe entende a rotina de profissionais de TI e se adapta à sua realidade.',
-                            ],
-                            [
-                                'question' => 'Segurança para você e quem você ama',
-                                'answer' => 'Todos os investimentos são de caráter sucessório, garantindo que, mesmo diante de eventualidades, sua família terá tranquilidade e acesso aos recursos.',
-                            ],
-                            [
-                                'question' => 'Investimento fora do tradicional',
-                                'answer' => 'Além dos investimentos tradicionais, oferecemos opções em NY e UK, com instituições como BNY Mellon, UBS, BNP Paribas, Credit Suisse, entre outros.',
-                            ],
-                        ],
-                    ],
-                ],
-            ],
-            'status' => 'published',
-        ],
+
 
     ],
     'articles' => [
