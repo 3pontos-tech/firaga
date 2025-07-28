@@ -1,5 +1,5 @@
 @props([
-    'subheading' => 'Nosso Trabalho',
+    'badge' => 'Nosso Trabalho',
     'heading' => 'Transformando desafios em oportunidades',
     'description' =>
         'Na nossa consultoria, entendemos que cada cliente é único. Por isso, desenvolvemos uma metodologia personalizada que se adapta às suas necessidades e objetivos financeiros. Nossa abordagem é baseada em três pilares fundamentais: Análise de Perfil, Planejamento Estratégico e Execução com Suporte Contínuo.',
@@ -25,7 +25,7 @@
     <div class="mx-auto container px-4 md:px-6 lg:flex lg:items-center lg:justify-between lg:space-x-12 relative z-10">
         <div class="lg:w-1/2 mb-8 md:mb-12 lg:mb-0 space-y-6 md:space-y-8 lg:space-y-10">
             <x-layout.shared.chip class="px-4 py-2">
-                {{ $subheading }}
+                {{ $badge }}
             </x-layout.shared.chip>
             <h2
                 class="text-text-dark dark:text-text-light font-bold text-2xl sm:text-3xl md:text-4xl lg:text-5xl leading-tight tracking-tight">
@@ -51,7 +51,7 @@
 
             <div class="space-y-4 md:space-y-6 lg:space-y-10">
                 @foreach ($cards as $index => $card)
-                    <x-landing.card-info class="py-4 md:py-6 lg:py-8 rounded-lg md:rounded-[20px]" :title="$card['title']" :description="$card['description']" />
+                    <x-cards.card-slim class="py-4 md:py-6 lg:py-8 rounded-lg md:rounded-[20px]" :title="$card['title']" :description="$card['description']" />
                 @endforeach
             </div>
         </div>

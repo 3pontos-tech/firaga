@@ -16,4 +16,6 @@ enum CustomComponent: string
 
     case CallToActionSection = 'call-to-action-section';
 
+    case SplitWithVerticalSteps = 'split-with-vertical-steps';
+
 }

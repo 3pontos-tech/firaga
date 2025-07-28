@@ -5,6 +5,45 @@ use Carbon\Carbon;
 return [
     'pages' => [
         [
+            'title' => 'Home',
+            'meta_title' => 'Planejamento Personalizado – Consultoria Financeira sob Medida | Fire|ce',
+            'meta_description' => 'Transforme sua vida financeira com os pacotes personalizados da Fire|ce. Do plano Gold ao Black, oferecemos organização, estratégia e performance para cada etapa da sua jornada.',
+            'meta_keywords' => 'planejamento financeiro, planejamento personalizado, consultoria financeira, organização financeira, consultoria Fire|ce',
+            'opengraph_title' => 'Planejamento Financeiro Personalizado para Cada Fase da Sua Vida | Fire|ce',
+            'opengraph_description' => 'Descubra os pacotes exclusivos da Fire|ce para organizar, proteger e expandir seu patrimônio com inteligência e clareza.',
+            'slug' => '',
+            'content' => [
+                [
+                    'type' => 'partials-grid-hero',
+                    'data' => [
+                        'heading' => 'Viva melhor com Educação Financeira',
+                        'subheading' => 'Transformamos a forma como as pessoas lidam com dinheiro, capacitando-as a conquistar liberdade, segurança e crescimento financeiro sustentável.',
+                        'button_text' => 'Agende uma consultoria',
+                        'button_url' => '#',
+                        'metrics' => [
+                            [
+                                'label' => 'Clientes Atendidos',
+                                'value' => '1000+'
+                            ],
+                            [
+                                'label' => 'Sob Administração',
+                                'value' => '70M'
+                            ],
+                            [
+                                'label' => 'Anos de experiência',
+                                'value' => '9'
+                            ],
+                            [
+                                'label' => 'Crescimento Anual',
+                                'value' => '300%'
+                            ]
+                        ]
+                    ],
+                ],
+            ],
+            'status' => 'published',
+        ],
+        [
             'title' => 'Planejamento',
             'meta_title' => 'Planejamento Personalizado – Consultoria Financeira sob Medida | Fire|ce',
             'meta_description' => 'Transforme sua vida financeira com os pacotes personalizados da Fire|ce. Do plano Gold ao Black, oferecemos organização, estratégia e performance para cada etapa da sua jornada.',

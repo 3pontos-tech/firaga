@@ -13,6 +13,7 @@ use App\Filament\Components\Partials\CtaComponent;
 use App\Filament\Components\Partials\FaqComponent;
 use App\Filament\Components\Partials\GridHeroComponent;
 use App\Filament\Components\Partials\QuoteComponent;
+use App\Filament\Components\Partials\SplitWithVerticalStepsComponent;
 use Illuminate\Contracts\View\View;
 use Illuminate\View\ViewException;
 use Webid\Druid\Components\ComponentInterface;
@@ -41,6 +42,7 @@ class TemplateRenderer
             CustomComponent::PartialFaq->value => app(FaqComponent::class),
             CustomComponent::PartialQuote->value => app(QuoteComponent::class),
             CustomComponent::CallToActionSection->value => app(CtaComponent::class),
+            CustomComponent::SplitWithVerticalSteps->value => app(SplitWithVerticalStepsComponent::class),
             'main_hero' => app(MainHeroComponent::class),
             'hero_with_image' => app(HeroWithImageComponent::class),
             'icon_solutions' => app(IconSolutionsComponent::class),

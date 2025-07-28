@@ -13,7 +13,6 @@ class PlansComponent implements ComponentInterface
     public static function blockSchema(): array
     {
         return [
-            // uma parte de planos com um repeater pra cards???? mds do céu n sei
             TextInput::make('heading')
                 ->label(__('Heading'))
                 ->required(),
