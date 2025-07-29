@@ -3,13 +3,14 @@
 namespace App\Filament\Components\Partials;
 
 use App\Enums\CustomComponent;
+use App\Filament\Components\AbstractCustomComponent;
 use Filament\Forms\Components\TextInput;
 use Guava\FilamentIconPicker\Forms\IconPicker;
-use Illuminate\Contracts\View\View;
-use Webid\Druid\Components\ComponentInterface;
 
-class CtaWithIconComponent implements ComponentInterface
+class CtaWithIconComponent extends AbstractCustomComponent
 {
+    protected static string $view = 'components.sections.cta-with-icon';
+
     public static function blockSchema(): array
     {
         return [
@@ -34,14 +35,14 @@ class CtaWithIconComponent implements ComponentInterface
         return CustomComponent::CallToActionWithIconSection->value;
     }
 
-    public static function toBlade(array $data): View
+    public static function setupRenderPayload(array $data): array
     {
-        return view('components.sections.cta-with-icon', [
+        return [
             'title' => $data['title'] ?? '',
             'cta_label' => $data['cta_label'] ?? '',
             'cta_url' => $data['cta_url'] ?? '',
             'icon' => $data['icon'] ?? '',
-        ]);
+        ];
     }
 
     public static function toSearchableContent(array $data): string

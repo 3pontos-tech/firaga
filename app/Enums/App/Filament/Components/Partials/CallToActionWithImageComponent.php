@@ -3,12 +3,13 @@
 namespace App\Enums\App\Filament\Components\Partials;
 
 use App\Enums\CustomComponent;
+use App\Filament\Components\AbstractCustomComponent;
 use Filament\Forms\Components\TextInput;
-use Illuminate\Contracts\View\View;
-use Webid\Druid\Components\ComponentInterface;
 
-class CallToActionWithImageComponent implements ComponentInterface
+class CallToActionWithImageComponent extends AbstractCustomComponent
 {
+    protected static string $view = 'components.sections.cta-with-image';
+
     public static function blockSchema(): array
     {
         return [
@@ -33,15 +34,15 @@ class CallToActionWithImageComponent implements ComponentInterface
         return CustomComponent::CallToActionWithImage->value;
     }
 
-    public static function toBlade(array $data): View
+    public static function setupRenderPayload(array $data): array
     {
-        return view('components.sections.cta-with-image', [
+        return [
             'heading' => $data['heading'],
             'description' => $data['description'],
             'cta_label' => $data['cta_label'],
             'cta_link' => $data['cta_link'],
             'image' => $data['image'],
-        ]);
+        ];
     }
 
     public static function toSearchableContent(array $data): string

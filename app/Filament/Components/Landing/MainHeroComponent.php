@@ -2,12 +2,13 @@
 
 namespace App\Filament\Components\Landing;
 
+use App\Filament\Components\AbstractCustomComponent;
 use Filament\Forms\Components\TextInput;
-use Illuminate\Contracts\View\View;
-use Webid\Druid\Components\ComponentInterface;
 
-class MainHeroComponent implements ComponentInterface
+class MainHeroComponent extends AbstractCustomComponent
 {
+    protected static string $view = 'components.landing.hero';
+
     public static function blockSchema(): array
     {
         return [
@@ -26,11 +27,11 @@ class MainHeroComponent implements ComponentInterface
         return 'main_hero';
     }
 
-    public static function toBlade(array $data): View
+    public static function setupRenderPayload(array $data): array
     {
-        return view('components.landing.hero', [
+        return [
             'heroData' => $data,
-        ]);
+        ];
     }
 
     public static function toSearchableContent(array $data): string

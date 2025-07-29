@@ -3,12 +3,13 @@
 namespace App\Filament\Components\Media;
 
 use App\Enums\CustomComponent;
+use App\Filament\Components\AbstractCustomComponent;
 use Filament\Forms\Components\TextInput;
-use Illuminate\Contracts\View\View;
-use Webid\Druid\Components\ComponentInterface;
 
-class FullWidthVideoComponent implements ComponentInterface
+class FullWidthVideoComponent extends AbstractCustomComponent
 {
+    protected static string $view = 'components.sections.video-full-width';
+
     public static function blockSchema(): array
     {
         return [
@@ -33,14 +34,14 @@ class FullWidthVideoComponent implements ComponentInterface
         return CustomComponent::FullWidthVideo->value;
     }
 
-    public static function toBlade(array $data): View
+    public static function setupRenderPayload(array $data): array
     {
-        return view('components.sections.video-full-width', [
+        return [
             'badge' => $data['badge'] ?? '',
             'heading' => $data['heading'] ?? '',
             'description' => $data['description'] ?? '',
             'video_url' => $data['video_url'] ?? '',
-        ]);
+        ];
     }
 
     public static function toSearchableContent(array $data): string

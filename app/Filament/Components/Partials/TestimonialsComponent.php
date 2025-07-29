@@ -3,14 +3,15 @@
 namespace App\Filament\Components\Partials;
 
 use App\Enums\CustomComponent;
+use App\Filament\Components\AbstractCustomComponent;
 use App\Models\Testimonial;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\TextInput;
-use Illuminate\Contracts\View\View;
-use Webid\Druid\Components\ComponentInterface;
 
-class TestimonialsComponent implements ComponentInterface
+class TestimonialsComponent extends AbstractCustomComponent
 {
+    protected static string $view = 'components.sections.testimonials';
+
     public static function blockSchema(): array
     {
         return [
@@ -32,13 +33,13 @@ class TestimonialsComponent implements ComponentInterface
         return CustomComponent::Testimonials->value;
     }
 
-    public static function toBlade(array $data): View
+    public static function setupRenderPayload(array $data): array
     {
-        return view('components.sections.testimonials', [
+        return [
             'heading' => $data['heading'],
             'badge' => $data['badge'],
             'testimonials' => Testimonial::query()->whereIn('id', $data['testimonials'])->get(),
-        ]);
+        ];
     }
 
     public static function toSearchableContent(array $data): string

@@ -3,16 +3,17 @@
 namespace App\Filament\Components\Partials;
 
 use App\Enums\CustomComponent;
+use App\Filament\Components\AbstractCustomComponent;
 use Filament\Forms\Components\Repeater;
 use Filament\Forms\Components\Textarea;
 use Filament\Forms\Components\TextInput;
 use Guava\FilamentIconPicker\Forms\IconPicker;
-use Illuminate\Contracts\View\View;
 use Illuminate\Support\Fluent;
-use Webid\Druid\Components\ComponentInterface;
 
-class SplitWithHorizontalStepsComponent implements ComponentInterface
+class SplitWithHorizontalStepsComponent extends AbstractCustomComponent
 {
+    protected static string $view = 'components.sections.split-horizontal-three-steps';
+
     public static function blockSchema(): array
     {
         return [
@@ -54,9 +55,9 @@ class SplitWithHorizontalStepsComponent implements ComponentInterface
         return CustomComponent::SplitWithHorizontalSteps->value;
     }
 
-    public static function toBlade(array $data): View
+    public static function setupRenderPayload(array $data): array
     {
-        return view('components.sections.split-horizontal-three-steps', [
+        return [
             'badge' => $data['badge'],
             'heading' => $data['heading'],
             'description' => $data['description'],
@@ -67,7 +68,7 @@ class SplitWithHorizontalStepsComponent implements ComponentInterface
                 'cta_label' => $card['cta_label'],
                 'cta_link' => $card['cta_link'],
             ])),
-        ]);
+        ];
     }
 
     public static function toSearchableContent(array $data): string

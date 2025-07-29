@@ -1,14 +1,14 @@
 <?php
 
+use App\Filament\Components\AbstractCustomComponent;
 use App\View\TemplateRenderer;
 use Illuminate\Support\Facades\Config;
 use Illuminate\View\ViewException;
-use Webid\Druid\Components\ComponentInterface;
 
-test('should implements ComponentInterface')
+test('should extends AbstractCustomComponent')
     ->expect('app\Filament\Components')
     ->toBeClasses()
-    ->toImplement(ComponentInterface::class);
+    ->toImplement(AbstractCustomComponent::class);
 
 it('should implement the interface methods')
     ->expect('app\Filament\Components')

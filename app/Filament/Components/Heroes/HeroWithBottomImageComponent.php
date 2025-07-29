@@ -3,12 +3,13 @@
 namespace App\Filament\Components\Heroes;
 
 use App\Enums\CustomComponent;
+use App\Filament\Components\AbstractCustomComponent;
 use Filament\Forms\Components\TextInput;
-use Illuminate\Contracts\View\View;
-use Webid\Druid\Components\ComponentInterface;
 
-class HeroWithBottomImageComponent implements ComponentInterface
+class HeroWithBottomImageComponent extends AbstractCustomComponent
 {
+    protected static string $view = 'components.heroes.hero-with-bottom-image';
+
     public static function blockSchema(): array
     {
         return [
@@ -44,15 +45,15 @@ class HeroWithBottomImageComponent implements ComponentInterface
         return CustomComponent::HeroWithBottomImage->value;
     }
 
-    public static function toBlade(array $data): View
+    public static function setupRenderPayload(array $data): array
     {
-        return view('components.heroes.hero-with-bottom-image', [
+        return [
             'heading' => $data['heading'],
             'subheading' => $data['subheading'],
             'badge' => $data['badge'],
             'cta_label' => $data['cta_label'],
             'cta_url' => $data['cta_url'],
-        ]);
+        ];
     }
 
     public static function toSearchableContent(array $data): string

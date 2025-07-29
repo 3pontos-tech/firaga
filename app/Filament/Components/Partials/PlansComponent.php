@@ -2,15 +2,16 @@
 
 namespace App\Filament\Components\Partials;
 
+use App\Filament\Components\AbstractCustomComponent;
 use Filament\Forms\Components\Repeater;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\TextInput;
-use Illuminate\Contracts\View\View;
 use Illuminate\Support\Fluent;
-use Webid\Druid\Components\ComponentInterface;
 
-class PlansComponent implements ComponentInterface
+class PlansComponent extends AbstractCustomComponent
 {
+    protected static string $view = 'components.sections.plans';
+
     public static function blockSchema(): array
     {
         return [
@@ -66,9 +67,9 @@ class PlansComponent implements ComponentInterface
         return 'plans';
     }
 
-    public static function toBlade(array $data): View
+    public static function setupRenderPayload(array $data): array
     {
-        return view('components.sections.plans', [
+        return [
             'heading' => $data['heading'],
             'subheading' => $data['subheading'],
             'plans' => collect($data['plans'] ?? [])->map(fn ($plan) => Fluent::make([
@@ -80,7 +81,7 @@ class PlansComponent implements ComponentInterface
                 'cta_label' => $plan['cta_label'],
                 'cta_link' => $plan['cta_link'],
             ])),
-        ]);
+        ];
     }
 
     public static function toSearchableContent(array $data): string

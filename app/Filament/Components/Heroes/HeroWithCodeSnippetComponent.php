@@ -3,13 +3,14 @@
 namespace App\Filament\Components\Heroes;
 
 use App\Enums\CustomComponent;
+use App\Filament\Components\AbstractCustomComponent;
 use Filament\Forms\Components\MarkdownEditor;
 use Filament\Forms\Components\TextInput;
-use Illuminate\Contracts\View\View;
-use Webid\Druid\Components\ComponentInterface;
 
-class HeroWithCodeSnippetComponent implements ComponentInterface
+class HeroWithCodeSnippetComponent extends AbstractCustomComponent
 {
+    protected static string $view = 'components.heroes.hero-with-code-snippet';
+
     public static function blockSchema(): array
     {
         return [
@@ -48,16 +49,16 @@ class HeroWithCodeSnippetComponent implements ComponentInterface
         return CustomComponent::HeroWithCodeSnippet->value;
     }
 
-    public static function toBlade(array $data): View
+    public static function setupRenderPayload(array $data): array
     {
-        return view('components.heroes.hero-with-code-snippet', [
+        return [
             'heading' => $data['heading'],
             'subheading' => $data['subheading'],
             'badge' => $data['badge'],
             'cta_label' => $data['cta_label'],
             'cta_url' => $data['cta_url'],
             'snippet' => $data['snippet'],
-        ]);
+        ];
     }
 
     public static function toSearchableContent(array $data): string

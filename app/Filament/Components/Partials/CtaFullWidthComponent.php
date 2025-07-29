@@ -3,12 +3,13 @@
 namespace App\Filament\Components\Partials;
 
 use App\Enums\CustomComponent;
+use App\Filament\Components\AbstractCustomComponent;
 use Filament\Forms\Components\TextInput;
-use Illuminate\Contracts\View\View;
-use Webid\Druid\Components\ComponentInterface;
 
-class CtaFullWidthComponent implements ComponentInterface
+class CtaFullWidthComponent extends AbstractCustomComponent
 {
+    protected static string $view = 'components.sections.cta-full-width';
+
     public static function blockSchema(): array
     {
         return [
@@ -30,13 +31,13 @@ class CtaFullWidthComponent implements ComponentInterface
         return CustomComponent::CallToActionFullWidthSection->value;
     }
 
-    public static function toBlade(array $data): View
+    public static function setupRenderPayload(array $data): array
     {
-        return view('components.sections.cta-full-width', [
+        return [
             'title' => $data['title'],
             'cta_label' => $data['cta_label'],
             'cta_url' => $data['cta_url'],
-        ]);
+        ];
     }
 
     public static function toSearchableContent(array $data): string

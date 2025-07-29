@@ -2,14 +2,15 @@
 
 namespace App\Filament\Components\Landing;
 
+use App\Filament\Components\AbstractCustomComponent;
 use Filament\Forms\Components\Repeater;
 use Filament\Forms\Components\TextInput;
 use Guava\FilamentIconPicker\Forms\IconPicker;
-use Illuminate\Contracts\View\View;
-use Webid\Druid\Components\ComponentInterface;
 
-class IconSolutionsComponent implements ComponentInterface
+class IconSolutionsComponent extends AbstractCustomComponent
 {
+    protected static string $view = 'components.landing.our-solutions';
+
     public static function blockSchema(): array
     {
         return [
@@ -45,14 +46,14 @@ class IconSolutionsComponent implements ComponentInterface
         return 'icon_solutions';
     }
 
-    public static function toBlade(array $data): View
+    public static function setupRenderPayload(array $data): array
     {
-        return view('components.landing.our-solutions', [
+        return [
             'section' => $data['section'],
             'heading' => $data['heading'],
             'description' => $data['description'],
             'solutions' => collect($data['solutions'] ?? []),
-        ]);
+        ];
     }
 
     public static function toSearchableContent(array $data): string

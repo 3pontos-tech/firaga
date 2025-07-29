@@ -2,14 +2,15 @@
 
 namespace App\Enums\App\Filament\Components\Partials;
 
+use App\Filament\Components\AbstractCustomComponent;
 use Filament\Forms\Components\Repeater;
 use Filament\Forms\Components\Textarea;
 use Filament\Forms\Components\TextInput;
-use Illuminate\Contracts\View\View;
-use Webid\Druid\Components\ComponentInterface;
 
-class TwoColumnsImageFeatureGridComponent implements ComponentInterface
+class TwoColumnsImageFeatureGridComponent extends AbstractCustomComponent
 {
+    protected static string $view = 'components.sections.two-columns-image-feature-grid';
+
     public static function blockSchema(): array
     {
         return [
@@ -49,16 +50,16 @@ class TwoColumnsImageFeatureGridComponent implements ComponentInterface
         return 'two-columns-image-feature-grid';
     }
 
-    public static function toBlade(array $data): View
+    public static function setupRenderPayload(array $data): array
     {
-        return view('components.sections.two-column-feature-grid', [
+        return [
             'badge' => $data['badge'],
             'heading' => $data['heading'],
             'description' => $data['description'],
             'cards' => $data['cards'] ?? [],
             'cta_label' => $data['cta_label'],
             'cta_link' => $data['cta_link'],
-        ]);
+        ];
     }
 
     public static function toSearchableContent(array $data): string

@@ -3,16 +3,17 @@
 namespace App\Filament\Components\Partials;
 
 use App\Enums\CustomComponent;
+use App\Filament\Components\AbstractCustomComponent;
 use Filament\Forms\Components\Repeater;
 use Filament\Forms\Components\Textarea;
 use Filament\Forms\Components\TextInput;
 use Guava\FilamentIconPicker\Forms\IconPicker;
-use Illuminate\Contracts\View\View;
 use Illuminate\Support\Fluent;
-use Webid\Druid\Components\ComponentInterface;
 
-class HorizontalScrollerHighlightComponent implements ComponentInterface
+class HorizontalScrollerHighlightComponent extends AbstractCustomComponent
 {
+    protected static string $view = 'components.sections.horizontal-scroller-highlight';
+
     public static function blockSchema(): array
     {
         return [
@@ -60,9 +61,9 @@ class HorizontalScrollerHighlightComponent implements ComponentInterface
         return CustomComponent::HorizontalScrollerHighlight->value;
     }
 
-    public static function toBlade(array $data): View
+    public static function setupRenderPayload(array $data): array
     {
-        return view('components.sections.horizontal-scroller-highlight', [
+        return [
             'badge' => $data['badge'],
             'heading' => $data['heading'],
             'description' => $data['description'],
@@ -74,7 +75,7 @@ class HorizontalScrollerHighlightComponent implements ComponentInterface
                 'cta_link' => $card['cta_link'],
                 'cta_label' => $card['cta_label'],
             ])),
-        ]);
+        ];
     }
 
     public static function toSearchableContent(array $data): string

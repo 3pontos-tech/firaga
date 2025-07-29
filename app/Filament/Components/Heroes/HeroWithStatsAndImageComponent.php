@@ -3,15 +3,16 @@
 namespace App\Filament\Components\Heroes;
 
 use App\Enums\CustomComponent;
+use App\Filament\Components\AbstractCustomComponent;
 use Filament\Forms\Components\Repeater;
 use Filament\Forms\Components\TextInput;
 use Guava\FilamentIconPicker\Forms\IconPicker;
-use Illuminate\Contracts\View\View;
 use Illuminate\Support\Fluent;
-use Webid\Druid\Components\ComponentInterface;
 
-class HeroWithStatsAndImageComponent implements ComponentInterface
+class HeroWithStatsAndImageComponent extends AbstractCustomComponent
 {
+    protected static string $view = 'components.heroes.hero-with-stats-and-image';
+
     public static function blockSchema(): array
     {
         return [
@@ -68,9 +69,9 @@ class HeroWithStatsAndImageComponent implements ComponentInterface
         return CustomComponent::HeroWithStatsAndImage->value;
     }
 
-    public static function toBlade(array $data): View
+    public static function setupRenderPayload(array $data): array
     {
-        return view('components.heroes.hero-with-stats-and-image', [
+        return [
             'heading' => $data['heading'],
             'subheading' => $data['subheading'],
             'badge' => $data['badge'],
@@ -81,7 +82,7 @@ class HeroWithStatsAndImageComponent implements ComponentInterface
                 'value' => $metric['value'] ?? '',
                 'icon' => $metric['icon'] ?? 'heroicon-o-tag',
             ])),
-        ]);
+        ];
     }
 
     public static function toSearchableContent(array $data): string

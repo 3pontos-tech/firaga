@@ -3,12 +3,13 @@
 namespace App\Filament\Components\Blog;
 
 use App\Enums\CustomComponent;
+use App\Filament\Components\AbstractCustomComponent;
 use Filament\Forms\Components\RichEditor;
-use Illuminate\Contracts\View\View;
-use Webid\Druid\Components\ComponentInterface;
 
-class RichTextComponent implements ComponentInterface
+class RichTextComponent extends AbstractCustomComponent
 {
+    protected static string $view = 'components.blog.partials.rich-text';
+
     public static function blockSchema(): array
     {
         return [
@@ -21,11 +22,11 @@ class RichTextComponent implements ComponentInterface
         return CustomComponent::BlogRichText->value;
     }
 
-    public static function toBlade(array $data): View
+    public static function setupRenderPayload(array $data): array
     {
-        return view('components.blog.partials.rich-text', [
+        return [
             'content' => $data['content'] ?? '',
-        ]);
+        ];
     }
 
     public static function toSearchableContent(array $data): string

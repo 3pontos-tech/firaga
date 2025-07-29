@@ -2,14 +2,15 @@
 
 namespace App\Filament\Components\Landing;
 
+use App\Filament\Components\AbstractCustomComponent;
 use Awcodes\Curator\Components\Forms\CuratorPicker;
 use Awcodes\Curator\Models\Media;
 use Filament\Forms\Components\TextInput;
-use Illuminate\Contracts\View\View;
-use Webid\Druid\Components\ComponentInterface;
 
-class HeroWithImageComponent implements ComponentInterface
+class HeroWithImageComponent extends AbstractCustomComponent
 {
+    protected static string $view = 'components.landing.heroWithImage';
+
     public static function blockSchema(): array
     {
         return [
@@ -29,14 +30,14 @@ class HeroWithImageComponent implements ComponentInterface
         return 'hero_with_image';
     }
 
-    public static function toBlade(array $data): View
+    public static function setupRenderPayload(array $data): array
     {
         $image = Media::query()->find($data['image'])->getSignedUrl();
 
-        return view('components.landing.heroWithImage', [
+        return [
             'heroWithImageData' => $data,
             'urlImage' => $image,
-        ]);
+        ];
     }
 
     public static function toSearchableContent(array $data): string

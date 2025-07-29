@@ -6,14 +6,14 @@ This technical documentation provides a step-by-step guide on how to add new com
 
 Components in the CMS are reusable blocks that can be used in pages or posts. Each component consists of:
 
-1. A PHP class that implements the `ComponentInterface`
+1. A PHP class that implements the `AbstractCustomComponent`
 2. A Blade template for rendering the component
 3. Registration in the CMS configuration
 
 ## Step 1: Create the Component Class
 
 Create a new PHP class in the `app/Filament/Components` directory (or a subdirectory for organization). The class must
-implement the `Webid\Druid\Components\ComponentInterface`.
+implement the `Webid\Druid\Components\AbstractCustomComponent`.
 
 ```php
 <?php
@@ -22,9 +22,9 @@ namespace App\Filament\Components;
 
 use Filament\Forms\Components\TextInput;
 use Illuminate\Contracts\View\View;
-use Webid\Druid\Components\ComponentInterface;
+use App\Filament\Components\AbstractCustomComponent;
 
-class MyCustomComponent implements ComponentInterface
+class MyCustomComponent extends AbstractCustomComponent
 {
     public static function blockSchema(): array
     {
@@ -43,7 +43,7 @@ class MyCustomComponent implements ComponentInterface
         return 'my_custom';
     }
 
-    public static function toBlade(array $data): View
+    public static function toBlade(array $data): array
     {
         // Render the component to a view
         return view('filament.components.my-custom', [
@@ -112,7 +112,7 @@ Open the `config/cms.php` file and add your component to the `components` array:
 Open the `app/TemplateRender.php` file and add your component to the `resolveComponent` method:
 
 ```php
-private function resolveComponent(string $type): ComponentInterface
+private function resolveComponent(string $type): AbstractCustomComponent
 {
     return match ($type) {
         'text' => app(TextComponent::class),

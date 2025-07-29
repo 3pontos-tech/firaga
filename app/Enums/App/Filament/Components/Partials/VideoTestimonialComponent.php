@@ -2,14 +2,15 @@
 
 namespace App\Enums\App\Filament\Components\Partials;
 
+use App\Filament\Components\AbstractCustomComponent;
 use Filament\Forms\Components\MarkdownEditor;
 use Filament\Forms\Components\Repeater;
 use Filament\Forms\Components\TextInput;
-use Illuminate\Contracts\View\View;
-use Webid\Druid\Components\ComponentInterface;
 
-class VideoTestimonialComponent implements ComponentInterface
+class VideoTestimonialComponent extends AbstractCustomComponent
 {
+    protected static string $view = 'components.sections.video-testimonial';
+
     public static function blockSchema(): array
     {
         return [
@@ -68,9 +69,9 @@ class VideoTestimonialComponent implements ComponentInterface
         return 'video-testimonial';
     }
 
-    public static function toBlade(array $data): View
+    public static function setupRenderPayload(array $data): array
     {
-        return view('components.sections.video-testimonial', [
+        return [
             'heading' => $data['heading'] ?? '',
             'description' => $data['description'] ?? '',
             'insights' => $data['insights'] ?? [],
@@ -78,7 +79,7 @@ class VideoTestimonialComponent implements ComponentInterface
             'video_cards' => $data['video_cards'] ?? [],
             'cta_label' => $data['cta_label'] ?? '',
             'cta_url' => $data['cta_url'] ?? '',
-        ]);
+        ];
     }
 
     public static function toSearchableContent(array $data): string

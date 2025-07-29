@@ -3,7 +3,6 @@
 namespace App\Providers\Filament;
 
 use App\Filament\Pages\Authentication;
-use Awcodes\Curator\CuratorPlugin;
 use BezhanSalleh\FilamentShield\FilamentShieldPlugin;
 use Filament\Http\Middleware\Authenticate;
 use Filament\Http\Middleware\AuthenticateSession;
@@ -61,7 +60,6 @@ class AdminPanelServiceProvider extends PanelProvider
                 SubstituteBindings::class,
                 DisableBladeIconComponents::class,
                 DispatchServingFilamentEvent::class,
-
                 SetTheme::class,
             ])
             ->plugins([
@@ -70,7 +68,6 @@ class AdminPanelServiceProvider extends PanelProvider
                     ->myProfile(shouldRegisterUserMenu: true),
                 FilamentBackgroundsPlugin::make(),
                 ThemesPlugin::make(),
-                CuratorPlugin::make(),
             ])
             ->theme(asset('css/filament/admin/theme.css'))
             ->authMiddleware([

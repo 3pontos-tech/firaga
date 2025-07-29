@@ -3,14 +3,15 @@
 namespace App\Filament\Components\Partials;
 
 use App\Enums\CustomComponent;
+use App\Filament\Components\AbstractCustomComponent;
 use Filament\Forms\Components\Repeater;
 use Filament\Forms\Components\Textarea;
 use Filament\Forms\Components\TextInput;
-use Illuminate\Contracts\View\View;
-use Webid\Druid\Components\ComponentInterface;
 
-class SplitWithImageQuoteComponent implements ComponentInterface
+class SplitWithImageQuoteComponent extends AbstractCustomComponent
 {
+    protected static string $view = 'components.sections.split-with-image-quote';
+
     public static function blockSchema(): array
     {
         return [
@@ -41,15 +42,15 @@ class SplitWithImageQuoteComponent implements ComponentInterface
         return CustomComponent::SplitWithImageQuote->value;
     }
 
-    public static function toBlade(array $data): View
+    public static function setupRenderPayload(array $data): array
     {
-        return view('components.sections.split-with-image-quote', [
+        return [
             'badge' => $data['badge'],
             'heading' => $data['heading'],
             'description' => $data['description'],
             'insights' => $data['insights'],
             'quote' => $data['quote'],
-        ]);
+        ];
     }
 
     public static function toSearchableContent(array $data): string

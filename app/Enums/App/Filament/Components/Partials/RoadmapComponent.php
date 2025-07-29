@@ -2,16 +2,17 @@
 
 namespace App\Enums\App\Filament\Components\Partials;
 
+use App\Filament\Components\AbstractCustomComponent;
 use Filament\Forms\Components\MarkdownEditor;
 use Filament\Forms\Components\Repeater;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\TextInput;
 use Guava\FilamentIconPicker\Forms\IconPicker;
-use Illuminate\Contracts\View\View;
-use Webid\Druid\Components\ComponentInterface;
 
-class RoadmapComponent implements ComponentInterface
+class RoadmapComponent extends AbstractCustomComponent
 {
+    protected static string $view = 'components.sections.roadmap';
+
     public static function blockSchema(): array
     {
         return [
@@ -79,16 +80,16 @@ class RoadmapComponent implements ComponentInterface
         return 'roadmap';
     }
 
-    public static function toBlade(array $data): View
+    public static function setupRenderPayload(array $data): array
     {
-        return view('components.sections.roadmap', [
+        return [
             'heading' => $data['heading'] ?? '',
             'subheading' => $data['subheading'] ?? '',
             'cta_text' => $data['cta_text'] ?? '',
             'cta_label' => $data['cta_label'] ?? '',
             'cta_url' => $data['cta_url'] ?? '',
             'steps' => $data['steps'] ?? [],
-        ]);
+        ];
     }
 
     public static function toSearchableContent(array $data): string

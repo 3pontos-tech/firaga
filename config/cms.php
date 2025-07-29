@@ -82,7 +82,7 @@ return [
      | Components
      |--------------------------------------------------------------------------
      | Components are reusable blocks that can be used in pages or posts.
-     | You can create your own components by implementing the ComponentInterface.
+     | You can create your own components by implementing the AbstractCustomComponent.
      |--------------------------------------------------------------------------
      */
     'components' => CustomComponent::allComponents(),

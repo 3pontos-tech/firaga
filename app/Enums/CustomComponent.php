@@ -6,6 +6,7 @@ use App\Enums\App\Filament\Components\Partials\CallToActionWithImageComponent;
 use App\Enums\App\Filament\Components\Partials\RoadmapComponent;
 use App\Enums\App\Filament\Components\Partials\TwoColumnsImageFeatureGridComponent;
 use App\Enums\App\Filament\Components\Partials\VideoTestimonialComponent;
+use App\Filament\Components\AbstractCustomComponent;
 use App\Filament\Components\Blog\MarkdownTextComponent;
 use App\Filament\Components\Blog\RichTextComponent;
 use App\Filament\Components\Heroes\HeroWithBottomImageComponent;
@@ -23,7 +24,6 @@ use App\Filament\Components\Partials\SplitWithHorizontalStepsComponent;
 use App\Filament\Components\Partials\SplitWithImageQuoteComponent;
 use App\Filament\Components\Partials\SplitWithVerticalStepsComponent;
 use App\Filament\Components\Partials\TestimonialsComponent;
-use Webid\Druid\Components\ComponentInterface;
 
 enum CustomComponent: string
 {
@@ -92,7 +92,7 @@ enum CustomComponent: string
         };
     }
 
-    public function getComponent(): ComponentInterface
+    public function getComponent(): AbstractCustomComponent
     {
         return app($this->getComponentClass());
     }

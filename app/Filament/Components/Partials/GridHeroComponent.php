@@ -3,12 +3,13 @@
 namespace App\Filament\Components\Partials;
 
 use App\Enums\CustomComponent;
+use App\Filament\Components\AbstractCustomComponent;
 use Filament\Forms\Components\TextInput;
-use Illuminate\Contracts\View\View;
-use Webid\Druid\Components\ComponentInterface;
 
-class GridHeroComponent implements ComponentInterface
+class GridHeroComponent extends AbstractCustomComponent
 {
+    protected static string $view = 'components.partials.grid-hero';
+
     public static function blockSchema(): array
     {
         return [
@@ -28,13 +29,13 @@ class GridHeroComponent implements ComponentInterface
         return CustomComponent::PartialGridHero->value;
     }
 
-    public static function toBlade(array $data): View
+    public static function setupRenderPayload(array $data): array
     {
-        return view('components.partials.grid-hero', [
+        return [
             'subheading' => $data['subheading'] ?? '',
             'heading' => $data['heading'] ?? '',
             'description' => $data['description'] ?? '',
-        ]);
+        ];
     }
 
     public static function toSearchableContent(array $data): string

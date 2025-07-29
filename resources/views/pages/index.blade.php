@@ -19,7 +19,7 @@
     </x-slot:metatags>
     <div class="bg-elevation-02dp dark:bg-[#232323]">
     @foreach($page->content as $componentPayload)
-        {!! $builder->render($componentPayload['type'], $componentPayload['data']) !!}
+        {!! $builder->render($page, $componentPayload['type'], $componentPayload['data']) !!}
     @endforeach
 
     </div>
