@@ -383,50 +383,50 @@ return [
             'status' => 'published',
         ],
         [
-            'title' => 'Planejamento',
-            'meta_title' => 'Planejamento Personalizado – Consultoria Financeira sob Medida | Fire|ce',
-            'meta_description' => 'Transforme sua vida financeira com os pacotes personalizados da Fire|ce. Do plano Gold ao Black, oferecemos organização, estratégia e performance para cada etapa da sua jornada.',
-            'meta_keywords' => 'planejamento financeiro, planejamento personalizado, consultoria financeira, organização financeira, consultoria Fire|ce',
-            'opengraph_title' => 'Planejamento Financeiro Personalizado para Cada Fase da Sua Vida | Fire|ce',
-            'opengraph_description' => 'Descubra os pacotes exclusivos da Fire|ce para organizar, proteger e expandir seu patrimônio com inteligência e clareza.',
-            'slug' => 'planejamento',
+            'title' => 'Parcerias',
+            'meta_title' => 'Parcerias Estratégicas – Iniciativas Colaborativas com Propósito | Fire|ce',
+            'meta_description' => 'Conecte-se à Fire|ce por meio de parcerias estratégicas. Criamos projetos colaborativos com empresas e instituições que desejam gerar impacto real por meio da educação financeira.',
+            'meta_keywords' => 'parcerias estratégicas, projetos educacionais, joint venture, educação corporativa, inovação financeira, colaboração, Fire|ce, integração de expertise, inteligência financeira',
+            'opengraph_title' => 'Parcerias Estratégicas com a Fire|ce – Juntos Pela Transformação Financeira',
+            'opengraph_description' => 'Empresas, especialistas e instituições podem se conectar à Fire|ce para criar soluções financeiras inovadoras com propósito e impacto.',
+            'slug' => 'parcerias',
             'content' => [
                 [
-                    'type' => 'partials-grid-hero',
+                    'type' => CustomComponent::HeroWithBottomImage->value,
                     'data' => [
-                        'subheading' => 'Fire',
-                        'heading' => 'Planejamento Personalizado',
-                        'description' => 'Descubra o plano ideal para organizar, crescer e proteger seu patrimônio com inteligência.',
+                        'heading' => 'A transformação se constrói com boas alianças.',
+                        'subheading' => 'Seja através de projetos conjuntos, campanhas, educação corporativa ou desenvolvimento de produtos financeiros sob medida, nossas parcerias são desenhadas com estratégia, colaboração e propósito.',
+                        'badge' => 'Parcerias',
+                        'cta_label' => 'Saiba mais',
+                        'cta_url' => 'https://pudim.com.br',
                     ],
                 ],
                 [
-                    'type' => 'blog-markdown-text',
+                    'type' => CustomComponent::SplitWithVerticalSteps->value,
                     'data' => [
-                        'content' => file_get_contents(resource_path('markdown/pages/custom-planning.md')),
-                    ],
-                ],
-                [
-                    'type' => 'partials-faq',
-                    'data' => [
-                        'thumbnail' => 1,
-                        'solutions' => [
+                        'badge' => 'Nosso trabalho',
+                        'heading' => 'Geração de resultados',
+                        'description' => 'Acreditamos que a transformação financeira ganha força quando compartilhada. Por isso, criamos uma frente dedicada a parcerias estratégicas, focada em gerar impacto mútuo. Atuamos com empresas, especialistas e instituições que compartilham nossa visão e desejam construir soluções colaborativas.',
+                        'cta_link' => 'https://pudim.com.br',
+                        'cta_label' => 'Saiba mais',
+                        'cards' => [
                             [
-                                'question' => 'Qual pacote é o mais indicado para o meu momento?',
-                                'answer' => 'O ideal é agendar uma análise financeira para entender o que mais faz sentido para seu momento. De forma geral, o Gold foca em organização, o Platinum aprofunda estratégia e investimentos e o Black oferece performance, proteção e visão internacional.',
+                                'icon' => 'firece-star',
+                                'title' => 'Join Ventures',
+                                'description' => 'Entendemos seu perfil financeiro e objetivos.',
                             ],
                             [
-                                'question' => 'Posso evoluir de um pacote para outro?',
-                                'answer' => 'Sim. Todos incluem suporte consultivo, com frequência e profundidade ajustadas ao plano escolhido. Todos os planos possibilitam até 8 reuniões com o planejador financeiro.',
+                                'icon' => 'firece-star',
+                                'title' => 'Integração de Expertise',
+                                'description' => 'Criamos um plano personalizado para você.',
                             ],
                             [
-                                'question' => 'Os planos servem para quem está endividado?',
-                                'answer' => 'O plano Gold, principalmente, é ideal para quem precisa recuperar o controle e construir uma base sólida. Junto a ele, temos o plano adicional Esmeralda, com foco em pessoas que estão endividadas.',
-                            ],
-                            [
-                                'question' => 'Os pacotes incluem acompanhamento?',
-                                'answer' => 'Sim. Todos incluem suporte consultivo, com frequência e profundidade ajustadas ao plano escolhido. Todos os planos possibilitam até 8 reuniões com o planejador financeiro.',
+                                'icon' => 'firece-star',
+                                'title' => 'Projetos Corpotarativos e Educacionais',
+                                'description' => 'Acompanhamos a execução do plano com suporte contínuo.',
                             ],
                         ],
+
                     ],
                 ],
             ],
@@ -521,56 +521,6 @@ return [
                             [
                                 'question' => 'A Fire|ce oferece formação para atuar no mercado financeiro?',
                                 'answer' => 'Sim! Para quem deseja se tornar um consultor de alto desempenho, oferecemos um caminho estruturado. A formação cobre desde metodologias até estratégias de atuação prática no mercado. O objetivo é preparar você para transformar vidas e construir uma carreira sólida na área financeira.',
-                            ],
-                        ],
-                    ],
-                ],
-            ],
-            'status' => 'published',
-        ],
-        [
-            'title' => 'Parcerias',
-            'meta_title' => 'Parcerias Estratégicas – Iniciativas Colaborativas com Propósito | Fire|ce',
-            'meta_description' => 'Conecte-se à Fire|ce por meio de parcerias estratégicas. Criamos projetos colaborativos com empresas e instituições que desejam gerar impacto real por meio da educação financeira.',
-            'meta_keywords' => 'parcerias estratégicas, projetos educacionais, joint venture, educação corporativa, inovação financeira, colaboração, Fire|ce, integração de expertise, inteligência financeira',
-            'opengraph_title' => 'Parcerias Estratégicas com a Fire|ce – Juntos Pela Transformação Financeira',
-            'opengraph_description' => 'Empresas, especialistas e instituições podem se conectar à Fire|ce para criar soluções financeiras inovadoras com propósito e impacto.',
-            'slug' => 'parcerias',
-            'content' => [
-                [
-                    'type' => 'partials-grid-hero',
-                    'data' => [
-                        'subheading' => 'Oportunidades',
-                        'heading' => 'Parcerias',
-                        'description' => 'Transformação real acontece com boas alianças',
-                    ],
-                ],
-                [
-                    'type' => 'blog-markdown-text',
-                    'data' => [
-                        'content' => file_get_contents(resource_path('markdown/pages/partnerships.md')),
-                    ],
-                ],
-                [
-                    'type' => 'partials-faq',
-                    'data' => [
-                        'thumbnail' => 1,
-                        'solutions' => [
-                            [
-                                'question' => 'Quem pode se tornar parceiro da Fire|ce?',
-                                'answer' => 'Qualquer profissional, empresa ou instituição com sinergia de trabalho alinhada e propósito alinhado ao nosso: transformar a vida financeira das pessoas com estratégia e impacto real.',
-                            ],
-                            [
-                                'question' => 'Quais são os formatos mais comuns de parceria?',
-                                'answer' => 'Desde Joint Ventures e projetos educacionais até parcerias comerciais, integrações de serviços.',
-                            ],
-                            [
-                                'question' => 'A Fire|ce investe em projetos em conjunto?',
-                                'answer' => 'Sim. Avaliamos oportunidades de forma individual e, quando há sinergia, investimos tempo, estrutura e até recursos para gerar resultados sólidos em parceria.',
-                            ],
-                            [
-                                'question' => 'Como iniciar uma conversa sobre parceria com a Fire|ce?',
-                                'answer' => 'Basta entrar em contato pelo nosso formulário ou canais oficiais. Vamos marcar uma reunião para entender como nossas forças podem se complementar.',
                             ],
                         ],
                     ],

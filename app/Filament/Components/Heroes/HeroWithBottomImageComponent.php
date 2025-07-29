@@ -1,0 +1,67 @@
+<?php
+
+namespace App\Filament\Components\Heroes;
+
+use App\Enums\CustomComponent;
+use Filament\Forms\Components\TextInput;
+use Illuminate\Contracts\View\View;
+use Webid\Druid\Components\ComponentInterface;
+
+class HeroWithBottomImageComponent implements ComponentInterface
+{
+    public static function blockSchema(): array
+    {
+        return [
+            TextInput::make('heading')
+                ->label('Heading')
+                ->required()
+                ->default('Invista no futuro com inteligência e precisão'),
+
+            TextInput::make('subheading')
+                ->label('Subheading')
+                ->required()
+                ->default('Transformamos a forma como as pessoas lidam com dinheiro, capacitando-as a conquistar liberdade, segurança e crescimento financeiro sustentável.'),
+
+            TextInput::make('badge')
+                ->label('Badge')
+                ->nullable()
+                ->default('Consultoria Financeira'),
+
+            TextInput::make('cta_label')
+                ->label('Button Text')
+                ->required()
+                ->default('Agende uma consultoria'),
+
+            TextInput::make('cta_url')
+                ->label('Button URL')
+                ->required()
+                ->default('/blog'),
+        ];
+    }
+
+    public static function fieldName(): string
+    {
+        return CustomComponent::HeroWithBottomImage->value;
+    }
+
+    public static function toBlade(array $data): View
+    {
+        return view('components.heroes.hero-with-bottom-image', [
+            'heading' => $data['heading'],
+            'subheading' => $data['subheading'],
+            'badge' => $data['badge'],
+            'cta_label' => $data['cta_label'],
+            'cta_url' => $data['cta_url'],
+        ]);
+    }
+
+    public static function toSearchableContent(array $data): string
+    {
+        // TODO: Implement toSearchableContent() method.
+    }
+
+    public static function imagePreview(): string
+    {
+        // TODO: Implement imagePreview() method.
+    }
+}

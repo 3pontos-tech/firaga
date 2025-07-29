@@ -8,6 +8,7 @@ use App\Enums\App\Filament\Components\Partials\TwoColumnsImageFeatureGridCompone
 use App\Enums\App\Filament\Components\Partials\VideoTestimonialComponent;
 use App\Filament\Components\Blog\MarkdownTextComponent;
 use App\Filament\Components\Blog\RichTextComponent;
+use App\Filament\Components\Heroes\HeroWithBottomImageComponent;
 use App\Filament\Components\Heroes\HeroWithCodeSnippetComponent;
 use App\Filament\Components\Heroes\HeroWithStatsAndImageComponent;
 use App\Filament\Components\Media\FullWidthVideoComponent;
@@ -44,6 +45,8 @@ enum CustomComponent: string
 
     case HeroWithStatsAndImage = 'hero-with-stats-and-image';
     case HeroWithCodeSnippet = 'hero-with-code-snippet';
+    case HeroWithBottomImage = 'hero-with-bottom-image';
+
     case SplitWithHorizontalSteps = 'split-with-horizontal-steps';
 
     case Plans = 'plans';
@@ -82,6 +85,7 @@ enum CustomComponent: string
             self::VideoTestimonial => VideoTestimonialComponent::class,
             self::TwoColumnsImageFeatureGrid => TwoColumnsImageFeatureGridComponent::class,
             self::CallToActionWithImage => CallToActionWithImageComponent::class,
+            self::HeroWithBottomImage => HeroWithBottomImageComponent::class,
         };
     }
 
