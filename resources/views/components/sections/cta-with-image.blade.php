@@ -2,7 +2,7 @@
     'heading',
     'description',
     'cta_label',
-    'cta_link',
+    'cta_url',
     'image',
 ])
 
@@ -22,7 +22,7 @@
                 {{ $description }}
             </p>
             <div class="flex flex-col sm:flex-row gap-4 sm:gap-x-4">
-                <x-layout.shared.button :href="$cta_link" class="bg-brand-primary text-white p-3 sm:p-4 w-full sm:w-auto">
+                <x-layout.shared.button :href="$cta_url" class="bg-brand-primary text-white p-3 sm:p-4 w-full sm:w-auto">
                     {{ $cta_label }}
                 </x-layout.shared.button>
             </div>

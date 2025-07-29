@@ -1,7 +1,7 @@
 @props([
     'title' => 'Seu talento é internacional, seus investimentos também devem ser.',
     'cta_label' => 'Agende sua análise',
-    'cta_link' => 'https://example.com/agende-sua-analise',
+    'cta_url' => 'https://example.com/agende-sua-analise',
 ])
 
 <section class="mt-16 sm:mt-24 md:mt-32 lg:mt-60">
@@ -17,7 +17,7 @@
             <h2 class="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl 2xl:text-6xl font-bold text-white text-center leading-tight max-w-4xl">
                 {{ $title }}
             </h2>
-            <x-layout.shared.button :href="$cta_link" variant="custom" class="px-4 py-2 sm:px-6 sm:py-2 md:px-7 md:py-2.5 lg:px-8 lg:py-3 text-sm sm:text-base md:text-lg mt-4 sm:mt-6 md:mt-8 lg:mt-10 text-text-dark bg-gradient-to-r from-[#D6D6D6] via-[#FFFFFF] to-[#D6D6D6]">
+            <x-layout.shared.button :href="$cta_url" variant="custom" class="px-4 py-2 sm:px-6 sm:py-2 md:px-7 md:py-2.5 lg:px-8 lg:py-3 text-sm sm:text-base md:text-lg mt-4 sm:mt-6 md:mt-8 lg:mt-10 text-text-dark bg-gradient-to-r from-[#D6D6D6] via-[#FFFFFF] to-[#D6D6D6]">
                 {{ $cta_label }}
             </x-layout.shared.button>
         </div>

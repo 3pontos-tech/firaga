@@ -4,7 +4,7 @@
     'description' =>
         'Na nossa consultoria, entendemos que cada cliente é único. Por isso, desenvolvemos uma metodologia personalizada que se adapta às suas necessidades e objetivos financeiros. Nossa abordagem é baseada em três pilares fundamentais: Análise de Perfil, Planejamento Estratégico e Execução com Suporte Contínuo.',
     'cta_label' => 'Saiba Mais',
-    'cta_link' => 'https://example.com/saiba-mais',
+    'cta_url' => 'https://example.com/saiba-mais',
     'cards' => [
         [
             'title' => 'Análise de Perfil',
@@ -34,7 +34,7 @@
             <p class="text-text-medium text-sm sm:text-base md:text-lg max-w-2xl leading-relaxed">
                 {{ $description }}
             </p>
-            <x-layout.shared.button :href="$cta_link" variant="primary" class="w-full sm:w-auto px-6 md:px-8 py-3">
+            <x-layout.shared.button :href="$cta_url" variant="primary" class="w-full sm:w-auto px-6 md:px-8 py-3">
                 {{ $cta_label }}
             </x-layout.shared.button>
         </div>

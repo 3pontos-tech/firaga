@@ -2,7 +2,7 @@
     'title' => '',
     'description' => '',
     'cta_label' => 'Saiba Mais',
-    'cta_link' => '#',
+    'cta_url' => 'https://pudim.com/',
 ])
 
 
@@ -24,7 +24,7 @@
             </p>
             <div class="opacity-0 max-h-0 group-hover:opacity-100 group-hover:max-h-20 transition-all duration-500 ease-in-out transform translate-y-4 group-hover:translate-y-0">
             <x-layout.shared.button
-                :href="$cta_link"
+                :href="$cta_url"
                 variant="secondary"
                 class="px-6 sm:px-8 py-2 sm:py-3 text-base sm:text-lg w-full font-bold transition-all duration-300 transform hover:scale-105">
                 {{ $cta_label }}

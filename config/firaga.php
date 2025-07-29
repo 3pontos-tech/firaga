@@ -13,6 +13,12 @@ return [
             'opengraph_title' => 'Planejamento Financeiro Personalizado para Cada Fase da Sua Vida | Fire|ce',
             'opengraph_description' => 'Descubra os pacotes exclusivos da Fire|ce para organizar, proteger e expandir seu patrimônio com inteligência e clareza.',
             'slug' => '/',
+            'medias' => [
+                [
+                    'collection' => CustomComponent::HeroWithStatsAndImage->value,
+                    'path' => public_path('images/stock/hero-stock.png'),
+                ],
+            ],
             'content' => [
                 [
                     'type' => CustomComponent::HeroWithStatsAndImage->value,
@@ -52,7 +58,7 @@ return [
                         'badge' => 'Nosso trabalho',
                         'heading' => 'Transformamos a complexidade em clareza com nossa metodologia.',
                         'description' => 'Levamos você da análise de perfil à execução estratégica, com suporte contínuo para maximizar seus resultados. Nossa metodologia foi desenvolvida para transformar a sua relação com o dinheiro em 3 etapas fundamentais:',
-                        'cta_link' => 'https://pudim.com.br',
+                        'cta_url' => 'https://pudim.com.br',
                         'cta_label' => 'Saiba mais',
                         'cards' => [
                             [
@@ -85,21 +91,21 @@ return [
                                 'icon' => 'firece-star',
                                 'title' => 'Se você sente que poderia estar melhor',
                                 'description' => 'Seu dinheiro some sem que perceba? Sente que poderia estar guardando mais, gastando melhor e tendo mais controle financeiro? Agende sua consultoria que nós vamos te ajudar!',
-                                'cta_link' => 'https://pudim.com.br',
+                                'cta_url' => 'https://pudim.com.br',
                                 'cta_label' => 'Agendar análise',
                             ],
                             [
                                 'icon' => 'firece-star',
                                 'title' => 'Se você guarda dinheiro, mas não sabe como potencializar',
                                 'description' => 'Criamos um planejamento financeiro alinhado com seus objetivos, transformando sua reserva em um plano sólido de crescimento. Chegou a hora de fazer suas economias trabalharem para você.',
-                                'cta_link' => 'https://pudim.com.br',
+                                'cta_url' => 'https://pudim.com.br',
                                 'cta_label' => 'Agendar análise',
                             ],
                             [
                                 'icon' => 'firece-star',
                                 'title' => 'Se você já investe e quer ir mais longe',
                                 'description' => 'Talvez sua carteira não seja tão diversificada ou seus rendimentos não estejam alinhados com seus objetivos. Está na hora de otimizar sua estratégia.',
-                                'cta_link' => 'https://pudim.com.br',
+                                'cta_url' => 'https://pudim.com.br',
                                 'cta_label' => 'Agendar análise',
                             ],
                         ],
@@ -119,41 +125,41 @@ return [
                         'badge' => 'Nossas especialidades',
                         'heading' => 'Soluções personalizadas',
                         'description' => 'Na nossa consultoria, entendemos que cada cliente é único. Por isso, desenvolvemos uma metodologia personalizada que se adapta às suas necessidades e objetivos financeiros.',
-                        'cta_link' => 'https://pudim.com.br',
+                        'cta_url' => 'https://pudim.com.br',
                         'cards' => [
                             [
                                 'icon' => 'firece-star',
                                 'title' => 'Planejamento Estratégico',
                                 'description' => 'Diagnóstico e plano financeiro personalizado para cada fase da sua vida.',
-                                'cta_link' => 'https://pudim.com.br',
+                                'cta_url' => 'https://pudim.com.br',
                                 'cta_label' => 'Visitar',
                             ],
                             [
                                 'icon' => 'firece-star',
                                 'title' => 'Key Account',
                                 'description' => 'Consultoria exclusiva e contínua para quem busca alta performance financeira.',
-                                'cta_link' => 'https://pudim.com.br',
+                                'cta_url' => 'https://pudim.com.br',
                                 'cta_label' => 'Visitar',
                             ],
                             [
                                 'icon' => 'firece-star',
                                 'title' => 'Educa Fire',
                                 'description' => 'Conteúdos, cursos e eventos para transformar sua carreira dentro do mercado financeiro.',
-                                'cta_link' => 'https://pudim.com.br',
+                                'cta_url' => 'https://pudim.com.br',
                                 'cta_label' => 'Visitar',
                             ],
                             [
                                 'icon' => 'firece-star',
                                 'title' => 'Parcerias',
                                 'description' => 'Soluções integradas com especialistas e marcas que compartilham nossos valores.',
-                                'cta_link' => 'https://pudim.com.br',
+                                'cta_url' => 'https://pudim.com.br',
                                 'cta_label' => 'Visitar',
                             ],
                             [
                                 'icon' => 'firece-star',
                                 'title' => 'Code Capital',
                                 'description' => 'Consultoria financeira especializada para profissionais do mercado tech.',
-                                'cta_link' => 'https://pudim.com.br',
+                                'cta_url' => 'https://pudim.com.br',
                                 'cta_label' => 'Visitar',
                             ],
                         ],
@@ -172,7 +178,7 @@ return [
                                 'best_plan' => false,
                                 'description' => 'Para quem está começando a organizar sua vida financeira e deseja mais tranquilidade.',
                                 'cta_label' => 'Saiba mais',
-                                'cta_link' => 'https://pudim.com.br',
+                                'cta_url' => 'https://pudim.com.br',
                                 'benefits' => [
                                     ['value' => 'Organização Anual'],
                                     ['value' => 'Mapa financeiro'],
@@ -187,7 +193,7 @@ return [
                                 'description' => 'Para quem deseja ter o controle total de suas finanças e ser mais arrojado, além de mais diversidade.',
                                 'includes' => 'Itens do Gold',
                                 'cta_label' => 'Saiba mais',
-                                'cta_link' => 'https://pudim.com.br',
+                                'cta_url' => 'https://pudim.com.br',
                                 'benefits' => [
                                     ['value' => 'Preenchimento de Fluxo de Caixa'],
                                     ['value' => 'Diagnóstico de carteira'],
@@ -202,7 +208,7 @@ return [
                                 'description' => 'Para quem já investe e deseja estratégias personalizadas para potencializar seu patrimônio.',
                                 'includes' => 'Itens do Gold & Platinum',
                                 'cta_label' => 'Saiba mais',
-                                'cta_link' => 'https://pudim.com.br',
+                                'cta_url' => 'https://pudim.com.br',
                                 'benefits' => [
                                     ['value' => 'Revisão de Progresso'],
                                     ['value' => 'Carteira Personalizada'],
@@ -279,9 +285,8 @@ return [
                     'data' => [
                         'heading' => 'Por que investir com a Code Capital?',
                         'subheading' => 'Você é atendido por quem fala a sua língua — especialistas que entendem sua realidade e estão prontos para te ajudar a crescer, recomeçar ou expandir seus horizontes financeiros.',
-                        'cta_text' => 'Nossa equipe é formada por especialistas que conhecem os desafios da sua profissão e estão prontos para caminhar ao seu lado, com respeito, clareza e soluções sob medida.',
                         'cta_label' => 'Saiba mais',
-                        'cta_link' => 'https://pudim.com.br',
+                        'cta_url' => 'https://pudim.com.br',
                         'steps' => [
                             [
                                 'icon' => 'firece-star',
@@ -358,7 +363,7 @@ return [
                             ],
                         ],
                         'cta_label' => 'Agende uma consulta gratuita',
-                        'cta_link' => '#',
+                        'cta_url' => 'https://pudim.com/',
                     ],
                 ],
                 [
@@ -375,7 +380,7 @@ return [
                         'heading' => 'Consultor financeiro exclusivo',
                         'description' => 'Ter um consultor financeiro vai muito além de "organizar as contas". É sobre ter um profissional ao seu lado que entende a sua realidade, te ajuda a enxergar possibilidades e constrói, junto com você, um caminho concreto rumo à tranquilidade financeira.',
                         'cta_label' => 'Agende uma consulta gratuita',
-                        'cta_link' => 'https://pudim.com.br',
+                        'cta_url' => 'https://pudim.com.br',
                         'image' => 'Saiba mais',
                     ],
                 ],
@@ -407,7 +412,7 @@ return [
                         'badge' => 'Nosso trabalho',
                         'heading' => 'Geração de resultados',
                         'description' => 'Acreditamos que a transformação financeira ganha força quando compartilhada. Por isso, criamos uma frente dedicada a parcerias estratégicas, focada em gerar impacto mútuo. Atuamos com empresas, especialistas e instituições que compartilham nossa visão e desejam construir soluções colaborativas.',
-                        'cta_link' => 'https://pudim.com.br',
+                        'cta_url' => 'https://pudim.com.br',
                         'cta_label' => 'Saiba mais',
                         'cards' => [
                             [
@@ -441,7 +446,7 @@ return [
                             ['value' => 'Instituições Educacionais'],
                         ],
                         'quote' => 'Seja parceiro da Fire|ce e ofereça acesso a soluções que geram equilíbrio, produtividade e bem-estar real.',
-                        'cta_link' => 'https://pudim.com.br',
+                        'cta_url' => 'https://pudim.com.br',
                         'cta_label' => 'Saiba mais',
                     ],
                 ],
@@ -470,7 +475,7 @@ return [
                             ],
                         ],
                         'cta_label' => 'Agende uma consulta gratuita',
-                        'cta_link' => '#',
+                        'cta_url' => 'https://pudim.com/',
                     ],
                 ],
                 [

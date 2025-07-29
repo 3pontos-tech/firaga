@@ -9,7 +9,7 @@ use Filament\Forms\Components\TextInput;
 
 class TwoColumnsImageFeatureGridComponent extends AbstractCustomComponent
 {
-    protected static string $view = 'components.sections.two-columns-image-feature-grid';
+    protected static string $view = 'components.sections.two-column-feature-grid';
 
     public static function blockSchema(): array
     {
@@ -39,7 +39,7 @@ class TwoColumnsImageFeatureGridComponent extends AbstractCustomComponent
             TextInput::make('cta_label')
                 ->label('CTA Label')
                 ->required(),
-            TextInput::make('cta_link')
+            TextInput::make('cta_url')
                 ->label('CTA Link')
                 ->required(),
         ];
@@ -58,7 +58,7 @@ class TwoColumnsImageFeatureGridComponent extends AbstractCustomComponent
             'description' => $data['description'],
             'cards' => $data['cards'] ?? [],
             'cta_label' => $data['cta_label'],
-            'cta_link' => $data['cta_link'],
+            'cta_url' => $data['cta_url'],
         ];
     }
 

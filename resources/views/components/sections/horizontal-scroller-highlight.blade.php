@@ -53,7 +53,7 @@
                         :description="$card['description']"
                         :icon="$card['icon']"
                         :cta_label="$card['cta_label']"
-                        :cta_link="$card['cta_link']"
+                        :cta_url="$card['cta_url']"
                     />
                 @endforeach
             </div>

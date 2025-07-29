@@ -26,7 +26,7 @@ class HorizontalScrollerHighlightComponent extends AbstractCustomComponent
             Textarea::make('description')
                 ->label('Description')
                 ->required(),
-            TextInput::make('cta_link')
+            TextInput::make('cta_url')
                 ->label('CTA Link')
                 ->hint('CTA: "Fale conosco para mais informações"')
                 ->url()
@@ -47,7 +47,7 @@ class HorizontalScrollerHighlightComponent extends AbstractCustomComponent
                     TextInput::make('cta_label')
                         ->label('CTA Label')
                         ->required(),
-                    TextInput::make('cta_link')
+                    TextInput::make('cta_url')
                         ->url()
                         ->label('CTA Link')
                         ->required(),
@@ -67,12 +67,12 @@ class HorizontalScrollerHighlightComponent extends AbstractCustomComponent
             'badge' => $data['badge'],
             'heading' => $data['heading'],
             'description' => $data['description'],
-            'cta_link' => $data['cta_link'],
+            'cta_url' => $data['cta_url'],
             'cards' => collect($data['cards'])->map(fn ($card) => Fluent::make([
                 'title' => $card['title'],
                 'description' => $card['description'],
                 'icon' => $card['icon'],
-                'cta_link' => $card['cta_link'],
+                'cta_url' => $card['cta_url'],
                 'cta_label' => $card['cta_label'],
             ])),
         ];

@@ -5,6 +5,7 @@ namespace App\Filament\Components\Heroes;
 use App\Enums\CustomComponent;
 use App\Filament\Components\AbstractCustomComponent;
 use Filament\Forms\Components\Repeater;
+use Filament\Forms\Components\SpatieMediaLibraryFileUpload;
 use Filament\Forms\Components\TextInput;
 use Guava\FilamentIconPicker\Forms\IconPicker;
 use Illuminate\Support\Fluent;
@@ -16,6 +17,12 @@ class HeroWithStatsAndImageComponent extends AbstractCustomComponent
     public static function blockSchema(): array
     {
         return [
+            SpatieMediaLibraryFileUpload::make('hero')
+                ->label('Hero Image')
+                ->collection(CustomComponent::HeroWithStatsAndImage->value)
+                ->image()
+                ->required(),
+
             TextInput::make('heading')
                 ->label('Heading')
                 ->required()

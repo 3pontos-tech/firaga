@@ -2,7 +2,7 @@
     'heading' => '',
     'description' => '',
     'cta_label' => 'Comece Agora',
-    'cta_url' => '#',
+    'cta_url' => 'https://pudim.com/',
     'badge' => 'Serviços',
     'snippet' => ''
 ])

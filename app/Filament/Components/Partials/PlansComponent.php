@@ -50,7 +50,7 @@ class PlansComponent extends AbstractCustomComponent
                                 ->label(__('Feature'))
                                 ->required(),
                         ]),
-                    TextInput::make('cta_text')
+                    TextInput::make('cta_label')
                         ->label(__('Button Text'))
                         ->required(),
                     TextInput::make('cta_url')
@@ -79,7 +79,7 @@ class PlansComponent extends AbstractCustomComponent
                 'note' => $plan['note'] ?? null,
                 'benefits' => collect($plan['benefits']),
                 'cta_label' => $plan['cta_label'],
-                'cta_link' => $plan['cta_link'],
+                'cta_url' => $plan['cta_url'],
             ])),
         ];
     }

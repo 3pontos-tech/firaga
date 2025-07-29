@@ -3,7 +3,7 @@
     'description',
     'insights' => [],
     'quote',
-    'cta_link',
+    'cta_url',
     'cta_label',
 ])
 <section class="py-8 sm:py-12 md:py-16 lg:py-20 xl:py-60 min-h-screen">

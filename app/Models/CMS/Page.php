@@ -10,6 +10,8 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Support\Collection;
+use Spatie\MediaLibrary\HasMedia;
+use Spatie\MediaLibrary\InteractsWithMedia;
 use Webid\Druid\Enums\PageStatus;
 use Webid\Druid\Models\Contracts\IsMenuable;
 use Webid\Druid\Models\Traits\CanRenderContent;
@@ -42,10 +44,11 @@ use Webid\Druid\Models\Traits\CanRenderContent;
  * @property-read Page $translationOrigin
  * @property-read Collection<int, Page> $translations
  */
-class Page extends Model implements IsMenuable
+class Page extends Model implements HasMedia, IsMenuable
 {
     use CanRenderContent;
     use HasFactory;
+    use InteractsWithMedia;
     use SoftDeletes;
 
     protected $table = 'pages';

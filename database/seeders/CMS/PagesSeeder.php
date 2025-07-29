@@ -4,15 +4,30 @@ declare(strict_types=1);
 
 namespace Database\Seeders\CMS;
 
-use Database\Factories\CMS\PageFactory;
+use App\Models\CMS\Page;
+use Carbon\Carbon;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\File;
 
 class PagesSeeder extends Seeder
 {
     public function run(): void
     {
         foreach (config('firaga.pages') as $page) {
-            PageFactory::new()->create($page);
+            $medias = $page['medias'] ?? [];
+            unset($page['medias']);
+            $page = Page::factory()->create($page);
+
+            foreach ($medias as $media) {
+                $extension = pathinfo($media['path'], PATHINFO_EXTENSION);
+                $filePath = '/tmp/' . Carbon::now()->getTimestamp() . '.' . $extension;
+
+                File::copy($media['path'], $filePath);
+
+                $page
+                    ->addMedia($filePath)
+                    ->toMediaCollection($media['collection'] ?? 'default');
+            }
         }
     }
 }

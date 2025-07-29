@@ -17,7 +17,7 @@
         ],
     ],
     'cta_label' => 'Agende uma consulta gratuita',
-    'cta_link' => '#',
+    'cta_url' => 'https://pudim.com/',
 ])
 
 <div class="container mx-auto">
@@ -43,7 +43,7 @@
                 @endforeach
             </div>
             <div class="flex flex-col sm:flex-row justify-start gap-4 sm:gap-x-4 mt-8 sm:mt-10 md:mt-12">
-                <x-layout.shared.button :href="$cta_link" class="bg-brand-primary text-white p-3 sm:p-4 w-full sm:w-auto">
+                <x-layout.shared.button :href="$cta_url" class="bg-brand-primary text-white p-3 sm:p-4 w-full sm:w-auto">
                     {{ $cta_label }}
                 </x-layout.shared.button>
             </div>

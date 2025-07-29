@@ -4,7 +4,7 @@
     'hasCTAButton' => false,
     'class' => '',
     'cta_label' => '',
-    'cta_link' => '',
+    'cta_url' => '',
 ])
 
 <div
@@ -22,7 +22,7 @@
         </p>
 
         <x-layout.shared.button
-            :href="$cta_link"
+            :href="$cta_url"
             variant="secondary"
             class="px-6 sm:px-8 py-2 sm:py-3 text-base sm:text-lg w-full font-bold opacity-0 group-hover:opacity-100 transition-opacity duration-300">
             {{ $cta_label }}

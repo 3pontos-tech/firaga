@@ -41,7 +41,7 @@ class SplitWithHorizontalStepsComponent extends AbstractCustomComponent
                     TextInput::make('cta_label')
                         ->label('CTA Label')
                         ->required(),
-                    TextInput::make('cta_link')
+                    TextInput::make('cta_url')
                         ->label('CTA Link')
                         ->url()
                         ->required(),
@@ -66,7 +66,7 @@ class SplitWithHorizontalStepsComponent extends AbstractCustomComponent
                 'description' => $card['description'],
                 'icon' => $card['icon'],
                 'cta_label' => $card['cta_label'],
-                'cta_link' => $card['cta_link'],
+                'cta_url' => $card['cta_url'],
             ])),
         ];
     }

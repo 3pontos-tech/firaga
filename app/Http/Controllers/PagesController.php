@@ -15,6 +15,7 @@ class PagesController extends Controller
 
         $page = Page::query()->where('slug', $page)
             ->where('status', 'published')
+            ->with('media')
             ->whereNull('deleted_at')
             ->firstOrFail();
 

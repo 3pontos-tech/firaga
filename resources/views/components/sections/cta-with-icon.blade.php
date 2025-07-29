@@ -1,7 +1,7 @@
 @props([
     'title' => 'Acesse nosso blog para ter acesso as melhores métricas',
     'description' => 'Nosso blog é o lugar ideal para quem busca conhecimento e insights para tomar decisões financeiras mais inteligentes.',
-    'cta_text' => 'Acessar blog',
+    'cta_label' => 'Acessar blog',
     'cta_url' => "#",
     'icon' => 'heroicon-o-newspaper',
 ])
@@ -31,7 +31,7 @@
                     href="{{ $cta_url }}"
                     variant="primary"
                 >
-                    {{ $cta_text }}
+                    {{ $cta_label }}
                 </x-layout.shared.button>
             </div>
         </div>

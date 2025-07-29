@@ -5,7 +5,7 @@
 personalizada que se adapta às suas necessidades e objetivos financeiros. Nossa abordagem é baseada em três pilares
 fundamentais: Análise de Perfil, Planejamento Estratégico e Execução com Suporte Contínuo.',
     'cta_label' => 'Saiba Mais',
-    'cta_link' => 'https://example.com/saiba-mais',
+    'cta_url' => 'https://example.com/saiba-mais',
     'cards' => [
         [
             'title' => 'Seja um parceiro',

@@ -60,10 +60,6 @@ class RoadmapComponent extends AbstractCustomComponent
 
                 ])
                 ->columns(1),
-            'cta_text' => TextInput::make('cta_text')
-                ->label(__('Call to Action Text'))
-                ->required()
-                ->default('Join us on this journey!'),
             'cta_label' => TextInput::make('cta_label')
                 ->label(__('Call to Action Label'))
                 ->required()
@@ -85,7 +81,6 @@ class RoadmapComponent extends AbstractCustomComponent
         return [
             'heading' => $data['heading'] ?? '',
             'subheading' => $data['subheading'] ?? '',
-            'cta_text' => $data['cta_text'] ?? '',
             'cta_label' => $data['cta_label'] ?? '',
             'cta_url' => $data['cta_url'] ?? '',
             'steps' => $data['steps'] ?? [],
