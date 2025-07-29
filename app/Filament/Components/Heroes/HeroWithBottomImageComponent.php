@@ -57,11 +57,11 @@ class HeroWithBottomImageComponent implements ComponentInterface
 
     public static function toSearchableContent(array $data): string
     {
-        // TODO: Implement toSearchableContent() method.
+        return '';
     }
 
     public static function imagePreview(): string
     {
-        // TODO: Implement imagePreview() method.
+        return 'https://http.cat/200.png';
     }
 }

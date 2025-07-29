@@ -20,6 +20,7 @@ use App\Filament\Components\Partials\HorizontalScrollerHighlightComponent;
 use App\Filament\Components\Partials\PlansComponent;
 use App\Filament\Components\Partials\QuoteComponent;
 use App\Filament\Components\Partials\SplitWithHorizontalStepsComponent;
+use App\Filament\Components\Partials\SplitWithImageQuoteComponent;
 use App\Filament\Components\Partials\SplitWithVerticalStepsComponent;
 use App\Filament\Components\Partials\TestimonialsComponent;
 use Webid\Druid\Components\ComponentInterface;
@@ -42,6 +43,7 @@ enum CustomComponent: string
     case TwoColumnsImageFeatureGrid = 'two-columns-image-feature-grid';
 
     case SplitWithVerticalSteps = 'split-with-vertical-steps';
+    case SplitWithImageQuote = 'split-with-image-quote';
 
     case HeroWithStatsAndImage = 'hero-with-stats-and-image';
     case HeroWithCodeSnippet = 'hero-with-code-snippet';
@@ -75,6 +77,7 @@ enum CustomComponent: string
             self::CallToActionWithIconSection => CtaWithIconComponent::class,
             self::SplitWithVerticalSteps => SplitWithVerticalStepsComponent::class,
             self::SplitWithHorizontalSteps => SplitWithHorizontalStepsComponent::class,
+            self::SplitWithImageQuote => SplitWithImageQuoteComponent::class, // Assuming this is the correct mapping
             self::HorizontalScrollerHighlight => HorizontalScrollerHighlightComponent::class,
             self::Plans => PlansComponent::class,
             self::HeroWithStatsAndImage => HeroWithStatsAndImageComponent::class,

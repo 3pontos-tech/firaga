@@ -429,6 +429,70 @@ return [
 
                     ],
                 ],
+                [
+                    'type' => CustomComponent::SplitWithImageQuote->value,
+                    'data' => [
+                        'heading' => 'Nosso Trabalho',
+                        'badge' => 'Parcerias',
+                        'description' => 'Trazemos nossa metodologia, estrutura e autoridade de mercado para somar com o que o parceiro já possui. A inovação nasce do encontro de forças complementares e estamos prontos para criar algo novo. Trabalhamos com:',
+                        'insights' => [
+                            ['value' => 'Empresas'],
+                            ['value' => 'Especialistas'],
+                            ['value' => 'Instituições Educacionais'],
+                        ],
+                        'quote' => 'Seja parceiro da Fire|ce e ofereça acesso a soluções que geram equilíbrio, produtividade e bem-estar real.',
+                        'cta_link' => 'https://pudim.com.br',
+                        'cta_label' => 'Saiba mais',
+                    ],
+                ],
+                [
+                    'type' => CustomComponent::TwoColumnsImageFeatureGrid->value,
+                    'data' => [
+                        'badge' => 'Sobre nós',
+                        'heading' => 'Sobre nós',
+                        'description' => 'A Fire|ce ajuda empresas a promoverem alta performance por meio da educação financeira. Com programas sob medida, consultores especializados e soluções integradas, criamos pontes entre saúde financeira e produtividade.',
+                        'cards' => [
+                            [
+                                'title' => 'Projetos Conjuntos',
+                                'description' => 'Monetize sua influência ou rede com um modelo de parceria inteligente e sustentável — você lucra enquanto ajuda pessoas a transformarem suas vidas financeiras.',
+                            ],
+                            [
+                                'title' => 'Reconhecimento',
+                                'description' => 'Associe sua marca ou imagem a uma consultoria que entrega resultados reais e melhora a relação das pessoas com o dinheiro.',
+                            ],
+                            [
+                                'title' => 'Ecossistema Fire|ce',
+                                'description' => 'Tenha contato privilegiado com nossos produtos, lançamentos e soluções, além de ferramentas que tornam a parceria ainda mais eficiente.',
+                            ],
+                            [
+                                'title' => 'Suporte contínuo',
+                                'description' => 'Contamos com uma equipe que acompanha sua jornada, oferece materiais personalizados, treinamentos e um plano de crescimento contínuo — juntos, vamos mais longe.',
+                            ],
+                        ],
+                        'cta_label' => 'Agende uma consulta gratuita',
+                        'cta_link' => '#',
+                    ],
+                ],
+                [
+                    'type' => 'partials-faq',
+                    'data' => [
+                        'thumbnail' => 1,
+                        'solutions' => [
+                            [
+                                'question' => 'Quem pode se tornar parceiro da Fire|ce?',
+                                'answer' => 'Qualquer profissional, empresa ou instituição com sinergia de trabalho alinhada e propósito alinhado ao nosso: transformar a vida financeira das pessoas com estratégia e impacto real.',
+                            ],
+                            [
+                                'question' => 'Quais são os formatos mais comuns de parceria?',
+                                'answer' => 'Conectamos conhecimento com inspiração. Levamos educação financeira para empresas, eventos e grupos, abordando temas que impactam diretamente a vida das pessoas. Nossa abordagem vai além de conceitos teóricos – oferecemos insights práticos e estratégias aplicáveis imediatamente.',
+                            ],
+                            [
+                                'question' => 'A Fire|ce investe em projetos em conjunto?',
+                                'answer' => 'Sim! Para quem deseja se tornar um consultor de alto desempenho, oferecemos um caminho estruturado. A formação cobre desde metodologias até estratégias de atuação prática no mercado. O objetivo é preparar você para transformar vidas e construir uma carreira sólida na área financeira.',
+                            ],
+                        ],
+                    ],
+                ],
             ],
             'status' => 'published',
         ],

@@ -41,7 +41,6 @@
                         :description="$card['description']"
                     />
                 @endforeach
-
             </div>
             <div class="flex flex-col sm:flex-row justify-start gap-4 sm:gap-x-4 mt-8 sm:mt-10 md:mt-12">
                 <x-layout.shared.button :href="$cta_link" class="bg-brand-primary text-white p-3 sm:p-4 w-full sm:w-auto">
