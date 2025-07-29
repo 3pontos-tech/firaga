@@ -12,7 +12,6 @@ use Webid\Druid\Components\ComponentInterface;
 
 class RoadmapComponent implements ComponentInterface
 {
-
     public static function blockSchema(): array
     {
         return [
@@ -50,13 +49,13 @@ class RoadmapComponent implements ComponentInterface
 
                     TextInput::make('cta_label')
                         ->label(__('Call to Action Label'))
-                        ->required(fn($get) => $get('has_cta'))
-                        ->visible(fn($get) => $get('has_cta')),
+                        ->required(fn ($get) => $get('has_cta'))
+                        ->visible(fn ($get) => $get('has_cta')),
                     TextInput::make('cta_url')
                         ->label(__('Call to Action URL'))
                         ->url()
-                        ->required(fn($get) => $get('has_cta'))
-                        ->visible(fn($get) => $get('has_cta')),
+                        ->required(fn ($get) => $get('has_cta'))
+                        ->visible(fn ($get) => $get('has_cta')),
 
                 ])
                 ->columns(1),

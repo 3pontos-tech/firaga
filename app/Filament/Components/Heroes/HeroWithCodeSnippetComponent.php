@@ -6,7 +6,6 @@ use App\Enums\CustomComponent;
 use Filament\Forms\Components\MarkdownEditor;
 use Filament\Forms\Components\TextInput;
 use Illuminate\Contracts\View\View;
-use Illuminate\Support\Fluent;
 use Webid\Druid\Components\ComponentInterface;
 
 class HeroWithCodeSnippetComponent implements ComponentInterface
@@ -40,7 +39,7 @@ class HeroWithCodeSnippetComponent implements ComponentInterface
                 ->default('/blog'),
             MarkdownEditor::make('snippet')
                 ->label('Code Snippet')
-                ->required()
+                ->required(),
         ];
     }
 
@@ -57,7 +56,7 @@ class HeroWithCodeSnippetComponent implements ComponentInterface
             'badge' => $data['badge'],
             'cta_label' => $data['cta_label'],
             'cta_url' => $data['cta_url'],
-            'snippet' => $data['snippet']
+            'snippet' => $data['snippet'],
         ]);
     }
 
@@ -70,5 +69,4 @@ class HeroWithCodeSnippetComponent implements ComponentInterface
     {
         return 'https://http.cat/500.png';
     }
-
 }

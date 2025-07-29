@@ -39,7 +39,7 @@
                 @foreach ($benefits as $item)
                     <li class="flex items-start gap-x-2 sm:gap-x-3">
                         <x-lucide-check class="w-4 h-4 sm:w-5 sm:h-5 {{ $bestPlan ? 'text-white' : 'text-brand-primary' }} flex-shrink-0 mt-0.5"/>
-                        <span class="{{ $mainTextColor }} font-medium text-sm sm:text-base">{{ $item }}</span>
+                        <span class="{{ $mainTextColor }} font-medium text-sm sm:text-base">{{ $item['value'] }}</span>
                     </li>
                 @endforeach
             </ul>

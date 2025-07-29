@@ -45,7 +45,7 @@ class PlansComponent implements ComponentInterface
                     Repeater::make('benefits')
                         ->label(__('Features'))
                         ->schema([
-                            TextInput::make('feature')
+                            TextInput::make('value')
                                 ->label(__('Feature'))
                                 ->required(),
                         ]),

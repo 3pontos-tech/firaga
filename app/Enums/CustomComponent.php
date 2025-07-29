@@ -2,6 +2,10 @@
 
 namespace App\Enums;
 
+use App\Enums\App\Filament\Components\Partials\CallToActionWithImageComponent;
+use App\Enums\App\Filament\Components\Partials\RoadmapComponent;
+use App\Enums\App\Filament\Components\Partials\TwoColumnsImageFeatureGridComponent;
+use App\Enums\App\Filament\Components\Partials\VideoTestimonialComponent;
 use App\Filament\Components\Blog\MarkdownTextComponent;
 use App\Filament\Components\Blog\RichTextComponent;
 use App\Filament\Components\Heroes\HeroWithCodeSnippetComponent;
@@ -34,6 +38,8 @@ enum CustomComponent: string
     case CallToActionFullWidthSection = 'call-to-action-section';
     case CallToActionWithIconSection = 'call-to-action-with-icon';
 
+    case TwoColumnsImageFeatureGrid = 'two-columns-image-feature-grid';
+
     case SplitWithVerticalSteps = 'split-with-vertical-steps';
 
     case HeroWithStatsAndImage = 'hero-with-stats-and-image';
@@ -49,6 +55,11 @@ enum CustomComponent: string
     case Testimonials = 'testimonials';
 
     case Roadmap = 'roadmap';
+
+    case VideoTestimonial = 'video-testimonial';
+
+    case CallToActionWithImage = 'call-to-action-with-image';
+
     public function getComponentClass(): string
     {
         return match ($this) {
@@ -67,7 +78,10 @@ enum CustomComponent: string
             self::FullWidthVideo => FullWidthVideoComponent::class,
             self::Testimonials => TestimonialsComponent::class,
             self::HeroWithCodeSnippet => HeroWithCodeSnippetComponent::class,
-            self::Roadmap => App\Filament\Components\Partials\RoadmapComponent::class,
+            self::Roadmap => RoadmapComponent::class,
+            self::VideoTestimonial => VideoTestimonialComponent::class,
+            self::TwoColumnsImageFeatureGrid => TwoColumnsImageFeatureGridComponent::class,
+            self::CallToActionWithImage => CallToActionWithImageComponent::class,
         };
     }
 
