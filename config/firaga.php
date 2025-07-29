@@ -268,6 +268,16 @@ return [
             'opengraph_title' => 'Code Capital – Investimento Inteligente para Profissionais de Tecnologia | Fire|ce',
             'opengraph_description' => 'Seu talento é global — seus investimentos também podem ser. Conheça o Code Capital da Fire|ce e invista com inteligência no mercado internacional.',
             'slug' => 'code-capital',
+            'medias' => [
+                [
+                    'collection' => CustomComponent::TwoColumnsImageFeatureGrid->value,
+                    'path' => public_path('images/stock/our-approach.png'),
+                ],
+                [
+                    'collection' => CustomComponent::CallToActionWithImage->value,
+                    'path' => public_path('images/stock/consultant.png'),
+                ],
+            ],
             'content' => [
                 [
                     'type' => CustomComponent::HeroWithCodeSnippet->value,
@@ -395,6 +405,24 @@ return [
             'opengraph_title' => 'Parcerias Estratégicas com a Fire|ce – Juntos Pela Transformação Financeira',
             'opengraph_description' => 'Empresas, especialistas e instituições podem se conectar à Fire|ce para criar soluções financeiras inovadoras com propósito e impacto.',
             'slug' => 'parcerias',
+            'medias' => [
+                [
+                    'collection' => CustomComponent::PartialFaq->value,
+                    'path' => public_path('images/stock/hero-stock.png'),
+                ],
+                [
+                    'collection' => CustomComponent::HeroWithBottomImage->value,
+                    'path' => public_path('images/stock/partners-hero.png'),
+                ],
+                [
+                    'collection' => CustomComponent::SplitWithImageQuote->value,
+                    'path' => public_path('images/stock/our-work.png'),
+                ],
+                [
+                    'collection' => CustomComponent::TwoColumnsImageFeatureGrid->value,
+                    'path' => public_path('images/stock/our-approach.png'),
+                ],
+            ],
             'content' => [
                 [
                     'type' => CustomComponent::HeroWithBottomImage->value,
@@ -479,9 +507,8 @@ return [
                     ],
                 ],
                 [
-                    'type' => 'partials-faq',
+                    'type' => CustomComponent::PartialFaq->value,
                     'data' => [
-                        'thumbnail' => 1,
                         'solutions' => [
                             [
                                 'question' => 'Quem pode se tornar parceiro da Fire|ce?',
@@ -595,7 +622,7 @@ return [
                     ],
                 ],
             ],
-            'status' => 'published',
+            'status' => 'draft',
         ],
 
     ],

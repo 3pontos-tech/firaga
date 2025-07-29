@@ -1,9 +1,11 @@
 <?php
 
-namespace App\Enums\App\Filament\Components\Partials;
+namespace App\Filament\Components\Partials;
 
+use App\Enums\CustomComponent;
 use App\Filament\Components\AbstractCustomComponent;
 use Filament\Forms\Components\Repeater;
+use Filament\Forms\Components\SpatieMediaLibraryFileUpload;
 use Filament\Forms\Components\Textarea;
 use Filament\Forms\Components\TextInput;
 
@@ -14,6 +16,11 @@ class TwoColumnsImageFeatureGridComponent extends AbstractCustomComponent
     public static function blockSchema(): array
     {
         return [
+            SpatieMediaLibraryFileUpload::make('hero')
+                ->label('Hero Image')
+                ->collection(CustomComponent::TwoColumnsImageFeatureGrid->value)
+                ->image()
+                ->required(),
             TextInput::make('badge')
                 ->label('Badge')
                 ->required(),

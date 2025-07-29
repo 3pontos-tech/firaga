@@ -28,6 +28,10 @@ class MenusSeeder extends Seeder
 
             foreach (config('firaga.pages') as $index => $page) {
 
+                if ($page['status'] === 'draft') {
+                    continue;
+                }
+
                 MenuItemFactory::new()
                     ->forExistingPage(Page::query()->where('slug', $page['slug'])->first())
                     ->forMenu($menu)

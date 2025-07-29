@@ -49,7 +49,7 @@
             </div>
         </div>
         <div class="w-full lg:w-2/4 justify-center lg:justify-end mt-8 lg:mt-0 hidden xl:block">
-            <img src="{{ asset('images/stock/our-approach.png') }}" alt="Code Capital" class="w-full max-w-[500px] lg:max-w-[652px] object-cover">
+            <img src="{{ $renderable?->getFirstMediaUrl(App\Enums\CustomComponent::TwoColumnsImageFeatureGrid->value) ?? asset('images/stock/our-approach.png') }}" alt="Code Capital" class="w-full max-w-[500px] lg:max-w-[652px] object-cover">
         </div>
     </div>
 </div>

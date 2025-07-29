@@ -1,4 +1,4 @@
-{{-- resources/views/components/navbar.blade.php --}}
+
 @props([
     'menu' => [], // expects ['main-menu' => ...]
     'mobileVar' => 'mobileOpen',

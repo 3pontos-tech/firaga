@@ -4,9 +4,8 @@ namespace App\Filament\Components\Partials;
 
 use App\Enums\CustomComponent;
 use App\Filament\Components\AbstractCustomComponent;
-use Awcodes\Curator\Components\Forms\CuratorPicker;
-use Awcodes\Curator\Models\Media;
 use Filament\Forms\Components\Repeater;
+use Filament\Forms\Components\SpatieMediaLibraryFileUpload;
 use Filament\Forms\Components\Textarea;
 use Filament\Forms\Components\TextInput;
 
@@ -17,8 +16,10 @@ class FaqComponent extends AbstractCustomComponent
     public static function blockSchema(): array
     {
         return [
-            CuratorPicker::make('thumbnail')
-                ->label(__('Thumbnail'))
+            SpatieMediaLibraryFileUpload::make('hero')
+                ->label('Hero Image')
+                ->collection(CustomComponent::PartialFaq->value)
+                ->image()
                 ->required(),
             Repeater::make('solutions')
                 ->label(__('Solutions'))
@@ -41,7 +42,6 @@ class FaqComponent extends AbstractCustomComponent
     public static function setupRenderPayload(array $data): array
     {
         return [
-            'thumbnail' => Media::query()->find($data['thumbnail']),
             'solutions' => collect($data['solutions'] ?? []),
         ];
     }

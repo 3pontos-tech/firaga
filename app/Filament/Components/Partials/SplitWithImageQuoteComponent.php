@@ -5,6 +5,7 @@ namespace App\Filament\Components\Partials;
 use App\Enums\CustomComponent;
 use App\Filament\Components\AbstractCustomComponent;
 use Filament\Forms\Components\Repeater;
+use Filament\Forms\Components\SpatieMediaLibraryFileUpload;
 use Filament\Forms\Components\Textarea;
 use Filament\Forms\Components\TextInput;
 
@@ -15,6 +16,11 @@ class SplitWithImageQuoteComponent extends AbstractCustomComponent
     public static function blockSchema(): array
     {
         return [
+            SpatieMediaLibraryFileUpload::make('hero')
+                ->label('Hero Image')
+                ->collection(CustomComponent::SplitWithImageQuote->value)
+                ->image()
+                ->required(),
             TextInput::make('badge')
                 ->label('Badge')
                 ->required(),

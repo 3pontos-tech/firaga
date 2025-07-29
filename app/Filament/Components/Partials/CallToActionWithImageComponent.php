@@ -1,9 +1,10 @@
 <?php
 
-namespace App\Enums\App\Filament\Components\Partials;
+namespace App\Filament\Components\Partials;
 
 use App\Enums\CustomComponent;
 use App\Filament\Components\AbstractCustomComponent;
+use Filament\Forms\Components\SpatieMediaLibraryFileUpload;
 use Filament\Forms\Components\TextInput;
 
 class CallToActionWithImageComponent extends AbstractCustomComponent
@@ -13,6 +14,11 @@ class CallToActionWithImageComponent extends AbstractCustomComponent
     public static function blockSchema(): array
     {
         return [
+            SpatieMediaLibraryFileUpload::make('hero')
+                ->label('Hero Image')
+                ->collection(CustomComponent::CallToActionWithImage->value)
+                ->image()
+                ->required(),
             TextInput::make('heading')
                 ->label('Heading')
                 ->required(),

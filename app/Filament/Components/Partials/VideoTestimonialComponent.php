@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Enums\App\Filament\Components\Partials;
+namespace App\Filament\Components\Partials;
 
 use App\Filament\Components\AbstractCustomComponent;
 use Filament\Forms\Components\MarkdownEditor;

@@ -23,7 +23,7 @@
             </x-layout.shared.button>
         </div>
         <div>
-            <img src="{{ asset('images/stock/partners-hero.png') }}" alt="Parcerias" class="w-full h-full object-cover">
+            <img src="{{ $renderable?->getFirstMediaUrl(App\Enums\CustomComponent::HeroWithBottomImage->value) ?? asset('images/stock/partners-hero.png') }}" alt="Parcerias" class="w-full h-full object-cover">
         </div>
     </div>
 </section>

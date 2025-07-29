@@ -29,7 +29,7 @@
             <div
                 class="relative flex items-center justify-center rounded-full animate-fade-in delay-300 transition-all duration-300">
                 <img
-                    src="{{ $renderable?->getFirstMediaUrl(CustomComponent::HeroWithStatsAndImage->value) ?? ('images/stock/hero-stock.png') }}"
+                    src="{{ $renderable?->getFirstMediaUrl(CustomComponent::HeroWithStatsAndImage->value) ?? asset('images/stock/hero-stock.png') }}"
                     alt="Fire|ce Logo"
                     class="w-full h-auto max-w-md lg:max-w-lg xl:max-w-xl object-cover">
             </div>

@@ -11,7 +11,7 @@
         <div class="flex flex-col lg:flex-row gap-8 lg:gap-12 xl:gap-16 items-center justify-between">
             <div class="w-full lg:w-1/2 xl:w-[60%] relative order-2 lg:order-2">
                 <div class="aspect-square sm:aspect-[4/3] lg:aspect-square xl:aspect-[4/3] relative">
-                    <img src="{{ asset('images/stock/our-work.png') }}" alt="Our Work"
+                    <img src="{{ $renderable?->getFirstMediaUrl(App\Enums\CustomComponent::SplitWithImageQuote->value) ?? asset('images/stock/our-work.png') }}" alt="Our Work"
                          class="w-full h-full object-cover rounded-lg sm:rounded-xl lg:rounded-2xl">
                     <div
                             class="absolute bottom-3 sm:bottom-4 lg:bottom-6 xl:bottom-8 left-1/2 transform -translate-x-1/2 text-white text-sm sm:text-base lg:text-lg xl:text-xl font-medium w-[85%] sm:w-[80%] lg:w-[85%] xl:w-[80%] flex flex-col sm:flex-row items-start gap-2 sm:gap-x-3 lg:gap-x-4 justify-center">
