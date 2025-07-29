@@ -18,6 +18,7 @@
         "blade-ui-kit/blade-icons": "^1.8",
         "danharrin/livewire-rate-limiting": "^2.1",
         "filament/filament": "^3.2",
+        "filament/spatie-laravel-media-library-plugin": "^3.2",
         "guava/filament-icon-picker": "^2.0",
         "hasnayeen/themes": "^3.0.24",
         "jeffgreco13/filament-breezy": "^2.6",

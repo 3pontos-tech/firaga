@@ -9,9 +9,9 @@ use App\Filament\Resources\CMS\PostResource\Pages\ViewPost;
 use App\Filament\Resources\CMS\PostResource\RelationManagers\PostsRelationManager;
 use App\Models\CMS\Category;
 use App\Models\CMS\Post;
-use Awcodes\Curator\Components\Forms\CuratorPicker;
 use Filament\Forms\Components\DateTimePicker;
 use Filament\Forms\Components\Select;
+use Filament\Forms\Components\SpatieMediaLibraryFileUpload;
 use Filament\Forms\Components\Tabs;
 use Filament\Forms\Components\Tabs\Tab;
 use Filament\Forms\Components\Textarea;
@@ -24,7 +24,7 @@ use Filament\Tables\Actions\BulkActionGroup;
 use Filament\Tables\Actions\DeleteAction;
 use Filament\Tables\Actions\DeleteBulkAction;
 use Filament\Tables\Actions\EditAction;
-use Filament\Tables\Columns\ImageColumn;
+use Filament\Tables\Columns\SpatieMediaLibraryImageColumn;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Columns\ViewColumn;
 use Filament\Tables\Table;
@@ -76,11 +76,9 @@ class PostResource extends Resource
         ];
 
         $parametersTab = [
-            'thumbnail_id' => CuratorPicker::make('thumbnail_id')
-                ->label(__('filament.thumbnail'))
-                ->required()
-                ->preserveFilenames()
-                ->columnSpanFull(),
+            'cover' => SpatieMediaLibraryFileUpload::make('cover')
+                ->label(__('Cover'))
+                ->collection('cover'),
             'thumbnail_alt' => TextInput::make('thumbnail_alt')
                 ->label(__('filament.thumbnail_alt'))
                 ->columnSpanFull(),
@@ -111,7 +109,7 @@ class PostResource extends Resource
                 ->required()
                 ->relationship('categories', 'name')
                 ->preload(),
-            'authors' => Select::make('author')
+            'authors' => Select::make('author_id')
                 ->label(__('filament.author'))
                 ->required()
                 ->preload()
@@ -134,9 +132,11 @@ class PostResource extends Resource
     {
 
         $columns = [
-            ImageColumn::make('author.thumbnail.url')
-                ->label(__('filament.avatar'))
-                ->circular(),
+            SpatieMediaLibraryImageColumn::make('cover')
+                ->label(__('Cover '))
+                ->collection('cover')
+                ->circular()
+                ->columnSpanFull(),
 
             TextColumn::make('title')
                 ->label(__('filament.title'))

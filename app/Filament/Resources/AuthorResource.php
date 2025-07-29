@@ -6,8 +6,8 @@ use App\Filament\Resources\AuthorResource\Pages\CreateAuthor;
 use App\Filament\Resources\AuthorResource\Pages\EditAuthor;
 use App\Filament\Resources\AuthorResource\Pages\ListAuthors;
 use App\Models\Author;
-use Awcodes\Curator\Components\Forms\CuratorPicker;
 use Filament\Forms\Components\Select;
+use Filament\Forms\Components\SpatieMediaLibraryFileUpload;
 use Filament\Forms\Components\Textarea;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Form;
@@ -16,7 +16,7 @@ use Filament\Resources\Resource;
 use Filament\Tables\Actions\BulkActionGroup;
 use Filament\Tables\Actions\DeleteBulkAction;
 use Filament\Tables\Actions\EditAction;
-use Filament\Tables\Columns\ImageColumn;
+use Filament\Tables\Columns\SpatieMediaLibraryImageColumn;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Table;
 use Illuminate\Support\Str;
@@ -68,10 +68,9 @@ class AuthorResource extends Resource
                     ->label(__('filament.linkedin_url'))
                     ->required()
                     ->url(),
-                CuratorPicker::make('thumbnail_id')
-                    ->columnSpanFull()
+                SpatieMediaLibraryFileUpload::make('avatar')
                     ->label(__('filament.avatar'))
-                    ->preserveFilenames(),
+                    ->collection('avatar'),
             ]);
     }
 
@@ -79,8 +78,9 @@ class AuthorResource extends Resource
     {
         return $table
             ->columns([
-                ImageColumn::make('thumbnail.url')
+                SpatieMediaLibraryImageColumn::make('avatar')
                     ->label(__('filament.avatar'))
+                    ->collection('avatar')
                     ->circular()
                     ->columnSpanFull(),
                 TextColumn::make('name')

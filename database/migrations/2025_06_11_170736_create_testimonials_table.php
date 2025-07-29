@@ -18,7 +18,6 @@ return new class extends Migration
             $table->integer('rating');
             $table->longText('comment');
             $table->timestamp('posted_at');
-            $table->foreignId('thumbnail_id')->constrained('media');
             $table->timestamps();
         });
     }

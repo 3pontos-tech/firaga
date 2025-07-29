@@ -14,7 +14,7 @@
                                     d="M24 232C10.7452 232 -1.04206e-06 221.255 -2.32751e-06 208L-2.01717e-05 24C-2.14572e-05 10.7452 10.7451 3.03682e-05 24 3.0107e-05L469.769 2.13245e-05C478.861 2.11454e-05 483.505 10.9109 477.202 17.464L437.024 59.2354C389.999 108.125 404.423 188.678 465.491 218.212V218.212C472.431 221.568 470.04 232 462.332 232L24 232Z" />
                             </clipPath>
                         </defs>
-                        <image href="https://github.com/moovmooov.png" alt="{{ $post->title }}" width="100%"
+                        <image href="{{ $post->getFirstMediaUrl('cover') }}" alt="{{ $post->title }}" width="100%"
                             height="100%" preserveAspectRatio="xMidYMid slice" clip-path="url(#custom-shape)" />
                     </svg>
                 </div>
@@ -48,7 +48,7 @@
                         <div class="flex items-center gap-4">
                             <img alt="{{ $post->author->name ?? '' }}" loading="lazy" decoding="async" data-nimg="1"
                                 class="rounded-full w-10 h-10 sm:w-12 sm:h-12 flex-shrink-0" style="color: transparent;"
-                                src="https://github.com/moovmooov.png">
+                                src="{{ $post->author->getFirstMediaUrl('avatar') }}">
                             <div class="flex flex-col">
                                 <span
                                     class="text-sm sm:text-base text-text-high font-medium">{{ $post->author->name }}</span>

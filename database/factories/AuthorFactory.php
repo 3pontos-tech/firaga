@@ -4,7 +4,6 @@ namespace Database\Factories;
 
 use App\Models\Author;
 use App\Models\User;
-use Awcodes\Curator\Models\Media;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Support\Str;
 
@@ -23,7 +22,6 @@ class AuthorFactory extends Factory
             'name' => fake()->name(),
             'role' => fake()->randomElement(['Financial Consultant', 'Developer']),
             'description' => fake()->paragraph(),
-            'thumbnail_id' => Media::factory()->create(), // Assuming you will handle media separately
             'linkedin_url' => fake()->url(),
         ];
     }

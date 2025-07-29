@@ -6,9 +6,7 @@ use App\Enums\CustomComponent;
 use Filament\Forms\Components\Repeater;
 use Filament\Forms\Components\Textarea;
 use Filament\Forms\Components\TextInput;
-use Guava\FilamentIconPicker\Forms\IconPicker;
 use Illuminate\Contracts\View\View;
-use Illuminate\Support\Fluent;
 use Webid\Druid\Components\ComponentInterface;
 
 class SplitWithImageQuoteComponent implements ComponentInterface

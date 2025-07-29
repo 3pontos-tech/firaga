@@ -16,6 +16,13 @@ Route::domain('lp.' . config('app.domain'))->group(function (): void {
 
 Route::domain(config('app.domain'))->group(function (): void {
 
+    Route::prefix('blog')->group(function (): void {
+        Route::get('/', [ArticlesController::class, 'index'])
+            ->name('blog.index');
+        Route::get('/{post:slug}', [ArticlesController::class, 'show'])
+            ->name('blog.show');
+    });
+
     Route::get(config('app.url'))->name('landing');
 
     Route::get('/{page?}', [PagesController::class, 'show'])
@@ -24,12 +31,5 @@ Route::domain(config('app.domain'))->group(function (): void {
 
     Route::get('/contact', ContactController::class)
         ->name('contact');
-
-    Route::prefix('blog')->group(function (): void {
-        Route::get('/', [ArticlesController::class, 'index'])
-            ->name('blog.index');
-        Route::get('/{post:slug}', [ArticlesController::class, 'show'])
-            ->name('blog.show');
-    });
 
 });

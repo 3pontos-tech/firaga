@@ -19,7 +19,7 @@
                 <img
                     alt="{{ $post->title }}" loading="lazy" decoding="async"
                     class="object-cover"
-                    src="https://github.com/moovmooov.png">
+                    src="{{ $post->getFirstMediaUrl('cover') }}">
             </div>
             <div class="flex gap-2 mb-2">
                 @foreach($post->categories as $category)
@@ -49,7 +49,7 @@
                         <img alt="{{ $post->author->name ?? '' }}" loading="lazy"
                              decoding="async" data-nimg="1"
                              class="rounded-full w-8 h-8"
-                             src="https://github.com/moovmooov.png">
+                             src="{{ $post->author->getFirstMediaUrl('avatar') }}">
                     </div>
                     <span class="">Por {{ $post->author->name }}</span>
                 </div>
@@ -71,7 +71,7 @@
                 loading="lazy"
                 decoding="async"
                 class="rounded-full w-16 h-16 border-2 border-outline-light"
-                src="https://github.com/moovmooov.png"
+                src="{{ $post->author->getFirstMediaUrl('avatar') }}"
             >
             <div class="flex flex-col">
                 <h2 class="text-lg font-bold text-text-high">Autor</h2>

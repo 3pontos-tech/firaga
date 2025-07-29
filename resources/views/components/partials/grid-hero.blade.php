@@ -1,6 +1,6 @@
 @props([
-    'subheading' => 'Conhecimento Financeiro',
-    'heading' => 'Blog Fire|ce',
+    'subheading' => 'Blog Fire|ce',
+    'heading' => 'Conteúdo que transforma',
     'description' => 'Transformamos a forma como as pessoas lidam com dinheiro, capacitando-as a conquistar liberdade, segurança e crescimento financeiro sustentável.',
 ])
 <section class="relative overflow-hidden min-h-[55vh] flex items-center justify-center bg-elevation-02dp">

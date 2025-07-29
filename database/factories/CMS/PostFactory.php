@@ -6,7 +6,6 @@ use App\Enums\CustomComponent;
 use App\Models\Author;
 use App\Models\CMS\Category;
 use App\Models\CMS\Post;
-use Awcodes\Curator\Models\Media;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Database\Eloquent\Model;
 use Webid\Druid\Enums\PostStatus;
@@ -21,7 +20,6 @@ class PostFactory extends Factory
             'title' => fake()->words(3, true),
             'slug' => fake()->slug,
             'author_id' => Author::factory(),
-            'thumbnail_id' => Media::factory()->create()->getKey(),
             'thumbnail_alt' => fake()->words(3, true),
             'status' => PostStatus::PUBLISHED,
             'lang' => 'en',

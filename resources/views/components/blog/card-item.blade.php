@@ -8,11 +8,11 @@
             class="group bg-elevation-04dp rounded-xl overflow-hidden hover:bg-base-200 transition-all duration-300  flex flex-col justify-between">
             <div class="relative h-48 overflow-hidden">
                 <img
-                    alt="Investimentos Estratégicos para Profissionais de TI" loading="lazy"
+                    alt="{{ $post->title }} cover" loading="lazy"
                     decoding="async" data-nimg="fill"
                     class="object-cover transition-transform duration-300 group-hover:scale-105"
                     style="position: absolute; height: 100%; width: 100%; inset: 0; color: transparent;"
-                    src="https://github.com/moovmooov.png">
+                    src="{{ $post->getFirstMediaUrl('avatar') }}">
                 <div class="absolute top-4 left-4">
                     @foreach($post->categories as $category)
                         <x-layout.shared.chip variant="custom"
@@ -49,7 +49,7 @@
                                  decoding="async"
                                  data-nimg="1"
                                  class="rounded-full w-8 h-8"
-                                 src="https://github.com/moovmooov.png"
+                                 src="{{ $post->author->getFirstMediaUrl('avatar') }}"
                             />
                         </div>
                         <div class="flex flex-col">
