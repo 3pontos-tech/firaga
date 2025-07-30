@@ -5,6 +5,7 @@ namespace App\Filament\Components\Partials;
 use App\Enums\CustomComponent;
 use App\Filament\Components\AbstractCustomComponent;
 use Filament\Forms\Components\Repeater;
+use Filament\Forms\Components\Select;
 use Filament\Forms\Components\SpatieMediaLibraryFileUpload;
 use Filament\Forms\Components\Textarea;
 use Filament\Forms\Components\TextInput;
@@ -21,6 +22,16 @@ class SplitWithImageQuoteComponent extends AbstractCustomComponent
                 ->collection(CustomComponent::SplitWithImageQuote->value)
                 ->image()
                 ->required(),
+
+            Select::make('image_position')
+                ->label('Image Position')
+                ->options([
+                    'left' => 'Left',
+                    'right' => 'Right',
+                ])
+                ->default('left')
+                ->required(),
+
             TextInput::make('badge')
                 ->label('Badge')
                 ->required(),
@@ -40,6 +51,13 @@ class SplitWithImageQuoteComponent extends AbstractCustomComponent
             Textarea::make('quote')
                 ->label('Quote')
                 ->required(),
+            TextInput::make('cta_label')
+                ->label('Call to Action Label')
+                ->required(),
+            TextInput::make('cta_url')
+                ->label('Call to Action URL')
+                ->url()
+                ->required(),
         ];
     }
 
@@ -51,11 +69,14 @@ class SplitWithImageQuoteComponent extends AbstractCustomComponent
     public static function setupRenderPayload(array $data): array
     {
         return [
+            'image_position' => $data['image_position'],
             'badge' => $data['badge'],
             'heading' => $data['heading'],
             'description' => $data['description'],
             'insights' => $data['insights'],
             'quote' => $data['quote'],
+            'cta_label' => $data['cta_label'] ?? '',
+            'cta_url' => $data['cta_url'] ?? '',
         ];
     }
 

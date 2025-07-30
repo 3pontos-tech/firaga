@@ -552,6 +552,10 @@ return [
                     'collection' => CustomComponent::PartialFaq->value,
                     'path' => public_path('images/stock/key-account-faq.png'),
                 ],
+                [
+                    'collection' => CustomComponent::SplitWithImageQuote->value,
+                    'path' => public_path('images/stock/our-work.png'),
+                ],
             ],
             'content' => [
                 [
@@ -590,6 +594,23 @@ return [
                             ],
 
                         ],
+                    ],
+                ],
+                [
+                    'type' => CustomComponent::SplitWithImageQuote->value,
+                    'data' => [
+                        'heading' => 'Nosso Trabalho',
+                        'badge' => 'Parcerias',
+                        'description' => 'Trazemos nossa metodologia, estrutura e autoridade de mercado para somar com o que o parceiro já possui. A inovação nasce do encontro de forças complementares e estamos prontos para criar algo novo. Trabalhamos com:',
+                        'insights' => [
+                            ['value' => 'Empresas'],
+                            ['value' => 'Especialistas'],
+                            ['value' => 'Instituições Educacionais'],
+                        ],
+                        'image_position' => 'right',
+                        'quote' => 'Seja parceiro da Fire|ce e ofereça acesso a soluções que geram equilíbrio, produtividade e bem-estar real.',
+                        'cta_url' => 'https://pudim.com.br',
+                        'cta_label' => 'Saiba mais',
                     ],
                 ],
                 [

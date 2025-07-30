@@ -5,7 +5,7 @@
 
 @php
     $variant = match($variant) {
-        'metallic' => 'border border-white/30 text-white',
+        'metallic' => 'border border-white/30 text-white bg-[#FFFFFF29]',
         'custom' => '',
         default => 'bg-brand-primary/40 hover:bg-brand-primary/90 text-white border border-brand-primary',
     };
