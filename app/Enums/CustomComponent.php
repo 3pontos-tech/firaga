@@ -6,6 +6,7 @@ use App\Filament\Components\AbstractCustomComponent;
 use App\Filament\Components\Blog\MarkdownTextComponent;
 use App\Filament\Components\Blog\RichTextComponent;
 use App\Filament\Components\Heroes\HeroWithBottomImageComponent;
+use App\Filament\Components\Heroes\HeroWithCenteredTitleComponent;
 use App\Filament\Components\Heroes\HeroWithCodeSnippetComponent;
 use App\Filament\Components\Heroes\HeroWithStatsAndImageComponent;
 use App\Filament\Components\Media\FullWidthVideoComponent;
@@ -13,7 +14,6 @@ use App\Filament\Components\Partials\CallToActionWithImageComponent;
 use App\Filament\Components\Partials\CtaFullWidthComponent;
 use App\Filament\Components\Partials\CtaWithIconComponent;
 use App\Filament\Components\Partials\FaqComponent;
-use App\Filament\Components\Partials\GridHeroComponent;
 use App\Filament\Components\Partials\HorizontalScrollerHighlightComponent;
 use App\Filament\Components\Partials\PlansComponent;
 use App\Filament\Components\Partials\QuoteComponent;
@@ -31,7 +31,7 @@ enum CustomComponent: string
 
     case BlogRichText = 'blog-rich-text';
 
-    case PartialGridHero = 'partials-grid-hero';
+    case HeroWithCenteredTitle = 'hero-with-centered-title';
 
     case PartialFaq = 'partials-faq';
 
@@ -70,7 +70,7 @@ enum CustomComponent: string
         return match ($this) {
             self::BlogMarkdownText => MarkdownTextComponent::class,
             self::BlogRichText => RichTextComponent::class,
-            self::PartialGridHero => GridHeroComponent::class,
+            self::HeroWithCenteredTitle => HeroWithCenteredTitleComponent::class,
             self::PartialFaq => FaqComponent::class,
             self::PartialQuote => QuoteComponent::class,
             self::CallToActionFullWidthSection => CtaFullWidthComponent::class,

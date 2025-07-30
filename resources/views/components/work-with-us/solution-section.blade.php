@@ -26,7 +26,7 @@ fundamentais: Análise de Perfil, Planejamento Estratégico e Execução com Sup
         </div>
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-8  ">
             @foreach($cards as $card)
-                <x-landing.card-cta
+                <x-cards.card-cta
                     :title="$card['title']"
                     :description="$card['description']"
                     :cta_label="$cta_label"

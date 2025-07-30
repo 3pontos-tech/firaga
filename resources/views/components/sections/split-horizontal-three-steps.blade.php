@@ -33,7 +33,7 @@ suscipit at nisi vitae, faucibus hendrerit turpis. ',
         </div>
         <div class="grid grid-cols-1 lg:grid-cols-3 gap-8  ">
             @foreach($cards as $card)
-                <x-landing.card-cta
+                <x-cards.card-cta
                     :title="$card['title']"
                     :description="$card['description']"
                     :cta_label="$cta_label"

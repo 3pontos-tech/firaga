@@ -1,12 +1,12 @@
 <?php
 
-namespace App\Filament\Components\Partials;
+namespace App\Filament\Components\Heroes;
 
 use App\Enums\CustomComponent;
 use App\Filament\Components\AbstractCustomComponent;
 use Filament\Forms\Components\TextInput;
 
-class GridHeroComponent extends AbstractCustomComponent
+class HeroWithCenteredTitleComponent extends AbstractCustomComponent
 {
     protected static string $view = 'components.partials.grid-hero';
 
@@ -26,7 +26,7 @@ class GridHeroComponent extends AbstractCustomComponent
 
     public static function fieldName(): string
     {
-        return CustomComponent::PartialGridHero->value;
+        return CustomComponent::HeroWithCenteredTitle->value;
     }
 
     public static function setupRenderPayload(array $data): array
