@@ -639,6 +639,14 @@ return [
                     ],
                 ],
                 [
+                    'type' => CustomComponent::Testimonials->value,
+                    'data' => [
+                        'heading' => 'Escute de nossos clientes',
+                        'badge' => 'Depoimentos',
+                        'testimonials' => [1, 2, 3],
+                    ],
+                ],
+                [
                     'type' => CustomComponent::PartialFaq->value,
                     'data' => [
                         'solutions' => [
