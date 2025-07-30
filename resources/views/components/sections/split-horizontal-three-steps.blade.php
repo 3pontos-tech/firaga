@@ -23,7 +23,18 @@ suscipit at nisi vitae, faucibus hendrerit turpis. ',
 suscipit at nisi vitae, faucibus hendrerit turpis. ',
         ],
     ],
+    'grid_columns' => 3,
 ])
+
+@php
+
+    $maxGridColumns = match($grid_columns) {
+        1 => 'lg:grid-cols-2',
+        2 => 'lg:grid-cols-2',
+        default => 'lg:grid-cols-3',
+    };
+
+@endphp
 
 <section class="mx-auto text-text-dark dark:text-text-light overflow-hidden">
     <div class="mx-auto flex flex-col container">
@@ -31,12 +42,13 @@ suscipit at nisi vitae, faucibus hendrerit turpis. ',
             <x-layout.shared.chip class="px-4 py-2">Escolha a Firelce</x-layout.shared.chip>
             <x-layout.shared.section-header :heading="$heading" :description="$description"/>
         </div>
-        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8  ">
+        <div class="grid grid-cols-1 {{ $maxGridColumns }} gap-8  ">
             @foreach($cards as $card)
                 <x-cards.card-cta
                     :title="$card['title']"
                     :description="$card['description']"
-                    :cta_label="$cta_label"
+                    :cta_label="$card['cta_label'] ?? $cta_label"
+                    :cta_url="$card['cta_url'] ?? $cta_url"
                 />
             @endforeach
         </div>

@@ -86,6 +86,7 @@ return [
                         'badge' => 'Escolha a Fire|Ce',
                         'heading' => 'Perfis e necessidades',
                         'description' => 'Saber se você é endividado, desorganizado ou poupador faz toda a diferença: é com esse entendimento que conseguimos traçar estratégias financeiras personalizadas, que respeitam sua realidade e aceleram seus resultados.',
+                        'grid_columns' => 3,
                         'cards' => [
                             [
                                 'icon' => 'firece-star',
@@ -392,6 +393,73 @@ return [
                         'cta_label' => 'Agende uma consulta gratuita',
                         'cta_url' => 'https://pudim.com.br',
                         'image' => 'Saiba mais',
+                    ],
+                ],
+            ],
+            'status' => 'published',
+        ],
+        [
+            'title' => 'Trabalhe Conosco',
+            'meta_title' => 'Parcerias Estratégicas – Iniciativas Colaborativas com Propósito | Fire|ce',
+            'meta_description' => 'Conecte-se à Fire|ce por meio de parcerias estratégicas. Criamos projetos colaborativos com empresas e instituições que desejam gerar impacto real por meio da educação financeira.',
+            'meta_keywords' => 'parcerias estratégicas, projetos educacionais, joint venture, educação corporativa, inovação financeira, colaboração, Fire|ce, integração de expertise, inteligência financeira',
+            'opengraph_title' => 'Parcerias Estratégicas com a Fire|ce – Juntos Pela Transformação Financeira',
+            'opengraph_description' => 'Empresas, especialistas e instituições podem se conectar à Fire|ce para criar soluções financeiras inovadoras com propósito e impacto.',
+            'slug' => 'trabalhe-conosco',
+            'medias' => [
+                [
+                    'collection' => CustomComponent::HeroWithBackgroundImage->value,
+                    'path' => public_path('images/stock/work-with-us-hero.jpg'),
+                ],
+            ],
+            'content' => [
+                [
+                    'type' => CustomComponent::HeroWithBackgroundImage->value,
+                    'data' => [
+                        'heading' => 'Trabalhe conosco.',
+                        'subheading' => 'Trabalhar na Fire|ce é transformar vidas todos os dias, começando pela sua.',
+                        'badge' => 'Trabalhe conosco',
+                    ],
+                ],
+                [
+                    'type' => CustomComponent::SplitWithHorizontalSteps->value,
+                    'data' => [
+                        'badge' => 'Escolha a Fire|Ce',
+                        'heading' => 'Perfis e necessidades',
+                        'description' => 'Saber se você é endividado, desorganizado ou poupador faz toda a diferença: é com esse entendimento que conseguimos traçar estratégias financeiras personalizadas, que respeitam sua realidade e aceleram seus resultados.',
+                        'grid_columns' => 2,
+                        'cards' => [
+                            [
+                                'icon' => 'firece-star',
+                                'title' => 'Seja um parceiro',
+                                'description' => 'Valorizamos profissionais que querem ir além, aprender, inovar e construir algo grande com a gente. Se você busca mais do que um emprego, vem fazer parte de um time que cresce junto e gera impacto real.',
+                                'cta_url' => 'https://pudim.com.br',
+                                'cta_label' => 'Converse com a gente',
+                            ],
+                            [
+                                'icon' => 'firece-star',
+                                'title' => 'Faça parte do time',
+                                'description' => 'Na Fire|ce, cada profissional tem papel estratégico para transformar o jeito que as pessoas lidam com o dinheiro. Trabalhamos com propósito, foco em resultado e um time que se apoia, se desafia e aprende junto.',
+                                'cta_url' => 'https://pudim.com.br',
+                                'cta_label' => 'Enviar Candidatura',
+                            ],
+
+                        ],
+                    ],
+                ],
+                [
+                    'type' => CustomComponent::CallToActionFullWidthSection->value,
+                    'data' => [
+                        'title' => 'Se você busca propósito, crescimento e parceria, seu lugar é aqui.',
+                        'cta_url' => 'https://pudim.com.br',
+                        'cta_label' => 'Entre em Contato',
+                    ],
+                ],
+                [
+                    'type' => CustomComponent::ContactForm->value,
+                    'data' => [
+                        'heading' => 'Envie uma mensagem',
+                        'description' => 'Estamos sempre abertos a conhecer pessoas que compartilham nossa visão e valores. Se você tem interesse em se juntar a nós ou discutir uma parceria, preencha o formulário abaixo e entraremos em contato.',
                     ],
                 ],
             ],

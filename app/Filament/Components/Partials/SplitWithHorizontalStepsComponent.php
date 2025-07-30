@@ -5,6 +5,7 @@ namespace App\Filament\Components\Partials;
 use App\Enums\CustomComponent;
 use App\Filament\Components\AbstractCustomComponent;
 use Filament\Forms\Components\Repeater;
+use Filament\Forms\Components\Select;
 use Filament\Forms\Components\Textarea;
 use Filament\Forms\Components\TextInput;
 use Guava\FilamentIconPicker\Forms\IconPicker;
@@ -25,6 +26,15 @@ class SplitWithHorizontalStepsComponent extends AbstractCustomComponent
                 ->required(),
             Textarea::make('description')
                 ->label('Description')
+                ->required(),
+            Select::make('grid_columns')
+                ->options([
+                    2 => '2 Columns',
+                    3 => '3 Columns',
+                    4 => '4 Columns',
+                ])
+                ->label('Grid Columns')
+                ->default(3)
                 ->required(),
             Repeater::make('cards')
                 ->label('Cards')
@@ -61,6 +71,7 @@ class SplitWithHorizontalStepsComponent extends AbstractCustomComponent
             'badge' => $data['badge'],
             'heading' => $data['heading'],
             'description' => $data['description'],
+            'grid_columns' => $data['grid_columns'] ?? 3,
             'cards' => collect($data['cards'])->map(fn ($card) => Fluent::make([
                 'title' => $card['title'],
                 'description' => $card['description'],

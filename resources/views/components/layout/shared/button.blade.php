@@ -2,9 +2,13 @@
     'href' => '#',
     'variant' => '',
     'class' => '',
+    'tag' => 'a',
 ])
 
+
+
 @php
+
     $variants = [
         'primary' => 'bg-brand-primary hover:bg-brand-primary/90 text-white',
         'secondary' => 'bg-icon-light hover:bg-brand-secondary/90 text-brand-primary',
@@ -19,6 +23,12 @@
     $finalClasses = $baseClasses . ' ' . $variantClasses . ' ' . $class;
 @endphp
 
+@if($tag === 'button')
+    <button type="submit" class="{{ $finalClasses }}">
+        {{ $slot }}
+    </button>
+@else
 <a href="{{ $href }}" class="{{ $finalClasses }}">
     {{ $slot }}
 </a>
+@endif

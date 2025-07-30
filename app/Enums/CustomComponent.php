@@ -5,12 +5,14 @@ namespace App\Enums;
 use App\Filament\Components\AbstractCustomComponent;
 use App\Filament\Components\Blog\MarkdownTextComponent;
 use App\Filament\Components\Blog\RichTextComponent;
+use App\Filament\Components\Heroes\HeroWithBackgroundImageComponent;
 use App\Filament\Components\Heroes\HeroWithBottomImageComponent;
 use App\Filament\Components\Heroes\HeroWithCenteredTitleComponent;
 use App\Filament\Components\Heroes\HeroWithCodeSnippetComponent;
 use App\Filament\Components\Heroes\HeroWithStatsAndImageComponent;
 use App\Filament\Components\Media\FullWidthVideoComponent;
 use App\Filament\Components\Partials\CallToActionWithImageComponent;
+use App\Filament\Components\Partials\ContactFormComponent;
 use App\Filament\Components\Partials\CtaFullWidthComponent;
 use App\Filament\Components\Partials\CtaWithIconComponent;
 use App\Filament\Components\Partials\FaqComponent;
@@ -51,6 +53,8 @@ enum CustomComponent: string
 
     case SplitWithHorizontalSteps = 'split-with-horizontal-steps';
 
+    case ContactForm = 'contact-form';
+
     case Plans = 'plans';
 
     case HorizontalScrollerHighlight = 'horizontal-scroller-highlight';
@@ -64,6 +68,8 @@ enum CustomComponent: string
     case VideoTestimonial = 'video-testimonial';
 
     case CallToActionWithImage = 'call-to-action-with-image';
+
+    case HeroWithBackgroundImage = 'hero-with-background-image';
 
     public function getComponentClass(): string
     {
@@ -89,6 +95,8 @@ enum CustomComponent: string
             self::TwoColumnsImageFeatureGrid => TwoColumnsImageFeatureGridComponent::class,
             self::CallToActionWithImage => CallToActionWithImageComponent::class,
             self::HeroWithBottomImage => HeroWithBottomImageComponent::class,
+            self::HeroWithBackgroundImage => HeroWithBackgroundImageComponent::class,
+            self::ContactForm => ContactFormComponent::class,
         };
     }
 
