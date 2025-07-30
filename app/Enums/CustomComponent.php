@@ -9,6 +9,7 @@ use App\Filament\Components\Heroes\HeroWithBackgroundImageComponent;
 use App\Filament\Components\Heroes\HeroWithBottomImageComponent;
 use App\Filament\Components\Heroes\HeroWithCenteredTitleComponent;
 use App\Filament\Components\Heroes\HeroWithCodeSnippetComponent;
+use App\Filament\Components\Heroes\HeroWithImageComponent;
 use App\Filament\Components\Heroes\HeroWithStatsAndImageComponent;
 use App\Filament\Components\Media\FullWidthVideoComponent;
 use App\Filament\Components\Partials\CallToActionWithImageComponent;
@@ -32,6 +33,8 @@ enum CustomComponent: string
     case BlogMarkdownText = 'blog-markdown-text';
 
     case BlogRichText = 'blog-rich-text';
+
+    case HeroWithImage = 'hero-with-image';
 
     case HeroWithCenteredTitle = 'hero-with-centered-title';
 
@@ -97,6 +100,7 @@ enum CustomComponent: string
             self::HeroWithBottomImage => HeroWithBottomImageComponent::class,
             self::HeroWithBackgroundImage => HeroWithBackgroundImageComponent::class,
             self::ContactForm => ContactFormComponent::class,
+            self::HeroWithImage => HeroWithImageComponent::class,
         };
     }
 

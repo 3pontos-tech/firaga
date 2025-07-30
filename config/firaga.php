@@ -398,73 +398,7 @@ return [
             ],
             'status' => 'published',
         ],
-        [
-            'title' => 'Trabalhe Conosco',
-            'meta_title' => 'Parcerias Estratégicas – Iniciativas Colaborativas com Propósito | Fire|ce',
-            'meta_description' => 'Conecte-se à Fire|ce por meio de parcerias estratégicas. Criamos projetos colaborativos com empresas e instituições que desejam gerar impacto real por meio da educação financeira.',
-            'meta_keywords' => 'parcerias estratégicas, projetos educacionais, joint venture, educação corporativa, inovação financeira, colaboração, Fire|ce, integração de expertise, inteligência financeira',
-            'opengraph_title' => 'Parcerias Estratégicas com a Fire|ce – Juntos Pela Transformação Financeira',
-            'opengraph_description' => 'Empresas, especialistas e instituições podem se conectar à Fire|ce para criar soluções financeiras inovadoras com propósito e impacto.',
-            'slug' => 'trabalhe-conosco',
-            'medias' => [
-                [
-                    'collection' => CustomComponent::HeroWithBackgroundImage->value,
-                    'path' => public_path('images/stock/work-with-us-hero.jpg'),
-                ],
-            ],
-            'content' => [
-                [
-                    'type' => CustomComponent::HeroWithBackgroundImage->value,
-                    'data' => [
-                        'heading' => 'Trabalhe conosco.',
-                        'subheading' => 'Trabalhar na Fire|ce é transformar vidas todos os dias, começando pela sua.',
-                        'badge' => 'Trabalhe conosco',
-                    ],
-                ],
-                [
-                    'type' => CustomComponent::SplitWithHorizontalSteps->value,
-                    'data' => [
-                        'badge' => 'Escolha a Fire|Ce',
-                        'heading' => 'Perfis e necessidades',
-                        'description' => 'Saber se você é endividado, desorganizado ou poupador faz toda a diferença: é com esse entendimento que conseguimos traçar estratégias financeiras personalizadas, que respeitam sua realidade e aceleram seus resultados.',
-                        'grid_columns' => 2,
-                        'cards' => [
-                            [
-                                'icon' => 'firece-star',
-                                'title' => 'Seja um parceiro',
-                                'description' => 'Valorizamos profissionais que querem ir além, aprender, inovar e construir algo grande com a gente. Se você busca mais do que um emprego, vem fazer parte de um time que cresce junto e gera impacto real.',
-                                'cta_url' => 'https://pudim.com.br',
-                                'cta_label' => 'Converse com a gente',
-                            ],
-                            [
-                                'icon' => 'firece-star',
-                                'title' => 'Faça parte do time',
-                                'description' => 'Na Fire|ce, cada profissional tem papel estratégico para transformar o jeito que as pessoas lidam com o dinheiro. Trabalhamos com propósito, foco em resultado e um time que se apoia, se desafia e aprende junto.',
-                                'cta_url' => 'https://pudim.com.br',
-                                'cta_label' => 'Enviar Candidatura',
-                            ],
 
-                        ],
-                    ],
-                ],
-                [
-                    'type' => CustomComponent::CallToActionFullWidthSection->value,
-                    'data' => [
-                        'title' => 'Se você busca propósito, crescimento e parceria, seu lugar é aqui.',
-                        'cta_url' => 'https://pudim.com.br',
-                        'cta_label' => 'Entre em Contato',
-                    ],
-                ],
-                [
-                    'type' => CustomComponent::ContactForm->value,
-                    'data' => [
-                        'heading' => 'Envie uma mensagem',
-                        'description' => 'Estamos sempre abertos a conhecer pessoas que compartilham nossa visão e valores. Se você tem interesse em se juntar a nós ou discutir uma parceria, preencha o formulário abaixo e entraremos em contato.',
-                    ],
-                ],
-            ],
-            'status' => 'published',
-        ],
         [
             'title' => 'Parcerias',
             'meta_title' => 'Parcerias Estratégicas – Iniciativas Colaborativas com Propósito | Fire|ce',
@@ -488,6 +422,10 @@ return [
                 ],
                 [
                     'collection' => CustomComponent::TwoColumnsImageFeatureGrid->value,
+                    'path' => public_path('images/stock/our-approach.png'),
+                ],
+                [
+                    'collection' => CustomComponent::PartialFaq->value,
                     'path' => public_path('images/stock/our-approach.png'),
                 ],
             ],
@@ -604,41 +542,43 @@ return [
             'opengraph_title' => 'Key Account – Consultoria Financeira Premium | Fire|ce',
             'opengraph_description' => 'Atendimento exclusivo e altamente estratégico para clientes que exigem inteligência, proteção e performance na gestão de seu patrimônio.',
             'slug' => 'key-account',
+            'medias' => [
+                [
+                    'collection' => CustomComponent::HeroWithImage->value,
+                    'path' => public_path('images/stock/key-account-hero.png'),
+                ],
+                [
+                    'collection' => CustomComponent::PartialFaq->value,
+                    'path' => public_path('images/stock/key-account-faq.png'),
+                ],
+            ],
             'content' => [
                 [
-                    'type' => CustomComponent::HeroWithCenteredTitle->value,
+                    'type' => CustomComponent::HeroWithImage->value,
                     'data' => [
-                        'subheading' => 'Serviços',
-                        'heading' => 'Key Account',
-                        'description' => 'Solução premium para quem busca inteligência, discrição e excelência na gestão patrimonial.',
+                        'badge' => 'Key Account',
+                        'heading' => 'Mais do que um serviço financeiro',
+                        'subheading' => 'O Key Account é o modelo de atendimento premium da Fire|ce, pensado para clientes que exigem um nível mais alto de personalização, estratégia e confidencialidade.',
+                        'cta_label' => 'Agende uma análise',
+                        'cta_url' => 'https://pudim.com.br',
+                        'style' => 'metallic',
                     ],
                 ],
                 [
-                    'type' => 'blog-markdown-text',
+                    'type' => CustomComponent::PartialFaq->value,
                     'data' => [
-                        'content' => file_get_contents(resource_path('markdown/pages/key-account.md')),
-                    ],
-                ],
-                [
-                    'type' => 'partials-faq',
-                    'data' => [
-                        'thumbnail' => 1,
                         'solutions' => [
                             [
-                                'question' => 'Qual o perfil ideal para o Key Account?',
-                                'answer' => 'Pessoas com patrimônio relevante que buscam estratégias avançadas de proteção e crescimento, com atendimento altamente personalizado.',
+                                'question' => 'Quem pode se tornar parceiro da Fire|ce?',
+                                'answer' => 'Qualquer profissional, empresa ou instituição com sinergia de trabalho alinhada e propósito alinhado ao nosso: transformar a vida financeira das pessoas com estratégia e impacto real.',
                             ],
                             [
-                                'question' => 'É possível contratar o Key Account para gestão internacional?',
-                                'answer' => 'Sim. O Key Account inclui estratégias de blindagem patrimonial e alocação internacional, respeitando o perfil do cliente e as normas regulatórias.',
+                                'question' => 'Quais são os formatos mais comuns de parceria?',
+                                'answer' => 'Conectamos conhecimento com inspiração. Levamos educação financeira para empresas, eventos e grupos, abordando temas que impactam diretamente a vida das pessoas. Nossa abordagem vai além de conceitos teóricos – oferecemos insights práticos e estratégias aplicáveis imediatamente.',
                             ],
                             [
-                                'question' => 'Com que frequência acontecem as reuniões?',
-                                'answer' => 'O acompanhamento é contínuo, com revisões periódicas e disponibilidade para reuniões emergenciais sempre que necessário.',
-                            ],
-                            [
-                                'question' => 'O serviço também cobre sucessão familiar e herança?',
-                                'answer' => 'Sim. Planejamos a sucessão de forma estratégica para garantir tranquilidade, segurança e continuidade para seu legado.',
+                                'question' => 'A Fire|ce investe em projetos em conjunto?',
+                                'answer' => 'Sim! Para quem deseja se tornar um consultor de alto desempenho, oferecemos um caminho estruturado. A formação cobre desde metodologias até estratégias de atuação prática no mercado. O objetivo é preparar você para transformar vidas e construir uma carreira sólida na área financeira.',
                             ],
                         ],
                     ],
@@ -691,6 +631,73 @@ return [
                 ],
             ],
             'status' => 'draft',
+        ],
+        [
+            'title' => 'Trabalhe Conosco',
+            'meta_title' => 'Parcerias Estratégicas – Iniciativas Colaborativas com Propósito | Fire|ce',
+            'meta_description' => 'Conecte-se à Fire|ce por meio de parcerias estratégicas. Criamos projetos colaborativos com empresas e instituições que desejam gerar impacto real por meio da educação financeira.',
+            'meta_keywords' => 'parcerias estratégicas, projetos educacionais, joint venture, educação corporativa, inovação financeira, colaboração, Fire|ce, integração de expertise, inteligência financeira',
+            'opengraph_title' => 'Parcerias Estratégicas com a Fire|ce – Juntos Pela Transformação Financeira',
+            'opengraph_description' => 'Empresas, especialistas e instituições podem se conectar à Fire|ce para criar soluções financeiras inovadoras com propósito e impacto.',
+            'slug' => 'trabalhe-conosco',
+            'medias' => [
+                [
+                    'collection' => CustomComponent::HeroWithBackgroundImage->value,
+                    'path' => public_path('images/stock/work-with-us-hero.jpg'),
+                ],
+            ],
+            'content' => [
+                [
+                    'type' => CustomComponent::HeroWithBackgroundImage->value,
+                    'data' => [
+                        'heading' => 'Trabalhe conosco.',
+                        'subheading' => 'Trabalhar na Fire|ce é transformar vidas todos os dias, começando pela sua.',
+                        'badge' => 'Trabalhe conosco',
+                    ],
+                ],
+                [
+                    'type' => CustomComponent::SplitWithHorizontalSteps->value,
+                    'data' => [
+                        'badge' => 'Escolha a Fire|Ce',
+                        'heading' => 'Perfis e necessidades',
+                        'description' => 'Saber se você é endividado, desorganizado ou poupador faz toda a diferença: é com esse entendimento que conseguimos traçar estratégias financeiras personalizadas, que respeitam sua realidade e aceleram seus resultados.',
+                        'grid_columns' => 2,
+                        'cards' => [
+                            [
+                                'icon' => 'firece-star',
+                                'title' => 'Seja um parceiro',
+                                'description' => 'Valorizamos profissionais que querem ir além, aprender, inovar e construir algo grande com a gente. Se você busca mais do que um emprego, vem fazer parte de um time que cresce junto e gera impacto real.',
+                                'cta_url' => 'https://pudim.com.br',
+                                'cta_label' => 'Converse com a gente',
+                            ],
+                            [
+                                'icon' => 'firece-star',
+                                'title' => 'Faça parte do time',
+                                'description' => 'Na Fire|ce, cada profissional tem papel estratégico para transformar o jeito que as pessoas lidam com o dinheiro. Trabalhamos com propósito, foco em resultado e um time que se apoia, se desafia e aprende junto.',
+                                'cta_url' => 'https://pudim.com.br',
+                                'cta_label' => 'Enviar Candidatura',
+                            ],
+
+                        ],
+                    ],
+                ],
+                [
+                    'type' => CustomComponent::CallToActionFullWidthSection->value,
+                    'data' => [
+                        'title' => 'Se você busca propósito, crescimento e parceria, seu lugar é aqui.',
+                        'cta_url' => 'https://pudim.com.br',
+                        'cta_label' => 'Entre em Contato',
+                    ],
+                ],
+                [
+                    'type' => CustomComponent::ContactForm->value,
+                    'data' => [
+                        'heading' => 'Envie uma mensagem',
+                        'description' => 'Estamos sempre abertos a conhecer pessoas que compartilham nossa visão e valores. Se você tem interesse em se juntar a nós ou discutir uma parceria, preencha o formulário abaixo e entraremos em contato.',
+                    ],
+                ],
+            ],
+            'status' => 'published',
         ],
 
     ],

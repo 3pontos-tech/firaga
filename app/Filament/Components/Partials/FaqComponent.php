@@ -5,6 +5,7 @@ namespace App\Filament\Components\Partials;
 use App\Enums\CustomComponent;
 use App\Filament\Components\AbstractCustomComponent;
 use Filament\Forms\Components\Repeater;
+use Filament\Forms\Components\Select;
 use Filament\Forms\Components\SpatieMediaLibraryFileUpload;
 use Filament\Forms\Components\Textarea;
 use Filament\Forms\Components\TextInput;
