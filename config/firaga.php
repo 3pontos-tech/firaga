@@ -538,7 +538,7 @@ return [
             'slug' => 'key-account',
             'content' => [
                 [
-                    'type' => 'partials-grid-hero',
+                    'type' => CustomComponent::HeroWithCenteredTitle->value,
                     'data' => [
                         'subheading' => 'Serviços',
                         'heading' => 'Key Account',
@@ -588,7 +588,7 @@ return [
             'slug' => 'educa-fire',
             'content' => [
                 [
-                    'type' => 'partials-grid-hero',
+                    'type' => CustomComponent::HeroWithCenteredTitle->value,
                     'data' => [
                         'subheading' => 'Serviços',
                         'heading' => 'Educa Fire',

@@ -60,7 +60,7 @@
     <section id="content" class="container mx-auto px-4 md:px-8">
         <article class="prose lg:prose-xl max-w-none dark:prose-invert">
             @foreach($post->content as $componentPayload)
-                {!! $builder->render($componentPayload['type'], $componentPayload['data']) !!}
+                {!! $builder->render($post, $componentPayload['type'], $componentPayload['data']) !!}
             @endforeach
         </article>
     </section>
