@@ -41,7 +41,7 @@ class PostsSeeder extends Seeder
                 ->forAuthor($author)
                 ->create($article);
 
-            $post->addMediaFromUrl('https://i.imgur.com/vlzOr6l.png')
+            $post->addMediaFromUrl('https://github.com/danielhe4rt.png')
                 ->toMediaCollection('cover');
         }
     }
