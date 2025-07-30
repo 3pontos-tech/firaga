@@ -2,6 +2,7 @@
 
 namespace Database\Factories\CMS;
 
+use App\Enums\PageTheme;
 use App\Models\CMS\Page;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Database\Eloquent\Model;
@@ -21,6 +22,7 @@ class PageFactory extends Factory
             'published_at' => $this->faker->dateTimeBetween('-1 year', 'now'),
             'disable_indexation' => false,
             'lang' => 'pt_BR',
+            'theme' => PageTheme::Default,
             'meta_title' => $this->faker->text(30),
             'meta_description' => $this->faker->text(50),
             'meta_keywords' => $this->faker->word . ',' . $this->faker->word,

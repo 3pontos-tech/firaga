@@ -72,22 +72,19 @@
         @livewireStyles
     </head>
     <body>
-
+    <noscript>
+        <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KTVLGCHG" class="hidden h-0 w-0"></iframe>
+    </noscript>
     <!-- Gradient Overlay Layer -->
-    <!-- <div class="fixed inset-0 z-[9999] pointer-events-none bg-gradient-to-b from-primary/3 to-base-100/3 mix-blend-normal"></div> -->
+    <div class="fixed inset-0 z-[9999] pointer-events-none bg-gradient-to-b from-primary/3 to-base-100/3 mix-blend-normal"></div>
 
-        <noscript>
-            <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KTVLGCHG" class="hidden h-0 w-0"></iframe>
-        </noscript>
-        @php
-            $menus = Menu::all()->keyBy("slug");
-        @endphp
-
-        <x-navbar :menu="$menus['main-menu']" />
+        {{ $navbar ?? "" }}
         <main>
             {{ $slot }}
         </main>
-        <x-layout.shared.footer />
+
+        {{ $footer ?? "" }}
+
         @livewireScripts
         @stack("scripts")
     </body>

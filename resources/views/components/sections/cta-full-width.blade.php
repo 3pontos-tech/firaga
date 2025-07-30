@@ -4,6 +4,12 @@
     'cta_url' => 'https://example.com/agende-sua-analise',
 ])
 
+@php
+
+$variant = $renderable->theme->value;
+
+@endphp
+
 <section class="mt-16 sm:mt-24 md:mt-32 lg:mt-60">
     <div class="relative text-center flex flex-col items-center justify-center min-h-[300px] sm:min-h-[400px] md:min-h-[500px] lg:min-h-[600px] xl:min-h-[700px]">
         <img src="{{ asset('images/globe.png') }}" alt="CTA Section" class="absolute inset-0 w-full h-full object-cover object-center">
@@ -17,7 +23,7 @@
             <h2 class="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl 2xl:text-6xl font-bold text-white text-center leading-tight max-w-4xl">
                 {{ $title }}
             </h2>
-            <x-layout.shared.button :href="$cta_url" variant="custom" class="px-4 py-2 sm:px-6 sm:py-2 md:px-7 md:py-2.5 lg:px-8 lg:py-3 text-sm sm:text-base md:text-lg mt-4 sm:mt-6 md:mt-8 lg:mt-10 text-text-dark bg-gradient-to-r from-[#D6D6D6] via-[#FFFFFF] to-[#D6D6D6]">
+            <x-layout.shared.button :href="$cta_url" :$variant class="px-4 py-2 sm:px-6 sm:py-2 md:px-7 md:py-2.5 lg:px-8 lg:py-3 text-sm sm:text-base md:text-lg mt-4 sm:mt-6 md:mt-8 lg:mt-10 text-text-dark">
                 {{ $cta_label }}
             </x-layout.shared.button>
         </div>

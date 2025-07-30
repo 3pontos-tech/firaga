@@ -21,6 +21,7 @@ class SplitWithHorizontalStepsComponent extends AbstractCustomComponent
             TextInput::make('badge')
                 ->label('Badge')
                 ->required(),
+
             TextInput::make('heading')
                 ->label('Heading')
                 ->required(),
@@ -35,6 +36,14 @@ class SplitWithHorizontalStepsComponent extends AbstractCustomComponent
                 ])
                 ->label('Grid Columns')
                 ->default(3)
+                ->required(),
+            Select::make('card_type')
+                ->options([
+                    'cta' => 'CTA',
+                    'slim' => 'Slim',
+                ])
+                ->label('Card Type')
+                ->default('cta')
                 ->required(),
             Repeater::make('cards')
                 ->label('Cards')
@@ -72,6 +81,7 @@ class SplitWithHorizontalStepsComponent extends AbstractCustomComponent
             'heading' => $data['heading'],
             'description' => $data['description'],
             'grid_columns' => $data['grid_columns'] ?? 3,
+            'card_type' => $data['card_type'] ?? 'cta',
             'cards' => collect($data['cards'])->map(fn ($card) => Fluent::make([
                 'title' => $card['title'],
                 'description' => $card['description'],

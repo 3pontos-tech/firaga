@@ -542,6 +542,7 @@ return [
             'opengraph_title' => 'Key Account – Consultoria Financeira Premium | Fire|ce',
             'opengraph_description' => 'Atendimento exclusivo e altamente estratégico para clientes que exigem inteligência, proteção e performance na gestão de seu patrimônio.',
             'slug' => 'key-account',
+            'theme' => \App\Enums\PageTheme::Metallic,
             'medias' => [
                 [
                     'collection' => CustomComponent::HeroWithImage->value,
@@ -562,6 +563,41 @@ return [
                         'cta_label' => 'Agende uma análise',
                         'cta_url' => 'https://pudim.com.br',
                         'style' => 'metallic',
+                    ],
+                ],
+                [
+                    'type' => CustomComponent::SplitWithHorizontalSteps->value,
+                    'data' => [
+                        'badge' => 'Escolha a Fire|Ce',
+                        'heading' => 'Perfis e necessidades',
+                        'card_type' => 'slim',
+                        'description' => 'Saber se você é endividado, desorganizado ou poupador faz toda a diferença: é com esse entendimento que conseguimos traçar estratégias financeiras personalizadas, que respeitam sua realidade e aceleram seus resultados.',
+                        'grid_columns' => 2,
+                        'cards' => [
+                            [
+                                'icon' => 'firece-star',
+                                'title' => 'Seja um parceiro',
+                                'description' => 'Valorizamos profissionais que querem ir além, aprender, inovar e construir algo grande com a gente. Se você busca mais do que um emprego, vem fazer parte de um time que cresce junto e gera impacto real.',
+                                'cta_url' => 'https://pudim.com.br',
+                                'cta_label' => 'Converse com a gente',
+                            ],
+                            [
+                                'icon' => 'firece-star',
+                                'title' => 'Faça parte do time',
+                                'description' => 'Na Fire|ce, cada profissional tem papel estratégico para transformar o jeito que as pessoas lidam com o dinheiro. Trabalhamos com propósito, foco em resultado e um time que se apoia, se desafia e aprende junto.',
+                                'cta_url' => 'https://pudim.com.br',
+                                'cta_label' => 'Enviar Candidatura',
+                            ],
+
+                        ],
+                    ],
+                ],
+                [
+                    'type' => CustomComponent::CallToActionFullWidthSection->value,
+                    'data' => [
+                        'title' => 'Transforme sua vida financeira com a Code Capital',
+                        'cta_label' => 'Agende uma análise',
+                        'cta_url' => 'https://pudim.com.br',
                     ],
                 ],
                 [

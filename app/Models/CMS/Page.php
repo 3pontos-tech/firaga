@@ -2,6 +2,7 @@
 
 namespace App\Models\CMS;
 
+use App\Enums\PageTheme;
 use Awcodes\Curator\Models\Media;
 use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -25,6 +26,7 @@ use Webid\Druid\Models\Traits\CanRenderContent;
  * @property PageStatus $status
  * @property string|null $lang
  * @property bool $is_landing
+ * @property string $theme
  * @property int|null $parent_page_id
  * @property int|null $translation_origin_model_id
  * @property bool $disable_indexation
@@ -63,6 +65,7 @@ class Page extends Model implements HasMedia, IsMenuable
         'status' => PageStatus::class,
         'disable_indexation' => 'boolean',
         'is_landing' => 'boolean',
+        'theme' => PageTheme::class
     ];
 
     public function parent(): BelongsTo

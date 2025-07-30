@@ -7,7 +7,6 @@
 
 
 @php
-
     $variant = match($variant){
         'secondary' => 'bg-icon-light hover:bg-brand-secondary/90 text-brand-primary',
         'outlined' => 'bg-transparent border border-outline-light dark:border-outline-low hover:bg-brand-primary/10',

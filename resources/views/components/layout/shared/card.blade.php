@@ -16,7 +16,7 @@
             'title' => 'text-text-high',
             'description' => 'text-text-medium font-medium group-hover:text-text-high',
         ],
-        'metalic' => [
+        'metallic' => [
             'bg' => 'bg-transparent hover:bg-gradient-to-r from-[#D6D6D6] via-[#FFFFFF] to-[#D6D6D6] p-8 border border-outline-dark',
             'icon' => 'text-brand-primary group-hover:text-white',
             'title' => 'text-text-high group-hover:text-text-dark',
