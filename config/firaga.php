@@ -33,7 +33,7 @@ return [
                             [
                                 'label' => 'Clientes Atendidos',
                                 'value' => '+2.000',
-                                'icon' => 'firece-star',
+                                'icon' => 'firece-nb-computer',
                             ],
                             [
                                 'label' => 'Consultores Financeiros',
