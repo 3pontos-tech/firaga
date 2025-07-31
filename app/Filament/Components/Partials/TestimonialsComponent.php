@@ -39,7 +39,7 @@ class TestimonialsComponent extends AbstractCustomComponent
             'heading' => $data['heading'],
             'badge' => $data['badge'],
             'testimonials' => Testimonial::query()->whereIn('id', $data['testimonials'])->get()
-                ->map(function ($testimonial) {
+                ->map(function ($testimonial): array {
                     return [
                         'id' => $testimonial->id,
                         'name' => $testimonial->name,
