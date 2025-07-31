@@ -69,7 +69,7 @@
                  class="w-full">
                 <div class="relative overflow-hidden w-full">
                     <div
-                        class="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-5 md:gap-6 lg:gap-7 xl:gap-8 min-h-[350px] sm:min-h-[400px] md:min-h-[600px] lg:min-h-[500px] xl:h-[600px] w-full"
+                        class="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-5 md:gap-6 lg:gap-7 xl:gap-8 :h-fit w-full"
                         x-bind:class="{ 'opacity-50 scale-[0.98]': isTransitioning }"
                         style="transition: all 0.3s ease-in-out; transform-origin: center;">
                         <template x-for="(card, index) in currentCards" :key="card.id">

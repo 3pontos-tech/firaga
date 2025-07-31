@@ -26,9 +26,9 @@
         </div>
         <div class="hidden lg:block mx-auto py-16 relative">
             <img src="{{ asset('images/dashed-line-1.svg') }}" alt="Process Background"
-                 class="absolute top-[314px] left-[80px]">
+                 class="absolute xl:top-[230px] xl:left-[80px] lg:top-[354px] lg:left-[50px]">
             <img src="{{ asset('images/dashed-line-2.svg') }}" alt="Process Background"
-                 class="absolute top-[769px] left-[780px]">
+                 class="absolute 2xl:top-[615px] 2xl:left-[735px] xl:top-[649px] xl:left-[500px] lg:left-[445px] lg:top-[750px]">
             <div class="grid grid-cols-16 gap-4">
                 @foreach($steps as $index => $card)
                     <div @class($grid[$index])>

@@ -18,11 +18,6 @@
         </div>
         <x-headers.headline :headline="$heading" :description="$subheading"
                             :button-text="$cta_label" :button-url="$cta_url">
-            <x-slot name="badge">
-                <x-layout.shared.chip class="px-4 py-2">
-                    {{ $badge }}
-                </x-layout.shared.chip>
-            </x-slot>
         </x-headers.headline>
 
         <div class="mt-8 lg:mt-0 lg:w-1/2 hidden lg:flex justify-center items-center">

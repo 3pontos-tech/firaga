@@ -69,7 +69,7 @@ class SplitWithImageQuoteComponent extends AbstractCustomComponent
     public static function setupRenderPayload(array $data): array
     {
         return [
-            'image_position' => $data['image_position'],
+            'image_position' => $data['image_position'] ?? 'left',
             'badge' => $data['badge'],
             'heading' => $data['heading'],
             'description' => $data['description'],
