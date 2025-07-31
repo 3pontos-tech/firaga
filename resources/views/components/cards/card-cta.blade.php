@@ -8,7 +8,7 @@
 ])
 
 <div
-    class="group border dark:border-outline-low border-outline-light p-4 sm:p-6 md:p-8 rounded dark:bg-elevation-03dp hover:bg-brand-primary dark:hover:bg-brand-primary transition-colors duration-300 {{ $class }} h-full">
+    class="group border dark:border-outline-low border-outline-light hover:border-brand-primary p-4 sm:p-6 md:p-8 rounded dark:bg-elevation-03dp hover:bg-brand-primary dark:hover:bg-brand-primary transition-colors duration-300 {{ $class }} h-full">
     <div class="flex flex-col gap-y-3 sm:gap-y-4 items-center h-full">
         <div>
             <x-lucide-goal

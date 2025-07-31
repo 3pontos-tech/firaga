@@ -25,12 +25,9 @@
     ];
 
     $variantClasses = $variants[$variant] ?? $variants['primary'];
-    $baseClasses =
-        'inline-flex items-center justify-center rounded-lg transition-all duration-200';
-    $finalClasses = $baseClasses . ' ' . $class;
 @endphp
 
-<div class="transition-all duration-300 ease-in-out group rounded-lg {{ $variantClasses['bg'] }}">
+<div class="transition-all duration-300 ease-in-out group rounded-lg {{ $variantClasses['bg'] }} {{ $class }}">
     <div class="flex flex-col gap-y-4">
         {{ $icon }}
         <h6 class="font-semibold {{ $variantClasses['title'] }}">{{ $title }}</h6>
