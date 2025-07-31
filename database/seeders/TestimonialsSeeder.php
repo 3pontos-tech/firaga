@@ -13,13 +13,17 @@ class TestimonialsSeeder extends Seeder
     public function run(): void
     {
         foreach (config('firaga.testimonials') as $testimonial) {
-            Testimonial::query()->create([
+            $testimonial = Testimonial::query()->create([
                 'name' => $testimonial['name'],
                 'role' => $testimonial['role'],
                 'rating' => $testimonial['rating'],
                 'comment' => $testimonial['comment'],
                 'posted_at' => now(),
             ]);
+
+            $testimonial
+                ->addMediaFromUrl("https://github.com/RichardGL11.png")
+                ->toMediaCollection('avatar');
         }
     }
 }
