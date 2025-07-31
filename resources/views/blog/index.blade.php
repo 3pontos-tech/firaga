@@ -1,4 +1,8 @@
 <x-layout.guest>
+    <x-slot:navbar>
+        <x-navbar/>
+    </x-slot:navbar>
+
     <x-partials.grid-hero>
         Blog <span class="text-primary">{{ config('app.name') }}</span>
     </x-partials.grid-hero>
@@ -30,4 +34,8 @@
             </div>
         </div>
     </section>
+
+    <x-slot:footer>
+        <x-layout.shared.footer />
+    </x-slot:footer>
 </x-layout.guest>

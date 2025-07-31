@@ -1,5 +1,5 @@
 @props([
-    'bg'
+    'bg' => 'bg-elevation-02dp'
 ])
 
 <footer class="{{ $bg }} text-base-content py-8 sm:py-12 lg:py-16">
