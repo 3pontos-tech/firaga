@@ -51,6 +51,11 @@ class SplitWithImageQuoteComponent extends AbstractCustomComponent
             Textarea::make('quote')
                 ->label('Quote')
                 ->required(),
+
+            Textarea::make('end_description')
+                ->label('End Description')
+                ->nullable(),
+
             TextInput::make('cta_label')
                 ->label('Call to Action Label')
                 ->required(),
@@ -72,6 +77,7 @@ class SplitWithImageQuoteComponent extends AbstractCustomComponent
             'image_position' => $data['image_position'] ?? 'left',
             'badge' => $data['badge'],
             'heading' => $data['heading'],
+            'end_description' => $data['end_description'] ?? '',
             'description' => $data['description'],
             'insights' => $data['insights'],
             'quote' => $data['quote'],

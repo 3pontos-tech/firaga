@@ -32,7 +32,7 @@
             <div class="grid grid-cols-16 gap-4">
                 @foreach($steps as $index => $card)
                     <div @class($grid[$index])>
-                        <x-code-capital.partials.process-card
+                        <x-cards.process-card
                             :number="$index + 1"
                             :icon="$card['icon']"
                             :tit
@@ -48,7 +48,7 @@
         <div class="lg:hidden py-8 sm:py-12 md:py-16">
             <div class="flex flex-col space-y-8 sm:space-y-12">
                 @foreach ($steps as $index => $card)
-                    <x-code-capital.partials.process-card
+                    <x-cards.process-card
                         :icon="$card['icon']"
                         :number="$index + 1"
                         :title="$card['title']" :description="$card['description']"

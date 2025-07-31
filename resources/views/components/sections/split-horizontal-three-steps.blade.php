@@ -50,7 +50,7 @@ fundamentais: Análise de Perfil, Planejamento Estratégico e Execução com Sup
                             :description="$card['description']"
                     >
                         <x-slot name="icon">
-                            <x-lucide-goal class="w-8 h-8 text-white group-hover:text-icon-dark"/>
+                            <x-filament::icon :icon="$card['icon']" class="w-8 h-8 text-white group-hover:text-icon-dark"/>
                         </x-slot>
                     </x-layout.shared.card>
                 @endif

@@ -26,7 +26,7 @@ class RoadmapComponent extends AbstractCustomComponent
                 ->label(__('Description'))
                 ->default('A brief overview of our roadmap and future plans.'),
 
-             'caption' => MarkdownEditor::make('caption')
+            'caption' => MarkdownEditor::make('caption')
                 ->required()
                 ->label(__('Description'))
                 ->default('A brief overview of our roadmap and future plans.'),

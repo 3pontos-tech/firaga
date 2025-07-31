@@ -1,6 +1,7 @@
 <?php
 
 use App\Enums\CustomComponent;
+use App\Enums\FireceIcons;
 use App\Enums\PageTheme;
 use Carbon\Carbon;
 
@@ -425,11 +426,11 @@ caminhar ao seu lado, com respeito, clareza e soluções sob medida.',
                 ],
                 [
                     'collection' => CustomComponent::SplitWithImageQuote->value,
-                    'path' => public_path('images/stock/our-work.png'),
+                    'path' => public_path('images/stock/work-with-us-hero.jpg'),
                 ],
                 [
                     'collection' => CustomComponent::TwoColumnsImageFeatureGrid->value,
-                    'path' => public_path('images/stock/our-approach.png'),
+                    'path' => public_path('images/stock/our-work-partners.png'),
                 ],
                 [
                     'collection' => CustomComponent::PartialFaq->value,
@@ -457,17 +458,17 @@ caminhar ao seu lado, com respeito, clareza e soluções sob medida.',
                         'cta_label' => 'Saiba mais',
                         'cards' => [
                             [
-                                'icon' => 'firece-star',
+                                'icon' => FireceIcons::Folder->value,
                                 'title' => 'Join Ventures',
                                 'description' => 'Entendemos seu perfil financeiro e objetivos.',
                             ],
                             [
-                                'icon' => 'firece-star',
+                                'icon' => FireceIcons::Gear->value,
                                 'title' => 'Integração de Expertise',
                                 'description' => 'Criamos um plano personalizado para você.',
                             ],
                             [
-                                'icon' => 'firece-star',
+                                'icon' => FireceIcons::Mortarboard->value,
                                 'title' => 'Projetos Corpotarativos e Educacionais',
                                 'description' => 'Acompanhamos a execução do plano com suporte contínuo.',
                             ],
@@ -480,6 +481,7 @@ caminhar ao seu lado, com respeito, clareza e soluções sob medida.',
                     'data' => [
                         'heading' => 'Nosso Trabalho',
                         'badge' => 'Parcerias',
+                        'image_position' => 'right',
                         'description' => 'Trazemos nossa metodologia, estrutura e autoridade de mercado para somar com o que o parceiro já possui. A inovação nasce do encontro de forças complementares e estamos prontos para criar algo novo. Trabalhamos com:',
                         'insights' => [
                             ['value' => 'Empresas'],
@@ -586,16 +588,30 @@ caminhar ao seu lado, com respeito, clareza e soluções sob medida.',
                         'grid_columns' => 2,
                         'cards' => [
                             [
-                                'icon' => 'firece-star',
-                                'title' => 'Seja um parceiro',
-                                'description' => 'Valorizamos profissionais que querem ir além, aprender, inovar e construir algo grande com a gente. Se você busca mais do que um emprego, vem fazer parte de um time que cresce junto e gera impacto real.',
+                                'icon' => FireceIcons::NbFolder->value,
+                                'title' => 'Qual o perfil ideal para o Key Account?',
+                                'description' => 'Pessoas com patrimônio relevante que buscam estratégias avançadas de proteção e crescimento, com atendimento altamente personalizado.',
                                 'cta_url' => 'https://pudim.com.br',
                                 'cta_label' => 'Converse com a gente',
                             ],
                             [
-                                'icon' => 'firece-star',
-                                'title' => 'Faça parte do time',
-                                'description' => 'Na Fire|ce, cada profissional tem papel estratégico para transformar o jeito que as pessoas lidam com o dinheiro. Trabalhamos com propósito, foco em resultado e um time que se apoia, se desafia e aprende junto.',
+                                'icon' => FireceIcons::NbPlanet->value,
+                                'title' => 'É possível contratar o Key Account para gestão internacional?',
+                                'description' => 'Sim. O Key Account inclui estratégias de blindagem patrimonial e alocação internacional, respeitando o perfil do cliente e as normas regulatórias.',
+                                'cta_url' => 'https://pudim.com.br',
+                                'cta_label' => 'Enviar Candidatura',
+                            ],
+                            [
+                                'icon' => FireceIcons::NbCalendar->value,
+                                'title' => 'Com que frequência acontecem as reuniões?',
+                                'description' => 'O acompanhamento é contínuo, com revisões periódicas e disponibilidade para reuniões emergenciais sempre que necessário.',
+                                'cta_url' => 'https://pudim.com.br',
+                                'cta_label' => 'Enviar Candidatura',
+                            ],
+                            [
+                                'icon' => FireceIcons::NbTarget->value,
+                                'title' => 'Planejamento Sucessório',
+                                'description' => 'Sim. Planejamos a sucessão de forma estratégica para garantir tranquilidade, segurança e continuidade para seu legado.',
                                 'cta_url' => 'https://pudim.com.br',
                                 'cta_label' => 'Enviar Candidatura',
                             ],
@@ -606,16 +622,12 @@ caminhar ao seu lado, com respeito, clareza e soluções sob medida.',
                 [
                     'type' => CustomComponent::SplitWithImageQuote->value,
                     'data' => [
-                        'heading' => 'Nosso Trabalho',
-                        'badge' => 'Parcerias',
-                        'description' => 'Trazemos nossa metodologia, estrutura e autoridade de mercado para somar com o que o parceiro já possui. A inovação nasce do encontro de forças complementares e estamos prontos para criar algo novo. Trabalhamos com:',
-                        'insights' => [
-                            ['value' => 'Empresas'],
-                            ['value' => 'Especialistas'],
-                            ['value' => 'Instituições Educacionais'],
-                        ],
-                        'image_position' => 'right',
-                        'quote' => 'Seja parceiro da Fire|ce e ofereça acesso a soluções que geram equilíbrio, produtividade e bem-estar real.',
+                        'heading' => 'Como funciona',
+                        'badge' => 'Nosso Trabalho',
+                        'description' => 'Atuamos lado a lado com quem busca proteção, inteligência e alta performance na gestão do patrimônio. Aqui, o planejamento financeiro vai além da organização: ele se transforma em um instrumento de segurança, expansão e legado.',
+                        'image_position' => 'left',
+                        'insights' => [],
+                        'quote' => 'Vamos construir o próximo nível da sua jornada financeira com o Key Account da Fire|ce.',
                         'cta_url' => 'https://pudim.com.br',
                         'cta_label' => 'Saiba mais',
                     ],
@@ -623,26 +635,27 @@ caminhar ao seu lado, com respeito, clareza e soluções sob medida.',
                 [
                     'type' => CustomComponent::CallToActionFullWidthSection->value,
                     'data' => [
-                        'title' => 'Transforme sua vida financeira com a Code Capital',
-                        'cta_label' => 'Agende uma análise',
+                        'title' => 'Agora é hora de fazer seu patrimônio trabalhar por você, com inteligência e visão de futuro.',
+                        'cta_label' => 'Entre em contato',
                         'cta_url' => 'https://pudim.com.br',
                     ],
                 ],
                 [
                     'type' => CustomComponent::SplitWithImageQuote->value,
                     'data' => [
-                        'heading' => 'Nosso Trabalho',
-                        'badge' => 'Parcerias',
-                        'description' => 'Trazemos nossa metodologia, estrutura e autoridade de mercado para somar com o que o parceiro já possui. A inovação nasce do encontro de forças complementares e estamos prontos para criar algo novo. Trabalhamos com:',
+                        'heading' => 'Por que optar pelo Key Account?',
+                        'badge' => 'Relacionamento',
+                        'description' => 'Mais do que um serviço financeiro, o Key Account é uma experiência de parceria contínua. Analisamos profundamente sua vida financeira, cruzamos dados patrimoniais e familiares, entendemos seus objetivos de longo prazo e criamos um plano sob medida que evolui com você.',
                         'insights' => [
-                            ['value' => 'Empresas'],
-                            ['value' => 'Especialistas'],
-                            ['value' => 'Instituições Educacionais'],
+                            ['value' => 'Inteligência'],
+                            ['value' => 'Estratégia'],
+                            ['value' => 'Resultado'],
                         ],
-                        'image_position' => 'left',
-                        'quote' => 'Seja parceiro da Fire|ce e ofereça acesso a soluções que geram equilíbrio, produtividade e bem-estar real.',
+                        'end_description' => 'Acompanhamos cada tomada de decisão importante, alertamos sobre riscos e oportunidades e adaptamos a estratégia conforme sua realidade muda. O cliente Key Account não é um número: é um relacionamento que atravessa fases, gera confiança e entrega resultados consistentes.',
+                        'image_position' => 'right',
+                        'quote' => 'Vamos construir o próximo nível da sua jornada financeira com o Key Account da Fire|ce.',
                         'cta_url' => 'https://pudim.com.br',
-                        'cta_label' => 'Saiba mais',
+                        'cta_label' => 'Entre em contato',
                     ],
                 ],
                 [

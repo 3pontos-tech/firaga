@@ -19,5 +19,5 @@
             </h4>
         </div>
     </div>
-    <x-code-capital.partials.feature-card :title="$title" :description="$description" :icon="$icon" :class="$class"/>
+    <x-cards.feature-card :title="$title" :description="$description" :icon="$icon" :class="$class"/>
 </div>
