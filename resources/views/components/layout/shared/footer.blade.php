@@ -2,16 +2,16 @@
     'bg'
 ])
 
-<footer class="{{ $bg }} text-base-content py-8 sm:py-12 md:py-16">
+<footer class="{{ $bg }} text-base-content py-8 sm:py-12 lg:py-16">
     <div class="mx-auto container px-4 sm:px-6 lg:px-8">
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-8 sm:gap-10 md:gap-12 animate-fade-in items-start">
+        <div class="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-6 gap-8 sm:gap-10 lg:gap-12 animate-fade-in items-start">
 
-            <div class="space-y-6 sm:space-y-8 md:space-y-11 col-span-1 md:col-span-2 lg:col-span-2">
+            <div class="space-y-6 sm:space-y-8 lg:space-y-11 col-span-1 lg:col-span-2 xl:col-span-2">
                 <a href="/" class="flex flex-col gap-y-3 sm:gap-y-4">
                     <div class="flex items-center space-x-2">
-                        <x-logo-white class="w-48 sm:w-56 md:w-64 lg:w-[276px]" />
+                        <x-logo-white class="w-48 sm:w-56 lg:w-64 xl:w-[276px]" />
                     </div>
-                    <span class="text-text-medium text-base sm:text-lg md:text-xl">
+                    <span class="text-text-medium text-base sm:text-lg lg:text-xl">
                         Investimentos Inteligentes e Planejamento Financeiro.
                     </span>
                 </a>
@@ -63,7 +63,7 @@
                 </div>
             </div>
 
-            <div class="flex flex-col gap-y-3 sm:gap-y-4 col-span-1 md:col-span-2 lg:col-span-2">
+            <div class="flex flex-col gap-y-3 sm:gap-y-4 col-span-1 lg:col-span-2 xl:col-span-2">
                 <h4 class="text-lg sm:text-xl font-semibold text-text-light">Nossa Newsletter</h4>
                 <p class="text-text-medium text-sm sm:text-base">
                     Envie nos o seu email e receba as melhores notícias e textos sobre o que

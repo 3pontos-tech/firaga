@@ -30,7 +30,7 @@
             </div>
         </div>
     </div>
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-8 w-full container mx-auto">
+    <div class="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-4 gap-4 md:gap-8 w-full container mx-auto">
         @foreach ($metrics as $metric)
             <x-cards.card-slim
                 class="rounded-lg border dark:border-outline-low border-outline-light"
