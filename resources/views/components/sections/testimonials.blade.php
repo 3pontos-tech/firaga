@@ -69,14 +69,14 @@
                  class="w-full">
                 <div class="relative overflow-hidden w-full">
                     <div
-                        class="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-5 md:gap-6 lg:gap-7 xl:gap-8 :h-fit w-full"
+                        class="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-5 md:gap-6 lg:gap-7 xl:gap-8 min-h-[400px] sm:min-h-[450px] md:min-h-[500px] lg:min-h-[650px]  w-full"
                         x-bind:class="{ 'opacity-50 scale-[0.98]': isTransitioning }"
                         style="transition: all 0.3s ease-in-out; transform-origin: center;">
                         <template x-for="(card, index) in currentCards" :key="card.id">
                             <div
                                 :class="index === activeIndexInGrid
-                                    ? '{{ $cardHover }} h-fit relative px-4 sm:px-5 md:px-6 lg:px-7 xl:px-8 pt-4 sm:pt-5 md:pt-6 lg:pt-7 xl:pt-8 pb-3'
-                                    : '{{ $isMetallic ? 'bg-elevation-02dp border border-outline-dark' : 'bg-outline-dark' }} h-[280px] sm:h-[300px] md:h-[320px] lg:h-[340px] xl:h-[360px] p-4 sm:p-5 md:p-6 lg:p-7 xl:p-8'"
+                                    ? '{{ $cardHover }} h-fit relative px-4 sm:px-5 md:px-6 lg:px-7 xl:px-8 pt-4 sm:pt-5 md:p-6 lg:py-7 xl:py-8 pb-3'
+                                    : '{{ $isMetallic ? 'bg-elevation-02dp border border-outline-dark' : 'bg-outline-dark' }} h-fit min-h-[280px] sm:min-h-[300px] md:min-h-[320px] lg:min-h-[340px] xl:min-h-[330px] p-4 sm:p-5 md:p-6 lg:p-7 xl:p-8'"
                                 class="rounded-xl space-y-4 sm:space-y-5 md:space-y-6 lg:space-y-7 xl:space-y-8 text-white w-full max-w-[280px] sm:max-w-[320px] md:max-w-[360px] lg:max-w-[400px] xl:max-w-[424px] mx-auto transition-all duration-300 ease-in-out">
                                 <div class="flex flex-col gap-4 sm:gap-5 md:gap-6 lg:gap-7 xl:gap-8">
                                     <div class="flex items-center">
