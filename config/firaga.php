@@ -227,7 +227,7 @@ return [
                 [
                     'type' => CustomComponent::FullWidthVideo->value,
                     'data' => [
-                        'badge' => 'Lorem ipsum  dolor sit amet',
+                        'badge' => 'Institucional',
                         'heading' => 'Nos conheça melhor',
                         'description' => 'Você não precisa enfrentar sua vida financeira sozinho. Descubra como a Fire|ce pode caminhar com você — do caos à conquista.',
                         'video_url' => 'https://pudim.com.br',
@@ -288,7 +288,7 @@ return [
                         'subheading' => 'Com uma abordagem personalizada, focamos em ajudar pessoas a organizarem suas finanças, evitarem decisões impulsivas e alocarem seu dinheiro de forma estratégica e com diversidade protegendo o patrimônio. O propósito da Code é transformar a relação com o dinheiro trazendo mais controle, confiança e liberdade para o futuro.',
                         'badge' => 'Code Capital',
                         'cta_label' => 'Agende uma análise',
-                        'cta_url' => 'https://pudim.com.br',
+                        'cta_url' => 'https://cal.com/eduardo-vogel-sc6dnr/30min',
                         'snippet' => file_get_contents(resource_path('markdown/code-capital/snippets.md')),
                     ],
                 ],
@@ -297,8 +297,10 @@ return [
                     'data' => [
                         'heading' => 'Por que investir com a Code Capital?',
                         'subheading' => 'Você é atendido por quem fala a sua língua — especialistas que entendem sua realidade e estão prontos para te ajudar a crescer, recomeçar ou expandir seus horizontes financeiros.',
+                        'caption' => 'Nossa equipe é formada por especialistas que conhecem os desafios da sua profissão e estão prontos para
+caminhar ao seu lado, com respeito, clareza e soluções sob medida.',
                         'cta_label' => 'Saiba mais',
-                        'cta_url' => 'https://pudim.com.br',
+                        'cta_url' => 'https://cal.com/eduardo-vogel-sc6dnr/30min',
                         'steps' => [
                             [
                                 'icon' => 'firece-star',
@@ -314,7 +316,7 @@ return [
                                 'class' => 'justify-center',
                                 'has_cta' => true,
                                 'cta_label' => 'Agende uma análise',
-                                'cta_url' => 'https://pudim.com.br',
+                                'cta_url' => 'https://cal.com/eduardo-vogel-sc6dnr/30min',
                             ],
                             [
                                 'icon' => 'firece-star',
@@ -329,9 +331,9 @@ return [
                 [
                     'type' => CustomComponent::CallToActionFullWidthSection->value,
                     'data' => [
-                        'title' => 'Transforme sua vida financeira com a Code Capital',
+                        'title' => 'A gente decodifica o mercado financeiro para você focar no que faz de melhor.',
                         'cta_label' => 'Agende uma análise',
-                        'cta_url' => 'https://pudim.com.br',
+                        'cta_url' => 'https://cal.com/eduardo-vogel-sc6dnr/30min',
                     ],
                 ],
                 [
@@ -351,7 +353,7 @@ return [
                             ['title' => 'Satisfação dos clientes', 'value' => '98%'],
                         ],
                         'cta_label' => 'Agende uma análise',
-                        'cta_url' => 'https://pudim.com.br',
+                        'cta_url' => 'https://cal.com/eduardo-vogel-sc6dnr/30min',
                     ],
                 ],
                 [
@@ -362,20 +364,24 @@ return [
                         'description' => 'Realizamos uma consulta com você para entender seu caso, seus objetivos e avaliar o melhor caminho para seus investimentos no exterior. Nós lhe auxiliaremos em todo o processo. Feito o investimento você terá um assessor para reinvestir ou para movimentações, além do envio de informes mensais sobre seus rendimentos.',
                         'cards' => [
                             [
-                                'title' => 'Análise de Perfil',
-                                'description' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris eu augue erat. Duis velit eros, suscipit at nisi vitae, faucibus hendrerit turpis.',
+                                'title' => 'Nossa Missão',
+                                'description' => 'A Code Capital nasce da necessidade de diversidade mais digital e entendimento de toda jornada de um profissional da área, criando assim um braço exclusivo e atento às necessidades dos profissionais.',
                             ],
                             [
-                                'title' => 'Planejamento Estratégico',
-                                'description' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris eu augue erat. Duis velit eros, suscipit at nisi vitae, faucibus hendrerit turpis.',
+                                'title' => 'Para Clientes Diferenciados',
+                                'description' => 'Com a possibilidade de realizar qualquer tarefa online para qualquer país do mundo. Se você gosta de ganhar em dólar, vai gostar ainda mais de ver sua rentabilidade crescer exponencialmente em uma moeda estrangeira.',
                             ],
                             [
-                                'title' => 'Execução com Suporte Contínuo',
-                                'description' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris eu augue erat. Duis velit eros, suscipit at nisi vitae, faucibus hendrerit turpis.',
+                                'title' => 'Segurança para você e quem você ama',
+                                'description' => 'Todos os investimentos são de carácter sucessório, ou seja, mesmo que haja qualquer tipo de fatalidade, sua família terá tranquilidade de usar esses recursos.',
+                            ],
+                            [
+                                'title' => 'Investimento fora do tradicional',
+                                'description' => 'Além dos investimentos tradicionais e dos presentes na internet, temos investimentos principalmente em NY e UK, como a BNY Mellon, UBS, BNP Paribas, Credit Suisse entre outros.',
                             ],
                         ],
                         'cta_label' => 'Agende uma consulta gratuita',
-                        'cta_url' => 'https://pudim.com/',
+                        'cta_url' => 'https://cal.com/eduardo-vogel-sc6dnr/30min',
                     ],
                 ],
                 [
@@ -392,7 +398,7 @@ return [
                         'heading' => 'Consultor financeiro exclusivo',
                         'description' => 'Ter um consultor financeiro vai muito além de "organizar as contas". É sobre ter um profissional ao seu lado que entende a sua realidade, te ajuda a enxergar possibilidades e constrói, junto com você, um caminho concreto rumo à tranquilidade financeira.',
                         'cta_label' => 'Agende uma consulta gratuita',
-                        'cta_url' => 'https://pudim.com.br',
+                        'cta_url' => 'https://cal.com/eduardo-vogel-sc6dnr/30min',
                         'image' => 'Saiba mais',
                     ],
                 ],
@@ -437,14 +443,14 @@ return [
                         'heading' => 'A transformação se constrói com boas alianças.',
                         'subheading' => 'Seja através de projetos conjuntos, campanhas, educação corporativa ou desenvolvimento de produtos financeiros sob medida, nossas parcerias são desenhadas com estratégia, colaboração e propósito.',
                         'badge' => 'Parcerias',
-                        'cta_label' => 'Saiba mais',
+                        'cta_label' => 'Entre em contato',
                         'cta_url' => 'https://pudim.com.br',
                     ],
                 ],
                 [
                     'type' => CustomComponent::SplitWithVerticalSteps->value,
                     'data' => [
-                        'badge' => 'Nosso trabalho',
+                        'badge' => 'Propósito',
                         'heading' => 'Geração de resultados',
                         'description' => 'Acreditamos que a transformação financeira ganha força quando compartilhada. Por isso, criamos uma frente dedicada a parcerias estratégicas, focada em gerar impacto mútuo. Atuamos com empresas, especialistas e instituições que compartilham nossa visão e desejam construir soluções colaborativas.',
                         'cta_url' => 'https://pudim.com.br',

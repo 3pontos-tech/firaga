@@ -2,9 +2,9 @@
     'heading',
     'subheading',
     'cta_label',
-    'cta_label',
     'cta_url',
     'steps' => [],
+    'caption'
 ])
 @php
     $grid = [
@@ -59,8 +59,9 @@
 
         <div class="flex flex-col items-center justify-center space-y-6 text-center">
             <p class="text-text-medium max-w-3xl mx-auto text-sm sm:text-base">
-                {{ $cta_label }}
+                {{ $caption }}
             </p>
+
             <x-layout.shared.button :href="$cta_url" class="px-6 sm:px-8 py-3 sm:py-4 font-semibold w-full sm:w-auto">
                 {{ $cta_label }}
             </x-layout.shared.button>

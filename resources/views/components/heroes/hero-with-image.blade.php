@@ -30,7 +30,7 @@
                     :href="$cta_url"
                     :variant="$style"
                     class="w-full sm:w-auto px-4 py-3 sm:p-4 font-bold text-sm sm:text-base">
-                    {{ $cta_label }}
+                    {{ 'oi' }}
                 </x-layout.shared.button>
             </x-slot>
         </x-headers.headline>
