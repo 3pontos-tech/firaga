@@ -1,6 +1,7 @@
 <?php
 
 use App\Enums\CustomComponent;
+use App\Enums\PageTheme;
 use Carbon\Carbon;
 
 return [
@@ -542,7 +543,7 @@ return [
             'opengraph_title' => 'Key Account – Consultoria Financeira Premium | Fire|ce',
             'opengraph_description' => 'Atendimento exclusivo e altamente estratégico para clientes que exigem inteligência, proteção e performance na gestão de seu patrimônio.',
             'slug' => 'key-account',
-            'theme' => \App\Enums\PageTheme::Metallic,
+            'theme' => PageTheme::Metallic,
             'medias' => [
                 [
                     'collection' => CustomComponent::HeroWithImage->value,

@@ -65,7 +65,7 @@ class Page extends Model implements HasMedia, IsMenuable
         'status' => PageStatus::class,
         'disable_indexation' => 'boolean',
         'is_landing' => 'boolean',
-        'theme' => PageTheme::class
+        'theme' => PageTheme::class,
     ];
 
     public function parent(): BelongsTo

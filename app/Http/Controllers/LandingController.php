@@ -8,7 +8,7 @@ class LandingController extends Controller
 {
     public function __invoke()
     {
-    $testimonials = Testimonial::query()->inRandomOrder()->limit(4)->get();
+        $testimonials = Testimonial::query()->inRandomOrder()->limit(4)->get();
 
         return view('welcome', [
             'heroData' => [

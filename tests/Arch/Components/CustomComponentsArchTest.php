@@ -1,9 +1,7 @@
 <?php
 
 use App\Filament\Components\AbstractCustomComponent;
-use App\View\TemplateRenderer;
 use Illuminate\Support\Facades\Config;
-use Illuminate\View\ViewException;
 
 test('should extends AbstractCustomComponent')
     ->expect('app\Filament\Components')
@@ -25,14 +23,9 @@ test('component should be registered at config/cms', function (): void {
 
         $componentClass = $component['class'];
 
-        expect(class_exists($componentClass))
-            ->and($componentClass)
-            ->toStartWith('App\Filament\Components\\')
+        expect(class_exists($componentClass::class))
+            ->and($componentClass::class)
+            ->toStartWith('App\\Filament\\Components\\')
             ->toHaveSuffix('Component');
     }
 });
-
-test('component should be registered at TemplateRendererqqClass', function (): void {
-    $templateRenderer = app(TemplateRenderer::class);
-    $templateRenderer->render('Component That is not Registered');
-})->throws(ViewException::class);

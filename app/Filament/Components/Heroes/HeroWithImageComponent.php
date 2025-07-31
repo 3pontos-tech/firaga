@@ -4,12 +4,9 @@ namespace App\Filament\Components\Heroes;
 
 use App\Enums\CustomComponent;
 use App\Filament\Components\AbstractCustomComponent;
-use Filament\Forms\Components\Repeater;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\SpatieMediaLibraryFileUpload;
 use Filament\Forms\Components\TextInput;
-use Guava\FilamentIconPicker\Forms\IconPicker;
-use Illuminate\Support\Fluent;
 
 class HeroWithImageComponent extends AbstractCustomComponent
 {
@@ -53,7 +50,7 @@ class HeroWithImageComponent extends AbstractCustomComponent
             TextInput::make('cta_url')
                 ->label('Button URL')
                 ->required()
-                ->default('/blog')
+                ->default('/blog'),
         ];
     }
 
