@@ -1,41 +1,30 @@
-<footer class="relative bg-base-300 text-base-content py-16 ">
-    <div class="container mx-auto px-6 relative z-10">
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 animate-fade-in">
-            <div class="space-y-6">
-                <a href="/" class="flex flex-col  gap-1 ">
+@props([
+    'bg' => 'bg-elevation-02dp'
+])
+
+<footer class="{{ $bg }} text-base-content py-8 sm:py-12 lg:py-16">
+    <div class="mx-auto container px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-6 gap-8 sm:gap-10 lg:gap-12 animate-fade-in items-start">
+
+            <div class="space-y-6 sm:space-y-8 lg:space-y-11 col-span-1 lg:col-span-2 xl:col-span-2">
+                <a href="/" class="flex flex-col gap-y-3 sm:gap-y-4">
                     <div class="flex items-center space-x-2">
-                        <x-logo :minimal="true" class="w-8 h-8"/>
-                        <p class="text-2xl font-semibold text-base-content">Fire|Ce</p>
+                        <x-logo-white class="w-48 sm:w-56 lg:w-64 xl:w-[276px]" />
                     </div>
-                    <span class="text-base-content/70 text-sm">
+                    <span class="text-text-medium text-base sm:text-lg lg:text-xl">
                         Investimentos Inteligentes e Planejamento Financeiro.
                     </span>
                 </a>
-
-                <!-- Social Icons -->
-                <div class="flex space-x-4 text-neutral">
-                    <!-- LinkedIn -->
-                    <a href="#"
-                       class="w-10 h-10 bg-base-200 hover:text-primary text-base-content/60 rounded-full flex items-center justify-center transition group shadow-lg overflow-hidden">
-                        <x-filament::icon icon="fab-linkedin" class="w-5 h-5 "/>
-                    </a>
-                    <!-- Instagram -->
-                    <a href="#"
-                       class="w-10 h-10 bg-base-200 hover:text-primary text-base-content/60  rounded-full flex items-center justify-center transition group shadow-lg overflow-hidden">
-                        <x-filament::icon icon="fab-instagram" class="w-5 h-5 "/>
-                    </a>
-                    <!-- WhatsApp -->
-                    <a href="#"
-                       class="w-10 h-10 bg-base-200 hover:text-primary text-base-content/60  rounded-full flex items-center justify-center transition group shadow-lg overflow-hidden">
-                        <x-filament::icon icon="fab-whatsapp" class="w-5 h-5 "/>
-                    </a>
+                <div class="flex flex-col gap-y-2 sm:gap-y-3">
+                    <h3 class="text-text-light text-lg sm:text-xl font-semibold">Nosso Endereço</h3>
+                    <p class="text-text-medium font-medium text-sm sm:text-base">Dr. Cardoso de Mello, 1666, Cj, 92 Vila Olímpia, São Paulo
+                    </p>
                 </div>
             </div>
 
-            <!-- Column 2: Links de Serviços -->
-            <div>
-                <h4 class="text-xl font-semibold text-base-content mb-4">Links de Serviços</h4>
-                <ul class="space-y-2 ">
+            <div class="col-span-1">
+                <h4 class="text-lg sm:text-xl font-semibold text-text-light mb-3 sm:mb-4">Links de Serviços</h4>
+                <ul class="space-y-1 sm:space-y-2 text-text-medium text-sm sm:text-base">
                     <li>
                         <a href="/key-account" class="hover:text-secondary transition">
                             Key Account
@@ -64,37 +53,32 @@
                 </ul>
             </div>
 
-            <!-- Column 3: Informações de Contato -->
-            <div class="flex justify-evenly flex-col gap-2">
-                <div>
-                    <h4 class="text-xl font-semibold text-base-content mb-2">Nosso Endereço</h4>
-                    <p class="mb-4 text-base-content/90">
-                        Dr. Cardoso de Mello, 1666, Cj. 92<br/>
-                        Vila Olímpia, São Paulo.
-                    </p>
-                </div>
-                <div>
-                    <h4 class="text-xl font-semibold text-base-content mb-2">Nosso Endereço</h4>
-                    <p class="font-medium text-base-content/90">contato@firece.com.br</p>
-                    <p class="mt-2 text-base-content/90">+55 11 98720-1303</p>
+            <div class="flex flex-col gap-y-3 sm:gap-y-4 col-span-1">
+                <h4 class="text-lg sm:text-xl font-semibold text-text-light">Contato e endereço</h4>
+                <p class="font-medium text-text-medium text-sm sm:text-base">contato@firece.com.br</p>
+                <div class="flex items-center gap-2">
+                    <img src="{{ asset('images/brasil-flag.png') }}" alt="Phone"
+                        class="w-6 sm:w-7 h-4 sm:h-5 object-contain rounded-sm">
+                    <p class="text-text-medium text-sm sm:text-base">(11) 98720-1303</p>
                 </div>
             </div>
-            <!-- Column 4: Newsletter -->
-            <div>
-                <h4 class="text-xl font-semibold text-base-content mb-4">Nossa Newsletter</h4>
-                <p class="text-base-content/90 mb-6">
+
+            <div class="flex flex-col gap-y-3 sm:gap-y-4 col-span-1 lg:col-span-2 xl:col-span-2">
+                <h4 class="text-lg sm:text-xl font-semibold text-text-light">Nossa Newsletter</h4>
+                <p class="text-text-medium text-sm sm:text-base">
                     Envie nos o seu email e receba as melhores notícias e textos sobre o que
                     acontece no mercado financeiro
                 </p>
-                <form class="flex flex-col sm:flex-row items-center sm:space-x-3 space-y-3 sm:space-y-0">
+                <form class="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-4">
                     <input type="email" placeholder="Seu email" id="email"
-                           class="px-4 py-3 border border-base-200/70 bg-base-200/50 rounded-lg focus:border-primary focus:outline-none">
-                    <button type="submit"
-                            class="bg-neutral text-primary-content px-4 py-3 rounded-lg hover:bg-neutral transition-colors hover:bg-primary hover:text-primary-content focus:border-primary focus:ring-2 focus:ring-primary focus:outline-none">
-                        Ok
-                    </button>
+                        class="flex-1 px-3 sm:px-4 py-2 sm:py-3 border border-outline-dark rounded-lg focus:border-primary focus:outline-none text-text-light bg-transparent placeholder:text-text-medium text-sm sm:text-base">
+                    <x-layout.shared.button type="submit"
+                        class="bg-primary text-primary-content px-4 py-2 sm:py-3 rounded-lg hover:bg-primary hover:text-primary-content focus:border-primary focus:ring-2 focus:ring-primary focus:outline-none text-text-medium text-sm sm:text-base whitespace-nowrap">
+                        Inscrever-se
+                    </x-layout.shared.button>
                 </form>
             </div>
+
         </div>
     </div>
 

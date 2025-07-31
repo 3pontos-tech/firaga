@@ -3,7 +3,6 @@
 namespace Database\Seeders;
 
 use App\Models\Testimonial;
-use Awcodes\Curator\Models\Media;
 use Illuminate\Database\Seeder;
 
 class TestimonialsSeeder extends Seeder
@@ -20,7 +19,6 @@ class TestimonialsSeeder extends Seeder
                 'rating' => $testimonial['rating'],
                 'comment' => $testimonial['comment'],
                 'posted_at' => now(),
-                'thumbnail_id' => Media::factory()->create()->getKey(),
             ]);
         }
     }

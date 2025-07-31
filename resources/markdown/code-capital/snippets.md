@@ -1,6 +1,4 @@
-
 ```php
-
 function calculateCompoundInterest(
     float $principal, 
     float $rate, 
@@ -14,7 +12,4 @@ function calculateCompoundInterest(
         'total' => $total
     ];  
 }
-
 ```
-
-

@@ -3,7 +3,6 @@
 namespace App\Models\CMS;
 
 use App\Models\Author;
-use Awcodes\Curator\Models\Media;
 use Carbon\Carbon;
 use Illuminate\Auth\Authenticatable;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -12,6 +11,9 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Str;
+use Spatie\MediaLibrary\HasMedia;
+use Spatie\MediaLibrary\InteractsWithMedia;
+use Spatie\MediaLibrary\MediaCollections\Models\Media;
 use Webid\Druid\Enums\PostStatus;
 use Webid\Druid\Models\Contracts\IsMenuable;
 use Webid\Druid\Models\Traits\CanRenderContent;
@@ -50,10 +52,11 @@ use Webid\Druid\Models\Traits\IsTranslatable;
  * @property-read string $fullUrlPath
  * @property-read string $url
  */
-class Post extends Model implements IsMenuable
+class Post extends Model implements HasMedia, IsMenuable
 {
     use CanRenderContent;
     use HasFactory;
+    use InteractsWithMedia;
     use IsTranslatable;
 
     protected $table = 'posts';
@@ -62,7 +65,6 @@ class Post extends Model implements IsMenuable
         'author_id',
         'title',
         'slug',
-        'thumbnail_id',
         'thumbnail_alt',
         'status',
         'lang',
@@ -92,6 +94,13 @@ class Post extends Model implements IsMenuable
         'read_time_in_minutes',
     ];
 
+    public function registerMediaConversions(?Media $media = null): void
+    {
+        $this
+            ->addMediaConversion('cover')
+            ->nonQueued();
+    }
+
     public function fullUrlPath(): string
     {
         $path = '';
@@ -118,11 +127,6 @@ class Post extends Model implements IsMenuable
     public function categories(): BelongsToMany
     {
         return $this->belongsToMany(Category::class, 'category_post', 'post_id', 'category_id');
-    }
-
-    public function thumbnail(): BelongsTo
-    {
-        return $this->belongsTo(Media::class, 'thumbnail_id', 'id');
     }
 
     public function openGraphPicture(): BelongsTo

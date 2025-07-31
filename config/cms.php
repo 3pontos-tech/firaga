@@ -2,15 +2,7 @@
 
 declare(strict_types=1);
 
-use App\Filament\Components\Blog\MarkdownTextComponent;
-use App\Filament\Components\Blog\RichTextComponent;
-use App\Filament\Components\Landing\HeroWithImageComponent;
-use App\Filament\Components\Landing\IconSolutionsComponent;
-use App\Filament\Components\Landing\MainHeroComponent;
-use App\Filament\Components\Landing\PlansComponent;
-use App\Filament\Components\Partials\FaqComponent;
-use App\Filament\Components\Partials\GridHeroComponent;
-use App\Filament\Components\Partials\QuoteComponent;
+use App\Enums\CustomComponent;
 use App\Filament\Resources\CMS\MenuResource\RelationManagers\ItemsRelationManager;
 use App\Models\CMS\Category;
 use App\Models\CMS\Menu;
@@ -90,25 +82,10 @@ return [
      | Components
      |--------------------------------------------------------------------------
      | Components are reusable blocks that can be used in pages or posts.
-     | You can create your own components by implementing the ComponentInterface.
+     | You can create your own components by implementing the AbstractCustomComponent.
      |--------------------------------------------------------------------------
      */
-    'components' => [
-        // Landing Components
-        ['class' => MainHeroComponent::class],
-        ['class' => IconSolutionsComponent::class],
-        ['class' => PlansComponent::class],
-        ['class' => HeroWithImageComponent::class],
-
-        // Blog components
-        ['class' => MarkdownTextComponent::class],
-        ['class' => RichTextComponent::class],
-
-        // Partial components
-        ['class' => GridHeroComponent::class],
-        ['class' => FaqComponent::class],
-        ['class' => QuoteComponent::class],
-    ],
+    'components' => CustomComponent::allComponents(),
 
     /*
      |--------------------------------------------------------------------------

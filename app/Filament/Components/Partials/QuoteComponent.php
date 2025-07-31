@@ -3,12 +3,13 @@
 namespace App\Filament\Components\Partials;
 
 use App\Enums\CustomComponent;
+use App\Filament\Components\AbstractCustomComponent;
 use Filament\Forms\Components\Textarea;
-use Illuminate\Contracts\View\View;
-use Webid\Druid\Components\ComponentInterface;
 
-class QuoteComponent implements ComponentInterface
+class QuoteComponent extends AbstractCustomComponent
 {
+    protected static string $view = 'components.partials.quote';
+
     public static function blockSchema(): array
     {
         return [
@@ -26,13 +27,13 @@ class QuoteComponent implements ComponentInterface
         return CustomComponent::PartialQuote->value;
     }
 
-    public static function toBlade(array $data): View
+    public static function setupRenderPayload(array $data): array
     {
-        return view('components.partials.quote', [
+        return [
             'headline' => $data['headline'] ?? '',
             'description' => $data['description'] ?? '',
             'quote' => $data['quote'] ?? '',
-        ]);
+        ];
     }
 
     public static function toSearchableContent(array $data): string

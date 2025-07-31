@@ -32,15 +32,16 @@ class ContactForm extends Component
 
     public ContactPreference $contactPreference = ContactPreference::Whatsapp;
 
-
     public function submit(): void
     {
-        try {
-            $this->rateLimit(3, 60 * 5);
-        } catch (TooManyRequestsException $exception) {
-            throw ValidationException::withMessages([
-                'error' => "Por favor aguarde {$exception->secondsUntilAvailable} segundos e tente novamente.",
-            ]);
+        if (app()->isProduction()) {
+            try {
+                $this->rateLimit(3, 60 * 5);
+            } catch (TooManyRequestsException $tooManyRequestsException) {
+                throw ValidationException::withMessages([
+                    'error' => sprintf('Por favor aguarde %s segundos e tente novamente.', $tooManyRequestsException->secondsUntilAvailable),
+                ]);
+            }
         }
 
         $this->validate();

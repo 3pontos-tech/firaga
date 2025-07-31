@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 namespace Database\Seeders\CMS;
 
+use App\Models\Author;
 use App\Models\CMS\Category;
-use Database\Factories\AuthorFactory;
 use Database\Factories\CMS\CategoryFactory;
 use Database\Factories\CMS\PostFactory;
 use Illuminate\Database\Seeder;
@@ -15,7 +15,14 @@ class PostsSeeder extends Seeder
 {
     public function run(): void
     {
-        $user = AuthorFactory::new()->create();
+        /** @var Author $author */
+        $author = Author::factory()->create([
+            'name' => 'Daniel Reis',
+            'slug' => 'daniel-reis',
+        ]);
+
+        $author->addMediaFromUrl('https://github.com/danielhe4rt.png')
+            ->toMediaCollection('avatar');
 
         foreach ($this->getCategoriesStructure() as $categoryByLocale) {
             if (! isset($categoryByLocale[Druid::getDefaultLocale()])) {
@@ -29,10 +36,13 @@ class PostsSeeder extends Seeder
         }
 
         foreach (config('firaga.articles') as $article) {
-            PostFactory::new()
+            $post = PostFactory::new()
                 ->forCategory(Category::query()->inRandomOrder()->first())
-                ->forAuthor($user)
+                ->forAuthor($author)
                 ->create($article);
+
+            $post->addMediaFromUrl('https://github.com/danielhe4rt.png')
+                ->toMediaCollection('cover');
         }
     }
 

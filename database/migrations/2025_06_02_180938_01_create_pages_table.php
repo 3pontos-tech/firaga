@@ -18,6 +18,7 @@ return new class extends Migration
                 ->cascadeOnDelete();
             $table->string('slug', 255);
             $table->longText('content');
+            $table->string('theme')->default('default');
             $table->longText('searchable_content')->nullable();
             $table->string('status');
             $table->foreignId('parent_page_id')

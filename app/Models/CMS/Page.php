@@ -2,6 +2,7 @@
 
 namespace App\Models\CMS;
 
+use App\Enums\PageTheme;
 use Awcodes\Curator\Models\Media;
 use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -10,6 +11,8 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Support\Collection;
+use Spatie\MediaLibrary\HasMedia;
+use Spatie\MediaLibrary\InteractsWithMedia;
 use Webid\Druid\Enums\PageStatus;
 use Webid\Druid\Models\Contracts\IsMenuable;
 use Webid\Druid\Models\Traits\CanRenderContent;
@@ -23,6 +26,7 @@ use Webid\Druid\Models\Traits\CanRenderContent;
  * @property PageStatus $status
  * @property string|null $lang
  * @property bool $is_landing
+ * @property string $theme
  * @property int|null $parent_page_id
  * @property int|null $translation_origin_model_id
  * @property bool $disable_indexation
@@ -42,10 +46,11 @@ use Webid\Druid\Models\Traits\CanRenderContent;
  * @property-read Page $translationOrigin
  * @property-read Collection<int, Page> $translations
  */
-class Page extends Model implements IsMenuable
+class Page extends Model implements HasMedia, IsMenuable
 {
     use CanRenderContent;
     use HasFactory;
+    use InteractsWithMedia;
     use SoftDeletes;
 
     protected $table = 'pages';
@@ -60,6 +65,7 @@ class Page extends Model implements IsMenuable
         'status' => PageStatus::class,
         'disable_indexation' => 'boolean',
         'is_landing' => 'boolean',
+        'theme' => PageTheme::class,
     ];
 
     public function parent(): BelongsTo

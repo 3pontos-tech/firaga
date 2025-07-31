@@ -3,21 +3,23 @@
 namespace App\Filament\Components\Partials;
 
 use App\Enums\CustomComponent;
-use Awcodes\Curator\Components\Forms\CuratorPicker;
-use Awcodes\Curator\Models\Media;
+use App\Filament\Components\AbstractCustomComponent;
 use Filament\Forms\Components\Repeater;
+use Filament\Forms\Components\SpatieMediaLibraryFileUpload;
 use Filament\Forms\Components\Textarea;
 use Filament\Forms\Components\TextInput;
-use Illuminate\Contracts\View\View;
-use Webid\Druid\Components\ComponentInterface;
 
-class FaqComponent implements ComponentInterface
+class FaqComponent extends AbstractCustomComponent
 {
+    protected static string $view = 'components.partials.faq';
+
     public static function blockSchema(): array
     {
         return [
-            CuratorPicker::make('thumbnail')
-                ->label(__('Thumbnail'))
+            SpatieMediaLibraryFileUpload::make('hero')
+                ->label('Hero Image')
+                ->collection(CustomComponent::PartialFaq->value)
+                ->image()
                 ->required(),
             Repeater::make('solutions')
                 ->label(__('Solutions'))
@@ -37,12 +39,11 @@ class FaqComponent implements ComponentInterface
         return CustomComponent::PartialFaq->value;
     }
 
-    public static function toBlade(array $data): View
+    public static function setupRenderPayload(array $data): array
     {
-        return view('components.partials.faq', [
-            'thumbnail' => Media::query()->find($data['thumbnail']),
+        return [
             'solutions' => collect($data['solutions'] ?? []),
-        ]);
+        ];
     }
 
     public static function toSearchableContent(array $data): string

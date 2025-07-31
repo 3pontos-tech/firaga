@@ -5,25 +5,25 @@
 <div>
     <a href="{{ route('blog.show', ['post' => $post->slug]) }}">
         <article
-            class="group bg-base-100 rounded-xl overflow-hidden hover:bg-base-200 transition-all duration-300  flex flex-col justify-between">
+            class="group bg-elevation-04dp rounded-xl overflow-hidden hover:bg-base-200 transition-all duration-300  flex flex-col justify-between">
             <div class="relative h-48 overflow-hidden">
                 <img
-                    alt="Investimentos Estratégicos para Profissionais de TI" loading="lazy"
+                    alt="{{ $post->title }} cover" loading="lazy"
                     decoding="async" data-nimg="fill"
                     class="object-cover transition-transform duration-300 group-hover:scale-105"
                     style="position: absolute; height: 100%; width: 100%; inset: 0; color: transparent;"
-                    src="{{ $post->thumbnail->getSignedUrl() }}">
+                    src="{{ $post->getFirstMediaUrl('avatar') }}">
                 <div class="absolute top-4 left-4">
                     @foreach($post->categories as $category)
-                        <span
-                            class="bg-neutral mx-1 text-base-content px-3 py-1 rounded-full text-xs font-semibold">
+                        <x-layout.shared.chip variant="custom"
+                            class="px-3 py-1 text-xs sm:text-sm bg-brand-primary/40 hover:bg-brand-primary/90 text-white group-hover:bg-icon-high group-hover:text-brand-primary">
                             {{ $category->name ?? 'Code' }}
-                        </span>
+                        </x-layout.shared.chip>
                     @endforeach
                 </div>
             </div>
             <div class="p-6">
-                <div class="flex items-center gap-4 text-xs text-base-content mb-3">
+                <div class="flex items-center gap-4 text-xs text-text-high mb-3">
                     <div class="flex items-center gap-1">
                         <x-heroicon-c-calendar class="h-3 w-3"/>
                         {{ $post->published_at->format('d/m/Y') }}
@@ -33,10 +33,10 @@
                         {{ $post->read_time_in_minutes }} min
                     </div>
                 </div>
-                <h3 class="text-lg text-base-content font-bold mb-3 group-hover:text-primary transition-colors">
+                <h3 class="text-lg text-text-high font-bold mb-3 group-hover:text-brand-primary transition-colors">
                     {{ $post->title }}
                 </h3>
-                <p class="text-base-content text-sm mb-4 line-clamp-3">
+                <p class="text-text-medium text-sm mb-4 line-clamp-3">
                     {{ $post->excerpt }}
                 </p>
             </div>
@@ -49,16 +49,16 @@
                                  decoding="async"
                                  data-nimg="1"
                                  class="rounded-full w-8 h-8"
-                                 src="{{ $post->author->thumbnail->getSignedUrl() }}"
+                                 src="{{ $post->author->getFirstMediaUrl('avatar') }}"
                             />
                         </div>
                         <div class="flex flex-col">
-                            <span class="text-xs text-base-content">{{ $post->author->name }}</span>
-                            <span class="text-xs text-base-content">Consultor Financeiro</span>
+                            <span class="text-xs text-text-high">{{ $post->author->name }}</span>
+                            <span class="text-xs text-text-medium">Consultor Financeiro</span>
                         </div>
                     </div>
                     <x-heroicon-c-arrow-right
-                        class="h-5 w-5 text-primary group-hover:translate-x-1 transition-transform"/>
+                        class="h-5 w-5 text-brand-primary group-hover:translate-x-1 transition-transform"/>
                 </div>
             </div>
         </article>

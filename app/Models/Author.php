@@ -3,16 +3,19 @@
 namespace App\Models;
 
 use App\Models\CMS\Post;
-use Awcodes\Curator\Models\Media;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use Spatie\MediaLibrary\HasMedia;
+use Spatie\MediaLibrary\InteractsWithMedia;
+use Spatie\MediaLibrary\MediaCollections\Models\Media;
 
-class Author extends Model
+class Author extends Model implements HasMedia
 {
     use HasFactory;
+    use InteractsWithMedia;
     use SoftDeletes;
 
     protected $fillable = [
@@ -20,7 +23,6 @@ class Author extends Model
         'slug',
         'name',
         'description',
-        'thumbnail_id',
         'linkedin_url',
     ];
 
@@ -29,13 +31,15 @@ class Author extends Model
         return $this->belongsTo(User::class);
     }
 
-    public function thumbnail(): BelongsTo
-    {
-        return $this->belongsTo(Media::class, 'thumbnail_id', 'id');
-    }
-
     public function posts(): HasMany
     {
         return $this->hasMany(Post::class, '');
+    }
+
+    public function registerMediaConversions(?Media $media = null): void
+    {
+        $this
+            ->addMediaConversion('avatar')
+            ->nonQueued();
     }
 }

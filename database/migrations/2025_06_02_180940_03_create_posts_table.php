@@ -15,7 +15,6 @@ return new class extends Migration
     {
         Schema::create('posts', function (Blueprint $table): void {
             $table->bigIncrements('id');
-            $table->foreignIdFor(Media::class, 'thumbnail_id')->nullable();
             $table->foreignIdFor(Author::class, 'author_id');
 
             $table->string('title');

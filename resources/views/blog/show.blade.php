@@ -1,4 +1,8 @@
 <x-layout.guest>
+    <x-slot:navbar>
+        <x-navbar/>
+    </x-slot:navbar>
+
     <x-slot:metatags>
         <title>{{ $post->meta_title . ' - ' . config('app.name', 'Laravel') }}</title>
         <link rel="canonical" href="{{ $post?->canonical ?? '' }}"/>
@@ -15,4 +19,10 @@
         <x-blog.article :post="$post"/>
         <x-blog.related-articles :related-posts="$relatedPosts"/>
     </div>
+
+
+    <x-slot:footer>
+        <x-layout.shared.footer/>
+    </x-slot:footer>
+
 </x-layout.guest>
