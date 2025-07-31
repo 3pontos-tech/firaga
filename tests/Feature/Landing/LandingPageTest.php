@@ -35,7 +35,7 @@ test('pages without testimonial should not render the testimonial avatar', funct
     $avatar = Str::remove('http://localhost:8000/storage/1/', $testimonial->getFirstMediaUrl('avatar'));
     $pages = Page::query()
         ->whereNotIn('slug', ['code-capital', '/', 'key-account'])
-        ->where('status','published')->get();
+        ->where('status', 'published')->get();
 
     $pages->each(function ($page) use ($avatar) {
         $response = get(route('page.show', $page->slug));

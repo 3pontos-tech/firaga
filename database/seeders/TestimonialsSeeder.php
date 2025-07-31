@@ -22,7 +22,7 @@ class TestimonialsSeeder extends Seeder
             ]);
 
             $testimonial
-                ->addMediaFromUrl("https://github.com/RichardGL11.png")
+                ->addMediaFromUrl('https://github.com/RichardGL11.png')
                 ->toMediaCollection('avatar');
         }
     }
