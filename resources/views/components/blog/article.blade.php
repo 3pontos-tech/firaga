@@ -18,7 +18,7 @@
             <div class="relative mb-12 md:max-h-[300px] max-h-[150px] rounded-xl overflow-hidden">
                 <img
                     alt="{{ $post->title }}" loading="lazy" decoding="async"
-                    class="object-cover"
+                    class="object-fill w-full h-full "
                     src="{{ $post->getFirstMediaUrl('cover') }}">
             </div>
             <div class="flex gap-2 mb-2">

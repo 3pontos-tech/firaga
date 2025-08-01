@@ -987,4 +987,24 @@ TEXT,
             'posted_at' => Carbon::now()->subMonths(3),
         ],
     ],
+    'consultants' => [
+        [
+            'slug' => 'arthur-mariano',
+            'name' => 'Arthur Mariano',
+            'description' => '',
+            'linkedin_url' => 'https://www.linkedin.com/in/arthur-mariano/',
+        ],
+        [
+            'slug' => 'laura-papaiano',
+            'name' => 'Laura Papaiano',
+            'description' => '',
+            'linkedin_url' => 'https://www.linkedin.com/in/laura-papaiano-0b0215196/',
+        ],
+        [
+            'slug' => 'marcelo-rosa',
+            'name' => 'Marcelo Rosa',
+            'description' => '',
+            'linkedin_url' => 'https://www.linkedin.com/in/laura-papaiano-0b0215196/',
+        ]
+    ]
 ];
