@@ -2,7 +2,7 @@
 
 namespace App\Providers;
 
-use App\Policies\ActivityPolicy;
+
 use App\View\Components\Navbar;
 use BezhanSalleh\FilamentShield\FilamentShield;
 use Filament\Tables\Table;
@@ -12,13 +12,10 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Gate;
 use Illuminate\Support\Facades\URL;
 use Illuminate\Support\ServiceProvider;
-use Spatie\Activitylog\Models\Activity;
+
 
 class AppServiceProvider extends ServiceProvider
 {
-    protected array $policies = [
-        Activity::class => ActivityPolicy::class,
-    ];
 
     public function register(): void
     {
@@ -43,9 +40,7 @@ class AppServiceProvider extends ServiceProvider
 
     private function configurePolicies(): void
     {
-        foreach ($this->policies as $model => $policy) {
-            Gate::policy($model, $policy);
-        }
+
     }
 
     private function configureDB(): void
