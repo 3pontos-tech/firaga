@@ -6,6 +6,13 @@ use App\Enums\PageTheme;
 use Carbon\Carbon;
 
 return [
+    'themes' => [
+        'enabled' => false,
+        'available' => [
+            // ... append themes when they're ready for use.
+        ],
+    ],
+
     'pages' => [
         [
             'title' => 'Home',
@@ -257,7 +264,7 @@ return [
                         'description' => 'Nosso blog é o lugar ideal para quem busca conhecimento e insights sobre o mercado financeiro, nacional e global.',
                         'cta_label' => 'Visitar Blog',
                         'cta_url' => 'https://firece.com.br/blog',
-                        'icon' => 'firece-star', //faltou icone
+                        'icon' => 'firece-star', // faltou icone
                     ],
                 ],
             ],
@@ -304,23 +311,22 @@ caminhar ao seu lado, com respeito, clareza e soluções sob medida.',
                         'cta_url' => 'https://cal.com/eduardo-vogel-sc6dnr/30min',
                         'steps' => [
                             [
-                                'icon' => 'firece-star',
+                                'icon' => FireceIcons::NbPerson->value,
                                 'title' => 'Expertise',
                                 'description' => 'Consultores capacitados para direcionar sua vida financeira e sua profissão para um novo nível, atrelando seus objetivos pessoas e profissionais.',
                                 'class' => 'justify-start',
-                                'has_cta' => false,
+
                             ],
                             [
-                                'icon' => 'firece-star',
+                                'icon' => FireceIcons::NbFolder->value,
                                 'title' => 'Planejamento financeiro sob medida',
                                 'description' => 'Estratégias personalizadas para maximizar sua remuneração, impulsionar seus investimentos e alcançar objetivos com segurança.',
                                 'class' => 'justify-center',
-                                'has_cta' => true,
                                 'cta_label' => 'Agende uma análise',
                                 'cta_url' => 'https://cal.com/eduardo-vogel-sc6dnr/30min',
                             ],
                             [
-                                'icon' => 'firece-star',
+                                'icon' => FireceIcons::NbStar->value,
                                 'title' => 'Resultados Comprovados',
                                 'description' => 'Desde 2023, ajudando profissionais de tecnologia a construírem patrimônio de forma inteligente e global.',
                                 'class' => 'justify-end',
@@ -346,15 +352,15 @@ caminhar ao seu lado, com respeito, clareza e soluções sob medida.',
                         'insights' => [
                             [
                                 'icon' => FireceIcons::NbPeople->value,
-                                'value' => 'Especialistas  planejamento financeiro'
+                                'value' => 'Especialistas  planejamento financeiro',
                             ],
                             [
                                 'icon' => FireceIcons::NbTarget->value,
-                                'value' => 'Metodologia própria testada e aprovada'
+                                'value' => 'Metodologia própria testada e aprovada',
                             ],
                             [
                                 'icon' => FireceIcons::NbChart->value,
-                                'value' => 'Foco em resultados reais e sustentáveis'
+                                'value' => 'Foco em resultados reais e sustentáveis',
                             ],
                         ],
                         'video_cards' => [
@@ -430,7 +436,7 @@ caminhar ao seu lado, com respeito, clareza e soluções sob medida.',
             'slug' => 'parcerias',
             'medias' => [
                 [
-                    'collection' => CustomComponent::PartialFaq->value,
+                    'collection' => CustomComponent::Faq->value,
                     'path' => public_path('images/stock/hero-stock.png'),
                 ],
                 [
@@ -446,7 +452,7 @@ caminhar ao seu lado, com respeito, clareza e soluções sob medida.',
                     'path' => public_path('images/stock/our-work-partners.png'),
                 ],
                 [
-                    'collection' => CustomComponent::PartialFaq->value,
+                    'collection' => CustomComponent::Faq->value,
                     'path' => public_path('images/stock/our-approach.png'),
                 ],
             ],
@@ -539,7 +545,7 @@ caminhar ao seu lado, com respeito, clareza e soluções sob medida.',
                     ],
                 ],
                 [
-                    'type' => CustomComponent::PartialFaq->value,
+                    'type' => CustomComponent::Faq->value,
                     'data' => [
                         'solutions' => [
                             [
@@ -579,7 +585,7 @@ caminhar ao seu lado, com respeito, clareza e soluções sob medida.',
                     'path' => public_path('images/stock/key-account-hero.png'),
                 ],
                 [
-                    'collection' => CustomComponent::PartialFaq->value,
+                    'collection' => CustomComponent::Faq->value,
                     'path' => public_path('images/stock/key-account-faq.png'),
                 ],
                 [
@@ -630,7 +636,7 @@ caminhar ao seu lado, com respeito, clareza e soluções sob medida.',
                                 'cta_label' => 'Enviar Candidatura',
                             ],
                             [
-                                'icon' => FireceIcons::NbTarget->value,
+                                'icon' => FireceIcons::NbVault->value,
                                 'title' => 'Planejamento Sucessório',
                                 'description' => 'Sim. Planejamos a sucessão de forma estratégica para garantir tranquilidade, segurança e continuidade para seu legado.',
                                 'cta_url' => 'https://pudim.com.br',
@@ -688,7 +694,7 @@ caminhar ao seu lado, com respeito, clareza e soluções sob medida.',
                     ],
                 ],
                 [
-                    'type' => CustomComponent::PartialFaq->value,
+                    'type' => CustomComponent::Faq->value,
                     'data' => [
                         'solutions' => [
                             [

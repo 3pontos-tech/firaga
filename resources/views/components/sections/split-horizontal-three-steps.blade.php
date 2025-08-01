@@ -1,13 +1,11 @@
 @props([
-    'subheading' => 'Lorem ipsum',
-    'heading' => 'Lorem Ipsum',
-    'description' => 'Na nossa consultoria, entendemos que cada cliente é único. Por isso, desenvolvemos uma metodologia
-personalizada que se adapta às suas necessidades e objetivos financeiros. Nossa abordagem é baseada em três pilares
-fundamentais: Análise de Perfil, Planejamento Estratégico e Execução com Suporte Contínuo.',
-    'cta_label' => 'Saiba Mais',
-    'cta_url' => 'https://example.com/saiba-mais',
+    'subheading',
+    'heading',
+    'description',
+    'cta_label',
+    'cta_url',
     'cards' => [],
-    'grid_columns' => 3,
+    'grid_columns',
     'card_type'
 ])
 @php

@@ -38,7 +38,7 @@ enum CustomComponent: string
 
     case HeroWithCenteredTitle = 'hero-with-centered-title';
 
-    case PartialFaq = 'partials-faq';
+    case Faq = 'partials-faq';
 
     case PartialQuote = 'partials-quote';
 
@@ -80,7 +80,7 @@ enum CustomComponent: string
             self::BlogMarkdownText => MarkdownTextComponent::class,
             self::BlogRichText => RichTextComponent::class,
             self::HeroWithCenteredTitle => HeroWithCenteredTitleComponent::class,
-            self::PartialFaq => FaqComponent::class,
+            self::Faq => FaqComponent::class,
             self::PartialQuote => QuoteComponent::class,
             self::CallToActionFullWidthSection => CtaFullWidthComponent::class,
             self::CallToActionWithIconSection => CtaWithIconComponent::class,

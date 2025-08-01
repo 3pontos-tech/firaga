@@ -35,10 +35,11 @@
                         <x-cards.process-card
                             :number="$index + 1"
                             :icon="$card['icon']"
-                            :tit
                             :title="$card['title']"
                             :description="$card['description']"
                             :class="$card['class']"
+                            :cta_label="$card['cta_label'] ?? null"
+                            :cta_url="$card['cta_url'] ?? null"
                         />
                     </div>
                 @endforeach

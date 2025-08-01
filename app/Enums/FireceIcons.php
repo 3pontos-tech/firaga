@@ -19,7 +19,7 @@ enum FireceIcons: string
     case Star = 'firece-star';
     case Chart = 'firece-chart';
     case Gear = 'firece-gear';
-    case IconesFireceSafe = 'firece-icones-firece-safe';
+    case NbVault = 'firece-nb-vault';
     case Mortarboard = 'firece-mortarboard';
     case NbChart = 'firece-nb-chart';
     case NbFolder = 'firece-nb-folder';

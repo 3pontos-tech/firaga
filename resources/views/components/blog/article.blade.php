@@ -8,7 +8,7 @@
 ])
 
 <article class="pb-8 md:pb-0 bg-elevation-surface">
-    <section id="heading" class="bg-elevation-02dp container mx-auto">
+    <section id="heading" class="bg-elevation-02dp ">
         <div class="max-w-4xl mx-auto pt-10">
             <a href="{{ route('blog.index') }}"
                class="inline-flex items-center gap-2 text-text-light hover:text-brand-primary-hover mb-8">
@@ -24,7 +24,7 @@
             <div class="flex gap-2 mb-2">
                 @foreach($post->categories as $category)
                     <x-layout.shared.chip variant="custom"
-                        class="px-3 py-1 text-sm bg-brand-primary/40 hover:bg-brand-primary/90 text-white group-hover:bg-icon-high group-hover:text-brand-primary">
+                                          class="px-3 py-1 text-sm bg-brand-primary/40 hover:bg-brand-primary/90 text-white group-hover:bg-icon-high group-hover:text-brand-primary">
                         {{ $category->name ?? 'Code' }}
                     </x-layout.shared.chip>
                 @endforeach

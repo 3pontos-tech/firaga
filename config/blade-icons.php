@@ -124,7 +124,6 @@ return [
         */
 
         'default' => 'icon',
-
     ],
 
 ];

@@ -13,7 +13,7 @@
         </div>
         <div class="w-full lg:w-1/2 relative flex flex-col gap-y-6 sm:gap-y-8 md:gap-y-10 order-1 lg:order-2">
             <div class="absolute top-[-30px] left-[-30px] sm:top-[-40px] sm:left-[-40px] md:top-[-55px] md:left-[-55px] hidden sm:block">
-                <img src="{{ asset('images/border-corner-orange.svg') }}" alt="Border Corner" class="w-[60px] h-[60px] sm:w-[80px] sm:h-[80px] md:w-[100px] md:h-[100px]">
+                <x-partials.corner variant="brand" class="w-[60px] h-[60px] sm:w-[80px] sm:h-[80px] md:w-[100px] md:h-[100px]"/>
             </div>
             <h2 class="text-text-high font-bold text-2xl sm:text-3xl md:text-4xl lg:text-5xl leading-tight">
                 {{ $heading }}
