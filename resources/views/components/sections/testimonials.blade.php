@@ -6,6 +6,7 @@
 
 ])
 
+
 @php
     $variant=$renderable->theme->value;
     $isMetallic = $variant === 'metallic';
@@ -82,6 +83,7 @@
                                     <div class="flex items-center">
                                         <div
                                             class="{{ $isMetallic ? 'bg-outline-dark' : 'bg-outline-light' }} rounded-full w-10 h-10 sm:w-11 sm:h-11 md:w-12 md:h-12 lg:w-14 lg:h-14 xl:w-16 xl:h-16 flex items-center justify-center">
+                                            <img :src="card.avatar_url" alt="" class="object-cover w-full h-full rounded-full" />
                                         </div>
                                     </div>
                                     <p class="font-medium text-xs sm:text-sm md:text-base lg:text-base leading-relaxed"

@@ -38,7 +38,7 @@
                 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 w-full">
                     @foreach($insights as $insight)
                         <div class="flex flex-col gap-y-3 sm:gap-y-4">
-                            <x-lucide-goal class="w-5 h-5 sm:w-6 sm:h-6 text-brand-primary"/>
+                            <x-filament::icon :icon="$insight['icon']" class="w-5 h-5 sm:w-6 sm:h-6 text-brand-primary"/>
                             <h3 class="text-text-high font-bold text-sm sm:text-base">
                                 {{ $insight['value'] }}
                             </h3>

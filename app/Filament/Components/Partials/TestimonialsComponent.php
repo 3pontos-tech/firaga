@@ -38,7 +38,16 @@ class TestimonialsComponent extends AbstractCustomComponent
         return [
             'heading' => $data['heading'],
             'badge' => $data['badge'],
-            'testimonials' => Testimonial::query()->whereIn('id', $data['testimonials'])->get(),
+            'testimonials' => Testimonial::query()->whereIn('id', $data['testimonials'])->get()
+                ->map(function ($testimonial): array {
+                    return [
+                        'id' => $testimonial->id,
+                        'name' => $testimonial->name,
+                        'role' => $testimonial->role,
+                        'comment' => $testimonial->comment,
+                        'avatar_url' => $testimonial->getFirstMediaUrl('avatar'),
+                    ];
+                })->values(),
         ];
     }
 

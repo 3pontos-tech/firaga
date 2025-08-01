@@ -12,7 +12,7 @@
                     decoding="async" data-nimg="fill"
                     class="object-cover transition-transform duration-300 group-hover:scale-105"
                     style="position: absolute; height: 100%; width: 100%; inset: 0; color: transparent;"
-                    src="{{ $post->getFirstMediaUrl('avatar') }}">
+                    src="{{ $post->getFirstMediaUrl('cover') }}">
                 <div class="absolute top-4 left-4">
                     @foreach($post->categories as $category)
                         <x-layout.shared.chip variant="custom"
@@ -48,7 +48,7 @@
                                  loading="lazy"
                                  decoding="async"
                                  data-nimg="1"
-                                 class="rounded-full w-8 h-8"
+                                 class="rounded-full object-cover object-center w-8 h-8"
                                  src="{{ $post->author->getFirstMediaUrl('avatar') }}"
                             />
                         </div>

@@ -5,13 +5,14 @@
     'class' => '',
     'cta_label' => '',
     'cta_url' => '',
+    'icon' => '',
 ])
 
 <div
     class="group border dark:border-outline-low border-outline-light hover:border-brand-primary p-4 sm:p-6 md:p-8 rounded dark:bg-elevation-03dp hover:bg-brand-primary dark:hover:bg-brand-primary transition-colors duration-300 {{ $class }} h-full">
     <div class="flex flex-col gap-y-3 sm:gap-y-4 items-center h-full">
         <div>
-            <x-lucide-goal
+            <x-filament::icon :icon="$icon"
                 class="w-12 h-12 sm:w-16 sm:h-16 md:w-20 md:h-20 text-brand-primary group-hover:text-text-light transition-colors duration-300"/>
         </div>
         <h3 class="text-lg sm:text-xl md:text-2xl font-semibold text-text-high group-hover:text-text-light transition-colors duration-300 text-center">

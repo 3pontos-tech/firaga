@@ -6,10 +6,10 @@ use App\Filament\Resources\TestimonialResource\Pages\CreateTestimonial;
 use App\Filament\Resources\TestimonialResource\Pages\EditTestimonial;
 use App\Filament\Resources\TestimonialResource\Pages\ListTestimonials;
 use App\Models\Testimonial;
-use Awcodes\Curator\Components\Forms\CuratorPicker;
 use Filament\Forms\Components\DateTimePicker;
 use Filament\Forms\Components\Section;
 use Filament\Forms\Components\Select;
+use Filament\Forms\Components\SpatieMediaLibraryFileUpload;
 use Filament\Forms\Components\Textarea;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Form;
@@ -66,10 +66,11 @@ class TestimonialResource extends Resource
                         DateTimePicker::make('posted_at')
                             ->label(__('filament.published_at'))
                             ->required(),
-                        CuratorPicker::make('thumbnail_id')
-                            ->label(__('filament.testimonial_avatar'))
-                            ->preserveFilenames()
-                            ->columnSpanFull(),
+                        SpatieMediaLibraryFileUpload::make('avatar')
+                            ->label('Avatar')
+                            ->collection('avatar')
+                            ->image()
+                            ->required(),
                     ]),
             ]);
     }

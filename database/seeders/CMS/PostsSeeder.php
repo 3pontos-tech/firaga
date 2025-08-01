@@ -9,12 +9,38 @@ use App\Models\CMS\Category;
 use Database\Factories\CMS\CategoryFactory;
 use Database\Factories\CMS\PostFactory;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\File;
+use Illuminate\Support\Str;
+use Spatie\MediaLibrary\MediaCollections\Exceptions\FileCannotBeAdded;
+use Spatie\MediaLibrary\MediaCollections\Exceptions\FileDoesNotExist;
+use Spatie\MediaLibrary\MediaCollections\Exceptions\FileIsTooBig;
 use Webid\Druid\Facades\Druid;
 
 class PostsSeeder extends Seeder
 {
+    /**
+     * @throws FileCannotBeAdded
+     * @throws FileDoesNotExist
+     * @throws FileIsTooBig
+     */
     public function run(): void
     {
+        foreach (config('firaga.consultants') as $consultant) {
+            $consultant = Author::factory()->create($consultant);
+
+            $imagePath = public_path(sprintf('images/consultants/%s.jpeg', $consultant['slug']));
+            $extension = pathinfo($imagePath, PATHINFO_EXTENSION);
+            $filePath = storage_path('app/tmp/' . Str::uuid() . '.' . $extension);
+
+            File::ensureDirectoryExists(dirname($filePath));
+
+            File::copy($imagePath, $filePath);
+
+            $consultant
+                ->addMedia($filePath)
+                ->toMediaCollection('avatar');
+        }
+
         /** @var Author $author */
         $author = Author::factory()->create([
             'name' => 'Daniel Reis',
@@ -41,7 +67,16 @@ class PostsSeeder extends Seeder
                 ->forAuthor($author)
                 ->create($article);
 
-            $post->addMediaFromUrl('https://github.com/danielhe4rt.png')
+            $imagePath = public_path('images/stock/office-coworkers.png');
+            $extension = pathinfo($imagePath, PATHINFO_EXTENSION);
+            $filePath = storage_path('app/tmp/' . Str::uuid() . '.' . $extension);
+
+            File::ensureDirectoryExists(dirname($filePath));
+
+            File::copy($imagePath, $filePath);
+
+            $post
+                ->addMedia($filePath)
                 ->toMediaCollection('cover');
         }
     }

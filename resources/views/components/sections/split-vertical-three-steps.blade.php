@@ -41,13 +41,13 @@
         </div>
 
         <div class="lg:w-1/2 relative pb-6 md:pb-10 md:pt-10 md:pr-10 md:pl-10">
-            <div class="hidden md:block md:absolute bottom-0 left-0">
-                <div class="w-20 md:w-32 h-[8px] md:h-[13px] bg-brand-primary"></div>
-                <div class="absolute bottom-0 left-0 h-20 md:h-32 w-[8px] md:w-[13px] bg-brand-primary"></div>
+            <div class="hidden md:block md:absolute bottom-0 left-0 rotate-270">
+                <x-partials.corner variant="brand" class="w-[60px] h-[60px] sm:w-[80px] sm:h-[80px] md:w-[120px] md:h-[120px]"/>
+{{--                <div class="w-20 md:w-32 h-[8px] md:h-[13px] bg-brand-primary"></div>--}}
+{{--                <div class="absolute bottom-0 left-0 h-20 md:h-32 w-[8px] md:w-[13px] bg-brand-primary"></div>--}}
             </div>
-            <div class="hidden md:block md:absolute top-0 right-0">
-                <div class="w-20 md:w-32 h-[8px] md:h-[13px] bg-brand-primary"></div>
-                <div class="absolute top-0 right-0 h-20 md:h-32 w-[8px] md:w-[13px] bg-brand-primary"></div>
+            <div class="hidden md:block md:absolute top-0 right-0 rotate-90">
+                <x-partials.corner variant="brand" class="w-[60px] h-[60px] sm:w-[80px] sm:h-[80px] md:w-[120px] md:h-[120px]"/>
             </div>
 
             <div class="space-y-4 md:space-y-6 lg:space-y-10">

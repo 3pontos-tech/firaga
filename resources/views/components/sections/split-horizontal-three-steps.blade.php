@@ -1,13 +1,11 @@
 @props([
-    'subheading' => 'Lorem ipsum',
-    'heading' => 'Lorem Ipsum',
-    'description' => 'Na nossa consultoria, entendemos que cada cliente é único. Por isso, desenvolvemos uma metodologia
-personalizada que se adapta às suas necessidades e objetivos financeiros. Nossa abordagem é baseada em três pilares
-fundamentais: Análise de Perfil, Planejamento Estratégico e Execução com Suporte Contínuo.',
-    'cta_label' => 'Saiba Mais',
-    'cta_url' => 'https://example.com/saiba-mais',
+    'subheading',
+    'heading',
+    'description',
+    'cta_label',
+    'cta_url',
     'cards' => [],
-    'grid_columns' => 3,
+    'grid_columns',
     'card_type'
 ])
 @php
@@ -38,6 +36,7 @@ fundamentais: Análise de Perfil, Planejamento Estratégico e Execução com Sup
             @foreach($cards as $card)
                 @if($card_type === 'cta')
                     <x-cards.card-cta
+                            :icon="$card['icon']"
                             :title="$card['title']"
                             :description="$card['description']"
                             :cta_label="$card['cta_label'] ?? $cta_label"
@@ -50,7 +49,7 @@ fundamentais: Análise de Perfil, Planejamento Estratégico e Execução com Sup
                             :description="$card['description']"
                     >
                         <x-slot name="icon">
-                            <x-lucide-goal class="w-8 h-8 text-white group-hover:text-icon-dark"/>
+                            <x-filament::icon :icon="$card['icon']" class="w-8 h-8 text-white group-hover:text-icon-dark"/>
                         </x-slot>
                     </x-layout.shared.card>
                 @endif

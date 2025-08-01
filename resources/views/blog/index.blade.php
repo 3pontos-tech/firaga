@@ -4,7 +4,7 @@
     </x-slot:navbar>
 
     <x-partials.grid-hero>
-        Blog <span class="text-primary">{{ config('app.name') }}</span>
+        Conteúdo que transforma
     </x-partials.grid-hero>
     <section class="bg-elevation-surface">
         <div class="container mx-auto">
@@ -12,20 +12,21 @@
                 <div class="flex-1 lg:flex-2">
                     @if ($featuredPost)
                         <section>
-                            <x-blog.featured-item :post="$featuredPost" />
+                            <x-blog.featured-item :post="$featuredPost"/>
                         </section>
                     @endif
                     <section class="py-20">
                         <div class="flex flex-col gap-y-6 mb-8">
                             <h2 class="text-5xl text-text-high font-bold">Últimos Artigos</h2>
                             <p class="text-text-medium text-sm ">
-                                Lorem ipsum dolor sit amet, consectetur adispicing elit. Maecenas non gravida dui.
-                                Nullam tincidunt porta magna
+                                Aqui você vai encontrar conteúdo de verdade feito por pessoas de verdade, que entendem e
+                                vivenciam todos os dias o mercado financeiro. Dessa forma, podem ter certeza que todo o
+                                artigo contém informações reais, verificadas e de qualidade.
                             </p>
                         </div>
                         <div class="space-y-6">
                             @foreach ($posts as $post)
-                                <x-blog.row-item :post="$post" />
+                                <x-blog.row-item :post="$post"/>
                             @endforeach
                         </div>
                         {{ $posts->links('components.layout.shared.paginator') }}
@@ -36,6 +37,6 @@
     </section>
 
     <x-slot:footer>
-        <x-layout.shared.footer />
+        <x-layout.shared.footer/>
     </x-slot:footer>
 </x-layout.guest>

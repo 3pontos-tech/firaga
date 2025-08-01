@@ -6,21 +6,7 @@
 <html
     lang="en"
     x-data
-    x-bind:class="document.documentElement.className"
-    x-init="
-        let theme = localStorage.getItem('theme')
-        // check if its null
-        if (theme === null) {
-            theme = window.matchMedia('(prefers-color-scheme: dark)').matches
-                ? 'dark'
-                : 'light'
-            localStorage.setItem('theme', theme)
-        }
-
-        if (theme === 'dark') {
-            document.documentElement.classList.add('dark')
-        }
-    "
+    class="dark"
 >
     <head>
         <!-- Meta Tags -->

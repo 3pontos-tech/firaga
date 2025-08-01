@@ -18,7 +18,7 @@ class FaqComponent extends AbstractCustomComponent
         return [
             SpatieMediaLibraryFileUpload::make('hero')
                 ->label('Hero Image')
-                ->collection(CustomComponent::PartialFaq->value)
+                ->collection(CustomComponent::Faq->value)
                 ->image()
                 ->required(),
             Repeater::make('solutions')
@@ -36,7 +36,7 @@ class FaqComponent extends AbstractCustomComponent
 
     public static function fieldName(): string
     {
-        return CustomComponent::PartialFaq->value;
+        return CustomComponent::Faq->value;
     }
 
     public static function setupRenderPayload(array $data): array

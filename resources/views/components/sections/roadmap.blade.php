@@ -2,9 +2,9 @@
     'heading',
     'subheading',
     'cta_label',
-    'cta_label',
     'cta_url',
     'steps' => [],
+    'caption'
 ])
 @php
     $grid = [
@@ -32,13 +32,14 @@
             <div class="grid grid-cols-16 gap-4">
                 @foreach($steps as $index => $card)
                     <div @class($grid[$index])>
-                        <x-code-capital.partials.process-card
+                        <x-cards.process-card
                             :number="$index + 1"
                             :icon="$card['icon']"
-                            :tit
                             :title="$card['title']"
                             :description="$card['description']"
                             :class="$card['class']"
+                            :cta_label="$card['cta_label'] ?? null"
+                            :cta_url="$card['cta_url'] ?? null"
                         />
                     </div>
                 @endforeach
@@ -48,7 +49,7 @@
         <div class="lg:hidden py-8 sm:py-12 md:py-16">
             <div class="flex flex-col space-y-8 sm:space-y-12">
                 @foreach ($steps as $index => $card)
-                    <x-code-capital.partials.process-card
+                    <x-cards.process-card
                         :icon="$card['icon']"
                         :number="$index + 1"
                         :title="$card['title']" :description="$card['description']"
@@ -59,8 +60,9 @@
 
         <div class="flex flex-col items-center justify-center space-y-6 text-center">
             <p class="text-text-medium max-w-3xl mx-auto text-sm sm:text-base">
-                {{ $cta_label }}
+                {{ $caption }}
             </p>
+
             <x-layout.shared.button :href="$cta_url" class="px-6 sm:px-8 py-3 sm:py-4 font-semibold w-full sm:w-auto">
                 {{ $cta_label }}
             </x-layout.shared.button>
