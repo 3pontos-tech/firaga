@@ -39,7 +39,7 @@ return [
                             [
                                 'label' => 'Consultores Financeiros',
                                 'value' => '+10',
-                                'icon' => FireceIcons::NbPeople->value,
+                                'icon' => FireceIcons::People->value,
                             ],
                             [
                                 'label' => 'Crescimento Anual',
@@ -69,7 +69,7 @@ return [
                                 'description' => 'O primeiro contato, onde conhecemos melhor suas metas, seus objetivos e estilo de vida para estruturarmos o seu planejamento financeiro estratégico.',
                             ],
                             [
-                                'icon' => FireceIcons::NbTarget->value,
+                                'icon' => FireceIcons::Target->value,
                                 'title' => 'Plano de Ação',
                                 'description' => 'Nosso segundo encontro, onde trazemos estratégias detalhadas para começar a colocar em prática todas as mudanças necessárias e soluções encontradas.',
                             ],
