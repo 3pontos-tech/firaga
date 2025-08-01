@@ -26,6 +26,11 @@ class RoadmapComponent extends AbstractCustomComponent
                 ->label(__('Description'))
                 ->default('A brief overview of our roadmap and future plans.'),
 
+            'caption' => MarkdownEditor::make('caption')
+                ->required()
+                ->label(__('Description'))
+                ->default('A brief overview of our roadmap and future plans.'),
+
             'steps' => Repeater::make('steps')
                 ->label(__('Steps'))
                 ->schema([
@@ -84,6 +89,7 @@ class RoadmapComponent extends AbstractCustomComponent
             'cta_label' => $data['cta_label'] ?? '',
             'cta_url' => $data['cta_url'] ?? '',
             'steps' => $data['steps'] ?? [],
+            'caption' => $data['caption'] ?? [],
         ];
     }
 

@@ -37,6 +37,7 @@
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 mt-8 sm:mt-10 md:mt-12">
                 @foreach($cards as $card)
                     <x-cards.grid-card
+                        :icon="$card['icon']"
                         :title="$card['title']"
                         :description="$card['description']"
                     />

@@ -8,6 +8,7 @@ use Filament\Forms\Components\Repeater;
 use Filament\Forms\Components\SpatieMediaLibraryFileUpload;
 use Filament\Forms\Components\Textarea;
 use Filament\Forms\Components\TextInput;
+use Guava\FilamentIconPicker\Forms\IconPicker;
 
 class TwoColumnsImageFeatureGridComponent extends AbstractCustomComponent
 {
@@ -33,6 +34,9 @@ class TwoColumnsImageFeatureGridComponent extends AbstractCustomComponent
             Repeater::make('cards')
                 ->label('Cards')
                 ->schema([
+                    IconPicker::make('icon')
+                        ->label('Icon')
+                        ->required(),
                     TextInput::make('title')
                         ->label('Title')
                         ->required(),

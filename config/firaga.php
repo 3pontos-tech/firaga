@@ -1,6 +1,7 @@
 <?php
 
 use App\Enums\CustomComponent;
+use App\Enums\FireceIcons;
 use App\Enums\PageTheme;
 use Carbon\Carbon;
 
@@ -31,24 +32,24 @@ return [
                         'cta_url' => 'https://firece.com.br',
                         'metrics' => [
                             [
-                                'label' => 'Clientes Atendidos',
-                                'value' => '+2.000',
-                                'icon' => 'firece-star',
+                                'label' => 'Anos de experiência',
+                                'value' => '+10',
+                                'icon' => FireceIcons::Star->value,
                             ],
                             [
                                 'label' => 'Consultores Financeiros',
                                 'value' => '+10',
-                                'icon' => 'firece-star',
-                            ],
-                            [
-                                'label' => 'Anos de experiência',
-                                'value' => '+10',
-                                'icon' => 'firece-star',
+                                'icon' => FireceIcons::NbPeople->value,
                             ],
                             [
                                 'label' => 'Crescimento Anual',
                                 'value' => '+300%',
-                                'icon' => 'firece-star',
+                                'icon' => FireceIcons::Chart->value,
+                            ],
+                            [
+                                'label' => 'Clientes Atendidos',
+                                'value' => '+2.000',
+                                'icon' => FireceIcons::Hands->value,
                             ],
                         ],
                     ],
@@ -63,17 +64,17 @@ return [
                         'cta_label' => 'Saiba mais',
                         'cards' => [
                             [
-                                'icon' => 'firece-star',
+                                'icon' => FireceIcons::Lookup->value,
                                 'title' => 'Análise Financeira',
                                 'description' => 'O primeiro contato, onde conhecemos melhor suas metas, seus objetivos e estilo de vida para estruturarmos o seu planejamento financeiro estratégico.',
                             ],
                             [
-                                'icon' => 'firece-star',
+                                'icon' => FireceIcons::NbTarget->value,
                                 'title' => 'Plano de Ação',
                                 'description' => 'Nosso segundo encontro, onde trazemos estratégias detalhadas para começar a colocar em prática todas as mudanças necessárias e soluções encontradas.',
                             ],
                             [
-                                'icon' => 'firece-star',
+                                'icon' => FireceIcons::Bubble->value,
                                 'title' => 'Acompanhamento',
                                 'description' => 'No terceiro momento, acompanhamos sua evolução e ajustamos o planejamento conforme sua vida muda. Estamos ao seu lado para que você se mantenha no caminho certo.',
                             ],
@@ -90,21 +91,21 @@ return [
                         'grid_columns' => 3,
                         'cards' => [
                             [
-                                'icon' => 'firece-star',
+                                'icon' => FireceIcons::Gear->value,
                                 'title' => 'Se você sente que poderia estar melhor',
                                 'description' => 'Seu dinheiro some sem que perceba? Sente que poderia estar guardando mais, gastando melhor e tendo mais controle financeiro? Agende sua consultoria que nós vamos te ajudar!',
                                 'cta_url' => 'https://pudim.com.br',
                                 'cta_label' => 'Agendar análise',
                             ],
                             [
-                                'icon' => 'firece-star',
+                                'icon' => FireceIcons::Chart->value,
                                 'title' => 'Se você guarda dinheiro, mas não sabe como potencializar',
                                 'description' => 'Criamos um planejamento financeiro alinhado com seus objetivos, transformando sua reserva em um plano sólido de crescimento. Chegou a hora de fazer suas economias trabalharem para você.',
                                 'cta_url' => 'https://pudim.com.br',
                                 'cta_label' => 'Agendar análise',
                             ],
                             [
-                                'icon' => 'firece-star',
+                                'icon' => FireceIcons::Planet->value,
                                 'title' => 'Se você já investe e quer ir mais longe',
                                 'description' => 'Talvez sua carteira não seja tão diversificada ou seus rendimentos não estejam alinhados com seus objetivos. Está na hora de otimizar sua estratégia.',
                                 'cta_url' => 'https://pudim.com.br',
@@ -130,35 +131,35 @@ return [
                         'cta_url' => 'https://pudim.com.br',
                         'cards' => [
                             [
-                                'icon' => 'firece-star',
+                                'icon' => FireceIcons::NbGear->value,
                                 'title' => 'Planejamento Estratégico',
                                 'description' => 'Diagnóstico e plano financeiro personalizado para cada fase da sua vida.',
                                 'cta_url' => 'https://pudim.com.br',
                                 'cta_label' => 'Visitar',
                             ],
                             [
-                                'icon' => 'firece-star',
+                                'icon' => FireceIcons::NbStar->value,
                                 'title' => 'Key Account',
                                 'description' => 'Consultoria exclusiva e contínua para quem busca alta performance financeira.',
                                 'cta_url' => 'https://pudim.com.br',
                                 'cta_label' => 'Visitar',
                             ],
                             [
-                                'icon' => 'firece-star',
+                                'icon' => FireceIcons::NbMortarboard->value,
                                 'title' => 'Educa Fire',
                                 'description' => 'Conteúdos, cursos e eventos para transformar sua carreira dentro do mercado financeiro.',
                                 'cta_url' => 'https://pudim.com.br',
                                 'cta_label' => 'Visitar',
                             ],
                             [
-                                'icon' => 'firece-star',
+                                'icon' => FireceIcons::NbHands->value,
                                 'title' => 'Parcerias',
                                 'description' => 'Soluções integradas com especialistas e marcas que compartilham nossos valores.',
                                 'cta_url' => 'https://pudim.com.br',
                                 'cta_label' => 'Visitar',
                             ],
                             [
-                                'icon' => 'firece-star',
+                                'icon' => FireceIcons::NbComputer->value,
                                 'title' => 'Code Capital',
                                 'description' => 'Consultoria financeira especializada para profissionais do mercado tech.',
                                 'cta_url' => 'https://pudim.com.br',
@@ -227,7 +228,7 @@ return [
                 [
                     'type' => CustomComponent::FullWidthVideo->value,
                     'data' => [
-                        'badge' => 'Lorem ipsum  dolor sit amet',
+                        'badge' => 'Institucional',
                         'heading' => 'Nos conheça melhor',
                         'description' => 'Você não precisa enfrentar sua vida financeira sozinho. Descubra como a Fire|ce pode caminhar com você — do caos à conquista.',
                         'video_url' => 'https://pudim.com.br',
@@ -246,7 +247,7 @@ return [
                     'data' => [
                         'heading' => 'Escute de nossos clientes',
                         'badge' => 'Depoimentos',
-                        'testimonials' => [1, 2, 3],
+                        'testimonials' => [1, 6, 10, 7],
                     ],
                 ],
                 [
@@ -256,7 +257,7 @@ return [
                         'description' => 'Nosso blog é o lugar ideal para quem busca conhecimento e insights sobre o mercado financeiro, nacional e global.',
                         'cta_label' => 'Visitar Blog',
                         'cta_url' => 'https://firece.com.br/blog',
-                        'icon' => 'firece-star',
+                        'icon' => 'firece-star', //faltou icone
                     ],
                 ],
             ],
@@ -288,7 +289,7 @@ return [
                         'subheading' => 'Com uma abordagem personalizada, focamos em ajudar pessoas a organizarem suas finanças, evitarem decisões impulsivas e alocarem seu dinheiro de forma estratégica e com diversidade protegendo o patrimônio. O propósito da Code é transformar a relação com o dinheiro trazendo mais controle, confiança e liberdade para o futuro.',
                         'badge' => 'Code Capital',
                         'cta_label' => 'Agende uma análise',
-                        'cta_url' => 'https://pudim.com.br',
+                        'cta_url' => 'https://cal.com/eduardo-vogel-sc6dnr/30min',
                         'snippet' => file_get_contents(resource_path('markdown/code-capital/snippets.md')),
                     ],
                 ],
@@ -297,8 +298,10 @@ return [
                     'data' => [
                         'heading' => 'Por que investir com a Code Capital?',
                         'subheading' => 'Você é atendido por quem fala a sua língua — especialistas que entendem sua realidade e estão prontos para te ajudar a crescer, recomeçar ou expandir seus horizontes financeiros.',
+                        'caption' => 'Nossa equipe é formada por especialistas que conhecem os desafios da sua profissão e estão prontos para
+caminhar ao seu lado, com respeito, clareza e soluções sob medida.',
                         'cta_label' => 'Saiba mais',
-                        'cta_url' => 'https://pudim.com.br',
+                        'cta_url' => 'https://cal.com/eduardo-vogel-sc6dnr/30min',
                         'steps' => [
                             [
                                 'icon' => 'firece-star',
@@ -314,7 +317,7 @@ return [
                                 'class' => 'justify-center',
                                 'has_cta' => true,
                                 'cta_label' => 'Agende uma análise',
-                                'cta_url' => 'https://pudim.com.br',
+                                'cta_url' => 'https://cal.com/eduardo-vogel-sc6dnr/30min',
                             ],
                             [
                                 'icon' => 'firece-star',
@@ -329,21 +332,30 @@ return [
                 [
                     'type' => CustomComponent::CallToActionFullWidthSection->value,
                     'data' => [
-                        'title' => 'Transforme sua vida financeira com a Code Capital',
+                        'title' => 'A gente decodifica o mercado financeiro para você focar no que faz de melhor.',
                         'cta_label' => 'Agende uma análise',
-                        'cta_url' => 'https://pudim.com.br',
+                        'cta_url' => 'https://cal.com/eduardo-vogel-sc6dnr/30min',
                     ],
                 ],
                 [
                     'type' => CustomComponent::VideoTestimonial->value,
                     'data' => [
-                        'heading' => 'Veja como a Fire|ce deu propósito ao dinheiro de Danilo',
+                        'heading' => 'Dinheiro com propósito: como danilo parou de gastar por impulso',
                         'description' => 'Danilo, programador, relata como o suporte da Fire|ce transformou sua relação com o dinheiro. Antes, ao ver o saldo na conta, acabava gastando por impulso. Hoje, com organização e diversificação dos investimentos, seu dinheiro tem um propósito — e ele evita mexer até no fundo de reserva. Além disso, valoriza a confiança de investir com uma empresa que não empurra produtos, e sim constrói estratégias sólidas e transparentes, mesmo diante da instabilidade econômica do Brasil.',
                         'video_url' => 'https://www.youtube.com/embed/dQw4w9WgXcQ?si=O6_xTlMmOrEmpqyy',
                         'insights' => [
-                            ['value' => 'Especialistas  planejamento financeiro'],
-                            ['value' => 'Metodologia própria testada e aprovada'],
-                            ['value' => 'Foco em resultados reais e sustentáveis'],
+                            [
+                                'icon' => FireceIcons::NbPeople->value,
+                                'value' => 'Especialistas  planejamento financeiro'
+                            ],
+                            [
+                                'icon' => FireceIcons::NbTarget->value,
+                                'value' => 'Metodologia própria testada e aprovada'
+                            ],
+                            [
+                                'icon' => FireceIcons::NbChart->value,
+                                'value' => 'Foco em resultados reais e sustentáveis'
+                            ],
                         ],
                         'video_cards' => [
                             ['title' => 'Clientes atendidos', 'value' => '500+'],
@@ -351,7 +363,7 @@ return [
                             ['title' => 'Satisfação dos clientes', 'value' => '98%'],
                         ],
                         'cta_label' => 'Agende uma análise',
-                        'cta_url' => 'https://pudim.com.br',
+                        'cta_url' => 'https://cal.com/eduardo-vogel-sc6dnr/30min',
                     ],
                 ],
                 [
@@ -362,28 +374,28 @@ return [
                         'description' => 'Realizamos uma consulta com você para entender seu caso, seus objetivos e avaliar o melhor caminho para seus investimentos no exterior. Nós lhe auxiliaremos em todo o processo. Feito o investimento você terá um assessor para reinvestir ou para movimentações, além do envio de informes mensais sobre seus rendimentos.',
                         'cards' => [
                             [
-                                'title' => 'Análise de Perfil',
-                                'description' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris eu augue erat. Duis velit eros, suscipit at nisi vitae, faucibus hendrerit turpis.',
+                                'icon' => FireceIcons::NbTarget->value,
+                                'title' => 'Nossa Missão',
+                                'description' => 'A Code Capital nasce da necessidade de diversidade mais digital e entendimento de toda jornada de um profissional da área, criando assim um braço exclusivo e atento às necessidades dos profissionais.',
                             ],
                             [
-                                'title' => 'Planejamento Estratégico',
-                                'description' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris eu augue erat. Duis velit eros, suscipit at nisi vitae, faucibus hendrerit turpis.',
+                                'icon' => FireceIcons::NbPeople->value,
+                                'title' => 'Para Clientes Diferenciados',
+                                'description' => 'Com a possibilidade de realizar qualquer tarefa online para qualquer país do mundo. Se você gosta de ganhar em dólar, vai gostar ainda mais de ver sua rentabilidade crescer exponencialmente em uma moeda estrangeira.',
                             ],
                             [
-                                'title' => 'Execução com Suporte Contínuo',
-                                'description' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris eu augue erat. Duis velit eros, suscipit at nisi vitae, faucibus hendrerit turpis.',
+                                'icon' => FireceIcons::NbComputer->value,
+                                'title' => 'Segurança para você e quem você ama',
+                                'description' => 'Todos os investimentos são de carácter sucessório, ou seja, mesmo que haja qualquer tipo de fatalidade, sua família terá tranquilidade de usar esses recursos.',
+                            ],
+                            [
+                                'icon' => FireceIcons::NbChart->value,
+                                'title' => 'Investimento fora do tradicional',
+                                'description' => 'Além dos investimentos tradicionais e dos presentes na internet, temos investimentos principalmente em NY e UK, como a BNY Mellon, UBS, BNP Paribas, Credit Suisse entre outros.',
                             ],
                         ],
-                        'cta_label' => 'Agende uma consulta gratuita',
-                        'cta_url' => 'https://pudim.com/',
-                    ],
-                ],
-                [
-                    'type' => CustomComponent::Testimonials->value,
-                    'data' => [
-                        'heading' => 'Escute de nossos clientes',
-                        'badge' => 'Depoimentos',
-                        'testimonials' => [1, 2, 3],
+                        'cta_label' => 'Quero saber mais',
+                        'cta_url' => 'https://cal.com/eduardo-vogel-sc6dnr/30min',
                     ],
                 ],
                 [
@@ -391,9 +403,17 @@ return [
                     'data' => [
                         'heading' => 'Consultor financeiro exclusivo',
                         'description' => 'Ter um consultor financeiro vai muito além de "organizar as contas". É sobre ter um profissional ao seu lado que entende a sua realidade, te ajuda a enxergar possibilidades e constrói, junto com você, um caminho concreto rumo à tranquilidade financeira.',
-                        'cta_label' => 'Agende uma consulta gratuita',
-                        'cta_url' => 'https://pudim.com.br',
+                        'cta_label' => 'Agendar uma consulta gratuita',
+                        'cta_url' => 'https://cal.com/eduardo-vogel-sc6dnr/30min',
                         'image' => 'Saiba mais',
+                    ],
+                ],
+                [
+                    'type' => CustomComponent::Testimonials->value,
+                    'data' => [
+                        'heading' => 'Escute de nossos clientes',
+                        'badge' => 'Avaliações',
+                        'testimonials' => [1, 6, 10, 7],
                     ],
                 ],
             ],
@@ -419,11 +439,11 @@ return [
                 ],
                 [
                     'collection' => CustomComponent::SplitWithImageQuote->value,
-                    'path' => public_path('images/stock/our-work.png'),
+                    'path' => public_path('images/stock/work-with-us-hero.jpg'),
                 ],
                 [
                     'collection' => CustomComponent::TwoColumnsImageFeatureGrid->value,
-                    'path' => public_path('images/stock/our-approach.png'),
+                    'path' => public_path('images/stock/our-work-partners.png'),
                 ],
                 [
                     'collection' => CustomComponent::PartialFaq->value,
@@ -437,31 +457,31 @@ return [
                         'heading' => 'A transformação se constrói com boas alianças.',
                         'subheading' => 'Seja através de projetos conjuntos, campanhas, educação corporativa ou desenvolvimento de produtos financeiros sob medida, nossas parcerias são desenhadas com estratégia, colaboração e propósito.',
                         'badge' => 'Parcerias',
-                        'cta_label' => 'Saiba mais',
+                        'cta_label' => 'Entre em contato',
                         'cta_url' => 'https://pudim.com.br',
                     ],
                 ],
                 [
                     'type' => CustomComponent::SplitWithVerticalSteps->value,
                     'data' => [
-                        'badge' => 'Nosso trabalho',
+                        'badge' => 'Propósito',
                         'heading' => 'Geração de resultados',
                         'description' => 'Acreditamos que a transformação financeira ganha força quando compartilhada. Por isso, criamos uma frente dedicada a parcerias estratégicas, focada em gerar impacto mútuo. Atuamos com empresas, especialistas e instituições que compartilham nossa visão e desejam construir soluções colaborativas.',
                         'cta_url' => 'https://pudim.com.br',
                         'cta_label' => 'Saiba mais',
                         'cards' => [
                             [
-                                'icon' => 'firece-star',
+                                'icon' => FireceIcons::Folder->value,
                                 'title' => 'Join Ventures',
                                 'description' => 'Entendemos seu perfil financeiro e objetivos.',
                             ],
                             [
-                                'icon' => 'firece-star',
+                                'icon' => FireceIcons::Gear->value,
                                 'title' => 'Integração de Expertise',
                                 'description' => 'Criamos um plano personalizado para você.',
                             ],
                             [
-                                'icon' => 'firece-star',
+                                'icon' => FireceIcons::Mortarboard->value,
                                 'title' => 'Projetos Corpotarativos e Educacionais',
                                 'description' => 'Acompanhamos a execução do plano com suporte contínuo.',
                             ],
@@ -474,6 +494,7 @@ return [
                     'data' => [
                         'heading' => 'Nosso Trabalho',
                         'badge' => 'Parcerias',
+                        'image_position' => 'right',
                         'description' => 'Trazemos nossa metodologia, estrutura e autoridade de mercado para somar com o que o parceiro já possui. A inovação nasce do encontro de forças complementares e estamos prontos para criar algo novo. Trabalhamos com:',
                         'insights' => [
                             ['value' => 'Empresas'],
@@ -493,18 +514,22 @@ return [
                         'description' => 'A Fire|ce ajuda empresas a promoverem alta performance por meio da educação financeira. Com programas sob medida, consultores especializados e soluções integradas, criamos pontes entre saúde financeira e produtividade.',
                         'cards' => [
                             [
+                                'icon' => FireceIcons::NbHands->value,
                                 'title' => 'Projetos Conjuntos',
                                 'description' => 'Monetize sua influência ou rede com um modelo de parceria inteligente e sustentável — você lucra enquanto ajuda pessoas a transformarem suas vidas financeiras.',
                             ],
                             [
+                                'icon' => FireceIcons::NbStar->value,
                                 'title' => 'Reconhecimento',
                                 'description' => 'Associe sua marca ou imagem a uma consultoria que entrega resultados reais e melhora a relação das pessoas com o dinheiro.',
                             ],
                             [
+                                'icon' => FireceIcons::NbLogo->value,
                                 'title' => 'Ecossistema Fire|ce',
                                 'description' => 'Tenha contato privilegiado com nossos produtos, lançamentos e soluções, além de ferramentas que tornam a parceria ainda mais eficiente.',
                             ],
                             [
+                                'icon' => FireceIcons::NbSpeechbubble->value,
                                 'title' => 'Suporte contínuo',
                                 'description' => 'Contamos com uma equipe que acompanha sua jornada, oferece materiais personalizados, treinamentos e um plano de crescimento contínuo — juntos, vamos mais longe.',
                             ],
@@ -527,6 +552,10 @@ return [
                             ],
                             [
                                 'question' => 'A Fire|ce investe em projetos em conjunto?',
+                                'answer' => 'Sim! Para quem deseja se tornar um consultor de alto desempenho, oferecemos um caminho estruturado. A formação cobre desde metodologias até estratégias de atuação prática no mercado. O objetivo é preparar você para transformar vidas e construir uma carreira sólida na área financeira.',
+                            ],
+                            [
+                                'question' => 'Como iniciar uma conversa com a Fire|ce?',
                                 'answer' => 'Sim! Para quem deseja se tornar um consultor de alto desempenho, oferecemos um caminho estruturado. A formação cobre desde metodologias até estratégias de atuação prática no mercado. O objetivo é preparar você para transformar vidas e construir uma carreira sólida na área financeira.',
                             ],
                         ],
@@ -580,16 +609,30 @@ return [
                         'grid_columns' => 2,
                         'cards' => [
                             [
-                                'icon' => 'firece-star',
-                                'title' => 'Seja um parceiro',
-                                'description' => 'Valorizamos profissionais que querem ir além, aprender, inovar e construir algo grande com a gente. Se você busca mais do que um emprego, vem fazer parte de um time que cresce junto e gera impacto real.',
+                                'icon' => FireceIcons::NbFolder->value,
+                                'title' => 'Qual o perfil ideal para o Key Account?',
+                                'description' => 'Pessoas com patrimônio relevante que buscam estratégias avançadas de proteção e crescimento, com atendimento altamente personalizado.',
                                 'cta_url' => 'https://pudim.com.br',
                                 'cta_label' => 'Converse com a gente',
                             ],
                             [
-                                'icon' => 'firece-star',
-                                'title' => 'Faça parte do time',
-                                'description' => 'Na Fire|ce, cada profissional tem papel estratégico para transformar o jeito que as pessoas lidam com o dinheiro. Trabalhamos com propósito, foco em resultado e um time que se apoia, se desafia e aprende junto.',
+                                'icon' => FireceIcons::NbPlanet->value,
+                                'title' => 'É possível contratar o Key Account para gestão internacional?',
+                                'description' => 'Sim. O Key Account inclui estratégias de blindagem patrimonial e alocação internacional, respeitando o perfil do cliente e as normas regulatórias.',
+                                'cta_url' => 'https://pudim.com.br',
+                                'cta_label' => 'Enviar Candidatura',
+                            ],
+                            [
+                                'icon' => FireceIcons::NbCalendar->value,
+                                'title' => 'Com que frequência acontecem as reuniões?',
+                                'description' => 'O acompanhamento é contínuo, com revisões periódicas e disponibilidade para reuniões emergenciais sempre que necessário.',
+                                'cta_url' => 'https://pudim.com.br',
+                                'cta_label' => 'Enviar Candidatura',
+                            ],
+                            [
+                                'icon' => FireceIcons::NbTarget->value,
+                                'title' => 'Planejamento Sucessório',
+                                'description' => 'Sim. Planejamos a sucessão de forma estratégica para garantir tranquilidade, segurança e continuidade para seu legado.',
                                 'cta_url' => 'https://pudim.com.br',
                                 'cta_label' => 'Enviar Candidatura',
                             ],
@@ -600,43 +643,40 @@ return [
                 [
                     'type' => CustomComponent::SplitWithImageQuote->value,
                     'data' => [
-                        'heading' => 'Nosso Trabalho',
-                        'badge' => 'Parcerias',
-                        'description' => 'Trazemos nossa metodologia, estrutura e autoridade de mercado para somar com o que o parceiro já possui. A inovação nasce do encontro de forças complementares e estamos prontos para criar algo novo. Trabalhamos com:',
-                        'insights' => [
-                            ['value' => 'Empresas'],
-                            ['value' => 'Especialistas'],
-                            ['value' => 'Instituições Educacionais'],
-                        ],
-                        'image_position' => 'right',
-                        'quote' => 'Seja parceiro da Fire|ce e ofereça acesso a soluções que geram equilíbrio, produtividade e bem-estar real.',
+                        'heading' => 'Como funciona',
+                        'badge' => 'Nosso Trabalho',
+                        'description' => 'Atuamos lado a lado com quem busca proteção, inteligência e alta performance na gestão do patrimônio. Aqui, o planejamento financeiro vai além da organização: ele se transforma em um instrumento de segurança, expansão e legado.',
+                        'image_position' => 'left',
+                        'insights' => [],
+                        'quote' => 'Vamos construir o próximo nível da sua jornada financeira com o Key Account da Fire|ce.',
                         'cta_url' => 'https://pudim.com.br',
-                        'cta_label' => 'Saiba mais',
+                        'cta_label' => 'Entre em contato',
                     ],
                 ],
                 [
                     'type' => CustomComponent::CallToActionFullWidthSection->value,
                     'data' => [
-                        'title' => 'Transforme sua vida financeira com a Code Capital',
-                        'cta_label' => 'Agende uma análise',
+                        'title' => 'Agora é hora de fazer seu patrimônio trabalhar por você, com inteligência e visão de futuro.',
+                        'cta_label' => 'Entre em contato',
                         'cta_url' => 'https://pudim.com.br',
                     ],
                 ],
                 [
                     'type' => CustomComponent::SplitWithImageQuote->value,
                     'data' => [
-                        'heading' => 'Nosso Trabalho',
-                        'badge' => 'Parcerias',
-                        'description' => 'Trazemos nossa metodologia, estrutura e autoridade de mercado para somar com o que o parceiro já possui. A inovação nasce do encontro de forças complementares e estamos prontos para criar algo novo. Trabalhamos com:',
+                        'heading' => 'Por que optar pelo Key Account?',
+                        'badge' => 'Relacionamento',
+                        'description' => 'Mais do que um serviço financeiro, o Key Account é uma experiência de parceria contínua. Analisamos profundamente sua vida financeira, cruzamos dados patrimoniais e familiares, entendemos seus objetivos de longo prazo e criamos um plano sob medida que evolui com você.',
                         'insights' => [
-                            ['value' => 'Empresas'],
-                            ['value' => 'Especialistas'],
-                            ['value' => 'Instituições Educacionais'],
+                            ['value' => 'Inteligência'],
+                            ['value' => 'Estratégia'],
+                            ['value' => 'Resultado'],
                         ],
-                        'image_position' => 'left',
-                        'quote' => 'Seja parceiro da Fire|ce e ofereça acesso a soluções que geram equilíbrio, produtividade e bem-estar real.',
+                        'end_description' => 'Acompanhamos cada tomada de decisão importante, alertamos sobre riscos e oportunidades e adaptamos a estratégia conforme sua realidade muda. O cliente Key Account não é um número: é um relacionamento que atravessa fases, gera confiança e entrega resultados consistentes.',
+                        'image_position' => 'right',
+                        'quote' => 'Vamos construir o próximo nível da sua jornada financeira com o Key Account da Fire|ce.',
                         'cta_url' => 'https://pudim.com.br',
-                        'cta_label' => 'Saiba mais',
+                        'cta_label' => 'Entre em contato',
                     ],
                 ],
                 [
@@ -644,7 +684,7 @@ return [
                     'data' => [
                         'heading' => 'Escute de nossos clientes',
                         'badge' => 'Depoimentos',
-                        'testimonials' => [1, 2, 3],
+                        'testimonials' => [1, 6, 10, 7],
                     ],
                 ],
                 [
@@ -743,18 +783,18 @@ return [
                     'data' => [
                         'badge' => 'Escolha a Fire|Ce',
                         'heading' => 'Perfis e necessidades',
-                        'description' => 'Saber se você é endividado, desorganizado ou poupador faz toda a diferença: é com esse entendimento que conseguimos traçar estratégias financeiras personalizadas, que respeitam sua realidade e aceleram seus resultados.',
+                        'description' => 'Acreditamos que educação financeira é poder. E,por aqui, formamos um time que une propósito, inovação, e alta performance oara levar esse poder a mais pessoas. Se você quer crescer em um ambiente colaborativo, dinâmico e com desafios reais, seu lugar pode ser com a gente.',
                         'grid_columns' => 2,
                         'cards' => [
                             [
-                                'icon' => 'firece-star',
+                                'icon' => FireceIcons::Hands->value,
                                 'title' => 'Seja um parceiro',
                                 'description' => 'Valorizamos profissionais que querem ir além, aprender, inovar e construir algo grande com a gente. Se você busca mais do que um emprego, vem fazer parte de um time que cresce junto e gera impacto real.',
                                 'cta_url' => 'https://pudim.com.br',
                                 'cta_label' => 'Converse com a gente',
                             ],
                             [
-                                'icon' => 'firece-star',
+                                'icon' => FireceIcons::People->value,
                                 'title' => 'Faça parte do time',
                                 'description' => 'Na Fire|ce, cada profissional tem papel estratégico para transformar o jeito que as pessoas lidam com o dinheiro. Trabalhamos com propósito, foco em resultado e um time que se apoia, se desafia e aprende junto.',
                                 'cta_url' => 'https://pudim.com.br',
@@ -928,6 +968,15 @@ TEXT,
             'rating' => 5,
             'comment' => <<<'TEXT'
 A Finance foi, sem dúvida, a empresa que mais me trouxe aquele sentimento de "UAU". A combinação entre estratégia bem definida e plano de ação sólido proporcionou uma sensação de segurança única. Ter o Matheus Cruz como consultor reforçou ainda mais essa confiança, transmitindo credibilidade em cada orientação. Sua capacidade de adaptação e atualização constante sobre os melhores investimentos me impressionou tanto que fiz questão de recomendar a empresa para vários amigos.
+TEXT,
+            'posted_at' => Carbon::now()->subMonths(3),
+        ],
+        [
+            'name' => 'Beatriz Sousa',
+            'role' => '',
+            'rating' => 5,
+            'comment' => <<<'TEXT'
+No final de 2024 comecei minha consultoria com o Sidney e foi um ótimo passo! Ele tem me ajudado a ter educação financeira e saber onde e como investir o meu dinheiro!.
 TEXT,
             'posted_at' => Carbon::now()->subMonths(3),
         ],

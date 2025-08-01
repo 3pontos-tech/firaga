@@ -38,6 +38,7 @@ fundamentais: Análise de Perfil, Planejamento Estratégico e Execução com Sup
             @foreach($cards as $card)
                 @if($card_type === 'cta')
                     <x-cards.card-cta
+                            :icon="$card['icon']"
                             :title="$card['title']"
                             :description="$card['description']"
                             :cta_label="$card['cta_label'] ?? $cta_label"
@@ -50,7 +51,7 @@ fundamentais: Análise de Perfil, Planejamento Estratégico e Execução com Sup
                             :description="$card['description']"
                     >
                         <x-slot name="icon">
-                            <x-lucide-goal class="w-8 h-8 text-white group-hover:text-icon-dark"/>
+                            <x-filament::icon :icon="$card['icon']" class="w-8 h-8 text-white group-hover:text-icon-dark"/>
                         </x-slot>
                     </x-layout.shared.card>
                 @endif
