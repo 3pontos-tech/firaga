@@ -105,7 +105,7 @@ return [
                                 'cta_label' => 'Agendar análise',
                             ],
                             [
-                                'icon' => FireceIcons::NbPlanet->value,
+                                'icon' => FireceIcons::Planet->value,
                                 'title' => 'Se você já investe e quer ir mais longe',
                                 'description' => 'Talvez sua carteira não seja tão diversificada ou seus rendimentos não estejam alinhados com seus objetivos. Está na hora de otimizar sua estratégia.',
                                 'cta_url' => 'https://pudim.com.br',
@@ -344,9 +344,18 @@ caminhar ao seu lado, com respeito, clareza e soluções sob medida.',
                         'description' => 'Danilo, programador, relata como o suporte da Fire|ce transformou sua relação com o dinheiro. Antes, ao ver o saldo na conta, acabava gastando por impulso. Hoje, com organização e diversificação dos investimentos, seu dinheiro tem um propósito — e ele evita mexer até no fundo de reserva. Além disso, valoriza a confiança de investir com uma empresa que não empurra produtos, e sim constrói estratégias sólidas e transparentes, mesmo diante da instabilidade econômica do Brasil.',
                         'video_url' => 'https://www.youtube.com/embed/dQw4w9WgXcQ?si=O6_xTlMmOrEmpqyy',
                         'insights' => [
-                            ['value' => 'Especialistas  planejamento financeiro'],
-                            ['value' => 'Metodologia própria testada e aprovada'],
-                            ['value' => 'Foco em resultados reais e sustentáveis'],
+                            [
+                                'icon' => FireceIcons::NbPeople->value,
+                                'value' => 'Especialistas  planejamento financeiro'
+                            ],
+                            [
+                                'icon' => FireceIcons::NbTarget->value,
+                                'value' => 'Metodologia própria testada e aprovada'
+                            ],
+                            [
+                                'icon' => FireceIcons::NbChart->value,
+                                'value' => 'Foco em resultados reais e sustentáveis'
+                            ],
                         ],
                         'video_cards' => [
                             ['title' => 'Clientes atendidos', 'value' => '500+'],
@@ -365,18 +374,22 @@ caminhar ao seu lado, com respeito, clareza e soluções sob medida.',
                         'description' => 'Realizamos uma consulta com você para entender seu caso, seus objetivos e avaliar o melhor caminho para seus investimentos no exterior. Nós lhe auxiliaremos em todo o processo. Feito o investimento você terá um assessor para reinvestir ou para movimentações, além do envio de informes mensais sobre seus rendimentos.',
                         'cards' => [
                             [
+                                'icon' => FireceIcons::NbTarget->value,
                                 'title' => 'Nossa Missão',
                                 'description' => 'A Code Capital nasce da necessidade de diversidade mais digital e entendimento de toda jornada de um profissional da área, criando assim um braço exclusivo e atento às necessidades dos profissionais.',
                             ],
                             [
+                                'icon' => FireceIcons::NbPeople->value,
                                 'title' => 'Para Clientes Diferenciados',
                                 'description' => 'Com a possibilidade de realizar qualquer tarefa online para qualquer país do mundo. Se você gosta de ganhar em dólar, vai gostar ainda mais de ver sua rentabilidade crescer exponencialmente em uma moeda estrangeira.',
                             ],
                             [
+                                'icon' => FireceIcons::NbComputer->value,
                                 'title' => 'Segurança para você e quem você ama',
                                 'description' => 'Todos os investimentos são de carácter sucessório, ou seja, mesmo que haja qualquer tipo de fatalidade, sua família terá tranquilidade de usar esses recursos.',
                             ],
                             [
+                                'icon' => FireceIcons::NbChart->value,
                                 'title' => 'Investimento fora do tradicional',
                                 'description' => 'Além dos investimentos tradicionais e dos presentes na internet, temos investimentos principalmente em NY e UK, como a BNY Mellon, UBS, BNP Paribas, Credit Suisse entre outros.',
                             ],
@@ -501,18 +514,22 @@ caminhar ao seu lado, com respeito, clareza e soluções sob medida.',
                         'description' => 'A Fire|ce ajuda empresas a promoverem alta performance por meio da educação financeira. Com programas sob medida, consultores especializados e soluções integradas, criamos pontes entre saúde financeira e produtividade.',
                         'cards' => [
                             [
+                                'icon' => FireceIcons::NbHands->value,
                                 'title' => 'Projetos Conjuntos',
                                 'description' => 'Monetize sua influência ou rede com um modelo de parceria inteligente e sustentável — você lucra enquanto ajuda pessoas a transformarem suas vidas financeiras.',
                             ],
                             [
+                                'icon' => FireceIcons::NbStar->value,
                                 'title' => 'Reconhecimento',
                                 'description' => 'Associe sua marca ou imagem a uma consultoria que entrega resultados reais e melhora a relação das pessoas com o dinheiro.',
                             ],
                             [
+                                'icon' => FireceIcons::NbLogo->value,
                                 'title' => 'Ecossistema Fire|ce',
                                 'description' => 'Tenha contato privilegiado com nossos produtos, lançamentos e soluções, além de ferramentas que tornam a parceria ainda mais eficiente.',
                             ],
                             [
+                                'icon' => FireceIcons::NbSpeechbubble->value,
                                 'title' => 'Suporte contínuo',
                                 'description' => 'Contamos com uma equipe que acompanha sua jornada, oferece materiais personalizados, treinamentos e um plano de crescimento contínuo — juntos, vamos mais longe.',
                             ],
@@ -777,7 +794,7 @@ caminhar ao seu lado, com respeito, clareza e soluções sob medida.',
                                 'cta_label' => 'Converse com a gente',
                             ],
                             [
-                                'icon' => FireceIcons::NbPeople->value,
+                                'icon' => FireceIcons::People->value,
                                 'title' => 'Faça parte do time',
                                 'description' => 'Na Fire|ce, cada profissional tem papel estratégico para transformar o jeito que as pessoas lidam com o dinheiro. Trabalhamos com propósito, foco em resultado e um time que se apoia, se desafia e aprende junto.',
                                 'cta_url' => 'https://pudim.com.br',

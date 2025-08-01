@@ -38,6 +38,7 @@ fundamentais: Análise de Perfil, Planejamento Estratégico e Execução com Sup
             @foreach($cards as $card)
                 @if($card_type === 'cta')
                     <x-cards.card-cta
+                            :icon="$card['icon']"
                             :title="$card['title']"
                             :description="$card['description']"
                             :cta_label="$card['cta_label'] ?? $cta_label"
