@@ -47,7 +47,7 @@
                         <div class="h-px bg-outline-low lg:hidden block"></div>
                         <div class="flex items-center gap-4">
                             <img alt="{{ $post->author->name ?? '' }}" loading="lazy" decoding="async" data-nimg="1"
-                                class="rounded-full w-10 h-10 sm:w-12 sm:h-12 flex-shrink-0" style="color: transparent;"
+                                class=" object-cover object-center rounded-full w-10 h-10 sm:w-12 sm:h-12 flex-shrink-0" style="color: transparent;"
                                 src="{{ $post->author->getFirstMediaUrl('avatar') }}">
                             <div class="flex flex-col">
                                 <span

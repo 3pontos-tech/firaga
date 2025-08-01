@@ -51,7 +51,7 @@ class PostsSeeder extends Seeder
             ->toMediaCollection('avatar');
 
         foreach ($this->getCategoriesStructure() as $categoryByLocale) {
-            if (!isset($categoryByLocale[Druid::getDefaultLocale()])) {
+            if (! isset($categoryByLocale[Druid::getDefaultLocale()])) {
                 return;
             }
 

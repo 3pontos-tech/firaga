@@ -1005,6 +1005,6 @@ TEXT,
             'name' => 'Marcelo Rosa',
             'description' => '',
             'linkedin_url' => 'https://www.linkedin.com/in/laura-papaiano-0b0215196/',
-        ]
-    ]
+        ],
+    ],
 ];

@@ -48,7 +48,7 @@
                     <div class="flex items-center">
                         <img alt="{{ $post->author->name ?? '' }}" loading="lazy"
                              decoding="async" data-nimg="1"
-                             class="rounded-full w-8 h-8"
+                             class="max-w-none object-cover object-center rounded-full w-8 h-8"
                              src="{{ $post->author->getFirstMediaUrl('avatar') }}">
                     </div>
                     <span class="">Por {{ $post->author->name }}</span>
@@ -66,21 +66,20 @@
     </section>
     <section id="author" class="container mx-auto mt-12 pb-10">
         <div class="max-w-4xl mx-auto mt-12 p-6 bg-elevation-02dp rounded-xl flex items-center gap-6">
-            <img
-                alt="{{ $post->author->name ?? '' }}"
-                loading="lazy"
-                decoding="async"
-                class="rounded-full w-16 h-16 border-2 border-outline-light"
-                src="{{ $post->author->getFirstMediaUrl('avatar') }}"
-            >
+            <div class="w-30">
+                <img
+                    alt="{{ $post->author->name ?? '' }}"
+                    loading="lazy"
+                    decoding="async"
+                    class="rounded-full object-cover object-center  border-2 border-elevation-04dp"
+                    src="{{ $post->author->getFirstMediaUrl('avatar') }}"
+                >
+            </div>
             <div class="flex flex-col">
                 <h2 class="text-lg font-bold text-text-high">Autor</h2>
                 <div class="flex flex-col">
                     <p class="text-text-high font-semibold">
                         {{ $post->author->name }}
-                    </p>
-                    <p class="text-text-medium">
-                        Consultor Financeiro
                     </p>
                 </div>
                 <p class="text-sm text-text-medium mt-1">{{ $post->author->description }}</p>
