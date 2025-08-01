@@ -6,7 +6,6 @@
     'cta_url',
 ])
 
-
 <div
     class="flex relative transform transition-all duration-300 hover:scale-105 hover:-translate-y-2">
     <div
