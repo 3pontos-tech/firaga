@@ -25,7 +25,7 @@ class ContactResource extends Resource
 
     protected static ?string $slug = 'contacts';
 
-    protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
+    protected static ?string $navigationIcon = 'heroicon-o-folder-open';
 
     protected static ?string $label = null;
 
@@ -34,10 +34,6 @@ class ContactResource extends Resource
         return __('filament.contact');
     }
 
-    public static function getNavigationGroup(): ?string
-    {
-        return __('filament.pages');
-    }
 
     public static function form(Form $form): Form
     {

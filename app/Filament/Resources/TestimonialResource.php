@@ -17,6 +17,7 @@ use Filament\Resources\Resource;
 use Filament\Tables\Actions\BulkActionGroup;
 use Filament\Tables\Actions\DeleteBulkAction;
 use Filament\Tables\Actions\EditAction;
+use Filament\Tables\Columns\SpatieMediaLibraryImageColumn;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Table;
 
@@ -79,17 +80,25 @@ class TestimonialResource extends Resource
     {
         return $table
             ->columns([
+                SpatieMediaLibraryImageColumn::make('avatar')
+                    ->circular()
+                    ->collection('avatar'),
                 TextColumn::make('name')
                     ->label(__('filament.testimonial_name'))
                     ->searchable()
                     ->sortable(),
                 TextColumn::make('rating')
                     ->label(__('filament.testimonial_rating'))
+                    ->badge()
+                    ->color(fn (int $state) => match ($state) {
+                        1 => 'danger',
+                        2 => 'warning',
+                        3 => 'primary',
+                        4 => 'info',
+                        5 => 'success',
+                    })
                     ->searchable()
                     ->sortable(),
-                TextColumn::make('comment')
-                    ->label(__('filament.testimonial_comment'))
-                    ->searchable(),
                 TextColumn::make('posted_at')
                     ->label(__('filament.published_at'))
                     ->searchable()

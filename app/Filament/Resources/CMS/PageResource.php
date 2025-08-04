@@ -110,9 +110,6 @@ class PageResource extends Resource
     public static function table(Table $table): Table
     {
         $columns = [
-            IconColumn::make('is_landing')
-                ->boolean()
-                ->label(__('filament.lading_page')),
             TextColumn::make('title')
                 ->label(__('filament.page_title'))
                 ->color('primary')
@@ -129,12 +126,6 @@ class PageResource extends Resource
                     'danger' => PageStatus::ARCHIVED,
                 ])
                 ->label(__('Status')),
-            IconColumn::make('disable_indexation')
-                ->label(__('filament.disabled_index'))
-                ->boolean(),
-            TextColumn::make('parent_page_id')
-                ->default('-')
-                ->label(__('filament.parent_page')),
             TextColumn::make('published_at')
                 ->label(__('filament.published_at'))
                 ->sortable(),

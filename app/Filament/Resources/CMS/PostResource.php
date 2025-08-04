@@ -2,6 +2,7 @@
 
 namespace App\Filament\Resources\CMS;
 
+use App\Filament\Resources\AuthorResource\Pages\EditAuthor;
 use App\Filament\Resources\CMS\PostResource\Pages\CreatePost;
 use App\Filament\Resources\CMS\PostResource\Pages\EditPost;
 use App\Filament\Resources\CMS\PostResource\Pages\ListPosts;
@@ -133,9 +134,8 @@ class PostResource extends Resource
 
         $columns = [
             SpatieMediaLibraryImageColumn::make('cover')
-                ->label(__('Cover '))
+                ->label(__('Cover'))
                 ->collection('cover')
-                ->circular()
                 ->columnSpanFull(),
 
             TextColumn::make('title')
@@ -154,6 +154,13 @@ class PostResource extends Resource
                     'danger' => PostStatus::ARCHIVED,
                 ])
                 ->label(__('Status')),
+            TextColumn::make('author.name')
+                ->color('primary')
+                ->url(
+                    url: fn (Post $record) => EditAuthor::getUrl(['record' => $record->author_id]),
+                    shouldOpenInNewTab: true
+                ),
+
 
             TextColumn::make('published_at')
                 ->label(__('filament.published_at'))
@@ -161,15 +168,11 @@ class PostResource extends Resource
                 ->sortable(),
         ];
 
-        if (Druid::isMultilingualEnabled()) {
-            $columns[] = ViewColumn::make('translations')->view('druid::admin.post.translations');
-        }
-
         return $table
             ->columns($columns)
             ->defaultSort('published_at', 'desc')
             ->actions([
-                EditAction::make()->button()->outlined()->icon(''),
+                EditAction::make(),
                 DeleteAction::make()->label(__('filament.delete')),
             ])
             ->bulkActions([
