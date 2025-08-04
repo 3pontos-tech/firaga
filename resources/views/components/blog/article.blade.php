@@ -8,19 +8,18 @@
 ])
 
 <article class="pb-8 md:pb-0 bg-elevation-surface">
-    <section id="heading" class="bg-elevation-02dp ">
+    <section id="heading" class="bg-elevation-02dp p-2 lg:p-0">
         <div class="max-w-4xl mx-auto pt-10">
             <a href="{{ route('blog.index') }}"
                class="inline-flex items-center gap-2 text-text-light hover:text-brand-primary-hover mb-8">
                 <x-heroicon-c-arrow-left class="h-4 w-4"/>
                 Voltar ao Blog
             </a>
-            <div class="relative mb-12 md:max-h-[300px] max-h-[150px] rounded-xl overflow-hidden">
-                <img
-                    alt="{{ $post->title }}" loading="lazy" decoding="async"
-                    class="object-fill w-full h-full "
-                    src="{{ $post->getFirstMediaUrl('cover') }}">
-            </div>
+
+            <img
+                alt="{{ $post->title }}" loading="lazy" decoding="async"
+                class="object-cover object-center w-full  relative mb-12 md:max-h-[300px] max-h-[150px] rounded-xl overflow-hidden "
+                src="{{ $post->getFirstMediaUrl('cover') }}">
             <div class="flex gap-2 mb-2">
                 @foreach($post->categories as $category)
                     <x-layout.shared.chip variant="custom"
