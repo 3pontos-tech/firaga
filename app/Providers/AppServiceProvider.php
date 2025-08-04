@@ -8,7 +8,6 @@ use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Blade;
 use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Facades\URL;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -30,7 +29,7 @@ class AppServiceProvider extends ServiceProvider
 
         $this->configureFilament();
 
-        URL::forceHttps($this->app->isProduction() || $this->app->environment('staging'));
+        //        URL::forceHttps($this->app->isProduction() || $this->app->environment('staging'));
 
     }
 

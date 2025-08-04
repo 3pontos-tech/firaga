@@ -27,7 +27,6 @@ use Filament\Tables\Actions\DeleteBulkAction;
 use Filament\Tables\Actions\EditAction;
 use Filament\Tables\Columns\SpatieMediaLibraryImageColumn;
 use Filament\Tables\Columns\TextColumn;
-use Filament\Tables\Columns\ViewColumn;
 use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Support\Str;
@@ -157,10 +156,9 @@ class PostResource extends Resource
             TextColumn::make('author.name')
                 ->color('primary')
                 ->url(
-                    url: fn (Post $record) => EditAuthor::getUrl(['record' => $record->author_id]),
+                    url: fn (Post $record): string => EditAuthor::getUrl(['record' => $record->author_id]),
                     shouldOpenInNewTab: true
                 ),
-
 
             TextColumn::make('published_at')
                 ->label(__('filament.published_at'))

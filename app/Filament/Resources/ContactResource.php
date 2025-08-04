@@ -34,7 +34,6 @@ class ContactResource extends Resource
         return __('filament.contact');
     }
 
-
     public static function form(Form $form): Form
     {
         return $form

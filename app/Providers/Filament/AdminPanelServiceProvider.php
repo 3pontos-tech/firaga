@@ -23,6 +23,7 @@ use Illuminate\Routing\Middleware\SubstituteBindings;
 use Illuminate\Session\Middleware\StartSession;
 use Illuminate\View\Middleware\ShareErrorsFromSession;
 use Jeffgreco13\FilamentBreezy\BreezyCore;
+use pxlrbt\FilamentEnvironmentIndicator\EnvironmentIndicatorPlugin;
 use Swis\Filament\Backgrounds\FilamentBackgroundsPlugin;
 
 class AdminPanelServiceProvider extends PanelProvider
@@ -63,6 +64,9 @@ class AdminPanelServiceProvider extends PanelProvider
                 SetTheme::class,
             ])
             ->plugins([
+                EnvironmentIndicatorPlugin::make()
+                    ->visible(fn () => auth()->check())
+                    ->showBadge(),
                 FilamentShieldPlugin::make(),
                 BreezyCore::make()
                     ->myProfile(shouldRegisterUserMenu: true),

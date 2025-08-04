@@ -90,7 +90,7 @@ class TestimonialResource extends Resource
                 TextColumn::make('rating')
                     ->label(__('filament.testimonial_rating'))
                     ->badge()
-                    ->color(fn (int $state) => match ($state) {
+                    ->color(fn (int $state): string => match ($state) {
                         1 => 'danger',
                         2 => 'warning',
                         3 => 'primary',
