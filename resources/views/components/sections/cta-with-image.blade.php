@@ -6,9 +6,9 @@
     'image',
 ])
 
-<div class="container mx-auto px-4 md:px-6">
+<div class="container mx-auto px-4 md:px-6 py-15 md:py-0">
     <div class="flex flex-col lg:flex-row lg:justify-between lg:items-center gap-8 lg:gap-12">
-        <div class="w-full lg:w-1/2 order-2 lg:order-1 hidden lg:block">
+        <div class="w-full lg:w-1/2  lg:order-1 ">
             <img src="{{ $renderable?->getFirstMediaUrl(App\Enums\CustomComponent::CallToActionWithImage->value) ?? asset('images/stock/consultant.png') }}" alt="Consultant" class="w-full max-w-[696px] h-auto lg:h-[718px] object-cover rounded-lg">
         </div>
         <div class="w-full lg:w-1/2 relative flex flex-col gap-y-6 sm:gap-y-8 md:gap-y-10 order-1 lg:order-2">

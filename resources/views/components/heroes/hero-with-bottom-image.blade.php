@@ -5,7 +5,7 @@
     'cta_label',
     'cta_url',
 ])
-<section class="min-h-screen flex flex-col items-center justify-center lg:min-h-[150vh]">
+<section class="min-h-[70vh] flex flex-col items-center justify-center lg:min-h-[100vh]">
     <div class="container px-4 sm:px-6 md:px-8">
         <div class="flex flex-col items-center justify-center gap-y-4 sm:gap-y-5 md:gap-y-6 text-center">
             <x-layout.shared.chip variant="primary" class="px-3 py-1.5 sm:px-4 sm:py-2">

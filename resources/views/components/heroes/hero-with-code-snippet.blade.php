@@ -12,7 +12,7 @@
     <div class="container mx-auto lg:flex lg:items-center lg:justify-between">
         <div class="mb-8 lg:hidden">
             <h2 class="text-brand-primary text-center text-2xl sm:text-3xl md:text-4xl font-bold">
-                {{ $badge }}
+                < {{ $badge }} />
             </h2>
         </div>
 
@@ -22,7 +22,7 @@
         >
             <x-slot name="badge">
                 @if($badge)
-                    <x-layout.shared.chip class="px-4 py-2">
+                    <x-layout.shared.chip class="px-4 py-2 hidden! lg:block!">
                         {{ $badge }}
                     </x-layout.shared.chip>
                 @endif

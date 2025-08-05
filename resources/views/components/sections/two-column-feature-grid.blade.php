@@ -7,7 +7,7 @@
     'cta_url',
 ])
 
-<div class="container mx-auto">
+<div class="container mx-auto py-15 md:py-0">
     <div class="flex flex-col lg:flex-row lg:justify-between lg:items-end gap-8 lg:gap-12">
         <div class="w-full lg:w-4/6 flex flex-col">
             <div class="flex flex-col gap-y-6 sm:gap-y-8 md:gap-y-10">

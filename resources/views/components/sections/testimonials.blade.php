@@ -111,9 +111,6 @@
                                                 : 'text-text-medium'"
                                              x-text="card.role"></div>
                                     </div>
-                                    <x-lucide-chevron-right
-                                        class="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6"
-                                        x-bind:class="index === activeIndexInGrid ? 'hidden' : '{{ $isMetallic ? 'text-icon-high' : 'text-brand-primary' }}'"/>
                                 </div>
                             </div>
                         </template>
