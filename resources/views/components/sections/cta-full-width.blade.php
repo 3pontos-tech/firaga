@@ -10,7 +10,7 @@ $variant = $renderable->theme->value;
 
 @endphp
 
-<section class="mt-16 sm:mt-24 md:mt-32 lg:mt-60">
+<section class="mt-16 sm:mt-24 md:mt-32">
     <div class="relative text-center flex flex-col items-center justify-center min-h-[300px] sm:min-h-[400px] md:min-h-[500px] lg:min-h-[600px] xl:min-h-[700px]">
         <img src="{{ asset('images/globe.png') }}" alt="CTA Section" class="absolute inset-0 w-full h-full object-cover object-center">
         <div class="absolute top-2 left-2 sm:top-4 sm:left-4 md:top-6 md:left-6 lg:top-8 lg:left-8">

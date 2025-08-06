@@ -3,7 +3,7 @@
     'heading' => 'Trabalhe conosco',
     'subheading' => 'Transformamos a forma como as pessoas lidam com dinheiro, capacitando-as a conquistar liberdade, segurança e crescimento financeiro sustentável.',
 ])
-<section class="relative overflow-hidden min-h-[55vh] flex items-center justify-center bg-elevation-02dp">
+<section class="relative overflow-hidden min-h-11/12 py-16 md:py-28 gap-y-12 md:gap-y-26 flex items-center justify-center bg-elevation-02dp">
     <!-- Background Image with Shadow -->
     <div class="absolute inset-0 z-0">
         <img src="{{ $renderable?->getFirstMediaUrl(App\Enums\CustomComponent::HeroWithBackgroundImage->value) ?? asset('images/stock/work-with-us-hero.jpg') }}" alt="Trabalhe conosco" class="w-full h-full object-cover object-top">

@@ -3,7 +3,7 @@
     'heading' => 'Conteúdo que transforma',
     'description' => 'Transformamos a forma como as pessoas lidam com dinheiro, capacitando-as a conquistar liberdade, segurança e crescimento financeiro sustentável.',
 ])
-<section class="relative overflow-hidden min-h-[55vh] flex items-center justify-center bg-elevation-02dp">
+<section class="relative overflow-hidden py-16 md:py-28 gap-y-12 md:gap-y-20 flex items-center justify-center bg-elevation-02dp">
     <div class="max-w-4xl mx-auto text-center">
         <div class="flex items-center justify-center gap-4 mb-6">
             <div class="h-1 w-12 bg-primary"></div>

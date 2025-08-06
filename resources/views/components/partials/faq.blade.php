@@ -2,7 +2,7 @@
 @props([
     'solutions' => collect(),
 ])
-<div class="py-8 sm:py-12 md:py-16 lg:py-20 xl:py-60 min-h-screen">
+<div class="py-8 sm:py-12 md:py-16 lg:py-20 xl:py-60">
     <div class="container mx-auto px-4 md:px-6">
         <div class="flex flex-col lg:flex-row gap-8 lg:gap-12 justify-between items-start lg:items-center">
             <div class="relative hidden md:block lg:block w-full lg:w-1/2">
