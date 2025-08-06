@@ -32,13 +32,13 @@
             </button>
         </div>
 
-        <div class="flex flex-col items-center gap-y-4 mt-8 md:mt-12 lg:mt-16 text-center px-4">
-            <p class="font-bold text-text-medium text-lg sm:text-xl">Não encontrou o que procura?</p>
-            <a href="" class="font-bold text-brand-primary flex flex-col sm:flex-row items-center gap-x-2 gap-y-2 text-lg sm:text-xl py-3 px-4 sm:px-8 text-center">
-                <span>Fale conosco para uma sugestão personalizada</span>
-                <x-lucide-chevron-right class="w-4 h-4 sm:inline hidden" />
-            </a>
-        </div>
+{{--        <div class="flex flex-col items-center gap-y-4 mt-8 md:mt-12 lg:mt-16 text-center px-4">--}}
+{{--            <p class="font-bold text-text-medium text-lg sm:text-xl">Não encontrou o que procura?</p>--}}
+{{--            <a href="" class="font-bold text-brand-primary flex flex-col sm:flex-row items-center gap-x-2 gap-y-2 text-lg sm:text-xl py-3 px-4 sm:px-8 text-center">--}}
+{{--                <span>Fale conosco para uma sugestão personalizada</span>--}}
+{{--                <x-lucide-chevron-right class="w-4 h-4 sm:inline hidden" />--}}
+{{--            </a>--}}
+{{--        </div>--}}
     </div>
 
     <script>

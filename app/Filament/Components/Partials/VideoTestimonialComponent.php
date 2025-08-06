@@ -75,7 +75,7 @@ class VideoTestimonialComponent extends AbstractCustomComponent
             'heading' => $data['heading'] ?? '',
             'description' => $data['description'] ?? '',
             'insights' => $data['insights'] ?? [],
-            'videoUrl' => $data['video_url'] ?? '',
+            'video_url' => $data['video_url'] ?? '',
             'video_cards' => $data['video_cards'] ?? [],
             'cta_label' => $data['cta_label'] ?? '',
             'cta_url' => $data['cta_url'] ?? '',

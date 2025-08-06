@@ -58,13 +58,13 @@
                 @endforeach
             </div>
         </div>
-        <div class="flex flex-col items-center gap-y-3 sm:gap-y-4 mt-8 sm:mt-12 md:mt-16 px-4">
-            <p class="font-bold text-text-medium text-lg sm:text-xl text-center">Não encontrou o que procura?</p>
-            <a href=""
-               class="font-bold text-brand-primary flex items-center gap-x-2 text-lg sm:text-xl py-2 sm:py-3 px-6 sm:px-8 text-center">Fale
-                conosco para uma sugestão personalizada
-                <x-lucide-chevron-right class="w-4 h-4"/>
-            </a>
-        </div>
+{{--        <div class="flex flex-col items-center gap-y-3 sm:gap-y-4 mt-8 sm:mt-12 md:mt-16 px-4">--}}
+{{--            <p class="font-bold text-text-medium text-lg sm:text-xl text-center">Não encontrou o que procura?</p>--}}
+{{--            <a href=""--}}
+{{--               class="font-bold text-brand-primary flex items-center gap-x-2 text-lg sm:text-xl py-2 sm:py-3 px-6 sm:px-8 text-center">Fale--}}
+{{--                conosco para uma sugestão personalizada--}}
+{{--                <x-lucide-chevron-right class="w-4 h-4"/>--}}
+{{--            </a>--}}
+{{--        </div>--}}
     </div>
 </section>
