@@ -28,9 +28,6 @@
             </x-slot>
         </x-headers.headline>
 
-
-
-
         <div class="mt-8 lg:mt-0 lg:w-1/2 hidden lg:flex justify-center items-center">
             <div
                 class="relative flex items-center justify-center rounded-full animate-fade-in delay-300 transition-all duration-300">
@@ -44,13 +41,12 @@
     <div class="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-4 gap-4 md:gap-8 w-full container mx-auto">
         @foreach ($metrics as $metric)
             <x-cards.card-slim
-                class="rounded-lg border dark:border-outline-low border-outline-light"
+                class="rounded-lg border dark:border-outline-dark border-outline-light"
                 :title="$metric['label']"
                 :description="$metric['value']"
                 :titleOnTop="false"
                 :icon="$metric['icon']"
             />
         @endforeach
-
     </div>
 </section>

@@ -24,18 +24,18 @@ return [
             'slug' => '/',
             'medias' => [
                 [
-                    'collection' => CustomComponent::HeroWithStatsAndImage->value,
+                    'collection' => CustomComponent::HeroWithBackgroundImage->value,
                     'path' => public_path('images/stock/hero-stock.png'),
                 ],
             ],
             'content' => [
                 [
-                    'type' => CustomComponent::HeroWithStatsAndImage->value,
+                    'type' => CustomComponent::HeroWithBackgroundImage->value,
                     'data' => [
                         'heading' => 'Viva melhor com Educação Financeira',
                         'subheading' => 'Transformamos a forma como as pessoas lidam com dinheiro, capacitando-as a conquistar liberdade, segurança e crescimento financeiro sustentável.',
                         'cta_label' => 'Agende uma análise',
-                        'badge' => null,
+                        'badge' => 'Invista agora com a Fire|ce',
                         'cta_url' => 'https://firece.com.br',
                         'metrics' => [
                             [
@@ -57,6 +57,38 @@ return [
                                 'label' => 'Clientes Atendidos',
                                 'value' => '+2.000',
                                 'icon' => FireceIcons::Hands->value,
+                            ],
+                        ],
+                    ],
+                ],
+                [
+                    'type' => CustomComponent::InfoStats->value,
+                    'data' => [
+                        'heading' => 'Viva melhor com Educação Financeira',
+                        'subheading' => 'Transformamos a forma como as pessoas lidam com dinheiro, capacitando-as a conquistar liberdade, segurança e crescimento financeiro sustentável.',
+                        'cta_label' => 'Agende uma análise',
+                        'badge' => 'Invista agora com a Fire|ce',
+                        'cta_url' => 'https://firece.com.br',
+                        'metrics' => [
+                            [
+                                'label' => 'Anos de experiência',
+                                'value' => '+10',
+                                'icon' => 'heroicon-o-star',
+                            ],
+                            [
+                                'label' => 'Consultores Financeiros',
+                                'value' => '+10',
+                                'icon' => 'heroicon-o-users',
+                            ],
+                            [
+                                'label' => 'Crescimento Anual',
+                                'value' => '+300%',
+                                'icon' => 'heroicon-o-arrow-trending-up',
+                            ],
+                            [
+                                'label' => 'Clientes Atendidos',
+                                'value' => '+2.000',
+                                'icon' => 'heroicon-o-user-plus',
                             ],
                         ],
                     ],

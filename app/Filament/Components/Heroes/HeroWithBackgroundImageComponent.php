@@ -4,6 +4,7 @@ namespace App\Filament\Components\Heroes;
 
 use App\Enums\CustomComponent;
 use App\Filament\Components\AbstractCustomComponent;
+use Filament\Forms\Components\Select;
 use Filament\Forms\Components\SpatieMediaLibraryFileUpload;
 use Filament\Forms\Components\TextInput;
 
@@ -39,6 +40,12 @@ class HeroWithBackgroundImageComponent extends AbstractCustomComponent
                 ->required()
                 ->default('Agende uma consultoria'),
 
+            Select::make('hero_size')
+                ->options([
+                    'screen' => 'Tela cheia',
+                    '[70vh]' => '70% da tela',
+                ]),
+
             TextInput::make('cta_url')
                 ->label('Button URL')
                 ->required()
@@ -57,6 +64,7 @@ class HeroWithBackgroundImageComponent extends AbstractCustomComponent
             'heading' => $data['heading'],
             'subheading' => $data['subheading'],
             'badge' => $data['badge'],
+            'hero_size' => $data['hero_size'] ?? 'screen',
         ];
     }
 

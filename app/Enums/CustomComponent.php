@@ -18,6 +18,7 @@ use App\Filament\Components\Partials\CtaFullWidthComponent;
 use App\Filament\Components\Partials\CtaWithIconComponent;
 use App\Filament\Components\Partials\FaqComponent;
 use App\Filament\Components\Partials\HorizontalScrollerHighlightComponent;
+use App\Filament\Components\Partials\InfoStatsComponent;
 use App\Filament\Components\Partials\PlansComponent;
 use App\Filament\Components\Partials\QuoteComponent;
 use App\Filament\Components\Partials\RoadmapComponent;
@@ -39,6 +40,8 @@ enum CustomComponent: string
     case HeroWithCenteredTitle = 'hero-with-centered-title';
 
     case Faq = 'partials-faq';
+
+    case InfoStats = 'info-stats';
 
     case PartialQuote = 'partials-quote';
 
@@ -77,6 +80,7 @@ enum CustomComponent: string
     public function getComponentClass(): string
     {
         return match ($this) {
+            self::InfoStats => InfoStatsComponent::class,
             self::BlogMarkdownText => MarkdownTextComponent::class,
             self::BlogRichText => RichTextComponent::class,
             self::HeroWithCenteredTitle => HeroWithCenteredTitleComponent::class,

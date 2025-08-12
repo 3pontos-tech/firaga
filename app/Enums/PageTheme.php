@@ -11,7 +11,7 @@ enum PageTheme: string
     public function getPageBackground(): string
     {
         return match ($this) {
-            self::Default => 'bg-[#232323]',
+            self::Default => 'bg-elevation-surface',
             self::Metallic => 'bg-[#09090A]',
         };
     }

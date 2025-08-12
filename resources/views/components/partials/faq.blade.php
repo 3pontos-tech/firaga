@@ -18,7 +18,7 @@
                 </div>
                 <div class="w-full space-y-4 sm:space-y-6 md:space-y-8 mt-6 sm:mt-8">
                     @forelse($solutions as $index => $solution)
-                        <div class="transition-all duration-300 ease-in-out hover:bg-[#303030] rounded-lg p-3 sm:p-4"
+                        <div class="transition-all duration-300 ease-in-out hover:bg-elevation-01dp rounded-lg p-3 sm:p-4"
                              x-data="{ open: false }">
                             <h3 class="flex">
                                 <button type="button" @click="open = !open" :aria-expanded="open"

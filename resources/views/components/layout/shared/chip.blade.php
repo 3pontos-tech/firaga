@@ -16,5 +16,9 @@
 @endphp
 
 <div class="font-bold flex items-center gap-2 sm:gap-2.5 lg:gap-[10px] w-fit rounded-full {{ $finalClasses }}">
+    @isset($icon)
+
+    @endif
+
     {{ $slot }}
 </div>
