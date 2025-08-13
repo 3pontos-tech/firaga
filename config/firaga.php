@@ -37,38 +37,21 @@ return [
                         'cta_label' => 'Agende uma análise',
                         'badge' => 'Invista agora com a Fire|ce',
                         'cta_url' => 'https://firece.com.br',
-                        'metrics' => [
-                            [
-                                'label' => 'Anos de experiência',
-                                'value' => '+10',
-                                'icon' => FireceIcons::Star->value,
-                            ],
-                            [
-                                'label' => 'Consultores Financeiros',
-                                'value' => '+10',
-                                'icon' => FireceIcons::People->value,
-                            ],
-                            [
-                                'label' => 'Crescimento Anual',
-                                'value' => '+300%',
-                                'icon' => FireceIcons::Chart->value,
-                            ],
-                            [
-                                'label' => 'Clientes Atendidos',
-                                'value' => '+2.000',
-                                'icon' => FireceIcons::Hands->value,
-                            ],
-                        ],
                     ],
                 ],
                 [
                     'type' => CustomComponent::InfoStats->value,
                     'data' => [
-                        'heading' => 'Viva melhor com Educação Financeira',
-                        'subheading' => 'Transformamos a forma como as pessoas lidam com dinheiro, capacitando-as a conquistar liberdade, segurança e crescimento financeiro sustentável.',
-                        'cta_label' => 'Agende uma análise',
-                        'badge' => 'Invista agora com a Fire|ce',
-                        'cta_url' => 'https://firece.com.br',
+                        'headline' => [
+                            'badge' => [
+                                'label' => 'Nossa História',
+                                'icon' => 'firece-logo',
+                                'hasBadge' => true,
+                            ],
+                            'heading' => 'Viva melhor com Educação Financeira',
+                            'description' => ' Transformamos a forma como as pessoas lidam com dinheiro, capacitando-as a conquistar liberdade, segurança e crescimento financeiro sustentável. ',
+                            'actions' => [],
+                        ],
                         'metrics' => [
                             [
                                 'label' => 'Anos de experiência',
@@ -93,6 +76,42 @@ return [
                         ],
                     ],
                 ],
+
+                [
+                    'type' => CustomComponent::SplitWithHorizontalSteps->value,
+                    'data' => [
+                        'badge' => 'Invista agora com a Fire|ce',
+                        'heading' => 'Transformamos a complexidade em clareza com nossa metodologia',
+                        'description' => 'Levamos você da análise de perfil à execução estratégica, com suporte contínuo para maximizar seus resultados. Nossa metodologia foi desenvolvida para transformar a sua relação com o dinheiro em 3 etapas fundamentais:',
+                        'grid_columns' => 3,
+                        'cards' => [
+                            [
+                                'icon' => 'heroicon-o-magnifying-glass',
+                                'title' => 'Análise Financeira',
+                                'description' => 'O primeiro contato, onde conhecemos melhor suas metas, seus objetivos e estilo de vida para estruturarmos o seu planejamento financeiro estratégico.',
+                                'cta_url' => 'https://pudim.com.br',
+                                'cta_label' => 'Agendar análise',
+                            ],
+
+                            [
+                                'icon' => 'heroicon-o-trophy',
+                                'title' => 'Plano de Ação',
+                                'description' => 'Nosso segundo encontro, onde trazemos estratégias detalhadas para começar a colocar em prática todas as mudanças necessárias e soluções encontradas.',
+                                'cta_url' => 'https://pudim.com.br',
+                                'cta_label' => 'Agendar análise',
+                            ],
+
+                            [
+                                'icon' => 'heroicon-o-chat-bubble-oval-left',
+                                'title' => 'Acompanhamento',
+                                'description' => 'No terceiro momento, acompanhamos sua evolução e ajustamos o planejamento conforme sua vida muda. Estamos ao seu lado para que você se mantenha no caminho certo.',
+                                'cta_url' => 'https://pudim.com.br',
+                                'cta_label' => 'Agendar análise',
+                            ],
+
+                        ],
+                    ],
+                ],
                 [
                     'type' => CustomComponent::SplitWithVerticalSteps->value,
                     'data' => [
@@ -103,7 +122,7 @@ return [
                         'cta_label' => 'Saiba mais',
                         'cards' => [
                             [
-                                'icon' => FireceIcons::Lookup->value,
+                                'icon' => 'heroicon-o-magnifying-glass',
                                 'title' => 'Análise Financeira',
                                 'description' => 'O primeiro contato, onde conhecemos melhor suas metas, seus objetivos e estilo de vida para estruturarmos o seu planejamento financeiro estratégico.',
                             ],
@@ -119,38 +138,6 @@ return [
                             ],
                         ],
 
-                    ],
-                ],
-                [
-                    'type' => CustomComponent::SplitWithHorizontalSteps->value,
-                    'data' => [
-                        'badge' => 'Escolha a Fire|Ce',
-                        'heading' => 'Perfis e necessidades',
-                        'description' => 'Saber se você é endividado, desorganizado ou poupador faz toda a diferença: é com esse entendimento que conseguimos traçar estratégias financeiras personalizadas, que respeitam sua realidade e aceleram seus resultados.',
-                        'grid_columns' => 3,
-                        'cards' => [
-                            [
-                                'icon' => FireceIcons::Gear->value,
-                                'title' => 'Se você sente que poderia estar melhor',
-                                'description' => 'Seu dinheiro some sem que perceba? Sente que poderia estar guardando mais, gastando melhor e tendo mais controle financeiro? Agende sua consultoria que nós vamos te ajudar!',
-                                'cta_url' => 'https://pudim.com.br',
-                                'cta_label' => 'Agendar análise',
-                            ],
-                            [
-                                'icon' => FireceIcons::Chart->value,
-                                'title' => 'Se você guarda dinheiro, mas não sabe como potencializar',
-                                'description' => 'Criamos um planejamento financeiro alinhado com seus objetivos, transformando sua reserva em um plano sólido de crescimento. Chegou a hora de fazer suas economias trabalharem para você.',
-                                'cta_url' => 'https://pudim.com.br',
-                                'cta_label' => 'Agendar análise',
-                            ],
-                            [
-                                'icon' => FireceIcons::Planet->value,
-                                'title' => 'Se você já investe e quer ir mais longe',
-                                'description' => 'Talvez sua carteira não seja tão diversificada ou seus rendimentos não estejam alinhados com seus objetivos. Está na hora de otimizar sua estratégia.',
-                                'cta_url' => 'https://pudim.com.br',
-                                'cta_label' => 'Agendar análise',
-                            ],
-                        ],
                     ],
                 ],
                 [

@@ -1,11 +1,22 @@
+@php use App\Filament\Components\DTOs\BadgeComponent; @endphp
 @props([
     'as' => 'div', // div|span|a|button
     'variant' => 'brand', // brand|neutral|custom
     'size' => 'md', // sm|md|lg
     'rounded' => 'full',
+    'component'
 ])
 
 @php
+
+    if(isset($component) && !$component instanceof BadgeComponent) {
+        throw new \Exception("Badge must be an instance of BadgeComponent");
+    }
+
+    if(isset($component)) {
+        $componentIcon = $component->icon ?? null;
+    }
+
     $tag = $as;
 
     $base = 'font-bold flex items-center w-fit mb-8 rounded-' . $rounded . ' inline-flex justify-center transition-all duration-200 border';
@@ -29,13 +40,18 @@
 
 <{{ $tag }} {{ $attributes->merge(['class' => $classes]) }}>
 
-    @isset($icon)
-        <span {{ $icon->attributes->class('shrink-0') }}>
+
+@isset($component)
+    <x-filament::icon :icon="$componentIcon" class="h-5 w-5 text-icon-high shrink-0" />
+@endisset
+
+@isset($icon)
+    <span {{ $icon->attributes->class('shrink-0') }}>
             {{ $icon }}
         </span>
-    @endisset
+@endisset
 
 
-        {{ $slot }}
+{{ $component->label ?? $slot }}
 
 </{{ $tag }}>

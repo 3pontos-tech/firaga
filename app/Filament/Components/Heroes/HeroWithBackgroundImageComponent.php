@@ -8,6 +8,7 @@ use Filament\Forms\Components\Select;
 use Filament\Forms\Components\SpatieMediaLibraryFileUpload;
 use Filament\Forms\Components\TextInput;
 
+
 class HeroWithBackgroundImageComponent extends AbstractCustomComponent
 {
     protected static string $view = 'components.heroes.hero-with-background-image';

@@ -4,6 +4,7 @@ namespace App\Filament\Components\Partials;
 
 use App\Enums\CustomComponent;
 use App\Filament\Components\AbstractCustomComponent;
+use App\Filament\Components\DTOs\HeadlineComponent;
 use Filament\Forms\Components\Repeater;
 use Filament\Forms\Components\TextInput;
 use Guava\FilamentIconPicker\Forms\IconPicker;
@@ -16,20 +17,7 @@ class InfoStatsComponent extends AbstractCustomComponent
     public static function blockSchema(): array
     {
         return [
-            TextInput::make('heading')
-                ->label('Heading')
-                ->required()
-                ->default('Invista no futuro com inteligência e precisão'),
-
-            TextInput::make('subheading')
-                ->label('Subheading')
-                ->required()
-                ->default('Transformamos a forma como as pessoas lidam com dinheiro, capacitando-as a conquistar liberdade, segurança e crescimento financeiro sustentável.'),
-
-            TextInput::make('badge')
-                ->label('Badge')
-                ->nullable()
-                ->default('Consultoria Financeira'),
+            ...HeadlineComponent::form(),
             Repeater::make('metrics')
                 ->label('Metrics')
                 ->schema([
@@ -60,16 +48,17 @@ class InfoStatsComponent extends AbstractCustomComponent
 
     public static function setupRenderPayload(array $data): array
     {
-        return [
-            'heading' => $data['heading'],
-            'subheading' => $data['subheading'],
-            'badge' => $data['badge'],
+
+        $result =  [
+            'headline' => HeadlineComponent::make($data),
             'metrics' => collect($data['metrics'] ?? [])->map(fn ($metric) => Fluent::make([
                 'label' => $metric['label'] ?? '',
                 'value' => $metric['value'] ?? '',
                 'icon' => $metric['icon'] ?? 'heroicon-o-tag',
             ])),
         ];
+
+        return $result;
     }
 
     public static function toSearchableContent(array $data): string

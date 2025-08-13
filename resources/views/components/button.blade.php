@@ -1,0 +1,118 @@
+@props([
+    'as' => 'button',
+    'href' => null,
+    'type' => 'button',
+    'variant',   // brand|secondary|outline|ghost|link|danger
+    'size' => 'md',         // xs|sm|md|lg
+    'rounded' => 'full',
+    'block' => false,
+    'disabled' => false,
+    'loading' => false,
+    'iconOnly' => false,
+])
+
+{{-- pick up the card's interactive flag if present --}}
+@aware([
+    'interactive' => null,
+    'variant' => 'brand', // default variant for buttons
+])
+
+@php
+    $isLink = filled($href);
+    $tag = $isLink ? 'a' : $as;
+    $isBusy = (bool) $loading;
+    $isDisabled = (bool) $disabled || $isBusy;
+
+    // base: note 'relative' for spinner positioning; use a *different* named group for the button itself
+    $base = 'relative inline-flex items-center justify-center font-medium transition-all duration-200 border focus:outline-none focus:ring-2 focus:ring-offset-2 group/button';
+
+    $round = [
+        'full' => 'rounded-full', 'lg' => 'rounded-xl', 'md' => 'rounded-lg', 'sm' => 'rounded-md',
+    ][$rounded] ?? 'rounded-full';
+
+    $sizes = [
+        'xs' => ['pad'=>'px-2.5 py-1.5','text'=>'text-xs','icon'=>'h-4 w-4','iconOnly'=>'p-1.5'],
+        'sm' => ['pad'=>'px-3.5 py-2','text'=>'text-sm','icon'=>'h-4.5 w-4.5','iconOnly'=>'p-2'],
+        'md' => ['pad'=>'px-4 py-2.5','text'=>'text-sm','icon'=>'h-5 w-5','iconOnly'=>'p-2.5'],
+        'lg' => ['pad'=>'px-5 py-3','text'=>'text-base','icon'=>'h-5 w-5','iconOnly'=>'p-3'],
+    ][$size] ?? ['pad'=>'px-4 py-2.5','text'=>'text-sm','icon'=>'h-5 w-5','iconOnly'=>'p-2.5'];
+
+    $variants = [
+        // self-hover styles
+        'brand'     => 'bg-brand-primary text-white border-brand-primary hover:bg-brand-primary/90 hover:shadow-md focus:ring-brand-primary',
+        'secondary' => 'bg-white text-brand-primary border-none focus:border-1 hover:bg-gray-50 hover:text-brand-primary/90 focus:ring-brand-primary',
+        'outline'   => 'bg-transparent text-text-high border-outline-low hover:bg-elevation-02dp focus:ring-zinc-400/40',
+        'white'    => 'bg-white text-text-high border-outline-low hover:bg-elevation-02dp focus:ring-zinc-400/40',
+    ];
+
+    $w = $block ? 'w-full' : 'w-auto';
+    $disabledCls = $isDisabled ? 'opacity-60 pointer-events-none' : '';
+    $hasLeading = isset($leading);
+    $hasTrailing = isset($trailing);
+    $gap = ($hasLeading || $hasTrailing) ? 'gap-2' : 'gap-0';
+    $pad = $iconOnly ? $sizes['iconOnly'] : $sizes['pad'];
+
+    // linked hover: react to CARD hover if the ancestor card is interactive
+    $linked = '';
+    if ($interactive) {
+        $linked = match ($variant) {
+            'brand'     => 'group-hover/card:shadow-md ', // brand already turns the card brand; we just add a subtle lift
+            'secondary' => 'group-hover/card:bg-white group-hover/card:text-brand-primary group-hover/card:border-none',
+            'outline'   => 'group-hover/card:bg-elevation-02dp group-hover/card:border-outline-low',
+            default     => '',
+        };
+    }
+
+    $classes = implode(' ', [
+        $base, $round, $w, $gap, $sizes['text'], $variants[$variant] ?? $variants['brand'], $pad, $disabledCls, $linked,
+    ]);
+@endphp
+
+<{{ $tag }}
+    @unless($isLink) type="{{ $type }}" @endunless
+{{ $attributes->merge(['class' => $classes]) }}
+@if($isLink)
+    href="{{ $href }}" @if($isDisabled)
+        aria-disabled="true" tabindex="-1"
+    @endif
+@else
+    @if($isDisabled)
+        disabled
+    @endif
+@endif
+@if($isBusy)
+    aria-busy="true"
+@endif
+>
+{{-- Leading icon --}}
+@isset($leading)
+    <span {{ $leading->attributes->class($sizes['icon'].' shrink-0 transition-colors group-hover/button:opacity-90') }}>
+            {{ $leading }}
+        </span>
+@endisset
+
+{{-- Label --}}
+@unless($iconOnly)
+    <span class="{{ $isBusy ? 'opacity-0' : 'opacity-100' }}">
+        {{ $slot }}
+    </span>
+@endunless
+
+{{-- Trailing icon --}}
+@isset($trailing)
+    <span {{ $trailing->attributes->class($sizes['icon'].' shrink-0 transition-transform group-hover/button:translate-x-0.5') }}>
+            {{ $trailing }}
+        </span>
+@endisset
+
+{{-- Loading spinner --}}
+@if($isBusy)
+    <span class="absolute inline-flex">
+            <svg class="animate-spin {{ $sizes['icon'] }}" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"/>
+                <path class="opacity-75" d="M4 12a8 8 0 018-8" stroke="currentColor" stroke-width="4"
+                      stroke-linecap="round"/>
+            </svg>
+        </span>
+@endif
+</{{ $tag }}>

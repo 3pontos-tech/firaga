@@ -1,3 +1,6 @@
+@php
+    use App\Filament\Components\DTOs\HeadlineComponent;
+@endphp
 @props([
     'as' => 'section',
     // layout & behavior
@@ -5,10 +8,23 @@
     'size'  => 'xl',         // sm|md|lg|xl
     'animate' => true,       // fade in
     'width' => 'default',    // default|narrow|wide|full
+    'component',   // for internal use only
 ])
 
 @php
-    $Tag = $as;
+    if(isset($component) && !$component instanceof HeadlineComponent) {
+        throw new \Exception("Component must be an instance of HeadlineComponent");
+    }
+    /** @var HeadlineComponent $component */
+
+    if($component) {
+        /** @var \App\Filament\Components\DTOs\BadgeComponent $badge */
+        $badgeComponent = $component->badge;
+        $componentDescription = $component->description ?? null;
+    }
+
+
+    $tag = $as;
 
     // container widths to match your snippet
 
@@ -21,9 +37,12 @@
 
     // heading & paragraph scales
     $sizes = [
-        'sm' => ['h' => 'text-lg sm:text-xl md:text-2xl lg:text-3xl',
-                 'p' => 'text-sm sm:text-base'],
-        'md' => ['h' => 'text-xl sm:text-2xl md:text-3xl lg:text-4xl',
+        'sm' => [
+            'h' => 'text-lg sm:text-xl md:text-2xl lg:text-3xl',
+            'p' => 'text-sm sm:text-base'
+        ],
+        'md' => [
+            'h' => 'text-xl sm:text-2xl md:text-3xl lg:text-4xl',
                  'p' => 'text-sm sm:text-base md:text-lg'],
         'lg' => ['h' => 'text-2xl sm:text-3xl md:text-4xl lg:text-5xl',
                  'p' => 'text-base md:text-lg lg:text-xl'],
@@ -33,7 +52,7 @@
 
 @endphp
 
-<{{ $Tag }} {{ $attributes->merge(['class' => "$animateCls  $alignCls "]) }}>
+<{{ $tag }} {{ $attributes->merge(['class' => "$animateCls  $alignCls "]) }}>
 {{-- Badge (optional) --}}
 @isset($badge)
     <div {{ $badge->attributes }}>
@@ -41,18 +60,35 @@
     </div>
 @endisset
 
+@isset($badgeComponent)
+    <x-badge :component="$badgeComponent" />
+@endif
 
-@isset($headline)
-    <h1 {{ $headline->attributes->class("text-text-high font-bold drop-shadow-lg leading-tight mb-2 sm:mb-4") }}>
-        {{ $headline }}
+
+@if(isset($headline))
+    <h1 {{ $headline->attributes->class("text-text-high font-bold drop-shadow-lg leading-tight mb-2 sm:mb-4 ") }}>
+        {{ $component->headline ?? $headline }}
+    </h1>
+@endisset
+
+@if($component->heading)
+    <h1 {{ $attributes->merge(['class' => "text-text-high text-2xl font-bold drop-shadow-lg leading-tight mb-2 sm:mb-4 " . $sizes['h']]) }}>
+        {{ $component->heading }}
     </h1>
 @endisset
 
 {{-- Description --}}
 
+
 @isset($description)
     <p {{ $description->attributes->class("text-text-high dark:text-text-medium font-medium animate-fade-in delay-200 max-w-full mb-4 sm:mb-6 $sizes[p] ".($align==='left'?'text-left':'text-center lg:text-left')) }}>
         {{ $description }}
+    </p>
+@endisset
+
+@if($componentDescription)
+    <p {{ $attributes->merge(['class' => "text-text-high dark:text-text-medium font-medium animate-fade-in delay-200 max-w-full mb-4 sm:mb-6 $sizes[p] ".($align==='left'?'text-left':'text-center lg:text-left')]) }}>
+        {{ $componentDescription }}
     </p>
 @endisset
 
@@ -62,4 +98,4 @@
         {{ $actions }}
     </div>
 @endisset
-</{{ $Tag }}>
+</{{ $tag }}>
