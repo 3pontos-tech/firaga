@@ -32,10 +32,26 @@ return [
                 [
                     'type' => CustomComponent::HeroWithBackgroundImage->value,
                     'data' => [
+                        'headline' => [
+                            'badge' => [
+                                'label' => 'Nossa História',
+                                'icon' => 'firece-logo',
+                                'hasBadge' => true,
+                            ],
+                            'heading' => 'Viva melhor com Educação Financeira',
+                            'description' => 'Transformamos a forma como as pessoas lidam com dinheiro, capacitando-as a conquistar liberdade, segurança e crescimento financeiro sustentável. ',
+                            'has_actions' => true,
+                            'actions' => [
+                                [
+                                    'label' => 'Agende uma Análise',
+                                    'url' => 'https://firece.com.br',
+                                    'target' => '_blank',
+                                ]
+                            ],
+                        ],
                         'heading' => 'Viva melhor com Educação Financeira',
                         'subheading' => 'Transformamos a forma como as pessoas lidam com dinheiro, capacitando-as a conquistar liberdade, segurança e crescimento financeiro sustentável.',
                         'cta_label' => 'Agende uma análise',
-                        'badge' => 'Invista agora com a Fire|ce',
                         'cta_url' => 'https://firece.com.br',
                     ],
                 ],
@@ -50,6 +66,7 @@ return [
                             ],
                             'heading' => 'Viva melhor com Educação Financeira',
                             'description' => ' Transformamos a forma como as pessoas lidam com dinheiro, capacitando-as a conquistar liberdade, segurança e crescimento financeiro sustentável. ',
+                            'has_actions' => false,
                             'actions' => [],
                         ],
                         'metrics' => [

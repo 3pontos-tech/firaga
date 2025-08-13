@@ -21,13 +21,14 @@
         /** @var \App\Filament\Components\DTOs\BadgeComponent $badge */
         $badgeComponent = $component->badge;
         $componentDescription = $component->description ?? null;
+
+        $componentActions = $component->actions->isNotEmpty()
+            ? $component->actions
+            : null;
     }
 
 
     $tag = $as;
-
-    // container widths to match your snippet
-
 
     $alignCls = $align === 'left'
         ? 'lg:text-left text-left'
@@ -65,7 +66,7 @@
 @endif
 
 
-@if(isset($headline))
+@isset($headline))
     <h1 {{ $headline->attributes->class("text-text-high font-bold drop-shadow-lg leading-tight mb-2 sm:mb-4 ") }}>
         {{ $component->headline ?? $headline }}
     </h1>
@@ -98,4 +99,6 @@
         {{ $actions }}
     </div>
 @endisset
+
+
 </{{ $tag }}>

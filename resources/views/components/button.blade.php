@@ -1,3 +1,4 @@
+@php use App\Filament\Components\DTOs\ButtonComponent; @endphp
 @props([
     'as' => 'button',
     'href' => null,
@@ -9,15 +10,29 @@
     'disabled' => false,
     'loading' => false,
     'iconOnly' => false,
+    'component'
 ])
 
 {{-- pick up the card's interactive flag if present --}}
 @aware([
     'interactive' => null,
     'variant' => 'brand', // default variant for buttons
+    'component'
 ])
 
 @php
+
+    if($component && !$component instanceof ButtonComponent) {
+        throw new \Exception("Component must be an instance of ButtonComponent");
+    }
+
+    if(isset($component)) {
+        /** @var \App\Filament\Components\DTOs\ButtonComponent $component */
+        $label = $component->label;
+        $href = $component->url;
+        $targetType = $component->target;
+    }
+
     $isLink = filled($href);
     $tag = $isLink ? 'a' : $as;
     $isBusy = (bool) $loading;
@@ -28,7 +43,7 @@
 
     $round = [
         'full' => 'rounded-full', 'lg' => 'rounded-xl', 'md' => 'rounded-lg', 'sm' => 'rounded-md',
-    ][$rounded] ?? 'rounded-full';
+    ][$rounded] ?? 'rounded-sm';
 
     $sizes = [
         'xs' => ['pad'=>'px-2.5 py-1.5','text'=>'text-xs','icon'=>'h-4 w-4','iconOnly'=>'p-1.5'],
@@ -70,8 +85,9 @@
 
 <{{ $tag }}
     @unless($isLink) type="{{ $type }}" @endunless
-{{ $attributes->merge(['class' => $classes]) }}
+    class="{{ $classes }}"
 @if($isLink)
+    @isset($targetType) target="{{ $targetType }}" @endisset
     href="{{ $href }}" @if($isDisabled)
         aria-disabled="true" tabindex="-1"
     @endif
@@ -84,6 +100,14 @@
     aria-busy="true"
 @endif
 >
+
+
+@isset($label)
+    <span {{ $attributes->merge(['class' =>' shrink-0 transition-colors group-hover/button:opacity-90']) }} >
+        {{ $label }}
+    </span>
+@endisset
+
 {{-- Leading icon --}}
 @isset($leading)
     <span {{ $leading->attributes->class($sizes['icon'].' shrink-0 transition-colors group-hover/button:opacity-90') }}>

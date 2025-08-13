@@ -4,9 +4,9 @@ namespace App\Filament\Components\Heroes;
 
 use App\Enums\CustomComponent;
 use App\Filament\Components\AbstractCustomComponent;
+use App\Filament\Components\DTOs\HeadlineComponent;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\SpatieMediaLibraryFileUpload;
-use Filament\Forms\Components\TextInput;
 
 
 class HeroWithBackgroundImageComponent extends AbstractCustomComponent
@@ -21,36 +21,13 @@ class HeroWithBackgroundImageComponent extends AbstractCustomComponent
                 ->collection(CustomComponent::HeroWithBackgroundImage->value)
                 ->image()
                 ->required(),
-            TextInput::make('heading')
-                ->label('Heading')
-                ->required()
-                ->default('Invista no futuro com inteligência e precisão'),
-
-            TextInput::make('subheading')
-                ->label('Subheading')
-                ->required()
-                ->default('Transformamos a forma como as pessoas lidam com dinheiro, capacitando-as a conquistar liberdade, segurança e crescimento financeiro sustentável.'),
-
-            TextInput::make('badge')
-                ->label('Badge')
-                ->nullable()
-                ->default('Consultoria Financeira'),
-
-            TextInput::make('cta_label')
-                ->label('Button Text')
-                ->required()
-                ->default('Agende uma consultoria'),
-
             Select::make('hero_size')
                 ->options([
                     'screen' => 'Tela cheia',
                     '[70vh]' => '70% da tela',
                 ]),
 
-            TextInput::make('cta_url')
-                ->label('Button URL')
-                ->required()
-                ->default('/blog'),
+            ...HeadlineComponent::form(),
         ];
     }
 
@@ -62,9 +39,7 @@ class HeroWithBackgroundImageComponent extends AbstractCustomComponent
     public static function setupRenderPayload(array $data): array
     {
         return [
-            'heading' => $data['heading'],
-            'subheading' => $data['subheading'],
-            'badge' => $data['badge'],
+            'headline' => HeadlineComponent::make($data),
             'hero_size' => $data['hero_size'] ?? 'screen',
         ];
     }

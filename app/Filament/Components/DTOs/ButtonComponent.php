@@ -21,12 +21,12 @@ class ButtonComponent
     public static function form(string $parent = ''): array
     {
         return [
-            Toggle::make($parent . '.has_buttons')
+            Toggle::make($parent . '.has_actions')
                 ->label('Has Buttons?')
                 ->live(debounce: 50)
                 ->default(false),
             Repeater::make($parent . '.buttons')
-                ->visible(fn($get) => $get($parent . '.has_buttons'))
+                ->visible(fn($get) => $get($parent . '.has_actions'))
                 ->label('Buttons')
                 ->schema([
                     TextInput::make('label')
@@ -57,12 +57,11 @@ class ButtonComponent
 
     public static function makeCollection(string $parent, array $payload): Collection
     {
-
-        if ($payload[$parent]['has_buttons'] ?? false) {
+        if (!$payload[$parent]['has_actions']) {
             return collect();
         }
 
-        return collect($payload[$parent]['buttons'] ?? [])
-            ->map(fn ($button) => self::make($parent, $button));
+        return collect($payload[$parent]['actions'] ?? [])
+            ->map(fn($button) => self::make($parent, $button));
     }
 }
