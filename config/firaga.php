@@ -97,34 +97,68 @@ return [
                 [
                     'type' => CustomComponent::SplitWithHorizontalSteps->value,
                     'data' => [
-                        'badge' => 'Invista agora com a Fire|ce',
-                        'heading' => 'Transformamos a complexidade em clareza com nossa metodologia',
-                        'description' => 'Levamos você da análise de perfil à execução estratégica, com suporte contínuo para maximizar seus resultados. Nossa metodologia foi desenvolvida para transformar a sua relação com o dinheiro em 3 etapas fundamentais:',
+                        'headline' => [
+                            'badge' => [
+                                'label' => 'Nossa História',
+                                'icon' => 'firece-logo',
+                                'hasBadge' => true,
+                            ],
+                            'position' => 'center',
+                            'heading' => 'Viva melhor com Educação Financeira',
+                            'description' => 'Transformamos a forma como as pessoas lidam com dinheiro, capacitando-as a conquistar liberdade, segurança e crescimento financeiro sustentável. ',
+                            'has_actions' => true,
+                            'actions' => [
+                                [
+                                    'label' => 'Agende uma Análise',
+                                    'url' => 'https://firece.com.br',
+                                    'target' => '_blank',
+                                ]
+                            ],
+                        ],
                         'grid_columns' => 3,
                         'cards' => [
                             [
                                 'icon' => 'heroicon-o-magnifying-glass',
                                 'title' => 'Análise Financeira',
                                 'description' => 'O primeiro contato, onde conhecemos melhor suas metas, seus objetivos e estilo de vida para estruturarmos o seu planejamento financeiro estratégico.',
-                                'cta_url' => 'https://pudim.com.br',
-                                'cta_label' => 'Agendar análise',
+                                'has_actions' => true,
+                                'actions' => [
+                                    [
+                                        'label' => 'Agende uma Análise',
+                                        'url' => 'https://firece.com.br',
+                                        'target' => '_blank',
+                                    ]
+                                ],
+                            ],
+                            [
+                                'icon' => 'heroicon-o-magnifying-glass',
+                                'title' => 'Análise Financeira',
+                                'description' => 'O primeiro contato, onde conhecemos melhor suas metas, seus objetivos e estilo de vida para estruturarmos o seu planejamento financeiro estratégico.',
+                                'has_actions' => true,
+                                'actions' => [
+                                    [
+                                        'label' => 'Agende uma Análise',
+                                        'url' => 'https://firece.com.br',
+                                        'target' => '_blank',
+                                    ]
+                                ],
                             ],
 
-                            [
-                                'icon' => 'heroicon-o-trophy',
-                                'title' => 'Plano de Ação',
-                                'description' => 'Nosso segundo encontro, onde trazemos estratégias detalhadas para começar a colocar em prática todas as mudanças necessárias e soluções encontradas.',
-                                'cta_url' => 'https://pudim.com.br',
-                                'cta_label' => 'Agendar análise',
-                            ],
 
                             [
-                                'icon' => 'heroicon-o-chat-bubble-oval-left',
-                                'title' => 'Acompanhamento',
-                                'description' => 'No terceiro momento, acompanhamos sua evolução e ajustamos o planejamento conforme sua vida muda. Estamos ao seu lado para que você se mantenha no caminho certo.',
-                                'cta_url' => 'https://pudim.com.br',
-                                'cta_label' => 'Agendar análise',
+                                'icon' => 'heroicon-o-magnifying-glass',
+                                'title' => 'Análise Financeira',
+                                'description' => 'O primeiro contato, onde conhecemos melhor suas metas, seus objetivos e estilo de vida para estruturarmos o seu planejamento financeiro estratégico.',
+                                'has_actions' => true,
+                                'actions' => [
+                                    [
+                                        'label' => 'Agende uma Análise',
+                                        'url' => 'https://firece.com.br',
+                                        'target' => '_blank',
+                                    ]
+                                ],
                             ],
+
 
                         ],
                     ],

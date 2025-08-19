@@ -39,7 +39,7 @@ class HeroWithBackgroundImageComponent extends AbstractCustomComponent
     public static function setupRenderPayload(array $data): array
     {
         return [
-            'headline' => HeadlineComponent::make($data),
+            'headline' => HeadlineComponent::make($data['headline']),
             'hero_size' => $data['hero_size'] ?? 'screen',
         ];
     }

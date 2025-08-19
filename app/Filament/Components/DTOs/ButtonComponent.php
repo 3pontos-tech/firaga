@@ -18,15 +18,17 @@ class ButtonComponent
     {
     }
 
-    public static function form(string $parent = ''): array
+    public static function form(?string $parent = null): array
     {
+        $parent = $parent ? $parent . '.' : null;
+
         return [
-            Toggle::make($parent . '.has_actions')
+            Toggle::make($parent . 'has_actions')
                 ->label('Has Buttons?')
                 ->live(debounce: 50)
                 ->default(false),
-            Repeater::make($parent . '.buttons')
-                ->visible(fn($get) => $get($parent . '.has_actions'))
+            Repeater::make($parent . 'buttons')
+                ->visible(fn($get) => $get($parent . 'has_actions'))
                 ->label('Buttons')
                 ->schema([
                     TextInput::make('label')
@@ -46,7 +48,7 @@ class ButtonComponent
         ];
     }
 
-    public static function make(string $parent, array $payload): self
+    public static function make(array $payload): self
     {
         return new self(
             label: $payload['label'] ?? '',
@@ -55,13 +57,13 @@ class ButtonComponent
         );
     }
 
-    public static function makeCollection(string $parent, array $payload): Collection
+    public static function makeCollection(array $payload): Collection
     {
-        if (!$payload[$parent]['has_actions']) {
+        if (!$payload['has_actions']) {
             return collect();
         }
 
-        return collect($payload[$parent]['actions'] ?? [])
-            ->map(fn($button) => self::make($parent, $button));
+        return collect($payload['actions'] ?? [])
+            ->map(fn($button) => self::make($button));
     }
 }

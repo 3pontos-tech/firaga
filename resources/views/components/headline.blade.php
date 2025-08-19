@@ -25,14 +25,16 @@
         $componentActions = $component->actions->isNotEmpty()
             ? $component->actions
             : null;
+
+        $align = $component->position;
     }
 
 
     $tag = $as;
 
     $alignCls = $align === 'left'
-        ? 'lg:text-left text-left'
-        : 'text-center lg:text-left';
+        ? 'lg:text-left text-left flex flex-col items-start'
+        : 'text-center lg:text-left flex flex-col items-center';
 
     $animateCls = $animate ? 'animate-fade-in' : '';
 

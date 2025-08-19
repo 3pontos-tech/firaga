@@ -23,49 +23,40 @@
     };
 @endphp
 
-<section class="mx-auto text-text-dark dark:text-text-light overflow-hidden mb-32 {{ $background }}">
+<section class="container mx-auto text-text-dark dark:text-text-light overflow-hidden mb-32 {{ $background }}">
     <div class="mx-auto flex flex-col container gap-y-12">
         <div class="flex flex-col items-center gap-y-6">
-            <x-layout.shared.chip
-                :variant="$variant"
-                class="px-4 py-2"> {{ $badge }}
-            </x-layout.shared.chip>
-            <x-layout.shared.section-header :heading="$heading" :description="$description"/>
+            <x-headline :component="$headline" />
         </div>
         <div class="grid grid-cols-1 {{ $maxGridColumns }} gap-8">
             @foreach($cards as $card)
+
                 <x-card variant="cta" align="center" interactive="brand">
-                    @if($card['icon'])
+                    @if($card->icon)
                         <x-slot:icon class="text-icon-high bg-brand-primary w-16 h-16 lg:w-20 lg:h-20">
-                            <x-filament::icon icon="heroicon-o-banknotes"
+                            <x-filament::icon :icon="$card->icon"
                                               class=" w-9 h-9 group-hover/card:text-brand-primary  lg:h-11 lg:w-11"/>
                         </x-slot:icon>
                     @endif
 
-                    @isset($card['title'])
+                    @isset($card->title)
                         <x-slot:title>
-                            {{ $card['title'] }}
+                            {{ $card->title }}
                         </x-slot:title>
                     @endisset
 
 
-                    @isset($card['description'])
+                    @isset($card->description)
                         <x-slot:subtitle class="text-lg">
-                            {{ $card['description'] }}
+                            {{ $card->description }}
                         </x-slot:subtitle>
                     @endisset
 
-                    @if(isset($card['cta_label']) && isset($card['cta_url']))
-                        <x-slot:footer class="hidden lg:block">
-                            <x-button :href="$card['cta_url']" variant="secondary"  :block="true">
-                                {{ $card['cta_label'] }}
-                                <x-slot:trailing>
-                                    <x-filament::icon icon="heroicon-o-chevron-right" />
-                                </x-slot:trailing>
-                            </x-button>
-
-                        </x-slot:footer>
-                    @endif
+                    <x-slot:footer class="hidden lg:block">
+                        @foreach($headline->actions as $action)
+                            <x-button rounded="sm" variant="white" :component="$action" />
+                        @endforeach
+                    </x-slot:footer>
                 </x-card>
 
             @endforeach

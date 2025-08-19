@@ -35,10 +35,10 @@ class BadgeComponent
         ];
     }
 
-    public static function make(string $parent, array $data): self
+    public static function make(array $data): self
     {
 
-        $badge = $data[$parent]['badge'];
+        $badge = $data['badge'];
         return new self(
             label: $badge['label'] ?? null,
             icon: $badge['icon'] ?? null,

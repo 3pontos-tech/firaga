@@ -50,7 +50,7 @@ class InfoStatsComponent extends AbstractCustomComponent
     {
 
         $result =  [
-            'headline' => HeadlineComponent::make($data),
+            'headline' => HeadlineComponent::make($data['headline']),
             'metrics' => collect($data['metrics'] ?? [])->map(fn ($metric) => Fluent::make([
                 'label' => $metric['label'] ?? '',
                 'value' => $metric['value'] ?? '',
