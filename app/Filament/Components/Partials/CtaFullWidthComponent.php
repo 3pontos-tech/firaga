@@ -4,7 +4,11 @@ namespace App\Filament\Components\Partials;
 
 use App\Enums\CustomComponent;
 use App\Filament\Components\AbstractCustomComponent;
+use Filament\Forms\Components\Hidden;
+use Filament\Forms\Components\SpatieMediaLibraryFileUpload;
 use Filament\Forms\Components\TextInput;
+use Filament\Forms\Get;
+use Ramsey\Uuid\Uuid;
 
 class CtaFullWidthComponent extends AbstractCustomComponent
 {
@@ -13,9 +17,25 @@ class CtaFullWidthComponent extends AbstractCustomComponent
     public static function blockSchema(): array
     {
         return [
+            Hidden::make('component_id')
+                ->formatStateUsing(fn () => Uuid::uuid4()->toString()),
             TextInput::make('title')
                 ->required()
                 ->label(__('Title')),
+            SpatieMediaLibraryFileUpload::make('hero')
+                ->label('Hero Image')
+                ->customProperties(fn(Get $get): array => [
+                    'component_id' => $get('component_id'),
+                ])
+                ->filterMediaUsing(
+                    fn($media, Get $get) => $media->where(
+                        'custom_properties.component_id',
+                        $get('component_id')
+                    ),
+                )
+                ->collection(CustomComponent::CallToActionFullWidthSection->value)
+                ->image()
+                ->required(),
             TextInput::make('cta_label')
                 ->required()
                 ->label(__('Call to Action Label')),
@@ -37,6 +57,7 @@ class CtaFullWidthComponent extends AbstractCustomComponent
             'title' => $data['title'],
             'cta_label' => $data['cta_label'],
             'cta_url' => $data['cta_url'],
+            'component_id' => $data['component_id'],
         ];
     }
 
