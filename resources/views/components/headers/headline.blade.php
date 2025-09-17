@@ -10,11 +10,11 @@
     {{ $badge }}
     <h1
         class="text-text-high mb-2 sm:mb-4 text-center text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl  font-bold drop-shadow-lg lg:text-left leading-tight">
-        {{ str($headline) }}
+        {{ $headline }}
     </h1>
     <p
         class="text-text-high dark:text-text-medium animate-fade-in mb-4 sm:mb-6 max-w-full text-center text-sm sm:text-base md:text-lg lg:text-xl delay-200 lg:text-left font-medium">
-        {{ str($description) }}
+        {{ $description }}
     </p>
     <div class="flex flex-col sm:flex-row gap-3 sm:gap-x-4 items-center lg:items-start justify-center lg:justify-start">
         {{ $ctaButton }}

@@ -7,7 +7,7 @@ use Carbon\Carbon;
 
 return [
     'themes' => [
-        'enabled' => false,
+        'enabled' => true,
         'available' => [
             // ... append themes when they're ready for use.
         ],
@@ -24,40 +24,140 @@ return [
             'slug' => '/',
             'medias' => [
                 [
-                    'collection' => CustomComponent::HeroWithStatsAndImage->value,
+                    'collection' => CustomComponent::HeroWithBackgroundImage->value,
                     'path' => public_path('images/stock/hero-stock.png'),
                 ],
             ],
             'content' => [
                 [
-                    'type' => CustomComponent::HeroWithStatsAndImage->value,
+                    'type' => CustomComponent::HeroWithBackgroundImage->value,
                     'data' => [
+                        'headline' => [
+                            'badge' => [
+                                'label' => 'Nossa História',
+                                'icon' => 'firece-logo',
+                                'hasBadge' => true,
+                            ],
+                            'heading' => 'Viva melhor com Educação Financeira',
+                            'description' => 'Transformamos a forma como as pessoas lidam com dinheiro, capacitando-as a conquistar liberdade, segurança e crescimento financeiro sustentável. ',
+                            'has_actions' => true,
+                            'actions' => [
+                                [
+                                    'label' => 'Agende uma Análise',
+                                    'url' => 'https://firece.com.br',
+                                    'target' => '_blank',
+                                ],
+                            ],
+                        ],
                         'heading' => 'Viva melhor com Educação Financeira',
                         'subheading' => 'Transformamos a forma como as pessoas lidam com dinheiro, capacitando-as a conquistar liberdade, segurança e crescimento financeiro sustentável.',
                         'cta_label' => 'Agende uma análise',
-                        'badge' => null,
                         'cta_url' => 'https://firece.com.br',
+                    ],
+                ],
+                [
+                    'type' => CustomComponent::InfoStats->value,
+                    'data' => [
+                        'headline' => [
+                            'badge' => [
+                                'label' => 'Nossa História',
+                                'icon' => 'firece-logo',
+                                'hasBadge' => true,
+                            ],
+                            'heading' => 'Viva melhor com Educação Financeira',
+                            'description' => ' Transformamos a forma como as pessoas lidam com dinheiro, capacitando-as a conquistar liberdade, segurança e crescimento financeiro sustentável. ',
+                            'has_actions' => false,
+                            'actions' => [],
+                        ],
                         'metrics' => [
                             [
                                 'label' => 'Anos de experiência',
                                 'value' => '+10',
-                                'icon' => FireceIcons::Star->value,
+                                'icon' => 'heroicon-o-star',
                             ],
                             [
                                 'label' => 'Consultores Financeiros',
                                 'value' => '+10',
-                                'icon' => FireceIcons::People->value,
+                                'icon' => 'heroicon-o-users',
                             ],
                             [
                                 'label' => 'Crescimento Anual',
                                 'value' => '+300%',
-                                'icon' => FireceIcons::Chart->value,
+                                'icon' => 'heroicon-o-arrow-trending-up',
                             ],
                             [
                                 'label' => 'Clientes Atendidos',
                                 'value' => '+2.000',
-                                'icon' => FireceIcons::Hands->value,
+                                'icon' => 'heroicon-o-user-plus',
                             ],
+                        ],
+                    ],
+                ],
+
+                [
+                    'type' => CustomComponent::SplitWithHorizontalSteps->value,
+                    'data' => [
+                        'headline' => [
+                            'badge' => [
+                                'label' => 'Nossa História',
+                                'icon' => 'firece-logo',
+                                'hasBadge' => true,
+                            ],
+                            'position' => 'center',
+                            'heading' => 'Viva melhor com Educação Financeira',
+                            'description' => 'Transformamos a forma como as pessoas lidam com dinheiro, capacitando-as a conquistar liberdade, segurança e crescimento financeiro sustentável. ',
+                            'has_actions' => true,
+                            'actions' => [
+                                [
+                                    'label' => 'Agende uma Análise',
+                                    'url' => 'https://firece.com.br',
+                                    'target' => '_blank',
+                                ],
+                            ],
+                        ],
+                        'grid_columns' => 3,
+                        'cards' => [
+                            [
+                                'icon' => 'heroicon-o-magnifying-glass',
+                                'title' => 'Análise Financeira',
+                                'description' => 'O primeiro contato, onde conhecemos melhor suas metas, seus objetivos e estilo de vida para estruturarmos o seu planejamento financeiro estratégico.',
+                                'has_actions' => true,
+                                'actions' => [
+                                    [
+                                        'label' => 'Agende uma Análise',
+                                        'url' => 'https://firece.com.br',
+                                        'target' => '_blank',
+                                    ],
+                                ],
+                            ],
+                            [
+                                'icon' => 'heroicon-o-magnifying-glass',
+                                'title' => 'Análise Financeira',
+                                'description' => 'O primeiro contato, onde conhecemos melhor suas metas, seus objetivos e estilo de vida para estruturarmos o seu planejamento financeiro estratégico.',
+                                'has_actions' => true,
+                                'actions' => [
+                                    [
+                                        'label' => 'Agende uma Análise',
+                                        'url' => 'https://firece.com.br',
+                                        'target' => '_blank',
+                                    ],
+                                ],
+                            ],
+
+                            [
+                                'icon' => 'heroicon-o-magnifying-glass',
+                                'title' => 'Análise Financeira',
+                                'description' => 'O primeiro contato, onde conhecemos melhor suas metas, seus objetivos e estilo de vida para estruturarmos o seu planejamento financeiro estratégico.',
+                                'has_actions' => true,
+                                'actions' => [
+                                    [
+                                        'label' => 'Agende uma Análise',
+                                        'url' => 'https://firece.com.br',
+                                        'target' => '_blank',
+                                    ],
+                                ],
+                            ],
+
                         ],
                     ],
                 ],
@@ -71,7 +171,7 @@ return [
                         'cta_label' => 'Saiba mais',
                         'cards' => [
                             [
-                                'icon' => FireceIcons::Lookup->value,
+                                'icon' => 'heroicon-o-magnifying-glass',
                                 'title' => 'Análise Financeira',
                                 'description' => 'O primeiro contato, onde conhecemos melhor suas metas, seus objetivos e estilo de vida para estruturarmos o seu planejamento financeiro estratégico.',
                             ],
@@ -87,38 +187,6 @@ return [
                             ],
                         ],
 
-                    ],
-                ],
-                [
-                    'type' => CustomComponent::SplitWithHorizontalSteps->value,
-                    'data' => [
-                        'badge' => 'Escolha a Fire|Ce',
-                        'heading' => 'Perfis e necessidades',
-                        'description' => 'Saber se você é endividado, desorganizado ou poupador faz toda a diferença: é com esse entendimento que conseguimos traçar estratégias financeiras personalizadas, que respeitam sua realidade e aceleram seus resultados.',
-                        'grid_columns' => 3,
-                        'cards' => [
-                            [
-                                'icon' => FireceIcons::Gear->value,
-                                'title' => 'Se você sente que poderia estar melhor',
-                                'description' => 'Seu dinheiro some sem que perceba? Sente que poderia estar guardando mais, gastando melhor e tendo mais controle financeiro? Agende sua consultoria que nós vamos te ajudar!',
-                                'cta_url' => 'https://pudim.com.br',
-                                'cta_label' => 'Agendar análise',
-                            ],
-                            [
-                                'icon' => FireceIcons::Chart->value,
-                                'title' => 'Se você guarda dinheiro, mas não sabe como potencializar',
-                                'description' => 'Criamos um planejamento financeiro alinhado com seus objetivos, transformando sua reserva em um plano sólido de crescimento. Chegou a hora de fazer suas economias trabalharem para você.',
-                                'cta_url' => 'https://pudim.com.br',
-                                'cta_label' => 'Agendar análise',
-                            ],
-                            [
-                                'icon' => FireceIcons::Planet->value,
-                                'title' => 'Se você já investe e quer ir mais longe',
-                                'description' => 'Talvez sua carteira não seja tão diversificada ou seus rendimentos não estejam alinhados com seus objetivos. Está na hora de otimizar sua estratégia.',
-                                'cta_url' => 'https://pudim.com.br',
-                                'cta_label' => 'Agendar análise',
-                            ],
-                        ],
                     ],
                 ],
                 [

@@ -18,7 +18,7 @@
                         referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                 <div class="flex flex-col sm:flex-row gap-4 sm:gap-x-6 lg:gap-x-8 w-full justify-between">
                     @foreach($video_cards as $card)
-                        <div class="flex flex-col p-3 sm:p-4 bg-[#303030] gap-y-2 sm:gap-y-3 rounded-lg flex-1 max-w-none sm:max-w-[234px]">
+                        <div class="flex flex-col p-3 sm:p-4 bg-elevation-01dp gap-y-2 sm:gap-y-3 rounded-lg flex-1 max-w-none sm:max-w-[234px]">
                             <h3 class="text-text-medium font-medium text-sm sm:text-base">{{ $card['title'] }}</h3>
                             <p class="text-text-high font-bold text-2xl sm:text-3xl">{{ $card['value'] }}</p>
                         </div>

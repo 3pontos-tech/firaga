@@ -6,6 +6,10 @@ use App\Http\Controllers\MarketingLandingController;
 use App\Http\Controllers\PagesController;
 use Illuminate\Support\Facades\Route;
 
+if (app()->isLocal()) {
+    Route::view('/test', 'test');
+}
+
 Route::domain('lp.' . config('app.domain'))->group(function (): void {
 
     Route::redirect('/', config('app.url'));

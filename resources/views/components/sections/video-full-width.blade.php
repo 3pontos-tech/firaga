@@ -6,6 +6,10 @@
 ])
 
 <section class="py-12 md:py-16 lg:py-32 xl:py-40">
+    <div class="absolute top-0 left-0 w-full h-1/2 bg-white dark:bg-black"></div>
+
+    <!-- Bottom half -->
+    <div class="absolute bottom-0 left-0 w-full h-1/2 bg-brand-primary"></div>
     <div class="container max-w-7xl mx-auto px-4 md:px-6 relative z-10">
         <div class="text-center mb-8 md:mb-16 flex flex-col items-center gap-y-6">
             <x-layout.shared.chip class="px-4 py-2">
@@ -14,8 +18,8 @@
             <x-layout.shared.section-header :$heading :$description />
         </div>
     </div>
-    <div class="relative w-full max-w-[1485px] mx-auto px-4 md:px-6">
-        <div class="relative w-full aspect-video md:aspect-[16/10] lg:aspect-[21/9] max-h-[780px]">
+    <div class="relative w-full max-w-svh mx-auto px-4 md:px-6">
+        <div class="relative w-full aspect-video">
             <video id="firece-video" class="w-full h-full object-cover rounded-lg md:rounded-2xl lg:rounded-4xl" muted loop playsinline>
                 <source src="{{ asset('video/firece_video.webm') }}" type="video/mp4">
                 Your browser does not support the video tag.
