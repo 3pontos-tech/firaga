@@ -11,18 +11,14 @@ use Illuminate\Support\Collection;
 class CardComponent
 {
     /**
-     * @param string $title
-     * @param string $description
-     * @param Collection<int, ButtonComponent> $actions
+     * @param  Collection<int, ButtonComponent>  $actions
      */
     public function __construct(
-        public string     $title,
-        public string     $description,
-        public ?string    $icon = null,
+        public string $title,
+        public string $description,
+        public ?string $icon,
         public Collection $actions,
-    )
-    {
-    }
+    ) {}
 
     public static function form(): array
     {
@@ -69,6 +65,6 @@ class CardComponent
     public static function makeCollection(array $data): Collection
     {
 
-        return collect($data)->map(fn($card) => self::make($card));
+        return collect($data)->map(fn ($card): \App\Filament\Components\DTOs\CardComponent => self::make($card));
     }
 }

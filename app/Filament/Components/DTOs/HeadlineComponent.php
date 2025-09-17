@@ -2,6 +2,7 @@
 
 namespace App\Filament\Components\DTOs;
 
+use function Illuminate\Log\log;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\TextInput;
 use Illuminate\Support\Collection;
@@ -9,20 +10,15 @@ use Illuminate\Support\Collection;
 class HeadlineComponent
 {
     /**
-     * @param BadgeComponent|null $badge
-     * @param string $heading
-     * @param string $description
-     * @param Collection<int, ButtonComponent> $actions
+     * @param  Collection<int, ButtonComponent>  $actions
      */
     public function __construct(
         public ?BadgeComponent $badge,
-        public string          $heading,
-        public string          $description,
-        public string          $position = 'left',
-        public Collection      $actions,
-    )
-    {
-    }
+        public string $heading,
+        public string $description,
+        public string $position,
+        public Collection $actions,
+    ) {}
 
     public static function form(): array
     {
@@ -52,7 +48,8 @@ class HeadlineComponent
 
     public static function make(array $data): self
     {
-        \Illuminate\Log\log($data);
+        log($data);
+
         return new self(
             badge: BadgeComponent::make($data),
             heading: $data['heading'],

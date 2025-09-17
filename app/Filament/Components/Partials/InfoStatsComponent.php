@@ -49,7 +49,7 @@ class InfoStatsComponent extends AbstractCustomComponent
     public static function setupRenderPayload(array $data): array
     {
 
-        $result =  [
+        return [
             'headline' => HeadlineComponent::make($data['headline']),
             'metrics' => collect($data['metrics'] ?? [])->map(fn ($metric) => Fluent::make([
                 'label' => $metric['label'] ?? '',
@@ -57,8 +57,6 @@ class InfoStatsComponent extends AbstractCustomComponent
                 'icon' => $metric['icon'] ?? 'heroicon-o-tag',
             ])),
         ];
-
-        return $result;
     }
 
     public static function toSearchableContent(array $data): string

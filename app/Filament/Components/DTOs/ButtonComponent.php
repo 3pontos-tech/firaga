@@ -14,13 +14,11 @@ class ButtonComponent
         public string $label,
         public string $url,
         public string $target,
-    )
-    {
-    }
+    ) {}
 
     public static function form(?string $parent = null): array
     {
-        $parent = $parent ? $parent . '.' : null;
+        $parent = $parent !== null && $parent !== '' && $parent !== '0' ? $parent . '.' : null;
 
         return [
             Toggle::make($parent . 'has_actions')
@@ -28,7 +26,7 @@ class ButtonComponent
                 ->live(debounce: 50)
                 ->default(false),
             Repeater::make($parent . 'buttons')
-                ->visible(fn($get) => $get($parent . 'has_actions'))
+                ->visible(fn ($get) => $get($parent . 'has_actions'))
                 ->label('Buttons')
                 ->schema([
                     TextInput::make('label')
@@ -59,11 +57,11 @@ class ButtonComponent
 
     public static function makeCollection(array $payload): Collection
     {
-        if (!$payload['has_actions']) {
+        if (! $payload['has_actions']) {
             return collect();
         }
 
         return collect($payload['actions'] ?? [])
-            ->map(fn($button) => self::make($button));
+            ->map(fn ($button): \App\Filament\Components\DTOs\ButtonComponent => self::make($button));
     }
 }

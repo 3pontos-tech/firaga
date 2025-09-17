@@ -46,7 +46,7 @@ return [
                                     'label' => 'Agende uma Análise',
                                     'url' => 'https://firece.com.br',
                                     'target' => '_blank',
-                                ]
+                                ],
                             ],
                         ],
                         'heading' => 'Viva melhor com Educação Financeira',
@@ -112,7 +112,7 @@ return [
                                     'label' => 'Agende uma Análise',
                                     'url' => 'https://firece.com.br',
                                     'target' => '_blank',
-                                ]
+                                ],
                             ],
                         ],
                         'grid_columns' => 3,
@@ -127,7 +127,7 @@ return [
                                         'label' => 'Agende uma Análise',
                                         'url' => 'https://firece.com.br',
                                         'target' => '_blank',
-                                    ]
+                                    ],
                                 ],
                             ],
                             [
@@ -140,10 +140,9 @@ return [
                                         'label' => 'Agende uma Análise',
                                         'url' => 'https://firece.com.br',
                                         'target' => '_blank',
-                                    ]
+                                    ],
                                 ],
                             ],
-
 
                             [
                                 'icon' => 'heroicon-o-magnifying-glass',
@@ -155,10 +154,9 @@ return [
                                         'label' => 'Agende uma Análise',
                                         'url' => 'https://firece.com.br',
                                         'target' => '_blank',
-                                    ]
+                                    ],
                                 ],
                             ],
-
 
                         ],
                     ],

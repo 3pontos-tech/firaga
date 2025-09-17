@@ -8,7 +8,6 @@ use App\Filament\Components\DTOs\HeadlineComponent;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\SpatieMediaLibraryFileUpload;
 
-
 class HeroWithBackgroundImageComponent extends AbstractCustomComponent
 {
     protected static string $view = 'components.heroes.hero-with-background-image';

@@ -6,12 +6,7 @@ use App\Enums\CustomComponent;
 use App\Filament\Components\AbstractCustomComponent;
 use App\Filament\Components\DTOs\CardComponent;
 use App\Filament\Components\DTOs\HeadlineComponent;
-use Filament\Forms\Components\Repeater;
 use Filament\Forms\Components\Select;
-use Filament\Forms\Components\Textarea;
-use Filament\Forms\Components\TextInput;
-use Guava\FilamentIconPicker\Forms\IconPicker;
-use Illuminate\Support\Fluent;
 
 class SplitWithHorizontalStepsComponent extends AbstractCustomComponent
 {
@@ -53,7 +48,7 @@ class SplitWithHorizontalStepsComponent extends AbstractCustomComponent
             'headline' => HeadlineComponent::make($data['headline']),
             'grid_columns' => $data['grid_columns'] ?? 3,
             'card_type' => $data['card_type'] ?? 'cta',
-            'cards' => CardComponent::makeCollection($data['cards'] ?? [])
+            'cards' => CardComponent::makeCollection($data['cards'] ?? []),
         ];
     }
 

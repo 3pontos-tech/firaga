@@ -24,11 +24,11 @@ class CtaFullWidthComponent extends AbstractCustomComponent
                 ->label(__('Title')),
             SpatieMediaLibraryFileUpload::make('hero')
                 ->label('Hero Image')
-                ->customProperties(fn(Get $get): array => [
+                ->customProperties(fn (Get $get): array => [
                     'component_id' => $get('component_id'),
                 ])
                 ->filterMediaUsing(
-                    fn($media, Get $get) => $media->where(
+                    fn ($media, Get $get) => $media->where(
                         'custom_properties.component_id',
                         $get('component_id')
                     ),

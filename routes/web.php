@@ -6,7 +6,7 @@ use App\Http\Controllers\MarketingLandingController;
 use App\Http\Controllers\PagesController;
 use Illuminate\Support\Facades\Route;
 
-if(app()->isLocal()) {
+if (app()->isLocal()) {
     Route::view('/test', 'test');
 }
 
