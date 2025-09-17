@@ -7,7 +7,7 @@ use Carbon\Carbon;
 
 return [
     'themes' => [
-        'enabled' => false,
+        'enabled' => true,
         'available' => [
             // ... append themes when they're ready for use.
         ],

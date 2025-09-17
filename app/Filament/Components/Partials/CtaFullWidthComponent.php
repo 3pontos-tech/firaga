@@ -18,7 +18,7 @@ class CtaFullWidthComponent extends AbstractCustomComponent
     {
         return [
             Hidden::make('component_id')
-                ->formatStateUsing(fn () => Uuid::uuid4()->toString()),
+                ->formatStateUsing(fn ($state) => $state ?? Uuid::uuid4()->toString()),
             TextInput::make('title')
                 ->required()
                 ->label(__('Title')),
