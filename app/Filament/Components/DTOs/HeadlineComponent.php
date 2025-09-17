@@ -2,10 +2,11 @@
 
 namespace App\Filament\Components\DTOs;
 
-use function Illuminate\Log\log;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\TextInput;
 use Illuminate\Support\Collection;
+
+use function Illuminate\Log\log;
 
 class HeadlineComponent
 {
