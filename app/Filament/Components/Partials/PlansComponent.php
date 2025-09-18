@@ -3,6 +3,7 @@
 namespace App\Filament\Components\Partials;
 
 use App\Filament\Components\AbstractCustomComponent;
+use App\Filament\Components\DTOs\HeadlineComponent;
 use Filament\Forms\Components\Repeater;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\TextInput;
@@ -15,12 +16,7 @@ class PlansComponent extends AbstractCustomComponent
     public static function blockSchema(): array
     {
         return [
-            TextInput::make('heading')
-                ->label(__('Heading'))
-                ->required(),
-            TextInput::make('subheading')
-                ->label(__('Subheading'))
-                ->required(),
+            ...HeadlineComponent::form(),
             Repeater::make('plans')
                 ->label(__('Plans'))
                 ->cloneable()
@@ -70,8 +66,7 @@ class PlansComponent extends AbstractCustomComponent
     public static function setupRenderPayload(array $data): array
     {
         return [
-            'heading' => $data['heading'],
-            'subheading' => $data['subheading'],
+            'headline' => HeadlineComponent::make($data['headline']),
             'plans' => collect($data['plans'] ?? [])->map(fn ($plan) => Fluent::make([
                 'best_plan' => $plan['best_plan'] ?? false,
                 'name' => $plan['name'],

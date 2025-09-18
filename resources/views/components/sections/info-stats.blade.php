@@ -10,12 +10,11 @@
 
 <section class="container mx-auto mb-32">
     <div class="flex flex-col lg:grid lg:grid-cols-12">
-        <div id="left-info" class="col-span-4">
-            <x-headline :component="$headline" size="md"/>
+        <div class="col-span-4 px-2">
+            <x-headline :component="$headline"/>
         </div>
 
-        <div id="right"
-             class="grid col-span-8 col-start-5 grid-cols-2 lg:grid-cols-2 xl:grid-cols-4 gap-4 md:gap-8">
+        <div class="grid col-span-8 col-start-5 grid-cols-2 lg:grid-cols-2 xl:grid-cols-4 gap-4 md:gap-8">
             @foreach ($metrics as $metric)
                 <x-card variant="stat" class="my-15" interactive>
                     <x-slot:icon>

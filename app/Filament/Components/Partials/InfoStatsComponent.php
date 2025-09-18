@@ -20,6 +20,7 @@ class InfoStatsComponent extends AbstractCustomComponent
             ...HeadlineComponent::form(),
             Repeater::make('metrics')
                 ->label('Metrics')
+                ->collapsible()
                 ->schema([
                     TextInput::make('label')
                         ->label('Label')
@@ -48,7 +49,6 @@ class InfoStatsComponent extends AbstractCustomComponent
 
     public static function setupRenderPayload(array $data): array
     {
-
         return [
             'headline' => HeadlineComponent::make($data['headline']),
             'metrics' => collect($data['metrics'] ?? [])->map(fn ($metric) => Fluent::make([

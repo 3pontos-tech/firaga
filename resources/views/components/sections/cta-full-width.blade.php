@@ -20,10 +20,8 @@ $variant = $renderable->theme->value;
         <div class="absolute bottom-2 right-2 sm:bottom-4 sm:right-4 md:bottom-6 md:right-6 lg:bottom-8 lg:right-8 rotate-180">
             <x-partials.corner class="w-[40px] h-[40px] sm:w-[60px] sm:h-[60px] md:w-[80px] md:h-[80px] lg:w-[100px] lg:h-[100px]"/>
         </div>
-        <div class="relative z-10 flex flex-col items-center justify-center max-w-6xl mx-auto px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16">
-            <h2 class="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl 2xl:text-6xl font-bold text-white text-center leading-tight max-w-4xl">
-                {{ $title }}
-            </h2>
+        <div class="relative z-10 flex flex-col items-center justify-center max-w-[80svw] mx-auto px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16">
+            <x-headline :component="$headline"/>
             <x-layout.shared.button :href="$cta_url" :$variant class="px-4 py-2 sm:px-6 sm:py-2 md:px-7 md:py-2.5 lg:px-8 lg:py-3 text-sm sm:text-base md:text-lg mt-4 sm:mt-6 md:mt-8 lg:mt-10 text-text-dark">
                 {{ $cta_label }}
             </x-layout.shared.button>

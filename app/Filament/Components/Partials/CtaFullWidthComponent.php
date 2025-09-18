@@ -4,6 +4,7 @@ namespace App\Filament\Components\Partials;
 
 use App\Enums\CustomComponent;
 use App\Filament\Components\AbstractCustomComponent;
+use App\Filament\Components\DTOs\HeadlineComponent;
 use Filament\Forms\Components\Hidden;
 use Filament\Forms\Components\SpatieMediaLibraryFileUpload;
 use Filament\Forms\Components\TextInput;
@@ -19,9 +20,6 @@ class CtaFullWidthComponent extends AbstractCustomComponent
         return [
             Hidden::make('component_id')
                 ->formatStateUsing(fn ($state) => $state ?? Uuid::uuid4()->toString()),
-            TextInput::make('title')
-                ->required()
-                ->label(__('Title')),
             SpatieMediaLibraryFileUpload::make('hero')
                 ->label('Hero Image')
                 ->customProperties(fn (Get $get): array => [
@@ -36,6 +34,9 @@ class CtaFullWidthComponent extends AbstractCustomComponent
                 ->collection(CustomComponent::CallToActionFullWidthSection->value)
                 ->image()
                 ->required(),
+
+            ...HeadlineComponent::form(),
+
             TextInput::make('cta_label')
                 ->required()
                 ->label(__('Call to Action Label')),
@@ -54,7 +55,7 @@ class CtaFullWidthComponent extends AbstractCustomComponent
     public static function setupRenderPayload(array $data): array
     {
         return [
-            'title' => $data['title'],
+            'headline' => HeadlineComponent::make($data['headline']),
             'cta_label' => $data['cta_label'],
             'cta_url' => $data['cta_url'],
             'component_id' => $data['component_id'],
