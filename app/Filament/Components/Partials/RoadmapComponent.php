@@ -4,7 +4,6 @@ namespace App\Filament\Components\Partials;
 
 use App\Filament\Components\AbstractCustomComponent;
 use App\Filament\Components\DTOs\HeadlineComponent;
-use Filament\Forms\Components\MarkdownEditor;
 use Filament\Forms\Components\Repeater;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\TextInput;

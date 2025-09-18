@@ -11,10 +11,8 @@ class BadgeComponent
     public function __construct(
         public ?string $label,
         public ?string $icon,
-        public bool    $hasBadge,
-    )
-    {
-    }
+        public bool $hasBadge,
+    ) {}
 
     public static function form(?string $parent): array
     {
@@ -27,10 +25,10 @@ class BadgeComponent
                 ->default(false),
             IconPicker::make($parent . 'icon')
                 ->label('Icon')
-                ->visible(fn($get) => $get($parent . 'has_badge'))
+                ->visible(fn ($get) => $get($parent . 'has_badge'))
                 ->default('heroicon-o-tag'),
             TextInput::make($parent . 'label')
-                ->visible(fn($get) => $get($parent . 'has_badge'))
+                ->visible(fn ($get) => $get($parent . 'has_badge'))
                 ->label('Badge')
                 ->nullable()
                 ->default('Consultoria Financeira'),
@@ -39,7 +37,7 @@ class BadgeComponent
 
     public static function make(array $data): self
     {
-        if (!isset($data['badge'])) {
+        if (! isset($data['badge'])) {
             return new self(
                 label: null,
                 icon: null,

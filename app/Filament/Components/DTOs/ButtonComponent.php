@@ -57,7 +57,7 @@ class ButtonComponent
 
     public static function makeCollection(array $payload): Collection
     {
-        if(!isset($payload['buttons'])) {
+        if (! isset($payload['buttons'])) {
             return collect();
         }
 
