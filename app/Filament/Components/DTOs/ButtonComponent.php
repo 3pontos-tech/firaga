@@ -57,11 +57,17 @@ class ButtonComponent
 
     public static function makeCollection(array $payload): Collection
     {
+        if (! isset($payload['buttons'])) {
+            return collect();
+        }
+
+        $payload = $payload['buttons'];
+
         if (! $payload['has_actions']) {
             return collect();
         }
 
-        return collect($payload['actions'] ?? [])
-            ->map(fn ($button): \App\Filament\Components\DTOs\ButtonComponent => self::make($button));
+        return collect($payload['buttons'] ?? [])
+            ->map(fn ($button): ButtonComponent => self::make($button));
     }
 }

@@ -1,9 +1,5 @@
 @props([
-    'subheading',
-    'heading',
-    'description',
-    'cta_label',
-    'cta_url',
+    'headline',
     'cards' => [],
     'grid_columns',
     'card_type'
