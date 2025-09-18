@@ -3,6 +3,7 @@
 namespace App\Filament\Components\Partials;
 
 use App\Filament\Components\AbstractCustomComponent;
+use App\Filament\Components\DTOs\HeadlineComponent;
 use Filament\Forms\Components\MarkdownEditor;
 use Filament\Forms\Components\Repeater;
 use Filament\Forms\Components\Select;
@@ -16,21 +17,7 @@ class RoadmapComponent extends AbstractCustomComponent
     public static function blockSchema(): array
     {
         return [
-            'heading' => TextInput::make('heading')
-                ->required()
-                ->label(__('Title'))
-                ->default('Our Roadmap'),
-
-            'subheading' => MarkdownEditor::make('subheading')
-                ->required()
-                ->label(__('Description'))
-                ->default('A brief overview of our roadmap and future plans.'),
-
-            'caption' => MarkdownEditor::make('caption')
-                ->required()
-                ->label(__('Description'))
-                ->default('A brief overview of our roadmap and future plans.'),
-
+            ...HeadlineComponent::form(),
             'steps' => Repeater::make('steps')
                 ->label(__('Steps'))
                 ->schema([
@@ -84,12 +71,10 @@ class RoadmapComponent extends AbstractCustomComponent
     public static function setupRenderPayload(array $data): array
     {
         return [
-            'heading' => $data['heading'] ?? '',
-            'subheading' => $data['subheading'] ?? '',
+            'headline' => HeadlineComponent::make($data['headline']),
             'cta_label' => $data['cta_label'] ?? '',
             'cta_url' => $data['cta_url'] ?? '',
             'steps' => $data['steps'] ?? [],
-            'caption' => $data['caption'] ?? [],
         ];
     }
 
