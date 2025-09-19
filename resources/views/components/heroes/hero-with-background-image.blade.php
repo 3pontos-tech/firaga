@@ -2,29 +2,25 @@
     'headline'
 ])
 
-<section class="relative isolate min-h-[700px] ">
+<section class="min-h-[300px] relative overflow-hidden">
     <!-- Background image and gradient overlay -->
-    <div class="absolute inset-0 -z-10 ">
-        <img
-            src="{{ $renderable?->getFirstMediaUrl(App\Enums\CustomComponent::HeroWithBackgroundImage->value) ?? asset('images/stock/work-with-us-hero.jpg') }}"
+    <div class="absolute inset-0 -z-10">
+        <div
+            style="background-image: url('{{ $renderable?->getFirstMediaUrl(App\Enums\CustomComponent::HeroWithBackgroundImage->value) ?? asset('images/stock/work-with-us-hero.jpg') }}');"
             alt="Trabalhe conosco"
-            class="h-full w-full object-cover object-center ">
-        <div class="absolute inset-0 bg-gradient-to-t from-elevation-surface to-elevation-surface/20 bg-elevation-surface/50"></div>
+            class="absolute inset-0 bg-cover bg-center bg-no-repeat">
+        </div>
+        <div class="absolute inset-0 bg-gradient-to-t lg:top-0  from-elevation-surface to-elevation-surface/20 bg-elevation-surface/50"></div>
     </div>
 
     <!-- Content container -->
-    <div class="mx-auto container ">
-        <div class="py-16 md:py-24 lg:py-32">
-            <!-- Text column: keep text left with readable max-width -->
-            <div class="max-w-2xl flex flex-col justify-between lg:max-w-3xl text-left">
-                <x-headline :component="$headline" >
-                    <x-slot:actions>
-                        @foreach($headline->actions as $action)
-                            <x-button rounded="sm" :component="$action" />
-                        @endforeach
-                    </x-slot:actions>
-                </x-headline>
-            </div>
-        </div>
+    <div class="container  lg:py-32">
+        <x-headline :component="$headline" class="mx-auto lg:max-w-4xl">
+            <x-slot:actions>
+                @foreach($headline->actions as $action)
+                    <x-button rounded="sm" :component="$action" />
+                @endforeach
+            </x-slot:actions>
+        </x-headline>
     </div>
 </section>

@@ -32,7 +32,7 @@ class HeroWithBackgroundImageComponent extends AbstractCustomComponent
 
     public static function fieldName(): string
     {
-        return CustomComponent::HeroWithBottomImage->value;
+        return CustomComponent::HeroWithBackgroundImage->value;
     }
 
     public static function setupRenderPayload(array $data): array

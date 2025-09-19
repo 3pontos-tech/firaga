@@ -34,7 +34,7 @@
     $tag = $as;
 
     $alignCls = match($align) {
-        'left' => 'lg:text-left text-left flex flex-col items-start',
+        'left' => 'lg:text-left text-center flex flex-col items-start',
         'center' => 'text-center lg:text-center flex flex-col items-center',
         default => 'text-center lg:text-left flex flex-col items-center',
     };

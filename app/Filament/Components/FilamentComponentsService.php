@@ -28,7 +28,7 @@ class FilamentComponentsService
 
             $name = sprintf('[%s] %s', $componentClass::getGroup(), str($componentClass::fieldName())->title()->replace('-', ' '));
             $blocks[] =
-                Builder\Block::make($name)
+                Builder\Block::make($componentClass::fieldName())
                     ->label($name)
                     ->icon($componentClass::imagePreview())
                     ->schema($componentClass::blockSchema());
