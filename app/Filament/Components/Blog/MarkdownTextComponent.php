@@ -38,4 +38,9 @@ class MarkdownTextComponent extends AbstractCustomComponent
     {
         return 'https://http.cat/201.png';
     }
+
+    public static function getGroup(): string
+    {
+        return 'Blog';
+    }
 }

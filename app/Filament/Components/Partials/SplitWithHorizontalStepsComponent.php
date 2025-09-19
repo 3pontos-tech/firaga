@@ -61,4 +61,9 @@ class SplitWithHorizontalStepsComponent extends AbstractCustomComponent
     {
         return 'https://http.cat/500';
     }
+
+    public static function getGroup(): string
+    {
+        return 'Section';
+    }
 }

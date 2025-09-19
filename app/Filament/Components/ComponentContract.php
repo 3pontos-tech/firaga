@@ -11,6 +11,8 @@ interface ComponentContract
 
     public static function fieldName(): string;
 
+    public static function getGroup(): string;
+
     /**
      * @param  array<string, mixed>  $data
      */
