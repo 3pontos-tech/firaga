@@ -20,7 +20,7 @@
     <div class="relative z-20 container py-16 sm:py-20 md:py-24 lg:py-32">
         <x-headline :component="$headline" class=" text-white">
             <x-slot:actions>
-                <div class="flex flex-wrap justify-center gap-3 sm:gap-4">
+                <div class="flex flex-wrap justify-center gap-3 sm:gap-4 ">
                     @foreach($headline->actions as $action)
                         <x-button rounded="sm" :component="$action"/>
                     @endforeach

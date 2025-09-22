@@ -37,7 +37,7 @@
 
     $classes = "$base " . ($sizes[$size] ?? $sizes['md']) . ' ' . ($variants[$variant] ?? $variants['brand']);
 @endphp
-
+<div class="w-full">
 <{{ $tag }} {{ $attributes->merge(['class' => $classes]) }}>
 
 
@@ -55,3 +55,4 @@
 {{ $component->label ?? $slot }}
 
 </{{ $tag }}>
+</div>

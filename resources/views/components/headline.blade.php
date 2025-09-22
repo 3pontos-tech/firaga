@@ -134,7 +134,17 @@
 
     {{-- Actions / CTA(s) --}}
     @isset($actions)
-        <div {{ $actions->attributes->class('flex flex-col sm:flex-row gap-3 sm:gap-x-4 items-center '.($align==='left'?'lg:items-start lg:justify-start justify-start':'justify-center lg:justify-start lg:items-start')) }}>
+        @php
+
+        $actionsAlign = match($align) {
+            'left' => 'lg:items-start lg:justify-start md:justify-center justify-center',
+            'center' => 'justify-center',
+            default => 'justify-center lg:justify-right lg:items-start',
+        };
+
+        @endphp
+
+        <div {{ $actions->attributes->class('flex w-full flex-col sm:flex-row gap-3 sm:gap-x-4 items-center ' . $actionsAlign) }}>
             {{ $actions }}
         </div>
     @endisset
