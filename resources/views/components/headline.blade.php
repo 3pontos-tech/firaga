@@ -76,6 +76,8 @@
 
 @endphp
 
+<div class="{{ $component->position == 'center' ? 'mx-auto' : '' }}  max-w-2xl md:max-w-3xl lg:max-w-4xl">
+
 <{{ $tag }} {{ $attributes->merge(['class' => "$animateCls  $alignCls "]) }}>
 
 @isset($badge)
@@ -140,3 +142,5 @@
 
 
 </{{ $tag }}>
+
+</div>
