@@ -2,6 +2,7 @@
 
 namespace App\Filament\Components;
 
+use Filament\Forms\Components\Builder\Block;
 use Filament\Forms\Components\Builder;
 use Webmozart\Assert\Assert;
 
@@ -28,7 +29,7 @@ class FilamentComponentsService
 
             $name = sprintf('[%s] %s', $componentClass::getGroup(), str($componentClass::fieldName())->title()->replace('-', ' '));
             $blocks[] =
-                Builder\Block::make($componentClass::fieldName())
+                Block::make($componentClass::fieldName())
                     ->label($name)
                     ->icon($componentClass::imagePreview())
                     ->schema($componentClass::blockSchema());
