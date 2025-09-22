@@ -7,8 +7,7 @@
     $alt = method_exists($headline, 'getTitle') ? $headline->getTitle() : ($headline->title ?? 'Hero background');
 @endphp
 
-<section
-        class="relative overflow-hidden min-h-[60svh] sm:min-h-[65svh] md:min-h-[70svh] lg:min-h-[75svh] xl:min-h-[80svh] ">
+<section class="relative overflow-hidden min-h-[60svh] sm:min-h-[65svh] md:min-h-[70svh] lg:min-h-[75svh] xl:min-h-[80svh] flex items-center justify-center">
     <!-- Background image and gradient overlay -->
     <div class="absolute inset-0 z-0">
         <img src="{{ $heroSrc }}" alt="{{ $alt }}"
