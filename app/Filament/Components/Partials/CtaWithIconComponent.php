@@ -54,4 +54,9 @@ class CtaWithIconComponent extends AbstractCustomComponent
     {
         return 'https://http.cat/500.png';
     }
+
+    public static function getGroup(): string
+    {
+        return 'CTA';
+    }
 }

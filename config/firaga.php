@@ -55,286 +55,285 @@ return [
                         'cta_url' => 'https://firece.com.br',
                     ],
                 ],
-                [
-                    'type' => CustomComponent::InfoStats->value,
-                    'data' => [
-                        'headline' => [
-                            'badge' => [
-                                'label' => 'Nossa História',
-                                'icon' => 'firece-logo',
-                                'hasBadge' => true,
-                            ],
-                            'heading' => 'Viva melhor com Educação Financeira',
-                            'description' => ' Transformamos a forma como as pessoas lidam com dinheiro, capacitando-as a conquistar liberdade, segurança e crescimento financeiro sustentável. ',
-                            'has_actions' => false,
-                            'actions' => [],
-                        ],
-                        'metrics' => [
-                            [
-                                'label' => 'Anos de experiência',
-                                'value' => '+10',
-                                'icon' => 'heroicon-o-star',
-                            ],
-                            [
-                                'label' => 'Consultores Financeiros',
-                                'value' => '+10',
-                                'icon' => 'heroicon-o-users',
-                            ],
-                            [
-                                'label' => 'Crescimento Anual',
-                                'value' => '+300%',
-                                'icon' => 'heroicon-o-arrow-trending-up',
-                            ],
-                            [
-                                'label' => 'Clientes Atendidos',
-                                'value' => '+2.000',
-                                'icon' => 'heroicon-o-user-plus',
-                            ],
-                        ],
-                    ],
-                ],
-
-                [
-                    'type' => CustomComponent::SplitWithHorizontalSteps->value,
-                    'data' => [
-                        'headline' => [
-                            'badge' => [
-                                'label' => 'Nossa História',
-                                'icon' => 'firece-logo',
-                                'hasBadge' => true,
-                            ],
-                            'position' => 'center',
-                            'heading' => 'Viva melhor com Educação Financeira',
-                            'description' => 'Transformamos a forma como as pessoas lidam com dinheiro, capacitando-as a conquistar liberdade, segurança e crescimento financeiro sustentável. ',
-                            'has_actions' => true,
-                            'actions' => [
-                                [
-                                    'label' => 'Agende uma Análise',
-                                    'url' => 'https://firece.com.br',
-                                    'target' => '_blank',
-                                ],
-                            ],
-                        ],
-                        'grid_columns' => 3,
-                        'cards' => [
-                            [
-                                'icon' => 'heroicon-o-magnifying-glass',
-                                'title' => 'Análise Financeira',
-                                'description' => 'O primeiro contato, onde conhecemos melhor suas metas, seus objetivos e estilo de vida para estruturarmos o seu planejamento financeiro estratégico.',
-                                'has_actions' => true,
-                                'actions' => [
-                                    [
-                                        'label' => 'Agende uma Análise',
-                                        'url' => 'https://firece.com.br',
-                                        'target' => '_blank',
-                                    ],
-                                ],
-                            ],
-                            [
-                                'icon' => 'heroicon-o-magnifying-glass',
-                                'title' => 'Análise Financeira',
-                                'description' => 'O primeiro contato, onde conhecemos melhor suas metas, seus objetivos e estilo de vida para estruturarmos o seu planejamento financeiro estratégico.',
-                                'has_actions' => true,
-                                'actions' => [
-                                    [
-                                        'label' => 'Agende uma Análise',
-                                        'url' => 'https://firece.com.br',
-                                        'target' => '_blank',
-                                    ],
-                                ],
-                            ],
-
-                            [
-                                'icon' => 'heroicon-o-magnifying-glass',
-                                'title' => 'Análise Financeira',
-                                'description' => 'O primeiro contato, onde conhecemos melhor suas metas, seus objetivos e estilo de vida para estruturarmos o seu planejamento financeiro estratégico.',
-                                'has_actions' => true,
-                                'actions' => [
-                                    [
-                                        'label' => 'Agende uma Análise',
-                                        'url' => 'https://firece.com.br',
-                                        'target' => '_blank',
-                                    ],
-                                ],
-                            ],
-
-                        ],
-                    ],
-                ],
-                [
-                    'type' => CustomComponent::SplitWithVerticalSteps->value,
-                    'data' => [
-                        'badge' => 'Nosso trabalho',
-                        'heading' => 'Transformamos a complexidade em clareza com nossa metodologia.',
-                        'description' => 'Levamos você da análise de perfil à execução estratégica, com suporte contínuo para maximizar seus resultados. Nossa metodologia foi desenvolvida para transformar a sua relação com o dinheiro em 3 etapas fundamentais:',
-                        'cta_url' => 'https://pudim.com.br',
-                        'cta_label' => 'Saiba mais',
-                        'cards' => [
-                            [
-                                'icon' => 'heroicon-o-magnifying-glass',
-                                'title' => 'Análise Financeira',
-                                'description' => 'O primeiro contato, onde conhecemos melhor suas metas, seus objetivos e estilo de vida para estruturarmos o seu planejamento financeiro estratégico.',
-                            ],
-                            [
-                                'icon' => FireceIcons::Target->value,
-                                'title' => 'Plano de Ação',
-                                'description' => 'Nosso segundo encontro, onde trazemos estratégias detalhadas para começar a colocar em prática todas as mudanças necessárias e soluções encontradas.',
-                            ],
-                            [
-                                'icon' => FireceIcons::Bubble->value,
-                                'title' => 'Acompanhamento',
-                                'description' => 'No terceiro momento, acompanhamos sua evolução e ajustamos o planejamento conforme sua vida muda. Estamos ao seu lado para que você se mantenha no caminho certo.',
-                            ],
-                        ],
-
-                    ],
-                ],
-                [
-                    'type' => CustomComponent::CallToActionFullWidthSection->value,
-                    'data' => [
-                        'title' => 'Não tema a faísca da mudança ele forja sua evolução.',
-                        'cta_url' => 'https://pudim.com.br',
-                        'cta_label' => 'Agende sua análise',
-                    ],
-                ],
-                [
-                    'type' => CustomComponent::HorizontalScrollerHighlight->value,
-                    'data' => [
-                        'badge' => 'Nossas especialidades',
-                        'heading' => 'Soluções personalizadas',
-                        'description' => 'Na nossa consultoria, entendemos que cada cliente é único. Por isso, desenvolvemos uma metodologia personalizada que se adapta às suas necessidades e objetivos financeiros.',
-                        'cta_url' => 'https://pudim.com.br',
-                        'cards' => [
-                            [
-                                'icon' => FireceIcons::NbGear->value,
-                                'title' => 'Planejamento Estratégico',
-                                'description' => 'Diagnóstico e plano financeiro personalizado para cada fase da sua vida.',
-                                'cta_url' => 'https://pudim.com.br',
-                                'cta_label' => 'Visitar',
-                            ],
-                            [
-                                'icon' => FireceIcons::NbStar->value,
-                                'title' => 'Key Account',
-                                'description' => 'Consultoria exclusiva e contínua para quem busca alta performance financeira.',
-                                'cta_url' => 'https://pudim.com.br',
-                                'cta_label' => 'Visitar',
-                            ],
-                            [
-                                'icon' => FireceIcons::NbMortarboard->value,
-                                'title' => 'Educa Fire',
-                                'description' => 'Conteúdos, cursos e eventos para transformar sua carreira dentro do mercado financeiro.',
-                                'cta_url' => 'https://pudim.com.br',
-                                'cta_label' => 'Visitar',
-                            ],
-                            [
-                                'icon' => FireceIcons::NbHands->value,
-                                'title' => 'Parcerias',
-                                'description' => 'Soluções integradas com especialistas e marcas que compartilham nossos valores.',
-                                'cta_url' => 'https://pudim.com.br',
-                                'cta_label' => 'Visitar',
-                            ],
-                            [
-                                'icon' => FireceIcons::NbComputer->value,
-                                'title' => 'Code Capital',
-                                'description' => 'Consultoria financeira especializada para profissionais do mercado tech.',
-                                'cta_url' => 'https://pudim.com.br',
-                                'cta_label' => 'Visitar',
-                            ],
-                        ],
-
-                    ],
-                ],
-                [
-                    'type' => CustomComponent::Plans->value,
-                    'data' => [
-                        'badge' => 'Investimento',
-                        'heading' => 'Conheça nossos planos',
-                        'subheading' => 'Conheça os planos da Fire|ce e entenda como a gente transforma a vida financeira de quem quer mais clareza, controle e crescimento',
-                        'plans' => [
-                            [
-                                'name' => 'gold',
-                                'best_plan' => false,
-                                'description' => 'Para quem está começando a organizar sua vida financeira e deseja mais tranquilidade.',
-                                'cta_label' => 'Saiba mais',
-                                'cta_url' => 'https://pudim.com.br',
-                                'benefits' => [
-                                    ['value' => 'Organização Anual'],
-                                    ['value' => 'Mapa financeiro'],
-                                    ['value' => 'Construção de Reserva'],
-                                    ['value' => 'Planilha de fluxo de caixa'],
-                                    ['value' => 'Planilha de patrimônio'],
-                                ],
-                            ],
-                            [
-                                'name' => 'platinum',
-                                'best_plan' => true,
-                                'description' => 'Para quem deseja ter o controle total de suas finanças e ser mais arrojado, além de mais diversidade.',
-                                'includes' => 'Itens do Gold',
-                                'cta_label' => 'Saiba mais',
-                                'cta_url' => 'https://pudim.com.br',
-                                'benefits' => [
-                                    ['value' => 'Preenchimento de Fluxo de Caixa'],
-                                    ['value' => 'Diagnóstico de carteira'],
-                                    ['value' => 'Estruturar aquisição de bens'],
-                                    ['value' => 'Parceiros de investimentos'],
-                                    ['value' => 'Custo Oportunidade'],
-                                ],
-                            ],
-                            [
-                                'name' => 'black',
-                                'best_plan' => false,
-                                'description' => 'Para quem já investe e deseja estratégias personalizadas para potencializar seu patrimônio.',
-                                'includes' => 'Itens do Gold & Platinum',
-                                'cta_label' => 'Saiba mais',
-                                'cta_url' => 'https://pudim.com.br',
-                                'benefits' => [
-                                    ['value' => 'Revisão de Progresso'],
-                                    ['value' => 'Carteira Personalizada'],
-                                    ['value' => 'Reserva Internacional'],
-                                    ['value' => 'Estratégias Exclusivas'],
-                                    ['value' => 'Possibilidade Key Account'],
-                                    ['value' => 'Possibilidade Key Account'],
-                                ],
-                            ],
-                        ],
-                    ],
-
-                ],
-                [
-                    'type' => CustomComponent::FullWidthVideo->value,
-                    'data' => [
-                        'badge' => 'Institucional',
-                        'heading' => 'Nos conheça melhor',
-                        'description' => 'Você não precisa enfrentar sua vida financeira sozinho. Descubra como a Fire|ce pode caminhar com você — do caos à conquista.',
-                        'video_url' => 'https://pudim.com.br',
-                    ],
-                ],
-                [
-                    'type' => CustomComponent::CallToActionFullWidthSection->value,
-                    'data' => [
-                        'title' => 'Tem jeito, tem plano e tem apoio. A Firece está com você nessa virada financeira.',
-                        'cta_url' => 'https://pudim.com.br',
-                        'cta_label' => 'Agende sua análise',
-                    ],
-                ],
-                [
-                    'type' => CustomComponent::Testimonials->value,
-                    'data' => [
-                        'heading' => 'Escute de nossos clientes',
-                        'badge' => 'Depoimentos',
-                        'testimonials' => [1, 6, 10, 7],
-                    ],
-                ],
-                [
-                    'type' => CustomComponent::CallToActionWithIconSection->value,
-                    'data' => [
-                        'title' => 'Visite nosso Blog e tenha acesso à conteúdos exclusivos',
-                        'description' => 'Nosso blog é o lugar ideal para quem busca conhecimento e insights sobre o mercado financeiro, nacional e global.',
-                        'cta_label' => 'Visitar Blog',
-                        'cta_url' => 'https://firece.com.br/blog',
-                        'icon' => 'firece-star', // faltou icone
-                    ],
-                ],
+                //                [
+                //                    'type' => CustomComponent::InfoStats->value,
+                //                    'data' => [
+                //                        'headline' => [
+                //                            'badge' => [
+                //                                'label' => 'Nossa História',
+                //                                'icon' => 'firece-logo',
+                //                                'hasBadge' => true,
+                //                            ],
+                //                            'heading' => 'Viva melhor com Educação Financeira',
+                //                            'description' => ' Transformamos a forma como as pessoas lidam com dinheiro, capacitando-as a conquistar liberdade, segurança e crescimento financeiro sustentável. ',
+                //                            'has_actions' => false,
+                //                            'actions' => [],
+                //                        ],
+                //                        'metrics' => [
+                //                            [
+                //                                'label' => 'Anos de experiência',
+                //                                'value' => '+10',
+                //                                'icon' => 'heroicon-o-star',
+                //                            ],
+                //                            [
+                //                                'label' => 'Consultores Financeiros',
+                //                                'value' => '+10',
+                //                                'icon' => 'heroicon-o-users',
+                //                            ],
+                //                            [
+                //                                'label' => 'Crescimento Anual',
+                //                                'value' => '+300%',
+                //                                'icon' => 'heroicon-o-arrow-trending-up',
+                //                            ],
+                //                            [
+                //                                'label' => 'Clientes Atendidos',
+                //                                'value' => '+2.000',
+                //                                'icon' => 'heroicon-o-user-plus',
+                //                            ],
+                //                        ],
+                //                    ],
+                //                ],
+                //                [
+                //                    'type' => CustomComponent::SplitWithHorizontalSteps->value,
+                //                    'data' => [
+                //                        'headline' => [
+                //                            'badge' => [
+                //                                'label' => 'Nossa História',
+                //                                'icon' => 'firece-logo',
+                //                                'hasBadge' => true,
+                //                            ],
+                //                            'position' => 'center',
+                //                            'heading' => 'Viva melhor com Educação Financeira',
+                //                            'description' => 'Transformamos a forma como as pessoas lidam com dinheiro, capacitando-as a conquistar liberdade, segurança e crescimento financeiro sustentável. ',
+                //                            'has_actions' => true,
+                //                            'actions' => [
+                //                                [
+                //                                    'label' => 'Agende uma Análise',
+                //                                    'url' => 'https://firece.com.br',
+                //                                    'target' => '_blank',
+                //                                ],
+                //                            ],
+                //                        ],
+                //                        'grid_columns' => 3,
+                //                        'cards' => [
+                //                            [
+                //                                'icon' => 'heroicon-o-magnifying-glass',
+                //                                'title' => 'Análise Financeira',
+                //                                'description' => 'O primeiro contato, onde conhecemos melhor suas metas, seus objetivos e estilo de vida para estruturarmos o seu planejamento financeiro estratégico.',
+                //                                'has_actions' => true,
+                //                                'actions' => [
+                //                                    [
+                //                                        'label' => 'Agende uma Análise',
+                //                                        'url' => 'https://firece.com.br',
+                //                                        'target' => '_blank',
+                //                                    ],
+                //                                ],
+                //                            ],
+                //                            [
+                //                                'icon' => 'heroicon-o-magnifying-glass',
+                //                                'title' => 'Análise Financeira',
+                //                                'description' => 'O primeiro contato, onde conhecemos melhor suas metas, seus objetivos e estilo de vida para estruturarmos o seu planejamento financeiro estratégico.',
+                //                                'has_actions' => true,
+                //                                'actions' => [
+                //                                    [
+                //                                        'label' => 'Agende uma Análise',
+                //                                        'url' => 'https://firece.com.br',
+                //                                        'target' => '_blank',
+                //                                    ],
+                //                                ],
+                //                            ],
+                //
+                //                            [
+                //                                'icon' => 'heroicon-o-magnifying-glass',
+                //                                'title' => 'Análise Financeira',
+                //                                'description' => 'O primeiro contato, onde conhecemos melhor suas metas, seus objetivos e estilo de vida para estruturarmos o seu planejamento financeiro estratégico.',
+                //                                'has_actions' => true,
+                //                                'actions' => [
+                //                                    [
+                //                                        'label' => 'Agende uma Análise',
+                //                                        'url' => 'https://firece.com.br',
+                //                                        'target' => '_blank',
+                //                                    ],
+                //                                ],
+                //                            ],
+                //
+                //                        ],
+                //                    ],
+                //                ],
+                //                [
+                //                    'type' => CustomComponent::SplitWithVerticalSteps->value,
+                //                    'data' => [
+                //                        'badge' => 'Nosso trabalho',
+                //                        'heading' => 'Transformamos a complexidade em clareza com nossa metodologia.',
+                //                        'description' => 'Levamos você da análise de perfil à execução estratégica, com suporte contínuo para maximizar seus resultados. Nossa metodologia foi desenvolvida para transformar a sua relação com o dinheiro em 3 etapas fundamentais:',
+                //                        'cta_url' => 'https://pudim.com.br',
+                //                        'cta_label' => 'Saiba mais',
+                //                        'cards' => [
+                //                            [
+                //                                'icon' => 'heroicon-o-magnifying-glass',
+                //                                'title' => 'Análise Financeira',
+                //                                'description' => 'O primeiro contato, onde conhecemos melhor suas metas, seus objetivos e estilo de vida para estruturarmos o seu planejamento financeiro estratégico.',
+                //                            ],
+                //                            [
+                //                                'icon' => FireceIcons::Target->value,
+                //                                'title' => 'Plano de Ação',
+                //                                'description' => 'Nosso segundo encontro, onde trazemos estratégias detalhadas para começar a colocar em prática todas as mudanças necessárias e soluções encontradas.',
+                //                            ],
+                //                            [
+                //                                'icon' => FireceIcons::Bubble->value,
+                //                                'title' => 'Acompanhamento',
+                //                                'description' => 'No terceiro momento, acompanhamos sua evolução e ajustamos o planejamento conforme sua vida muda. Estamos ao seu lado para que você se mantenha no caminho certo.',
+                //                            ],
+                //                        ],
+                //
+                //                    ],
+                //                ],
+                //                [
+                //                    'type' => CustomComponent::CallToActionFullWidthSection->value,
+                //                    'data' => [
+                //                        'title' => 'Não tema a faísca da mudança ele forja sua evolução.',
+                //                        'cta_url' => 'https://pudim.com.br',
+                //                        'cta_label' => 'Agende sua análise',
+                //                    ],
+                //                ],
+                //                [
+                //                    'type' => CustomComponent::HorizontalScrollerHighlight->value,
+                //                    'data' => [
+                //                        'badge' => 'Nossas especialidades',
+                //                        'heading' => 'Soluções personalizadas',
+                //                        'description' => 'Na nossa consultoria, entendemos que cada cliente é único. Por isso, desenvolvemos uma metodologia personalizada que se adapta às suas necessidades e objetivos financeiros.',
+                //                        'cta_url' => 'https://pudim.com.br',
+                //                        'cards' => [
+                //                            [
+                //                                'icon' => FireceIcons::NbGear->value,
+                //                                'title' => 'Planejamento Estratégico',
+                //                                'description' => 'Diagnóstico e plano financeiro personalizado para cada fase da sua vida.',
+                //                                'cta_url' => 'https://pudim.com.br',
+                //                                'cta_label' => 'Visitar',
+                //                            ],
+                //                            [
+                //                                'icon' => FireceIcons::NbStar->value,
+                //                                'title' => 'Key Account',
+                //                                'description' => 'Consultoria exclusiva e contínua para quem busca alta performance financeira.',
+                //                                'cta_url' => 'https://pudim.com.br',
+                //                                'cta_label' => 'Visitar',
+                //                            ],
+                //                            [
+                //                                'icon' => FireceIcons::NbMortarboard->value,
+                //                                'title' => 'Educa Fire',
+                //                                'description' => 'Conteúdos, cursos e eventos para transformar sua carreira dentro do mercado financeiro.',
+                //                                'cta_url' => 'https://pudim.com.br',
+                //                                'cta_label' => 'Visitar',
+                //                            ],
+                //                            [
+                //                                'icon' => FireceIcons::NbHands->value,
+                //                                'title' => 'Parcerias',
+                //                                'description' => 'Soluções integradas com especialistas e marcas que compartilham nossos valores.',
+                //                                'cta_url' => 'https://pudim.com.br',
+                //                                'cta_label' => 'Visitar',
+                //                            ],
+                //                            [
+                //                                'icon' => FireceIcons::NbComputer->value,
+                //                                'title' => 'Code Capital',
+                //                                'description' => 'Consultoria financeira especializada para profissionais do mercado tech.',
+                //                                'cta_url' => 'https://pudim.com.br',
+                //                                'cta_label' => 'Visitar',
+                //                            ],
+                //                        ],
+                //
+                //                    ],
+                //                ],
+                //                [
+                //                    'type' => CustomComponent::Plans->value,
+                //                    'data' => [
+                //                        'badge' => 'Investimento',
+                //                        'heading' => 'Conheça nossos planos',
+                //                        'subheading' => 'Conheça os planos da Fire|ce e entenda como a gente transforma a vida financeira de quem quer mais clareza, controle e crescimento',
+                //                        'plans' => [
+                //                            [
+                //                                'name' => 'gold',
+                //                                'best_plan' => false,
+                //                                'description' => 'Para quem está começando a organizar sua vida financeira e deseja mais tranquilidade.',
+                //                                'cta_label' => 'Saiba mais',
+                //                                'cta_url' => 'https://pudim.com.br',
+                //                                'benefits' => [
+                //                                    ['value' => 'Organização Anual'],
+                //                                    ['value' => 'Mapa financeiro'],
+                //                                    ['value' => 'Construção de Reserva'],
+                //                                    ['value' => 'Planilha de fluxo de caixa'],
+                //                                    ['value' => 'Planilha de patrimônio'],
+                //                                ],
+                //                            ],
+                //                            [
+                //                                'name' => 'platinum',
+                //                                'best_plan' => true,
+                //                                'description' => 'Para quem deseja ter o controle total de suas finanças e ser mais arrojado, além de mais diversidade.',
+                //                                'includes' => 'Itens do Gold',
+                //                                'cta_label' => 'Saiba mais',
+                //                                'cta_url' => 'https://pudim.com.br',
+                //                                'benefits' => [
+                //                                    ['value' => 'Preenchimento de Fluxo de Caixa'],
+                //                                    ['value' => 'Diagnóstico de carteira'],
+                //                                    ['value' => 'Estruturar aquisição de bens'],
+                //                                    ['value' => 'Parceiros de investimentos'],
+                //                                    ['value' => 'Custo Oportunidade'],
+                //                                ],
+                //                            ],
+                //                            [
+                //                                'name' => 'black',
+                //                                'best_plan' => false,
+                //                                'description' => 'Para quem já investe e deseja estratégias personalizadas para potencializar seu patrimônio.',
+                //                                'includes' => 'Itens do Gold & Platinum',
+                //                                'cta_label' => 'Saiba mais',
+                //                                'cta_url' => 'https://pudim.com.br',
+                //                                'benefits' => [
+                //                                    ['value' => 'Revisão de Progresso'],
+                //                                    ['value' => 'Carteira Personalizada'],
+                //                                    ['value' => 'Reserva Internacional'],
+                //                                    ['value' => 'Estratégias Exclusivas'],
+                //                                    ['value' => 'Possibilidade Key Account'],
+                //                                    ['value' => 'Possibilidade Key Account'],
+                //                                ],
+                //                            ],
+                //                        ],
+                //                    ],
+                //
+                //                ],
+                //                [
+                //                    'type' => CustomComponent::FullWidthVideo->value,
+                //                    'data' => [
+                //                        'badge' => 'Institucional',
+                //                        'heading' => 'Nos conheça melhor',
+                //                        'description' => 'Você não precisa enfrentar sua vida financeira sozinho. Descubra como a Fire|ce pode caminhar com você — do caos à conquista.',
+                //                        'video_url' => 'https://pudim.com.br',
+                //                    ],
+                //                ],
+                //                [
+                //                    'type' => CustomComponent::CallToActionFullWidthSection->value,
+                //                    'data' => [
+                //                        'title' => 'Tem jeito, tem plano e tem apoio. A Firece está com você nessa virada financeira.',
+                //                        'cta_url' => 'https://pudim.com.br',
+                //                        'cta_label' => 'Agende sua análise',
+                //                    ],
+                //                ],
+                //                [
+                //                    'type' => CustomComponent::Testimonials->value,
+                //                    'data' => [
+                //                        'heading' => 'Escute de nossos clientes',
+                //                        'badge' => 'Depoimentos',
+                //                        'testimonials' => [1, 6, 10, 7],
+                //                    ],
+                //                ],
+                //                [
+                //                    'type' => CustomComponent::CallToActionWithIconSection->value,
+                //                    'data' => [
+                //                        'title' => 'Visite nosso Blog e tenha acesso à conteúdos exclusivos',
+                //                        'description' => 'Nosso blog é o lugar ideal para quem busca conhecimento e insights sobre o mercado financeiro, nacional e global.',
+                //                        'cta_label' => 'Visitar Blog',
+                //                        'cta_url' => 'https://firece.com.br/blog',
+                //                        'icon' => 'firece-star', // faltou icone
+                //                    ],
+                //                ],
             ],
             'status' => 'published',
         ],

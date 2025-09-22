@@ -88,4 +88,9 @@ class PlansComponent extends AbstractCustomComponent
     {
         return 'https://http.cat/599';
     }
+
+    public static function getGroup(): string
+    {
+        return 'Section';
+    }
 }

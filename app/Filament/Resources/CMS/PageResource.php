@@ -2,6 +2,7 @@
 
 namespace App\Filament\Resources\CMS;
 
+use App\Filament\Components\FilamentComponentsService;
 use App\Filament\Resources\CMS\PageResource\Pages\CreatePage;
 use App\Filament\Resources\CMS\PageResource\Pages\EditPage;
 use App\Filament\Resources\CMS\PageResource\Pages\ListPages;
@@ -25,8 +26,6 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Str;
 use Webid\Druid\Enums\PageStatus;
-// use Webid\Druid\Filament\Resources\CommonFields;
-use Webid\Druid\Services\Admin\FilamentComponentsService;
 
 class PageResource extends Resource
 {

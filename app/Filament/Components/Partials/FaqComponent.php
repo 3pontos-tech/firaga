@@ -59,4 +59,9 @@ class FaqComponent extends AbstractCustomComponent
     {
         return '';
     }
+
+    public static function getGroup(): string
+    {
+        return 'Partial';
+    }
 }

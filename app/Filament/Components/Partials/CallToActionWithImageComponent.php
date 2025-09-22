@@ -60,4 +60,9 @@ class CallToActionWithImageComponent extends AbstractCustomComponent
     {
         return 'https://http.cat/200.png';
     }
+
+    public static function getGroup(): string
+    {
+        return 'CTA';
+    }
 }

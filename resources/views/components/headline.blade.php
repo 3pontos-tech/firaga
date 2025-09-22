@@ -1,5 +1,5 @@
 @php
-    use App\Filament\Components\DTOs\HeadlineComponent;
+    use App\Filament\Components\DTOs\BadgeComponent;use App\Filament\Components\DTOs\HeadlineComponent;
 @endphp
 @props([
     'as' => 'div',
@@ -10,7 +10,6 @@
     'width' => 'default',    // default|narrow|wide|full
     'component',   // for internal use only
 ])
-
 @php
     if(isset($component) && !$component instanceof HeadlineComponent) {
         throw new \Exception("Component must be an instance of HeadlineComponent");
@@ -18,7 +17,7 @@
     /** @var HeadlineComponent $component */
 
     if($component) {
-        /** @var \App\Filament\Components\DTOs\BadgeComponent $badge */
+        /** @var BadgeComponent $badge */
         $badgeComponent = $component->badge;
         $componentDescription = $component->description ?? null;
 
@@ -34,7 +33,7 @@
     $tag = $as;
 
     $alignCls = match($align) {
-        'left' => 'lg:text-left text-left flex flex-col items-start',
+        'left' => 'lg:text-left text-center flex flex-col items-start',
         'center' => 'text-center lg:text-center flex flex-col items-center',
         default => 'text-center lg:text-left flex flex-col items-center',
     };
@@ -76,67 +75,81 @@
 
 @endphp
 
-<{{ $tag }} {{ $attributes->merge(['class' => "$animateCls  $alignCls "]) }}>
+<div class="{{ $component->position == 'center' ? 'mx-auto' : '' }}  max-w-2xl md:max-w-3xl lg:max-w-4xl">
 
-@isset($badge)
-    <div {{ $badge->attributes }}>
-        {{ $badge }}
-    </div>
-@endisset
+    <{{ $tag }} {{ $attributes->merge(['class' => "$animateCls  $alignCls "]) }}>
 
-@if(isset($badgeComponent) && $badgeComponent->hasBadge)
-    <x-badge :component="$badgeComponent"/>
-@endif
+    @isset($badge)
+        <div {{ $badge->attributes }}>
+            {{ $badge }}
+        </div>
+    @endisset
+
+    @if(isset($badgeComponent) && $badgeComponent->hasBadge)
+        <x-badge :component="$badgeComponent" />
+    @endif
 
 
-@isset($headline)
+    @isset($headline)
 
-    <h1 {{ $headline->attributes->class("text-text-high font-bold drop-shadow-lg leading-tight mb-2 sm:mb-4 ") }}>
-        {{ $component->headline ?? $headline }}
-    </h1>
-@endisset
+        <h1 {{ $headline->attributes->class("text-text-high font-bold drop-shadow-lg leading-tight mb-2 sm:mb-4 ") }}>
+            {{ $component->headline ?? $headline }}
+        </h1>
+    @endisset
 
-@if($component->heading)
-    <h1 {{ $attributes->merge(['class' => "text-text-high text-2xl font-bold drop-shadow-lg tracking-wide mb-2 sm:mb-4 " . $sizes['h']]) }}>
+    @if($component->heading)
+        <h1 {{ $attributes->merge(['class' => "text-text-high text-2xl font-bold drop-shadow-lg tracking-wide mb-2 sm:mb-4 " . $sizes['h']]) }}>
 
+            @php
+                $headline = str($component->heading)->explode(' ');
+            @endphp
+            @foreach($headline as $word)
+                @if(in_array($word, $component->keywords))
+                    <span class="text-brand-primary">{{ $word }}</span>
+                @else
+                    {{ $word }}
+                @endif
+                @if(!$loop->last)
+                    {{-- Add space between words except after the last one --}}
+                    {{ ' ' }}
+                @endif
+            @endforeach
+        </h1>
+    @endisset
+
+    {{-- Description --}}
+
+
+    @isset($description)
+        <p {{ $description->attributes->class("text-text-high dark:text-text-medium font-medium animate-fade-in delay-200 max-w-full mb-4 sm:mb-6 " . $sizes['p']) }}>
+            {{ $description }}
+        </p>
+    @endisset
+
+    @if($componentDescription)
+        <p {{ $attributes->merge(['class' => "text-text-high dark:text-text-medium font-medium animate-fade-in delay-200 max-w-full mb-4 sm:mb-6 " . $sizes['p']]) }}>
+            {{ $componentDescription }}
+        </p>
+    @endisset
+
+    {{-- Actions / CTA(s) --}}
+    @isset($actions)
         @php
-            $headline = str($component->heading)->explode(' ');
+
+        $actionsAlign = match($align) {
+            'left' => 'lg:items-start lg:justify-start md:justify-center justify-center',
+            'center' => 'justify-center',
+            default => 'justify-center lg:justify-right lg:items-start',
+        };
+
         @endphp
-        @foreach($headline as $word)
-            @if(in_array($word, $component->keywords))
-                <span class="text-brand-primary">{{ $word }}</span>
-            @else
-                {{ $word }}
-            @endif
-            @if(!$loop->last)
-                {{-- Add space between words except after the last one --}}
-                {{ ' ' }}
-            @endif
-        @endforeach
-    </h1>
-@endisset
 
-{{-- Description --}}
-
-
-@isset($description)
-    <p {{ $description->attributes->class("text-text-high dark:text-text-medium font-medium animate-fade-in delay-200 max-w-full mb-4 sm:mb-6 " . $sizes['p']) }}>
-        {{ $description }}
-    </p>
-@endisset
-
-@if($componentDescription)
-    <p {{ $attributes->merge(['class' => "text-text-high dark:text-text-medium font-medium animate-fade-in delay-200 max-w-full mb-4 sm:mb-6 " . $sizes['p']]) }}>
-        {{ $componentDescription }}
-    </p>
-@endisset
-
-{{-- Actions / CTA(s) --}}
-@isset($actions)
-    <div {{ $actions->attributes->class('flex flex-col sm:flex-row gap-3 sm:gap-x-4 items-center '.($align==='left'?'lg:items-start lg:justify-start justify-start':'justify-center lg:justify-start lg:items-start')) }}>
-        {{ $actions }}
-    </div>
-@endisset
+        <div {{ $actions->attributes->class('flex w-full flex-col sm:flex-row gap-3 sm:gap-x-4 items-center ' . $actionsAlign) }}>
+            {{ $actions }}
+        </div>
+    @endisset
 
 
 </{{ $tag }}>
+
+</div>

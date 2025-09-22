@@ -45,4 +45,9 @@ class QuoteComponent extends AbstractCustomComponent
     {
         return 'https://http.cat/404.png';
     }
+
+    public static function getGroup(): string
+    {
+        return 'Section';
+    }
 }

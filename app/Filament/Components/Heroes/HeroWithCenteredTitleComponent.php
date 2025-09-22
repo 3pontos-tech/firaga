@@ -47,4 +47,9 @@ class HeroWithCenteredTitleComponent extends AbstractCustomComponent
     {
         return 'https://http.cat/301.png';
     }
+
+    public static function getGroup(): string
+    {
+        return 'Hero';
+    }
 }
