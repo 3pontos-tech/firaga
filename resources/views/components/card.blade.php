@@ -90,21 +90,29 @@
 
     $alignText = $align === 'center' ? ' text-center' : '';
 
+    $alignText = match($variant) {
+        'callout' => [
+            'left' => 'text-left',
+            'center' => 'md:text-left lg:text-center',
+        ],
+        default => $alignText,
+    };
+
     $titleBase = match($variant) {
         'cta'  => 'text-xl font-bold tracking-tight',
         'callout' => 'text-lg font-semibold md:text-left tracking-tight lg:text-center',
         default => 'text-lg font-semibold tracking-tight',
     };
-    $titleClass = trim($titleBase . $alignText . ' ' . ($isInteractive ? $interactiveText : ''));
+    $titleClass = trim($titleBase . $alignText[$align] . ' ' . ($isInteractive ? $interactiveText : ''));
 
     $subtitleBase = match($variant) {
         'stat' => 'text-md text-text-medium',
         'callout' => 'text-sm text-text-medium md:text-left lg:text-center',
         default => 'text-sm text-text-medium',
     };
-    $subtitleClass = trim($subtitleBase . $alignText . ' ' . ($isInteractive ? $interactiveText : ''));
+    $subtitleClass = trim($subtitleBase . $alignText[$align] . ' ' . ($isInteractive ? $interactiveText : ''));
 
-    $metricClass = trim('text-3xl text-text-high font-bold' . $alignText);
+    $metricClass = trim('text-3xl text-text-high font-bold' . $alignText[$align]);
 
     // Disabled visuals
     $disabledClasses = $disabled ? ' pointer-events-none cursor-not-allowed opacity-60' : '';
@@ -132,36 +140,73 @@
 @endphp
 
 <div class="{{ $isInteractive ? 'group/card' : '' }}">
-<{{ $tag }} {{ $attributes->merge(['class' => $classes])->merge($linkAttrs) }}>
+    <{{ $tag }} {{ $attributes->merge(['class' => $classes])->merge($linkAttrs) }}>
 
-@if($variant === 'stat')
-    @isset($icon)
-        <div {{ $icon->attributes->class($iconClass) }}>
-            {{ $icon }}
+    @if($variant === 'stat')
+        @isset($icon)
+            <div {{ $icon->attributes->class($iconClass) }}>
+                {{ $icon }}
+            </div>
+        @else
+            @if($card && $card->icon)
+                <div class="{{ $iconClass }}">
+                    <x-filament::icon :icon="$card->icon" class="w-9 h-9 lg:h-11 lg:w-11"/>
+                </div>
+            @endif
+        @endisset
+
+        @isset($title)
+            <h3 {{ $title->attributes->class($titleClass) }}>
+                {{ $title }}
+            </h3>
+        @else
+            @if($card && $card->title)
+                <h3 class="{{ $titleClass }}">{{ $card->title }}</h3>
+            @endif
+        @endisset
+
+        <div class="flex flex-col gap-y-2">
+            @isset($metric)
+                <div {{ $metric->attributes->class($metricClass) }}>
+                    {{ $metric }}
+                </div>
+            @endisset
+
+            @isset($subtitle)
+                <p {{ $subtitle->attributes->class($subtitleClass) }}>
+                    {{ $subtitle }}
+                </p>
+            @else
+                @if($card && $card->description)
+                    <p class="{{ $subtitleClass }}">{{ $card->description }}</p>
+                @endif
+            @endisset
         </div>
-    @else
-        @if($card && $card->icon)
-            <div class="{{ $iconClass }}">
-                <x-filament::icon :icon="$card->icon" class="w-9 h-9 lg:h-11 lg:w-11" />
-            </div>
-        @endif
-    @endisset
 
-    @isset($title)
-        <h3 {{ $title->attributes->class($titleClass) }}>
-            {{ $title }}
-        </h3>
-    @else
-        @if($card && $card->title)
-            <h3 class="{{ $titleClass }}">{{ $card->title }}</h3>
-        @endif
-    @endisset
+    @endif
 
-    <div class="flex flex-col gap-y-2">
-        @isset($metric)
-            <div {{ $metric->attributes->class($metricClass) }}>
-                {{ $metric }}
+    @if($variant === 'cta')
+
+        @isset($icon)
+            <div {{ $icon->attributes->class($iconClass) }}>
+                {{ $icon }}
             </div>
+        @else
+            @if($card && $card->icon)
+                <div class="{{ $iconClass }}">
+                    <x-filament::icon :icon="$card->icon" class="w-9 h-9 lg:h-11 lg:w-11"/>
+                </div>
+            @endif
+        @endisset
+
+        @isset($title)
+            <h3 {{ $title->attributes->class($titleClass) }}>
+                {{ $title }}
+            </h3>
+        @else
+            @if($card && $card->title)
+                <h3 class="{{ $titleClass }}">{{ $card->title }}</h3>
+            @endif
         @endisset
 
         @isset($subtitle)
@@ -173,97 +218,60 @@
                 <p class="{{ $subtitleClass }}">{{ $card->description }}</p>
             @endif
         @endisset
-    </div>
 
-@endif
+        <div>{{ $slot }}</div>
 
-@if($variant === 'cta')
-
-    @isset($icon)
-        <div {{ $icon->attributes->class($iconClass) }}>
-            {{ $icon }}
-        </div>
-    @else
-        @if($card && $card->icon)
-            <div class="{{ $iconClass }}">
-                <x-filament::icon :icon="$card->icon" class="w-9 h-9 lg:h-11 lg:w-11" />
+        @isset($footer)
+            {{-- show CTA only when card hovered, if interactive --}}
+            <div {{ $footer->attributes->class($isInteractive ? 'hidden lg:block lg:opacity-0 lg:group-hover/card:opacity-100 w-full' : 'w-full') }}>
+                {{ $footer }}
             </div>
-        @endif
-    @endisset
+        @endisset
+    @endif
 
-    @isset($title)
-        <h3 {{ $title->attributes->class($titleClass) }}>
-            {{ $title }}
-        </h3>
-    @else
-        @if($card && $card->title)
-            <h3 class="{{ $titleClass }}">{{ $card->title }}</h3>
-        @endif
-    @endisset
-
-    @isset($subtitle)
-        <p {{ $subtitle->attributes->class($subtitleClass) }}>
-            {{ $subtitle }}
-        </p>
-    @else
-        @if($card && $card->description)
-            <p class="{{ $subtitleClass }}">{{ $card->description }}</p>
-        @endif
-    @endisset
-
-    <div>{{ $slot }}</div>
-
-    @isset($footer)
-        {{-- show CTA only when card hovered, if interactive --}}
-        <div {{ $footer->attributes->class($isInteractive ? 'hidden lg:block lg:opacity-0 lg:group-hover/card:opacity-100 w-full' : 'w-full') }}>
-            {{ $footer }}
-        </div>
-    @endisset
-@endif
-
-@if($variant === 'callout')
-    @isset($icon)
-        <div {{ $icon->attributes->class($iconClass) }}>
-            {{ $icon }}
-        </div>
-    @else
-        @if($card && $card->icon)
-            <div class="{{ $iconClass }}">
-                <x-filament::icon :icon="$card->icon" class="w-9 h-9 lg:h-11 lg:w-11" />
+    @if($variant === 'callout')
+        @isset($icon)
+            <div {{ $icon->attributes->class($iconClass) }}>
+                {{ $icon }}
             </div>
-        @endif
-    @endisset
-
-    <div class="px-4 space-y-2">
-        @isset($title)
-            <h3 {{ $title->attributes->class($titleClass) }}>
-                {{ $title }}
-            </h3>
         @else
-            @if($card && $card->title)
-                <h3 class="{{ $titleClass }}">{{ $card->title }}</h3>
+            @if($card && $card->icon)
+                <div class="{{ $iconClass }}">
+                    <x-filament::icon :icon="$card->icon" class="w-9 h-9 lg:h-11 lg:w-11"/>
+                </div>
             @endif
         @endisset
 
+        <div class="px-4 space-y-2">
+            @isset($title)
+                <h3 {{ $title->attributes->class($titleClass) }}>
+                    {{ $title }}
+                </h3>
+            @else
+                @if($card && $card->title)
+                    <h3 class="{{ $titleClass }}">{{ $card->title }}</h3>
+                @endif
+            @endisset
 
-        @isset($subtitle)
-            <p {{ $subtitle->attributes->class('text-sm text-text-medium') }}>
-                {{ $subtitle }}
-            </p>
-        @else
-            @if($card && $card->description)
-                <p class="{{ $subtitleClass }}  {{ $isInteractive ? 'group-hover/card:text-text-light' : '' }} ">{{ $card->description }}</p>
-            @endif
-        @endisset
-    </div>
 
-    <div>{{ $slot }}</div>
-
-    @isset($footer)
-        <div {{ $footer->attributes->class('mt-4 pt-4 border-t border-zinc-800/80') }}>
-            {{ $footer }}
+            @isset($subtitle)
+                <p {{ $subtitle->attributes->class('text-sm text-text-medium') }}>
+                    {{ $subtitle }}
+                </p>
+            @else
+                @if($card && $card->description)
+                    <p class="{{ $subtitleClass }}  {{ $isInteractive ? 'group-hover/card:text-text-light' : '' }} ">{{ $card->description }}</p>
+                @endif
+            @endisset
         </div>
-    @endisset
-@endif
+
+        <div>{{ $slot }}</div>
+
+        @isset($footer)
+            <div {{ $footer->attributes->class('mt-4 pt-4 border-t border-zinc-800/80') }}>
+                {{ $footer }}
+            </div>
+        @endisset
+    @endif
 </{{ $tag }}>
 </div>

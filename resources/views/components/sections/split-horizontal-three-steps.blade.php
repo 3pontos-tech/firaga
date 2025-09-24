@@ -18,7 +18,7 @@
         </div>
         <div class="grid  {{ $maxGridColumns }} gap-8">
             @foreach($cards as $card)
-                <x-card :card="$card" variant="callout" emphasis="primary" align="center" :interactive="true" />
+                <x-card :card="$card" variant="callout" emphasis="primary" align="left" :interactive="true" />
             @endforeach
         </div>
     </div>
