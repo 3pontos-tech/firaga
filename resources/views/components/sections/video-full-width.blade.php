@@ -10,7 +10,7 @@
     <div class="absolute bottom-0 left-0 w-full h-1/5 md:h-1/2 bg-brand-primary"></div>
 
     <div class="relative z-10 h-full flex flex-col">
-        <div class="flex-shrink-0 container max-w-7xl mx-auto px-4 md:px-6 mb-8 md:mb-12">
+        <div class="flex-shrink-0 container max-w-7xl mx-auto px-1 md:px-2 mb-8 md:mb-12">
             <div class="text-center flex flex-col items-center gap-y-4">
                 <x-layout.shared.chip class="px-4 py-2">
                     {{ $badge ?? 'Vídeo' }}
@@ -42,19 +42,6 @@
         </div>
 
         <div class="flex-shrink-0 h-8 md:h-12"></div>
-
-        {{-- Commented out section for future use --}}
-        {{--
-        <div class="flex-shrink-0 container max-w-7xl mx-auto px-4 md:px-6">
-            <div class="flex flex-col items-center gap-y-4 text-center">
-                <p class="font-bold text-text-medium text-lg sm:text-xl">Não encontrou o que procura?</p>
-                <a href="" class="font-bold text-brand-primary flex flex-col sm:flex-row items-center gap-x-2 gap-y-2 text-lg sm:text-xl py-3 px-4 sm:px-8 text-center">
-                    <span>Fale conosco para uma sugestão personalizada</span>
-                    <x-lucide-chevron-right class="w-4 h-4 sm:inline hidden" />
-                </a>
-            </div>
-        </div>
-        --}}
     </div>
 </section>
 <script>
