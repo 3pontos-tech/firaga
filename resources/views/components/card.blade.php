@@ -12,6 +12,7 @@
     'borderStrength' => 2, // 1|2
     'target' => null,
     'rel' => null,
+    'card' => null, // DTO opcional para auto popular slots (App\Filament\Components\DTOs\CardComponent)
 ])
 
 @php
@@ -46,6 +47,7 @@
     $padBase = match($variant)  {
         'stat' => 'p-8 flex flex-col gap-y-8 justify-between',
         'cta'  => 'p-6 flex flex-col gap-y-4 ' . ($align === 'center' ? 'items-center text-center' : ''),
+        'callout' => 'py-6 md:p-6 flex flex-col gap-y-2',
         default => 'p-6 flex flex-col gap-y-4',
     };
     if ($density === 'compact') {
@@ -77,22 +79,27 @@
         'base'    => 'space-y-3',
         'cta'     => 'space-y-2',
         'service' => ($align === 'center' ? 'text-center' : '') . ' space-y-4',
-        'callout' => 'flex items-start gap-4',
+        'callout' => 'flex items-center  flex-col md:flex-row lg:flex-col  lg:gap-2',
     ][$variant] ?? 'space-y-3';
 
     // Classes por slot (centralizadas)
-    $iconClass = trim('h-8 w-8 text-icon-high rounded-xl grid place-items-center shrink-0 ' . ($isInteractive ? $interactiveIcon : ''));
+    $iconClass = match($variant) {
+        'callout' => trim('w-16 h-16 lg:w-20 lg:h-20 rounded-xl grid place-items-center shrink-0 bg-brand-primary text-white transition-colors duration-200 group-hover/card:bg-white ' . ($isInteractive ? ' group-hover/card:text-brand-primary' : '')),
+        default => trim('h-8 w-8 text-icon-high rounded-xl grid place-items-center shrink-0 ' . ($isInteractive ? $interactiveIcon : '')),
+    };
 
     $alignText = $align === 'center' ? ' text-center' : '';
 
     $titleBase = match($variant) {
         'cta'  => 'text-xl font-bold tracking-tight',
+        'callout' => 'text-lg font-semibold md:text-left tracking-tight lg:text-center',
         default => 'text-lg font-semibold tracking-tight',
     };
     $titleClass = trim($titleBase . $alignText . ' ' . ($isInteractive ? $interactiveText : ''));
 
     $subtitleBase = match($variant) {
         'stat' => 'text-md text-text-medium',
+        'callout' => 'text-sm text-text-medium md:text-left lg:text-center',
         default => 'text-sm text-text-medium',
     };
     $subtitleClass = trim($subtitleBase . $alignText . ' ' . ($isInteractive ? $interactiveText : ''));
@@ -132,12 +139,22 @@
         <div {{ $icon->attributes->class($iconClass) }}>
             {{ $icon }}
         </div>
+    @else
+        @if($card && $card->icon)
+            <div class="{{ $iconClass }}">
+                <x-filament::icon :icon="$card->icon" class="w-9 h-9 lg:h-11 lg:w-11" />
+            </div>
+        @endif
     @endisset
 
     @isset($title)
         <h3 {{ $title->attributes->class($titleClass) }}>
             {{ $title }}
         </h3>
+    @else
+        @if($card && $card->title)
+            <h3 class="{{ $titleClass }}">{{ $card->title }}</h3>
+        @endif
     @endisset
 
     <div class="flex flex-col gap-y-2">
@@ -151,27 +168,47 @@
             <p {{ $subtitle->attributes->class($subtitleClass) }}>
                 {{ $subtitle }}
             </p>
+        @else
+            @if($card && $card->description)
+                <p class="{{ $subtitleClass }}">{{ $card->description }}</p>
+            @endif
         @endisset
     </div>
 
-@elseif($variant === 'cta')
+@endif
+
+@if($variant === 'cta')
 
     @isset($icon)
         <div {{ $icon->attributes->class($iconClass) }}>
             {{ $icon }}
         </div>
+    @else
+        @if($card && $card->icon)
+            <div class="{{ $iconClass }}">
+                <x-filament::icon :icon="$card->icon" class="w-9 h-9 lg:h-11 lg:w-11" />
+            </div>
+        @endif
     @endisset
 
     @isset($title)
         <h3 {{ $title->attributes->class($titleClass) }}>
             {{ $title }}
         </h3>
+    @else
+        @if($card && $card->title)
+            <h3 class="{{ $titleClass }}">{{ $card->title }}</h3>
+        @endif
     @endisset
 
     @isset($subtitle)
         <p {{ $subtitle->attributes->class($subtitleClass) }}>
             {{ $subtitle }}
         </p>
+    @else
+        @if($card && $card->description)
+            <p class="{{ $subtitleClass }}">{{ $card->description }}</p>
+        @endif
     @endisset
 
     <div>{{ $slot }}</div>
@@ -182,31 +219,43 @@
             {{ $footer }}
         </div>
     @endisset
+@endif
 
-@else
+@if($variant === 'callout')
     @isset($icon)
         <div {{ $icon->attributes->class($iconClass) }}>
             {{ $icon }}
         </div>
+    @else
+        @if($card && $card->icon)
+            <div class="{{ $iconClass }}">
+                <x-filament::icon :icon="$card->icon" class="w-9 h-9 lg:h-11 lg:w-11" />
+            </div>
+        @endif
     @endisset
 
-    @isset($title)
-        <h3 {{ $title->attributes->class($titleClass) }}>
-            {{ $title }}
-        </h3>
-    @endisset
+    <div class="px-4 space-y-2">
+        @isset($title)
+            <h3 {{ $title->attributes->class($titleClass) }}>
+                {{ $title }}
+            </h3>
+        @else
+            @if($card && $card->title)
+                <h3 class="{{ $titleClass }}">{{ $card->title }}</h3>
+            @endif
+        @endisset
 
-    @isset($metric)
-        <div {{ $metric->attributes->class($metricClass) }}>
-            {{ $metric }}
-        </div>
-    @endisset
 
-    @isset($subtitle)
-        <p {{ $subtitle->attributes->class('text-sm text-text-medium') }}>
-            {{ $subtitle }}
-        </p>
-    @endisset
+        @isset($subtitle)
+            <p {{ $subtitle->attributes->class('text-sm text-text-medium') }}>
+                {{ $subtitle }}
+            </p>
+        @else
+            @if($card && $card->description)
+                <p class="{{ $subtitleClass }}  {{ $isInteractive ? 'group-hover/card:text-text-light' : '' }} ">{{ $card->description }}</p>
+            @endif
+        @endisset
+    </div>
 
     <div>{{ $slot }}</div>
 

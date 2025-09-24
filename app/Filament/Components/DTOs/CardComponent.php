@@ -2,9 +2,12 @@
 
 namespace App\Filament\Components\DTOs;
 
+use Filament\Forms\Components\Fieldset;
 use Filament\Forms\Components\Repeater;
+use Filament\Forms\Components\Select;
 use Filament\Forms\Components\Textarea;
 use Filament\Forms\Components\TextInput;
+use Filament\Forms\Components\Toggle;
 use Guava\FilamentIconPicker\Forms\IconPicker;
 use Illuminate\Support\Collection;
 
@@ -20,35 +23,54 @@ class CardComponent
         public Collection $actions,
     ) {}
 
-    public static function form(): array
+    public static function form(?string $parent = null): array
     {
+        $parent = $parent !== null && $parent !== '' && $parent !== '0' ? $parent . '.' : null;
+
         return [
-            TextInput::make('card.title')
-                ->label('Title')
-                ->required()
-                ->default('Default Card Title'),
-
-            Repeater::make('card.items')
-                ->label('Cards')
+            Fieldset::make('Cards')
+                ->columns(1)
                 ->schema([
-                    TextInput::make('title')
-                        ->label('Title')
+                    Toggle::make($parent . 'has_cards')
+                        ->label('Has Cards?')
+                        ->live(debounce: 50)
+                        ->default(false),
+                    Select::make($parent . 'grid_columns')
+                        ->options([
+                            2 => '2 Columns',
+                            3 => '3 Columns',
+                            4 => '4 Columns',
+                        ])
+                        ->label('Grid Columns')
+                        ->visible(fn ($get) => $get($parent . 'has_cards'))
+                        ->default(3)
                         ->required(),
-                    Textarea::make('description')
-                        ->label('Description')
+                    Select::make($parent . 'card_type')
+                        ->options([
+                            'cta' => 'CTA',
+                            'slim' => 'Slim',
+                        ])
+                        ->visible(fn ($get) => $get($parent . 'has_cards'))
+                        ->label('Card Type')
+                        ->default('cta')
                         ->required(),
-                    IconPicker::make('icon')
-                        ->label('Icon')
+                    Repeater::make($parent . 'items')
+                        ->label('Cards')
+                        ->visible(fn ($get) => $get($parent . 'has_cards'))
+                        ->schema([
+                            TextInput::make('title')
+                                ->label('Title')
+                                ->required(),
+                            Textarea::make('description')
+                                ->label('Description')
+                                ->required(),
+                            IconPicker::make('icon')
+                                ->label('Icon')
+                                ->required(),
+                            ...ButtonComponent::form(),
+                        ])
                         ->required(),
-                    ...ButtonComponent::form(),
-                ])
-                ->required(),
-
-            TextInput::make('card.description')
-                ->label('Description')
-                ->required()
-                ->default('Default card description.'),
-
+                ]),
         ];
     }
 
@@ -64,7 +86,14 @@ class CardComponent
 
     public static function makeCollection(array $data): Collection
     {
+        if ($data['has_cards'] !== true) {
+            return collect();
+        }
 
-        return collect($data)->map(fn ($card): \App\Filament\Components\DTOs\CardComponent => self::make($card));
+        return CardCollection::newCollection(
+            cardType: $data['card_type'],
+            columns: $data['grid_columns'],
+            items: array_map(fn ($item) => self::make($item), $data['items'] ?? []),
+        );
     }
 }

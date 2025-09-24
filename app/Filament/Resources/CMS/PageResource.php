@@ -9,10 +9,13 @@ use App\Filament\Resources\CMS\PageResource\Pages\ListPages;
 use App\Filament\Resources\CMS\PageResource\Pages\ViewPage;
 use App\Models\CMS\Page;
 use Filament\Forms\Components\DatePicker;
+use Filament\Forms\Components\Grid;
+use Filament\Forms\Components\Section;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\Tabs;
 use Filament\Forms\Components\Tabs\Tab;
 use Filament\Forms\Components\TextInput;
+use Filament\Forms\Components\View;
 use Filament\Forms\Form;
 use Filament\Forms\Set;
 use Filament\Resources\Resource;
@@ -54,20 +57,31 @@ class PageResource extends Resource
         $filamentComponentService = app(FilamentComponentsService::class);
 
         $contentTab = [
-            'title' => TextInput::make('title')
-                ->label(__('filament.page_title'))
-                ->live(debounce: 400)
-                ->afterStateUpdated(
-                    fn (string $operation, string $state, Set $set): mixed => $operation === 'create'
-                        ? $set('slug', Str::slug($state)) : null
-                )
-                ->required(),
-            $filamentComponentService->getFlexibleContentFieldsForModel(Page::class),
+            Grid::make(4)->schema([
+                Section::make('Content')
+                    ->columnSpan(fn ($livewire): int => (int) ($livewire->isJsonVisible ? 2 : 4))
+                    ->columns(1)
+                    ->schema([
+                        'title' => TextInput::make('title')
+                            ->label(__('filament.page_title'))
+                            ->live(debounce: 400)
+                            ->afterStateUpdated(
+                                fn (string $operation, string $state, Set $set): mixed => $operation === 'create'
+                                    ? $set('slug', Str::slug($state)) : null
+                            )
+                            ->required(),
+                        $filamentComponentService->getFlexibleContentFieldsForModel(Page::class),
+                    ]),
+                View::make('filament.components.preview-json') // Preview
+                    ->columnSpan(2)
+                    ->visible(fn ($livewire): bool => $livewire->isJsonVisible)
+                    ->reactive(),
+
+            ]),
         ];
 
         $parametersTab = [
-            'slug' => TextInput::make('slug')
-                ->label(__('filament.page_slug')),
+
             'is_landing' => Select::make('is_landing')
                 ->label(__('filament.is_landing_page'))
                 ->boolean()

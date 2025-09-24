@@ -2,8 +2,8 @@
 
 namespace App\Filament\Components;
 
-use Filament\Forms\Components\Builder\Block;
 use Filament\Forms\Components\Builder;
+use Filament\Forms\Components\Builder\Block;
 use Webmozart\Assert\Assert;
 
 class FilamentComponentsService
@@ -41,7 +41,6 @@ class FilamentComponentsService
             ->blocks($blocks)
             ->blockNumbers(false)
             ->addActionLabel(__('Add a component'))
-            ->collapsed()
-            ->columnSpanFull();
+            ->collapsed();
     }
 }
