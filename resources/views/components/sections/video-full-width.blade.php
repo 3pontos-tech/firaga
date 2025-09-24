@@ -15,13 +15,13 @@
                 <x-layout.shared.chip class="px-4 py-2">
                     {{ $badge ?? 'Vídeo' }}
                 </x-layout.shared.chip>
-                <x-layout.shared.section-header :$heading :$description />
+                <x-layout.shared.section-header :$heading :$description width="narrow" />
             </div>
         </div>
 
         <div class="flex-grow flex items-center justify-center">
-            <div class="w-full max-w-6xl mx-auto px-4 md:px-6">
-                <div class="relative w-full aspect-video max-w-lg sm:max-w-xl md:max-w-4xl lg:max-w-6xl mx-auto">
+            <div class="w-full max-w-7xl mx-auto px-3 md:px-4">
+                <div class="relative w-full aspect-video max-w-lg sm:max-w-2xl md:max-w-5xl lg:max-w-none mx-auto">
                     <video id="firece-video" class="w-full h-full object-cover rounded-lg md:rounded-xl lg:rounded-2xl shadow-2xl" muted loop playsinline>
                         <source src="{{ asset('video/firece_video.webm') }}" type="video/webm">
                         <source src="{{ asset('video/firece_video.mp4') }}" type="video/mp4">
