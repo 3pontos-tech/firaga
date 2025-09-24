@@ -5,15 +5,10 @@
     'video_url'
 ])
 <section class="relative py-12 md:py-16 lg:py-32 xl:py-40">
-    <!-- Top half background (black) -->
-    <div class="absolute top-0 left-0 w-full h-1/2 bg-white dark:bg-black "></div>
 
-    <!-- Bottom half background (orange) -->
-    <div class="absolute bottom-0 left-0 w-full h-1/2 bg-brand-primary"></div>
-
-    <!-- Content overlay -->
+    <div class="absolute top-0 left-0 w-full h-2/4 md:h-1/2 bg-white dark:bg-black"></div>
+    <div class="absolute bottom-0 left-0 w-full h-2/5 md:h-1/2 bg-brand-primary"></div>
     <div class="relative z-10 h-full flex flex-col">
-        <!-- Header section - positioned in black area -->
         <div class="flex-shrink-0 container max-w-7xl mx-auto px-4 md:px-6 mb-8 md:mb-12">
             <div class="text-center flex flex-col items-center gap-y-4">
                 <x-layout.shared.chip class="px-4 py-2">
@@ -23,7 +18,6 @@
             </div>
         </div>
 
-        <!-- Video section - positioned to span across black/orange border -->
         <div class="flex-grow flex items-center justify-center">
             <div class="w-full max-w-6xl mx-auto px-4 md:px-6">
                 <div class="relative w-full aspect-video max-w-lg sm:max-w-xl md:max-w-4xl lg:max-w-6xl mx-auto">
@@ -46,7 +40,6 @@
             </div>
         </div>
 
-        {{-- Spacer for bottom section if needed --}}
         <div class="flex-shrink-0 h-8 md:h-12"></div>
 
         {{-- Commented out section for future use --}}
@@ -70,7 +63,6 @@
         if (video && playButton) {
             video.play();
             playButton.style.display = 'none';
-            // Show play button when video is paused or ended
             const showPlayButton = () => {
                 playButton.style.display = 'flex';
             };
