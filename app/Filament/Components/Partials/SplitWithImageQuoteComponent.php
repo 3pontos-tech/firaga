@@ -9,6 +9,9 @@ use Filament\Forms\Components\Select;
 use Filament\Forms\Components\SpatieMediaLibraryFileUpload;
 use Filament\Forms\Components\Textarea;
 use Filament\Forms\Components\TextInput;
+use Guava\FilamentIconPicker\Forms\IconPicker;
+use Illuminate\Support\Fluent;
+
 
 class SplitWithImageQuoteComponent extends AbstractCustomComponent
 {
@@ -63,6 +66,20 @@ class SplitWithImageQuoteComponent extends AbstractCustomComponent
                 ->label('Call to Action URL')
                 ->url()
                 ->required(),
+            Repeater::make('cards')
+                ->label('Cards')
+                ->schema([
+                    TextInput::make('title')
+                        ->label('Title')
+                        ->required(),
+                    Textarea::make('description')
+                        ->label('Description')
+                        ->required(),
+                    IconPicker::make('icon')
+                        ->label('Icon')
+//                        ->required(),
+                ])
+                ->required(),
         ];
     }
 
@@ -75,15 +92,21 @@ class SplitWithImageQuoteComponent extends AbstractCustomComponent
     {
         return [
             'image_position' => $data['image_position'] ?? 'left',
-            'badge' => $data['badge'],
-            'heading' => $data['heading'],
+            'badge' => $data['badge'] ?? '',
+            'heading' => $data['heading'] ?? '',
             'end_description' => $data['end_description'] ?? '',
-            'description' => $data['description'],
-            'insights' => $data['insights'],
-            'quote' => $data['quote'],
+            'description' => $data['description'] ?? '',
+            'insights' => $data['insights'] ?? [],
+            'quote' => $data['quote'] ?? '',
             'cta_label' => $data['cta_label'] ?? '',
             'cta_url' => $data['cta_url'] ?? '',
+            'cards' => collect($data['cards'] ?? [])->map(fn ($card) => Fluent::make([
+                'title' => $card['title'] ?? '',
+                'description' => $card['description'] ?? '',
+                'icon' => $card['icon'] ?? 'heroicon-o-check-circle',
+            ])),
         ];
+
     }
 
     public static function toSearchableContent(array $data): string

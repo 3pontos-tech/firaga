@@ -1,80 +1,64 @@
 @props([
-    'heading',
-    'description',
-    'insights' => [],
-    'quote',
-    'cta_url',
-    'cta_label',
-    'image_position',
-    'end_description' => '',
+    'badge' => 'Nosso Trabalho',
+    'heading' => 'Transformando desafios em oportunidades',
+    'description' =>
+        'Na nossa consultoria, entendemos que cada cliente é único. Por isso, desenvolvemos uma metodologia personalizada que se adapta às suas necessidades e objetivos financeiros. Nossa abordagem é baseada em três pilares fundamentais: Análise de Perfil, Planejamento Estratégico e Execução com Suporte Contínuo.',
+    'cta_label' => 'Saiba Mais',
+    'cta_url' => 'https://example.com/saiba-mais',
+    'cards' => collect([
+        [
+            'title' => 'Análise de Perfil',
+            'description' => 'Entendemos seu perfil financeiro e objetivos.',
+        ],
+        [
+            'title' => 'Planejamento Estratégico',
+            'description' => 'Criamos um plano personalizado para você.',
+        ],
+        [
+            'title' => 'Execução e Suporte',
+            'description' => 'Acompanhamos a execução do plano com suporte contínuo.',
+        ],
+    ]),
 ])
 
-@php
-    $imagePos = $image_position === 'left' ? 'order-1 lg:order-1' : 'order-1 lg:order-2';
-    $contentPos = $image_position === 'left' ? 'order-1 lg:order-2' : 'order-2 lg:order-1';
-    $variant = $renderable?->theme->value;
-@endphp
+<section id="nosso-atendimento"
+         class="mx-auto text-text-dark dark:text-text-light overflow-hidden py-8 md:py-16 lg:py-20">
+    <div class="mx-auto container px-4 md:px-6 lg:flex lg:items-center lg:justify-between lg:space-x-12 relative z-10">
+        <div class="lg:w-1/2 mb-8 md:mb-12 lg:mb-0 space-y-6 md:space-y-8 lg:space-y-10">
+            <x-layout.shared.chip class="px-4 py-2">
+                {{ $badge }}
+            </x-layout.shared.chip>
+            <h2
+                class="text-text-dark dark:text-text-light font-bold text-2xl sm:text-3xl md:text-4xl lg:text-5xl leading-tight tracking-tight">
+                {{ $heading }}
+            </h2>
+            <p class="text-text-medium text-sm sm:text-base md:text-lg max-w-2xl leading-relaxed">
+                {{ $description }}
+            </p>
+            <x-layout.shared.button :href="$cta_url" variant="primary" class="w-full sm:w-auto px-6 md:px-8 py-3">
+                {{ $cta_label }}
+            </x-layout.shared.button>
+        </div>
 
-
-<section class="py-8 sm:py-12 md:py-16 lg:py-20 xl:py-60">
-    <div class="container mx-auto">
-        <div class="flex flex-col lg:flex-row gap-8 lg:gap-12 xl:gap-16 items-center justify-between">
-            <div class="w-full lg:w-1/2 xl:w-[60%] relative  {{ $imagePos }}">
-                <div class="aspect-square sm:aspect-[4/3] lg:aspect-square xl:aspect-[4/3] relative">
-                    <img
-                        src="{{ $renderable?->getFirstMediaUrl(App\Enums\CustomComponent::SplitWithImageQuote->value) ?? asset('images/stock/our-work.png') }}"
-                        alt="Our Work"
-                        class="w-full h-full object-cover rounded-lg sm:rounded-xl lg:rounded-2xl">
-                    <div
-                        class="absolute bottom-3 sm:bottom-4 lg:bottom-6 xl:bottom-8 left-1/2 transform -translate-x-1/2 text-white text-sm sm:text-base lg:text-lg xl:text-xl font-medium w-[85%] sm:w-[80%] lg:w-[85%] xl:w-[80%] flex flex-col sm:flex-row items-start gap-2 sm:gap-x-3 lg:gap-x-4 justify-center">
-                        <img src="{{ asset('images/quote-mark.svg') }}" alt="Quote"
-                             class="w-5 h-5 sm:w-6 sm:h-6 lg:w-8 lg:h-8 xl:w-10 xl:h-10 flex-shrink-0"/>
-                        <span class="leading-relaxed">
-                            {{ $quote }}
-                        </span>
-                    </div>
-                </div>
+        <div class="lg:w-1/2 relative pb-6 md:pb-10 md:pt-10 md:pr-10 md:pl-10">
+            <div class="hidden md:block md:absolute bottom-0 left-0 rotate-270">
+                <x-partials.corner variant="brand" class="w-[60px] h-[60px] sm:w-[80px] sm:h-[80px] md:w-[120px] md:h-[120px]"/>
+                {{--                <div class="w-20 md:w-32 h-[8px] md:h-[13px] bg-brand-primary"></div>--}}
+                {{--                <div class="absolute bottom-0 left-0 h-20 md:h-32 w-[8px] md:w-[13px] bg-brand-primary"></div>--}}
             </div>
-            <div class="w-full lg:w-1/2 xl:w-[40%] flex flex-col gap-y-4 sm:gap-y-6 lg:gap-y-8 {{ $contentPos }}">
-                <div class="space-y-4 sm:space-y-6 lg:space-y-8">
-                    <div class="space-y-3 sm:space-y-4 lg:space-y-6 flex flex-col">
-                        @if($badge)
-                            <x-layout.shared.chip :$variant class="px-4 py-2">
-                                {{ $badge }}
-                            </x-layout.shared.chip>
-                        @endif
-                        <h2 class="text-text-high font-bold text-xl sm:text-2xl lg:text-3xl xl:text-4xl leading-tight">
-                            {{ $heading }}
-                        </h2>
-                        <p class="text-text-medium text-sm sm:text-base lg:text-lg leading-relaxed">
-                            {{ $description }}
-                        </p>
-                    </div>
-                    <div class="grid grid-cols-1 sm:grid-cols-1 lg:grid-cols-1 gap-3 sm:gap-4 w-full">
-                        @foreach($insights as $insight)
-                            <div class="flex items-start gap-x-2 sm:gap-x-3">
-                                <x-lucide-check
-                                    class="w-4 h-4 sm:w-5 sm:h-5 lg:w-6 lg:h-6 {{ $variant === 'default' ? 'text-brand-primary' : 'text-white'}} flex-shrink-0 mt-0.5"/>
-                                <h3 class="text-text-high font-medium text-sm sm:text-base lg:text-lg">
-                                    {{ $insight['value'] }}
-                                </h3>
-                            </div>
-                        @endforeach
-                    </div>
+            <div class="hidden md:block md:absolute top-0 right-0 rotate-90">
+                <x-partials.corner variant="brand" class="w-[60px] h-[60px] sm:w-[80px] sm:h-[80px] md:w-[120px] md:h-[120px]"/>
+            </div>
 
-                    @if(!empty($end_description))
-                        <p class="text-text-medium text-sm sm:text-base lg:text-lg leading-relaxed">
-                            {{ $end_description }}
-                        </p>
-                    @endif
-
-                    <div class="flex flex-col sm:flex-row gap-3 sm:gap-4 lg:gap-6">
-                        <x-layout.shared.button :$variant :href="$cta_url"
-                                                class="w-full sm:w-auto px-4 py-2 sm:px-6 sm:py-3 lg:px-8 lg:py-4 font-bold text-xs sm:text-sm lg:text-base">
-                            {{ $cta_label }}
-                        </x-layout.shared.button>
-                    </div>
-                </div>
+            <div class="grid grid-cols-auto-fit gap-4 md:gap-6 lg:gap-10" style="grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));">
+                @foreach ($cards as $index => $card)
+                    <x-cards.card-slim
+                        class="py-4 md:py-6 lg:py-8 rounded-lg md:rounded-[20px]"
+                        :title="$card['title']"
+                        :description="$card['description']"
+                        :icon="$card['icon'] ?? 'heroicon-o-check-circle'"
+                    />
+                @endforeach
             </div>
         </div>
     </div>
