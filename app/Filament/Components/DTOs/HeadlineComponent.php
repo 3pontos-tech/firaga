@@ -31,7 +31,7 @@ class HeadlineComponent
                 ->schema([
                     TextInput::make('headline.heading')
                         ->label('Heading')
-                        ->reactive()
+                        ->live(debounce: 500)
                         ->afterStateUpdated(fn ($state, $set) => $set('headline.keywords', str($state)->explode(' ')))
                         ->required()
                         ->default('Invista no futuro com inteligência e precisão'),

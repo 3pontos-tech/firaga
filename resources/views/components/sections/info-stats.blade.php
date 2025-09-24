@@ -8,20 +8,19 @@
 @endphp
 
 
-<section class="container mx-auto mb-32">
-    <div class="flex flex-col lg:grid lg:grid-cols-12">
-        <div class="col-span-4 px-2">
-            <x-headline :component="$headline"/>
+<section class="container mx-auto">
+    <div class="flex flex-col   justify-between lg:grid lg:grid-cols-12">
+        <div class="col-span-4">
+            <x-headline :component="$headline" class="mx-auto md:mx-0"/>
         </div>
-
         <div class="grid col-span-8 col-start-5 grid-cols-2 lg:grid-cols-2 xl:grid-cols-4 gap-4 md:gap-8">
             @foreach ($metrics as $metric)
-                <x-card variant="stat" class="my-15" interactive>
+                <x-card variant="stat" emphasis="primary" :interactive="true">
                     <x-slot:icon>
-                        <x-filament::icon :icon="$metric['icon']" class="h-8 w-8 text-white"/>
+                        <x-filament::icon :icon="$metric['icon']" />
                     </x-slot:icon>
 
-                    <x-slot:metric>{{ $metric['value'] }}</x-slot:metric>
+                    <x-slot:metric >{{ $metric['value'] }}</x-slot:metric>
                     <x-slot:subtitle>{{ $metric['label'] }}</x-slot:subtitle>
                 </x-card>
             @endforeach
