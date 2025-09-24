@@ -5,9 +5,10 @@
     'video_url'
 ])
 <section class="relative py-12 md:py-16 lg:py-32 xl:py-40">
+    <div class="absolute top-0 left-0 w-full h-4/5 md:h-1/2 bg-white dark:bg-black"></div>
 
-    <div class="absolute top-0 left-0 w-full h-2/4 md:h-1/2 bg-white dark:bg-black"></div>
-    <div class="absolute bottom-0 left-0 w-full h-2/5 md:h-1/2 bg-brand-primary"></div>
+    <div class="absolute bottom-0 left-0 w-full h-1/5 md:h-1/2 bg-brand-primary"></div>
+
     <div class="relative z-10 h-full flex flex-col">
         <div class="flex-shrink-0 container max-w-7xl mx-auto px-4 md:px-6 mb-8 md:mb-12">
             <div class="text-center flex flex-col items-center gap-y-4">
