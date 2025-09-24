@@ -20,7 +20,7 @@
         </div>
 
         <div class="flex-grow flex items-center justify-center">
-            <div class="w-full max-w-7xl mx-auto px-3 md:px-4">
+            <div class="w-full max-w-[90rem] mx-auto px-3 md:px-4">
                 <div class="relative w-full aspect-video max-w-lg sm:max-w-2xl md:max-w-5xl lg:max-w-none mx-auto">
                     <video id="firece-video" class="w-full h-full object-cover rounded-lg md:rounded-xl lg:rounded-2xl shadow-2xl" muted loop playsinline>
                         <source src="{{ asset('video/firece_video.webm') }}" type="video/webm">
