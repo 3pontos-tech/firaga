@@ -1,63 +1,74 @@
 @props([
-    'badge' => 'Nosso Trabalho',
-    'heading' => 'Transformando desafios em oportunidades',
-    'description' =>
-        'Na nossa consultoria, entendemos que cada cliente é único. Por isso, desenvolvemos uma metodologia personalizada que se adapta às suas necessidades e objetivos financeiros. Nossa abordagem é baseada em três pilares fundamentais: Análise de Perfil, Planejamento Estratégico e Execução com Suporte Contínuo.',
-    'cta_label' => 'Saiba Mais',
-    'cta_url' => 'https://example.com/saiba-mais',
+    'heading' => 'Conheça mais sobre a Fire|ce',
+    'description' => 'A Fire|ce ajuda empresas a promoverem alta performance por meio da educação financeira. Com programas sob medida, consultores especializados e soluções integradas, criamos pontes entre saúde financeira e produtividade.',
+    'image_position' => 'right',
+    'badge' => 'Sobre nós',
     'cards' => collect([
         [
-            'title' => 'Análise de Perfil',
-            'description' => 'Entendemos seu perfil financeiro e objetivos.',
+            'title' => 'Projetos Conjuntos',
+            'description' => 'Monetize sua influência ou rede com um modelo de parceria inteligente e sustentável — você lucra enquanto ajuda pessoas a transformarem suas vidas financeiras.',
+            'icon' => 'heroicon-o-chat-bubble-left-right',
         ],
         [
-            'title' => 'Planejamento Estratégico',
-            'description' => 'Criamos um plano personalizado para você.',
+            'title' => 'Reconhecimento',
+            'description' => 'Associe sua marca ou imagem a uma consultoria que entrega resultados reais e melhora a relação das pessoas com o dinheiro.',
+            'icon' => 'heroicon-o-chat-bubble-left-right',
         ],
         [
-            'title' => 'Execução e Suporte',
-            'description' => 'Acompanhamos a execução do plano com suporte contínuo.',
+            'title' => 'Ecossistema Fire|ce',
+            'description' => 'Tenha contato privilegiado com nossos produtos, lançamentos e soluções, além de ferramentas que tornam a parceria ainda mais eficiente.',
+            'icon' => 'heroicon-o-chat-bubble-left-right',
+        ],
+        [
+            'title' => 'Suporte contínuo',
+            'description' => 'Contamos com uma equipe que acompanha sua jornada, oferece materiais personalizados, treinamentos e um plano de crescimento contínuo.',
+            'icon' => 'heroicon-o-chat-bubble-left-right',
         ],
     ]),
 ])
 
+@php
+    $imagePos = $image_position === 'left' ? 'lg:order-1' : 'lg:order-2';
+    $contentPos = $image_position === 'left' ? 'lg:order-2' : 'lg:order-1';
+@endphp
+
 <section class="mx-auto text-text-dark dark:text-text-light overflow-hidden py-8 md:py-16 lg:py-20">
     <div class="mx-auto container px-4 md:px-6 lg:flex lg:items-center lg:justify-between lg:space-x-12 relative z-10">
-        <div class="lg:w-1/2 mb-8 md:mb-12 lg:mb-0 space-y-6 md:space-y-8 lg:space-y-10">
-            <x-layout.shared.chip class="px-4 py-2">
-                {{ $badge }}
-            </x-layout.shared.chip>
-            <h2
-                class="text-text-dark dark:text-text-light font-bold text-2xl sm:text-3xl md:text-4xl lg:text-5xl leading-tight tracking-tight">
+        <div class="lg:w-1/2 mb-8 md:mb-12 lg:mb-0 space-y-6 md:space-y-8 lg:space-y-10 {{ $contentPos }}">
+            @if($badge)
+                <x-layout.shared.chip class="px-4 py-2">
+                    {{ $badge }}
+                </x-layout.shared.chip>
+            @endif
+
+            <h2 class="font-bold text-2xl sm:text-3xl md:text-4xl lg:text-5xl leading-tight tracking-tight">
                 {{ $heading }}
             </h2>
+
             <p class="text-text-medium text-sm sm:text-base md:text-lg max-w-2xl leading-relaxed">
                 {{ $description }}
             </p>
-            <x-layout.shared.button :href="$cta_url" variant="primary" class="w-full sm:w-auto px-6 md:px-8 py-3">
-                {{ $cta_label }}
-            </x-layout.shared.button>
-        </div>
 
-        <div class="lg:w-1/2 relative pb-6 md:pb-10 md:pt-10 md:pr-10 md:pl-10">
-{{--            <div class="hidden md:block md:absolute bottom-0 left-0 rotate-270">--}}
-{{--                <x-partials.corner variant="brand" class="w-[60px] h-[60px] sm:w-[80px] sm:h-[80px] md:w-[120px] md:h-[120px]"/>--}}
-{{--                --}}{{--                <div class="w-20 md:w-32 h-[8px] md:h-[13px] bg-brand-primary"></div>--}}
-{{--                --}}{{--                <div class="absolute bottom-0 left-0 h-20 md:h-32 w-[8px] md:w-[13px] bg-brand-primary"></div>--}}
-{{--            </div>--}}
-{{--            <div class="hidden md:block md:absolute top-0 right-0 rotate-90">--}}
-{{--                <x-partials.corner variant="brand" class="w-[60px] h-[60px] sm:w-[80px] sm:h-[80px] md:w-[120px] md:h-[120px]"/>--}}
-{{--            </div>--}}
-
-            <div class="grid grid-cols-auto-fit gap-4 md:gap-6 lg:gap-10" style="grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));">
-                @foreach ($cards as $index => $card)
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                @foreach ($cards as $card)
                     <x-cards.card-slim
-                        class="py-4 md:py-6 lg:py-8 rounded-lg md:rounded-[20px]"
+                        class="py-6 px-4 rounded-lg md:rounded-[20px] bg-surface dark:bg-surface-dark"
                         :title="$card['title']"
                         :description="$card['description']"
-                        :icon="$card['icon'] ?? 'heroicon-o-check-circle'"
+                        :icon="$card['icon']"
                     />
                 @endforeach
+            </div>
+        </div>
+
+        <div class="lg:w-1/2 relative {{ $imagePos }}">
+            <div class="aspect-[4/3] md:aspect-square lg:aspect-[4/3] relative overflow-hidden rounded-xl md:rounded-2xl shadow-2xl">
+                <img
+                    src="{{ $renderable?->getFirstMediaUrl(App\Enums\CustomComponent::SplitWithImageQuote->value) ?? asset('images/stock/our-work.png') }}"
+                    alt="Equipe Fire|ce"
+                    class="w-full h-full object-cover transition-transform duration-300 hover:scale-105"
+                    loading="lazy"
+                >
             </div>
         </div>
     </div>
