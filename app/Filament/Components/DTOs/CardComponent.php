@@ -57,6 +57,7 @@ class CardComponent
                     Repeater::make($parent . 'items')
                         ->label('Cards')
                         ->visible(fn ($get) => $get($parent . 'has_cards'))
+                        ->cloneable()
                         ->schema([
                             TextInput::make('title')
                                 ->label('Title')
@@ -80,7 +81,8 @@ class CardComponent
             title: $data['title'],
             description: $data['description'],
             icon: $data['icon'] ?? null,
-            actions: ButtonComponent::makeCollection($data),
+            actions:  collect($data['buttons'] ?? [])
+                ->map(fn ($button): ButtonComponent => ButtonComponent::make($button)),
         );
     }
 
@@ -89,7 +91,6 @@ class CardComponent
         if ($data['has_cards'] !== true) {
             return collect();
         }
-
         return CardCollection::newCollection(
             cardType: $data['card_type'],
             columns: $data['grid_columns'],
