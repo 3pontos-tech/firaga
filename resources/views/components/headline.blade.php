@@ -75,7 +75,7 @@
 
 @endphp
 
-<div class="{{ $component->position == 'center' ? 'mx-auto' : '' }}  max-w-2xl md:max-w-3xl lg:max-w-4xl">
+<div {{ $attributes->class(($component->position == 'center' ? 'mx-auto' : '') . ' max-w-2xl md:max-w-3xl lg:max-w-4xl') }} >
 
     <{{ $tag }} {{ $attributes->merge(['class' => "$animateCls  $alignCls "]) }}>
 
@@ -149,7 +149,7 @@
         </div>
     @else
         @if($component->actions)
-            <div class="flex w-full flex-col sm:flex-row gap-3 sm:gap-x-4 items-center ">
+            <div class="flex w-full flex-col sm:flex-row gap-3 sm:gap-x-4 items-center">
                 @foreach($component->actions as $action)
                     <x-button rounded="sm" :component="$action"/>
                 @endforeach
