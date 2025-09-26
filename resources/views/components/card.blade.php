@@ -5,7 +5,7 @@
     'accent' => 'orange',
     'interactive' => null, // bool|null|'brand'|'default' (legacy)
     'emphasis' => null,    // null|'default'|'primary' (aplica quando interactive)
-    'align' => 'left',
+    'align' => 'center',
     'disabled' => false,
     'density' => 'normal', // 'normal'|'compact'
     'elevation' => 1,      // 0|1|2
@@ -40,7 +40,7 @@
         2 => 'bg-elevation-02dp',
         default => 'bg-elevation-01dp',
     };
-    $borderClass = 'border border-outline-dark' . ((int) $borderStrength === 2 ? ' border-2' : '');
+    $borderClass = 'border border-outline-dark';
     $surfaces = trim($elevationClass . ' ' . $borderClass . ' rounded-xl transition');
 
     // Padding / spacing por variant + density
@@ -183,50 +183,6 @@
             @endisset
         </div>
 
-    @endif
-
-    @if($variant === 'cta')
-
-        @isset($icon)
-            <div {{ $icon->attributes->class($iconClass) }}>
-                {{ $icon }}
-            </div>
-        @else
-            @if($card && $card->icon)
-                <div class="{{ $iconClass }}">
-                    <x-filament::icon :icon="$card->icon" class="w-9 h-9 lg:h-11 lg:w-11"/>
-                </div>
-            @endif
-        @endisset
-
-        @isset($title)
-            <h3 {{ $title->attributes->class($titleClass) }}>
-                {{ $title }}
-            </h3>
-        @else
-            @if($card && $card->title)
-                <h3 class="{{ $titleClass }}">{{ $card->title }}</h3>
-            @endif
-        @endisset
-
-        @isset($subtitle)
-            <p {{ $subtitle->attributes->class($subtitleClass) }}>
-                {{ $subtitle }}
-            </p>
-        @else
-            @if($card && $card->description)
-                <p class="{{ $subtitleClass }}">{{ $card->description }}</p>
-            @endif
-        @endisset
-
-        <div>{{ $slot }}</div>
-
-        @isset($footer)
-            {{-- show CTA only when card hovered, if interactive --}}
-            <div {{ $footer->attributes->class($isInteractive ? 'hidden lg:block lg:opacity-0 lg:group-hover/card:opacity-100 w-full' : 'w-full') }}>
-                {{ $footer }}
-            </div>
-        @endisset
     @endif
 
     @if($variant === 'callout')

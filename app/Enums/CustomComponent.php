@@ -115,6 +115,6 @@ enum CustomComponent: string
 
     public static function allComponents(): array
     {
-        return array_map(fn (\App\Enums\CustomComponent $component): array => ['class' => $component->getComponent()], self::cases());
+        return array_map(fn (CustomComponent $component): array => ['class' => $component->getComponent()], self::cases());
     }
 }
