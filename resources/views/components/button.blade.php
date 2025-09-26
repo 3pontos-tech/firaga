@@ -85,7 +85,7 @@
 
 <{{ $tag }}
     @unless($isLink) type="{{ $type }}" @endunless
-    class="{{ $classes }}"
+    {{ $attributes->class($classes) }}
 @if($isLink)
     @isset($targetType) target="{{ $targetType }}" @endisset
     href="{{ $href }}" @if($isDisabled)
