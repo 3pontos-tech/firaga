@@ -86,7 +86,7 @@
     @endisset
 
     @if(isset($badgeComponent) && $badgeComponent->hasBadge)
-        <x-badge :component="$badgeComponent" />
+        <x-badge :component="$badgeComponent"/>
     @endif
 
 
@@ -136,17 +136,25 @@
     @isset($actions)
         @php
 
-        $actionsAlign = match($align) {
-            'left' => 'lg:items-start lg:justify-start md:justify-center justify-center',
-            'center' => 'justify-center',
-            default => 'justify-center lg:justify-right lg:items-start',
-        };
+            $actionsAlign = match($align) {
+                'left' => 'lg:items-start lg:justify-start md:justify-center justify-center',
+                'center' => 'justify-center',
+                default => 'justify-center lg:justify-right lg:items-start',
+            };
 
         @endphp
 
         <div {{ $actions->attributes->class('flex w-full flex-col sm:flex-row gap-3 sm:gap-x-4 items-center ' . $actionsAlign) }}>
             {{ $actions }}
         </div>
+    @else
+        @if($component->actions)
+            <div class="flex w-full flex-col sm:flex-row gap-3 sm:gap-x-4 items-center ">
+                @foreach($component->actions as $action)
+                    <x-button rounded="sm" :component="$action"/>
+                @endforeach
+            </div>
+        @endif
     @endisset
 
 
