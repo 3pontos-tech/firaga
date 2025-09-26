@@ -33,27 +33,5 @@
         </div>
     </div>
 
-    <!-- Optional: Hide scrollbars (if animation fails or fallback used) -->
-    <style>
-        #metrics::-webkit-scrollbar {
-            display: none;
-        }
 
-        @keyframes infinite-scroll {
-            0% {
-                transform: translateX(0);
-            }
-            100% {
-                transform: translateX(-100%);
-            }
-        }
-
-        .animate-infinite-scroll {
-            animation: infinite-scroll 30s linear infinite;
-        }
-
-        .animate-infinite-scroll:hover {
-            animation-play-state: paused;
-        }
-    </style>
 </section>
