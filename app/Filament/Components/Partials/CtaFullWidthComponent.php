@@ -5,6 +5,7 @@ namespace App\Filament\Components\Partials;
 use App\Enums\CustomComponent;
 use App\Filament\Components\AbstractCustomComponent;
 use App\Filament\Components\DTOs\HeadlineComponent;
+use App\Filament\Components\DTOs\ImageComponent;
 use Filament\Forms\Components\Hidden;
 use Filament\Forms\Components\SpatieMediaLibraryFileUpload;
 use Filament\Forms\Components\TextInput;
@@ -18,32 +19,9 @@ class CtaFullWidthComponent extends AbstractCustomComponent
     public static function blockSchema(): array
     {
         return [
-            Hidden::make('component_id')
-                ->formatStateUsing(fn ($state) => $state ?? Uuid::uuid4()->toString()),
-            SpatieMediaLibraryFileUpload::make('hero')
-                ->label('Hero Image')
-                ->customProperties(fn (Get $get): array => [
-                    'component_id' => $get('component_id'),
-                ])
-                ->filterMediaUsing(
-                    fn ($media, Get $get) => $media->where(
-                        'custom_properties.component_id',
-                        $get('component_id')
-                    ),
-                )
-                ->collection(CustomComponent::CallToActionFullWidthSection->value)
-                ->image()
-                ->required(),
+            ...ImageComponent::form(CustomComponent::CallToActionFullWidthSection),
 
             ...HeadlineComponent::form(),
-
-            TextInput::make('cta_label')
-                ->required()
-                ->label(__('Call to Action Label')),
-            TextInput::make('cta_url')
-                ->required()
-                ->url()
-                ->label(__('Call to Action URL')),
         ];
     }
 
@@ -56,8 +34,6 @@ class CtaFullWidthComponent extends AbstractCustomComponent
     {
         return [
             'headline' => HeadlineComponent::make($data['headline']),
-            'cta_label' => $data['cta_label'],
-            'cta_url' => $data['cta_url'],
             'component_id' => $data['component_id'],
         ];
     }
