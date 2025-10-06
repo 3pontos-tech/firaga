@@ -4,6 +4,7 @@ namespace App\Filament\Components\Media;
 
 use App\Enums\CustomComponent;
 use App\Filament\Components\AbstractCustomComponent;
+use App\Filament\Components\DTOs\HeadlineComponent;
 use Filament\Forms\Components\TextInput;
 
 class FullWidthVideoComponent extends AbstractCustomComponent
@@ -13,15 +14,7 @@ class FullWidthVideoComponent extends AbstractCustomComponent
     public static function blockSchema(): array
     {
         return [
-            'badge' => TextInput::make('badge')
-                ->label(__('Badge'))
-                ->required(),
-            'heading' => TextInput::make('heading')
-                ->label(__('Heading'))
-                ->required(),
-            'description' => TextInput::make('description')
-                ->label(__('Description'))
-                ->required(),
+            ...HeadlineComponent::form(),
             'video_url' => TextInput::make('video_url')
                 ->label(__('Video URL'))
                 ->url()
@@ -37,9 +30,7 @@ class FullWidthVideoComponent extends AbstractCustomComponent
     public static function setupRenderPayload(array $data): array
     {
         return [
-            'badge' => $data['badge'] ?? '',
-            'heading' => $data['heading'] ?? '',
-            'description' => $data['description'] ?? '',
+            'headline' => HeadlineComponent::make($data['headline']),
             'video_url' => $data['video_url'] ?? '',
         ];
     }

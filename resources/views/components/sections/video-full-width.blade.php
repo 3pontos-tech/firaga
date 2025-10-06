@@ -1,7 +1,5 @@
 @props([
-    'badge',
-    'heading',
-    'description',
+    'headline',
     'video_url'
 ])
 <section class="relative py-12 md:py-16 lg:py-32 xl:py-40">
@@ -10,13 +8,8 @@
     <div class="absolute bottom-0 left-0 w-full h-2/6 bg-brand-primary"></div>
 
     <div class="relative z-10 h-full flex flex-col">
-        <div class="flex-shrink-0 container max-w-7xl mx-auto px-1 md:px-2 mb-8 md:mb-12">
-            <div class="text-center flex flex-col items-center gap-y-4">
-                <x-layout.shared.chip class="px-4 py-2">
-                    {{ $badge ?? 'Vídeo' }}
-                </x-layout.shared.chip>
-                <x-layout.shared.section-header :$heading :$description width="narrow" />
-            </div>
+        <div class="px-4">
+            <x-headline :component="$headline"></x-headline>
         </div>
 
         <div class="flex-grow flex items-center justify-center">
