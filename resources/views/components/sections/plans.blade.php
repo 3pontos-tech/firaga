@@ -8,7 +8,7 @@
             <x-headline :component="$headline"/>
         </div>
         <div class="w-full ">
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 md:gap-10 lg:gap-12">
+            <div class="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-3 gap-6 sm:gap-8 md:gap-10 lg:gap-12">
                 @foreach ($plans as $plan)
                     <x-cards.plan-card
                         :bestPlan="$plan['best_plan'] ?? false"

@@ -15,31 +15,32 @@
 
 <div>
     <div
-        class="p-4 sm:p-6 rounded-t-lg {{ $bestPlan ? 'bg-brand-primary' : 'bg-[#393939] border dark:border-outline-low border-outline-light' }}">
-        <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-y-3">
+        class="p-4 sm:p-6 rounded-t-lg {{ $bestPlan ? 'bg-brand-primary' : 'bg-elevation-03dp border border-outline-dark' }}">
+        <div class="flex flex-col sm:flex-row md:flex-col  sm:justify-between gap-y-3">
             <h2 class="font-semibold text-xl sm:text-2xl text-text-light">{{ str($name)->title() }}</h2>
-            <span
-                class="bg-outline-light text-brand-primary py-2 px-3 sm:px-4 rounded-full text-xs sm:text-sm font-bold flex items-center gap-x-2 sm:gap-x-[10px] self-start sm:self-auto">
-
-                    <span class="whitespace-nowrap">{{ $bestPlan ? 'Melhor Plano' : 'Popular' }}</span>
-                </span>
         </div>
     </div>
     <div
-        class="p-4 sm:p-6 border dark:border-outline-low dark:bg-[#343434] border-outline-light border-t-0 rounded-b-lg space-y-6 sm:space-y-8 {{ $bestPlan  ? 'border-none dark:bg-brand-primary' : '' }}">
+        class="p-4 sm:p-6 border  border-t-0 rounded-b-lg space-y-6 sm:space-y-8 {{ $bestPlan  ? 'border-none bg-brand-primary' : 'border-outline-dark dark:bg-elevation-02dp' }}">
         <div class="flex flex-col gap-y-3">
-            <span class="{{ $mainTextColor }} text-sm sm:text-base">{{ $description }}</span>
+            <span class="{{ $bestPlan ? 'text-text-light' : 'text-text-medium'  }} text-sm sm:text-base">{{ $description }}</span>
             @if (isset($note))
                 <span class="{{ $mainTextColor }} text-xs sm:text-sm italic">{{ $note }}</span>
             @endif
         </div>
-        <div class="h-[1px] {{ $bestPlan ? 'bg-outline-light' : 'bg-outline-low' }}"></div>
         <div class="flex flex-col gap-y-4 sm:gap-y-6">
-            <ul class="flex flex-col gap-y-4 sm:gap-y-6 md:gap-y-8">
+            <ul class="grid grid-cols-1 md:grid-cols-2 gap-x-6 sm:gap-x-8 gap-y-2 sm:gap-y-4">
                 @foreach ($benefits as $item)
-                    <li class="flex items-start gap-x-2 sm:gap-x-3">
-                        <x-lucide-check class="w-4 h-4 sm:w-5 sm:h-5 {{ $bestPlan ? 'text-white' : 'text-helper-success' }} flex-shrink-0 mt-0.5"/>
-                        <span class="{{ $mainTextColor }} font-medium text-sm sm:text-base">{{ $item['value'] }}</span>
+                    <li>
+                        <div class="flex items-start gap-x-2 sm:gap-x-3">
+                        @if($item['is_highlighted'])
+                            <x-heroicon-c-star class="w-4 h-4 sm:w-5 sm:h-5 {{ $bestPlan ? 'text-white' : 'text-yellow-100' }} flex-shrink-0 mt-0.5" />
+                        @else
+                            <x-heroicon-m-check class="w-4 h-4 sm:w-5 sm:h-5 {{ $bestPlan ? 'text-white' : 'text-helper-success' }} flex-shrink-0 mt-0.5"/>
+                        @endif
+
+                        <span class="{{ $bestPlan ? 'text-text-light' : 'text-text-medium'  }}  font-medium text-sm sm:text-base">{{ $item['value'] }}</span>
+                        </div>
                     </li>
                 @endforeach
             </ul>

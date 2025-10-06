@@ -2,11 +2,13 @@
 
 namespace App\Filament\Components\Partials;
 
+use App\Enums\CustomComponent;
 use App\Filament\Components\AbstractCustomComponent;
 use App\Filament\Components\DTOs\HeadlineComponent;
 use Filament\Forms\Components\Repeater;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\TextInput;
+use Filament\Forms\Components\Toggle;
 use Illuminate\Support\Fluent;
 
 class PlansComponent extends AbstractCustomComponent
@@ -42,6 +44,8 @@ class PlansComponent extends AbstractCustomComponent
                     Repeater::make('benefits')
                         ->label(__('Features'))
                         ->schema([
+                            Toggle::make('is_highlighted')->default(false),
+
                             TextInput::make('value')
                                 ->label(__('Feature'))
                                 ->required(),
@@ -60,7 +64,7 @@ class PlansComponent extends AbstractCustomComponent
 
     public static function fieldName(): string
     {
-        return 'plans';
+        return CustomComponent::Plans->value;
     }
 
     public static function setupRenderPayload(array $data): array
