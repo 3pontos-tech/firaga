@@ -17,6 +17,7 @@ use App\Filament\Components\Partials\ContactFormComponent;
 use App\Filament\Components\Partials\CtaFullWidthComponent;
 use App\Filament\Components\Partials\CtaWithIconComponent;
 use App\Filament\Components\Partials\FaqComponent;
+use App\Filament\Components\Partials\FlowTimeline;
 use App\Filament\Components\Partials\HorizontalScrollerHighlightComponent;
 use App\Filament\Components\Partials\InfoStatsComponent;
 use App\Filament\Components\Partials\PlansComponent;
@@ -77,6 +78,8 @@ enum CustomComponent: string
 
     case HeroWithBackgroundImage = 'hero-with-background-image';
 
+    case FlowTimeline = 'flow-timeline';
+
     public function getComponentClass(): string
     {
         return match ($this) {
@@ -105,6 +108,7 @@ enum CustomComponent: string
             self::HeroWithBackgroundImage => HeroWithBackgroundImageComponent::class,
             self::ContactForm => ContactFormComponent::class,
             self::HeroWithImage => HeroWithImageComponent::class,
+            self::FlowTimeline => FlowTimeline::class,
         };
     }
 
