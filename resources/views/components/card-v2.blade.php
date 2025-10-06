@@ -1,3 +1,4 @@
+@php use App\Filament\Components\DTOs\CardComponent; @endphp
 @props([
     'as' => 'div',
     'href' => null,
@@ -16,9 +17,9 @@
 
 @php
     // DTO obrigatório
-    if (!$card instanceof \App\Filament\Components\DTOs\CardComponent) {
-        throw new \Exception('O componente CardV2 requer um DTO CardComponent válido.');
-    }
+//    if (!$card instanceof CardComponent) {
+//        throw new \Exception('O componente CardV2 requer um DTO CardComponent válido.');
+//    }
 
     $isInteractive =  $interactive && !$disabled;
     $tag = $href ? 'a' : $as;
@@ -82,20 +83,20 @@
 
 <div class="{{ $isInteractive ? 'group/card' : '' }}">
     <{{ $tag }} {{ $attributes->merge(['class' => $classes])->merge($linkAttrs) }}>
-        {{-- Icon --}}
+    {{-- Icon --}}
     @isset($icon)
         <div {{ $icon->attributes->class('h-8 w-8 text-icon-high rounded-md grid place-items-center shrink-0') }}>
-        {{ $icon }}
+            {{ $icon }}
         </div>
     @else
         @if(!empty($card->icon))
             <div class="h-8 w-8 text-icon-high rounded-md grid place-items-center shrink-0">
-                <x-filament::icon :icon="$card->icon" class="w-6 h-6" />
+                <x-filament::icon :icon="$card->icon" class="w-6 h-6"/>
             </div>
         @endif
-   @endif
+    @endif
 
-        <div class="flex {{ $textBox }}">
+    <div class="flex {{ $textBox }}">
         {{-- Title --}}
         @isset($title)
             <h3 {{ $title->attributes->class('text-lg font-semibold tracking-tight text-text-high') }}>
@@ -118,20 +119,20 @@
             @endif
         @endisset
 
+    </div>
+
+    {{-- Ações (opcional) --}}
+    @isset($actions)
+        <div {{ $actions->attributes->class('mt-2') }}>
+            {{ $actions }}
         </div>
+    @endisset
 
-        {{-- Ações (opcional) --}}
-        @isset($actions)
-            <div {{ $actions->attributes->class('mt-2') }}>
-                {{ $actions }}
-            </div>
-        @endisset
-
-        {{-- Rodapé (opcional) --}}
-        @isset($footer)
-            <div {{ $footer->attributes->class('mt-4 pt-4 border-t border-zinc-800/80') }}>
-                {{ $footer }}
-            </div>
-        @endisset
-    </{{ $tag }}>
+    {{-- Rodapé (opcional) --}}
+    @isset($footer)
+        <div {{ $footer->attributes->class('mt-4 pt-4 border-t border-zinc-800/80') }}>
+            {{ $footer }}
+        </div>
+    @endisset
+</{{ $tag }}>
 </div>

@@ -4,18 +4,14 @@
 ])
 
 <section>
-    <div class="py-12 sm:py-16 md:py-20 lg:py-24 mx-auto flex flex-col items-center container">
-        <div class="mb-8 sm:mb-12 md:mb-16 px-4 md:px-8 flex flex-col items-center justify-center gap-y-4 sm:gap-y-6"
-             style="opacity: 1; transform: none; will-change: opacity, transform;">
+    <div class="py-12 sm:py-16 md:py-20 lg:py-24 mx-auto flex flex-col items-center ">
+        <div>
             <x-headline :component="$headline" />
         </div>
         <div class="overflow-hidden w-full my-auto">
             <div class="mx-4 sm:mx-5 flex animate-infinite-scroll whitespace-nowrap gap-6 lg:animate-none rounded-xl sm:rounded-2xl">
                 @foreach(range(1,2) as $idx)
-                    <div class="flex {{ $idx == 2 ? 'lg:hidden' : 'lg:grid' }}  lg:grid-cols-5 lg:min-w-[300px] gap-4 sm:gap-6 md:gap-8 min-h-[240px] items-end">
-
-
-
+                    <div class="flex {{ $idx == 2 ? 'lg:hidden' : 'lg:grid' }} mx-auto lg:grid-cols-5 lg:min-w-[300px] gap-4 sm:gap-6 md:gap-8 min-h-[240px] items-end">
                         @foreach($cards as $card)
                             <x-card-v2
                                     :$card
