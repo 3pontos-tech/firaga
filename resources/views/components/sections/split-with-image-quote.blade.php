@@ -1,5 +1,5 @@
 @props([
-    '$headline',
+    'headline',
     'insights' => [],
     'quote',
     'cta_url',
@@ -58,13 +58,6 @@
                                     {{ $insight['description'] }}
                                 </x-slot:description>
                             </x-card-v2>
-{{--                            <div class="flex items-start gap-x-2 sm:gap-x-3">--}}
-{{--                                <x-lucide-check--}}
-{{--                                    class="w-4 h-4 sm:w-5 sm:h-5 lg:w-6 lg:h-6 {{ $variant === 'default' ? 'text-brand-primary' : 'text-white'}} flex-shrink-0 mt-0.5"/>--}}
-{{--                                <h3 class="text-text-high font-medium text-sm sm:text-base lg:text-lg">--}}
-{{--                                    {{ $insight['value'] }}--}}
-{{--                                </h3>--}}
-{{--                            </div>--}}
                         @endforeach
                     </div>
 
