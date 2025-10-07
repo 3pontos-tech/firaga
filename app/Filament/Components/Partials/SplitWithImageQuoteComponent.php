@@ -10,6 +10,7 @@ use Filament\Forms\Components\Select;
 use Filament\Forms\Components\SpatieMediaLibraryFileUpload;
 use Filament\Forms\Components\Textarea;
 use Filament\Forms\Components\TextInput;
+use Guava\FilamentIconPicker\Forms\IconPicker;
 
 class SplitWithImageQuoteComponent extends AbstractCustomComponent
 {
@@ -42,8 +43,12 @@ class SplitWithImageQuoteComponent extends AbstractCustomComponent
             Repeater::make('insights')
                 ->label('Insights')
                 ->schema([
-                    TextInput::make('value')
-                        ->label('Value')
+                    IconPicker::make('icon')
+                        ->required(),
+                    TextInput::make('title')
+                        ->required(),
+                    TextInput::make('description')
+                        ->label('Description')
                         ->required(),
                 ]),
             Textarea::make('quote')
@@ -55,12 +60,10 @@ class SplitWithImageQuoteComponent extends AbstractCustomComponent
                 ->nullable(),
 
             TextInput::make('cta_label')
-                ->label('Call to Action Label')
-                ->required(),
+                ->label('Call to Action Label'),
             TextInput::make('cta_url')
                 ->label('Call to Action URL')
-                ->url()
-                ->required(),
+                ->url(),
         ];
     }
 

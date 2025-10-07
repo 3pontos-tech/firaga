@@ -17,9 +17,9 @@
 
 <section class="py-8 sm:py-12 md:py-16 lg:py-20 xl:py-60">
     <div class="container mx-auto">
-        <div class="flex flex-col lg:flex-row gap-8 lg:gap-12 xl:gap-16 items-center justify-between">
-            <div class="w-full lg:w-1/2 xl:w-[60%] relative  {{ $imagePos }}">
-                <div class="hidden lg:block aspect-square sm:aspect-[4/3] lg:aspect-square xl:aspect-[4/3] relative">
+        <div class="flex flex-col lg:flex-row gap-8 lg:gap-12 xl:gap-16">
+            <div class="w-full lg:w-1/2 xl:w-[40%] relative {{ $imagePos }}">
+                <div class="hidden lg:block h-full relative">
                     <img
                         src="{{ $renderable?->getFirstMediaUrl(App\Enums\CustomComponent::SplitWithImageQuote->value) ?? asset('images/stock/our-work.png') }}"
                         alt="Our Work"
@@ -34,20 +34,37 @@
                     </div>
                 </div>
             </div>
-            <div class="w-full lg:w-1/2 xl:w-[40%] flex flex-col gap-y-4 sm:gap-y-6 lg:gap-y-8 {{ $contentPos }}">
+            <div class="w-full lg:w-1/2 xl:w-[55%] flex flex-col gap-y-4 sm:gap-y-6 lg:gap-y-8 {{ $contentPos }}">
                 <div class="space-y-4 sm:space-y-6 lg:space-y-8">
                     <div class="flex flex-col items-center justify-center space-y-6 text-center">
-                        <x-headline :component="$headline" />
+                        <x-headline class="lg:text-start" :component="$headline" />
                     </div>
-                    <div class="grid grid-cols-1 sm:grid-cols-1 lg:grid-cols-1 gap-3 sm:gap-4 w-full">
+                    <div class="grid grid-cols-1 sm:grid-cols-1 lg:grid-cols-2 gap-8 w-full">
                         @foreach($insights as $insight)
-                            <div class="flex items-start gap-x-2 sm:gap-x-3">
-                                <x-lucide-check
-                                    class="w-4 h-4 sm:w-5 sm:h-5 lg:w-6 lg:h-6 {{ $variant === 'default' ? 'text-brand-primary' : 'text-white'}} flex-shrink-0 mt-0.5"/>
-                                <h3 class="text-text-high font-medium text-sm sm:text-base lg:text-lg">
-                                    {{ $insight['value'] }}
-                                </h3>
-                            </div>
+                            <x-card-v2 text-align="items-center text-center sm:items-start sm:text-left"
+                                       class="flex h-full sm:flex-row lg:flex-col gap-4 items-center md:items-start">
+                                <x-slot:icon>
+                                    <div class="bg-brand-primary p-4 rounded-md max-w-fit">
+                                        <x-dynamic-component
+                                            :component="$insight['icon']"
+                                            class="w-6 h-6 text-white"
+                                        />
+                                    </div>
+                                </x-slot:icon>
+                                <x-slot:title class="mb-2">
+                                    {{ $insight['title'] }}
+                                </x-slot:title>
+                                <x-slot:description>
+                                    {{ $insight['description'] }}
+                                </x-slot:description>
+                            </x-card-v2>
+{{--                            <div class="flex items-start gap-x-2 sm:gap-x-3">--}}
+{{--                                <x-lucide-check--}}
+{{--                                    class="w-4 h-4 sm:w-5 sm:h-5 lg:w-6 lg:h-6 {{ $variant === 'default' ? 'text-brand-primary' : 'text-white'}} flex-shrink-0 mt-0.5"/>--}}
+{{--                                <h3 class="text-text-high font-medium text-sm sm:text-base lg:text-lg">--}}
+{{--                                    {{ $insight['value'] }}--}}
+{{--                                </h3>--}}
+{{--                            </div>--}}
                         @endforeach
                     </div>
 
@@ -57,12 +74,14 @@
                         </p>
                     @endif
 
-                    <div class="flex flex-col sm:flex-row gap-3 sm:gap-4 lg:gap-6">
-                        <x-layout.shared.button :$variant :href="$cta_url"
-                                                class="w-full sm:w-auto px-4 py-2 sm:px-6 sm:py-3 lg:px-8 lg:py-4 font-bold text-xs sm:text-sm lg:text-base">
-                            {{ $cta_label }}
-                        </x-layout.shared.button>
-                    </div>
+                    @if(!empty($cta_label))
+                        <div class="flex flex-col sm:flex-row gap-3 sm:gap-4 lg:gap-6">
+                            <x-layout.shared.button :$variant :href="$cta_url"
+                                                    class="w-full sm:w-auto px-4 py-2 sm:px-6 sm:py-3 lg:px-8 lg:py-4 font-bold text-xs sm:text-sm lg:text-base">
+                                {{ $cta_label }}
+                            </x-layout.shared.button>
+                        </div>
+                    @endif
                 </div>
             </div>
         </div>

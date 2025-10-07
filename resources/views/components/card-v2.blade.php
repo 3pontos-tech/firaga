@@ -12,7 +12,8 @@
     'target' => null,
     'rel' => null,
     'card' => null, // DTO obrigatório: App\Filament\Components\DTOs\CardComponent
-    'textBox' => 'flex-col'
+    'textBox' => 'flex-col',
+    'textAlign' => ''
 ])
 
 @php
@@ -96,7 +97,7 @@
         @endif
     @endif
 
-    <div class="flex {{ $textBox }}">
+    <div class="flex {{ $textBox }} {{ $textAlign }}">
         {{-- Title --}}
         @isset($title)
             <h3 {{ $title->attributes->class('text-lg font-semibold tracking-tight text-text-high') }}>
