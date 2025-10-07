@@ -4,6 +4,7 @@ namespace App\Filament\Components\Partials;
 
 use App\Enums\CustomComponent;
 use App\Filament\Components\AbstractCustomComponent;
+use App\Filament\Components\DTOs\HeadlineComponent;
 use Filament\Forms\Components\Repeater;
 use Filament\Forms\Components\TextInput;
 use Guava\FilamentIconPicker\Forms\IconPicker;
@@ -15,6 +16,7 @@ class FlowTimeline extends AbstractCustomComponent
     public static function blockSchema(): array
     {
         return [
+            ...HeadlineComponent::form(),
             Repeater::make('timeline')
                 ->label(__('Timeline'))
                 ->schema([
@@ -41,6 +43,7 @@ class FlowTimeline extends AbstractCustomComponent
     public static function setupRenderPayload(array $data): array
     {
         return [
+            'headline' => HeadlineComponent::make($data['headline']),
             'timeline' => collect($data['timeline'] ?? []),
         ];
     }

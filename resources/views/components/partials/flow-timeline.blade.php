@@ -1,8 +1,12 @@
 @props([
+    'headline',
     'timeline'
 ])
 
 <section class="py-8 sm:py-12 md:py-16 text-white">
+    <div class="flex flex-col items-center justify-center px-2 space-y-6 text-center">
+        <x-headline :component="$headline" />
+    </div>
     <div class="container grid grid-cols-1 md:grid-cols-3 md:grid-rows-3 mx-auto space-y-16 relative">
         @foreach($timeline as $item)
             <div class="relative items-center z-10 p-4 md:p-0 bg-elevation-surface space-y-4 md:col-start-1 md:row-start-1
@@ -21,7 +25,7 @@
                         : "after:content-[''] after:max-w-[190px] after:lg:max-w-screen after:z-0 after:rounded-bl-xl
                         after:absolute after:-z-10 after:border-dashed
                         after:md:border-b-2 after:border-l-2 after:border-outline-low after:left-1/2 after:md:left-1/10
-                        after:md:top-[101%] after:w-[520px] after:h-[190px] after:top-[110%]";
+                        after:md:top-[101%] after:w-[520px] after:h-[180px] after:top-[110%]";
                 @endphp
 
                 @if($loop->iteration === 2)
