@@ -4,6 +4,7 @@ namespace App\Filament\Components\Partials;
 
 use App\Enums\CustomComponent;
 use App\Filament\Components\AbstractCustomComponent;
+use App\Filament\Components\DTOs\HeadlineComponent;
 use Filament\Forms\Components\Repeater;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\SpatieMediaLibraryFileUpload;
@@ -17,6 +18,8 @@ class SplitWithImageQuoteComponent extends AbstractCustomComponent
     public static function blockSchema(): array
     {
         return [
+            ...HeadlineComponent::form(),
+
             SpatieMediaLibraryFileUpload::make('hero')
                 ->label('Hero Image')
                 ->collection(CustomComponent::SplitWithImageQuote->value)
@@ -35,12 +38,7 @@ class SplitWithImageQuoteComponent extends AbstractCustomComponent
             TextInput::make('badge')
                 ->label('Badge')
                 ->required(),
-            TextInput::make('heading')
-                ->label('Heading')
-                ->required(),
-            Textarea::make('description')
-                ->label('Description')
-                ->required(),
+
             Repeater::make('insights')
                 ->label('Insights')
                 ->schema([
@@ -76,8 +74,7 @@ class SplitWithImageQuoteComponent extends AbstractCustomComponent
         return [
             'image_position' => $data['image_position'] ?? 'left',
             'badge' => $data['badge'],
-            'heading' => $data['heading'],
-            'end_description' => $data['end_description'] ?? '',
+            'headline' => HeadlineComponent::make($data['headline']),
             'description' => $data['description'],
             'insights' => $data['insights'],
             'quote' => $data['quote'],

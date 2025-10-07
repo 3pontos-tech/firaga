@@ -1,6 +1,5 @@
 @props([
-    'heading',
-    'description',
+    '$headline',
     'insights' => [],
     'quote',
     'cta_url',
@@ -20,7 +19,7 @@
     <div class="container mx-auto">
         <div class="flex flex-col lg:flex-row gap-8 lg:gap-12 xl:gap-16 items-center justify-between">
             <div class="w-full lg:w-1/2 xl:w-[60%] relative  {{ $imagePos }}">
-                <div class="aspect-square sm:aspect-[4/3] lg:aspect-square xl:aspect-[4/3] relative">
+                <div class="hidden lg:block aspect-square sm:aspect-[4/3] lg:aspect-square xl:aspect-[4/3] relative">
                     <img
                         src="{{ $renderable?->getFirstMediaUrl(App\Enums\CustomComponent::SplitWithImageQuote->value) ?? asset('images/stock/our-work.png') }}"
                         alt="Our Work"
@@ -37,18 +36,8 @@
             </div>
             <div class="w-full lg:w-1/2 xl:w-[40%] flex flex-col gap-y-4 sm:gap-y-6 lg:gap-y-8 {{ $contentPos }}">
                 <div class="space-y-4 sm:space-y-6 lg:space-y-8">
-                    <div class="space-y-3 sm:space-y-4 lg:space-y-6 flex flex-col">
-                        @if($badge)
-                            <x-layout.shared.chip :$variant class="px-4 py-2">
-                                {{ $badge }}
-                            </x-layout.shared.chip>
-                        @endif
-                        <h2 class="text-text-high font-bold text-xl sm:text-2xl lg:text-3xl xl:text-4xl leading-tight">
-                            {{ $heading }}
-                        </h2>
-                        <p class="text-text-medium text-sm sm:text-base lg:text-lg leading-relaxed">
-                            {{ $description }}
-                        </p>
+                    <div class="flex flex-col items-center justify-center space-y-6 text-center">
+                        <x-headline :component="$headline" />
                     </div>
                     <div class="grid grid-cols-1 sm:grid-cols-1 lg:grid-cols-1 gap-3 sm:gap-4 w-full">
                         @foreach($insights as $insight)
