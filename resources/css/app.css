@@ -23,6 +23,7 @@
 }
 
 @theme inline {
+    --breakpoint-md: 821px;
     --font-sans: "Syne", sans-serif;
     --font-smooth: never;
     --color-brand-primary: var(--brand-primary);
