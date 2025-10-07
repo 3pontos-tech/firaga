@@ -1,6 +1,7 @@
 @import 'tailwindcss';
-@plugin '@tailwindcss/typography';
 @import './fonts.css';
+
+@plugin '@tailwindcss/typography';
 
 @custom-variant dark (&:where(.dark, .dark *));
 
@@ -22,6 +23,7 @@
 }
 
 @theme inline {
+    --breakpoint-md: 821px;
     --font-sans: "Syne", sans-serif;
     --font-smooth: never;
     --color-brand-primary: var(--brand-primary);

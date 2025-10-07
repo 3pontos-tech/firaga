@@ -85,7 +85,7 @@
     <{{ $tag }} {{ $attributes->merge(['class' => $classes])->merge($linkAttrs) }}>
     {{-- Icon --}}
     @isset($icon)
-        <div {{ $icon->attributes->class('h-8 w-8 text-icon-high rounded-md grid place-items-center shrink-0') }}>
+        <div {{ $icon->attributes }}>
             {{ $icon }}
         </div>
     @else
