@@ -4,8 +4,10 @@ namespace App\Filament\Components\Partials;
 
 use App\Enums\CustomComponent;
 use App\Filament\Components\AbstractCustomComponent;
+use App\Filament\Components\DTOs\HeadlineComponent;
 use Filament\Forms\Components\SpatieMediaLibraryFileUpload;
 use Filament\Forms\Components\TextInput;
+use Guava\FilamentIconPicker\Forms\IconPicker;
 
 class CallToActionWithImageComponent extends AbstractCustomComponent
 {
@@ -19,15 +21,11 @@ class CallToActionWithImageComponent extends AbstractCustomComponent
                 ->collection(CustomComponent::CallToActionWithImage->value)
                 ->image()
                 ->required(),
-            TextInput::make('heading')
-                ->label('Heading')
-                ->required(),
-            TextInput::make('description')
-                ->label('Description')
-                ->required(),
+            ...HeadlineComponent::form(),
             TextInput::make('cta_label')
                 ->label('CTA Label')
                 ->required(),
+            IconPicker::make('cta_icon'),
             TextInput::make('cta_url')
                 ->label('CTA URL')
                 ->url()
@@ -43,9 +41,9 @@ class CallToActionWithImageComponent extends AbstractCustomComponent
     public static function setupRenderPayload(array $data): array
     {
         return [
-            'heading' => $data['heading'],
-            'description' => $data['description'],
+            'headline' => HeadlineComponent::make($data['headline']),
             'cta_label' => $data['cta_label'],
+            'cta_icon' => $data['cta_icon'] ?? '',
             'cta_url' => $data['cta_url'],
         ];
     }
