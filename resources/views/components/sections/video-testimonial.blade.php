@@ -14,13 +14,13 @@
                 <div class="flex flex-col items-center justify-center space-y-6 text-center">
                     <x-headline class="lg:text-start" :component="$headline" />
                 </div>
-                <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 md:gap-6 w-full">
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-4 md:gap-6 w-full">
                     @foreach($insights as $insight)
                         <x-card-v2 class="flex flex-col gap-y-3 sm:gap-y-4 h-full">
                             <x-slot:icon>
                                 <x-filament::icon :icon="$insight['icon']" class="w-5 h-5 sm:w-6 sm:h-6 text-brand-primary"/>
                             </x-slot:icon>
-                            <x-slot:title>
+                            <x-slot:title class="text-sm sm:text-lg">
                                 {{ $insight['value'] }}
                             </x-slot:title>
                         </x-card-v2>
