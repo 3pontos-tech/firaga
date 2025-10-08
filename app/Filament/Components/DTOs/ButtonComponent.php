@@ -6,6 +6,7 @@ use Filament\Forms\Components\Repeater;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Components\Toggle;
+use Guava\FilamentIconPicker\Forms\IconPicker;
 use Illuminate\Support\Collection;
 
 class ButtonComponent
@@ -14,6 +15,8 @@ class ButtonComponent
         public string $label,
         public string $url,
         public string $target,
+        public string $icon,
+        public string $iconPosition
     ) {}
 
     public static function form(?string $parent = null): array
@@ -35,6 +38,14 @@ class ButtonComponent
                     TextInput::make('url')
                         ->label('URL')
                         ->required(),
+                    IconPicker::make('icon'),
+                    Select::make('icon_position')
+                        ->label('Icon Position')
+                        ->options([
+                            'leading' => 'Leading',
+                            'trailing' => 'Trailing',
+                        ])
+                        ->default('trailing'),
                     Select::make('target')
                         ->label('Target')
                         ->options([
@@ -52,6 +63,8 @@ class ButtonComponent
             label: $payload['label'] ?? '',
             url: $payload['url'] ?? '',
             target: $payload['target'] ?? '_blank',
+            icon: $payload['icon'] ?? '',
+            iconPosition: $payload['icon_position'] ?? 'leading',
         );
     }
 

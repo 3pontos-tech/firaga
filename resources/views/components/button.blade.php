@@ -10,7 +10,9 @@
     'disabled' => false,
     'loading' => false,
     'iconOnly' => false,
-    'component'
+    'component',
+    'icon' => null,
+    'iconPosition' => 'leading'
 ])
 
 {{-- pick up the card's interactive flag if present --}}
@@ -31,6 +33,8 @@
         $label = $component->label;
         $href = $component->url;
         $targetType = $component->target;
+        $icon = $component->icon;
+        $iconPosition = $component->iconPosition;
     }
 
     $isLink = filled($href);
@@ -62,8 +66,9 @@
 
     $w = $block ? 'w-full' : 'w-auto';
     $disabledCls = $isDisabled ? 'opacity-60 pointer-events-none' : '';
-    $hasLeading = isset($leading);
-    $hasTrailing = isset($trailing);
+    $hasIcon = filled($icon);
+    $hasLeading = isset($leading) || ($hasIcon && $iconPosition === 'leading');
+    $hasTrailing = isset($trailing) || ($hasIcon && $iconPosition === 'trailing');
     $gap = ($hasLeading || $hasTrailing) ? 'gap-2' : 'gap-0';
     $pad = $iconOnly ? $sizes['iconOnly'] : $sizes['pad'];
 
@@ -109,11 +114,15 @@
 @endisset
 
 {{-- Leading icon --}}
-@isset($leading)
+@if ($hasIcon && $iconPosition === 'leading')
+    <span class="{{ $sizes['icon'] }} shrink-0 transition-colors group-hover/button:opacity-90">
+        <x-dynamic-component :component="$icon" class="w-full h-full" />
+    </span>
+@elseif (isset($leading))
     <span {{ $leading->attributes->class($sizes['icon'].' shrink-0 transition-colors group-hover/button:opacity-90') }}>
-            {{ $leading }}
-        </span>
-@endisset
+        {{ $leading }}
+    </span>
+@endif
 
 {{-- Label --}}
 @unless($iconOnly)
@@ -123,11 +132,15 @@
 @endunless
 
 {{-- Trailing icon --}}
-@isset($trailing)
-    <span {{ $trailing->attributes->class($sizes['icon'].' shrink-0 transition-transform group-hover/button:translate-x-0.5') }}>
-            {{ $trailing }}
-        </span>
-@endisset
+@if ($hasIcon && $iconPosition === 'trailing')
+    <span class="{{ $sizes['icon'] }} shrink-0 transition-transform">
+        <x-dynamic-component :component="$icon" class="w-full h-full" />
+    </span>
+@elseif (isset($trailing))
+    <span {{ $trailing->attributes->class($sizes['icon'].' shrink-0 transition-transform') }}>
+        {{ $trailing }}
+    </span>
+@endif
 
 {{-- Loading spinner --}}
 @if($isBusy)
