@@ -47,7 +47,6 @@ class CallToActionWithImageComponent extends AbstractCustomComponent
             'description' => $data['description'],
             'cta_label' => $data['cta_label'],
             'cta_url' => $data['cta_url'],
-            'image' => $data['image'],
         ];
     }
 
