@@ -21,6 +21,7 @@ class FaqComponent extends AbstractCustomComponent
                 ->collection(CustomComponent::Faq->value)
                 ->image()
                 ->required(),
+            TextInput::make('description'),
             Repeater::make('solutions')
                 ->label(__('Solutions'))
                 ->schema([
@@ -42,6 +43,7 @@ class FaqComponent extends AbstractCustomComponent
     public static function setupRenderPayload(array $data): array
     {
         return [
+            'description' => $data['description'] ?? '',
             'solutions' => collect($data['solutions'] ?? []),
         ];
     }
