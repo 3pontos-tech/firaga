@@ -19,7 +19,7 @@
 
     $tag = $as;
 
-    $base = 'font-bold flex items-center w-fit mb-8 rounded-' . $rounded . ' inline-flex justify-center transition-all duration-200 border';
+    $base = 'font-semibold flex items-center w-fit mb-8 rounded-' . $rounded . ' inline-flex justify-center transition-all duration-200 border';
 
     // Sizes
     $sizes = [
@@ -30,7 +30,7 @@
 
     // Variants
     $variants = [
-        'brand'   => 'bg-brand-primary/40 hover:bg-brand-primary/90 text-white border-brand-primary',
+        'brand'   => 'bg-brand-primary/10 hover:bg-brand-primary/90 text-white border-brand-primary/30',
         'neutral' => 'bg-zinc-200 hover:bg-zinc-300 text-zinc-800 border-zinc-300',
         'custom'  => '', // allow full custom via $attributes->merge()
     ];
