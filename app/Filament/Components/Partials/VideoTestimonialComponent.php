@@ -3,6 +3,7 @@
 namespace App\Filament\Components\Partials;
 
 use App\Filament\Components\AbstractCustomComponent;
+use App\Filament\Components\DTOs\HeadlineComponent;
 use Filament\Forms\Components\MarkdownEditor;
 use Filament\Forms\Components\Repeater;
 use Filament\Forms\Components\TextInput;
@@ -14,16 +15,7 @@ class VideoTestimonialComponent extends AbstractCustomComponent
     public static function blockSchema(): array
     {
         return [
-            'heading' => TextInput::make('heading')
-                ->label(__('Heading'))
-                ->required()
-                ->default('Customer Testimonial'),
-
-            'description' => MarkdownEditor::make('description')
-                ->label(__('Description'))
-                ->required()
-                ->default('Hear what our customers have to say about us!'),
-
+            ...HeadlineComponent::form(),
             'insights' => Repeater::make('insights')
                 ->label(__('Testimonials Insights'))
                 ->maxItems(3)
@@ -55,12 +47,10 @@ class VideoTestimonialComponent extends AbstractCustomComponent
                 ->columns(3)
                 ->defaultItems(1),
             'cta_label' => TextInput::make('cta_label')
-                ->label(__('CTA Label'))
-                ->required(),
+                ->label(__('CTA Label')),
             'cta_url' => TextInput::make('cta_url')
                 ->label(__('CTA URL'))
-                ->url()
-                ->required(),
+                ->url(),
         ];
     }
 
@@ -72,8 +62,7 @@ class VideoTestimonialComponent extends AbstractCustomComponent
     public static function setupRenderPayload(array $data): array
     {
         return [
-            'heading' => $data['heading'] ?? '',
-            'description' => $data['description'] ?? '',
+            'headline' => HeadlineComponent::make($data['headline']),
             'insights' => $data['insights'] ?? [],
             'video_url' => $data['video_url'] ?? '',
             'video_cards' => $data['video_cards'] ?? [],

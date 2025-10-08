@@ -7,7 +7,7 @@
     <div class="flex flex-col items-center justify-center px-2 space-y-6 text-center">
         <x-headline :component="$headline" />
     </div>
-    <div class="container grid grid-cols-1 md:grid-cols-3 md:grid-rows-3 mx-auto space-y-16 relative">
+    <div class="container pt-8 grid grid-cols-1 md:grid-cols-3 md:grid-rows-3 mx-auto space-y-16 relative">
         @foreach($timeline as $item)
             <div class="relative items-center z-10 p-4 md:p-0 bg-elevation-surface space-y-4 md:col-start-1 md:row-start-1
             {{ $loop->iteration === 2 ? 'md:col-start-2 md:row-start-2' : '' }}
