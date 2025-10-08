@@ -75,7 +75,7 @@
 
 @endphp
 
-<div {{ $attributes->class(($component->position == 'center' ? 'mx-auto' : '') . ' max-w-2xl md:max-w-3xl lg:max-w-4xl') }} >
+<div {{ $attributes->class(($component->position == 'center' ? 'mx-auto' : '') . ' max-w-2xl md:max-w-3xl lg:max-w-7xl') }} >
 
     <{{ $tag }} {{ $attributes->merge(['class' => "$animateCls  $alignCls "]) }}>
 
