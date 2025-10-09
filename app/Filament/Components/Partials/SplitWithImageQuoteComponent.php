@@ -78,7 +78,6 @@ class SplitWithImageQuoteComponent extends AbstractCustomComponent
             'image_position' => $data['image_position'] ?? 'left',
             'badge' => $data['badge'],
             'headline' => HeadlineComponent::make($data['headline']),
-            'description' => $data['description'],
             'insights' => $data['insights'],
             'quote' => $data['quote'],
             'cta_label' => $data['cta_label'] ?? '',

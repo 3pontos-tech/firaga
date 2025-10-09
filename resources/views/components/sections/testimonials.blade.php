@@ -23,7 +23,7 @@
             <x-headline :component="$headline" />
         </div>
 
-        <div class="overflow-x-hidden">
+        <div class="overflow-x-hidden lg:mask-none mask-l-from-95% mask-l-to-99% mask-r-from-95% mask-r-to-99%">
             <div
                 class="mx-4 sm:mx-5 flex animate-infinite-scroll gap-6 lg:animate-none rounded-xl sm:rounded-2xl">
                 @foreach(range(1,2) as $idx)
