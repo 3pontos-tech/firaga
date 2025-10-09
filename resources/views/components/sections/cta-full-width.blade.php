@@ -12,7 +12,7 @@ $variant = $renderable->theme->value;
 @endphp
 
 <section class="mt-16 sm:mt-24 md:mt-32">
-    <div class="relative text-center flex flex-col items-center justify-center min-h-[300px] sm:min-h-[400px] md:min-h-[500px] lg:min-h-[600px] xl:min-h-[700px]">
+    <div class="relative text-center py-16 flex flex-col items-center justify-center min-h-[300px] sm:min-h-[400px] md:min-h-[500px] lg:min-h-[600px] xl:min-h-[700px]">
         <img src="{{ $renderable?->getFirstMedia(App\Enums\CustomComponent::CallToActionFullWidthSection->value, ['component_id' => $component_id])->getUrl() ?? asset('images/stock/our-work.png') }}" alt="CTA Section" class="absolute inset-0 w-full h-full object-cover object-center brightness-30">
         <div class="absolute top-2 left-2 sm:top-4 sm:left-4 md:top-6 md:left-6 lg:top-8 lg:left-8">
             <x-partials.corner variant="brand" class="w-[40px] h-[40px] sm:w-[60px] sm:h-[60px] md:w-[80px] md:h-[80px] lg:w-[100px] lg:h-[100px]"/>
