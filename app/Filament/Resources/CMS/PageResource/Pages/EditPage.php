@@ -11,7 +11,7 @@ class EditPage extends EditRecord
 {
     protected static string $resource = PageResource::class;
 
-    public bool $isJsonVisible = true;
+    public bool $isJsonVisible = false;
 
     protected ?string $maxContentWidth = 'full';
 
