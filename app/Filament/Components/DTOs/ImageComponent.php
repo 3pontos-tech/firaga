@@ -13,23 +13,22 @@ class ImageComponent
 {
     public static function form(
         CustomComponent $component,
-        string          $field = 'image',
-    )
-    {
+        string $field = 'image',
+    ) {
         return [
             Fieldset::make('Headline')
                 ->columns(1)
                 ->schema([
                     Hidden::make('component_id')
-                        ->formatStateUsing(fn($state) => $state ?? Uuid::uuid4()->toString()),
+                        ->formatStateUsing(fn ($state) => $state ?? Uuid::uuid4()->toString()),
 
                     SpatieMediaLibraryFileUpload::make($field)
                         ->label('Hero Image')
-                        ->customProperties(fn(Get $get): array => [
+                        ->customProperties(fn (Get $get): array => [
                             'component_id' => $get('component_id'),
                         ])
                         ->filterMediaUsing(
-                            fn($media, Get $get) => $media->where(
+                            fn ($media, Get $get) => $media->where(
                                 'custom_properties.component_id',
                                 $get('component_id')
                             ),
