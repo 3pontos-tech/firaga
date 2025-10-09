@@ -107,45 +107,49 @@
 >
 
 
-@isset($label)
-    <span {{ $attributes->merge(['class' =>' shrink-0 transition-colors group-hover/button:opacity-90']) }} >
-        {{ $label }}
-    </span>
-@endisset
+<span class="inline-flex items-center justify-center {{ $gap }}">
 
-{{-- Leading icon --}}
-@if ($hasIcon && $iconPosition === 'leading')
-    <span class="{{ $sizes['icon'] }} shrink-0 transition-colors group-hover/button:opacity-90">
-        <x-dynamic-component :component="$icon" class="w-full h-full" />
-    </span>
-@elseif (isset($leading))
-    <span {{ $leading->attributes->class($sizes['icon'].' shrink-0 transition-colors group-hover/button:opacity-90') }}>
-        {{ $leading }}
-    </span>
-@endif
+        @isset($label)
+        <span {{ $attributes->merge(['class' =>' shrink-0 transition-colors group-hover/button:opacity-90']) }} >
+                {{ $label }}
+            </span>
+    @endisset
 
-{{-- Label --}}
-@unless($iconOnly)
-    <span class="{{ $isBusy ? 'opacity-0' : 'opacity-100' }}">
-        {{ $slot }}
-    </span>
-@endunless
+    {{-- Leading icon --}}
+    @if ($hasIcon && $iconPosition === 'leading')
+        <span class="{{ $sizes['icon'] }} shrink-0 transition-colors group-hover/button:opacity-90">
+                <x-dynamic-component :component="$icon" class="w-full h-full" />
+            </span>
+    @elseif (isset($leading))
+        <span {{ $leading->attributes->class($sizes['icon'].' shrink-0 transition-colors group-hover/button:opacity-90') }}>
+                {{ $leading }}
+            </span>
+    @endif
 
-{{-- Trailing icon --}}
-@if ($hasIcon && $iconPosition === 'trailing')
-    <span class="{{ $sizes['icon'] }} shrink-0 transition-transform">
-        <x-dynamic-component :component="$icon" class="w-full h-full" />
+    {{-- Label --}}
+    @unless($iconOnly)
+        <span class="{{ $isBusy ? 'opacity-0' : 'opacity-100' }}">
+                {{ $slot }}
+            </span>
+    @endunless
+
+    {{-- Trailing icon --}}
+    @if ($hasIcon && $iconPosition === 'trailing')
+        <span class="{{ $sizes['icon'] }} shrink-0 transition-transform">
+                <x-dynamic-component :component="$icon" class="w-full h-full" />
+            </span>
+    @elseif (isset($trailing))
+        <span {{ $trailing->attributes->class($sizes['icon'].' shrink-0 transition-transform') }}>
+                {{ $trailing }}
+            </span>
+    @endif
+
     </span>
-@elseif (isset($trailing))
-    <span {{ $trailing->attributes->class($sizes['icon'].' shrink-0 transition-transform') }}>
-        {{ $trailing }}
-    </span>
-@endif
 
 {{-- Loading spinner --}}
 @if($isBusy)
     <span class="absolute inline-flex">
-            <svg class="animate-spin {{ $sizes['icon'] }}" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <svg class="animate-spin {{ $sizes['icon'] }}" viewBox="0 0 24 24" aria-hidden="true">
                 <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"/>
                 <path class="opacity-75" d="M4 12a8 8 0 018-8" stroke="currentColor" stroke-width="4"
                       stroke-linecap="round"/>
