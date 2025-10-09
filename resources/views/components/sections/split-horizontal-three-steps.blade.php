@@ -23,8 +23,9 @@
                         :elevation="2"
                         :card="$card"
                         :interactive="true"
-                        text-box="flex flex-col gap-2  md:mx-4"
-                        class="flex flex-col gap-y-4 m-0! justify-center items-center text-center h-full md:flex-row lg:flex-col"
+                        text-box="flex flex-col gap-2 md:mx-4 sm:items-start sm:text-left"
+                        class="flex flex-col gap-4 m-0! justify-center items-center
+                        sm:justify-start text-center h-full sm:flex-row lg:flex-col"
                 >
                     <x-slot:icon class="bg-brand-primary rounded-lg group-hover/card:bg-white h-12 w-12 md:h-14 md:w-14 flex items-center justify-center">
                         <x-filament::icon :icon="$card->icon" class="group-hover/card:text-brand-primary w-8 h-8" />
