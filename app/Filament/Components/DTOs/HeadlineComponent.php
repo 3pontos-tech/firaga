@@ -39,6 +39,7 @@ class HeadlineComponent
                         ->label('Keywords'),
                     Select::make('headline.size')
                         ->label('Size')
+                        ->default('lg')
                         ->options([
                             'sm' => 'Small',
                             'md' => 'Medium',
