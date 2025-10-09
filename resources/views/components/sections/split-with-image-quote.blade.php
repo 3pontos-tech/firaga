@@ -34,7 +34,7 @@
                     </div>
                 </div>
             </div>
-            <div class="w-full lg:w-1/2 xl:w-[55%] flex flex-col gap-y-4 sm:gap-y-6 lg:gap-y-8 {{ $contentPos }}">
+            <div class="w-full lg:w-1/2 xl:w-[55%] flex flex-col gap-y-4 sm:gap-y-6 lg:gap-y-8 justify-center {{ $contentPos }}">
                 <div class="space-y-4 sm:space-y-6 lg:space-y-8">
                     <div class="flex flex-col items-center justify-center space-y-6 text-center">
                         <x-headline class="lg:text-start" :component="$headline" />
