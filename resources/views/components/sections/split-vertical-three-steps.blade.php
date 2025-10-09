@@ -26,8 +26,8 @@
                             text-box="flex flex-col gap-2 text-left!  md:mx-4"
                             class="flex flex-col mx-6 md:mx-0 md:flex-row justify-center items-center gap-4 md:gap-6 lg:gap-8"
                     >
-                        <x-slot:icon class="bg-outline-dark group-hover/card:bg-white h-12 w-12 md:h-14 md:w-14 flex items-center justify-center">
-                            <x-filament::icon :icon="$card->icon" class="group-hover/card:text-brand-primary " />
+                        <x-slot:icon class="bg-outline-dark rounded-lg group-hover/card:bg-white h-12 w-12 sm:h-16 sm:w-16 flex items-center justify-center">
+                            <x-filament::icon :icon="$card->icon" class="group-hover/card:text-brand-primary w-6 h-6 sm:w-8 sm:h-8" />
                         </x-slot:icon>
 
                         <x-slot:title class="text-center md:text-left lg:text-left">
