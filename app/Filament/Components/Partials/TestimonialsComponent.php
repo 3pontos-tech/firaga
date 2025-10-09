@@ -7,7 +7,6 @@ use App\Filament\Components\AbstractCustomComponent;
 use App\Filament\Components\DTOs\HeadlineComponent;
 use App\Models\Testimonial;
 use Filament\Forms\Components\Select;
-use Filament\Forms\Components\TextInput;
 
 class TestimonialsComponent extends AbstractCustomComponent
 {

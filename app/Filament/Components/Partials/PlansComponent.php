@@ -5,6 +5,7 @@ namespace App\Filament\Components\Partials;
 use App\Enums\CustomComponent;
 use App\Filament\Components\AbstractCustomComponent;
 use App\Filament\Components\DTOs\HeadlineComponent;
+use Filament\Forms\Components\Fieldset;
 use Filament\Forms\Components\Repeater;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\TextInput;
@@ -19,46 +20,53 @@ class PlansComponent extends AbstractCustomComponent
     {
         return [
             ...HeadlineComponent::form(),
-            Repeater::make('plans')
-                ->label(__('Plans'))
-                ->cloneable()
+            Fieldset::make('Plans')
+                ->columnSpanFull()
                 ->schema([
-                    Select::make('best_plan')
-                        ->label(__('Best Plan?'))
-                        ->boolean()
-                        ->required(),
-                    Select::make('name')
-                        ->label(__('Plan Type'))
-                        ->options([
-                            'gold' => 'Gold',
-                            'platinum' => 'Platinum',
-                            'black' => 'Black',
-                        ])
-                        ->required(),
-                    TextInput::make('description')
-                        ->label(__('Description'))
-                        ->required(),
-                    TextInput::make('note')
-                        ->label(__('Note'))
-                        ->nullable(),
-                    Repeater::make('benefits')
-                        ->label(__('Features'))
+                    Repeater::make('plans')
+                        ->label(__('Plans'))
+                        ->cloneable()
+                        ->columnSpanFull()
+                        ->collapsible()
                         ->schema([
-                            Toggle::make('is_highlighted')->default(false),
-
-                            TextInput::make('value')
-                                ->label(__('Feature'))
+                            Select::make('best_plan')
+                                ->label(__('Best Plan?'))
+                                ->boolean()
                                 ->required(),
-                        ]),
-                    TextInput::make('cta_label')
-                        ->label(__('Button Text'))
+                            Select::make('name')
+                                ->label(__('Plan Type'))
+                                ->options([
+                                    'gold' => 'Gold',
+                                    'platinum' => 'Platinum',
+                                    'black' => 'Black',
+                                ])
+                                ->required(),
+                            TextInput::make('description')
+                                ->label(__('Description'))
+                                ->required(),
+                            TextInput::make('note')
+                                ->label(__('Note'))
+                                ->nullable(),
+                            Repeater::make('benefits')
+                                ->label(__('Features'))
+                                ->cloneable()
+                                ->schema([
+                                    Toggle::make('is_highlighted')->default(false),
+
+                                    TextInput::make('value')
+                                        ->label(__('Feature'))
+                                        ->required(),
+                                ]),
+                            TextInput::make('cta_label')
+                                ->label(__('Button Text'))
+                                ->required(),
+                            TextInput::make('cta_url')
+                                ->label(__('Button URL'))
+                                ->required(),
+                        ])
+                        ->reorderableWithButtons()
                         ->required(),
-                    TextInput::make('cta_url')
-                        ->label(__('Button URL'))
-                        ->required(),
-                ])
-                ->reorderableWithButtons()
-                ->required(),
+                ]),
         ];
     }
 

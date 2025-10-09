@@ -4,7 +4,6 @@ namespace App\Filament\Components\Partials;
 
 use App\Filament\Components\AbstractCustomComponent;
 use App\Filament\Components\DTOs\HeadlineComponent;
-use Filament\Forms\Components\MarkdownEditor;
 use Filament\Forms\Components\Repeater;
 use Filament\Forms\Components\TextInput;
 use Guava\FilamentIconPicker\Forms\IconPicker;
@@ -25,7 +24,7 @@ class VideoTestimonialComponent extends AbstractCustomComponent
                         ->label(__('Insight'))
                         ->required()
                         ->default('John Doe'),
-                    IconPicker::make('icon')
+                    IconPicker::make('icon'),
                 ])
                 ->columns(3)
                 ->defaultItems(1),

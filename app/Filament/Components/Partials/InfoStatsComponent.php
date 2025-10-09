@@ -6,10 +6,6 @@ use App\Enums\CustomComponent;
 use App\Filament\Components\AbstractCustomComponent;
 use App\Filament\Components\DTOs\CardComponent;
 use App\Filament\Components\DTOs\HeadlineComponent;
-use Filament\Forms\Components\Repeater;
-use Filament\Forms\Components\TextInput;
-use Guava\FilamentIconPicker\Forms\IconPicker;
-use Illuminate\Support\Fluent;
 
 class InfoStatsComponent extends AbstractCustomComponent
 {
@@ -19,7 +15,7 @@ class InfoStatsComponent extends AbstractCustomComponent
     {
         return [
             ...HeadlineComponent::form(),
-            ...CardComponent::form('cards')
+            ...CardComponent::form('cards'),
         ];
     }
 

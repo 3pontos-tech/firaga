@@ -6,11 +6,6 @@ use App\Enums\CustomComponent;
 use App\Filament\Components\AbstractCustomComponent;
 use App\Filament\Components\DTOs\HeadlineComponent;
 use App\Filament\Components\DTOs\ImageComponent;
-use Filament\Forms\Components\Hidden;
-use Filament\Forms\Components\SpatieMediaLibraryFileUpload;
-use Filament\Forms\Components\TextInput;
-use Filament\Forms\Get;
-use Ramsey\Uuid\Uuid;
 
 class CtaFullWidthComponent extends AbstractCustomComponent
 {
