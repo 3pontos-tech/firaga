@@ -81,16 +81,17 @@ class CardComponent
             title: $data['title'],
             description: $data['description'],
             icon: $data['icon'] ?? null,
-            actions:  collect($data['buttons'] ?? [])
+            actions: collect($data['buttons'] ?? [])
                 ->map(fn ($button): ButtonComponent => ButtonComponent::make($button)),
         );
     }
 
     public static function makeCollection(array $data): Collection
     {
-        if ($data['has_cards'] !== true) {
+        if (isset($data['has_cards']) && $data['has_cards'] !== true) {
             return collect();
         }
+
         return CardCollection::newCollection(
             cardType: $data['card_type'],
             columns: $data['grid_columns'],
