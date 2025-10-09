@@ -38,11 +38,14 @@
     </div>
 </section>
 <script>
+
+
+
     function playVideo() {
         const video = document.getElementById('firece-video');
         const playButton = document.getElementById('play-button');
         if (video && playButton) {
-            video.play();
+            
             playButton.style.display = 'none';
             const showPlayButton = () => {
                 playButton.style.display = 'flex';
