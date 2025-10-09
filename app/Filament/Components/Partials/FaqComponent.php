@@ -57,13 +57,13 @@ class FaqComponent extends AbstractCustomComponent
         })->implode(' ');
     }
 
-    public static function imagePreview(): string
+    public static function featuredColor(): string
     {
-        return '';
+        return 'black';
     }
 
     public static function getGroup(): string
     {
-        return 'Partial';
+        return 'Section';
     }
 }

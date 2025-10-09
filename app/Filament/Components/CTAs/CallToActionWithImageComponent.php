@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Filament\Components\Partials;
+namespace App\Filament\Components\CTAs;
 
 use App\Enums\CustomComponent;
 use App\Filament\Components\AbstractCustomComponent;
@@ -53,9 +53,9 @@ class CallToActionWithImageComponent extends AbstractCustomComponent
         return '';
     }
 
-    public static function imagePreview(): string
+    public static function featuredColor(): string
     {
-        return 'https://http.cat/200.png';
+        return '#3c0000';
     }
 
     public static function getGroup(): string

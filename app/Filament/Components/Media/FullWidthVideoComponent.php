@@ -40,13 +40,13 @@ class FullWidthVideoComponent extends AbstractCustomComponent
         return '';
     }
 
-    public static function imagePreview(): string
+    public static function featuredColor(): string
     {
-        return 'https://http.cat/301.png';
+        return 'purple';
     }
 
     public static function getGroup(): string
     {
-        return 'Media';
+        return 'Media Section';
     }
 }

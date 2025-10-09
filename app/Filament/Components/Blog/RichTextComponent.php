@@ -34,9 +34,9 @@ class RichTextComponent extends AbstractCustomComponent
         return '';
     }
 
-    public static function imagePreview(): string
+    public static function featuredColor(): string
     {
-        return 'https://http.cat/204.png';
+        return 'gray';
     }
 
     public static function getGroup(): string

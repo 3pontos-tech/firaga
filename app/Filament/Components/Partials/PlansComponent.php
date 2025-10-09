@@ -93,12 +93,12 @@ class PlansComponent extends AbstractCustomComponent
 
     public static function toSearchableContent(array $data): string
     {
-        return '';
+        return 'black';
     }
 
-    public static function imagePreview(): string
+    public static function featuredColor(): string
     {
-        return 'https://http.cat/599';
+        return 'black';
     }
 
     public static function getGroup(): string

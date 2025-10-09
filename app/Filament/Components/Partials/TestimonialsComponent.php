@@ -41,13 +41,13 @@ class TestimonialsComponent extends AbstractCustomComponent
         return '';
     }
 
-    public static function imagePreview(): string
+    public static function featuredColor(): string
     {
-        return 'https://http.cat/301.png';
+        return '#00003c';
     }
 
     public static function getGroup(): string
     {
-        return 'Section';
+        return 'Integration';
     }
 }

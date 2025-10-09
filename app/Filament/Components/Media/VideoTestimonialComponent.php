@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Filament\Components\Partials;
+namespace App\Filament\Components\Media;
 
 use App\Filament\Components\AbstractCustomComponent;
 use App\Filament\Components\DTOs\HeadlineComponent;
@@ -77,13 +77,13 @@ class VideoTestimonialComponent extends AbstractCustomComponent
         return '';
     }
 
-    public static function imagePreview(): string
+    public static function featuredColor(): string
     {
-        return 'https://http.cat/500.png';
+        return 'purple';
     }
 
     public static function getGroup(): string
     {
-        return 'Section';
+        return 'Media Section';
     }
 }

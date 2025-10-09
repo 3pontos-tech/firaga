@@ -38,9 +38,9 @@ class HorizontalScrollerHighlightComponent extends AbstractCustomComponent
         return '';
     }
 
-    public static function imagePreview(): string
+    public static function featuredColor(): string
     {
-        return 'https://http.cat/500';
+        return 'black';
     }
 
     public static function getGroup(): string

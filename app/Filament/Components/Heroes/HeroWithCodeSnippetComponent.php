@@ -66,9 +66,9 @@ class HeroWithCodeSnippetComponent extends AbstractCustomComponent
         return '';
     }
 
-    public static function imagePreview(): string
+    public static function featuredColor(): string
     {
-        return 'https://http.cat/500.png';
+        return 'orange';
     }
 
     public static function getGroup(): string

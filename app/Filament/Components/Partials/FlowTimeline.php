@@ -53,13 +53,13 @@ class FlowTimeline extends AbstractCustomComponent
         return '';
     }
 
-    public static function imagePreview(): string
+    public static function featuredColor(): string
     {
-        return '';
+        return 'black';
     }
 
     public static function getGroup(): string
     {
-        return 'Partial';
+        return 'Section';
     }
 }
