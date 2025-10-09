@@ -40,18 +40,19 @@
                 </x-card-v2>
             @endforeach
         </div>
-        @if(isset($actions))
-            <div class="flex w-full flex-col items-center gap-y-4 md:gap-y-8 mt-4 md:mt-8 text-center">
-                @if(isset($cta_description))
-                    <h3 class="text-text-medium">{{ $cta_description }}</h3>
-                @endif
-                <div class="flex flex-wrap items-center justify-center gap-4">
-                    @foreach($actions as $button)
-                        <x-button rounded="sm" :component="$button" />
-                    @endforeach
+        @isset($actions)
+            @if($actions && count($actions))
+                <div class="flex w-full flex-col items-center gap-y-4 md:gap-y-8 mt-4 md:mt-8 text-center">
+                    @if(!empty($cta_description))
+                        <h3 class="text-text-medium">{{ $cta_description }}</h3>
+                    @endif
+                    <div class="flex flex-wrap items-center justify-center gap-4">
+                        @foreach($actions as $button)
+                            <x-button rounded="sm" :component="$button" />
+                        @endforeach
+                    </div>
                 </div>
-
-            </div>
-        @endif
+            @endif
+        @endisset
     </div>
 </section>
