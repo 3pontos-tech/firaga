@@ -4,8 +4,10 @@ namespace App\Filament\Components\Partials;
 
 use App\Enums\CustomComponent;
 use App\Filament\Components\AbstractCustomComponent;
+use App\Filament\Components\DTOs\ButtonComponent;
 use App\Filament\Components\DTOs\CardComponent;
 use App\Filament\Components\DTOs\HeadlineComponent;
+use Filament\Forms\Components\TextInput;
 
 class SplitWithHorizontalStepsComponent extends AbstractCustomComponent
 {
@@ -16,6 +18,8 @@ class SplitWithHorizontalStepsComponent extends AbstractCustomComponent
         return [
             ...HeadlineComponent::form(),
             ...CardComponent::form('cards'),
+            TextInput::make('cta_description'),
+            ...ButtonComponent::form(),
         ];
     }
 
@@ -29,6 +33,9 @@ class SplitWithHorizontalStepsComponent extends AbstractCustomComponent
         return [
             'headline' => HeadlineComponent::make($data['headline']),
             'cards' => CardComponent::makeCollection($data['cards'] ?? []),
+            'cta_description' => $data['cta_description'] ?? '',
+            'actions' => collect($data['buttons'] ?? [])
+                ->map(fn ($button): ButtonComponent => ButtonComponent::make($button)),
         ];
     }
 
