@@ -636,41 +636,7 @@ return [
                         'snippet' => file_get_contents(resource_path('markdown/code-capital/snippets.md')),
                     ],
                 ],
-                [
-                    'type' => CustomComponent::Roadmap->value,
-                    'data' => [
-                        'heading' => 'Por que investir com a Code Capital?',
-                        'subheading' => 'Você é atendido por quem fala a sua língua — especialistas que entendem sua realidade e estão prontos para te ajudar a crescer, recomeçar ou expandir seus horizontes financeiros.',
-                        'caption' => 'Nossa equipe é formada por especialistas que conhecem os desafios da sua profissão e estão prontos para
-caminhar ao seu lado, com respeito, clareza e soluções sob medida.',
-                        'cta_label' => 'Saiba mais',
-                        'cta_url' => 'https://cal.com/eduardo-vogel-sc6dnr/30min',
-                        'steps' => [
-                            [
-                                'icon' => FireceIcons::NbPerson->value,
-                                'title' => 'Expertise',
-                                'description' => 'Consultores capacitados para direcionar sua vida financeira e sua profissão para um novo nível, atrelando seus objetivos pessoas e profissionais.',
-                                'class' => 'justify-start',
 
-                            ],
-                            [
-                                'icon' => FireceIcons::NbFolder->value,
-                                'title' => 'Planejamento financeiro sob medida',
-                                'description' => 'Estratégias personalizadas para maximizar sua remuneração, impulsionar seus investimentos e alcançar objetivos com segurança.',
-                                'class' => 'justify-center',
-                                'cta_label' => 'Agende uma análise',
-                                'cta_url' => 'https://cal.com/eduardo-vogel-sc6dnr/30min',
-                            ],
-                            [
-                                'icon' => FireceIcons::NbStar->value,
-                                'title' => 'Resultados Comprovados',
-                                'description' => 'Desde 2023, ajudando profissionais de tecnologia a construírem patrimônio de forma inteligente e global.',
-                                'class' => 'justify-end',
-                                'has_cta' => false,
-                            ],
-                        ],
-                    ],
-                ],
                 [
                     'type' => CustomComponent::CallToActionFullWidthSection->value,
                     'data' => [
@@ -775,10 +741,7 @@ caminhar ao seu lado, com respeito, clareza e soluções sob medida.',
                     'collection' => CustomComponent::Faq->value,
                     'path' => public_path('images/stock/hero-stock.png'),
                 ],
-                [
-                    'collection' => CustomComponent::HeroWithBottomImage->value,
-                    'path' => public_path('images/stock/partners-hero.png'),
-                ],
+
                 [
                     'collection' => CustomComponent::SplitWithImageQuote->value,
                     'path' => public_path('images/stock/work-with-us-hero.jpg'),
@@ -793,16 +756,6 @@ caminhar ao seu lado, com respeito, clareza e soluções sob medida.',
                 ],
             ],
             'content' => [
-                [
-                    'type' => CustomComponent::HeroWithBottomImage->value,
-                    'data' => [
-                        'heading' => 'A transformação se constrói com boas alianças.',
-                        'subheading' => 'Seja através de projetos conjuntos, campanhas, educação corporativa ou desenvolvimento de produtos financeiros sob medida, nossas parcerias são desenhadas com estratégia, colaboração e propósito.',
-                        'badge' => 'Parcerias',
-                        'cta_label' => 'Entre em contato',
-                        'cta_url' => 'https://pudim.com.br',
-                    ],
-                ],
                 [
                     'type' => CustomComponent::SplitWithVerticalSteps->value,
                     'data' => [
@@ -916,10 +869,7 @@ caminhar ao seu lado, com respeito, clareza e soluções sob medida.',
             'slug' => 'key-account',
             'theme' => PageTheme::Metallic,
             'medias' => [
-                [
-                    'collection' => CustomComponent::HeroWithImage->value,
-                    'path' => public_path('images/stock/key-account-hero.png'),
-                ],
+
                 [
                     'collection' => CustomComponent::Faq->value,
                     'path' => public_path('images/stock/key-account-faq.png'),
@@ -930,17 +880,7 @@ caminhar ao seu lado, com respeito, clareza e soluções sob medida.',
                 ],
             ],
             'content' => [
-                [
-                    'type' => CustomComponent::HeroWithImage->value,
-                    'data' => [
-                        'badge' => 'Key Account',
-                        'heading' => 'Mais do que um serviço financeiro',
-                        'subheading' => 'O Key Account é o modelo de atendimento premium da Fire|ce, pensado para clientes que exigem um nível mais alto de personalização, estratégia e confidencialidade.',
-                        'cta_label' => 'Agende uma análise',
-                        'cta_url' => 'https://pudim.com.br',
-                        'style' => 'metallic',
-                    ],
-                ],
+
                 [
                     'type' => CustomComponent::SplitWithHorizontalSteps->value,
                     'data' => [
@@ -1059,42 +999,7 @@ caminhar ao seu lado, com respeito, clareza e soluções sob medida.',
             'opengraph_title' => 'Educa Fire – Conhecimento para Transformar Finanças | Fire|ce',
             'opengraph_description' => 'Workshops, palestras e formações práticas para democratizar o acesso à inteligência financeira. Conheça o Educa Fire e comece a transformar sua vida.',
             'slug' => 'educa-fire',
-            'content' => [
-                [
-                    'type' => CustomComponent::HeroWithCenteredTitle->value,
-                    'data' => [
-                        'subheading' => 'Serviços',
-                        'heading' => 'Educa Fire',
-                        'description' => 'Conhecimento prático para transformar vidas e carreiras.',
-                    ],
-                ],
-                [
-                    'type' => 'blog-markdown-text',
-                    'data' => [
-                        'content' => file_get_contents(resource_path('markdown/pages/educa-fire.md')),
-                    ],
-                ],
-                [
-                    'type' => 'partials-faq',
-                    'data' => [
-                        'thumbnail' => 1,
-                        'solutions' => [
-                            [
-                                'question' => 'O que são os workshops da Fire|ce?',
-                                'answer' => 'São formatos imersivos, dinâmicos e objetivos, focados em temas específicos do mercado financeiro. Os workshops são validados e estruturados para conhecimento aplicado – não é apenas teoria. Cada encontro é planejado para que você saia com estratégias prontas para colocar em prática. Formato 100% online e com foco em geração de leads e conversões para consultoria.',
-                            ],
-                            [
-                                'question' => 'Qual é o diferencial das palestras da Fire|ce?',
-                                'answer' => 'Conectamos conhecimento com inspiração. Levamos educação financeira para empresas, eventos e grupos, abordando temas que impactam diretamente a vida das pessoas. Nossa abordagem vai além de conceitos teóricos – oferecemos insights práticos e estratégias aplicáveis imediatamente.',
-                            ],
-                            [
-                                'question' => 'A Fire|ce oferece formação para atuar no mercado financeiro?',
-                                'answer' => 'Sim! Para quem deseja se tornar um consultor de alto desempenho, oferecemos um caminho estruturado. A formação cobre desde metodologias até estratégias de atuação prática no mercado. O objetivo é preparar você para transformar vidas e construir uma carreira sólida na área financeira.',
-                            ],
-                        ],
-                    ],
-                ],
-            ],
+            'content' => [],
             'status' => 'draft',
         ],
         [
