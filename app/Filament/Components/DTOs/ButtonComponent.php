@@ -34,13 +34,16 @@ class ButtonComponent
                 ->schema([
                     TextInput::make('label')
                         ->label('Label')
+                        ->default('Quero Começar Agora')
                         ->required(),
                     TextInput::make('url')
                         ->label('URL')
+                        ->default('https://firece.com')
                         ->required(),
-                    IconPicker::make('icon'),
+                    IconPicker::make('icon')->default('heroicon-c-chevron-right'),
                     Select::make('icon_position')
                         ->label('Icon Position')
+                        ->default('trailing')
                         ->options([
                             'leading' => 'Leading',
                             'trailing' => 'Trailing',
