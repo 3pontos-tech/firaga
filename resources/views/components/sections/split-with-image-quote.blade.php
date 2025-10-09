@@ -41,15 +41,13 @@
                     </div>
                     <div class="grid grid-cols-1 sm:grid-cols-1 lg:grid-cols-2 gap-8 w-full">
                         @foreach($insights as $insight)
-                            <x-card-v2 text-align="items-center text-center sm:items-start sm:text-left"
-                                       class="flex h-full sm:flex-row lg:flex-col gap-4 items-center md:items-start">
-                                <x-slot:icon>
-                                    <div class="bg-brand-primary p-4 rounded-md max-w-fit">
-                                        <x-dynamic-component
-                                            :component="$insight['icon']"
-                                            class="w-6 h-6 text-white"
-                                        />
-                                    </div>
+                            <x-card-v2
+                                :interactive="true"
+                                text-align="items-center text-center sm:items-start sm:text-left"
+                                class="flex h-full sm:flex-row lg:flex-col gap-4 items-center md:items-start"
+                            >
+                                <x-slot:icon class="bg-brand-primary p-4 rounded-lg group-hover/card:bg-white h-12 w-12 sm:h-16 sm:w-16 flex items-center justify-center">
+                                    <x-filament::icon :icon="$insight['icon']" class="group-hover/card:text-brand-primary w-6 h-6 sm:w-8 sm:h-8" />
                                 </x-slot:icon>
                                 <x-slot:title class="mb-2">
                                     {{ $insight['title'] }}
