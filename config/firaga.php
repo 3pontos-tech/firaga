@@ -1296,7 +1296,10 @@ return [
             'slug' => 'key-account',
             'theme' => PageTheme::Metallic,
             'medias' => [
-
+                [
+                    'collection' => CustomComponent::HeroWithBackgroundImage->value,
+                    'path' => public_path('images/stock/hero-stock.png'),
+                ],
                 [
                     'collection' => CustomComponent::Faq->value,
                     'path' => public_path('images/stock/key-account-faq.png'),
@@ -1305,114 +1308,250 @@ return [
                     'collection' => CustomComponent::SplitWithImageQuote->value,
                     'path' => public_path('images/stock/our-work.png'),
                 ],
+                [
+                    'collection' => CustomComponent::CallToActionFullWidthSection->value,
+                    'path' => public_path('images/stock/hero-stock.png'),
+                    'custom_properties' => [
+                        "component_id" => "f8af4192-f84f-4f3d-98a2-a45de3d49618",
+                    ]
+                ]
             ],
             'content' => [
-
-                [
-                    'type' => CustomComponent::SplitWithHorizontalSteps->value,
-                    'data' => [
-                        'badge' => 'Escolha a Fire|Ce',
-                        'heading' => 'Perfis e necessidades',
-                        'card_type' => 'slim',
-                        'description' => 'Saber se você é endividado, desorganizado ou poupador faz toda a diferença: é com esse entendimento que conseguimos traçar estratégias financeiras personalizadas, que respeitam sua realidade e aceleram seus resultados.',
-                        'grid_columns' => 2,
-                        'cards' => [
-                            [
-                                'icon' => FireceIcons::NbFolder->value,
-                                'title' => 'Qual o perfil ideal para o Key Account?',
-                                'description' => 'Pessoas com patrimônio relevante que buscam estratégias avançadas de proteção e crescimento, com atendimento altamente personalizado.',
-                                'cta_url' => 'https://pudim.com.br',
-                                'cta_label' => 'Converse com a gente',
+                "32bdc021-7bf2-40d1-a74c-bf94a56b2ad6" => [
+                    "type" => "hero-with-background-image",
+                    "data" => [
+                        "hero_size" => "[70vh]",
+                        "headline" => [
+                            "heading" => "Mais do que um serviço financeiro",
+                            "keywords" => [],
+                            "size" => "lg",
+                            "position" => "left",
+                            "description" => "O Key Account é o modelo de atendimento premium da Fire|ce, pensado para clientes que exigem um nível mais alto de personalização, estratégia e confidencialidade.",
+                            "badge" => [
+                                "has_badge" => true,
+                                "icon" => "firece-logo",
+                                "label" => "Invista agora com a Fire|ce",
                             ],
-                            [
-                                'icon' => FireceIcons::NbPlanet->value,
-                                'title' => 'É possível contratar o Key Account para gestão internacional?',
-                                'description' => 'Sim. O Key Account inclui estratégias de blindagem patrimonial e alocação internacional, respeitando o perfil do cliente e as normas regulatórias.',
-                                'cta_url' => 'https://pudim.com.br',
-                                'cta_label' => 'Enviar Candidatura',
+                            "buttons" => [
+                                "has_actions" => true,
+                                "buttons" => [
+                                    "694e6e88-8cf2-47b8-8632-5c237e8ae3e5" => [
+                                        "label" => "Começar meu planejamento",
+                                        "url" => "https://firece.com",
+                                        "icon" => "heroicon-c-chevron-right",
+                                        "icon_position" => "trailing",
+                                        "target" => "_blank",
+                                    ],
+                                ],
                             ],
-                            [
-                                'icon' => FireceIcons::NbCalendar->value,
-                                'title' => 'Com que frequência acontecem as reuniões?',
-                                'description' => 'O acompanhamento é contínuo, com revisões periódicas e disponibilidade para reuniões emergenciais sempre que necessário.',
-                                'cta_url' => 'https://pudim.com.br',
-                                'cta_label' => 'Enviar Candidatura',
-                            ],
-                            [
-                                'icon' => FireceIcons::NbVault->value,
-                                'title' => 'Planejamento Sucessório',
-                                'description' => 'Sim. Planejamos a sucessão de forma estratégica para garantir tranquilidade, segurança e continuidade para seu legado.',
-                                'cta_url' => 'https://pudim.com.br',
-                                'cta_label' => 'Enviar Candidatura',
-                            ],
-
+                        ],
+                        "hero" => [
+                            "d1db3990-ac52-4429-86e6-422c12e78c89" => "d1db3990-ac52-4429-86e6-422c12e78c89",
                         ],
                     ],
                 ],
-                [
-                    'type' => CustomComponent::SplitWithImageQuote->value,
-                    'data' => [
-                        'heading' => 'Como funciona',
-                        'badge' => 'Nosso Trabalho',
-                        'description' => 'Atuamos lado a lado com quem busca proteção, inteligência e alta performance na gestão do patrimônio. Aqui, o planejamento financeiro vai além da organização: ele se transforma em um instrumento de segurança, expansão e legado.',
-                        'image_position' => 'left',
-                        'insights' => [],
-                        'quote' => 'Vamos construir o próximo nível da sua jornada financeira com o Key Account da Fire|ce.',
-                        'cta_url' => 'https://pudim.com.br',
-                        'cta_label' => 'Entre em contato',
-                    ],
-                ],
-                [
-                    'type' => CustomComponent::CallToActionFullWidthSection->value,
-                    'data' => [
-                        'title' => 'Agora é hora de fazer seu patrimônio trabalhar por você, com inteligência e visão de futuro.',
-                        'cta_label' => 'Entre em contato',
-                        'cta_url' => 'https://pudim.com.br',
-                    ],
-                ],
-                [
-                    'type' => CustomComponent::SplitWithImageQuote->value,
-                    'data' => [
-                        'heading' => 'Por que optar pelo Key Account?',
-                        'badge' => 'Relacionamento',
-                        'description' => 'Mais do que um serviço financeiro, o Key Account é uma experiência de parceria contínua. Analisamos profundamente sua vida financeira, cruzamos dados patrimoniais e familiares, entendemos seus objetivos de longo prazo e criamos um plano sob medida que evolui com você.',
-                        'insights' => [
-                            ['value' => 'Inteligência'],
-                            ['value' => 'Estratégia'],
-                            ['value' => 'Resultado'],
-                        ],
-                        'end_description' => 'Acompanhamos cada tomada de decisão importante, alertamos sobre riscos e oportunidades e adaptamos a estratégia conforme sua realidade muda. O cliente Key Account não é um número: é um relacionamento que atravessa fases, gera confiança e entrega resultados consistentes.',
-                        'image_position' => 'right',
-                        'quote' => 'Vamos construir o próximo nível da sua jornada financeira com o Key Account da Fire|ce.',
-                        'cta_url' => 'https://pudim.com.br',
-                        'cta_label' => 'Entre em contato',
-                    ],
-                ],
-                [
-                    'type' => CustomComponent::Testimonials->value,
-                    'data' => [
-                        'heading' => 'Escute de nossos clientes',
-                        'badge' => 'Depoimentos',
-                        'testimonials' => [1, 6, 10, 7],
-                    ],
-                ],
-                [
-                    'type' => CustomComponent::Faq->value,
-                    'data' => [
-                        'solutions' => [
-                            [
-                                'question' => 'Quem pode se tornar parceiro da Fire|ce?',
-                                'answer' => 'Qualquer profissional, empresa ou instituição com sinergia de trabalho alinhada e propósito alinhado ao nosso: transformar a vida financeira das pessoas com estratégia e impacto real.',
+                "5008a241-ac16-40af-97aa-fb76b67f1d34" => [
+                    "type" => "split-with-horizontal-steps",
+                    "data" => [
+                        "headline" => [
+                            "heading" => "Você busca inteligência, discrição e excelência  no cuidado com o seu patrimônio?",
+                            "keywords" => [],
+                            "size" => "lg",
+                            "position" => "center",
+                            "description" => "O Key Account é para quem não aceita menos do que alta performance. Vamos construir o próximo nível da sua jornada financeira.",
+                            "badge" => [
+                                "has_badge" => true,
+                                "icon" => "firece-logo",
+                                "label" => "Invista agora com a Fire|ce",
                             ],
-                            [
-                                'question' => 'Quais são os formatos mais comuns de parceria?',
-                                'answer' => 'Conectamos conhecimento com inspiração. Levamos educação financeira para empresas, eventos e grupos, abordando temas que impactam diretamente a vida das pessoas. Nossa abordagem vai além de conceitos teóricos – oferecemos insights práticos e estratégias aplicáveis imediatamente.',
-                            ],
-                            [
-                                'question' => 'A Fire|ce investe em projetos em conjunto?',
-                                'answer' => 'Sim! Para quem deseja se tornar um consultor de alto desempenho, oferecemos um caminho estruturado. A formação cobre desde metodologias até estratégias de atuação prática no mercado. O objetivo é preparar você para transformar vidas e construir uma carreira sólida na área financeira.',
+                            "buttons" => [
+                                "has_actions" => false,
+                                "buttons" => [],
                             ],
                         ],
+                        "cards" => [
+                            "has_cards" => true,
+                            "grid_columns" => "2",
+                            "card_type" => "cta",
+                            "items" => [
+                                "f9c60331-83cb-4626-a855-d4ada59e8e55" => [
+                                    "title" => "Qual o perfil ideal para o Key Account?",
+                                    "description" => "Pessoas com patrimônio relevante que buscam estratégias avançadas de proteção e crescimento, com atendimento altamente personalizado.",
+                                    "icon" => "lucide-message-circle-more",
+                                    "has_actions" => false,
+                                    "buttons" => [],
+                                ],
+                                "82ed5f19-69bf-4aa0-9d60-aacc691dfbb3" => [
+                                    "title" => "É possível contratar o Key Account para gestão internacional?",
+                                    "description" => "Sim. O Key Account inclui estratégias de blindagem patrimonial e alocação internacional, respeitando o perfil do cliente e as normas regulatórias.",
+                                    "icon" => "lucide-message-circle-more",
+                                    "has_actions" => false,
+                                    "buttons" => [],
+                                ],
+                                "6511d4b1-738f-4801-a248-c6504d3e75d0" => [
+                                    "title" => "Com que frequência acontecem as reuniões?",
+                                    "description" => "O acompanhamento é contínuo, com revisões periódicas e disponibilidade para reuniões emergenciais sempre que necessário.",
+                                    "icon" => "lucide-message-circle-more",
+                                    "has_actions" => false,
+                                    "buttons" => [],
+                                ],
+                                "16e6690b-3296-40c8-9f85-336fa432c54f" => [
+                                    "title" => "Planejamento Sucessório",
+                                    "description" => "Sim. Planejamos a sucessão de forma estratégica para garantir tranquilidade, segurança e continuidade para seu legado.",
+                                    "icon" => "lucide-message-circle-more",
+                                    "has_actions" => false,
+                                    "buttons" => [],
+                                ],
+                            ],
+                        ],
+                        "cta_description" => "Não encontrou exatamente o que procura?",
+                        "has_actions" => true,
+                        "buttons" => [
+                            "870e39f8-c9c2-41b8-8cfb-37e596d392e1" => [
+                                "label" => "Agende uma análise",
+                                "url" => "https://firece.com",
+                                "icon" => "heroicon-c-chevron-right",
+                                "icon_position" => "trailing",
+                                "target" => "_blank",
+                            ],
+                        ],
+                    ],
+                ],
+                "078af3b1-207f-4bb5-a070-ac07e3a31a47" => [
+                    "type" => "split-with-image-quote",
+                    "data" => [
+                        "headline" => [
+                            "heading" => "Como funciona?",
+                            "keywords" => [],
+                            "size" => "lg",
+                            "position" => "left",
+                            "description" => "Atuamos lado a lado com quem busca proteção, inteligência e alta performance na gestão do patrimônio. Aqui, o planejamento financeiro vai além da organização: ele se transforma em um instrumento de segurança, expansão e legado.",
+                            "badge" => [
+                                "has_badge" => true,
+                                "icon" => "firece-logo",
+                                "label" => "Invista agora com a Fire|ce",
+                            ],
+                            "buttons" => [
+                                "has_actions" => false,
+                                "buttons" => [],
+                            ],
+                        ],
+                        "image_position" => "right",
+                        "badge" => "Vamos construir o próximo nível da sua jornada financeira com o Key Account da Fire|ce.",
+                        "insights" => [
+                            "f8dcd330-b4f5-45fa-beb8-f4ce6e0c0561" => [
+                                "icon" => "heroicon-c-check",
+                                "title" => "Inteligência",
+                                "description" => "Mais do que um serviço financeiro, o Key Account é uma experiência de parceria contínua. Analisamos profundamente sua vida financeira, cruzamos dados patrimoniais e familiares, entendemos seus objetivos de longo prazo e criamos um plano sob medida que evolui com você.",
+                            ],
+                        ],
+                        "quote" => "Vamos construir o próximo nível da sua jornada financeira com o Key Account da Fire|ce.",
+                        "end_description" => null,
+                        "cta_label" => null,
+                        "cta_url" => null,
+                        "hero" => [
+                            "9812d300-29e5-4565-bd8e-add8eec15b09" => "9812d300-29e5-4565-bd8e-add8eec15b09",
+                        ],
+                    ],
+                ],
+                "58a9cda0-107b-4638-a4dd-3dd77d45e933" => [
+                    "type" => "call-to-action-section",
+                    "data" => [
+                        "component_id" => "f8af4192-f84f-4f3d-98a2-a45de3d49618",
+                        "headline" => [
+                            "heading" => "Agora é hora de fazer seu patrimônio trabalhar por você, com inteligência e visão de futuro.",
+                            "keywords" => [],
+                            "size" => "lg",
+                            "position" => "center",
+                            "description" => null,
+                            "badge" => [
+                                "has_badge" => false,
+                                "icon" => null,
+                                "label" => null,
+                            ],
+                            "buttons" => [
+                                "has_actions" => true,
+                                "buttons" => [
+                                    "08c77bfd-4359-4061-ab35-7aeb0d0f4f8b" => [
+                                        "label" => "Agende uma análise",
+                                        "url" => "https://firece.com",
+                                        "icon" => "heroicon-c-chevron-right",
+                                        "icon_position" => "trailing",
+                                        "target" => "_blank",
+                                    ],
+                                ],
+                            ],
+                        ],
+                        "image" => [
+                            "ed952d55-084a-4bd5-a0da-ad0609e36e8a" => "ed952d55-084a-4bd5-a0da-ad0609e36e8a",
+                        ],
+                    ],
+                ],
+                "3539a1ad-196d-4d74-ad14-82a8d975a672" => [
+                    "type" => "testimonials",
+                    "data" => [
+                        "headline" => [
+                            "heading" => "Escute de nossos clientes",
+                            "keywords" => [],
+                            "size" => "lg",
+                            "position" => "center",
+                            "description" => "Levamos você da análise de perfil à execução estratégica, com suporte contínuo para maximizar seus resultados. Nossa metodologia foi desenvolvida para transformar a sua relação com o dinheiro em 3 etapas fundamentais:",
+                            "badge" => [
+                                "has_badge" => true,
+                                "icon" => "firece-logo",
+                                "label" => "Invista agora com a Fire|ce",
+                            ],
+                            "buttons" => [
+                                "has_actions" => false,
+                                "buttons" => [],
+                            ],
+                        ],
+                        "testimonials" => [
+                            "2",
+                            "4",
+                            "7",
+                            "6",
+                        ],
+                    ],
+                ],
+                "6d0b0726-0b48-44c4-ba3b-1aa0823b5027" => [
+                    "type" => "faq",
+                    "data" => [
+                        "description" => "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam urna tellus, cursus vitae vestibulum quis, pretium eu dui.",
+                        "solutions" => [
+                            "1de9fafc-f5ee-4bff-8cc8-9ff0cce4f58a" => [
+                                "question" => "Lorem Ipsum dolor sit amet",
+                                "answer" => "Lorem Ipsum dolor sit amet",
+                            ],
+                            "63d5383a-2a98-46f5-bdbc-27bc0a06ccd7" => [
+                                "question" => "Lorem Ipsum dolor sit amet",
+                                "answer" => "Lorem Ipsum dolor sit amet",
+                            ],
+                            "de6ceced-28e6-425a-8f54-aeca0fa04105" => [
+                                "question" => "Lorem Ipsum dolor sit amet",
+                                "answer" => "Lorem Ipsum dolor sit amet",
+                            ],
+                            "901d4007-e491-4f57-96ea-801a28166fb9" => [
+                                "question" => "Lorem Ipsum dolor sit amet",
+                                "answer" => "Lorem Ipsum dolor sit amet",
+                            ],
+                            "9c498ccc-5a63-446b-9608-284b0995f33e" => [
+                                "question" => "Lorem Ipsum dolor sit amet",
+                                "answer" => "Lorem Ipsum dolor sit amet",
+                            ],
+                        ],
+                        "hero" => [
+                            "80e850c0-8487-4933-8a86-9db5a56ad7e9" => "80e850c0-8487-4933-8a86-9db5a56ad7e9",
+                        ],
+                    ],
+                ],
+                "c2fefb39-b6f0-44f6-9dbe-1db7300ed55f" => [
+                    "type" => "call-to-action-with-icon",
+                    "data" => [
+                        "title" => "Visite nosso Blog e tenha acesso à conteúdos exclusivos",
+                        "cta_label" => "Agende uma análise",
+                        "cta_url" => "https://firece.com.br/blog",
+                        "icon" => "lucide-book-marked",
                     ],
                 ],
             ],
