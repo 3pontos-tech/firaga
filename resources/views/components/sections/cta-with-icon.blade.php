@@ -11,7 +11,7 @@
     <div class="bg-elevation-02dp rounded-2xl sm:rounded-3xl p-4 sm:p-6 md:p-8 lg:p-10">
         <div
             class="flex flex-col lg:flex-row items-center justify-between gap-8 sm:gap-8 md:gap-12 lg:gap-16 xl:gap-20
-                px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 py-8 sm:py-12 md:py-16 lg:py-20 xl:py-24">
+                px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 py-6 sm:py-8 lg:py-12 xl:py-16">
             <div class="relative">
                 <span
                     class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2
