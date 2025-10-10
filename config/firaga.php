@@ -1586,7 +1586,7 @@ return [
                     'path' => public_path('images/stock/key-account-faq.png'),
                 ],
                 [
-                    'collection' => CustomComponent::SplitWithImageQuote->value,
+                    'collection' => CustomComponent::TwoColumnsImageFeatureGrid->value,
                     'path' => public_path('images/stock/our-work.png'),
                 ],
             ],
