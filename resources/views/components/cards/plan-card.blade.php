@@ -29,7 +29,7 @@
             @endif
         </div>
         <div class="flex flex-col gap-y-4 sm:gap-y-6">
-            <ul class="grid grid-cols-1 md:grid-cols-2 gap-x-6 sm:gap-x-8 gap-y-2 sm:gap-y-4">
+            <ul class="grid grid-cols-1 gap-x-6 sm:gap-x-8 gap-y-2 sm:gap-y-4">
                 @foreach ($benefits as $item)
                     <li>
                         <div class="flex items-start gap-x-2 sm:gap-x-3">
