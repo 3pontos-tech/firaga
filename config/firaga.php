@@ -197,8 +197,16 @@ return [
                             ],
                         ],
                         'cta_description' => 'Não encontrou exatamente o que procura?',
-                        'has_actions' => false,
-                        'buttons' => [],
+                        "has_actions" => true,
+                        "buttons" => [
+                            "ad1b59a6-fbb4-492b-b2e4-d3e7dff7713d" => [
+                                "label" => "Agende uma análise",
+                                "url" => "https://firece.com",
+                                "icon" => "heroicon-c-chevron-right",
+                                "icon_position" => "trailing",
+                                "target" => "_blank",
+                            ],
+                        ],
                     ],
                 ],
                 '3fd3a1ae-7d18-457d-a11f-17c6bbed5451' => [
