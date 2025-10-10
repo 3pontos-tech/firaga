@@ -620,114 +620,350 @@ return [
             'slug' => 'code-capital',
             'medias' => [
                 [
-                    'collection' => CustomComponent::TwoColumnsImageFeatureGrid->value,
-                    'path' => public_path('images/stock/our-approach.png'),
+                    'collection' => CustomComponent::HeroWithBackgroundImage->value,
+                    'path' => public_path('images/stock/hero-stock.png'),
                 ],
                 [
-                    'collection' => CustomComponent::CallToActionWithImage->value,
-                    'path' => public_path('images/stock/consultant.png'),
+                    'collection' => CustomComponent::CallToActionFullWidthSection->value,
+                    'path' => public_path('images/stock/hero-stock.png'),
+                    'custom_properties' => [
+                        "component_id" => "e1bd64b1-7a01-4f6b-9292-c687740ca409",
+                    ]
+                ],
+                [
+                    'collection' => CustomComponent::Faq->value,
+                    'path' => public_path('images/stock/hero-stock.png'),
                 ],
             ],
             'content' => [
-                [
-                    'type' => CustomComponent::HeroWithCodeSnippet->value,
-                    'data' => [
-                        'heading' => 'Consultoria exclusiva e diferenciada para profissionais de tecnologia.',
-                        'subheading' => 'Com uma abordagem personalizada, focamos em ajudar pessoas a organizarem suas finanças, evitarem decisões impulsivas e alocarem seu dinheiro de forma estratégica e com diversidade protegendo o patrimônio. O propósito da Code é transformar a relação com o dinheiro trazendo mais controle, confiança e liberdade para o futuro.',
-                        'badge' => 'Code Capital',
-                        'cta_label' => 'Agende uma análise',
-                        'cta_url' => 'https://cal.com/eduardo-vogel-sc6dnr/30min',
-                        'snippet' => file_get_contents(resource_path('markdown/code-capital/snippets.md')),
+                "604b2665-4b8d-46da-8410-1a516ff18862" => [
+                    "type" => "hero-with-background-image",
+                    "data" => [
+                        "hero_size" => "[70vh]",
+                        "headline" => [
+                            "heading" => "Consultoria exclusiva e diferenciada para profissionais de tecnologia",
+                            "keywords" => [
+                                "Consultoria",
+                                "exclusiva",
+                            ],
+                            "size" => "lg",
+                            "position" => "center",
+                            "description" => "Com uma abordagem personalizada, focamos em ajudar pessoas a organizarem suas finanças, evitarem decisões impulsivas e alocarem seu dinheiro de forma estratégica e com diversidade protegendo o patrimônio. O propósito da Code é transformar a relação com o dinheiro trazendo mais controle, confiança e liberdade para o futuro.",
+                            "badge" => [
+                                "has_badge" => true,
+                                "icon" => "firece-logo",
+                                "label" => "Invista agora com a Code Capital",
+                            ],
+                            "buttons" => [
+                                "has_actions" => true,
+                                "buttons" => [
+                                    "389d890d-c9a8-4e9f-97a1-02fd3faba4b7" => [
+                                        "label" => "Começar meu planejamento",
+                                        "url" => "https://firece.com",
+                                        "icon" => "heroicon-c-chevron-right",
+                                        "icon_position" => "trailing",
+                                        "target" => "_blank",
+                                    ],
+                                ],
+                            ],
+                        ],
+                        "hero" => [
+                            "02e24f5b-b87a-4251-9824-63b2023db36f" => "02e24f5b-b87a-4251-9824-63b2023db36f",
+                        ],
                     ],
                 ],
 
-                [
-                    'type' => CustomComponent::CallToActionFullWidthSection->value,
-                    'data' => [
-                        'title' => 'A gente decodifica o mercado financeiro para você focar no que faz de melhor.',
-                        'cta_label' => 'Agende uma análise',
-                        'cta_url' => 'https://cal.com/eduardo-vogel-sc6dnr/30min',
-                    ],
-                ],
-                [
-                    'type' => CustomComponent::VideoTestimonial->value,
-                    'data' => [
-                        'heading' => 'Dinheiro com propósito: como danilo parou de gastar por impulso',
-                        'description' => 'Danilo, programador, relata como o suporte da Fire|ce transformou sua relação com o dinheiro. Antes, ao ver o saldo na conta, acabava gastando por impulso. Hoje, com organização e diversificação dos investimentos, seu dinheiro tem um propósito — e ele evita mexer até no fundo de reserva. Além disso, valoriza a confiança de investir com uma empresa que não empurra produtos, e sim constrói estratégias sólidas e transparentes, mesmo diante da instabilidade econômica do Brasil.',
-                        'video_url' => 'https://www.youtube.com/embed/dQw4w9WgXcQ?si=O6_xTlMmOrEmpqyy',
-                        'insights' => [
-                            [
-                                'icon' => FireceIcons::NbPeople->value,
-                                'value' => 'Especialistas  planejamento financeiro',
+                "69742386-e554-4c4e-983e-1ec85f62eb6b" => [
+                    "type" => "flow-timeline",
+                    "data" => [
+                        "headline" => [
+                            "heading" => "Por que investir com a Code Capital?",
+                            "keywords" => [],
+                            "size" => "lg",
+                            "position" => "center",
+                            "description" => "Você é atendido por quem fala a sua língua — especialistas que entendem sua realidade e estão prontos para te ajudar a crescer, recomeçar ou expandir seus horizontes financeiros.",
+                            "badge" => [
+                                "has_badge" => true,
+                                "icon" => "firece-logo",
+                                "label" => "Invista agora com a Fire|ce",
                             ],
-                            [
-                                'icon' => FireceIcons::NbTarget->value,
-                                'value' => 'Metodologia própria testada e aprovada',
-                            ],
-                            [
-                                'icon' => FireceIcons::NbChart->value,
-                                'value' => 'Foco em resultados reais e sustentáveis',
+                            "buttons" => [
+                                "has_actions" => false,
+                                "buttons" => [],
                             ],
                         ],
-                        'video_cards' => [
-                            ['title' => 'Clientes atendidos', 'value' => '500+'],
-                            ['title' => 'Anos de Experiência', 'value' => '5 anos'],
-                            ['title' => 'Satisfação dos clientes', 'value' => '98%'],
-                        ],
-                        'cta_label' => 'Agende uma análise',
-                        'cta_url' => 'https://cal.com/eduardo-vogel-sc6dnr/30min',
-                    ],
-                ],
-                [
-                    'type' => CustomComponent::TwoColumnsImageFeatureGrid->value,
-                    'data' => [
-                        'badge' => 'Nossa missão',
-                        'heading' => 'Construído por profissionais de Finanças e Tecnologia',
-                        'description' => 'Realizamos uma consulta com você para entender seu caso, seus objetivos e avaliar o melhor caminho para seus investimentos no exterior. Nós lhe auxiliaremos em todo o processo. Feito o investimento você terá um assessor para reinvestir ou para movimentações, além do envio de informes mensais sobre seus rendimentos.',
-                        'cards' => [
-                            [
-                                'icon' => FireceIcons::NbTarget->value,
-                                'title' => 'Nossa Missão',
-                                'description' => 'A Code Capital nasce da necessidade de diversidade mais digital e entendimento de toda jornada de um profissional da área, criando assim um braço exclusivo e atento às necessidades dos profissionais.',
+                        "timeline" => [
+                            "73eae07e-aee5-4d56-8b4e-096f7a7b7790" => [
+                                "title" => "Expertise",
+                                "card_icon" => "lucide-goal",
+                                "card_title" => "Personalized Initial Consultation",
+                                "card_description" => "Consultores capacitados para direcionar sua vida financeira e sua profissão para um novo nível, atrelando seus objetivos pessoas e profissionais.",
                             ],
-                            [
-                                'icon' => FireceIcons::NbPeople->value,
-                                'title' => 'Para Clientes Diferenciados',
-                                'description' => 'Com a possibilidade de realizar qualquer tarefa online para qualquer país do mundo. Se você gosta de ganhar em dólar, vai gostar ainda mais de ver sua rentabilidade crescer exponencialmente em uma moeda estrangeira.',
+                            "f5aba19a-807c-4894-9c05-59982770b369" => [
+                                "title" => "Planejamento financeiro sob medida",
+                                "card_icon" => "lucide-goal",
+                                "card_title" => "Tailored Investment Plan",
+                                "card_description" => "Estratégias personalizadas para maximizar sua remuneração, impulsionar seus investimentos e alcançar objetivos com segurança.",
                             ],
-                            [
-                                'icon' => FireceIcons::NbComputer->value,
-                                'title' => 'Segurança para você e quem você ama',
-                                'description' => 'Todos os investimentos são de carácter sucessório, ou seja, mesmo que haja qualquer tipo de fatalidade, sua família terá tranquilidade de usar esses recursos.',
-                            ],
-                            [
-                                'icon' => FireceIcons::NbChart->value,
-                                'title' => 'Investimento fora do tradicional',
-                                'description' => 'Além dos investimentos tradicionais e dos presentes na internet, temos investimentos principalmente em NY e UK, como a BNY Mellon, UBS, BNP Paribas, Credit Suisse entre outros.',
+                            "adaadf61-8ca1-47fb-b5a6-f29bc1205940" => [
+                                "title" => "Resultados Comprovados",
+                                "card_icon" => "lucide-goal",
+                                "card_title" => "Ongoing International Support",
+                                "card_description" => "Desde 2023, ajudando profissionais de tecnologia a construírem patrimônio de forma inteligente e global.",
                             ],
                         ],
-                        'cta_label' => 'Quero saber mais',
-                        'cta_url' => 'https://cal.com/eduardo-vogel-sc6dnr/30min',
                     ],
                 ],
-                [
-                    'type' => CustomComponent::CallToActionWithImage->value,
-                    'data' => [
-                        'heading' => 'Consultor financeiro exclusivo',
-                        'description' => 'Ter um consultor financeiro vai muito além de "organizar as contas". É sobre ter um profissional ao seu lado que entende a sua realidade, te ajuda a enxergar possibilidades e constrói, junto com você, um caminho concreto rumo à tranquilidade financeira.',
-                        'cta_label' => 'Agendar uma consulta gratuita',
-                        'cta_url' => 'https://cal.com/eduardo-vogel-sc6dnr/30min',
-                        'image' => 'Saiba mais',
+
+                "d98fd0ad-377b-42b1-9cea-3d9e1c39f936" => [
+                    "type" => "video-testimonial",
+                    "data" => [
+                        "headline" => [
+                            "heading" => "Dinheiro com propósito: como danilo parou de gastar por impulso",
+                            "keywords" => [],
+                            "size" => "lg",
+                            "position" => "left",
+                            "description" => "Danilo, programador, relata como o suporte da Fire|ce transformou sua relação com o dinheiro. Antes, ao ver o saldo na conta, acabava gastando por impulso. Hoje, com organização e diversificação dos investimentos, seu dinheiro tem um propósito — e ele evita mexer até no fundo de reserva. Além disso, valoriza a confiança de investir com uma empresa que não empurra produtos, e sim constrói estratégias sólidas e transparentes, mesmo diante da instabilidade econômica do Brasil.",
+                            "badge" => [
+                                "has_badge" => true,
+                                "icon" => "firece-logo",
+                                "label" => "Por que escolher a Code Capital?",
+                            ],
+                            "buttons" => [
+                                "has_actions" => false,
+                                "buttons" => [],
+                            ],
+                        ],
+                        "insights" => [
+                            "8449ba30-5e8f-418b-9f54-2a538012c1aa" => [
+                                "value" => "Especialistas  planejamento financeiro",
+                                "icon" => "lucide-hand-coins",
+                            ],
+                            "b453c85b-43d5-478f-bc30-9bf2e27a3a0d" => [
+                                "value" => "Metodologia própria testada e aprovada",
+                                "icon" => "lucide-hand-coins",
+                            ],
+                            "3bb8d780-497f-4fd1-be23-af04af936c59" => [
+                                "value" => "Foco em resultados reais e sustentáveis",
+                                "icon" => "lucide-hand-coins",
+                            ],
+                        ],
+                        "video_url" => "https://www.youtube.com/embed/dQw4w9WgXcQ?si=eThAUAsChTqyDw8",
+                        "video_cards" => [
+                            "8d52e47a-c514-46c0-8dde-1d17cffe1164" => [
+                                "title" => "500+",
+                                "value" => "Clientes atendidos",
+                            ],
+                            "55807fa7-f8fa-4bf9-8072-65e2de738296" => [
+                                "title" => "5",
+                                "value" => "Anos de Experiência",
+                            ],
+                            "941a1c43-da99-490f-9ee2-67a53dee5e72" => [
+                                "title" => "98%",
+                                "value" => "Satisfação dos clientes",
+                            ],
+                        ],
+                        "cta_label" => null,
+                        "cta_url" => null,
                     ],
                 ],
-                [
-                    'type' => CustomComponent::Testimonials->value,
-                    'data' => [
-                        'heading' => 'Escute de nossos clientes',
-                        'badge' => 'Avaliações',
-                        'testimonials' => [1, 6, 10, 7],
+
+                "b9ecdd05-1e3c-49d7-b85c-f206eec36de3" => [
+                    "type" => "call-to-action-section",
+                    "data" => [
+                        "component_id" => "e1bd64b1-7a01-4f6b-9292-c687740ca409",
+                        "headline" => [
+                            "heading" => "A gente decodifica o mercado financeiro para você focar no que faz de melhor.",
+                            "keywords" => [
+                                "decodifica",
+                                "o",
+                                "mercado",
+                                "financeiro",
+                            ],
+                            "size" => "lg",
+                            "position" => "left",
+                            "description" => null,
+                            "badge" => [
+                                "has_badge" => false,
+                                "icon" => null,
+                                "label" => null,
+                            ],
+                            "buttons" => [
+                                "has_actions" => true,
+                                "buttons" => [
+                                    "fe3818ba-daf8-4d20-944d-58f4062c64e1" => [
+                                        "label" => "Agende uma análise",
+                                        "url" => "https://firece.com",
+                                        "icon" => "heroicon-c-chevron-right",
+                                        "icon_position" => "trailing",
+                                        "target" => "_blank",
+                                    ],
+                                ],
+                            ],
+                        ],
+                        "image" => [
+                            "94bde7f2-fddb-4b9b-89c9-7521c51ef38f" => "94bde7f2-fddb-4b9b-89c9-7521c51ef38f",
+                        ],
                     ],
                 ],
+
+                "33f830c9-4488-4bb8-822d-d99469ec1cb6" => [
+                    "type" => "two-columns-image-feature-grid",
+                    "data" => [
+                        "badge" => "Invista com a Fire|ce",
+                        "heading" => "Construído por profissionais de Finanças e Tecnologia",
+                        "description" => "Na nossa consultoria, entendemos que cada cliente é único. Por isso, desenvolvemos uma metodologia personalizada que se adapta às suas necessidades e objetivos financeiros. Nossa abordagem é baseada em três pilares fundamentais: Análise de Perfil, Planejamento Estratégico e Execução com Suporte Contínuo.",
+                        "cards" => [
+                            "ae20962b-450b-4bde-8323-6ac82ee423f8" => [
+                                "icon" => "lucide-message-circle-more",
+                                "title" => "Nossa Missão",
+                                "description" => "A Code Capital nasce da necessidade de diversidade mais digital e entendimento de toda jornada de um profissional da área, criando assim um braço exclusivo e atento às necessidades dos profissionais.",
+                            ],
+                            "2506e50b-2ae2-4297-83fb-748b26adfe30" => [
+                                "icon" => "lucide-message-circle-more",
+                                "title" => "Para Clientes Diferenciados",
+                                "description" => "Com a possibilidade de realizar qualquer tarefa online para qualquer país do mundo. Se você gosta de ganhar em dólar, vai gostar ainda mais de ver sua rentabilidade crescer exponencialmente em uma moeda estrangeira.",
+                            ],
+                            "df547c71-89c4-4368-a66d-3092c2ee7c91" => [
+                                "icon" => "lucide-message-circle-more",
+                                "title" => "Segurança para você e sua família",
+                                "description" => "Todos os investimentos são de carácter sucessório, ou seja, mesmo que haja qualquer tipo de fatalidade, sua família terá tranquilidade de usar esses recursos.",
+                            ],
+                            "0a648c0d-baa1-4158-b24a-c6bd7a3197e8" => [
+                                "icon" => "lucide-message-circle-more",
+                                "title" => "Investimento inovador",
+                                "description" => "Além dos investimentos tradicionais e dos presentes na internet, temos investimentos principalmente em NY e UK, como a BNY Mellon, UBS, BNP Paribas, Credit Suisse entre outros.",
+                            ],
+                        ],
+                        "cta_label" => "Agende uma análise",
+                        "cta_url" => "firece.com",
+                        "hero" => [
+                            "f51e1eeb-9d94-4df0-b2e1-35e78c7076f9" => "f51e1eeb-9d94-4df0-b2e1-35e78c7076f9",
+                        ],
+                    ],
+                ],
+
+                "d5cace60-6bc7-4d76-99b8-d0968cdf9346" => [
+                    "type" => "call-to-action-with-image",
+                    "data" => [
+                        "headline" => [
+                            "heading" => "Consultor financeiro exclusivo",
+                            "keywords" => [],
+                            "size" => "lg",
+                            "position" => "left",
+                            "description" => "Ter um consultor financeiro vai muito além de \"organizar as contas\". É sobre ter um profissional ao seu lado que entende a sua realidade, te ajuda a enxergar possibilidades e constrói, junto com você, um caminho concreto rumo à tranquilidade financeira.",
+                            "badge" => [
+                                "has_badge" => true,
+                                "icon" => "firece-logo",
+                                "label" => "Invista agora com a Fire|ce",
+                            ],
+                            "buttons" => [
+                                "has_actions" => false,
+                                "buttons" => [],
+                            ],
+                        ],
+                        "cta_label" => "Quero começar agora",
+                        "cta_icon" => "heroicon-c-chevron-right",
+                        "cta_url" => "https://firece.com.br/",
+                        "hero" => [
+                            "7141cd43-f13c-484b-a00b-97b2d1fc6d80" => "7141cd43-f13c-484b-a00b-97b2d1fc6d80",
+                        ],
+                    ],
+                ],
+
+                "ce234a8a-2164-4824-9d35-f284992e1c0c" => [
+                    "type" => "testimonials",
+                    "data" => [
+                        "headline" => [
+                            "heading" => "Escute de nossos clientes",
+                            "keywords" => [],
+                            "size" => "lg",
+                            "position" => "center",
+                            "description" => "Levamos você da análise de perfil à execução estratégica, com suporte contínuo para maximizar seus resultados. Nossa metodologia foi desenvolvida para transformar a sua relação com o dinheiro em 3 etapas fundamentais:",
+                            "badge" => [
+                                "has_badge" => true,
+                                "icon" => "firece-logo",
+                                "label" => "Depoimentos",
+                            ],
+                            "buttons" => [
+                                "has_actions" => false,
+                                "buttons" => [],
+                            ],
+                        ],
+                        "testimonials" => [
+                            "5",
+                            "3",
+                            "7",
+                            "9",
+                        ],
+                    ],
+                ],
+
+                "c16601fb-61ef-4212-a4f3-720996a9b3a6" => [
+                    "type" => "faq",
+                    "data" => [
+                        "description" => "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam urna tellus, cursus vitae vestibulum quis, pretium eu dui.",
+                        "solutions" => [
+                            "c2680d14-602b-4e07-9827-e29e183a9fda" => [
+                                "question" => "Lorem Ipsum dolor sit amet",
+                                "answer" => "Lorem Ipsum dolor sit amet Lorem Ipsum dolor sit amet",
+                            ],
+                            "f6ec47a8-bb0f-4ffd-bac5-b2d6426d1e0f" => [
+                                "question" => "Lorem Ipsum dolor sit amet",
+                                "answer" => "Lorem Ipsum dolor sit amet Lorem Ipsum dolor sit amet",
+                            ],
+                            "6e57287d-16e2-481c-8d84-a2ef9efe74ce" => [
+                                "question" => "Lorem Ipsum dolor sit amet",
+                                "answer" => "Lorem Ipsum dolor sit amet Lorem Ipsum dolor sit amet",
+                            ],
+                            "d48e936c-c9d8-4839-8077-be242159bd69" => [
+                                "question" => "Lorem Ipsum dolor sit amet Lorem Ipsum dolor sit amet",
+                                "answer" => "Lorem Ipsum dolor sit amet Lorem Ipsum dolor sit amet",
+                            ],
+                        ],
+                        "hero" => [
+                            "bb504efb-9b98-4696-8e25-ac29a3bc0fe3" => "bb504efb-9b98-4696-8e25-ac29a3bc0fe3",
+                        ],
+                    ],
+
+                    "c16601fb-61ef-4212-a4f3-720996a9b3a6" => [
+                        "type" => "faq",
+                        "data" => [
+                            "description" => "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam urna tellus, cursus vitae vestibulum quis, pretium eu dui.",
+                            "solutions" => [
+                                "c2680d14-602b-4e07-9827-e29e183a9fda" => [
+                                    "question" => "Lorem Ipsum dolor sit amet",
+                                    "answer" => "Lorem Ipsum dolor sit amet Lorem Ipsum dolor sit amet",
+                                ],
+                                "f6ec47a8-bb0f-4ffd-bac5-b2d6426d1e0f" => [
+                                    "question" => "Lorem Ipsum dolor sit amet",
+                                    "answer" => "Lorem Ipsum dolor sit amet Lorem Ipsum dolor sit amet",
+                                ],
+                                "6e57287d-16e2-481c-8d84-a2ef9efe74ce" => [
+                                    "question" => "Lorem Ipsum dolor sit amet",
+                                    "answer" => "Lorem Ipsum dolor sit amet Lorem Ipsum dolor sit amet",
+                                ],
+                                "d48e936c-c9d8-4839-8077-be242159bd69" => [
+                                    "question" => "Lorem Ipsum dolor sit amet Lorem Ipsum dolor sit amet",
+                                    "answer" => "Lorem Ipsum dolor sit amet Lorem Ipsum dolor sit amet",
+                                ],
+                            ],
+                            "hero" => [
+                                "bb504efb-9b98-4696-8e25-ac29a3bc0fe3" => "bb504efb-9b98-4696-8e25-ac29a3bc0fe3",
+                            ],
+                        ]
+                    ],
+                ],
+
+                "ba6a9018-7c61-44d2-a9f8-d62cb49ffb3f" => [
+                    "type" => "call-to-action-with-icon",
+                    "data" => [
+                        "title" => "Visite nosso Blog e tenha acesso à conteúdos exclusivos",
+                        "cta_label" => "Agende uma análise",
+                        "cta_url" => "https://firece.com.br/blog",
+                        "icon" => "lucide-book-marked",
+                    ],
+                ]
             ],
             'status' => 'published',
         ],
