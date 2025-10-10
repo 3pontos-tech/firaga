@@ -24,7 +24,7 @@ $variant = $renderable->theme->value;
             <x-headline :component="$headline" class="max-w-[100vw]! text-center gap-4" >
                 <x-slot:actions class="flex! mx-auto! justify-center! items-center align-middle">
                     @foreach($headline->actions as $action)
-                        <x-button :component="$action" class="rounded-lg! w-full md:w-auto"/>
+                        <x-button :component="$action" class="rounded-lg! w-full sm:w-auto"/>
                     @endforeach
                 </x-slot:actions>
             </x-headline>

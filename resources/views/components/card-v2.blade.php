@@ -82,7 +82,7 @@
     }
 @endphp
 
-<div class="{{ $isInteractive ? 'group/card' : '' }}">
+<div class="{{ $isInteractive ? 'group/card' : '' }} h-full">
     <{{ $tag }} {{ $attributes->merge(['class' => $classes])->merge($linkAttrs) }}>
     {{-- Icon --}}
     @isset($icon)

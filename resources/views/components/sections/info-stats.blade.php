@@ -18,11 +18,11 @@
 
                 <!-- First set of cards -->
                 @foreach(range(1,2) as $ignored)
-                <div class="flex gap-6">
+                <div class="flex gap-6 items-stretch">
                     @foreach ($metrics as $metric)
-                        <div class="shrink-0 w-[15rem] sm:w-[18rem] transition-transform duration-300 ease-in-out hover:scale-[1.02]">
+                        <div class="shrink-0 w-[15rem] sm:w-[21rem] transition-transform duration-300 ease-in-out hover:scale-[1.02]">
                             <x-card-v2 :card="$metric" text-box="mt-8 flex-col" emphasis="primary" :interactive="true" class="h-full">
-                                <x-slot:title class="text-2xl!">{{ $metric->title }}</x-slot:title>
+                                <x-slot:title class="text-2xl! whitespace-normal">{{ $metric->title }}</x-slot:title>
                                 <x-slot:description>{{ $metric->description }}</x-slot:description>
                             </x-card-v2>
                         </div>
