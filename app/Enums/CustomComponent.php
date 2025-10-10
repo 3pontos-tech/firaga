@@ -14,6 +14,7 @@ use App\Filament\Components\Heroes\HeroWithCenteredTitleComponent;
 use App\Filament\Components\Heroes\HeroWithCodeSnippetComponent;
 use App\Filament\Components\Heroes\HeroWithImageComponent;
 use App\Filament\Components\Heroes\HeroWithStatsAndImageComponent;
+use App\Filament\Components\Heroes\HeroWithTitleOnly;
 use App\Filament\Components\Media\FullWidthVideoComponent;
 use App\Filament\Components\Media\VideoTestimonialComponent;
 use App\Filament\Components\Partials\ContactFormComponent;
@@ -38,6 +39,8 @@ enum CustomComponent: string
 
     case HeroWithBackgroundImage = 'hero-with-background-image';
     case HeroWithCodeSnippet = 'hero-with-code-snippet';
+
+    case HeroWithTitleOnly = 'hero-with-title-only';
 
     case Faq = 'faq';
 
@@ -93,6 +96,7 @@ enum CustomComponent: string
             self::HeroWithBackgroundImage => HeroWithBackgroundImageComponent::class,
             self::ContactForm => ContactFormComponent::class,
             self::FlowTimeline => FlowTimeline::class,
+            self::HeroWithTitleOnly => HeroWithTitleOnly::class
         };
     }
 

@@ -148,8 +148,18 @@
             {{ $actions }}
         </div>
     @else
+        @php
+
+            $actionsAlign = match($align) {
+                'left' => 'lg:items-start lg:justify-start md:justify-center justify-center',
+                'center' => 'justify-center',
+                default => 'justify-center lg:justify-right lg:items-start',
+            };
+
+        @endphp
+
         @if($component->actions)
-            <div class="flex w-full flex-col md:flex-row gap-3 sm:gap-x-4 items-center">
+            <div class="flex w-full flex-col md:flex-row gap-3 sm:gap-x-4 items-center {{ $actionsAlign }}" >
                 @foreach($component->actions as $action)
                     <x-button rounded="sm" :component="$action"/>
                 @endforeach
