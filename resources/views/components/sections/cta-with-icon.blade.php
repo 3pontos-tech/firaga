@@ -7,7 +7,7 @@
 ])
 
 <section
-    class="text-base-content py-12 sm:py-16 md:py-20 lg:py-24 xl:py-30 overflow-hidden bg-elevation-surface container mx-auto">
+    class="text-base-content sm:py-8 md:py-10 lg:py-14 xl:py-16 overflow-hidden bg-elevation-surface container mx-auto">
     <div class="bg-elevation-02dp rounded-2xl sm:rounded-3xl p-4 sm:p-6 md:p-8 lg:p-10">
         <div
             class="flex flex-col lg:flex-row items-center justify-between gap-8 sm:gap-8 md:gap-12 lg:gap-16 xl:gap-20
