@@ -271,7 +271,7 @@ return [
                     'data' => [
                         'component_id' => '9461ce3e-893c-481d-b7d8-fc0320be353c',
                         'headline' => [
-                            'heading' => 'Não tema a faísca da mudança  ele forja sua evolução.',
+                            'heading' => 'Não tema a faísca da mudança ela forja sua evolução.',
                             'keywords' => [
                                 'Não',
                                 'tema',
@@ -290,7 +290,7 @@ return [
                                 'has_actions' => true,
                                 'buttons' => [
                                     '1160ecf4-2111-471c-a9b8-b63ede512bec' => [
-                                        'label' => 'Agendar Análise',
+                                        'label' => 'Agendar uma análise',
                                         'url' => 'https://firece.com',
                                         'icon' => 'heroicon-c-chevron-right',
                                         'icon_position' => 'trailing',
