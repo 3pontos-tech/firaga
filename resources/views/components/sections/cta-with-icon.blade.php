@@ -7,11 +7,11 @@
 ])
 
 <section
-    class="text-base-content py-12 sm:py-16 md:py-20 lg:py-24 xl:py-30 overflow-hidden bg-elevation-surface container mx-auto">
+    class="text-base-content sm:py-8 md:py-10 lg:py-14 xl:py-16 overflow-hidden bg-elevation-surface container mx-auto">
     <div class="bg-elevation-02dp rounded-2xl sm:rounded-3xl p-4 sm:p-6 md:p-8 lg:p-10">
         <div
             class="flex flex-col lg:flex-row items-center justify-between gap-8 sm:gap-8 md:gap-12 lg:gap-16 xl:gap-20
-                px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 py-8 sm:py-12 md:py-16 lg:py-20 xl:py-24">
+                px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 py-6 sm:py-8 lg:py-12 xl:py-16">
             <div class="relative">
                 <span
                     class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2

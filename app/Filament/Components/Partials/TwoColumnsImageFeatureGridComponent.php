@@ -4,6 +4,7 @@ namespace App\Filament\Components\Partials;
 
 use App\Enums\CustomComponent;
 use App\Filament\Components\AbstractCustomComponent;
+use App\Filament\Components\DTOs\HeadlineComponent;
 use Filament\Forms\Components\Repeater;
 use Filament\Forms\Components\SpatieMediaLibraryFileUpload;
 use Filament\Forms\Components\Textarea;
@@ -22,15 +23,7 @@ class TwoColumnsImageFeatureGridComponent extends AbstractCustomComponent
                 ->collection(CustomComponent::TwoColumnsImageFeatureGrid->value)
                 ->image()
                 ->required(),
-            TextInput::make('badge')
-                ->label('Badge')
-                ->required(),
-            TextInput::make('heading')
-                ->label('Heading')
-                ->required(),
-            Textarea::make('description')
-                ->label('Description')
-                ->required(),
+            ...HeadlineComponent::form(),
             Repeater::make('cards')
                 ->label('Cards')
                 ->schema([
@@ -47,12 +40,6 @@ class TwoColumnsImageFeatureGridComponent extends AbstractCustomComponent
                 ->minItems(1)
                 ->maxItems(4)
                 ->required(),
-            TextInput::make('cta_label')
-                ->label('CTA Label')
-                ->required(),
-            TextInput::make('cta_url')
-                ->label('CTA Link')
-                ->required(),
         ];
     }
 
@@ -64,12 +51,8 @@ class TwoColumnsImageFeatureGridComponent extends AbstractCustomComponent
     public static function setupRenderPayload(array $data): array
     {
         return [
-            'badge' => $data['badge'],
-            'heading' => $data['heading'],
-            'description' => $data['description'],
+            'headline' => HeadlineComponent::make($data['headline']),
             'cards' => $data['cards'] ?? [],
-            'cta_label' => $data['cta_label'],
-            'cta_url' => $data['cta_url'],
         ];
     }
 

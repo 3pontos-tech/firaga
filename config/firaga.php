@@ -620,114 +620,374 @@ return [
             'slug' => 'code-capital',
             'medias' => [
                 [
+                    'collection' => CustomComponent::HeroWithBackgroundImage->value,
+                    'path' => public_path('images/stock/hero-stock.png'),
+                ],
+                [
+                    'collection' => CustomComponent::CallToActionFullWidthSection->value,
+                    'path' => public_path('images/stock/hero-stock.png'),
+                    'custom_properties' => [
+                        "component_id" => "e1bd64b1-7a01-4f6b-9292-c687740ca409",
+                    ]
+                ],
+                [
                     'collection' => CustomComponent::TwoColumnsImageFeatureGrid->value,
-                    'path' => public_path('images/stock/our-approach.png'),
+                    'path' => public_path('images/stock/code-capital.png'),
                 ],
                 [
                     'collection' => CustomComponent::CallToActionWithImage->value,
                     'path' => public_path('images/stock/consultant.png'),
                 ],
+                [
+                    'collection' => CustomComponent::Faq->value,
+                    'path' => public_path('images/stock/hero-stock.png'),
+                ],
             ],
             'content' => [
-                [
-                    'type' => CustomComponent::HeroWithCodeSnippet->value,
-                    'data' => [
-                        'heading' => 'Consultoria exclusiva e diferenciada para profissionais de tecnologia.',
-                        'subheading' => 'Com uma abordagem personalizada, focamos em ajudar pessoas a organizarem suas finanças, evitarem decisões impulsivas e alocarem seu dinheiro de forma estratégica e com diversidade protegendo o patrimônio. O propósito da Code é transformar a relação com o dinheiro trazendo mais controle, confiança e liberdade para o futuro.',
-                        'badge' => 'Code Capital',
-                        'cta_label' => 'Agende uma análise',
-                        'cta_url' => 'https://cal.com/eduardo-vogel-sc6dnr/30min',
-                        'snippet' => file_get_contents(resource_path('markdown/code-capital/snippets.md')),
+                "604b2665-4b8d-46da-8410-1a516ff18862" => [
+                    "type" => "hero-with-background-image",
+                    "data" => [
+                        "hero_size" => "[70vh]",
+                        "headline" => [
+                            "heading" => "Consultoria exclusiva e diferenciada para profissionais de tecnologia",
+                            "keywords" => [
+                                "Consultoria",
+                                "exclusiva",
+                            ],
+                            "size" => "lg",
+                            "position" => "center",
+                            "description" => "Com uma abordagem personalizada, focamos em ajudar pessoas a organizarem suas finanças, evitarem decisões impulsivas e alocarem seu dinheiro de forma estratégica e com diversidade protegendo o patrimônio. O propósito da Code é transformar a relação com o dinheiro trazendo mais controle, confiança e liberdade para o futuro.",
+                            "badge" => [
+                                "has_badge" => true,
+                                "icon" => "firece-logo",
+                                "label" => "Invista agora com a Code Capital",
+                            ],
+                            "buttons" => [
+                                "has_actions" => true,
+                                "buttons" => [
+                                    "389d890d-c9a8-4e9f-97a1-02fd3faba4b7" => [
+                                        "label" => "Começar meu planejamento",
+                                        "url" => "https://firece.com",
+                                        "icon" => "heroicon-c-chevron-right",
+                                        "icon_position" => "trailing",
+                                        "target" => "_blank",
+                                    ],
+                                ],
+                            ],
+                        ],
+                        "hero" => [
+                            "02e24f5b-b87a-4251-9824-63b2023db36f" => "02e24f5b-b87a-4251-9824-63b2023db36f",
+                        ],
                     ],
                 ],
 
-                [
-                    'type' => CustomComponent::CallToActionFullWidthSection->value,
-                    'data' => [
-                        'title' => 'A gente decodifica o mercado financeiro para você focar no que faz de melhor.',
-                        'cta_label' => 'Agende uma análise',
-                        'cta_url' => 'https://cal.com/eduardo-vogel-sc6dnr/30min',
-                    ],
-                ],
-                [
-                    'type' => CustomComponent::VideoTestimonial->value,
-                    'data' => [
-                        'heading' => 'Dinheiro com propósito: como danilo parou de gastar por impulso',
-                        'description' => 'Danilo, programador, relata como o suporte da Fire|ce transformou sua relação com o dinheiro. Antes, ao ver o saldo na conta, acabava gastando por impulso. Hoje, com organização e diversificação dos investimentos, seu dinheiro tem um propósito — e ele evita mexer até no fundo de reserva. Além disso, valoriza a confiança de investir com uma empresa que não empurra produtos, e sim constrói estratégias sólidas e transparentes, mesmo diante da instabilidade econômica do Brasil.',
-                        'video_url' => 'https://www.youtube.com/embed/dQw4w9WgXcQ?si=O6_xTlMmOrEmpqyy',
-                        'insights' => [
-                            [
-                                'icon' => FireceIcons::NbPeople->value,
-                                'value' => 'Especialistas  planejamento financeiro',
+                "69742386-e554-4c4e-983e-1ec85f62eb6b" => [
+                    "type" => "flow-timeline",
+                    "data" => [
+                        "headline" => [
+                            "heading" => "Por que investir com a Code Capital?",
+                            "keywords" => [],
+                            "size" => "lg",
+                            "position" => "center",
+                            "description" => "Você é atendido por quem fala a sua língua — especialistas que entendem sua realidade e estão prontos para te ajudar a crescer, recomeçar ou expandir seus horizontes financeiros.",
+                            "badge" => [
+                                "has_badge" => true,
+                                "icon" => "firece-logo",
+                                "label" => "Invista agora com a Fire|ce",
                             ],
-                            [
-                                'icon' => FireceIcons::NbTarget->value,
-                                'value' => 'Metodologia própria testada e aprovada',
-                            ],
-                            [
-                                'icon' => FireceIcons::NbChart->value,
-                                'value' => 'Foco em resultados reais e sustentáveis',
+                            "buttons" => [
+                                "has_actions" => false,
+                                "buttons" => [],
                             ],
                         ],
-                        'video_cards' => [
-                            ['title' => 'Clientes atendidos', 'value' => '500+'],
-                            ['title' => 'Anos de Experiência', 'value' => '5 anos'],
-                            ['title' => 'Satisfação dos clientes', 'value' => '98%'],
-                        ],
-                        'cta_label' => 'Agende uma análise',
-                        'cta_url' => 'https://cal.com/eduardo-vogel-sc6dnr/30min',
-                    ],
-                ],
-                [
-                    'type' => CustomComponent::TwoColumnsImageFeatureGrid->value,
-                    'data' => [
-                        'badge' => 'Nossa missão',
-                        'heading' => 'Construído por profissionais de Finanças e Tecnologia',
-                        'description' => 'Realizamos uma consulta com você para entender seu caso, seus objetivos e avaliar o melhor caminho para seus investimentos no exterior. Nós lhe auxiliaremos em todo o processo. Feito o investimento você terá um assessor para reinvestir ou para movimentações, além do envio de informes mensais sobre seus rendimentos.',
-                        'cards' => [
-                            [
-                                'icon' => FireceIcons::NbTarget->value,
-                                'title' => 'Nossa Missão',
-                                'description' => 'A Code Capital nasce da necessidade de diversidade mais digital e entendimento de toda jornada de um profissional da área, criando assim um braço exclusivo e atento às necessidades dos profissionais.',
+                        "timeline" => [
+                            "73eae07e-aee5-4d56-8b4e-096f7a7b7790" => [
+                                "title" => "Expertise",
+                                "card_icon" => "lucide-goal",
+                                "card_title" => "Personalized Initial Consultation",
+                                "card_description" => "Consultores capacitados para direcionar sua vida financeira e sua profissão para um novo nível, atrelando seus objetivos pessoas e profissionais.",
                             ],
-                            [
-                                'icon' => FireceIcons::NbPeople->value,
-                                'title' => 'Para Clientes Diferenciados',
-                                'description' => 'Com a possibilidade de realizar qualquer tarefa online para qualquer país do mundo. Se você gosta de ganhar em dólar, vai gostar ainda mais de ver sua rentabilidade crescer exponencialmente em uma moeda estrangeira.',
+                            "f5aba19a-807c-4894-9c05-59982770b369" => [
+                                "title" => "Planejamento financeiro sob medida",
+                                "card_icon" => "lucide-goal",
+                                "card_title" => "Tailored Investment Plan",
+                                "card_description" => "Estratégias personalizadas para maximizar sua remuneração, impulsionar seus investimentos e alcançar objetivos com segurança.",
                             ],
-                            [
-                                'icon' => FireceIcons::NbComputer->value,
-                                'title' => 'Segurança para você e quem você ama',
-                                'description' => 'Todos os investimentos são de carácter sucessório, ou seja, mesmo que haja qualquer tipo de fatalidade, sua família terá tranquilidade de usar esses recursos.',
-                            ],
-                            [
-                                'icon' => FireceIcons::NbChart->value,
-                                'title' => 'Investimento fora do tradicional',
-                                'description' => 'Além dos investimentos tradicionais e dos presentes na internet, temos investimentos principalmente em NY e UK, como a BNY Mellon, UBS, BNP Paribas, Credit Suisse entre outros.',
+                            "adaadf61-8ca1-47fb-b5a6-f29bc1205940" => [
+                                "title" => "Resultados Comprovados",
+                                "card_icon" => "lucide-goal",
+                                "card_title" => "Ongoing International Support",
+                                "card_description" => "Desde 2023, ajudando profissionais de tecnologia a construírem patrimônio de forma inteligente e global.",
                             ],
                         ],
-                        'cta_label' => 'Quero saber mais',
-                        'cta_url' => 'https://cal.com/eduardo-vogel-sc6dnr/30min',
                     ],
                 ],
-                [
-                    'type' => CustomComponent::CallToActionWithImage->value,
-                    'data' => [
-                        'heading' => 'Consultor financeiro exclusivo',
-                        'description' => 'Ter um consultor financeiro vai muito além de "organizar as contas". É sobre ter um profissional ao seu lado que entende a sua realidade, te ajuda a enxergar possibilidades e constrói, junto com você, um caminho concreto rumo à tranquilidade financeira.',
-                        'cta_label' => 'Agendar uma consulta gratuita',
-                        'cta_url' => 'https://cal.com/eduardo-vogel-sc6dnr/30min',
-                        'image' => 'Saiba mais',
+
+                "d98fd0ad-377b-42b1-9cea-3d9e1c39f936" => [
+                    "type" => "video-testimonial",
+                    "data" => [
+                        "headline" => [
+                            "heading" => "Dinheiro com propósito: como danilo parou de gastar por impulso",
+                            "keywords" => [],
+                            "size" => "lg",
+                            "position" => "left",
+                            "description" => "Danilo, programador, relata como o suporte da Fire|ce transformou sua relação com o dinheiro. Antes, ao ver o saldo na conta, acabava gastando por impulso. Hoje, com organização e diversificação dos investimentos, seu dinheiro tem um propósito — e ele evita mexer até no fundo de reserva. Além disso, valoriza a confiança de investir com uma empresa que não empurra produtos, e sim constrói estratégias sólidas e transparentes, mesmo diante da instabilidade econômica do Brasil.",
+                            "badge" => [
+                                "has_badge" => true,
+                                "icon" => "firece-logo",
+                                "label" => "Por que escolher a Code Capital?",
+                            ],
+                            "buttons" => [
+                                "has_actions" => false,
+                                "buttons" => [],
+                            ],
+                        ],
+                        "insights" => [
+                            "8449ba30-5e8f-418b-9f54-2a538012c1aa" => [
+                                "value" => "Especialistas  planejamento financeiro",
+                                "icon" => "lucide-hand-coins",
+                            ],
+                            "b453c85b-43d5-478f-bc30-9bf2e27a3a0d" => [
+                                "value" => "Metodologia própria testada e aprovada",
+                                "icon" => "lucide-hand-coins",
+                            ],
+                            "3bb8d780-497f-4fd1-be23-af04af936c59" => [
+                                "value" => "Foco em resultados reais e sustentáveis",
+                                "icon" => "lucide-hand-coins",
+                            ],
+                        ],
+                        "video_url" => "https://www.youtube.com/embed/dQw4w9WgXcQ?si=eThAUAsChTqyDw8",
+                        "video_cards" => [
+                            "8d52e47a-c514-46c0-8dde-1d17cffe1164" => [
+                                "title" => "500+",
+                                "value" => "Clientes atendidos",
+                            ],
+                            "55807fa7-f8fa-4bf9-8072-65e2de738296" => [
+                                "title" => "5",
+                                "value" => "Anos de Experiência",
+                            ],
+                            "941a1c43-da99-490f-9ee2-67a53dee5e72" => [
+                                "title" => "98%",
+                                "value" => "Satisfação dos clientes",
+                            ],
+                        ],
+                        "cta_label" => null,
+                        "cta_url" => null,
                     ],
                 ],
-                [
-                    'type' => CustomComponent::Testimonials->value,
-                    'data' => [
-                        'heading' => 'Escute de nossos clientes',
-                        'badge' => 'Avaliações',
-                        'testimonials' => [1, 6, 10, 7],
+
+                "b9ecdd05-1e3c-49d7-b85c-f206eec36de3" => [
+                    "type" => "call-to-action-section",
+                    "data" => [
+                        "component_id" => "e1bd64b1-7a01-4f6b-9292-c687740ca409",
+                        "headline" => [
+                            "heading" => "A gente decodifica o mercado financeiro para você focar no que faz de melhor.",
+                            "keywords" => [
+                                "decodifica",
+                                "o",
+                                "mercado",
+                                "financeiro",
+                            ],
+                            "size" => "lg",
+                            "position" => "left",
+                            "description" => null,
+                            "badge" => [
+                                "has_badge" => false,
+                                "icon" => null,
+                                "label" => null,
+                            ],
+                            "buttons" => [
+                                "has_actions" => true,
+                                "buttons" => [
+                                    "fe3818ba-daf8-4d20-944d-58f4062c64e1" => [
+                                        "label" => "Agende uma análise",
+                                        "url" => "https://firece.com",
+                                        "icon" => "heroicon-c-chevron-right",
+                                        "icon_position" => "trailing",
+                                        "target" => "_blank",
+                                    ],
+                                ],
+                            ],
+                        ],
+                        "image" => [
+                            "94bde7f2-fddb-4b9b-89c9-7521c51ef38f" => "94bde7f2-fddb-4b9b-89c9-7521c51ef38f",
+                        ],
                     ],
                 ],
+
+                "33f830c9-4488-4bb8-822d-d99469ec1cb6" => [
+                    "type" => "two-columns-image-feature-grid",
+                    "data" => [
+                        'headline' => [
+                            'size' => 'md',
+                            'position' => 'left',
+                            'heading' => 'Construído por profissionais de Finanças e Tecnologia',
+                            'description' => 'Na nossa consultoria, entendemos que cada cliente é único. Por isso,
+                                desenvolvemos uma metodologia personalizada que se adapta às suas necessidades e
+                                objetivos financeiros. Nossa abordagem é baseada em três pilares fundamentais:
+                                Análise de Perfil, Planejamento Estratégico e Execução com Suporte Contínuo.',
+                            'has_actions' => false,
+                            'actions' => [],
+                            'keywords' => [],
+                            "badge" => [
+                                "has_badge" => true,
+                                "icon" => "firece-logo",
+                                "label" => "Propósito",
+                            ],
+                            "buttons" => [
+                                "has_actions" => false,
+                                "buttons" => [],
+                            ],
+                        ],
+                        "cards" => [
+                            "ae20962b-450b-4bde-8323-6ac82ee423f8" => [
+                                "icon" => "lucide-message-circle-more",
+                                "title" => "Nossa Missão",
+                                "description" => "A Code Capital nasce da necessidade de diversidade mais digital e entendimento de toda jornada de um profissional da área, criando assim um braço exclusivo e atento às necessidades dos profissionais.",
+                            ],
+                            "2506e50b-2ae2-4297-83fb-748b26adfe30" => [
+                                "icon" => "lucide-message-circle-more",
+                                "title" => "Para Clientes Diferenciados",
+                                "description" => "Com a possibilidade de realizar qualquer tarefa online para qualquer país do mundo. Se você gosta de ganhar em dólar, vai gostar ainda mais de ver sua rentabilidade crescer exponencialmente em uma moeda estrangeira.",
+                            ],
+                            "df547c71-89c4-4368-a66d-3092c2ee7c91" => [
+                                "icon" => "lucide-message-circle-more",
+                                "title" => "Segurança para você e sua família",
+                                "description" => "Todos os investimentos são de carácter sucessório, ou seja, mesmo que haja qualquer tipo de fatalidade, sua família terá tranquilidade de usar esses recursos.",
+                            ],
+                            "0a648c0d-baa1-4158-b24a-c6bd7a3197e8" => [
+                                "icon" => "lucide-message-circle-more",
+                                "title" => "Investimento inovador",
+                                "description" => "Além dos investimentos tradicionais e dos presentes na internet, temos investimentos principalmente em NY e UK, como a BNY Mellon, UBS, BNP Paribas, Credit Suisse entre outros.",
+                            ],
+                        ],
+                        "hero" => [
+                            "f51e1eeb-9d94-4df0-b2e1-35e78c7076f9" => "f51e1eeb-9d94-4df0-b2e1-35e78c7076f9",
+                        ],
+                    ],
+                ],
+
+                "d5cace60-6bc7-4d76-99b8-d0968cdf9346" => [
+                    "type" => "call-to-action-with-image",
+                    "data" => [
+                        "headline" => [
+                            "heading" => "Consultor financeiro exclusivo",
+                            "keywords" => [],
+                            "size" => "lg",
+                            "position" => "left",
+                            "description" => "Ter um consultor financeiro vai muito além de \"organizar as contas\". É sobre ter um profissional ao seu lado que entende a sua realidade, te ajuda a enxergar possibilidades e constrói, junto com você, um caminho concreto rumo à tranquilidade financeira.",
+                            "badge" => [
+                                "has_badge" => true,
+                                "icon" => "firece-logo",
+                                "label" => "Invista agora com a Fire|ce",
+                            ],
+                            "buttons" => [
+                                "has_actions" => false,
+                                "buttons" => [],
+                            ],
+                        ],
+                        "cta_label" => "Quero começar agora",
+                        "cta_icon" => "heroicon-c-chevron-right",
+                        "cta_url" => "https://firece.com.br/",
+                        "hero" => [
+                            "7141cd43-f13c-484b-a00b-97b2d1fc6d80" => "7141cd43-f13c-484b-a00b-97b2d1fc6d80",
+                        ],
+                    ],
+                ],
+
+                "ce234a8a-2164-4824-9d35-f284992e1c0c" => [
+                    "type" => "testimonials",
+                    "data" => [
+                        "headline" => [
+                            "heading" => "Escute de nossos clientes",
+                            "keywords" => [],
+                            "size" => "lg",
+                            "position" => "center",
+                            "description" => "Levamos você da análise de perfil à execução estratégica, com suporte contínuo para maximizar seus resultados. Nossa metodologia foi desenvolvida para transformar a sua relação com o dinheiro em 3 etapas fundamentais:",
+                            "badge" => [
+                                "has_badge" => true,
+                                "icon" => "firece-logo",
+                                "label" => "Depoimentos",
+                            ],
+                            "buttons" => [
+                                "has_actions" => false,
+                                "buttons" => [],
+                            ],
+                        ],
+                        "testimonials" => [
+                            "5",
+                            "3",
+                            "7",
+                            "9",
+                        ],
+                    ],
+                ],
+
+                "c16601fb-61ef-4212-a4f3-720996a9b3a6" => [
+                    "type" => "faq",
+                    "data" => [
+                        "description" => "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam urna tellus, cursus vitae vestibulum quis, pretium eu dui.",
+                        "solutions" => [
+                            "c2680d14-602b-4e07-9827-e29e183a9fda" => [
+                                "question" => "Lorem Ipsum dolor sit amet",
+                                "answer" => "Lorem Ipsum dolor sit amet Lorem Ipsum dolor sit amet",
+                            ],
+                            "f6ec47a8-bb0f-4ffd-bac5-b2d6426d1e0f" => [
+                                "question" => "Lorem Ipsum dolor sit amet",
+                                "answer" => "Lorem Ipsum dolor sit amet Lorem Ipsum dolor sit amet",
+                            ],
+                            "6e57287d-16e2-481c-8d84-a2ef9efe74ce" => [
+                                "question" => "Lorem Ipsum dolor sit amet",
+                                "answer" => "Lorem Ipsum dolor sit amet Lorem Ipsum dolor sit amet",
+                            ],
+                            "d48e936c-c9d8-4839-8077-be242159bd69" => [
+                                "question" => "Lorem Ipsum dolor sit amet Lorem Ipsum dolor sit amet",
+                                "answer" => "Lorem Ipsum dolor sit amet Lorem Ipsum dolor sit amet",
+                            ],
+                        ],
+                        "hero" => [
+                            "bb504efb-9b98-4696-8e25-ac29a3bc0fe3" => "bb504efb-9b98-4696-8e25-ac29a3bc0fe3",
+                        ],
+                    ],
+
+                    "c16601fb-61ef-4212-a4f3-720996a9b3a6" => [
+                        "type" => "faq",
+                        "data" => [
+                            "description" => "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam urna tellus, cursus vitae vestibulum quis, pretium eu dui.",
+                            "solutions" => [
+                                "c2680d14-602b-4e07-9827-e29e183a9fda" => [
+                                    "question" => "Lorem Ipsum dolor sit amet",
+                                    "answer" => "Lorem Ipsum dolor sit amet Lorem Ipsum dolor sit amet",
+                                ],
+                                "f6ec47a8-bb0f-4ffd-bac5-b2d6426d1e0f" => [
+                                    "question" => "Lorem Ipsum dolor sit amet",
+                                    "answer" => "Lorem Ipsum dolor sit amet Lorem Ipsum dolor sit amet",
+                                ],
+                                "6e57287d-16e2-481c-8d84-a2ef9efe74ce" => [
+                                    "question" => "Lorem Ipsum dolor sit amet",
+                                    "answer" => "Lorem Ipsum dolor sit amet Lorem Ipsum dolor sit amet",
+                                ],
+                                "d48e936c-c9d8-4839-8077-be242159bd69" => [
+                                    "question" => "Lorem Ipsum dolor sit amet Lorem Ipsum dolor sit amet",
+                                    "answer" => "Lorem Ipsum dolor sit amet Lorem Ipsum dolor sit amet",
+                                ],
+                            ],
+                            "hero" => [
+                                "bb504efb-9b98-4696-8e25-ac29a3bc0fe3" => "bb504efb-9b98-4696-8e25-ac29a3bc0fe3",
+                            ],
+                        ]
+                    ],
+                ],
+
+                "ba6a9018-7c61-44d2-a9f8-d62cb49ffb3f" => [
+                    "type" => "call-to-action-with-icon",
+                    "data" => [
+                        "title" => "Visite nosso Blog e tenha acesso à conteúdos exclusivos",
+                        "cta_label" => "Agende uma análise",
+                        "cta_url" => "https://firece.com.br/blog",
+                        "icon" => "lucide-book-marked",
+                    ],
+                ]
             ],
             'status' => 'published',
         ],
@@ -742,13 +1002,15 @@ return [
             'slug' => 'parcerias',
             'medias' => [
                 [
-                    'collection' => CustomComponent::Faq->value,
+                    'collection' => CustomComponent::CallToActionWithImage->value,
                     'path' => public_path('images/stock/hero-stock.png'),
                 ],
-
                 [
-                    'collection' => CustomComponent::SplitWithImageQuote->value,
-                    'path' => public_path('images/stock/work-with-us-hero.jpg'),
+                    'collection' => CustomComponent::CallToActionFullWidthSection->value,
+                    'path' => public_path('images/stock/hero-stock.png'),
+                    'custom_properties' => [
+                        "component_id" => "512c2004-348f-48e7-b395-80b61a60e664",
+                    ]
                 ],
                 [
                     'collection' => CustomComponent::TwoColumnsImageFeatureGrid->value,
@@ -760,104 +1022,304 @@ return [
                 ],
             ],
             'content' => [
-                [
-                    'type' => CustomComponent::SplitWithVerticalSteps->value,
-                    'data' => [
-                        'badge' => 'Propósito',
-                        'heading' => 'Geração de resultados',
-                        'description' => 'Acreditamos que a transformação financeira ganha força quando compartilhada. Por isso, criamos uma frente dedicada a parcerias estratégicas, focada em gerar impacto mútuo. Atuamos com empresas, especialistas e instituições que compartilham nossa visão e desejam construir soluções colaborativas.',
-                        'cta_url' => 'https://pudim.com.br',
-                        'cta_label' => 'Saiba mais',
-                        'cards' => [
-                            [
-                                'icon' => FireceIcons::Folder->value,
-                                'title' => 'Join Ventures',
-                                'description' => 'Entendemos seu perfil financeiro e objetivos.',
+                "9cbb654a-da87-4f2a-8387-be2473a1477a" => [
+                    "type" => "call-to-action-with-image",
+                    "data" => [
+                        "headline" => [
+                            "heading" => "A transformação se constrói com boas alianças",
+                            "keywords" => [],
+                            "size" => "lg",
+                            "position" => "left",
+                            "description" => "Seja através de projetos conjuntos, campanhas, educação corporativa ou desenvolvimento de produtos financeiros sob medida, nossas parcerias são desenhadas com estratégia, colaboração e propósito.",
+                            "badge" => [
+                                "has_badge" => true,
+                                "icon" => "firece-logo",
+                                "label" => "Invista agora com a Fire|ce",
                             ],
-                            [
-                                'icon' => FireceIcons::Gear->value,
-                                'title' => 'Integração de Expertise',
-                                'description' => 'Criamos um plano personalizado para você.',
-                            ],
-                            [
-                                'icon' => FireceIcons::Mortarboard->value,
-                                'title' => 'Projetos Corpotarativos e Educacionais',
-                                'description' => 'Acompanhamos a execução do plano com suporte contínuo.',
+                            "buttons" => [
+                                "has_actions" => false,
+                                "buttons" => [],
                             ],
                         ],
+                        "cta_label" => "Entrar em contato",
+                        "cta_icon" => "heroicon-c-chevron-right",
+                        "cta_url" => "https://api.whatsapp.com/send/?phone=5511987201303&text=Visitei+o+site+da+Fire%7Cce+e+quero+mais+informa%C3%B5es&type=phone_number&app_absent=0",
+                        "hero" => [
+                            "28cacbae-2332-4621-9f4a-8a414f2a5446" => "28cacbae-2332-4621-9f4a-8a414f2a5446",
+                        ],
+                    ],
+                ],
 
-                    ],
-                ],
-                [
-                    'type' => CustomComponent::SplitWithImageQuote->value,
-                    'data' => [
-                        'heading' => 'Nosso Trabalho',
-                        'badge' => 'Parcerias',
-                        'image_position' => 'right',
-                        'description' => 'Trazemos nossa metodologia, estrutura e autoridade de mercado para somar com o que o parceiro já possui. A inovação nasce do encontro de forças complementares e estamos prontos para criar algo novo. Trabalhamos com:',
-                        'insights' => [
-                            ['value' => 'Empresas'],
-                            ['value' => 'Especialistas'],
-                            ['value' => 'Instituições Educacionais'],
-                        ],
-                        'quote' => 'Seja parceiro da Fire|ce e ofereça acesso a soluções que geram equilíbrio, produtividade e bem-estar real.',
-                        'cta_url' => 'https://pudim.com.br',
-                        'cta_label' => 'Saiba mais',
-                    ],
-                ],
-                [
-                    'type' => CustomComponent::TwoColumnsImageFeatureGrid->value,
-                    'data' => [
-                        'badge' => 'Sobre nós',
-                        'heading' => 'Sobre nós',
-                        'description' => 'A Fire|ce ajuda empresas a promoverem alta performance por meio da educação financeira. Com programas sob medida, consultores especializados e soluções integradas, criamos pontes entre saúde financeira e produtividade.',
-                        'cards' => [
-                            [
-                                'icon' => FireceIcons::NbHands->value,
-                                'title' => 'Projetos Conjuntos',
-                                'description' => 'Monetize sua influência ou rede com um modelo de parceria inteligente e sustentável — você lucra enquanto ajuda pessoas a transformarem suas vidas financeiras.',
+                "e81d1fe4-5c72-4a29-ada6-121651144f1c" => [
+                    "type" => "split-with-horizontal-steps",
+                    "data" => [
+                        "headline" => [
+                            "heading" => "Geração de resultados",
+                            "keywords" => [],
+                            "size" => "lg",
+                            "position" => "center",
+                            "description" => "Acreditamos que a transformação financeira ganha força quando compartilhada. Por isso, criamos uma frente dedicada a parcerias estratégicas, focada em gerar impacto mútuo. Atuamos com empresas, especialistas e instituições que compartilham nossa visão e desejam construir soluções colaborativas. ",
+                            "badge" => [
+                                "has_badge" => true,
+                                "icon" => "firece-logo",
+                                "label" => "Propósito",
                             ],
-                            [
-                                'icon' => FireceIcons::NbStar->value,
-                                'title' => 'Reconhecimento',
-                                'description' => 'Associe sua marca ou imagem a uma consultoria que entrega resultados reais e melhora a relação das pessoas com o dinheiro.',
-                            ],
-                            [
-                                'icon' => FireceIcons::NbLogo->value,
-                                'title' => 'Ecossistema Fire|ce',
-                                'description' => 'Tenha contato privilegiado com nossos produtos, lançamentos e soluções, além de ferramentas que tornam a parceria ainda mais eficiente.',
-                            ],
-                            [
-                                'icon' => FireceIcons::NbSpeechbubble->value,
-                                'title' => 'Suporte contínuo',
-                                'description' => 'Contamos com uma equipe que acompanha sua jornada, oferece materiais personalizados, treinamentos e um plano de crescimento contínuo — juntos, vamos mais longe.',
+                            "buttons" => [
+                                "has_actions" => false,
+                                "buttons" => [],
                             ],
                         ],
-                        'cta_label' => 'Agende uma consulta gratuita',
-                        'cta_url' => 'https://pudim.com/',
-                    ],
-                ],
-                [
-                    'type' => CustomComponent::Faq->value,
-                    'data' => [
-                        'solutions' => [
-                            [
-                                'question' => 'Quem pode se tornar parceiro da Fire|ce?',
-                                'answer' => 'Qualquer profissional, empresa ou instituição com sinergia de trabalho alinhada e propósito alinhado ao nosso: transformar a vida financeira das pessoas com estratégia e impacto real.',
-                            ],
-                            [
-                                'question' => 'Quais são os formatos mais comuns de parceria?',
-                                'answer' => 'Conectamos conhecimento com inspiração. Levamos educação financeira para empresas, eventos e grupos, abordando temas que impactam diretamente a vida das pessoas. Nossa abordagem vai além de conceitos teóricos – oferecemos insights práticos e estratégias aplicáveis imediatamente.',
-                            ],
-                            [
-                                'question' => 'A Fire|ce investe em projetos em conjunto?',
-                                'answer' => 'Sim! Para quem deseja se tornar um consultor de alto desempenho, oferecemos um caminho estruturado. A formação cobre desde metodologias até estratégias de atuação prática no mercado. O objetivo é preparar você para transformar vidas e construir uma carreira sólida na área financeira.',
-                            ],
-                            [
-                                'question' => 'Como iniciar uma conversa com a Fire|ce?',
-                                'answer' => 'Sim! Para quem deseja se tornar um consultor de alto desempenho, oferecemos um caminho estruturado. A formação cobre desde metodologias até estratégias de atuação prática no mercado. O objetivo é preparar você para transformar vidas e construir uma carreira sólida na área financeira.',
+                        "cards" => [
+                            "has_cards" => true,
+                            "grid_columns" => 3,
+                            "card_type" => "cta",
+                            "items" => [
+                                "d40c073e-368f-4d0a-8d2d-22dedb867896" => [
+                                    "title" => "Projetos de capacitação corporativa.",
+                                    "description" => "Entendemos seu perfil financeiro e objetivos.",
+                                    "icon" => "lucide-message-circle-more",
+                                    "has_actions" => false,
+                                    "buttons" => [],
+                                ],
+                                "32747d8d-b48b-4f66-8efc-8336f6a821f5" => [
+                                    "title" => "Integração de Expertise",
+                                    "description" => "Criamos um plano personalizado para você.",
+                                    "icon" => "lucide-message-circle-more",
+                                    "has_actions" => false,
+                                    "buttons" => [],
+                                ],
+                                "99732ff2-703f-4935-b17a-1c5d111dee90" => [
+                                    "title" => "Projetos Corporativos e Educacionais",
+                                    "description" => "Acompanhamos a execução do plano com suporte contínuo.",
+                                    "icon" => "lucide-message-circle-more",
+                                    "has_actions" => false,
+                                    "buttons" => [],
+                                ],
                             ],
                         ],
+                        "cta_description" => "Não encontrou exatamente o que procura?",
+                        "has_actions" => true,
+                        "buttons" => [
+                            "48b42a4e-9c55-4cdb-b068-1d044487b1bb" => [
+                                "label" => "Agende uma análise",
+                                "url" => "https://firece.com",
+                                "icon" => "heroicon-c-chevron-right",
+                                "icon_position" => "trailing",
+                                "target" => "_blank",
+                            ],
+                        ],
+                    ],
+                ],
+
+                "cf4e36f5-f7d7-4a1c-9a25-4d748a0fda06" => [
+                    "type" => "call-to-action-section",
+                    "data" => [
+                        "component_id" => "512c2004-348f-48e7-b395-80b61a60e664",
+                        "headline" => [
+                            "heading" => "Seja parceiro da Fire|ce e ofereça acesso a soluções que geram equilíbrio, produtividade e bem-estar real",
+                            "keywords" => [
+                                "equilíbrio,",
+                                "produtividade",
+                                "bem-estar",
+                                "real",
+                            ],
+                            "size" => "lg",
+                            "position" => "center",
+                            "description" => null,
+                            "badge" => [
+                                "has_badge" => false,
+                                "icon" => null,
+                                "label" => null,
+                            ],
+                            "buttons" => [
+                                "has_actions" => true,
+                                "buttons" => [
+                                    "439fb4ab-3e38-4f77-b057-27e73ad471e8" => [
+                                        "label" => "Agende uma análise",
+                                        "url" => "https://firece.com",
+                                        "icon" => "heroicon-c-chevron-right",
+                                        "icon_position" => "trailing",
+                                        "target" => "_blank",
+                                    ],
+                                ],
+                            ],
+                        ],
+                        "image" => [
+                            "fc4e2c0a-136e-4258-8400-a6891747c695" => "fc4e2c0a-136e-4258-8400-a6891747c695",
+                        ],
+                    ],
+                ],
+
+                "a011c44c-054a-4e24-a24a-7b0df1b501b0" => [
+                    "type" => "info-stats",
+                    "data" => [
+                        "headline" => [
+                            "heading" => "Nosso trabalho",
+                            "keywords" => [],
+                            "size" => "lg",
+                            "position" => "left",
+                            "description" => "Trazemos nossa metodologia, estrutura e autoridade de mercado para somar com o que o parceiro já possui. A inovação nasce do encontro de forças complementares e estamos prontos para criar algo novo. ",
+                            "badge" => [
+                                "has_badge" => true,
+                                "icon" => "firece-logo",
+                                "label" => "Invista agora com a Fire|ce",
+                            ],
+                            "buttons" => [
+                                "has_actions" => false,
+                                "buttons" => [],
+                            ],
+                        ],
+                        "cards" => [
+                            "has_cards" => true,
+                            "grid_columns" => 3,
+                            "card_type" => "slim",
+                            "items" => [
+                                "ec3acf93-4acc-4bdc-b087-fcb9ba313fdf" => [
+                                    "title" => "+10",
+                                    "description" => "Empresas",
+                                    "icon" => "lucide-hand-coins",
+                                    "has_actions" => false,
+                                    "buttons" => [],
+                                ],
+                                "09b2112e-c4e6-4ba7-be93-36f0441973c4" => [
+                                    "title" => "+2.000",
+                                    "description" => "Instituições Educacionais",
+                                    "icon" => "lucide-hand-coins",
+                                    "has_actions" => false,
+                                    "buttons" => [],
+                                ],
+                                "ba472aa9-1d05-4316-a202-ac0bfb08c34a" => [
+                                    "title" => "+300%",
+                                    "description" => "Especialistas",
+                                    "icon" => "lucide-hand-coins",
+                                    "has_actions" => false,
+                                    "buttons" => [],
+                                ],
+                            ],
+                        ],
+                    ],
+                ],
+
+                "403198d1-74b0-4a54-85e6-732f658b5c73" => [
+                    "type" => "two-columns-image-feature-grid",
+                    "data" => [
+                        'headline' => [
+                            'size' => 'md',
+                            'position' => 'left',
+                            'heading' => 'Conheça mais sobre a Fire|ce',
+                            'description' => 'A Fire|ce ajuda empresas a promoverem alta performance por meio da
+                            educação financeira. Com programas sob medida, consultores especializados e soluções
+                            integradas, criamos pontes entre saúde financeira e produtividade.',
+                            'has_actions' => false,
+                            'actions' => [],
+                            'keywords' => [],
+                            "badge" => [
+                                "has_badge" => true,
+                                "icon" => "firece-logo",
+                                "label" => "Sobre nós",
+                            ],
+                            "buttons" => [
+                                "has_actions" => false,
+                                "buttons" => [],
+                            ],
+                        ],
+                        "cards" => [
+                            "fa8ce8d1-3d8b-4a84-ab14-c0c968c3699a" => [
+                                "icon" => "lucide-message-circle-more",
+                                "title" => "Projetos Conjuntos",
+                                "description" => "Monetize sua influência ou rede com um modelo de parceria inteligente e sustentável — você lucra enquanto ajuda pessoas a transformarem suas vidas financeiras.",
+                            ],
+                            "6ca5f284-797b-4d10-98de-e63cc3a9fd6e" => [
+                                "icon" => "lucide-message-circle-more",
+                                "title" => "Reconhecimento",
+                                "description" => "Associe sua marca ou imagem a uma consultoria que entrega resultados reais e melhora a relação das pessoas com o dinheiro.",
+                            ],
+                            "896a7da5-fe55-426f-b637-6f44b02c76e7" => [
+                                "icon" => "lucide-message-circle-more",
+                                "title" => "Ecossistema Fire|ce",
+                                "description" => "Tenha contato privilegiado com nossos produtos, lançamentos e soluções, além de ferramentas que tornam a parceria ainda mais eficiente.",
+                            ],
+                            "197243a8-957a-40de-ae47-96a03a128ba6" => [
+                                "icon" => "lucide-message-circle-more",
+                                "title" => "Suporte contínuo",
+                                "description" => "Contamos com uma equipe que acompanha sua jornada, oferece materiais personalizados, treinamentos e um plano de crescimento contínuo.",
+                            ],
+                        ],
+                        "hero" => [
+                            "ffd0375e-78f6-4685-b60d-62b315e0fbff" => "ffd0375e-78f6-4685-b60d-62b315e0fbff",
+                        ],
+                    ],
+                ],
+
+                "7152d7e2-4250-425a-802f-088e88d26bc0" => [
+                    "type" => "hero-with-title-only",
+                    "data" => [
+                        "headline" => [
+                            "heading" => "Não ofereça só um benefício. Ofereça um plano completo de suporte financeiro com a Fire|ce ao seu lado.",
+                            "keywords" => [],
+                            "size" => "lg",
+                            "position" => "center",
+                            "description" => "Você tem um projeto, canal, empresa ou ideia que pode crescer ainda mais com um parceiro estratégico ao lado? Vamos conversar. Juntos, podemos criar algo que realmente transforma.",
+                            "badge" => [
+                                "has_badge" => true,
+                                "icon" => "firece-logo",
+                                "label" => "Torne-se um parceiro",
+                            ],
+                            "buttons" => [
+                                "has_actions" => true,
+                                "buttons" => [
+                                    "5661e000-cbdc-4e32-9910-e9a80561c38c" => [
+                                        "label" => "Quero Começar Agora",
+                                        "url" => "https://firece.com",
+                                        "icon" => "heroicon-c-chevron-right",
+                                        "icon_position" => "trailing",
+                                        "target" => "_blank",
+                                    ],
+                                ],
+                            ],
+                        ],
+                    ],
+                ],
+
+                "6312bc8c-27ed-4485-b0f2-8f35d0339621" => [
+                    "type" => "faq",
+                    "data" => [
+                        "description" => "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam urna tellus, cursus vitae vestibulum quis, pretium eu dui.",
+                        "solutions" => [
+                            "96736f3d-758b-46f7-96e4-4bd00fec1da8" => [
+                                "question" => "Lorem Ipsum dolor sit amet",
+                                "answer" => "Lorem Ipsum dolor sit ametLorem Ipsum dolor sit ametLorem Ipsum dolor sit ametLorem Ipsum dolor sit ametLorem Ipsum dolor sit amet",
+                            ],
+                            "d7aeac19-95de-4d74-bb4a-c6c750be5af8" => [
+                                "question" => "Lorem Ipsum dolor sit amet",
+                                "answer" => "Lorem Ipsum dolor sit ametLorem Ipsum dolor sit ametLorem Ipsum dolor sit ametLorem Ipsum dolor sit ametLorem Ipsum dolor sit amet",
+                            ],
+                            "1c37890c-7674-46cc-a009-547e28785c9f" => [
+                                "question" => "Lorem Ipsum dolor sit amet",
+                                "answer" => "Lorem Ipsum dolor sit ametLorem Ipsum dolor sit ametLorem Ipsum dolor sit ametLorem Ipsum dolor sit ametLorem Ipsum dolor sit amet",
+                            ],
+                            "ca716de0-c837-4271-8cb6-358551a094a3" => [
+                                "question" => "Lorem Ipsum dolor sit amet",
+                                "answer" => "Lorem Ipsum dolor sit ametLorem Ipsum dolor sit ametLorem Ipsum dolor sit ametLorem Ipsum dolor sit ametLorem Ipsum dolor sit amet",
+                            ],
+                            "79404094-5440-4e08-976a-8f73341d5375" => [
+                                "question" => "Lorem Ipsum dolor sit amet",
+                                "answer" => "Lorem Ipsum dolor sit ametLorem Ipsum dolor sit ametLorem Ipsum dolor sit ametLorem Ipsum dolor sit ametLorem Ipsum dolor sit amet",
+                            ],
+                        ],
+                        "hero" => [
+                            "42b70175-f5b8-430e-81a2-fd2ca21887c6" => "42b70175-f5b8-430e-81a2-fd2ca21887c6",
+                        ],
+                    ],
+                ],
+
+                "269a165f-0bd0-419e-a548-745aae7338bf" => [
+                    "type" => "call-to-action-with-icon",
+                    "data" => [
+                        "title" => "Visite nosso Blog e tenha acesso à conteúdos exclusivos",
+                        "cta_label" => "Agende uma análise",
+                        "cta_url" => "https://firece.com.br/blog",
+                        "icon" => "lucide-book-marked",
                     ],
                 ],
             ],
@@ -873,7 +1335,10 @@ return [
             'slug' => 'key-account',
             'theme' => PageTheme::Metallic,
             'medias' => [
-
+                [
+                    'collection' => CustomComponent::HeroWithBackgroundImage->value,
+                    'path' => public_path('images/stock/hero-stock.png'),
+                ],
                 [
                     'collection' => CustomComponent::Faq->value,
                     'path' => public_path('images/stock/key-account-faq.png'),
@@ -882,114 +1347,250 @@ return [
                     'collection' => CustomComponent::SplitWithImageQuote->value,
                     'path' => public_path('images/stock/our-work.png'),
                 ],
+                [
+                    'collection' => CustomComponent::CallToActionFullWidthSection->value,
+                    'path' => public_path('images/stock/hero-stock.png'),
+                    'custom_properties' => [
+                        "component_id" => "f8af4192-f84f-4f3d-98a2-a45de3d49618",
+                    ]
+                ]
             ],
             'content' => [
-
-                [
-                    'type' => CustomComponent::SplitWithHorizontalSteps->value,
-                    'data' => [
-                        'badge' => 'Escolha a Fire|Ce',
-                        'heading' => 'Perfis e necessidades',
-                        'card_type' => 'slim',
-                        'description' => 'Saber se você é endividado, desorganizado ou poupador faz toda a diferença: é com esse entendimento que conseguimos traçar estratégias financeiras personalizadas, que respeitam sua realidade e aceleram seus resultados.',
-                        'grid_columns' => 2,
-                        'cards' => [
-                            [
-                                'icon' => FireceIcons::NbFolder->value,
-                                'title' => 'Qual o perfil ideal para o Key Account?',
-                                'description' => 'Pessoas com patrimônio relevante que buscam estratégias avançadas de proteção e crescimento, com atendimento altamente personalizado.',
-                                'cta_url' => 'https://pudim.com.br',
-                                'cta_label' => 'Converse com a gente',
+                "32bdc021-7bf2-40d1-a74c-bf94a56b2ad6" => [
+                    "type" => "hero-with-background-image",
+                    "data" => [
+                        "hero_size" => "[70vh]",
+                        "headline" => [
+                            "heading" => "Mais do que um serviço financeiro",
+                            "keywords" => [],
+                            "size" => "lg",
+                            "position" => "left",
+                            "description" => "O Key Account é o modelo de atendimento premium da Fire|ce, pensado para clientes que exigem um nível mais alto de personalização, estratégia e confidencialidade.",
+                            "badge" => [
+                                "has_badge" => true,
+                                "icon" => "firece-logo",
+                                "label" => "Invista agora com a Fire|ce",
                             ],
-                            [
-                                'icon' => FireceIcons::NbPlanet->value,
-                                'title' => 'É possível contratar o Key Account para gestão internacional?',
-                                'description' => 'Sim. O Key Account inclui estratégias de blindagem patrimonial e alocação internacional, respeitando o perfil do cliente e as normas regulatórias.',
-                                'cta_url' => 'https://pudim.com.br',
-                                'cta_label' => 'Enviar Candidatura',
+                            "buttons" => [
+                                "has_actions" => true,
+                                "buttons" => [
+                                    "694e6e88-8cf2-47b8-8632-5c237e8ae3e5" => [
+                                        "label" => "Começar meu planejamento",
+                                        "url" => "https://firece.com",
+                                        "icon" => "heroicon-c-chevron-right",
+                                        "icon_position" => "trailing",
+                                        "target" => "_blank",
+                                    ],
+                                ],
                             ],
-                            [
-                                'icon' => FireceIcons::NbCalendar->value,
-                                'title' => 'Com que frequência acontecem as reuniões?',
-                                'description' => 'O acompanhamento é contínuo, com revisões periódicas e disponibilidade para reuniões emergenciais sempre que necessário.',
-                                'cta_url' => 'https://pudim.com.br',
-                                'cta_label' => 'Enviar Candidatura',
-                            ],
-                            [
-                                'icon' => FireceIcons::NbVault->value,
-                                'title' => 'Planejamento Sucessório',
-                                'description' => 'Sim. Planejamos a sucessão de forma estratégica para garantir tranquilidade, segurança e continuidade para seu legado.',
-                                'cta_url' => 'https://pudim.com.br',
-                                'cta_label' => 'Enviar Candidatura',
-                            ],
-
+                        ],
+                        "hero" => [
+                            "d1db3990-ac52-4429-86e6-422c12e78c89" => "d1db3990-ac52-4429-86e6-422c12e78c89",
                         ],
                     ],
                 ],
-                [
-                    'type' => CustomComponent::SplitWithImageQuote->value,
-                    'data' => [
-                        'heading' => 'Como funciona',
-                        'badge' => 'Nosso Trabalho',
-                        'description' => 'Atuamos lado a lado com quem busca proteção, inteligência e alta performance na gestão do patrimônio. Aqui, o planejamento financeiro vai além da organização: ele se transforma em um instrumento de segurança, expansão e legado.',
-                        'image_position' => 'left',
-                        'insights' => [],
-                        'quote' => 'Vamos construir o próximo nível da sua jornada financeira com o Key Account da Fire|ce.',
-                        'cta_url' => 'https://pudim.com.br',
-                        'cta_label' => 'Entre em contato',
-                    ],
-                ],
-                [
-                    'type' => CustomComponent::CallToActionFullWidthSection->value,
-                    'data' => [
-                        'title' => 'Agora é hora de fazer seu patrimônio trabalhar por você, com inteligência e visão de futuro.',
-                        'cta_label' => 'Entre em contato',
-                        'cta_url' => 'https://pudim.com.br',
-                    ],
-                ],
-                [
-                    'type' => CustomComponent::SplitWithImageQuote->value,
-                    'data' => [
-                        'heading' => 'Por que optar pelo Key Account?',
-                        'badge' => 'Relacionamento',
-                        'description' => 'Mais do que um serviço financeiro, o Key Account é uma experiência de parceria contínua. Analisamos profundamente sua vida financeira, cruzamos dados patrimoniais e familiares, entendemos seus objetivos de longo prazo e criamos um plano sob medida que evolui com você.',
-                        'insights' => [
-                            ['value' => 'Inteligência'],
-                            ['value' => 'Estratégia'],
-                            ['value' => 'Resultado'],
-                        ],
-                        'end_description' => 'Acompanhamos cada tomada de decisão importante, alertamos sobre riscos e oportunidades e adaptamos a estratégia conforme sua realidade muda. O cliente Key Account não é um número: é um relacionamento que atravessa fases, gera confiança e entrega resultados consistentes.',
-                        'image_position' => 'right',
-                        'quote' => 'Vamos construir o próximo nível da sua jornada financeira com o Key Account da Fire|ce.',
-                        'cta_url' => 'https://pudim.com.br',
-                        'cta_label' => 'Entre em contato',
-                    ],
-                ],
-                [
-                    'type' => CustomComponent::Testimonials->value,
-                    'data' => [
-                        'heading' => 'Escute de nossos clientes',
-                        'badge' => 'Depoimentos',
-                        'testimonials' => [1, 6, 10, 7],
-                    ],
-                ],
-                [
-                    'type' => CustomComponent::Faq->value,
-                    'data' => [
-                        'solutions' => [
-                            [
-                                'question' => 'Quem pode se tornar parceiro da Fire|ce?',
-                                'answer' => 'Qualquer profissional, empresa ou instituição com sinergia de trabalho alinhada e propósito alinhado ao nosso: transformar a vida financeira das pessoas com estratégia e impacto real.',
+                "5008a241-ac16-40af-97aa-fb76b67f1d34" => [
+                    "type" => "split-with-horizontal-steps",
+                    "data" => [
+                        "headline" => [
+                            "heading" => "Você busca inteligência, discrição e excelência  no cuidado com o seu patrimônio?",
+                            "keywords" => [],
+                            "size" => "lg",
+                            "position" => "center",
+                            "description" => "O Key Account é para quem não aceita menos do que alta performance. Vamos construir o próximo nível da sua jornada financeira.",
+                            "badge" => [
+                                "has_badge" => true,
+                                "icon" => "firece-logo",
+                                "label" => "Invista agora com a Fire|ce",
                             ],
-                            [
-                                'question' => 'Quais são os formatos mais comuns de parceria?',
-                                'answer' => 'Conectamos conhecimento com inspiração. Levamos educação financeira para empresas, eventos e grupos, abordando temas que impactam diretamente a vida das pessoas. Nossa abordagem vai além de conceitos teóricos – oferecemos insights práticos e estratégias aplicáveis imediatamente.',
-                            ],
-                            [
-                                'question' => 'A Fire|ce investe em projetos em conjunto?',
-                                'answer' => 'Sim! Para quem deseja se tornar um consultor de alto desempenho, oferecemos um caminho estruturado. A formação cobre desde metodologias até estratégias de atuação prática no mercado. O objetivo é preparar você para transformar vidas e construir uma carreira sólida na área financeira.',
+                            "buttons" => [
+                                "has_actions" => false,
+                                "buttons" => [],
                             ],
                         ],
+                        "cards" => [
+                            "has_cards" => true,
+                            "grid_columns" => "2",
+                            "card_type" => "cta",
+                            "items" => [
+                                "f9c60331-83cb-4626-a855-d4ada59e8e55" => [
+                                    "title" => "Qual o perfil ideal para o Key Account?",
+                                    "description" => "Pessoas com patrimônio relevante que buscam estratégias avançadas de proteção e crescimento, com atendimento altamente personalizado.",
+                                    "icon" => "lucide-message-circle-more",
+                                    "has_actions" => false,
+                                    "buttons" => [],
+                                ],
+                                "82ed5f19-69bf-4aa0-9d60-aacc691dfbb3" => [
+                                    "title" => "É possível contratar o Key Account para gestão internacional?",
+                                    "description" => "Sim. O Key Account inclui estratégias de blindagem patrimonial e alocação internacional, respeitando o perfil do cliente e as normas regulatórias.",
+                                    "icon" => "lucide-message-circle-more",
+                                    "has_actions" => false,
+                                    "buttons" => [],
+                                ],
+                                "6511d4b1-738f-4801-a248-c6504d3e75d0" => [
+                                    "title" => "Com que frequência acontecem as reuniões?",
+                                    "description" => "O acompanhamento é contínuo, com revisões periódicas e disponibilidade para reuniões emergenciais sempre que necessário.",
+                                    "icon" => "lucide-message-circle-more",
+                                    "has_actions" => false,
+                                    "buttons" => [],
+                                ],
+                                "16e6690b-3296-40c8-9f85-336fa432c54f" => [
+                                    "title" => "Planejamento Sucessório",
+                                    "description" => "Sim. Planejamos a sucessão de forma estratégica para garantir tranquilidade, segurança e continuidade para seu legado.",
+                                    "icon" => "lucide-message-circle-more",
+                                    "has_actions" => false,
+                                    "buttons" => [],
+                                ],
+                            ],
+                        ],
+                        "cta_description" => "Não encontrou exatamente o que procura?",
+                        "has_actions" => true,
+                        "buttons" => [
+                            "870e39f8-c9c2-41b8-8cfb-37e596d392e1" => [
+                                "label" => "Agende uma análise",
+                                "url" => "https://firece.com",
+                                "icon" => "heroicon-c-chevron-right",
+                                "icon_position" => "trailing",
+                                "target" => "_blank",
+                            ],
+                        ],
+                    ],
+                ],
+                "078af3b1-207f-4bb5-a070-ac07e3a31a47" => [
+                    "type" => "split-with-image-quote",
+                    "data" => [
+                        "headline" => [
+                            "heading" => "Como funciona?",
+                            "keywords" => [],
+                            "size" => "lg",
+                            "position" => "left",
+                            "description" => "Atuamos lado a lado com quem busca proteção, inteligência e alta performance na gestão do patrimônio. Aqui, o planejamento financeiro vai além da organização: ele se transforma em um instrumento de segurança, expansão e legado.",
+                            "badge" => [
+                                "has_badge" => true,
+                                "icon" => "firece-logo",
+                                "label" => "Invista agora com a Fire|ce",
+                            ],
+                            "buttons" => [
+                                "has_actions" => false,
+                                "buttons" => [],
+                            ],
+                        ],
+                        "image_position" => "right",
+                        "badge" => "Vamos construir o próximo nível da sua jornada financeira com o Key Account da Fire|ce.",
+                        "insights" => [
+                            "f8dcd330-b4f5-45fa-beb8-f4ce6e0c0561" => [
+                                "icon" => "heroicon-c-check",
+                                "title" => "Inteligência",
+                                "description" => "Mais do que um serviço financeiro, o Key Account é uma experiência de parceria contínua. Analisamos profundamente sua vida financeira, cruzamos dados patrimoniais e familiares, entendemos seus objetivos de longo prazo e criamos um plano sob medida que evolui com você.",
+                            ],
+                        ],
+                        "quote" => "Vamos construir o próximo nível da sua jornada financeira com o Key Account da Fire|ce.",
+                        "end_description" => null,
+                        "cta_label" => null,
+                        "cta_url" => null,
+                        "hero" => [
+                            "9812d300-29e5-4565-bd8e-add8eec15b09" => "9812d300-29e5-4565-bd8e-add8eec15b09",
+                        ],
+                    ],
+                ],
+                "58a9cda0-107b-4638-a4dd-3dd77d45e933" => [
+                    "type" => "call-to-action-section",
+                    "data" => [
+                        "component_id" => "f8af4192-f84f-4f3d-98a2-a45de3d49618",
+                        "headline" => [
+                            "heading" => "Agora é hora de fazer seu patrimônio trabalhar por você, com inteligência e visão de futuro.",
+                            "keywords" => [],
+                            "size" => "lg",
+                            "position" => "center",
+                            "description" => null,
+                            "badge" => [
+                                "has_badge" => false,
+                                "icon" => null,
+                                "label" => null,
+                            ],
+                            "buttons" => [
+                                "has_actions" => true,
+                                "buttons" => [
+                                    "08c77bfd-4359-4061-ab35-7aeb0d0f4f8b" => [
+                                        "label" => "Agende uma análise",
+                                        "url" => "https://firece.com",
+                                        "icon" => "heroicon-c-chevron-right",
+                                        "icon_position" => "trailing",
+                                        "target" => "_blank",
+                                    ],
+                                ],
+                            ],
+                        ],
+                        "image" => [
+                            "ed952d55-084a-4bd5-a0da-ad0609e36e8a" => "ed952d55-084a-4bd5-a0da-ad0609e36e8a",
+                        ],
+                    ],
+                ],
+                "3539a1ad-196d-4d74-ad14-82a8d975a672" => [
+                    "type" => "testimonials",
+                    "data" => [
+                        "headline" => [
+                            "heading" => "Escute de nossos clientes",
+                            "keywords" => [],
+                            "size" => "lg",
+                            "position" => "center",
+                            "description" => "Levamos você da análise de perfil à execução estratégica, com suporte contínuo para maximizar seus resultados. Nossa metodologia foi desenvolvida para transformar a sua relação com o dinheiro em 3 etapas fundamentais:",
+                            "badge" => [
+                                "has_badge" => true,
+                                "icon" => "firece-logo",
+                                "label" => "Invista agora com a Fire|ce",
+                            ],
+                            "buttons" => [
+                                "has_actions" => false,
+                                "buttons" => [],
+                            ],
+                        ],
+                        "testimonials" => [
+                            "2",
+                            "4",
+                            "7",
+                            "6",
+                        ],
+                    ],
+                ],
+                "6d0b0726-0b48-44c4-ba3b-1aa0823b5027" => [
+                    "type" => "faq",
+                    "data" => [
+                        "description" => "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam urna tellus, cursus vitae vestibulum quis, pretium eu dui.",
+                        "solutions" => [
+                            "1de9fafc-f5ee-4bff-8cc8-9ff0cce4f58a" => [
+                                "question" => "Lorem Ipsum dolor sit amet",
+                                "answer" => "Lorem Ipsum dolor sit amet",
+                            ],
+                            "63d5383a-2a98-46f5-bdbc-27bc0a06ccd7" => [
+                                "question" => "Lorem Ipsum dolor sit amet",
+                                "answer" => "Lorem Ipsum dolor sit amet",
+                            ],
+                            "de6ceced-28e6-425a-8f54-aeca0fa04105" => [
+                                "question" => "Lorem Ipsum dolor sit amet",
+                                "answer" => "Lorem Ipsum dolor sit amet",
+                            ],
+                            "901d4007-e491-4f57-96ea-801a28166fb9" => [
+                                "question" => "Lorem Ipsum dolor sit amet",
+                                "answer" => "Lorem Ipsum dolor sit amet",
+                            ],
+                            "9c498ccc-5a63-446b-9608-284b0995f33e" => [
+                                "question" => "Lorem Ipsum dolor sit amet",
+                                "answer" => "Lorem Ipsum dolor sit amet",
+                            ],
+                        ],
+                        "hero" => [
+                            "80e850c0-8487-4933-8a86-9db5a56ad7e9" => "80e850c0-8487-4933-8a86-9db5a56ad7e9",
+                        ],
+                    ],
+                ],
+                "c2fefb39-b6f0-44f6-9dbe-1db7300ed55f" => [
+                    "type" => "call-to-action-with-icon",
+                    "data" => [
+                        "title" => "Visite nosso Blog e tenha acesso à conteúdos exclusivos",
+                        "cta_label" => "Agende uma análise",
+                        "cta_url" => "https://firece.com.br/blog",
+                        "icon" => "lucide-book-marked",
                     ],
                 ],
             ],
@@ -1019,55 +1620,189 @@ return [
                     'collection' => CustomComponent::HeroWithBackgroundImage->value,
                     'path' => public_path('images/stock/work-with-us-hero.jpg'),
                 ],
-            ],
-            'content' => [
                 [
-                    'type' => CustomComponent::HeroWithBackgroundImage->value,
-                    'data' => [
-                        'heading' => 'Trabalhe conosco.',
-                        'subheading' => 'Trabalhar na Fire|ce é transformar vidas todos os dias, começando pela sua.',
-                        'badge' => 'Trabalhe conosco',
-                    ],
+                    'collection' => CustomComponent::Faq->value,
+                    'path' => public_path('images/stock/key-account-faq.png'),
                 ],
                 [
-                    'type' => CustomComponent::SplitWithHorizontalSteps->value,
-                    'data' => [
-                        'badge' => 'Escolha a Fire|Ce',
-                        'heading' => 'Perfis e necessidades',
-                        'description' => 'Acreditamos que educação financeira é poder. E,por aqui, formamos um time que une propósito, inovação, e alta performance oara levar esse poder a mais pessoas. Se você quer crescer em um ambiente colaborativo, dinâmico e com desafios reais, seu lugar pode ser com a gente.',
-                        'grid_columns' => 2,
-                        'cards' => [
-                            [
-                                'icon' => FireceIcons::Hands->value,
-                                'title' => 'Seja um parceiro',
-                                'description' => 'Valorizamos profissionais que querem ir além, aprender, inovar e construir algo grande com a gente. Se você busca mais do que um emprego, vem fazer parte de um time que cresce junto e gera impacto real.',
-                                'cta_url' => 'https://pudim.com.br',
-                                'cta_label' => 'Converse com a gente',
+                    'collection' => CustomComponent::TwoColumnsImageFeatureGrid->value,
+                    'path' => public_path('images/stock/our-work.png'),
+                ],
+            ],
+            'content' => [
+                "31f19faf-f8c3-4ec4-aa6c-f585e18f6ecb" => [
+                    "type" => "hero-with-background-image",
+                    "data" => [
+                        "hero_size" => "screen",
+                        "headline" => [
+                            "heading" => "Trabalhe conosco",
+                            "keywords" => [],
+                            "size" => "lg",
+                            "position" => "center",
+                            "description" => "Trabalhar na Fire|ce é transformar vidas todos os dias, começando pela sua.",
+                            "badge" => [
+                                "has_badge" => true,
+                                "icon" => "firece-logo",
+                                "label" => "Invista agora com a Code Capital",
                             ],
-                            [
-                                'icon' => FireceIcons::People->value,
-                                'title' => 'Faça parte do time',
-                                'description' => 'Na Fire|ce, cada profissional tem papel estratégico para transformar o jeito que as pessoas lidam com o dinheiro. Trabalhamos com propósito, foco em resultado e um time que se apoia, se desafia e aprende junto.',
-                                'cta_url' => 'https://pudim.com.br',
-                                'cta_label' => 'Enviar Candidatura',
+                            "buttons" => [
+                                "has_actions" => true,
+                                "buttons" => [
+                                    "ce58c3a2-274d-4f37-a4dc-5ee99ac6b474" => [
+                                        "label" => "Começar meu planejamento",
+                                        "url" => "https://firece.com",
+                                        "icon" => "heroicon-c-chevron-right",
+                                        "icon_position" => "trailing",
+                                        "target" => "_blank",
+                                    ],
+                                ],
                             ],
-
+                        ],
+                        "hero" => [
+                            "c8355b4d-9b1b-406c-a1a9-a743c3f1fc12" => "c8355b4d-9b1b-406c-a1a9-a743c3f1fc12",
                         ],
                     ],
                 ],
-                [
-                    'type' => CustomComponent::CallToActionFullWidthSection->value,
-                    'data' => [
-                        'title' => 'Se você busca propósito, crescimento e parceria, seu lugar é aqui.',
-                        'cta_url' => 'https://pudim.com.br',
-                        'cta_label' => 'Entre em Contato',
+                "f01869cc-f985-4d25-8415-38dbf910a34b" => [
+                    "type" => "split-with-horizontal-steps",
+                    "data" => [
+                        "headline" => [
+                            "heading" => "Perfis e necessidades",
+                            "keywords" => [],
+                            "size" => "lg",
+                            "position" => "center",
+                            "description" => "Acreditamos que educação financeira é poder. E, por aqui, formamos um time que une propósito, inovação, e alta performance oara levar esse poder a mais pessoas. Se você quer crescer em um ambiente colaborativo, dinâmico e com desafios reais, seu lugar pode ser com a gente.",
+                            "badge" => [
+                                "has_badge" => true,
+                                "icon" => "firece-logo",
+                                "label" => "Invista agora com a Fire|ce",
+                            ],
+                            "buttons" => [
+                                "has_actions" => false,
+                                "buttons" => [],
+                            ],
+                        ],
+                        "cards" => [
+                            "has_cards" => true,
+                            "grid_columns" => "2",
+                            "card_type" => "cta",
+                            "items" => [
+                                "41ffc9e5-290a-4400-9bb5-d1210391ad79" => [
+                                    "title" => "Seja um parceiro",
+                                    "description" => "Valorizamos profissionais que querem ir além, aprender, inovar e construir algo grande com a gente. Se você busca mais do que um emprego, vem fazer parte de um time que cresce junto e gera impacto real.",
+                                    "icon" => "lucide-message-circle-more",
+                                    "has_actions" => false,
+                                    "buttons" => [],
+                                ],
+                                "413a263e-0121-4a42-809c-03d8492647b9" => [
+                                    "title" => "Plano de Ação",
+                                    "description" => "Na Fire|ce, cada profissional tem papel estratégico para transformar o jeito que as pessoas lidam com o dinheiro. Trabalhamos com propósito, foco em resultado e um time que se apoia, se desafia e aprende junto.",
+                                    "icon" => "lucide-message-circle-more",
+                                    "has_actions" => false,
+                                    "buttons" => [],
+                                ],
+                            ],
+                        ],
+                        "cta_description" => null,
+                        "has_actions" => false,
+                        "buttons" => [],
                     ],
                 ],
-                [
-                    'type' => CustomComponent::ContactForm->value,
-                    'data' => [
-                        'heading' => 'Envie uma mensagem',
-                        'description' => 'Estamos sempre abertos a conhecer pessoas que compartilham nossa visão e valores. Se você tem interesse em se juntar a nós ou discutir uma parceria, preencha o formulário abaixo e entraremos em contato.',
+                "48f90557-c86e-4c04-bc12-782b68fadd3d" => [
+                    "type" => "two-columns-image-feature-grid",
+                    "data" => [
+                        'headline' => [
+                            'size' => 'md',
+                            'position' => 'left',
+                            'heading' => 'Conheça mais sobre a Fire|ce',
+                            'description' => 'A Fire|ce ajuda empresas a promoverem alta performance por meio da
+                            educação financeira. Com programas sob medida, consultores especializados e soluções
+                            integradas, criamos pontes entre saúde financeira e produtividade.',
+                            'has_actions' => false,
+                            'actions' => [],
+                            'keywords' => [],
+                            "badge" => [
+                                "has_badge" => true,
+                                "icon" => "firece-logo",
+                                "label" => "Sobre nós",
+                            ],
+                            "buttons" => [
+                                "has_actions" => false,
+                                "buttons" => [],
+                            ],
+                        ],
+                        "cards" => [
+                            "ab7dbacd-8d15-44a9-8679-d5f7b2070af8" => [
+                                "icon" => "lucide-message-circle-more",
+                                "title" => "Projetos Conjuntos",
+                                "description" => "Monetize sua influência ou rede com um modelo de parceria inteligente e sustentável — você lucra enquanto ajuda pessoas a transformarem suas vidas financeiras.",
+                            ],
+                            "9f66fbd0-f4a3-476f-a467-012b0c08c50d" => [
+                                "icon" => "lucide-message-circle-more",
+                                "title" => "Reconhecimento",
+                                "description" => "Associe sua marca ou imagem a uma consultoria que entrega resultados reais e melhora a relação das pessoas com o dinheiro.",
+                            ],
+                            "139da8af-1cc5-45b8-a8ab-eb9ffc6811c7" => [
+                                "icon" => "lucide-message-circle-more",
+                                "title" => "Ecossistema Fire|ce",
+                                "description" => "Tenha contato privilegiado com nossos produtos, lançamentos e soluções, além de ferramentas que tornam a parceria ainda mais eficiente.",
+                            ],
+                            "55c36b6e-b9b9-4c4a-80f4-c6dbda565697" => [
+                                "icon" => "lucide-message-circle-more",
+                                "title" => "Suporte contínuo",
+                                "description" => "Contamos com uma equipe que acompanha sua jornada, oferece materiais personalizados, treinamentos e um plano de crescimento contínuo.",
+                            ],
+                        ],
+                        "hero" => [
+                            "e6b23c8e-b49b-4aad-aa12-f3e2217222d9" => "e6b23c8e-b49b-4aad-aa12-f3e2217222d9",
+                        ],
+                    ],
+                ],
+                "0fd402d7-abeb-4c34-80a2-0c2be433c68e" => [
+                    "type" => "contact-form",
+                    "data" => [
+                        "heading" => "Envie uma mensagem",
+                        "description" => "O Key Account é o modelo de atendimento premium da Fire|ce, pensado para clientes",
+                    ],
+                ],
+                "0e3bc746-dc03-4481-9972-9bfb6c6f9502" => [
+                    "type" => "faq",
+                    "data" => [
+                        "description" => "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam urna tellus, cursus vitae vestibulum quis, pretium eu dui.",
+                        "solutions" => [
+                            "df98bf4b-7725-414a-8558-91e95b1d71f1" => [
+                                "question" => "Lorem Ipsum dolor sit amet",
+                                "answer" => "Lorem Ipsum dolor sit amet",
+                            ],
+                            "7a1fd300-dd51-48de-816b-1973c20d60dc" => [
+                                "question" => "Lorem Ipsum dolor sit amet",
+                                "answer" => "Lorem Ipsum dolor sit amet",
+                            ],
+                            "154615ee-207f-4467-8f0d-d73a01bd95c2" => [
+                                "question" => "Lorem Ipsum dolor sit amet",
+                                "answer" => "Lorem Ipsum dolor sit amet",
+                            ],
+                            "2cbf2f54-1dc5-4e4d-8761-76184502ad98" => [
+                                "question" => "Lorem Ipsum dolor sit amet",
+                                "answer" => "Lorem Ipsum dolor sit amet",
+                            ],
+                            "5cf46d35-2a68-426b-90c6-7b3e1c10c7f2" => [
+                                "question" => "Lorem Ipsum dolor sit amet",
+                                "answer" => "Lorem Ipsum dolor sit amet",
+                            ],
+                        ],
+                        "hero" => [
+                            "df77443e-c977-4766-a8b9-d330d42ef6f4" => "df77443e-c977-4766-a8b9-d330d42ef6f4",
+                        ],
+                    ],
+                ],
+                "e0d099bc-bc25-4bf4-bca4-34491b01522b" => [
+                    "type" => "call-to-action-with-icon",
+                    "data" => [
+                        "title" => "Visite nosso Blog e tenha acesso à conteúdos exclusivos",
+                        "cta_label" => "Agende uma análise",
+                        "cta_url" => "https://firece.com.br/blog",
+                        "icon" => "lucide-book-marked",
                     ],
                 ],
             ],

@@ -3,7 +3,7 @@
      'description',
      'solutions' => collect(),
 ])
-<div class="container mx-auto py-8 sm:py-12 md:py-16 lg:py-20 xl:py-60">
+<div class="container mx-auto py-6 sm:py-8 md:py-10 lg:py-14 xl:py-16">
     <div class="px-4 md:px-6">
         <div class="flex flex-col bg-elevation-01dp border border-outline-dark rounded-xl transition lg:grid grid-cols-7 gap-8
             lg:gap-12 items-stretch">
