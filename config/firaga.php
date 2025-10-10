@@ -1581,55 +1581,174 @@ return [
                     'collection' => CustomComponent::HeroWithBackgroundImage->value,
                     'path' => public_path('images/stock/work-with-us-hero.jpg'),
                 ],
-            ],
-            'content' => [
                 [
-                    'type' => CustomComponent::HeroWithBackgroundImage->value,
-                    'data' => [
-                        'heading' => 'Trabalhe conosco.',
-                        'subheading' => 'Trabalhar na Fire|ce é transformar vidas todos os dias, começando pela sua.',
-                        'badge' => 'Trabalhe conosco',
-                    ],
+                    'collection' => CustomComponent::Faq->value,
+                    'path' => public_path('images/stock/key-account-faq.png'),
                 ],
                 [
-                    'type' => CustomComponent::SplitWithHorizontalSteps->value,
-                    'data' => [
-                        'badge' => 'Escolha a Fire|Ce',
-                        'heading' => 'Perfis e necessidades',
-                        'description' => 'Acreditamos que educação financeira é poder. E,por aqui, formamos um time que une propósito, inovação, e alta performance oara levar esse poder a mais pessoas. Se você quer crescer em um ambiente colaborativo, dinâmico e com desafios reais, seu lugar pode ser com a gente.',
-                        'grid_columns' => 2,
-                        'cards' => [
-                            [
-                                'icon' => FireceIcons::Hands->value,
-                                'title' => 'Seja um parceiro',
-                                'description' => 'Valorizamos profissionais que querem ir além, aprender, inovar e construir algo grande com a gente. Se você busca mais do que um emprego, vem fazer parte de um time que cresce junto e gera impacto real.',
-                                'cta_url' => 'https://pudim.com.br',
-                                'cta_label' => 'Converse com a gente',
+                    'collection' => CustomComponent::SplitWithImageQuote->value,
+                    'path' => public_path('images/stock/our-work.png'),
+                ],
+            ],
+            'content' => [
+                "31f19faf-f8c3-4ec4-aa6c-f585e18f6ecb" => [
+                    "type" => "hero-with-background-image",
+                    "data" => [
+                        "hero_size" => "screen",
+                        "headline" => [
+                            "heading" => "Trabalhe conosco",
+                            "keywords" => [],
+                            "size" => "lg",
+                            "position" => "center",
+                            "description" => "Trabalhar na Fire|ce é transformar vidas todos os dias, começando pela sua.",
+                            "badge" => [
+                                "has_badge" => true,
+                                "icon" => "firece-logo",
+                                "label" => "Invista agora com a Code Capital",
                             ],
-                            [
-                                'icon' => FireceIcons::People->value,
-                                'title' => 'Faça parte do time',
-                                'description' => 'Na Fire|ce, cada profissional tem papel estratégico para transformar o jeito que as pessoas lidam com o dinheiro. Trabalhamos com propósito, foco em resultado e um time que se apoia, se desafia e aprende junto.',
-                                'cta_url' => 'https://pudim.com.br',
-                                'cta_label' => 'Enviar Candidatura',
+                            "buttons" => [
+                                "has_actions" => true,
+                                "buttons" => [
+                                    "ce58c3a2-274d-4f37-a4dc-5ee99ac6b474" => [
+                                        "label" => "Começar meu planejamento",
+                                        "url" => "https://firece.com",
+                                        "icon" => "heroicon-c-chevron-right",
+                                        "icon_position" => "trailing",
+                                        "target" => "_blank",
+                                    ],
+                                ],
                             ],
-
+                        ],
+                        "hero" => [
+                            "c8355b4d-9b1b-406c-a1a9-a743c3f1fc12" => "c8355b4d-9b1b-406c-a1a9-a743c3f1fc12",
                         ],
                     ],
                 ],
-                [
-                    'type' => CustomComponent::CallToActionFullWidthSection->value,
-                    'data' => [
-                        'title' => 'Se você busca propósito, crescimento e parceria, seu lugar é aqui.',
-                        'cta_url' => 'https://pudim.com.br',
-                        'cta_label' => 'Entre em Contato',
+                "f01869cc-f985-4d25-8415-38dbf910a34b" => [
+                    "type" => "split-with-horizontal-steps",
+                    "data" => [
+                        "headline" => [
+                            "heading" => "Perfis e necessidades",
+                            "keywords" => [],
+                            "size" => "lg",
+                            "position" => "center",
+                            "description" => "Acreditamos que educação financeira é poder. E, por aqui, formamos um time que une propósito, inovação, e alta performance oara levar esse poder a mais pessoas. Se você quer crescer em um ambiente colaborativo, dinâmico e com desafios reais, seu lugar pode ser com a gente.",
+                            "badge" => [
+                                "has_badge" => true,
+                                "icon" => "firece-logo",
+                                "label" => "Invista agora com a Fire|ce",
+                            ],
+                            "buttons" => [
+                                "has_actions" => false,
+                                "buttons" => [],
+                            ],
+                        ],
+                        "cards" => [
+                            "has_cards" => true,
+                            "grid_columns" => "2",
+                            "card_type" => "cta",
+                            "items" => [
+                                "41ffc9e5-290a-4400-9bb5-d1210391ad79" => [
+                                    "title" => "Seja um parceiro",
+                                    "description" => "Valorizamos profissionais que querem ir além, aprender, inovar e construir algo grande com a gente. Se você busca mais do que um emprego, vem fazer parte de um time que cresce junto e gera impacto real.",
+                                    "icon" => "lucide-message-circle-more",
+                                    "has_actions" => false,
+                                    "buttons" => [],
+                                ],
+                                "413a263e-0121-4a42-809c-03d8492647b9" => [
+                                    "title" => "Plano de Ação",
+                                    "description" => "Na Fire|ce, cada profissional tem papel estratégico para transformar o jeito que as pessoas lidam com o dinheiro. Trabalhamos com propósito, foco em resultado e um time que se apoia, se desafia e aprende junto.",
+                                    "icon" => "lucide-message-circle-more",
+                                    "has_actions" => false,
+                                    "buttons" => [],
+                                ],
+                            ],
+                        ],
+                        "cta_description" => null,
+                        "has_actions" => false,
+                        "buttons" => [],
                     ],
                 ],
-                [
-                    'type' => CustomComponent::ContactForm->value,
-                    'data' => [
-                        'heading' => 'Envie uma mensagem',
-                        'description' => 'Estamos sempre abertos a conhecer pessoas que compartilham nossa visão e valores. Se você tem interesse em se juntar a nós ou discutir uma parceria, preencha o formulário abaixo e entraremos em contato.',
+                "48f90557-c86e-4c04-bc12-782b68fadd3d" => [
+                    "type" => "two-columns-image-feature-grid",
+                    "data" => [
+                        "badge" => "Sobre nós",
+                        "heading" => "Conheça mais sobre a Fire|ce",
+                        "description" => "A Fire|ce ajuda empresas a promoverem alta performance por meio da educação financeira. Com programas sob medida, consultores especializados e soluções integradas, criamos pontes entre saúde financeira e produtividade.",
+                        "cards" => [
+                            "ab7dbacd-8d15-44a9-8679-d5f7b2070af8" => [
+                                "icon" => "lucide-message-circle-more",
+                                "title" => "Projetos Conjuntos",
+                                "description" => "Monetize sua influência ou rede com um modelo de parceria inteligente e sustentável — você lucra enquanto ajuda pessoas a transformarem suas vidas financeiras.",
+                            ],
+                            "9f66fbd0-f4a3-476f-a467-012b0c08c50d" => [
+                                "icon" => "lucide-message-circle-more",
+                                "title" => "Reconhecimento",
+                                "description" => "Associe sua marca ou imagem a uma consultoria que entrega resultados reais e melhora a relação das pessoas com o dinheiro.",
+                            ],
+                            "139da8af-1cc5-45b8-a8ab-eb9ffc6811c7" => [
+                                "icon" => "lucide-message-circle-more",
+                                "title" => "Ecossistema Fire|ce",
+                                "description" => "Tenha contato privilegiado com nossos produtos, lançamentos e soluções, além de ferramentas que tornam a parceria ainda mais eficiente.",
+                            ],
+                            "55c36b6e-b9b9-4c4a-80f4-c6dbda565697" => [
+                                "icon" => "lucide-message-circle-more",
+                                "title" => "Suporte contínuo",
+                                "description" => "Contamos com uma equipe que acompanha sua jornada, oferece materiais personalizados, treinamentos e um plano de crescimento contínuo.",
+                            ],
+                        ],
+                        "cta_label" => "Entre em contato",
+                        "cta_url" => "https://firece.com.br/trabalhe-conosco",
+                        "hero" => [
+                            "e6b23c8e-b49b-4aad-aa12-f3e2217222d9" => "e6b23c8e-b49b-4aad-aa12-f3e2217222d9",
+                        ],
+                    ],
+                ],
+                "0fd402d7-abeb-4c34-80a2-0c2be433c68e" => [
+                    "type" => "contact-form",
+                    "data" => [
+                        "heading" => "Envie uma mensagem",
+                        "description" => "O Key Account é o modelo de atendimento premium da Fire|ce, pensado para clientes",
+                    ],
+                ],
+                "0e3bc746-dc03-4481-9972-9bfb6c6f9502" => [
+                    "type" => "faq",
+                    "data" => [
+                        "description" => "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam urna tellus, cursus vitae vestibulum quis, pretium eu dui.",
+                        "solutions" => [
+                            "df98bf4b-7725-414a-8558-91e95b1d71f1" => [
+                                "question" => "Lorem Ipsum dolor sit amet",
+                                "answer" => "Lorem Ipsum dolor sit amet",
+                            ],
+                            "7a1fd300-dd51-48de-816b-1973c20d60dc" => [
+                                "question" => "Lorem Ipsum dolor sit amet",
+                                "answer" => "Lorem Ipsum dolor sit amet",
+                            ],
+                            "154615ee-207f-4467-8f0d-d73a01bd95c2" => [
+                                "question" => "Lorem Ipsum dolor sit amet",
+                                "answer" => "Lorem Ipsum dolor sit amet",
+                            ],
+                            "2cbf2f54-1dc5-4e4d-8761-76184502ad98" => [
+                                "question" => "Lorem Ipsum dolor sit amet",
+                                "answer" => "Lorem Ipsum dolor sit amet",
+                            ],
+                            "5cf46d35-2a68-426b-90c6-7b3e1c10c7f2" => [
+                                "question" => "Lorem Ipsum dolor sit amet",
+                                "answer" => "Lorem Ipsum dolor sit amet",
+                            ],
+                        ],
+                        "hero" => [
+                            "df77443e-c977-4766-a8b9-d330d42ef6f4" => "df77443e-c977-4766-a8b9-d330d42ef6f4",
+                        ],
+                    ],
+                ],
+                "e0d099bc-bc25-4bf4-bca4-34491b01522b" => [
+                    "type" => "call-to-action-with-icon",
+                    "data" => [
+                        "title" => "Visite nosso Blog e tenha acesso à conteúdos exclusivos",
+                        "cta_label" => "Agende uma análise",
+                        "cta_url" => "https://firece.com.br/blog",
+                        "icon" => "lucide-book-marked",
                     ],
                 ],
             ],
