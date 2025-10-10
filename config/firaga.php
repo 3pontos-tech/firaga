@@ -93,10 +93,9 @@ return [
                     'data' => [
                         'headline' => [
                             'badge' => [
-                                'hasBadge' => true,
-                                'has_badge' => false,
-                                'icon' => null,
-                                'label' => null,
+                                'has_badge' => true,
+                                'icon' => 'firece-logo',
+                                'label' => 'Invista agora com a Fire|ce',
                             ],
                             'heading' => 'Viva melhor com Educação Financeira',
                             'description' => 'Transformamos a forma como as pessoas lidam com dinheiro, capacitando-as a conquistar liberdade, segurança e crescimento financeiro sustentável. ',
@@ -271,7 +270,7 @@ return [
                                 'sua',
                                 'evolução.',
                             ],
-                            'size' => '4xl',
+                            'size' => '3xl',
                             'position' => 'center',
                             'description' => null,
                             'badge' => [
@@ -302,10 +301,7 @@ return [
                     'data' => [
                         'headline' => [
                             'heading' => 'Soluções personalizadas',
-                            'keywords' => [
-                                'Soluções',
-                                'personalizadas',
-                            ],
+                            'keywords' => [],
                             'size' => 'lg',
                             'position' => 'center',
                             'description' => 'Transformamos a forma como as pessoas lidam com dinheiro, capacitando-as a conquistar liberdade, segurança e crescimento financeiro sustentável.',
@@ -368,18 +364,14 @@ return [
                     'data' => [
                         'headline' => [
                             'heading' => 'Conheça nossos planos',
-                            'keywords' => [
-                                'Conheça',
-                                'nossos',
-                                'planos',
-                            ],
+                            'keywords' => [],
                             'size' => 'lg',
                             'position' => 'center',
                             'description' => 'Na nossa consultoria, entendemos que cada cliente é único. Por isso, desenvolvemos uma metodologia personalizada que se adapta às suas necessidades e objetivos financeiros. Nossa abordagem é baseada em três pilares fundamentais: Análise de Perfil, Planejamento Estratégico e Execução com Suporte Contínuo.',
                             'badge' => [
-                                'has_badge' => false,
-                                'icon' => null,
-                                'label' => null,
+                                'has_badge' => true,
+                                'icon' => 'firece-logo',
+                                'label' => 'Invista agora com a Fire|ce',
                             ],
                             'buttons' => [
                                 'has_actions' => false,
@@ -502,9 +494,9 @@ return [
                             'position' => 'center',
                             'description' => 'Você não precisa enfrentar sua vida financeira sozinho. Descubra como a Fire|ce pode caminhar com você — do caos à conquista.',
                             'badge' => [
-                                'has_badge' => false,
-                                'icon' => 'heroicon-o-tag',
-                                'label' => 'Consultoria Financeira',
+                                'has_badge' => true,
+                                'icon' => 'firece-logo',
+                                'label' => 'Invista agora com a Fire|ce',
                             ],
                             'buttons' => [
                                 'has_actions' => false,
@@ -527,19 +519,14 @@ return [
                     'data' => [
                         'headline' => [
                             'heading' => 'Escute de nossos clientes',
-                            'keywords' => [
-                                'Escute',
-                                'de',
-                                'nossos',
-                                'clientes',
-                            ],
+                            'keywords' => [],
                             'size' => 'lg',
                             'position' => 'center',
                             'description' => 'Levamos você da análise de perfil à execução estratégica, com suporte contínuo para maximizar seus resultados. Nossa metodologia foi desenvolvida para transformar a sua relação com o dinheiro em 3 etapas fundamentais:',
                             'badge' => [
-                                'has_badge' => false,
-                                'icon' => 'heroicon-o-tag',
-                                'label' => 'Consultoria Financeira',
+                                'has_badge' => true,
+                                'icon' => 'firece-logo',
+                                'label' => 'Invista agora com a Fire|ce',
                             ],
                             'buttons' => [
                                 'has_actions' => false,
@@ -580,7 +567,7 @@ return [
                             'keywords' => [
                                 'Fire|ce',
                             ],
-                            'size' => '4xl',
+                            'size' => '3xl',
                             'position' => 'center',
                             'description' => 'Transformamos a forma como as pessoas lidam com dinheiro, capacitando-as a conquistar liberdade, segurança e crescimento financeiro sustentável.',
                             'badge' => [
@@ -601,6 +588,15 @@ return [
                                 ],
                             ],
                         ],
+                    ],
+                ],
+                "822f7358-74c6-49a7-9db7-89665d644b29" => [
+                    "type" => "call-to-action-with-icon",
+                    "data" => [
+                        "title" => "Visite nosso Blog e tenha acesso à conteúdos exclusivos",
+                        "cta_label" => "Agende uma análise",
+                        "cta_url" => "https://firece.com",
+                        "icon" => "lucide-book-marked",
                     ],
                 ],
             ],
