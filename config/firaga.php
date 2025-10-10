@@ -631,6 +631,14 @@ return [
                     ]
                 ],
                 [
+                    'collection' => CustomComponent::TwoColumnsImageFeatureGrid->value,
+                    'path' => public_path('images/stock/code-capital.png'),
+                ],
+                [
+                    'collection' => CustomComponent::CallToActionWithImage->value,
+                    'path' => public_path('images/stock/consultant.png'),
+                ],
+                [
                     'collection' => CustomComponent::Faq->value,
                     'path' => public_path('images/stock/hero-stock.png'),
                 ],
