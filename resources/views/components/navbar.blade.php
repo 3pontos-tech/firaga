@@ -14,15 +14,15 @@
 
 <nav
     x-data="{ {{ $mobileVar }}: false }"
-    class="xs:relative {{ $bg }} backdrop-blur-xl border-b border-outline-light dark:border-outline-dark sticky top-0 z-50 shadow-sm transition-all duration-300 overflow-visible animate-fade-in-navbar"
+    class="xs:relative {{ $bg }} backdrop-blur-xl border-b  sticky top-0 z-50 shadow-sm transition-all duration-300 overflow-visible animate-fade-in-navbar"
 >
     <div class="py-4 relative z-10 container flex items-center justify-between mx-auto">
         <div class="flex items-center w-full lg:w-auto space-x-4 lg:space-x-6">
             {{-- Logo and Brand Name --}}
             <a href="/">
                 <div class="flex items-center gap-3">
-                    <x-logo :minimal="true" class="w-8 h-8"/>
-                    <h2 class="text-2xl font-bold text-text-dark dark:text-text-light">{{ config('app.name') }}</h2>
+                    <x-logo :minimal="true" class="w-8 h-8 fill-brand-primary"/>
+                    <h2 class="text-2xl font-bold text-white">{{ config('app.name') }}</h2>
                 </div>
             </a>
         </div>
@@ -32,7 +32,7 @@
                     <li class="relative group" x-data="{ open: false }" @mouseenter="open = true"
                         @mouseleave="open = false">
                         <a href="{{ $menuItem->model?->url() ?? $menuItem->custom_url}}"
-                           class="flex items-center px-3 py-2 rounded-lg font-medium transition-colors duration-200 text-text-dark dark:text-text-light hover:text-primary"
+                           class="flex items-center px-3 py-2 rounded-lg font-medium  transition-colors duration-200 text-text-dark dark:text-text-light hover:text-primary"
                            @click="open = !open">
                             {{ $menuItem->label }}
                             <svg
@@ -43,7 +43,7 @@
                                       clip-rule="evenodd"/>
                             </svg>
                         </a>
-                        <ul class="absolute left-0 mt-1 w-48 bg-elevation-02dp dark:bg-elevation-03dp border border-outline-light dark:border-outline-dark rounded-lg shadow-lg transition-all duration-200 z-50"
+                        <ul class="absolute left-0 mt-1 w-48 bg-elevation-02dp dark:bg-elevation-03dp border-0 rounded-lg shadow-lg transition-all duration-200 z-50"
                             x-show="open"
                             x-transition:enter="transition ease-out duration-200"
                             x-transition:enter-start="opacity-0 translate-y-1"
@@ -67,7 +67,7 @@
                     <li>
                         <a href="{{ $menuItem->model?->url() ?? $menuItem->custom_url }}"
                            target="{{ $menuItem->target->getHtmlProperty() }}"
-                           class="text-text-dark dark:text-text-light hover:text-primary px-3 py-2 rounded-lg font-medium transition-colors duration-200">
+                           class="text-white/70 hover:text-white px-3 py-2 rounded-lg font-medium transition-colors duration-200">
                             {{ $menuItem->label }}
                         </a>
                     </li>
@@ -85,7 +85,7 @@
             @endif
             <button
                 @click="{{ $mobileVar }} = !{{ $mobileVar }}"
-                class="p-2 text-text-dark dark:text-text-light border border-outline-light dark:border-outline-dark rounded-lg focus:outline-none relative group hover:text-primary hover:border-primary"
+                class="p-2 text-white/70 hover:text-white border border-white/70 hover:border-white rounded-lg focus:outline-none relative group hover:text-primary hover:border-primary"
                 aria-label="Toggle menu"
             >
                 <span class="sr-only">Open main menu</span>
@@ -102,7 +102,7 @@
     <div class="lg:hidden">
         <div
             x-show="{{ $mobileVar }}"
-            class="border-t border-outline-light dark:border-outline-dark bg-elevation-02dp dark:bg-elevation-03dp shadow-md"
+            class="bg-elevation-02dp dark:bg-elevation-03dp shadow-md"
             x-transition:enter="transition ease-out duration-200"
             x-transition:enter-start="opacity-0 -translate-y-2"
             x-transition:enter-end="opacity-100 translate-y-0"
@@ -116,7 +116,7 @@
                     <li>
                         <a href="{{ $menuItem->model?->url() ?? $menuItem->custom_url }}"
                            target="{{ $menuItem->target->getHtmlProperty() }}"
-                           class="block text-text-dark dark:text-text-light hover:text-primary px-4 py-2 rounded-lg transition-colors duration-200">
+                           class="block text-white/70 hover:text-white px-4 py-2 rounded-lg transition-colors duration-200">
                             {{  $menuItem->label  }}
                         </a>
                     </li>

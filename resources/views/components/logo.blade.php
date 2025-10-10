@@ -1,7 +1,7 @@
 @props([
     'minimal' => false,
     'class' => '',
-])
+])'
 
 <svg class="{{ $class }}" id="Camada_15" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="{{ $minimal ? '0 0 113.36 113.36' : '0 0 402.53 113.36' }}">
     <!-- Generator: Adobe Illustrator 29.2.1, SVG Export Plug-In . SVG Version: 2.1.0 Build 116)  -->

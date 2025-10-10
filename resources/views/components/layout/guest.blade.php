@@ -6,7 +6,7 @@
 <html
     lang="en"
     x-data
-    class="dark"
+    class="metallic"
 >
     <head>
         <!-- Meta Tags -->

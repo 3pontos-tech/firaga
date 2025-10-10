@@ -520,7 +520,7 @@
 
     .metallic {
         --brand-accent: #111111;
-        --brand-primary: #FFFFFF;
+        --brand-primary: oklch(1 0 89.876 / 0.99);
         --red-primary: #ff3838;
         --gray-primary: #ddddde;
         --gray-900: #39393a;
