@@ -1,46 +1,40 @@
 @props([
-    'badge',
-    'heading',
-    'description',
+    'headline',
     'cards' => [],
-    'cta_label',
-    'cta_url',
 ])
 
-<div class="container mx-auto py-15 md:py-0">
-    <div class="flex flex-col lg:flex-row lg:justify-between lg:items-end gap-8 lg:gap-12">
-        <div class="w-full lg:w-4/6 flex flex-col">
-            <div class="flex flex-col gap-y-6 sm:gap-y-8 md:gap-y-10">
-                <x-layout.shared.chip class="px-4 py-2">
-                    {{ $badge }}
-                </x-layout.shared.chip>
-                <h2 class="text-text-high font-bold text-2xl sm:text-3xl md:text-4xl lg:text-5xl leading-tight">
-                    {{ $heading }}
-                </h2>
-                <p class="text-text-medium leading-relaxed text-base sm:text-lg md:text-xl">
-                    {{ $description }}
-                </p>
+<section class="flex bg-elevation-01dp border-t border-b border-outline-dark mx-auto items-center justify-center py-6 sm:py-10 lg:py-14">
+    <div class="container py-15 md:py-0">
+        <div class="flex flex-col lg:flex-row lg:justify-between lg:items-end gap-8 lg:gap-12">
+            <div class="w-full lg:w-4/6 flex flex-col">
+                <div class="flex flex-col gap-y-6 sm:gap-y-8 md:gap-y-10">
+                    <x-headline :component="$headline" />
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 mt-8 sm:mt-10 md:mt-12">
+                    @foreach($cards as $card)
+                        <x-card-v2
+                            elevation="2"
+                            text-align="items-center text-center sm:items-start sm:text-left"
+                            class="flex h-full sm:flex-row lg:flex-col gap-4 items-center md:items-start"
+                        >
+                            <x-slot:icon class="bg-brand-primary text-text-high rounded-lg group-hover/card:bg-white h-12 w-12 min-w-12 sm:min-w-16 sm:h-16 sm:w-16 flex items-center justify-center">
+                                <x-filament::icon :icon="$card['icon']" class="group-hover/card:text-brand-primary w-6 h-6 sm:w-8 sm:h-8" />
+                            </x-slot:icon>
+                            <x-slot:title class="mb-2">
+                                {{ $card['title'] }}
+                            </x-slot:title>
+                            <x-slot:description>
+                                {{ $card['description'] }}
+                            </x-slot:description>
+                        </x-card-v2>
+                    @endforeach
+                </div>
             </div>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 mt-8 sm:mt-10 md:mt-12">
-                @foreach($cards as $card)
-                    <x-cards.grid-card
-                        :icon="$card['icon']"
-                        :title="$card['title']"
-                        :description="$card['description']"
-                    />
-                @endforeach
+            <div class="w-full lg:w-2/4 justify-center lg:justify-end mt-8 lg:mt-0 hidden xl:block">
+                <img
+                    src="{{ $renderable?->getFirstMediaUrl(App\Enums\CustomComponent::TwoColumnsImageFeatureGrid->value) ?? asset('images/stock/our-approach.png') }}"
+                    alt="Code Capital" class="w-full max-w-[500px] lg:max-w-[652px] object-cover">
             </div>
-            <div class="flex flex-col sm:flex-row justify-start gap-4 sm:gap-x-4 mt-8 sm:mt-10 md:mt-12">
-                <x-layout.shared.button :href="$cta_url"
-                                        class="bg-brand-primary text-white p-3 sm:p-4 w-full sm:w-auto">
-                    {{ $cta_label }}
-                </x-layout.shared.button>
-            </div>
-        </div>
-        <div class="w-full lg:w-2/4 justify-center lg:justify-end mt-8 lg:mt-0 hidden xl:block">
-            <img
-                src="{{ $renderable?->getFirstMediaUrl(App\Enums\CustomComponent::TwoColumnsImageFeatureGrid->value) ?? asset('images/stock/our-approach.png') }}"
-                alt="Code Capital" class="w-full max-w-[500px] lg:max-w-[652px] object-cover">
         </div>
     </div>
-</div>
+</section>

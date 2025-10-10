@@ -818,9 +818,27 @@ return [
                 "33f830c9-4488-4bb8-822d-d99469ec1cb6" => [
                     "type" => "two-columns-image-feature-grid",
                     "data" => [
-                        "badge" => "Invista com a Fire|ce",
-                        "heading" => "Construído por profissionais de Finanças e Tecnologia",
-                        "description" => "Na nossa consultoria, entendemos que cada cliente é único. Por isso, desenvolvemos uma metodologia personalizada que se adapta às suas necessidades e objetivos financeiros. Nossa abordagem é baseada em três pilares fundamentais: Análise de Perfil, Planejamento Estratégico e Execução com Suporte Contínuo.",
+                        'headline' => [
+                            'size' => 'md',
+                            'position' => 'left',
+                            'heading' => 'Construído por profissionais de Finanças e Tecnologia',
+                            'description' => 'Na nossa consultoria, entendemos que cada cliente é único. Por isso,
+                                desenvolvemos uma metodologia personalizada que se adapta às suas necessidades e
+                                objetivos financeiros. Nossa abordagem é baseada em três pilares fundamentais:
+                                Análise de Perfil, Planejamento Estratégico e Execução com Suporte Contínuo.',
+                            'has_actions' => false,
+                            'actions' => [],
+                            'keywords' => [],
+                            "badge" => [
+                                "has_badge" => true,
+                                "icon" => "firece-logo",
+                                "label" => "Propósito",
+                            ],
+                            "buttons" => [
+                                "has_actions" => false,
+                                "buttons" => [],
+                            ],
+                        ],
                         "cards" => [
                             "ae20962b-450b-4bde-8323-6ac82ee423f8" => [
                                 "icon" => "lucide-message-circle-more",
@@ -843,8 +861,6 @@ return [
                                 "description" => "Além dos investimentos tradicionais e dos presentes na internet, temos investimentos principalmente em NY e UK, como a BNY Mellon, UBS, BNP Paribas, Credit Suisse entre outros.",
                             ],
                         ],
-                        "cta_label" => "Agende uma análise",
-                        "cta_url" => "firece.com",
                         "hero" => [
                             "f51e1eeb-9d94-4df0-b2e1-35e78c7076f9" => "f51e1eeb-9d94-4df0-b2e1-35e78c7076f9",
                         ],
@@ -1187,9 +1203,26 @@ return [
                 "403198d1-74b0-4a54-85e6-732f658b5c73" => [
                     "type" => "two-columns-image-feature-grid",
                     "data" => [
-                        "badge" => "Sobre nós",
-                        "heading" => "Conheça mais sobre a Fire|ce",
-                        "description" => "A Fire|ce ajuda empresas a promoverem alta performance por meio da educação financeira. Com programas sob medida, consultores especializados e soluções integradas, criamos pontes entre saúde financeira e produtividade.",
+                        'headline' => [
+                            'size' => 'md',
+                            'position' => 'left',
+                            'heading' => 'Conheça mais sobre a Fire|ce',
+                            'description' => 'A Fire|ce ajuda empresas a promoverem alta performance por meio da
+                            educação financeira. Com programas sob medida, consultores especializados e soluções
+                            integradas, criamos pontes entre saúde financeira e produtividade.',
+                            'has_actions' => false,
+                            'actions' => [],
+                            'keywords' => [],
+                            "badge" => [
+                                "has_badge" => true,
+                                "icon" => "firece-logo",
+                                "label" => "Sobre nós",
+                            ],
+                            "buttons" => [
+                                "has_actions" => false,
+                                "buttons" => [],
+                            ],
+                        ],
                         "cards" => [
                             "fa8ce8d1-3d8b-4a84-ab14-c0c968c3699a" => [
                                 "icon" => "lucide-message-circle-more",
@@ -1212,8 +1245,6 @@ return [
                                 "description" => "Contamos com uma equipe que acompanha sua jornada, oferece materiais personalizados, treinamentos e um plano de crescimento contínuo.",
                             ],
                         ],
-                        "cta_label" => "Fale conosco",
-                        "cta_url" => "https://firece.com.br/parcerias",
                         "hero" => [
                             "ffd0375e-78f6-4685-b60d-62b315e0fbff" => "ffd0375e-78f6-4685-b60d-62b315e0fbff",
                         ],
@@ -1680,9 +1711,26 @@ return [
                 "48f90557-c86e-4c04-bc12-782b68fadd3d" => [
                     "type" => "two-columns-image-feature-grid",
                     "data" => [
-                        "badge" => "Sobre nós",
-                        "heading" => "Conheça mais sobre a Fire|ce",
-                        "description" => "A Fire|ce ajuda empresas a promoverem alta performance por meio da educação financeira. Com programas sob medida, consultores especializados e soluções integradas, criamos pontes entre saúde financeira e produtividade.",
+                        'headline' => [
+                            'size' => 'md',
+                            'position' => 'left',
+                            'heading' => 'Conheça mais sobre a Fire|ce',
+                            'description' => 'A Fire|ce ajuda empresas a promoverem alta performance por meio da
+                            educação financeira. Com programas sob medida, consultores especializados e soluções
+                            integradas, criamos pontes entre saúde financeira e produtividade.',
+                            'has_actions' => false,
+                            'actions' => [],
+                            'keywords' => [],
+                            "badge" => [
+                                "has_badge" => true,
+                                "icon" => "firece-logo",
+                                "label" => "Sobre nós",
+                            ],
+                            "buttons" => [
+                                "has_actions" => false,
+                                "buttons" => [],
+                            ],
+                        ],
                         "cards" => [
                             "ab7dbacd-8d15-44a9-8679-d5f7b2070af8" => [
                                 "icon" => "lucide-message-circle-more",
@@ -1705,8 +1753,6 @@ return [
                                 "description" => "Contamos com uma equipe que acompanha sua jornada, oferece materiais personalizados, treinamentos e um plano de crescimento contínuo.",
                             ],
                         ],
-                        "cta_label" => "Entre em contato",
-                        "cta_url" => "https://firece.com.br/trabalhe-conosco",
                         "hero" => [
                             "e6b23c8e-b49b-4aad-aa12-f3e2217222d9" => "e6b23c8e-b49b-4aad-aa12-f3e2217222d9",
                         ],
