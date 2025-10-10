@@ -58,7 +58,7 @@
 
     $variants = [
         // self-hover styles
-        'brand'     => 'bg-brand-primary text-white border-brand-primary hover:bg-brand-primary/90 hover:shadow-md focus:ring-brand-primary',
+        'brand'     => 'bg-brand-primary text-brand-accent border-brand-primary hover:bg-brand-primary/90 hover:shadow-md focus:ring-brand-primary',
         'secondary' => 'bg-white text-brand-primary border-none focus:border-1 hover:bg-gray-50 hover:text-brand-primary/90 focus:ring-brand-primary',
         'outline'   => 'bg-transparent text-text-high border-outline-low hover:bg-elevation-02dp focus:ring-zinc-400/40',
         'white'    => 'bg-white text-text-high border-outline-low hover:bg-elevation-02dp focus:ring-zinc-400/40',

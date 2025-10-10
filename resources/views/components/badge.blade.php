@@ -30,19 +30,19 @@
 
     // Variants
     $variants = [
-        'brand'   => 'bg-brand-primary/10 hover:bg-brand-primary/90 text-white border-brand-primary/30',
+        'brand'   => 'bg-brand-primary/10 hover:bg-brand-primary/90 text-white hover:text-brand-accent border-brand-primary/30',
         'neutral' => 'bg-zinc-200 hover:bg-zinc-300 text-zinc-800 border-zinc-300',
         'custom'  => '', // allow full custom via $attributes->merge()
     ];
 
-    $classes = "$base " . ($sizes[$size] ?? $sizes['md']) . ' ' . ($variants[$variant] ?? $variants['brand']);
+    $classes = "$base group " . ($sizes[$size] ?? $sizes['md']) . ' ' . ($variants[$variant] ?? $variants['brand']);
 @endphp
 <div class="w-full">
 <{{ $tag }} {{ $attributes->merge(['class' => $classes]) }}>
 
 
 @isset($component)
-    <x-filament::icon :icon="$componentIcon" class="h-5 w-5 text-icon-high shrink-0" />
+    <x-filament::icon :icon="$componentIcon" class="h-5 w-5 text-icon-high group-hover:text-brand-accent shrink-0" />
 @endisset
 
 @isset($icon)

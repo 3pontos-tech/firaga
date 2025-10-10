@@ -91,7 +91,7 @@
         </div>
     @else
         @if(!empty($card->icon))
-            <div class="h-8 w-8 text-icon-high rounded-md grid place-items-center shrink-0">
+            <div class="h-8 w-8 text-icon-high rounded-md grid place-items-center group-hover/card:text-brand-accent shrink-0">
                 <x-filament::icon :icon="$card->icon" class="w-6 h-6"/>
             </div>
         @endif
@@ -100,23 +100,23 @@
     <div class="flex {{ $textBox }} {{ $textAlign }}">
         {{-- Title --}}
         @isset($title)
-            <h3 {{ $title->attributes->class('text-lg font-semibold tracking-tight text-text-high') }}>
+            <h3 {{ $title->attributes->class('text-lg font-semibold tracking-tight text-text-high group-hover/card:text-brand-accent') }}>
                 {{ $title }}
             </h3>
         @else
             @if(!empty($card->title))
-                <h3 class="text-lg font-semibold tracking-tight  {{ $alignText }}">{{ $card->title }}</h3>
+                <h3 class="text-lg font-semibold tracking-tight  group-hover/card:text-brand-accent {{ $alignText }}">{{ $card->title }}</h3>
             @endif
         @endisset
 
         {{-- Subtitle / Description --}}
         @isset($description)
-            <p {{ $description->attributes->class('text-sm text-text-medium group-hover/card:text-text-light') }}>
+            <p {{ $description->attributes->class('text-sm text-text-medium group-hover/card:text-brand-accent') }}>
                 {{ $description }}
             </p>
         @else
             @if(!empty($card->description))
-                <p class="text-sm text-text-medium{{ $alignText }}">{{ $card->description }}</p>
+                <p class="text-sm text-text-medium group-hover/card:text-brand-accent {{ $alignText }}">{{ $card->description }}</p>
             @endif
         @endisset
 
