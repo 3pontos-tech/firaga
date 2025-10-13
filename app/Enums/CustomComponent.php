@@ -3,6 +3,7 @@
 namespace App\Enums;
 
 use App\Filament\Components\AbstractCustomComponent;
+use App\Filament\Components\Blog\BlogListingComponent;
 use App\Filament\Components\Blog\MarkdownTextComponent;
 use App\Filament\Components\Blog\RichTextComponent;
 use App\Filament\Components\CTAs\CallToActionWithImageComponent;
@@ -36,6 +37,8 @@ enum CustomComponent: string
     case BlogMarkdownText = 'blog-markdown-text';
 
     case BlogRichText = 'blog-rich-text';
+
+    case BlogArticleList = 'blog-article-list';
 
     case HeroWithBackgroundImage = 'hero-with-background-image';
     case HeroWithCodeSnippet = 'hero-with-code-snippet';
@@ -77,6 +80,7 @@ enum CustomComponent: string
     {
         return match ($this) {
             self::InfoStats => InfoStatsComponent::class,
+            self::BlogArticleList => BlogListingComponent::class,
             self::BlogMarkdownText => MarkdownTextComponent::class,
             self::BlogRichText => RichTextComponent::class,
             self::Faq => FaqComponent::class,
@@ -84,7 +88,7 @@ enum CustomComponent: string
             self::CallToActionWithIconSection => CtaWithIconComponent::class,
             self::SplitWithVerticalSteps => SplitWithVerticalStepsComponent::class,
             self::SplitWithHorizontalSteps => SplitWithHorizontalStepsComponent::class,
-            self::SplitWithImageQuote => SplitWithImageQuoteComponent::class, // Assuming this is the correct mapping
+            self::SplitWithImageQuote => SplitWithImageQuoteComponent::class,
             self::HorizontalScrollerHighlight => HorizontalScrollerHighlightComponent::class,
             self::Plans => PlansComponent::class,
             self::FullWidthVideo => FullWidthVideoComponent::class,
