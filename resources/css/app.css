@@ -210,6 +210,10 @@
         animation-play-state: paused;
     }
 
+    .transition-width {
+        transition-property: width;
+    }
+
     code.hljs {
         display: block;
         overflow-x: auto;
