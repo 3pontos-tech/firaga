@@ -69,10 +69,14 @@ class PageResource extends Resource
                                 'title' => TextInput::make('title')
                                     ->label(__('filament.page_title'))
                                     ->live(debounce: 400)
-                                    ->afterStateUpdated(
-                                        fn(string $operation, string $state, Set $set): mixed => $operation === 'create'
-                                            ? $set('slug', Str::slug($state)) : null
-                                    )
+                                    ->afterStateUpdated(function(string $operation, string $state, Set $set) {
+
+
+                                        $set('slug', Str::slug($state));
+                                        $set('meta_title', $state);
+                                        $set('opengraph_title', $state);
+                                    })
+
                                     ->required(),
 
                                 'slug' => TextInput::make('slug')
@@ -95,11 +99,16 @@ class PageResource extends Resource
         ];
 
         $parametersTab = [
-
             'is_landing' => Select::make('is_landing')
                 ->label(__('filament.is_landing_page'))
+                ->helperText(__('Used to marketing campaigns'))
                 ->boolean()
                 ->default(false),
+            'deletable' => Select::make('deletable')
+                ->label(__('Deletable'))
+                ->helperText(__('Internal: used for homepage/blog'))
+                ->boolean()
+                ->default(true),
             'parent_page_id' => Select::make('parent_page_id')
                 ->label(__('filament.parent_page'))
                 ->placeholder(__('Select a parent page'))
@@ -163,7 +172,9 @@ class PageResource extends Resource
             ->defaultSort('published_at', 'desc')
             ->actions([
                 EditAction::make()->button()->outlined(),
-                DeleteAction::make()->label(__('filament.delete')),
+                DeleteAction::make()
+                    ->visible(fn($record) => $record->deletable)
+                    ->label(__('filament.delete')),
             ])
             ->bulkActions([
                 BulkActionGroup::make([

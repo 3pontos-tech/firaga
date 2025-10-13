@@ -22,7 +22,9 @@ class EditPage extends EditRecord
                 ->action(fn () => $this->isJsonVisible = ! $this->isJsonVisible)
                 ->outlined(fn () => $this->isJsonVisible)
                 ->label('Toggle Json'),
-            DeleteAction::make(),
+
+            DeleteAction::make()
+                ->visible(fn($record) => $record->deletable)
         ];
     }
 }
