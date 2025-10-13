@@ -38,11 +38,6 @@ class MenusSeeder extends Seeder
                     ->create(['order' => $index]);
             }
 
-            MenuItemFactory::new()
-                ->forCustomUrl(route('blog.index'), 'Blog')
-                ->forMenu($menu)
-                ->create(['order' => count($pages) + 1]);
-
         }
     }
 
