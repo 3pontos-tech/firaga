@@ -24,7 +24,7 @@
                 </span>
             </div>
             <div class="flex-1 text-center lg:text-left mb-6 lg:mb-0 px-2 sm:px-0 order-2 lg:order-2">
-                <h3 class="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl text-text-dark dark:text-text-light
+                <h3 class="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl text-text-high
                     font-extrabold mb-3 sm:mb-4 leading-tight">
                     {{ $title }}
                 </h3>

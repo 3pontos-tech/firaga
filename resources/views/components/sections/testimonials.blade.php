@@ -47,13 +47,13 @@
                                 </x-slot:description>
                                 <x-slot:footer class="lg:flex justify-between">
                                     <div class="flex">
-                                        <x-heroicon-c-star class="w-4 h-4 sm:w-5 sm:h-5 group-hover/card:text-white text-amber-400 flex-shrink-0 mt-0.5" />
-                                        <x-heroicon-c-star class="w-4 h-4 sm:w-5 sm:h-5 group-hover/card:text-white text-amber-400 flex-shrink-0 mt-0.5" />
-                                        <x-heroicon-c-star class="w-4 h-4 sm:w-5 sm:h-5 group-hover/card:text-white text-amber-400 flex-shrink-0 mt-0.5" />
-                                        <x-heroicon-c-star class="w-4 h-4 sm:w-5 sm:h-5 group-hover/card:text-white text-amber-400 flex-shrink-0 mt-0.5" />
-                                        <x-heroicon-c-star class="w-4 h-4 sm:w-5 sm:h-5 group-hover/card:text-white text-amber-400 flex-shrink-0 mt-0.5" />
+                                        <x-heroicon-c-star class="w-4 h-4 sm:w-5 sm:h-5 group-hover/card:text-brand-accent text-amber-400 flex-shrink-0 mt-0.5" />
+                                        <x-heroicon-c-star class="w-4 h-4 sm:w-5 sm:h-5 group-hover/card:text-brand-accent text-amber-400 flex-shrink-0 mt-0.5" />
+                                        <x-heroicon-c-star class="w-4 h-4 sm:w-5 sm:h-5 group-hover/card:text-brand-accent text-amber-400 flex-shrink-0 mt-0.5" />
+                                        <x-heroicon-c-star class="w-4 h-4 sm:w-5 sm:h-5 group-hover/card:text-brand-accent text-amber-400 flex-shrink-0 mt-0.5" />
+                                        <x-heroicon-c-star class="w-4 h-4 sm:w-5 sm:h-5 group-hover/card:text-brand-accent text-amber-400 flex-shrink-0 mt-0.5" />
                                     </div>
-                                    <span class="text-white px-0.5">
+                                    <span class="text-text-high group-hover/card:text-brand-accent px-0.5">
                                         {{ $testimonial->name }}
                                     </span>
                                 </x-slot:footer>
