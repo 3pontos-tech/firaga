@@ -26,7 +26,7 @@
                 </div>
             </a>
         </div>
-        <ul class="hidden lg:flex lg:items-center lg:space-x-6">
+        <ul class="hidden lg:flex lg:items-center lg:space-x-7">
             @foreach ($menu->items as $menuItem)
                 @if ($menuItem->children && $menuItem->children->isNotEmpty())
                     <li class="relative group" x-data="{ open: false }" @mouseenter="open = true"
@@ -65,9 +65,13 @@
                     </li>
                 @else
                     <li>
-                        <a href="{{ $menuItem->model?->url() ?? $menuItem->custom_url }}"
+                        @php
+                            $url = $menuItem->model?->url() ?? $menuItem->custom_url;
+                        @endphp
+                        <a href="{{ $url }}"
                            target="{{ $menuItem->target->getHtmlProperty() }}"
-                           class="text-text-high/70 hover:text-text-high px-3 py-2 rounded-lg font-medium transition-colors duration-200">
+                           class="hover:text-text-high border-b-2 px-2 py-2 pb-1 font-medium transition-colors duration-200
+                                  {{ request()->fullUrlIs($url) ? 'text-text-high border-primary' : 'text-text-high/70 border-transparent' }}">
                             {{ $menuItem->label }}
                         </a>
                     </li>
