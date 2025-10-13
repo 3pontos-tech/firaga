@@ -14,7 +14,7 @@
 
 <nav
     x-data="{ {{ $mobileVar }}: false }"
-    class="xs:relative {{ $bg }} backdrop-blur-xl border-b  sticky top-0 z-50 shadow-sm transition-all duration-300 overflow-visible animate-fade-in-navbar"
+    class="xs:relative {{ $bg }} backdrop-blur-xl sticky top-0 z-50 shadow-sm transition-all duration-300 overflow-visible animate-fade-in-navbar"
 >
     <div class="py-4 relative z-10 container flex items-center justify-between mx-auto">
         <div class="flex items-center w-full lg:w-auto space-x-4 lg:space-x-6">
@@ -22,7 +22,7 @@
             <a href="/">
                 <div class="flex items-center gap-3">
                     <x-logo :minimal="true" class="w-8 h-8 fill-brand-primary"/>
-                    <h2 class="text-2xl font-bold text-white">{{ config('app.name') }}</h2>
+                    <h2 class="text-2xl font-bold text-text-high">{{ config('app.name') }}</h2>
                 </div>
             </a>
         </div>
@@ -37,7 +37,7 @@
                             {{ $menuItem->label }}
                             <svg
                                 class="ml-1 h-4 w-4 text-text-medium group-hover:text-primary transition-colors duration-200"
-                                fill="currentColor" viewBox="0 0 20 20">
+                                viewBox="0 0 20 20">
                                 <path fill-rule="evenodd"
                                       d="M5.23 7.21a.75.75 0 011.06-.02L10 10.584l3.71-3.396a.75.75 0 011.04 1.084l-4.25 3.89a.75.75 0 01-1.04 0l-4.25-3.89a.75.75 0 01-.02-1.06z"
                                       clip-rule="evenodd"/>
@@ -67,7 +67,7 @@
                     <li>
                         <a href="{{ $menuItem->model?->url() ?? $menuItem->custom_url }}"
                            target="{{ $menuItem->target->getHtmlProperty() }}"
-                           class="text-white/70 hover:text-white px-3 py-2 rounded-lg font-medium transition-colors duration-200">
+                           class="text-text-high/70 hover:text-text-high px-3 py-2 rounded-lg font-medium transition-colors duration-200">
                             {{ $menuItem->label }}
                         </a>
                     </li>
@@ -85,7 +85,7 @@
             @endif
             <button
                 @click="{{ $mobileVar }} = !{{ $mobileVar }}"
-                class="p-2 text-white/70 hover:text-white border border-white/70 hover:border-white rounded-lg focus:outline-none relative group hover:text-primary hover:border-primary"
+                class="p-2 text-text-high/70 hover:text-text-high border border-white/70 hover:border-white rounded-lg focus:outline-none relative group hover:text-primary hover:border-primary"
                 aria-label="Toggle menu"
             >
                 <span class="sr-only">Open main menu</span>
@@ -116,7 +116,7 @@
                     <li>
                         <a href="{{ $menuItem->model?->url() ?? $menuItem->custom_url }}"
                            target="{{ $menuItem->target->getHtmlProperty() }}"
-                           class="block text-white/70 hover:text-white px-4 py-2 rounded-lg transition-colors duration-200">
+                           class="block text-text-high/70 hover:text-text-high px-4 py-2 rounded-lg transition-colors duration-200">
                             {{  $menuItem->label  }}
                         </a>
                     </li>

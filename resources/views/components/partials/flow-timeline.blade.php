@@ -16,7 +16,7 @@
                     <span class="bg-brand-primary text-brand-accent text-2xl w-8 h-8 rounded-full flex items-center justify-center">
                         {{ $loop->iteration }}
                     </span>
-                    <h3 class="text-xl">{{ $item['title'] }}</h3>
+                    <h3 class="text-xl text-text-high">{{ $item['title'] }}</h3>
                 </div>
 
                 @php

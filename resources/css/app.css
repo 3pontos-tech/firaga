@@ -358,7 +358,7 @@
 @layer base {
  :root {
         --brand-primary: #E2410A;
-        --brand-accent: #E2410A;
+        --brand-accent: #09090a;
         --red-primary: #ff3838;
         --red-900: #870000;
         --red-800: #a6000a;
@@ -576,7 +576,7 @@
         --icon-dark: #09090a;
         --outline-high: #99999f;
         --outline-medium: #7c7c83;
-        --outline-low: #5e5e64;
+        --outline-low: #2c2c2d;
         --outline-light: #e8e9f1;
         --outline-dark: #2c2c2d;
         --elevation-surface: #09090A;
