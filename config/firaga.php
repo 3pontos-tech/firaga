@@ -1820,6 +1820,9 @@ return [
                 [
                     'collection' => CustomComponent::HeroWithBackgroundImage->value,
                     'path' => public_path('images/stock/work-with-us-hero.jpg'),
+                    'custom_properties' => [
+                        "component_id" => "6a3e8358-8aa3-4a19-878b-46d046cacb92",
+                    ]
                 ],
             ],
             'content' => [
