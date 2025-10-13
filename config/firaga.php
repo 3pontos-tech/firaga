@@ -1815,7 +1815,7 @@ return [
             'meta_keywords' => 'blog financeiro, consultoria financeira, estratégia financeira, tecnologia financeira, investimentos, Fire|ce',
             'opengraph_title' => 'Fire|ce Blog – Onde Finanças e Tecnologia se Encontram',
             'opengraph_description' => 'Artigos técnicos e análises profundas sobre consultoria financeira moderna, automação e dados aplicados ao planejamento financeiro inteligente.',
-            'slug' => '/blog',
+            'slug' => 'blog',
             'medias' => [
                 [
                     'collection' => CustomComponent::HeroWithBackgroundImage->value,
