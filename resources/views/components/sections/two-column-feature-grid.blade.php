@@ -17,7 +17,7 @@
                             text-align="items-center text-center sm:items-start sm:text-left"
                             class="flex h-full sm:flex-row lg:flex-col gap-4 items-center md:items-start"
                         >
-                            <x-slot:icon class="bg-brand-primary text-text-high rounded-lg group-hover/card:bg-white h-12 w-12 min-w-12 sm:min-w-16 sm:h-16 sm:w-16 flex items-center justify-center">
+                            <x-slot:icon class="bg-brand-primary text-brand-accent rounded-lg h-12 w-12 min-w-12 sm:min-w-16 sm:h-16 sm:w-16 flex items-center justify-center">
                                 <x-filament::icon :icon="$card['icon']" class="group-hover/card:text-brand-primary w-6 h-6 sm:w-8 sm:h-8" />
                             </x-slot:icon>
                             <x-slot:title class="mb-2">

@@ -18,13 +18,13 @@
                            w-[calc(100%)] h-[calc(100%)]
                            bg-brand-primary rotate-45 rounded-md z-0">
                     </span>
-                <span class="relative block bg-outline-dark p-4 rounded-md max-w-fit z-2">
+                <span class="relative block bg-outline-low p-4 rounded-md max-w-fit z-2">
                     <x-filament::icon :$icon alt="Blog Icon"
                          class="w-12 h-12 sm:w-16 sm:h-16 md:w-18 md:h-18 lg:w-20 lg:h-20 text-text-high"/>
                 </span>
             </div>
             <div class="flex-1 text-center lg:text-left mb-6 lg:mb-0 px-2 sm:px-0 order-2 lg:order-2">
-                <h3 class="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl text-text-dark dark:text-text-light
+                <h3 class="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl text-text-high
                     font-extrabold mb-3 sm:mb-4 leading-tight">
                     {{ $title }}
                 </h3>

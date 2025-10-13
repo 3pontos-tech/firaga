@@ -10,7 +10,7 @@
 <article class="pb-8 md:pb-0 bg-elevation-surface">
     <section id="heading" class="bg-elevation-02dp p-2 lg:p-0">
         <div class="max-w-4xl mx-auto pt-10">
-            <a href="{{ route('blog.index') }}"
+            <a href="/blog"
                class="inline-flex items-center gap-2 text-text-light hover:text-brand-primary-hover mb-8">
                 <x-heroicon-c-arrow-left class="h-4 w-4"/>
                 Voltar ao Blog

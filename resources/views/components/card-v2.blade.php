@@ -33,7 +33,7 @@
     };
 
     // Mantemos a borda atual do v1 (strength reservado para futuro)
-    $borderClass = 'border border-outline-dark';
+    $borderClass = 'border border-outline-low';
 
     $padding = 'p-6';
     if ($density === 'compact') {

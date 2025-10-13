@@ -3,7 +3,7 @@
     'video_url'
 ])
 <section class="relative py-12 md:py-16 lg:py-32 xl:py-40">
-    <div class="absolute top-0 left-0 w-full h-4/6 bg-white dark:bg-black"></div>
+    <div class="absolute top-0 left-0 w-full h-4/6 metallic:bg-black dark:bg-black"></div>
 
     <div class="absolute bottom-0 left-0 w-full h-2/6 bg-brand-primary"></div>
 
@@ -45,7 +45,7 @@
         const video = document.getElementById('firece-video');
         const playButton = document.getElementById('play-button');
         if (video && playButton) {
-            
+
             playButton.style.display = 'none';
             const showPlayButton = () => {
                 playButton.style.display = 'flex';

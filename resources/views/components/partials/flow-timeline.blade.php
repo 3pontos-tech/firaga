@@ -13,10 +13,10 @@
             {{ $loop->iteration === 2 ? 'md:col-start-2 md:row-start-2' : '' }}
             {{ $loop->iteration === 3 ? 'md:col-start-3 md:row-start-3' : '' }}">
                 <div class="flex items-center gap-4">
-                    <span class="bg-brand-primary text-2xl w-8 h-8 rounded-full flex items-center justify-center">
+                    <span class="bg-brand-primary text-brand-accent text-2xl w-8 h-8 rounded-full flex items-center justify-center">
                         {{ $loop->iteration }}
                     </span>
-                    <h3 class="text-xl">{{ $item['title'] }}</h3>
+                    <h3 class="text-xl text-text-high">{{ $item['title'] }}</h3>
                 </div>
 
                 @php

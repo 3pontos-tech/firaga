@@ -30,7 +30,7 @@
 
     // Variants
     $variants = [
-        'brand'   => 'bg-brand-primary/10 hover:bg-brand-primary/90 text-white hover:text-brand-accent border-brand-primary/30',
+        'brand'   => 'bg-brand-primary/10 hover:bg-brand-primary/90 text-text-high hover:text-brand-accent border-brand-primary/30',
         'neutral' => 'bg-zinc-200 hover:bg-zinc-300 text-zinc-800 border-zinc-300',
         'custom'  => '', // allow full custom via $attributes->merge()
     ];

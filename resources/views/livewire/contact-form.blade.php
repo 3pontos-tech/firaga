@@ -59,7 +59,7 @@
 
         <div class="pt-4 flex justify-center md:justify-start">
             <x-layout.shared.button tag="button"
-                class="bg-primary cursor-pointer hover:bg-secondary text-base-content px-8 py-3 rounded-md text-base font-semibold w-full md:w-[180px]">
+                class="bg-primary cursor-pointer hover:bg-secondary px-8 py-3 rounded-md font-semibold w-full md:w-[180px]">
                 Enviar
             </x-layout.shared.button>
         </div>

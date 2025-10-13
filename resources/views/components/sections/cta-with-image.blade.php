@@ -20,7 +20,7 @@
 
             <div class="flex flex flex-col items-center sm:flex-row sm:justify-center sm:flex-row gap-4 sm:gap-x-4">
                 <x-button :icon="$cta_icon" icon-position="trailing" :href="$cta_url"
-                          class="bg-brand-primary text-white p-3 sm:p-4 sm:w-auto rounded-md lg:w-full">
+                          class="bg-brand-primary text-brand-accent p-3 sm:p-4 sm:w-auto rounded-md lg:w-full">
                     {{ $cta_label }}
                 </x-button>
             </div>

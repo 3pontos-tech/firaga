@@ -10,14 +10,14 @@
 
 @php
     $buttonVariant = $bestPlan ? 'secondary' : 'outlined';
-    $mainTextColor = $bestPlan ? 'text-text-light' : 'text-text-medium';
+    $mainTextColor = $bestPlan ? 'text-text-light' : 'text-text-high';
 @endphp
 
 <div>
     <div
         class="p-4 sm:p-6 rounded-t-lg {{ $bestPlan ? 'bg-brand-primary' : 'bg-elevation-03dp border border-outline-dark' }}">
         <div class="flex flex-col sm:flex-row md:flex-col  sm:justify-between gap-y-3">
-            <h2 class="font-semibold text-xl sm:text-2xl text-text-light">{{ str($name)->title() }}</h2>
+            <h2 class="font-semibold text-xl sm:text-2xl {{ $mainTextColor }}">{{ str($name)->title() }}</h2>
         </div>
     </div>
     <div
@@ -34,9 +34,9 @@
                     <li>
                         <div class="flex items-start gap-x-2 sm:gap-x-3">
                         @if($item['is_highlighted'])
-                            <x-heroicon-c-star class="w-4 h-4 sm:w-5 sm:h-5 {{ $bestPlan ? 'text-white' : 'text-yellow-100' }} flex-shrink-0 mt-0.5" />
+                            <x-heroicon-c-star class="w-4 h-4 sm:w-5 sm:h-5 {{ $bestPlan ? $mainTextColor : 'text-yellow-100' }} flex-shrink-0 mt-0.5" />
                         @else
-                            <x-heroicon-m-check class="w-4 h-4 sm:w-5 sm:h-5 {{ $bestPlan ? 'text-white' : 'text-helper-success' }} flex-shrink-0 mt-0.5"/>
+                            <x-heroicon-m-check class="w-4 h-4 sm:w-5 sm:h-5 {{ $bestPlan ? $mainTextColor : 'text-helper-success' }} flex-shrink-0 mt-0.5"/>
                         @endif
 
                         <span class="{{ $bestPlan ? 'text-text-light' : 'text-text-medium'  }}  font-medium text-sm sm:text-base">{{ $item['value'] }}</span>
@@ -50,7 +50,7 @@
             <x-layout.shared.button
                 :href="$cta_url"
                 :variant="$buttonVariant"
-                class="w-full font-semibold py-3 sm:py-4 text-sm sm:text-base {{ $bestPlan  ? 'text-brand-primary' : 'text-text-light border border-outline-low' }}"
+                class="w-full font-semibold py-3 sm:py-4 text-sm sm:text-base {{ $bestPlan  ? 'text-text-dark' : 'text-text-high border border-outline-low' }}"
             >
                 {{ $cta_label }}
             </x-layout.shared.button>

@@ -121,13 +121,13 @@
 
 
     @isset($description)
-        <p {{ $description->attributes->class("text-text-high dark:text-text-medium font-medium animate-fade-in delay-200 max-w-full mb-4 sm:mb-6 " . $sizes['p']) }}>
+        <p {{ $description->attributes->class("text-text-medium font-medium animate-fade-in delay-200 max-w-full mb-4 sm:mb-6 " . $sizes['p']) }}>
             {{ $description }}
         </p>
     @endisset
 
     @if($componentDescription)
-        <p {{ $attributes->merge(['class' => "text-text-high dark:text-text-medium font-medium animate-fade-in delay-200 max-w-full mb-4 sm:mb-6 " . $sizes['p']]) }}>
+        <p {{ $attributes->merge(['class' => "text-text-medium font-medium animate-fade-in delay-200 max-w-full mb-4 sm:mb-6 " . $sizes['p']]) }}>
             {{ $componentDescription }}
         </p>
     @endisset
