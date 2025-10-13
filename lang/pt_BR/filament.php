@@ -85,7 +85,7 @@ return [
     'page_title' => 'Título da Página',
     'page_slug' => 'Identificador da página (slug)',
     'lading_page' => 'landing page',
-    'is_landing_page' => 'É uma pagina landing page?',
+    'is_landing_page' => 'Marketing Landing Page?',
     'parent_page' => 'Página relacionada',
     'page_content' => 'Conteúdo da Página',
     'page_parameters' => 'Parâmetros da Página',

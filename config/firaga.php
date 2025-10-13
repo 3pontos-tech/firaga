@@ -991,7 +991,6 @@ return [
             ],
             'status' => 'published',
         ],
-
         [
             'title' => 'Parcerias',
             'meta_title' => 'Parcerias Estratégicas – Iniciativas Colaborativas com Propósito | Fire|ce',
@@ -1805,6 +1804,77 @@ return [
                         "icon" => "lucide-book-marked",
                     ],
                 ],
+            ],
+            'status' => 'published',
+        ],
+        [
+            'title' => 'Blog',
+            'meta_title' => 'Fire|ce Blog – Estratégia Financeira e Tecnologia de Investimentos',
+            'deletable' => false,
+            'meta_description' => 'Explore análises, estudos e estratégias da Fire|ce sobre finanças, investimentos e tecnologia. Um blog técnico para quem quer entender o futuro da consultoria financeira.',
+            'meta_keywords' => 'blog financeiro, consultoria financeira, estratégia financeira, tecnologia financeira, investimentos, Fire|ce',
+            'opengraph_title' => 'Fire|ce Blog – Onde Finanças e Tecnologia se Encontram',
+            'opengraph_description' => 'Artigos técnicos e análises profundas sobre consultoria financeira moderna, automação e dados aplicados ao planejamento financeiro inteligente.',
+            'slug' => '/blog',
+            'medias' => [
+                [
+                    'collection' => CustomComponent::HeroWithBackgroundImage->value,
+                    'path' => public_path('images/stock/work-with-us-hero.jpg'),
+                ],
+            ],
+            'content' => [
+                '81279e8e-f087-4cd8-a7cf-ed289bfb2422' => [
+                    'type' => 'hero-with-background-image',
+                    'data' => [
+                        'hero_size' => null,
+                        'headline' => [
+                            'heading' => 'Conteúdo que transforma',
+                            'keywords' => [],
+                            'size' => '2xl',
+                            'position' => 'center',
+                            'description' => 'Transformamos a forma como as pessoas lidam com dinheiro, capacitando-as a conquistar liberdade, segurança e crescimento financeiro sustentável.',
+                            'badge' => [
+                                'has_badge' => false,
+                                'icon' => null,
+                                'label' => null
+                            ],
+                            'buttons' => [
+                                'has_actions' => false,
+                                'buttons' => []
+                            ]
+                        ],
+                        'hero' => [
+                            '6a3e8358-8aa3-4a19-878b-46d046cacb92' => '6a3e8358-8aa3-4a19-878b-46d046cacb92'
+                        ]
+                    ]
+                ],
+                '852b14ef-67fd-4d1e-8394-a9e033f31fab' => [
+                    'type' => 'blog-article-list',
+                    'data' => [
+                        'headline' => [
+                            'heading' => 'Invista no futuro com inteligência e precisão ',
+                            'keywords' => [
+                                'Invista',
+                                'com',
+                                'inteligência',
+                                'e',
+                                'precisão',
+                            ],
+                            'size' => 'md',
+                            'position' => 'left',
+                            'description' => 'Transformamos a forma como as pessoas lidam com dinheiro, capacitando-as a conquistar liberdade, segurança e crescimento financeiro sustentável.',
+                            'badge' => [
+                                'has_badge' => true,
+                                'icon' => 'firece-logo',
+                                'label' => 'Consultoria Financeira'
+                            ],
+                            'buttons' => [
+                                'has_actions' => false,
+                                'buttons' => []
+                            ]
+                        ]
+                    ]
+                ]
             ],
             'status' => 'published',
         ],

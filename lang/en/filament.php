@@ -85,7 +85,7 @@ return [
     'page_title' => 'Page Title',
     'page_slug' => 'Page Slug',
     'lading_page' => 'Landing Page',
-    'is_landing_page' => 'Is it a landing page?',
+    'is_landing_page' => 'Marketing Landing Page?',
     'parent_page' => 'Related Page',
     'page_content' => 'Page Content',
     'page_parameters' => 'Page Parameters',

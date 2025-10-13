@@ -21,8 +21,6 @@ Route::domain('lp.' . config('app.domain'))->group(function (): void {
 Route::domain(config('app.domain'))->group(function (): void {
 
     Route::prefix('blog')->group(function (): void {
-        Route::get('/', [ArticlesController::class, 'index'])
-            ->name('blog.index');
         Route::get('/{post:slug}', [ArticlesController::class, 'show'])
             ->name('blog.show');
     });
