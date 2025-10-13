@@ -9,6 +9,7 @@ use App\Filament\Resources\CMS\PageResource\Pages\ListPages;
 use App\Filament\Resources\CMS\PageResource\Pages\ViewPage;
 use App\Models\CMS\Page;
 use Filament\Forms\Components\DatePicker;
+use Filament\Forms\Components\Fieldset;
 use Filament\Forms\Components\Grid;
 use Filament\Forms\Components\Section;
 use Filament\Forms\Components\Select;
@@ -59,22 +60,35 @@ class PageResource extends Resource
         $contentTab = [
             Grid::make(4)->schema([
                 Section::make('Content')
-                    ->columnSpan(fn ($livewire): int => (int) ($livewire->isJsonVisible ? 2 : 4))
+                    ->columnSpan(fn($livewire): int => (int)($livewire->isJsonVisible ? 2 : 4))
                     ->columns(1)
                     ->schema([
-                        'title' => TextInput::make('title')
-                            ->label(__('filament.page_title'))
-                            ->live(debounce: 400)
-                            ->afterStateUpdated(
-                                fn (string $operation, string $state, Set $set): mixed => $operation === 'create'
-                                    ? $set('slug', Str::slug($state)) : null
-                            )
-                            ->required(),
+                        Fieldset::make('Content')
+                            ->columns(2)
+                            ->schema([
+                                'title' => TextInput::make('title')
+                                    ->label(__('filament.page_title'))
+                                    ->live(debounce: 400)
+                                    ->afterStateUpdated(
+                                        fn(string $operation, string $state, Set $set): mixed => $operation === 'create'
+                                            ? $set('slug', Str::slug($state)) : null
+                                    )
+                                    ->required(),
+
+                                'slug' => TextInput::make('slug')
+                                    ->label(__('filament.slug'))
+                                    ->live(debounce: 400)
+                                    ->afterStateUpdated(
+                                        fn(string $operation, string $state, Set $set): mixed => $operation === 'create'
+                                            ? $set('slug', Str::slug($state)) : null
+                                    )
+                                    ->required(),
+                            ]),
                         $filamentComponentService->getFlexibleContentFieldsForModel(Page::class),
                     ]),
                 View::make('filament.components.preview-json') // Preview
-                    ->columnSpan(2)
-                    ->visible(fn ($livewire): bool => $livewire->isJsonVisible)
+                    ->columnSpanFull()
+                    ->visible(fn($livewire): bool => $livewire->isJsonVisible)
                     ->reactive(),
 
             ]),
@@ -90,7 +104,7 @@ class PageResource extends Resource
                 ->label(__('filament.parent_page'))
                 ->placeholder(__('Select a parent page'))
                 // @phpstan-ignore-next-line
-                ->options(fn (?Model $record): Collection => Page::query()->get()->pluck('title', 'id'))
+                ->options(fn(?Model $record): Collection => Page::query()->get()->pluck('title', 'id'))
                 ->searchable(),
             'status' => Select::make('status')
                 ->label(__('Status'))
@@ -126,7 +140,7 @@ class PageResource extends Resource
                 ->label(__('filament.page_title'))
                 ->color('primary')
                 ->url(
-                    url: fn (Page $record): string => $record->url(),
+                    url: fn(Page $record): string => $record->url(),
                     shouldOpenInNewTab: true
                 )
                 ->searchable(),
@@ -144,7 +158,7 @@ class PageResource extends Resource
         ];
 
         return $table
-            ->query(fn () => Page::query()->with('parent'))
+            ->query(fn() => Page::query()->with('parent'))
             ->columns($columns)
             ->defaultSort('published_at', 'desc')
             ->actions([
