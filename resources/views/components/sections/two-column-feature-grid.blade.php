@@ -3,7 +3,7 @@
     'cards' => [],
 ])
 
-<section class="flex bg-elevation-01dp border-t border-b border-outline-dark mx-auto items-center justify-center py-6 sm:py-10 lg:py-14">
+<section class="flex bg-elevation-01dp border-t border-b border-outline-light dark:border-outline-dark mx-auto items-center justify-center py-6 sm:py-10 lg:py-14">
     <div class="container py-15 md:py-0">
         <div class="flex flex-col lg:flex-row lg:justify-between lg:items-end gap-8 lg:gap-12">
             <div class="w-full lg:w-4/6 flex flex-col">
