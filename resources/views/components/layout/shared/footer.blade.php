@@ -2,7 +2,7 @@
     'bg' => 'bg-elevation-02dp'
 ])
 
-<footer class="bg-elevation-02dp container border-t border-outline-light dark:border-outline-dark text-base-content py-8 sm:py-12 lg:py-16">
+<footer class="bg-elevation-02dp border-t border-outline-light dark:border-outline-dark metallic:border-outline-dark text-base-content py-8 sm:py-12 lg:py-16">
     <div class="mx-auto container px-4 sm:px-6 lg:px-8">
         <div class="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-6 gap-8 sm:gap-10 lg:gap-12 animate-fade-in items-start">
 
