@@ -992,7 +992,7 @@ return [
             'slug' => 'parcerias',
             'medias' => [
                 [
-                    'collection' => CustomComponent::CallToActionWithImage->value,
+                    'collection' => CustomComponent::HeroWithSplitImages->value,
                     'path' => public_path('images/stock/hero-stock.png'),
                 ],
                 [
@@ -1013,7 +1013,7 @@ return [
             ],
             'content' => [
                 "9cbb654a-da87-4f2a-8387-be2473a1477a" => [
-                    "type" => "call-to-action-with-image",
+                    "type" => "hero-with-split-images",
                     "data" => [
                         "headline" => [
                             "heading" => "A transformação se constrói com boas alianças",

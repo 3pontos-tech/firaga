@@ -9,6 +9,7 @@ use App\Filament\Components\Blog\RichTextComponent;
 use App\Filament\Components\CTAs\CallToActionWithImageComponent;
 use App\Filament\Components\CTAs\CtaFullWidthComponent;
 use App\Filament\Components\CTAs\CtaWithIconComponent;
+use App\Filament\Components\Heroes\HeroWithSplitImages;
 use App\Filament\Components\Heroes\HeroWithBackgroundImageComponent;
 use App\Filament\Components\Heroes\HeroWithBottomImageComponent;
 use App\Filament\Components\Heroes\HeroWithCenteredTitleComponent;
@@ -44,6 +45,8 @@ enum CustomComponent: string
     case HeroWithCodeSnippet = 'hero-with-code-snippet';
 
     case HeroWithTitleOnly = 'hero-with-title-only';
+
+    case HeroWithSplitImages = 'hero-with-split-images';
 
     case Faq = 'faq';
 
@@ -100,7 +103,8 @@ enum CustomComponent: string
             self::HeroWithBackgroundImage => HeroWithBackgroundImageComponent::class,
             self::ContactForm => ContactFormComponent::class,
             self::FlowTimeline => FlowTimeline::class,
-            self::HeroWithTitleOnly => HeroWithTitleOnly::class
+            self::HeroWithTitleOnly => HeroWithTitleOnly::class,
+            self::HeroWithSplitImages => HeroWithSplitImages::class,
         };
     }
 
