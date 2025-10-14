@@ -21,7 +21,7 @@ $variant = $renderable->theme->value;
             <x-partials.corner variant="brand" class="w-[40px] h-[40px] sm:w-[60px] sm:h-[60px] md:w-[80px] md:h-[80px] lg:w-[100px] lg:h-[100px]"/>
         </div>
         <div class="relative z-10 flex flex-col items-center justify-center max-w-[80svw] mx-auto px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16">
-            <x-headline :component="$headline" class="max-w-[100vw]! text-center gap-4" >
+            <x-headline :component="$headline" class="max-w-[100vw]! text-center text-text-light! gap-4" >
                 <x-slot:actions class="flex! mx-auto! justify-center! items-center align-middle">
                     @foreach($headline->actions as $action)
                         <x-button :component="$action" class="rounded-lg! w-full sm:w-auto"/>

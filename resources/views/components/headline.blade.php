@@ -92,7 +92,7 @@
 
     @isset($headline)
 
-        <h1 {{ $headline->attributes->class("text-text-high font-bold drop-shadow-lg leading-tight mb-2 sm:mb-4 ") }}>
+        <h1 {{ $headline->attributes->class("text-text-high font-bold drop-shadow-lg leading-tight mb-2 sm:mb-4") }}>
             {{ $component->headline ?? $headline }}
         </h1>
     @endisset
