@@ -2,6 +2,7 @@
 
 namespace App\Filament\Resources\CMS;
 
+use App\Enums\PageTheme;
 use App\Filament\Components\FilamentComponentsService;
 use App\Filament\Resources\CMS\PageResource\Pages\CreatePage;
 use App\Filament\Resources\CMS\PageResource\Pages\EditPage;
@@ -121,6 +122,10 @@ class PageResource extends Resource
                 ->options(PageStatus::class)
                 ->default(PageStatus::PUBLISHED)
                 ->required(),
+            'theme' => Select::make('theme')
+                ->enum(PageTheme::class)
+                ->options(PageTheme::class)
+                ->default(PageTheme::Default),
             'published_at' => DatePicker::make('published_at')
                 ->label(__('filament.published_at'))
                 ->native(false)

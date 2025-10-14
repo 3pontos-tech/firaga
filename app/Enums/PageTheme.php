@@ -4,7 +4,7 @@ namespace App\Enums;
 
 enum PageTheme: string
 {
-    case Default = 'default';
+    case Default = 'dark';
 
     case Metallic = 'metallic';
 

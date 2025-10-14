@@ -7,7 +7,7 @@ use Carbon\Carbon;
 
 return [
     'themes' => [
-        'enabled' => true,
+        'enabled' => env('FIRAGA_THEMES_ENABLED', false),
         'available' => [
             // ... append themes when they're ready for use.
         ],
