@@ -29,14 +29,14 @@ return [
                 ],
                 [
                     'collection' => CustomComponent::CallToActionFullWidthSection->value,
-                    'path' => public_path('images/stock/hero-stock.png'),
+                    'path' => public_path('images/stock/hero-our-work.png'),
                     'custom_properties' => [
                         "component_id" => "9461ce3e-893c-481d-b7d8-fc0320be353c",
                     ]
                 ],
                 [
                     'collection' => CustomComponent::CallToActionFullWidthSection->value,
-                    'path' => public_path('images/stock/hero-stock.png'),
+                    'path' => public_path('images/stock/hero-our-work.png'),
                     'custom_properties' => [
                         "component_id" => "b954abbb-9b88-4479-b59e-b8322392c9bb",
                     ]
@@ -624,7 +624,7 @@ return [
                 ],
                 [
                     'collection' => CustomComponent::CallToActionFullWidthSection->value,
-                    'path' => public_path('images/stock/hero-stock.png'),
+                    'path' => public_path('images/stock/hero-our-work.png'),
                     'custom_properties' => [
                         "component_id" => "e1bd64b1-7a01-4f6b-9292-c687740ca409",
                     ]
@@ -639,7 +639,7 @@ return [
                 ],
                 [
                     'collection' => CustomComponent::Faq->value,
-                    'path' => public_path('images/stock/hero-stock.png'),
+                    'path' => public_path('images/stock/partner-faq.png'),
                 ],
             ],
             'content' => [
@@ -1005,7 +1005,7 @@ return [
                 ],
                 [
                     'collection' => CustomComponent::CallToActionFullWidthSection->value,
-                    'path' => public_path('images/stock/hero-stock.png'),
+                    'path' => public_path('images/stock/hero-our-work.png'),
                     'custom_properties' => [
                         "component_id" => "512c2004-348f-48e7-b395-80b61a60e664",
                     ]
@@ -1016,7 +1016,7 @@ return [
                 ],
                 [
                     'collection' => CustomComponent::Faq->value,
-                    'path' => public_path('images/stock/our-approach.png'),
+                    'path' => public_path('images/stock/partner-faq.png'),
                 ],
             ],
             'content' => [
@@ -1328,11 +1328,11 @@ return [
             'medias' => [
                 [
                     'collection' => CustomComponent::HeroWithBackgroundImage->value,
-                    'path' => public_path('images/stock/hero-stock.png'),
+                    'path' => public_path('images/stock/hero-stock-gray.png'),
                 ],
                 [
                     'collection' => CustomComponent::Faq->value,
-                    'path' => public_path('images/stock/key-account-faq.png'),
+                    'path' => public_path('images/stock/faq-work-with-grey.png'),
                 ],
                 [
                     'collection' => CustomComponent::SplitWithImageQuote->value,
@@ -1340,7 +1340,7 @@ return [
                 ],
                 [
                     'collection' => CustomComponent::CallToActionFullWidthSection->value,
-                    'path' => public_path('images/stock/hero-stock.png'),
+                    'path' => public_path('images/stock/hero-our-work.png'),
                     'custom_properties' => [
                         "component_id" => "f8af4192-f84f-4f3d-98a2-a45de3d49618",
                     ]
@@ -1609,15 +1609,15 @@ return [
             'medias' => [
                 [
                     'collection' => CustomComponent::HeroWithBackgroundImage->value,
-                    'path' => public_path('images/stock/work-with-us-hero.jpg'),
+                    'path' => public_path('images/stock/hero-stock.png'),
                 ],
                 [
                     'collection' => CustomComponent::Faq->value,
-                    'path' => public_path('images/stock/key-account-faq.png'),
+                    'path' => public_path('images/stock/partner-faq.png'),
                 ],
                 [
                     'collection' => CustomComponent::TwoColumnsImageFeatureGrid->value,
-                    'path' => public_path('images/stock/our-work.png'),
+                    'path' => public_path('images/stock/code-capital.png'),
                 ],
             ],
             'content' => [

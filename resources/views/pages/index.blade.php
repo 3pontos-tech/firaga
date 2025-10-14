@@ -6,7 +6,7 @@
 
 <x-layout.guest xmlns:x-slot="http://www.w3.org/1999/html">
     <x-slot:theme>
-        {{ $theme }}
+        {{ $theme->value }}
     </x-slot:theme>
 
 
