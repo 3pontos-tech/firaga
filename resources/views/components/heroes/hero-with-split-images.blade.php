@@ -29,7 +29,7 @@
         <div class="w-full relative flex flex-col gap-y-6 sm:gap-y-8 md:gap-y-10 order-1">
             <x-headline :component="$headline" />
 
-            <div class="flex flex flex-col items-center sm:flex-row sm:justify-center sm:flex-row lg:justify-start gap-4 sm:gap-x-4">
+            <div class="flex flex-col items-center sm:justify-center sm:flex-row lg:justify-start gap-4 sm:gap-x-4">
                 <x-button :icon="$cta_icon" icon-position="trailing" :href="$cta_url"
                           class="bg-brand-primary text-brand-accent p-3 sm:p-4 sm:w-auto rounded-md">
                     {{ $cta_label }}
