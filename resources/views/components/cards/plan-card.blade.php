@@ -9,19 +9,19 @@
 ])
 
 @php
-    $buttonVariant = $bestPlan ? 'secondary' : 'outlined';
+    $buttonVariant = 'outlined';
     $mainTextColor = $bestPlan ? 'text-text-light' : 'text-text-high';
 @endphp
 
-<div>
+<div class="group">
     <div
-        class="p-4 sm:p-6 rounded-t-lg {{ $bestPlan ? 'bg-brand-primary' : 'bg-elevation-03dp border border-outline-dark' }}">
+        class="p-4 sm:p-6 rounded-t-lg {{ $bestPlan ? 'bg-brand-primary/90 group-hover:bg-brand-primary' : 'bg-elevation-03dp border border-outline-light dark:border-outline-dark group-hover:bg-elevation-04dp' }}">
         <div class="flex flex-col sm:flex-row md:flex-col  sm:justify-between gap-y-3">
             <h2 class="font-semibold text-xl sm:text-2xl {{ $mainTextColor }}">{{ str($name)->title() }}</h2>
         </div>
     </div>
     <div
-        class="p-4 sm:p-6 border  border-t-0 rounded-b-lg space-y-6 sm:space-y-8 {{ $bestPlan  ? 'border-none bg-brand-primary' : 'border-outline-dark dark:bg-elevation-02dp' }}">
+        class="p-4 sm:p-6 border  border-t-0 rounded-b-lg space-y-6 sm:space-y-8  {{ $bestPlan  ? 'border-none bg-brand-primary/90 group-hover:bg-brand-primary' : 'border-outline-light dark:border-outline-dark dark:bg-elevation-02dp group-hover:bg-elevation-04dp' }}">
         <div class="flex flex-col gap-y-3">
             <span class="{{ $bestPlan ? 'text-text-light' : 'text-text-medium'  }} text-sm sm:text-base">{{ $description }}</span>
             @if (isset($note))
@@ -50,7 +50,7 @@
             <x-layout.shared.button
                 :href="$cta_url"
                 :variant="$buttonVariant"
-                class="w-full font-semibold py-3 sm:py-4 text-sm sm:text-base {{ $bestPlan  ? 'text-text-dark' : 'text-text-high border border-outline-low' }}"
+                class="w-full font-semibold py-3 sm:py-4 text-sm sm:text-base {{ $bestPlan  ? 'text-text-light border border-outline-light!' : 'text-text-high border border-outline-light dark:border-outline-dark' }}"
             >
                 {{ $cta_label }}
             </x-layout.shared.button>
