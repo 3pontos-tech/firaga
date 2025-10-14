@@ -993,7 +993,15 @@ return [
             'medias' => [
                 [
                     'collection' => CustomComponent::HeroWithSplitImages->value,
-                    'path' => public_path('images/stock/hero-stock.png'),
+                    'path' => public_path('images/stock/work-with-us-hero.jpg'),
+                ],
+                [
+                    'collection' => CustomComponent::HeroWithSplitImages->value,
+                    'path' => public_path('images/stock/work-with-us-hero.jpg'),
+                ],
+                [
+                    'collection' => CustomComponent::HeroWithSplitImages->value,
+                    'path' => public_path('images/stock/work-with-us-hero.jpg'),
                 ],
                 [
                     'collection' => CustomComponent::CallToActionFullWidthSection->value,

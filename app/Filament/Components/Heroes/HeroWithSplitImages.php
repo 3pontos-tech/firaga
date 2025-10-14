@@ -17,8 +17,11 @@ class HeroWithSplitImages extends AbstractCustomComponent
     {
         return [
             SpatieMediaLibraryFileUpload::make('hero')
+                ->multiple()
+                ->minFiles(3)
+                ->maxFiles(3)
                 ->label('Hero Image')
-                ->collection(CustomComponent::CallToActionWithImage->value)
+                ->collection(CustomComponent::HeroWithSplitImages->value)
                 ->image()
                 ->required(),
             ...HeadlineComponent::form(),
