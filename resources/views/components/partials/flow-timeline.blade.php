@@ -34,14 +34,9 @@
                     </div>
                 @endif
 
-                <x-card-v2 class="relative z-10 flex sm:flex-row max-w-[650px] p-8 space-x-4 sm:items-center border {{ $afterClasses }}">
-                    <x-slot:icon>
-                        <div class="bg-outline-dark p-4 rounded-md max-w-fit">
-                            <x-dynamic-component
-                                :component="$item['card_icon']"
-                                class="w-6 h-6"
-                            />
-                        </div>
+                <x-card-v2 :interactive="true" class="relative z-10 flex sm:flex-row max-w-[650px] p-8 space-x-4 sm:items-center border {{ $afterClasses }}">
+                    <x-slot:icon class="bg-outline-dark rounded-lg group-hover/card:bg-brand-accent h-12 w-12 sm:h-16 sm:w-16 sm:min-w-16 sm:min-h-16 flex items-center justify-center">
+                        <x-filament::icon :icon="$item['card_icon']" class="group-hover/card:text-brand-primary w-6 h-6 sm:w-8 sm:h-8" />
                     </x-slot:icon>
                     <x-slot:title class="mb-2">
                         {{ $item['card_title'] }}

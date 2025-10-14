@@ -12,7 +12,7 @@
     };
 @endphp
 
-<section class="py-12 md:py-16 border-b border-t border-outline-dark mx-auto text-text-dark bg-elevation-01dp dark:text-text-light overflow-hidden ">
+<section class="py-12 md:py-16 border-b border-t border-outline-light dark:border-outline-dark metallic:border-outline-dark mx-auto text-text-dark bg-elevation-01dp dark:text-text-light overflow-hidden ">
     <div class="mx-auto flex flex-col container gap-y-12">
         <div class="flex flex-col items-center gap-y-6">
             <x-headline :component="$headline" />

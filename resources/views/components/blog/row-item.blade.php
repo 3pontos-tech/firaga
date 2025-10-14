@@ -50,7 +50,7 @@
                         class="text-text-medium text-xs sm:text-sm line-clamp-2 group-hover:text-text-high">
                         {{ $post->excerpt }}
                     </p>
-                    <div class="h-px bg-outline-low group-hover:bg-outline-light"></div>
+                    <div class="h-px bg-outline-low group-hover:bg-outline-dark group-hover:dark:bg-outline-light"></div>
                     <div class="flex items-center gap-4">
                         <img alt="{{ $post->author->name ?? '' }}" loading="lazy" decoding="async" data-nimg="1"
                              class=" object-cover object-center rounded-full w-10 h-10 sm:w-12 sm:h-12 flex-shrink-0" style="color: transparent;"

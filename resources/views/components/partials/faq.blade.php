@@ -5,7 +5,7 @@
 ])
 <div class="container mx-auto py-6 sm:py-8 md:py-10 lg:py-14 xl:py-16">
     <div class="px-4 md:px-6">
-        <div class="flex flex-col bg-elevation-01dp border border-outline-dark rounded-xl transition lg:grid grid-cols-7 gap-8
+        <div class="flex flex-col bg-elevation-01dp border border-outline-light dark:border-outline-dark metallic:border-outline-dark rounded-xl transition lg:grid grid-cols-7 gap-8
             lg:gap-12 items-stretch">
             <div class="relative w-full h-full col-span-2">
                 <img alt="Customer support representative helping customers" loading="lazy" decoding="async"

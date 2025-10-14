@@ -4,6 +4,7 @@
 @plugin '@tailwindcss/typography';
 
 @custom-variant dark (&:where(.dark, .dark *));
+@custom-variant metallic (&:where(.metallic, .metallic *));
 
 @utility container {
     padding-inline: 16px;
@@ -540,7 +541,7 @@
         --text-high: #fdfdfd;
         --text-medium: #9c9c9c;
         --text-low: #7a7a7b;
-        --text-light: #09090a;
+        --text-light: #fdfdfd;
         --text-dark: #09090a;
         --icon-high: #fdfdfd;
         --icon-medium: #9c9c9c;

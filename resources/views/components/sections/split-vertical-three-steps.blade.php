@@ -4,7 +4,7 @@
 ])
 
 <section id="nosso-atendimento"
-         class="container mx-auto text-text-dark dark:text-text-light overflow-hidden py-8 md:py-16 lg:py-20">
+         class="container mx-auto text-white overflow-hidden py-8 md:py-16 lg:py-20">
     <div class="mx-auto lg:flex lg:items-center lg:justify-between lg:space-x-12 relative z-10">
         <div class="lg:w-1/2 mb-8 md:mb-12 lg:mb-0 space-y-6 md:space-y-8 lg:space-y-10">
             <x-headline :component="$headline"/>
@@ -23,12 +23,12 @@
                     <x-card-v2
                             :card="$card"
                             :interactive="true"
-                            text-box="flex flex-col gap-2 md:mx-4 sm:items-start sm:text-left"
+                            text-box="flex flex-col gap-2 md:mx-4 text-center sm:items-start sm:text-left"
                             class="flex flex-col gap-4 m-0! justify-center items-center
                             sm:justify-start text-center h-full sm:flex-row"
                     >
-                        <x-slot:icon class="bg-brand-primary rounded-lg group-hover/card:bg-brand-accent h-12 w-12 sm:h-16 sm:w-16 sm:min-w-16 sm:min-h-16 flex items-center justify-center">
-                            <x-filament::icon :icon="$card->icon" class="group-hover/card:text-brand-primary   w-6 h-6 sm:w-8 sm:h-8" />
+                        <x-slot:icon class="bg-outline-dark rounded-lg group-hover/card:bg-brand-accent h-12 w-12 sm:h-16 sm:w-16 sm:min-w-16 sm:min-h-16 flex items-center justify-center">
+                            <x-filament::icon :icon="$card->icon" class="group-hover/card:text-brand-primary w-6 h-6 sm:w-8 sm:h-8" />
                         </x-slot:icon>
 
                         <x-slot:title class="text-center sm:text-left">

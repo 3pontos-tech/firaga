@@ -33,7 +33,7 @@
     };
 
     // Mantemos a borda atual do v1 (strength reservado para futuro)
-    $borderClass = 'border border-outline-low';
+    $borderClass = 'border border-outline-light dark:border-outline-dark metallic:border-outline-dark';
 
     $padding = 'p-6';
     if ($density === 'compact') {
@@ -131,7 +131,7 @@
 
     {{-- Rodapé (opcional) --}}
     @isset($footer)
-        <div {{ $footer->attributes->class('mt-4 pt-4 border-t border-zinc-800/80') }}>
+        <div {{ $footer->attributes->class('mt-4 pt-4 border-t group-hover/card:border-outline-dark group-hover/card:dark:border-outline-light  border-outline-light dark:border-outline-dark') }}>
             {{ $footer }}
         </div>
     @endisset

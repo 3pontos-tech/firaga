@@ -7,7 +7,7 @@ use Carbon\Carbon;
 
 return [
     'themes' => [
-        'enabled' => true,
+        'enabled' => env('FIRAGA_THEMES_ENABLED', false),
         'available' => [
             // ... append themes when they're ready for use.
         ],
@@ -29,14 +29,14 @@ return [
                 ],
                 [
                     'collection' => CustomComponent::CallToActionFullWidthSection->value,
-                    'path' => public_path('images/stock/hero-stock.png'),
+                    'path' => public_path('images/stock/hero-our-work.png'),
                     'custom_properties' => [
                         "component_id" => "9461ce3e-893c-481d-b7d8-fc0320be353c",
                     ]
                 ],
                 [
                     'collection' => CustomComponent::CallToActionFullWidthSection->value,
-                    'path' => public_path('images/stock/hero-stock.png'),
+                    'path' => public_path('images/stock/hero-our-work.png'),
                     'custom_properties' => [
                         "component_id" => "b954abbb-9b88-4479-b59e-b8322392c9bb",
                     ]
@@ -50,7 +50,6 @@ return [
                             'badge' => [
                                 'label' => 'Invista agora com a Fire|ce',
                                 'icon' => 'firece-logo',
-                                'hasBadge' => true,
                                 'has_badge' => true,
                             ],
                             'heading' => 'Transforme suas finanças e alcance sua liberdade financeira',
@@ -106,7 +105,7 @@ return [
                                 'has_actions' => false,
                                 'buttons' => [],
                             ],
-                            'size' => null,
+                            'size' => 'lg',
                             'position' => null,
                         ],
                         'cards' => [
@@ -155,13 +154,13 @@ return [
                                 'nossa',
                                 'metodologia',
                             ],
-                            'size' => 'xl',
+                            'size' => 'lg',
                             'position' => 'center',
                             'description' => 'Transformamos a forma como as pessoas lidam com dinheiro, capacitando-as a conquistar liberdade, segurança e crescimento financeiro sustentável.',
                             'badge' => [
-                                'has_badge' => false,
-                                'icon' => null,
-                                'label' => null,
+                                'has_badge' => true,
+                                'icon' => 'firece-logo',
+                                'label' => 'Invista agora com a Fire|ce',
                             ],
                             'buttons' => [
                                 'has_actions' => false,
@@ -215,7 +214,7 @@ return [
                         'headline' => [
                             'heading' => 'Perfis e necessidades',
                             'keywords' => [],
-                            'size' => null,
+                            'size' => 'lg',
                             'position' => 'left',
                             'description' => 'Saber se você é endividado, desorganizado ou poupador faz toda a diferença: é com esse entendimento que conseguimos traçar estratégias financeiras personalizadas, que respeitam sua realidade e aceleram seus resultados.',
                             'badge' => [
@@ -625,7 +624,7 @@ return [
                 ],
                 [
                     'collection' => CustomComponent::CallToActionFullWidthSection->value,
-                    'path' => public_path('images/stock/hero-stock.png'),
+                    'path' => public_path('images/stock/hero-our-work.png'),
                     'custom_properties' => [
                         "component_id" => "e1bd64b1-7a01-4f6b-9292-c687740ca409",
                     ]
@@ -640,7 +639,7 @@ return [
                 ],
                 [
                     'collection' => CustomComponent::Faq->value,
-                    'path' => public_path('images/stock/hero-stock.png'),
+                    'path' => public_path('images/stock/partner-faq.png'),
                 ],
             ],
             'content' => [
@@ -654,7 +653,7 @@ return [
                                 "Consultoria",
                                 "exclusiva",
                             ],
-                            "size" => "lg",
+                            "size" => "3xl",
                             "position" => "center",
                             "description" => "Com uma abordagem personalizada, focamos em ajudar pessoas a organizarem suas finanças, evitarem decisões impulsivas e alocarem seu dinheiro de forma estratégica e com diversidade protegendo o patrimônio. O propósito da Code é transformar a relação com o dinheiro trazendo mais controle, confiança e liberdade para o futuro.",
                             "badge" => [
@@ -680,7 +679,6 @@ return [
                         ],
                     ],
                 ],
-
                 "69742386-e554-4c4e-983e-1ec85f62eb6b" => [
                     "type" => "flow-timeline",
                     "data" => [
@@ -722,7 +720,6 @@ return [
                         ],
                     ],
                 ],
-
                 "d98fd0ad-377b-42b1-9cea-3d9e1c39f936" => [
                     "type" => "video-testimonial",
                     "data" => [
@@ -775,7 +772,6 @@ return [
                         "cta_url" => null,
                     ],
                 ],
-
                 "b9ecdd05-1e3c-49d7-b85c-f206eec36de3" => [
                     "type" => "call-to-action-section",
                     "data" => [
@@ -788,7 +784,7 @@ return [
                                 "mercado",
                                 "financeiro",
                             ],
-                            "size" => "lg",
+                            "size" => "3xl",
                             "position" => "left",
                             "description" => null,
                             "badge" => [
@@ -814,12 +810,11 @@ return [
                         ],
                     ],
                 ],
-
                 "33f830c9-4488-4bb8-822d-d99469ec1cb6" => [
                     "type" => "two-columns-image-feature-grid",
                     "data" => [
                         'headline' => [
-                            'size' => 'md',
+                            'size' => 'lg',
                             'position' => 'left',
                             'heading' => 'Construído por profissionais de Finanças e Tecnologia',
                             'description' => 'Na nossa consultoria, entendemos que cada cliente é único. Por isso,
@@ -866,7 +861,6 @@ return [
                         ],
                     ],
                 ],
-
                 "d5cace60-6bc7-4d76-99b8-d0968cdf9346" => [
                     "type" => "call-to-action-with-image",
                     "data" => [
@@ -894,7 +888,6 @@ return [
                         ],
                     ],
                 ],
-
                 "ce234a8a-2164-4824-9d35-f284992e1c0c" => [
                     "type" => "testimonials",
                     "data" => [
@@ -922,7 +915,6 @@ return [
                         ],
                     ],
                 ],
-
                 "c16601fb-61ef-4212-a4f3-720996a9b3a6" => [
                     "type" => "faq",
                     "data" => [
@@ -978,7 +970,6 @@ return [
                         ]
                     ],
                 ],
-
                 "ba6a9018-7c61-44d2-a9f8-d62cb49ffb3f" => [
                     "type" => "call-to-action-with-icon",
                     "data" => [
@@ -1001,12 +992,20 @@ return [
             'slug' => 'parcerias',
             'medias' => [
                 [
-                    'collection' => CustomComponent::CallToActionWithImage->value,
-                    'path' => public_path('images/stock/hero-stock.png'),
+                    'collection' => CustomComponent::HeroWithSplitImages->value,
+                    'path' => public_path('images/stock/work-with-us-hero.jpg'),
+                ],
+                [
+                    'collection' => CustomComponent::HeroWithSplitImages->value,
+                    'path' => public_path('images/stock/work-with-us-hero.jpg'),
+                ],
+                [
+                    'collection' => CustomComponent::HeroWithSplitImages->value,
+                    'path' => public_path('images/stock/work-with-us-hero.jpg'),
                 ],
                 [
                     'collection' => CustomComponent::CallToActionFullWidthSection->value,
-                    'path' => public_path('images/stock/hero-stock.png'),
+                    'path' => public_path('images/stock/hero-our-work.png'),
                     'custom_properties' => [
                         "component_id" => "512c2004-348f-48e7-b395-80b61a60e664",
                     ]
@@ -1017,17 +1016,17 @@ return [
                 ],
                 [
                     'collection' => CustomComponent::Faq->value,
-                    'path' => public_path('images/stock/our-approach.png'),
+                    'path' => public_path('images/stock/partner-faq.png'),
                 ],
             ],
             'content' => [
                 "9cbb654a-da87-4f2a-8387-be2473a1477a" => [
-                    "type" => "call-to-action-with-image",
+                    "type" => "hero-with-split-images",
                     "data" => [
                         "headline" => [
                             "heading" => "A transformação se constrói com boas alianças",
                             "keywords" => [],
-                            "size" => "lg",
+                            "size" => "3xl",
                             "position" => "left",
                             "description" => "Seja através de projetos conjuntos, campanhas, educação corporativa ou desenvolvimento de produtos financeiros sob medida, nossas parcerias são desenhadas com estratégia, colaboração e propósito.",
                             "badge" => [
@@ -1048,7 +1047,6 @@ return [
                         ],
                     ],
                 ],
-
                 "e81d1fe4-5c72-4a29-ada6-121651144f1c" => [
                     "type" => "split-with-horizontal-steps",
                     "data" => [
@@ -1109,7 +1107,6 @@ return [
                         ],
                     ],
                 ],
-
                 "cf4e36f5-f7d7-4a1c-9a25-4d748a0fda06" => [
                     "type" => "call-to-action-section",
                     "data" => [
@@ -1122,7 +1119,7 @@ return [
                                 "bem-estar",
                                 "real",
                             ],
-                            "size" => "lg",
+                            "size" => "3xl",
                             "position" => "center",
                             "description" => null,
                             "badge" => [
@@ -1148,7 +1145,6 @@ return [
                         ],
                     ],
                 ],
-
                 "a011c44c-054a-4e24-a24a-7b0df1b501b0" => [
                     "type" => "info-stats",
                     "data" => [
@@ -1198,12 +1194,11 @@ return [
                         ],
                     ],
                 ],
-
                 "403198d1-74b0-4a54-85e6-732f658b5c73" => [
                     "type" => "two-columns-image-feature-grid",
                     "data" => [
                         'headline' => [
-                            'size' => 'md',
+                            'size' => 'lg',
                             'position' => 'left',
                             'heading' => 'Conheça mais sobre a Fire|ce',
                             'description' => 'A Fire|ce ajuda empresas a promoverem alta performance por meio da
@@ -1249,14 +1244,13 @@ return [
                         ],
                     ],
                 ],
-
                 "7152d7e2-4250-425a-802f-088e88d26bc0" => [
                     "type" => "hero-with-title-only",
                     "data" => [
                         "headline" => [
                             "heading" => "Não ofereça só um benefício. Ofereça um plano completo de suporte financeiro com a Fire|ce ao seu lado.",
                             "keywords" => [],
-                            "size" => "lg",
+                            "size" => "3xl",
                             "position" => "center",
                             "description" => "Você tem um projeto, canal, empresa ou ideia que pode crescer ainda mais com um parceiro estratégico ao lado? Vamos conversar. Juntos, podemos criar algo que realmente transforma.",
                             "badge" => [
@@ -1279,7 +1273,6 @@ return [
                         ],
                     ],
                 ],
-
                 "6312bc8c-27ed-4485-b0f2-8f35d0339621" => [
                     "type" => "faq",
                     "data" => [
@@ -1311,7 +1304,6 @@ return [
                         ],
                     ],
                 ],
-
                 "269a165f-0bd0-419e-a548-745aae7338bf" => [
                     "type" => "call-to-action-with-icon",
                     "data" => [
@@ -1336,11 +1328,11 @@ return [
             'medias' => [
                 [
                     'collection' => CustomComponent::HeroWithBackgroundImage->value,
-                    'path' => public_path('images/stock/hero-stock.png'),
+                    'path' => public_path('images/stock/hero-stock-gray.png'),
                 ],
                 [
                     'collection' => CustomComponent::Faq->value,
-                    'path' => public_path('images/stock/key-account-faq.png'),
+                    'path' => public_path('images/stock/faq-work-with-grey.png'),
                 ],
                 [
                     'collection' => CustomComponent::SplitWithImageQuote->value,
@@ -1348,7 +1340,7 @@ return [
                 ],
                 [
                     'collection' => CustomComponent::CallToActionFullWidthSection->value,
-                    'path' => public_path('images/stock/hero-stock.png'),
+                    'path' => public_path('images/stock/hero-our-work.png'),
                     'custom_properties' => [
                         "component_id" => "f8af4192-f84f-4f3d-98a2-a45de3d49618",
                     ]
@@ -1362,7 +1354,7 @@ return [
                         "headline" => [
                             "heading" => "Mais do que um serviço financeiro",
                             "keywords" => [],
-                            "size" => "lg",
+                            "size" => "3xl",
                             "position" => "left",
                             "description" => "O Key Account é o modelo de atendimento premium da Fire|ce, pensado para clientes que exigem um nível mais alto de personalização, estratégia e confidencialidade.",
                             "badge" => [
@@ -1499,7 +1491,7 @@ return [
                         "headline" => [
                             "heading" => "Agora é hora de fazer seu patrimônio trabalhar por você, com inteligência e visão de futuro.",
                             "keywords" => [],
-                            "size" => "lg",
+                            "size" => "3xl",
                             "position" => "center",
                             "description" => null,
                             "badge" => [
@@ -1617,15 +1609,15 @@ return [
             'medias' => [
                 [
                     'collection' => CustomComponent::HeroWithBackgroundImage->value,
-                    'path' => public_path('images/stock/work-with-us-hero.jpg'),
+                    'path' => public_path('images/stock/hero-stock.png'),
                 ],
                 [
                     'collection' => CustomComponent::Faq->value,
-                    'path' => public_path('images/stock/key-account-faq.png'),
+                    'path' => public_path('images/stock/partner-faq.png'),
                 ],
                 [
                     'collection' => CustomComponent::TwoColumnsImageFeatureGrid->value,
-                    'path' => public_path('images/stock/our-work.png'),
+                    'path' => public_path('images/stock/code-capital.png'),
                 ],
             ],
             'content' => [
@@ -1636,7 +1628,7 @@ return [
                         "headline" => [
                             "heading" => "Trabalhe conosco",
                             "keywords" => [],
-                            "size" => "lg",
+                            "size" => "3xl",
                             "position" => "center",
                             "description" => "Trabalhar na Fire|ce é transformar vidas todos os dias, começando pela sua.",
                             "badge" => [
@@ -1711,7 +1703,7 @@ return [
                     "type" => "two-columns-image-feature-grid",
                     "data" => [
                         'headline' => [
-                            'size' => 'md',
+                            'size' => 'lg',
                             'position' => 'left',
                             'heading' => 'Conheça mais sobre a Fire|ce',
                             'description' => 'A Fire|ce ajuda empresas a promoverem alta performance por meio da
@@ -1833,7 +1825,7 @@ return [
                         'headline' => [
                             'heading' => 'Conteúdo que transforma',
                             'keywords' => [],
-                            'size' => '2xl',
+                            'size' => '3xl',
                             'position' => 'center',
                             'description' => 'Transformamos a forma como as pessoas lidam com dinheiro, capacitando-as a conquistar liberdade, segurança e crescimento financeiro sustentável.',
                             'badge' => [
@@ -1863,7 +1855,7 @@ return [
                                 'e',
                                 'precisão',
                             ],
-                            'size' => 'md',
+                            'size' => 'lg',
                             'position' => 'left',
                             'description' => 'Transformamos a forma como as pessoas lidam com dinheiro, capacitando-as a conquistar liberdade, segurança e crescimento financeiro sustentável.',
                             'badge' => [

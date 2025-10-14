@@ -51,8 +51,8 @@
             'p' => 'text-sm sm:text-base md:text-lg'
         ],
         'lg' => [
-            'h' => 'text-2xl sm:text-3xl md:text-4xl lg:text-5xl',
-            'p' => 'text-base md:text-lg lg:text-xl'
+            'h' => 'text-lg sm:text-xl md:text-2xl lg:text-3xl',
+            'p' => 'text-sm md:text-md lg:text-base'
         ],
         'xl' => [
             'h' => 'text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl',
@@ -64,7 +64,7 @@
         ],
         '3xl' => [
             'h' => 'text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl',
-            'p' => 'text-lg md:text-xl lg:text-2xl xl:text-3xl'
+            'p' => 'text-base md:text-lg lg:text-xl xl:text-2xl'
         ],
         '4xl' => [
             'h' => 'text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl',
@@ -92,7 +92,7 @@
 
     @isset($headline)
 
-        <h1 {{ $headline->attributes->class("text-text-high font-bold drop-shadow-lg leading-tight mb-2 sm:mb-4 ") }}>
+        <h1 {{ $headline->attributes->class("text-text-high font-bold drop-shadow-lg leading-tight mb-2 sm:mb-4") }}>
             {{ $component->headline ?? $headline }}
         </h1>
     @endisset
