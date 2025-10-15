@@ -4,7 +4,9 @@
     'quote',
     'cta_url',
     'cta_label',
+    'badge',
     'image_position',
+    'start_description' => '',
     'end_description' => '',
 ])
 
@@ -19,7 +21,7 @@
     <div class="container mx-auto">
         <div class="flex flex-col lg:flex-row gap-8 lg:gap-12 xl:gap-16">
             <div class="w-full lg:w-1/2 xl:w-[40%] relative {{ $imagePos }}">
-                <div class="hidden lg:block h-full relative">
+                <div class="block h-full mb-16 sm:mb-20 lg:mb-0 relative">
                     <img
                         src="{{ $renderable?->getFirstMediaUrl(App\Enums\CustomComponent::SplitWithImageQuote->value) ?? asset('images/stock/our-work.png') }}"
                         alt="Our Work"
@@ -35,29 +37,35 @@
                 </div>
             </div>
             <div class="w-full lg:w-1/2 xl:w-[55%] flex flex-col gap-y-4 sm:gap-y-6 lg:gap-y-8 justify-center {{ $contentPos }}">
-                <div class="space-y-4 sm:space-y-6 lg:space-y-8">
-                    <div class="flex flex-col items-center justify-center space-y-6 text-center">
-                        <x-headline class="lg:text-start" :component="$headline" />
+                <div class="space-y-4 sm:space-y-6">
+                    <div class="flex flex-col items-center justify-center space-y-6">
+                        <x-headline class="text-start" :component="$headline" />
                     </div>
-                    <div class="grid grid-cols-1 sm:grid-cols-1 lg:grid-cols-2 gap-8 w-full">
-                        @foreach($insights as $insight)
-                            <x-card-v2
-                                :interactive="true"
-                                text-align="items-center text-center sm:items-start sm:text-left"
-                                class="flex h-full sm:flex-row lg:flex-col gap-4 items-center md:items-start"
-                            >
-                                <x-slot:icon class="bg-brand-primary p-4 rounded-lg group-hover/card:bg-brand-accent group-hover/card:text-brand-accent h-12 w-12 sm:h-16 sm:w-16 flex items-center justify-center">
-                                    <x-filament::icon :icon="$insight['icon']" class="group-hover/card:text-brand-primary w-6 h-6 sm:w-8 sm:h-8" />
-                                </x-slot:icon>
-                                <x-slot:title class="mb-2">
-                                    {{ $insight['title'] }}
-                                </x-slot:title>
-                                <x-slot:description>
-                                    {{ $insight['description'] }}
-                                </x-slot:description>
-                            </x-card-v2>
-                        @endforeach
-                    </div>
+
+                    @if(!empty($badge))
+                        <h3 class="text-text-high text-lg sm:text-xl md:text-2xl lg:text-3xl leading-relaxed font-bold">
+                            {{ $badge }}
+                        </h3>
+                    @endif
+
+                    @if(!empty($start_description))
+                        <p class="text-text-medium text-sm sm:text-base lg:text-lg leading-relaxed">
+                            {{ $start_description }}
+                        </p>
+                    @endif
+
+                    @if($insights)
+                        <div class="flex gap-6">
+                            @foreach($insights as $insight)
+                                <div class="flex gap-2">
+                                    <x-filament::icon :icon="$insight['icon']" class="w-6 h-6 text-text-medium" />
+                                    <p class="text-text-high text-sm sm:text-base lg:text-lg leading-relaxed">
+                                        {{ $insight['title'] }}
+                                    </p>
+                                </div>
+                            @endforeach
+                        </div>
+                    @endif
 
                     @if(!empty($end_description))
                         <p class="text-text-medium text-sm sm:text-base lg:text-lg leading-relaxed">
