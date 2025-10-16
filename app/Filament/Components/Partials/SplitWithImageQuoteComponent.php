@@ -36,9 +36,17 @@ class SplitWithImageQuoteComponent extends AbstractCustomComponent
                 ->default('left')
                 ->required(),
 
+            Textarea::make('quote')
+                ->label('Quote')
+                ->required(),
+
             TextInput::make('badge')
                 ->label('Badge')
                 ->required(),
+
+            Textarea::make('start_description')
+                ->label('Start Description')
+                ->nullable(),
 
             Repeater::make('insights')
                 ->label('Insights')
@@ -47,13 +55,7 @@ class SplitWithImageQuoteComponent extends AbstractCustomComponent
                         ->required(),
                     TextInput::make('title')
                         ->required(),
-                    TextInput::make('description')
-                        ->label('Description')
-                        ->required(),
                 ]),
-            Textarea::make('quote')
-                ->label('Quote')
-                ->required(),
 
             Textarea::make('end_description')
                 ->label('End Description')
@@ -80,6 +82,8 @@ class SplitWithImageQuoteComponent extends AbstractCustomComponent
             'headline' => HeadlineComponent::make($data['headline']),
             'insights' => $data['insights'],
             'quote' => $data['quote'],
+            'start_description' => $data['start_description'] ?? '',
+            'end_description' => $data['end_description'] ?? '',
             'cta_label' => $data['cta_label'] ?? '',
             'cta_url' => $data['cta_url'] ?? '',
         ];

@@ -1447,7 +1447,7 @@ return [
                         ],
                     ],
                 ],
-                "078af3b1-207f-4bb5-a070-ac07e3a31a47" => [
+                "05dd01bd-4d94-427c-9cb7-8c55bb1febb3" => [
                     "type" => "split-with-image-quote",
                     "data" => [
                         "headline" => [
@@ -1467,21 +1467,30 @@ return [
                             ],
                         ],
                         "image_position" => "right",
-                        "badge" => "Vamos construir o próximo nível da sua jornada financeira com o Key Account da Fire|ce.",
+                        "badge" => "Por que optar pelo Key Account?",
                         "insights" => [
-                            "f8dcd330-b4f5-45fa-beb8-f4ce6e0c0561" => [
+                            "ea8718cc-3e6e-4a78-b899-4721a59da1e8" => [
                                 "icon" => "heroicon-c-check",
                                 "title" => "Inteligência",
                                 "description" => "Mais do que um serviço financeiro, o Key Account é uma experiência de parceria contínua. Analisamos profundamente sua vida financeira, cruzamos dados patrimoniais e familiares, entendemos seus objetivos de longo prazo e criamos um plano sob medida que evolui com você.",
                             ],
+                            "bcf24544-a5d0-45dd-9d67-4f5ec3a03388" => [
+                                "icon" => "heroicon-m-check",
+                                "title" => "Estratégia",
+                            ],
+                            "95ddb608-a057-4308-847c-25d522656583" => [
+                                "icon" => "heroicon-m-check",
+                                "title" => "Resultado",
+                            ],
                         ],
                         "quote" => "Vamos construir o próximo nível da sua jornada financeira com o Key Account da Fire|ce.",
-                        "end_description" => null,
-                        "cta_label" => null,
-                        "cta_url" => null,
+                        "end_description" => "Acompanhamos cada tomada de decisão importante, alertamos sobre riscos e oportunidades e adaptamos a estratégia conforme sua realidade muda. O cliente Key Account não é um número: é um relacionamento que atravessa fases, gera confiança e entrega resultados consistentes.",
+                        "cta_label" => "Agende uma análise",
+                        "cta_url" => "https://firece.com",
                         "hero" => [
-                            "9812d300-29e5-4565-bd8e-add8eec15b09" => "9812d300-29e5-4565-bd8e-add8eec15b09",
+                            "c0762479-79d6-4a90-8cb9-a1811462953d" => "c0762479-79d6-4a90-8cb9-a1811462953d",
                         ],
+                        "start_description" => "Mais do que um serviço financeiro, o Key Account é uma experiência de parceria contínua. Analisamos profundamente sua vida financeira, cruzamos dados patrimoniais e familiares, entendemos seus objetivos de longo prazo e criamos um plano sob medida que evolui com você.",
                     ],
                 ],
                 "58a9cda0-107b-4638-a4dd-3dd77d45e933" => [
