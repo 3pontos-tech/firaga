@@ -16,8 +16,8 @@
             <div class="w-full max-w-[90rem] mx-auto px-3 md:px-4">
                 <div class="relative w-full aspect-video max-w-lg sm:max-w-2xl md:max-w-5xl lg:max-w-none mx-auto">
                     <video id="firece-video" class="w-full h-full object-cover rounded-lg md:rounded-xl lg:rounded-2xl shadow-2xl" muted loop playsinline>
-                        <source src="{{ asset('video/firece_video.webm') }}" type="video/webm">
                         <source src="{{ asset('video/firece_video.mp4') }}" type="video/mp4">
+                        <source src="{{ asset('video/firece_video.webm') }}" type="video/webm">
                         Your browser does not support the video tag.
                     </video>
                     <button
@@ -44,12 +44,19 @@
     function playVideo() {
         const video = document.getElementById('firece-video');
         const playButton = document.getElementById('play-button');
+
         if (video && playButton) {
+            video.play();
+
+            video.controls = true;
 
             playButton.style.display = 'none';
+
             const showPlayButton = () => {
                 playButton.style.display = 'flex';
+                video.controls = false;
             };
+
             video.addEventListener('pause', showPlayButton);
             video.addEventListener('ended', showPlayButton);
         }
