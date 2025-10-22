@@ -43,7 +43,7 @@
                                 <x-slot:description class="line-clamp-5 overflow-hidden max-h-24 transition-all duration-500 ease-in-out">
                                     {{ $testimonial->comment }}
                                 </x-slot:description>
-                                <x-slot:footer class="lg:flex justify-between gap-2">
+                                <x-slot:footer class="lg:flex mt-auto justify-between gap-2">
                                     <div class="flex">
                                         <x-heroicon-c-star class="w-4 h-4 sm:w-5 sm:h-5 group-hover/card:text-brand-accent text-amber-400 flex-shrink-0 mt-0.5" />
                                         <x-heroicon-c-star class="w-4 h-4 sm:w-5 sm:h-5 group-hover/card:text-brand-accent text-amber-400 flex-shrink-0 mt-0.5" />

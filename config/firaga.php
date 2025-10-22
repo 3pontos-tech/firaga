@@ -58,20 +58,23 @@ return [
                             'actions' => [
                                 [
                                     'label' => 'Agende uma Análise',
-                                    'url' => 'https://firece.com.br',
+                                    'url' => 'https://api.whatsapp.com/send/?phone=5511987201303&text=Visitei+o+site+da+Fire%7Cce+e+quero+mais+informa%C3%A7%C3%B5es&type=phone_number&app_absent=0',
                                     'target' => '_blank',
                                 ],
                             ],
                             'keywords' => [
-                                'Transforme',
+                                'e',
                                 'alcance',
+                                'sua',
+                                'liberdade',
+                                'financeira'
                             ],
                             'buttons' => [
                                 'has_actions' => true,
                                 'buttons' => [
                                     'b24de348-34d0-4966-9151-a2bf2555a696' => [
                                         'label' => 'Começar meu planejamento',
-                                        'url' => 'https =>//firece.com.br',
+                                        'url' => 'https://api.whatsapp.com/send/?phone=5511987201303&text=Visitei+o+site+da+Fire%7Cce+e+quero+mais+informa%C3%A7%C3%B5es&type=phone_number&app_absent=0',
                                         'icon' => 'heroicon-c-chevron-right',
                                         'icon_position' => 'trailing',
                                         'target' => '_blank',
@@ -160,7 +163,7 @@ return [
                             'badge' => [
                                 'has_badge' => true,
                                 'icon' => 'firece-logo',
-                                'label' => 'Invista agora com a Fire|ce',
+                                'label' => 'Nosso trabalho',
                             ],
                             'buttons' => [
                                 'has_actions' => false,
@@ -200,7 +203,7 @@ return [
                         "buttons" => [
                             "ad1b59a6-fbb4-492b-b2e4-d3e7dff7713d" => [
                                 "label" => "Agende uma análise",
-                                "url" => "https://firece.com",
+                                "url" => "https://api.whatsapp.com/send/?phone=5511987201303&text=Visitei+o+site+da+Fire%7Cce+e+quero+mais+informa%C3%A7%C3%B5es&type=phone_number&app_absent=0",
                                 "icon" => "heroicon-c-chevron-right",
                                 "icon_position" => "trailing",
                                 "target" => "_blank",
@@ -220,14 +223,14 @@ return [
                             'badge' => [
                                 'has_badge' => true,
                                 'icon' => 'firece-logo',
-                                'label' => 'Invista agora com a Fire|ce',
+                                'label' => 'Escolha a Fire|ce',
                             ],
                             'buttons' => [
                                 'has_actions' => true,
                                 'buttons' => [
                                     'da8e78cb-ab9b-44cd-9623-4555547a9999' => [
                                         'label' => 'Quero começar agora',
-                                        'url' => 'https://firece.com',
+                                        'url' => 'https://api.whatsapp.com/send/?phone=5511987201303&text=Visitei+o+site+da+Fire%7Cce+e+quero+mais+informa%C3%A7%C3%B5es&type=phone_number&app_absent=0',
                                         'icon' => 'heroicon-c-chevron-right',
                                         'icon_position' => 'trailing',
                                         'target' => '_blank',
@@ -290,7 +293,7 @@ return [
                                 'buttons' => [
                                     '1160ecf4-2111-471c-a9b8-b63ede512bec' => [
                                         'label' => 'Agendar uma análise',
-                                        'url' => 'https://firece.com',
+                                        'url' => 'https://api.whatsapp.com/send/?phone=5511987201303&text=Visitei+o+site+da+Fire%7Cce+e+quero+mais+informa%C3%A7%C3%B5es&type=phone_number&app_absent=0',
                                         'icon' => 'heroicon-c-chevron-right',
                                         'icon_position' => 'trailing',
                                         'target' => '_blank',
@@ -303,7 +306,7 @@ return [
                         ],
                     ],
                 ],
-                'ebd8e66e-3b01-4048-bc32-c0e02396169e' => [
+                'd1febff4-dec0-4c71-a97b-d7b19ae264a0' => [
                     'type' => 'horizontal-scroller-highlight',
                     'data' => [
                         'headline' => [
@@ -315,58 +318,98 @@ return [
                             'badge' => [
                                 'has_badge' => true,
                                 'icon' => 'firece-logo',
-                                'label' => 'Invista agora com a Fire|ce',
+                                'label' => 'Nossas especialidades'
                             ],
                             'buttons' => [
                                 'has_actions' => false,
-                                'buttons' => [],
-                            ],
+                                'buttons' => []
+                            ]
                         ],
                         'cards' => [
                             'has_cards' => true,
                             'grid_columns' => '4',
                             'card_type' => 'cta',
                             'items' => [
-                                'b0da86fd-af68-41e7-902d-0c4db7e15035' => [
+                                '5a6201c5-271f-4120-9286-7faccdc4daa7' => [
                                     'title' => 'Planejamento',
-                                    'description' => 'Diagnóstico completo e plano financeiro...',
+                                    'description' => 'Diagnóstico e plano financeiro...',
                                     'icon' => 'lucide-hand-coins',
-                                    'has_actions' => false,
-                                    'buttons' => [],
+                                    'has_actions' => true,
+                                    'buttons' => [
+                                        '897b80fb-dbd1-440a-a61d-3c4edbaea7c0' => [
+                                            'label' => 'Visitar',
+                                            'url' => 'https://api.whatsapp.com/send/?phone=5511987201303&text=Visitei+o+site+da+Fire%7Cce+e+quero+mais+informa%C3%A7%C3%B5es&type=phone_number&app_absent=0',
+                                            'icon' => 'heroicon-c-chevron-right',
+                                            'icon_position' => 'trailing',
+                                            'target' => '_blank'
+                                        ]
+                                    ]
                                 ],
-                                'dad65811-a269-47e1-84cc-67aeec7b630d' => [
+                                '691e215c-a90b-440c-8249-a819466c01d4' => [
                                     'title' => 'Key Account',
                                     'description' => 'Consultoria exclusiva e contínua para quem bus...',
                                     'icon' => 'lucide-hand-coins',
-                                    'has_actions' => false,
-                                    'buttons' => [],
+                                    'has_actions' => true,
+                                    'buttons' => [
+                                        '85cfbdf7-3a5b-4373-9d7e-6a6952c6d430' => [
+                                            'label' => 'Visitar',
+                                            'url' => 'https://firece.com.br/key-account',
+                                            'icon' => 'heroicon-c-chevron-right',
+                                            'icon_position' => 'trailing',
+                                            'target' => '_blank'
+                                        ]
+                                    ]
                                 ],
-                                '41ad5aa3-a2f4-4e9c-9d1d-1cefc2e7c698' => [
+                                'a9baf570-6110-4953-b1eb-5e7dd7fbc711' => [
                                     'title' => 'Educa Fire',
                                     'description' => 'Consultoria exclusiva e contínua para quem bus...',
                                     'icon' => 'lucide-hand-coins',
-                                    'has_actions' => false,
-                                    'buttons' => [],
+                                    'has_actions' => true,
+                                    'buttons' => [
+                                        'dc945fa6-b475-4cd1-ab7c-a9374993aeca' => [
+                                            'label' => 'Visitar',
+                                            'url' => 'https://www.educafire.com.br/workshop',
+                                            'icon' => 'heroicon-c-chevron-right',
+                                            'icon_position' => 'trailing',
+                                            'target' => '_blank'
+                                        ]
+                                    ]
                                 ],
-                                '79fe06d2-f3ab-4892-a6b0-56c45b758f18' => [
+                                'f51510ee-b86f-43e2-a47f-511c21d8e0dd' => [
                                     'title' => 'Parcerias',
                                     'description' => 'Soluções integradas com especialistas e marcas...',
                                     'icon' => 'lucide-hand-coins',
-                                    'has_actions' => false,
-                                    'buttons' => [],
+                                    'has_actions' => true,
+                                    'buttons' => [
+                                        '1b9df2ec-2ffe-41ae-9dff-3e560df2a00f' => [
+                                            'label' => 'Visitar',
+                                            'url' => 'https://firece.com/parcerias',
+                                            'icon' => 'heroicon-c-chevron-right',
+                                            'icon_position' => 'trailing',
+                                            'target' => '_blank'
+                                        ]
+                                    ]
                                 ],
-                                '02310782-4e08-40f8-9a7d-2d59b866b3ee' => [
+                                '01e95070-4b1f-4698-b51d-20b13eb154df' => [
                                     'title' => 'Code Capital',
                                     'description' => 'Consultoria financeira especializada para...',
                                     'icon' => 'lucide-hand-coins',
-                                    'has_actions' => false,
-                                    'buttons' => [],
-                                ],
-                            ],
-                        ],
-                    ],
+                                    'has_actions' => true,
+                                    'buttons' => [
+                                        'cd559ef3-f760-442c-9803-02172f594a52' => [
+                                            'label' => 'Visitar',
+                                            'url' => 'https://firece.com/code-capital',
+                                            'icon' => 'heroicon-c-chevron-right',
+                                            'icon_position' => 'trailing',
+                                            'target' => '_blank'
+                                        ]
+                                    ]
+                                ]
+                            ]
+                        ]
+                    ]
                 ],
-                '36ef206b-bab9-4963-ba09-a8e433267c88' => [
+                'cda8ebd2-9702-40ac-905d-65517b62342c' => [
                     'type' => 'plans',
                     'data' => [
                         'headline' => [
@@ -378,118 +421,118 @@ return [
                             'badge' => [
                                 'has_badge' => true,
                                 'icon' => 'firece-logo',
-                                'label' => 'Invista agora com a Fire|ce',
+                                'label' => 'Nossos Planos'
                             ],
                             'buttons' => [
                                 'has_actions' => false,
-                                'buttons' => [],
-                            ],
+                                'buttons' => []
+                            ]
                         ],
                         'plans' => [
-                            '409695ac-76d8-4a77-b1da-c82c69934cf1' => [
+                            'ded9cf98-4668-4207-9977-5d32b4227da2' => [
                                 'best_plan' => '0',
                                 'name' => 'gold',
                                 'description' => 'Para quem está começando a organizar sua vida finaceira e deseja mais tranquilidade.',
                                 'note' => null,
                                 'benefits' => [
-                                    'fe93c94e-3f19-49b4-9d71-7c3cd6a5c758' => [
+                                    'f6b8a981-ef18-427b-a17d-06e7513e1fcb' => [
                                         'is_highlighted' => true,
-                                        'value' => 'Organização Anual',
+                                        'value' => 'Organização Anual'
                                     ],
-                                    'f0a24929-a9ed-4fcf-88be-09ed3f58b1b1' => [
+                                    'cf603e94-b10d-4560-a3f2-1574a5017e8d' => [
                                         'is_highlighted' => true,
-                                        'value' => 'Organização Anual',
+                                        'value' => 'Organização Anual'
                                     ],
-                                    '5c9c00e3-adb4-417d-a446-f3869c48a482' => [
+                                    'aab9f543-e842-4245-982e-db787d4b1e90' => [
                                         'is_highlighted' => false,
-                                        'value' => 'Mapa financeiro',
+                                        'value' => 'Mapa financeiro'
                                     ],
-                                    '7acc768a-ed2b-4493-bc43-b057294a2bd6' => [
+                                    '731f6734-92d1-417f-bcfb-e6bf0141c23d' => [
                                         'is_highlighted' => false,
-                                        'value' => 'Construção de Reserva',
+                                        'value' => 'Construção de Reserva'
                                     ],
-                                    '0eaf3c5a-7fcb-4b7c-a883-b91e2b78f198' => [
+                                    '0d5f74d9-3b31-4885-b846-84571d52a5ca' => [
                                         'is_highlighted' => false,
-                                        'value' => 'Planilha de fluxo de caixa',
+                                        'value' => 'Planilha de fluxo de caixa'
                                     ],
-                                    '17c21020-85f8-4163-9ecc-a07da4c3caee' => [
+                                    'e18a6990-f256-4fd5-ab9a-64b6d5345cd5' => [
                                         'is_highlighted' => false,
-                                        'value' => 'Planilha de patrimônio',
-                                    ],
+                                        'value' => 'Planilha de patrimônio'
+                                    ]
                                 ],
                                 'cta_label' => 'Saiba Mais',
-                                'cta_url' => 'https://firece.com',
+                                'cta_url' => 'https://api.whatsapp.com/send/?phone=5511987201303&text=Visitei+o+site+da+Fire%7Cce+e+quero+mais+informa%C3%A7%C3%B5es&type=phone_number&app_absent=0'
                             ],
-                            '1ade6802-bcf5-4f39-9b52-1bbd93dabfae' => [
+                            'decfdcff-e27a-4371-bfd3-fc9f9f5b016e' => [
                                 'best_plan' => '0',
                                 'name' => 'platinum',
                                 'description' => 'Para quem está começando a organizar sua vida finaceira e deseja mais tranquilidade.',
                                 'note' => null,
                                 'benefits' => [
-                                    '55014493-c342-4073-88fb-1590084a82d7' => [
+                                    '8cd4eabf-5461-4106-b5d2-017109757ad6' => [
                                         'is_highlighted' => true,
-                                        'value' => 'Organização Anual',
+                                        'value' => 'Organização Anual'
                                     ],
-                                    '697bb2ed-70a7-49b9-9e97-a41beb2336c2' => [
+                                    '45769abe-82ea-4d9f-ac7f-b074dc7a7559' => [
                                         'is_highlighted' => true,
-                                        'value' => 'Organização Anual',
+                                        'value' => 'Organização Anual'
                                     ],
-                                    '3f177e2e-3739-4b6b-98d6-8e10b1f85f84' => [
+                                    '36753588-02d4-4683-816e-6da72e2dcd1a' => [
                                         'is_highlighted' => false,
-                                        'value' => 'Mapa financeiro',
+                                        'value' => 'Mapa financeiro'
                                     ],
-                                    '4a9d1f1b-2553-4f88-9b33-05060a494299' => [
+                                    '21c3aef1-7fee-44ec-a1d3-1a4e08fafaa1' => [
                                         'is_highlighted' => false,
-                                        'value' => 'Construção de Reserva',
+                                        'value' => 'Construção de Reserva'
                                     ],
-                                    'd578ccdc-bd42-4805-a561-8cd3d5065654' => [
+                                    '1ef8c9f1-a316-429a-9b45-fde55bbf1ced' => [
                                         'is_highlighted' => false,
-                                        'value' => 'Planilha de fluxo de caixa',
+                                        'value' => 'Planilha de fluxo de caixa'
                                     ],
-                                    'a3d71332-8929-4bbb-8f66-c1334823d17d' => [
+                                    'b97fd296-3651-4557-b1dc-f55f4405fcb9' => [
                                         'is_highlighted' => false,
-                                        'value' => 'Planilha de patrimônio',
-                                    ],
+                                        'value' => 'Planilha de patrimônio'
+                                    ]
                                 ],
                                 'cta_label' => 'Saiba Mais',
-                                'cta_url' => 'https://firece.com',
+                                'cta_url' => 'https://api.whatsapp.com/send/?phone=5511987201303&text=Visitei+o+site+da+Fire%7Cce+e+quero+mais+informa%C3%A7%C3%B5es&type=phone_number&app_absent=0'
                             ],
-                            'a47f3ba2-f4bb-43c9-8786-16ecb8aa9c53' => [
+                            '4a4a966a-669d-4eab-becb-6f2d0616cebb' => [
                                 'best_plan' => '1',
                                 'name' => 'black',
                                 'description' => 'Para quem está começando a organizar sua vida finaceira e deseja mais tranquilidade.',
                                 'note' => null,
                                 'benefits' => [
-                                    '6d783dd0-9573-4749-ab1a-b97c43f129fc' => [
+                                    'fd24aa10-2dce-450f-9353-da1b99822267' => [
                                         'is_highlighted' => true,
-                                        'value' => 'Organização Anual',
+                                        'value' => 'Organização Anual'
                                     ],
-                                    '52970488-cb43-4c03-b5a7-eed15c1f4ea7' => [
+                                    'c3e7f389-656a-4907-9ca7-cf813bd85375' => [
                                         'is_highlighted' => true,
-                                        'value' => 'Organização Anual',
+                                        'value' => 'Organização Anual'
                                     ],
-                                    'ffd9771c-2e49-4f47-984c-477617130fbd' => [
+                                    '537fff25-ab80-4ff1-8b7d-780aee4e8e1e' => [
                                         'is_highlighted' => false,
-                                        'value' => 'Mapa financeiro',
+                                        'value' => 'Mapa financeiro'
                                     ],
-                                    'f2a1767c-cdeb-4dcb-91c9-b94d569217d3' => [
+                                    '097019d7-aa7e-4c52-9282-4e2d94c30b3c' => [
                                         'is_highlighted' => false,
-                                        'value' => 'Construção de Reserva',
+                                        'value' => 'Construção de Reserva'
                                     ],
-                                    '8f726a9b-50e2-45c4-a286-2d9bc4aa232e' => [
+                                    '3251d8b9-8c54-4387-add5-cc71c931aa24' => [
                                         'is_highlighted' => false,
-                                        'value' => 'Planilha de fluxo de caixa',
+                                        'value' => 'Planilha de fluxo de caixa'
                                     ],
-                                    '34a740a8-2224-415e-8cb3-04cb946a7a3f' => [
+                                    'd175f193-df65-48de-b891-2a8c14c4953a' => [
                                         'is_highlighted' => false,
-                                        'value' => 'Planilha de patrimônio',
-                                    ],
+                                        'value' => 'Planilha de patrimônio'
+                                    ]
                                 ],
                                 'cta_label' => 'Saiba Mais',
-                                'cta_url' => 'https://firece.com',
-                            ],
-                        ],
-                    ],
+                                'cta_url' => 'https://api.whatsapp.com/send/?phone=5511987201303&text=Visitei+o+site+da+Fire%7Cce+e+quero+mais+informa%C3%A7%C3%B5es&type=phone_number&app_absent=0'
+                            ]
+                        ]
+                    ]
                 ],
                 '6f38afee-cf9d-472d-a79d-f01e580ac269' => [
                     'type' => 'full-width-video',
@@ -503,7 +546,7 @@ return [
                             'badge' => [
                                 'has_badge' => true,
                                 'icon' => 'firece-logo',
-                                'label' => 'Invista agora com a Fire|ce',
+                                'label' => 'Institucional',
                             ],
                             'buttons' => [
                                 'has_actions' => false,
@@ -521,7 +564,7 @@ return [
                         'video_url' => 'https://vai-brasil.com',
                     ],
                 ],
-                '32df460a-5070-4ae6-ab54-a069e1224472' => [
+                '37c82174-c21b-4cc5-ac95-bba2177ae3f1' => [
                     'type' => 'testimonials',
                     'data' => [
                         'headline' => [
@@ -533,34 +576,24 @@ return [
                             'badge' => [
                                 'has_badge' => true,
                                 'icon' => 'firece-logo',
-                                'label' => 'Invista agora com a Fire|ce',
+                                'label' => 'Depoimentos'
                             ],
                             'buttons' => [
                                 'has_actions' => false,
-                                'buttons' => [
-                                    '5c129509-3888-4876-a79e-9e9a77d06a00' => [
-                                        'label' => 'Quero Começar Agora',
-                                        'url' => 'https://firece.com',
-                                        'icon' => 'heroicon-c-chevron-right',
-                                        'icon_position' => 'trailing',
-                                        'target' => '_blank',
-                                    ],
-                                ],
-                            ],
+                                'buttons' => []
+                            ]
                         ],
                         'testimonials' => [
-                            '1',
-                            '2',
-                            '3',
-                            '4',
-                            '5',
-                            '6',
-                            '7',
-                            '8',
-                            '9',
                             '10',
-                        ],
-                    ],
+                            '7',
+                            '13',
+                            '14',
+                            '1',
+                            '6',
+                            '15',
+                            '16'
+                        ]
+                    ]
                 ],
                 '8aea2526-b72b-47ed-aefe-489fff1dfe73' => [
                     'type' => 'call-to-action-section',
@@ -587,7 +620,7 @@ return [
                                 'buttons' => [
                                     '53c07c42-e069-4c34-ac9e-0df90b005b69' => [
                                         'label' => 'Quero Começar Agora',
-                                        'url' => 'https://firece.com',
+                                        'url' => 'https://api.whatsapp.com/send/?phone=5511987201303&text=Visitei+o+site+da+Fire%7Cce+e+quero+mais+informa%C3%A7%C3%B5es&type=phone_number&app_absent=0',
                                         'icon' => 'heroicon-c-chevron-right',
                                         'icon_position' => 'trailing',
                                         'target' => '_blank',
@@ -602,7 +635,7 @@ return [
                     "data" => [
                         "title" => "Visite nosso Blog e tenha acesso à conteúdos exclusivos",
                         "cta_label" => "Agende uma análise",
-                        "cta_url" => "https://firece.com",
+                        "cta_url" => "https://firece.com.br/blog",
                         "icon" => "lucide-book-marked",
                     ],
                 ],
@@ -659,14 +692,14 @@ return [
                             "badge" => [
                                 "has_badge" => true,
                                 "icon" => "firece-logo",
-                                "label" => "Invista agora com a Code Capital",
+                                "label" => "Code Capital",
                             ],
                             "buttons" => [
                                 "has_actions" => true,
                                 "buttons" => [
                                     "389d890d-c9a8-4e9f-97a1-02fd3faba4b7" => [
                                         "label" => "Começar meu planejamento",
-                                        "url" => "https://firece.com",
+                                        "url" => "https://api.whatsapp.com/send/?phone=5511987201303&text=Visitei+o+site+da+Fire%7Cce+e+quero+mais+informa%C3%A7%C3%B5es&type=phone_number&app_absent=0",
                                         "icon" => "heroicon-c-chevron-right",
                                         "icon_position" => "trailing",
                                         "target" => "_blank",
@@ -720,7 +753,7 @@ return [
                         ],
                     ],
                 ],
-                "d98fd0ad-377b-42b1-9cea-3d9e1c39f936" => [
+                "920f4a51-76ab-4fd3-b78f-b5e504e84d07" => [
                     "type" => "video-testimonial",
                     "data" => [
                         "headline" => [
@@ -732,45 +765,45 @@ return [
                             "badge" => [
                                 "has_badge" => true,
                                 "icon" => "firece-logo",
-                                "label" => "Por que escolher a Code Capital?",
+                                "label" => "Por que escolher a Code Capital?"
                             ],
                             "buttons" => [
                                 "has_actions" => false,
-                                "buttons" => [],
-                            ],
+                                "buttons" => []
+                            ]
                         ],
                         "insights" => [
-                            "8449ba30-5e8f-418b-9f54-2a538012c1aa" => [
+                            "b33889ad-37e7-4a66-a09c-a65c12e102bc" => [
                                 "value" => "Especialistas  planejamento financeiro",
-                                "icon" => "lucide-hand-coins",
+                                "icon" => "lucide-hand-coins"
                             ],
-                            "b453c85b-43d5-478f-bc30-9bf2e27a3a0d" => [
+                            "4748f30a-f3c6-4eb3-b730-8b49a6ed782b" => [
                                 "value" => "Metodologia própria testada e aprovada",
-                                "icon" => "lucide-hand-coins",
+                                "icon" => "lucide-hand-coins"
                             ],
-                            "3bb8d780-497f-4fd1-be23-af04af936c59" => [
+                            "53d22777-5fd4-4b83-815b-d1132669bb40" => [
                                 "value" => "Foco em resultados reais e sustentáveis",
-                                "icon" => "lucide-hand-coins",
-                            ],
+                                "icon" => "lucide-hand-coins"
+                            ]
                         ],
-                        "video_url" => "https://www.youtube.com/embed/dQw4w9WgXcQ?si=eThAUAsChTqyDw8",
+                        "video_url" => "https://www.youtube.com/embed/VX0mX7WjKnw?si=Uepn17uJQZ0l55G3",
                         "video_cards" => [
-                            "8d52e47a-c514-46c0-8dde-1d17cffe1164" => [
+                            "ecf030e0-60c1-496d-a4c4-a40e2ddd0b90" => [
                                 "title" => "500+",
-                                "value" => "Clientes atendidos",
+                                "value" => "Clientes atendidos"
                             ],
-                            "55807fa7-f8fa-4bf9-8072-65e2de738296" => [
+                            "17667ebd-862b-4253-a770-204cbaec03cd" => [
                                 "title" => "5",
-                                "value" => "Anos de Experiência",
+                                "value" => "Anos de Experiência"
                             ],
-                            "941a1c43-da99-490f-9ee2-67a53dee5e72" => [
+                            "b15e5fad-808b-47f8-a35c-002e871ba690" => [
                                 "title" => "98%",
-                                "value" => "Satisfação dos clientes",
-                            ],
+                                "value" => "Satisfação dos clientes"
+                            ]
                         ],
                         "cta_label" => null,
-                        "cta_url" => null,
-                    ],
+                        "cta_url" => null
+                    ]
                 ],
                 "b9ecdd05-1e3c-49d7-b85c-f206eec36de3" => [
                     "type" => "call-to-action-section",
@@ -797,7 +830,7 @@ return [
                                 "buttons" => [
                                     "fe3818ba-daf8-4d20-944d-58f4062c64e1" => [
                                         "label" => "Agende uma análise",
-                                        "url" => "https://firece.com",
+                                        "url" => "https://api.whatsapp.com/send/?phone=5511987201303&text=Visitei+o+site+da+Fire%7Cce+e+quero+mais+informa%C3%A7%C3%B5es&type=phone_number&app_absent=0",
                                         "icon" => "heroicon-c-chevron-right",
                                         "icon_position" => "trailing",
                                         "target" => "_blank",
@@ -882,13 +915,13 @@ return [
                         ],
                         "cta_label" => "Quero começar agora",
                         "cta_icon" => "heroicon-c-chevron-right",
-                        "cta_url" => "https://firece.com.br/",
+                        "cta_url" => "https://api.whatsapp.com/send/?phone=5511987201303&text=Visitei+o+site+da+Fire%7Cce+e+quero+mais+informa%C3%A7%C3%B5es&type=phone_number&app_absent=0",
                         "hero" => [
                             "7141cd43-f13c-484b-a00b-97b2d1fc6d80" => "7141cd43-f13c-484b-a00b-97b2d1fc6d80",
                         ],
                     ],
                 ],
-                "ce234a8a-2164-4824-9d35-f284992e1c0c" => [
+                "1664b739-1e68-48af-a42a-df18b28a0411" => [
                     "type" => "testimonials",
                     "data" => [
                         "headline" => [
@@ -900,75 +933,47 @@ return [
                             "badge" => [
                                 "has_badge" => true,
                                 "icon" => "firece-logo",
-                                "label" => "Depoimentos",
+                                "label" => "Depoimentos"
                             ],
                             "buttons" => [
                                 "has_actions" => false,
-                                "buttons" => [],
-                            ],
+                                "buttons" => []
+                            ]
                         ],
                         "testimonials" => [
                             "5",
                             "3",
                             "7",
-                            "9",
-                        ],
-                    ],
+                            "9"
+                        ]
+                    ]
                 ],
-                "c16601fb-61ef-4212-a4f3-720996a9b3a6" => [
+                "9c81da59-a096-464c-9707-d44a15c92852" => [
                     "type" => "faq",
                     "data" => [
-                        "description" => "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam urna tellus, cursus vitae vestibulum quis, pretium eu dui.",
+                        "description" => null,
                         "solutions" => [
-                            "c2680d14-602b-4e07-9827-e29e183a9fda" => [
-                                "question" => "Lorem Ipsum dolor sit amet",
-                                "answer" => "Lorem Ipsum dolor sit amet Lorem Ipsum dolor sit amet",
+                            "3d9669a9-645e-4e16-8b82-2e03b8b94f42" => [
+                                "question" => "Quem pode se tornar parceiro da Fire|ce?",
+                                "answer" => "Qualquer profissional, empresa ou instituição com sinergia de trabalho alinhada e propósito alinhado ao nosso: transformar a vida financeira das pessoas com estratégia e impacto real."
                             ],
-                            "f6ec47a8-bb0f-4ffd-bac5-b2d6426d1e0f" => [
-                                "question" => "Lorem Ipsum dolor sit amet",
-                                "answer" => "Lorem Ipsum dolor sit amet Lorem Ipsum dolor sit amet",
+                            "e11bf08c-71f3-4368-aebd-68e588a9c7b4" => [
+                                "question" => "Quais são os formatos mais comuns de parceria?",
+                                "answer" => "Desde Joint Ventures e projetos educacionais até parcerias comerciais e e integração de serviços."
                             ],
-                            "6e57287d-16e2-481c-8d84-a2ef9efe74ce" => [
-                                "question" => "Lorem Ipsum dolor sit amet",
-                                "answer" => "Lorem Ipsum dolor sit amet Lorem Ipsum dolor sit amet",
+                            "119f6fdd-a1c8-42f1-84a0-13e3b8a85c18" => [
+                                "question" => "A Fire|ce investe em projetos em conjunto?",
+                                "answer" => "Sim. Avaliamos oportunidades de forma individual e, quando há sinergia, investimos tempo, estrutura e até recursos para gerar resultados sólidos em parceria."
                             ],
-                            "d48e936c-c9d8-4839-8077-be242159bd69" => [
-                                "question" => "Lorem Ipsum dolor sit amet Lorem Ipsum dolor sit amet",
-                                "answer" => "Lorem Ipsum dolor sit amet Lorem Ipsum dolor sit amet",
-                            ],
+                            "b1ec09d8-a516-48c1-b3af-3c9a8060e7aa" => [
+                                "question" => "Como iniciar uma conversa sobre parceria com a Fire|ce?",
+                                "answer" => "Basta entrar em contato pelo nosso formulário ou canais oficiais. Vamos marcar uma reunião para entender como nossas forças podem se complementar."
+                            ]
                         ],
                         "hero" => [
-                            "bb504efb-9b98-4696-8e25-ac29a3bc0fe3" => "bb504efb-9b98-4696-8e25-ac29a3bc0fe3",
-                        ],
-                    ],
-
-                    "c16601fb-61ef-4212-a4f3-720996a9b3a6" => [
-                        "type" => "faq",
-                        "data" => [
-                            "description" => "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam urna tellus, cursus vitae vestibulum quis, pretium eu dui.",
-                            "solutions" => [
-                                "c2680d14-602b-4e07-9827-e29e183a9fda" => [
-                                    "question" => "Lorem Ipsum dolor sit amet",
-                                    "answer" => "Lorem Ipsum dolor sit amet Lorem Ipsum dolor sit amet",
-                                ],
-                                "f6ec47a8-bb0f-4ffd-bac5-b2d6426d1e0f" => [
-                                    "question" => "Lorem Ipsum dolor sit amet",
-                                    "answer" => "Lorem Ipsum dolor sit amet Lorem Ipsum dolor sit amet",
-                                ],
-                                "6e57287d-16e2-481c-8d84-a2ef9efe74ce" => [
-                                    "question" => "Lorem Ipsum dolor sit amet",
-                                    "answer" => "Lorem Ipsum dolor sit amet Lorem Ipsum dolor sit amet",
-                                ],
-                                "d48e936c-c9d8-4839-8077-be242159bd69" => [
-                                    "question" => "Lorem Ipsum dolor sit amet Lorem Ipsum dolor sit amet",
-                                    "answer" => "Lorem Ipsum dolor sit amet Lorem Ipsum dolor sit amet",
-                                ],
-                            ],
-                            "hero" => [
-                                "bb504efb-9b98-4696-8e25-ac29a3bc0fe3" => "bb504efb-9b98-4696-8e25-ac29a3bc0fe3",
-                            ],
+                            "bb504efb-9b98-4696-8e25-ac29a3bc0fe3" => "bb504efb-9b98-4696-8e25-ac29a3bc0fe3"
                         ]
-                    ],
+                    ]
                 ],
                 "ba6a9018-7c61-44d2-a9f8-d62cb49ffb3f" => [
                     "type" => "call-to-action-with-icon",
@@ -1012,7 +1017,7 @@ return [
                 ],
                 [
                     'collection' => CustomComponent::TwoColumnsImageFeatureGrid->value,
-                    'path' => public_path('images/stock/our-work-partners.png'),
+                    'path' => public_path('images/stock/code-capital.png'),
                 ],
                 [
                     'collection' => CustomComponent::Faq->value,
@@ -1099,7 +1104,7 @@ return [
                         "buttons" => [
                             "48b42a4e-9c55-4cdb-b068-1d044487b1bb" => [
                                 "label" => "Agende uma análise",
-                                "url" => "https://firece.com",
+                                "url" => "https://api.whatsapp.com/send/?phone=5511987201303&text=Visitei+o+site+da+Fire%7Cce+e+quero+mais+informa%C3%B5es&type=phone_number&app_absent=0",
                                 "icon" => "heroicon-c-chevron-right",
                                 "icon_position" => "trailing",
                                 "target" => "_blank",
@@ -1132,7 +1137,7 @@ return [
                                 "buttons" => [
                                     "439fb4ab-3e38-4f77-b057-27e73ad471e8" => [
                                         "label" => "Agende uma análise",
-                                        "url" => "https://firece.com",
+                                        "url" => "https://api.whatsapp.com/send/?phone=5511987201303&text=Visitei+o+site+da+Fire%7Cce+e+quero+mais+informa%C3%B5es&type=phone_number&app_absent=0",
                                         "icon" => "heroicon-c-chevron-right",
                                         "icon_position" => "trailing",
                                         "target" => "_blank",
@@ -1157,7 +1162,7 @@ return [
                             "badge" => [
                                 "has_badge" => true,
                                 "icon" => "firece-logo",
-                                "label" => "Invista agora com a Fire|ce",
+                                "label" => "Como fazemos",
                             ],
                             "buttons" => [
                                 "has_actions" => false,
@@ -1263,7 +1268,7 @@ return [
                                 "buttons" => [
                                     "5661e000-cbdc-4e32-9910-e9a80561c38c" => [
                                         "label" => "Quero Começar Agora",
-                                        "url" => "https://firece.com",
+                                        "url" => "https://api.whatsapp.com/send/?phone=5511987201303&text=Visitei+o+site+da+Fire%7Cce+e+quero+mais+informa%C3%B5es&type=phone_number&app_absent=0",
                                         "icon" => "heroicon-c-chevron-right",
                                         "icon_position" => "trailing",
                                         "target" => "_blank",
@@ -1273,36 +1278,32 @@ return [
                         ],
                     ],
                 ],
-                "6312bc8c-27ed-4485-b0f2-8f35d0339621" => [
+                "e3a1ba12-ea96-44b7-b199-b83b0617e02a" => [
                     "type" => "faq",
                     "data" => [
-                        "description" => "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam urna tellus, cursus vitae vestibulum quis, pretium eu dui.",
+                        "description" => null,
                         "solutions" => [
-                            "96736f3d-758b-46f7-96e4-4bd00fec1da8" => [
-                                "question" => "Lorem Ipsum dolor sit amet",
-                                "answer" => "Lorem Ipsum dolor sit ametLorem Ipsum dolor sit ametLorem Ipsum dolor sit ametLorem Ipsum dolor sit ametLorem Ipsum dolor sit amet",
+                            "84241851-833a-4ff1-a664-149aaa0592d8" => [
+                                "question" => "Quem pode se tornar parceiro da Fire|ce?",
+                                "answer" => "Qualquer profissional, empresa ou instituição com sinergia de trabalho alinhada e propósito alinhado ao nosso: transformar a vida financeira das pessoas com estratégia e impacto real."
                             ],
-                            "d7aeac19-95de-4d74-bb4a-c6c750be5af8" => [
-                                "question" => "Lorem Ipsum dolor sit amet",
-                                "answer" => "Lorem Ipsum dolor sit ametLorem Ipsum dolor sit ametLorem Ipsum dolor sit ametLorem Ipsum dolor sit ametLorem Ipsum dolor sit amet",
+                            "e8d46eb2-5d56-42cd-b183-34e8dcf722ed" => [
+                                "question" => "Quais são os formatos mais comuns de parceria?",
+                                "answer" => "Conectamos conhecimento com inspiração. Levamos educação financeira para empresas, eventos e grupos, abordando temas que impactam diretamente a vida das pessoas. Nossa abordagem vai além de conceitos teóricos – oferecemos insights práticos e estratégias aplicáveis imediatamente."
                             ],
-                            "1c37890c-7674-46cc-a009-547e28785c9f" => [
-                                "question" => "Lorem Ipsum dolor sit amet",
-                                "answer" => "Lorem Ipsum dolor sit ametLorem Ipsum dolor sit ametLorem Ipsum dolor sit ametLorem Ipsum dolor sit ametLorem Ipsum dolor sit amet",
+                            "14dd3635-aa3b-456c-a314-cab1fabbc182" => [
+                                "question" => "A Fire|ce investe em projetos em conjunto?",
+                                "answer" => "Sim! Para quem deseja se tornar um consultor de alto desempenho, oferecemos um caminho estruturado. A formação cobre desde metodologias até estratégias de atuação prática no mercado. O objetivo é preparar você para transformar vidas e construir uma carreira sólida na área financeira."
                             ],
-                            "ca716de0-c837-4271-8cb6-358551a094a3" => [
-                                "question" => "Lorem Ipsum dolor sit amet",
-                                "answer" => "Lorem Ipsum dolor sit ametLorem Ipsum dolor sit ametLorem Ipsum dolor sit ametLorem Ipsum dolor sit ametLorem Ipsum dolor sit amet",
-                            ],
-                            "79404094-5440-4e08-976a-8f73341d5375" => [
-                                "question" => "Lorem Ipsum dolor sit amet",
-                                "answer" => "Lorem Ipsum dolor sit ametLorem Ipsum dolor sit ametLorem Ipsum dolor sit ametLorem Ipsum dolor sit ametLorem Ipsum dolor sit amet",
-                            ],
+                            "5445ba54-e027-4308-919f-184bf497850a" => [
+                                "question" => "Como iniciar uma conversa com a Fire|ce?",
+                                "answer" => "Basta entrar em contato pelo nosso formulário ou canais oficiais. Vamos marcar uma reunião para entender como nossas forças podem se complementar."
+                            ]
                         ],
                         "hero" => [
-                            "42b70175-f5b8-430e-81a2-fd2ca21887c6" => "42b70175-f5b8-430e-81a2-fd2ca21887c6",
-                        ],
-                    ],
+                            "42b70175-f5b8-430e-81a2-fd2ca21887c6" => "42b70175-f5b8-430e-81a2-fd2ca21887c6"
+                        ]
+                    ]
                 ],
                 "269a165f-0bd0-419e-a548-745aae7338bf" => [
                     "type" => "call-to-action-with-icon",
@@ -1360,14 +1361,14 @@ return [
                             "badge" => [
                                 "has_badge" => true,
                                 "icon" => "firece-logo",
-                                "label" => "Invista agora com a Fire|ce",
+                                "label" => "Key Account",
                             ],
                             "buttons" => [
                                 "has_actions" => true,
                                 "buttons" => [
                                     "694e6e88-8cf2-47b8-8632-5c237e8ae3e5" => [
                                         "label" => "Começar meu planejamento",
-                                        "url" => "https://firece.com",
+                                        "url" => "https://api.whatsapp.com/send/?phone=5511987201303&text=Visitei+o+site+da+Fire%7Cce+e+quero+mais+informa%C3%B5es&type=phone_number&app_absent=0",
                                         "icon" => "heroicon-c-chevron-right",
                                         "icon_position" => "trailing",
                                         "target" => "_blank",
@@ -1392,7 +1393,7 @@ return [
                             "badge" => [
                                 "has_badge" => true,
                                 "icon" => "firece-logo",
-                                "label" => "Invista agora com a Fire|ce",
+                                "label" => "Escolha a Fire|ce",
                             ],
                             "buttons" => [
                                 "has_actions" => false,
@@ -1439,7 +1440,7 @@ return [
                         "buttons" => [
                             "870e39f8-c9c2-41b8-8cfb-37e596d392e1" => [
                                 "label" => "Agende uma análise",
-                                "url" => "https://firece.com",
+                                "url" => "https://api.whatsapp.com/send/?phone=5511987201303&text=Visitei+o+site+da+Fire%7Cce+e+quero+mais+informa%C3%B5es&type=phone_number&app_absent=0",
                                 "icon" => "heroicon-c-chevron-right",
                                 "icon_position" => "trailing",
                                 "target" => "_blank",
@@ -1459,7 +1460,7 @@ return [
                             "badge" => [
                                 "has_badge" => true,
                                 "icon" => "firece-logo",
-                                "label" => "Invista agora com a Fire|ce",
+                                "label" => "Nosso Trabalho",
                             ],
                             "buttons" => [
                                 "has_actions" => false,
@@ -1486,7 +1487,7 @@ return [
                         "quote" => "Vamos construir o próximo nível da sua jornada financeira com o Key Account da Fire|ce.",
                         "end_description" => "Acompanhamos cada tomada de decisão importante, alertamos sobre riscos e oportunidades e adaptamos a estratégia conforme sua realidade muda. O cliente Key Account não é um número: é um relacionamento que atravessa fases, gera confiança e entrega resultados consistentes.",
                         "cta_label" => "Agende uma análise",
-                        "cta_url" => "https://firece.com",
+                        "cta_url" => "https://api.whatsapp.com/send/?phone=5511987201303&text=Visitei+o+site+da+Fire%7Cce+e+quero+mais+informa%C3%B5es&type=phone_number&app_absent=0",
                         "hero" => [
                             "c0762479-79d6-4a90-8cb9-a1811462953d" => "c0762479-79d6-4a90-8cb9-a1811462953d",
                         ],
@@ -1513,7 +1514,7 @@ return [
                                 "buttons" => [
                                     "08c77bfd-4359-4061-ab35-7aeb0d0f4f8b" => [
                                         "label" => "Agende uma análise",
-                                        "url" => "https://firece.com",
+                                        "url" => "https://api.whatsapp.com/send/?phone=5511987201303&text=Visitei+o+site+da+Fire%7Cce+e+quero+mais+informa%C3%B5es&type=phone_number&app_absent=0",
                                         "icon" => "heroicon-c-chevron-right",
                                         "icon_position" => "trailing",
                                         "target" => "_blank",
@@ -1526,7 +1527,7 @@ return [
                         ],
                     ],
                 ],
-                "3539a1ad-196d-4d74-ad14-82a8d975a672" => [
+                "a77e5fd7-0f65-4a04-b70b-89a5c80acef8" => [
                     "type" => "testimonials",
                     "data" => [
                         "headline" => [
@@ -1538,51 +1539,47 @@ return [
                             "badge" => [
                                 "has_badge" => true,
                                 "icon" => "firece-logo",
-                                "label" => "Invista agora com a Fire|ce",
+                                "label" => "Depoimentos"
                             ],
                             "buttons" => [
                                 "has_actions" => false,
-                                "buttons" => [],
-                            ],
+                                "buttons" => []
+                            ]
                         ],
                         "testimonials" => [
                             "2",
                             "4",
                             "7",
-                            "6",
-                        ],
-                    ],
+                            "6"
+                        ]
+                    ]
                 ],
-                "6d0b0726-0b48-44c4-ba3b-1aa0823b5027" => [
+                "0fec5c9a-ccb5-40d7-b185-2a4207744ba7" => [
                     "type" => "faq",
                     "data" => [
-                        "description" => "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam urna tellus, cursus vitae vestibulum quis, pretium eu dui.",
+                        "description" => null,
                         "solutions" => [
-                            "1de9fafc-f5ee-4bff-8cc8-9ff0cce4f58a" => [
-                                "question" => "Lorem Ipsum dolor sit amet",
-                                "answer" => "Lorem Ipsum dolor sit amet",
+                            "ef0e8694-e349-49c3-9b16-18420e57da77" => [
+                                "question" => "Qual o perfil ideal para o Key Account?",
+                                "answer" => "Pessoas com patrimônio relevante que buscam estratégias avançadas de proteção e crescimento, com atendimento altamente personalizado."
                             ],
-                            "63d5383a-2a98-46f5-bdbc-27bc0a06ccd7" => [
-                                "question" => "Lorem Ipsum dolor sit amet",
-                                "answer" => "Lorem Ipsum dolor sit amet",
+                            "671c2f39-b4a1-4e18-8ac7-cb12cecde42e" => [
+                                "question" => "É possível contratar o Key Account para gestão internacional?",
+                                "answer" => "Sim. O Key Account inclui estratégias de blindagem patrimonial e alocação internacional, respeitando o perfil do cliente e as normas regulatórias."
                             ],
-                            "de6ceced-28e6-425a-8f54-aeca0fa04105" => [
-                                "question" => "Lorem Ipsum dolor sit amet",
-                                "answer" => "Lorem Ipsum dolor sit amet",
+                            "2e31407c-a04c-4cc9-b109-d46c58d7fc50" => [
+                                "question" => "Com que frequência acontecem as reuniões?",
+                                "answer" => "O acompanhamento é contínuo, com revisões periódicas e disponibilidade para reuniões emergenciais sempre que necessário."
                             ],
-                            "901d4007-e491-4f57-96ea-801a28166fb9" => [
-                                "question" => "Lorem Ipsum dolor sit amet",
-                                "answer" => "Lorem Ipsum dolor sit amet",
-                            ],
-                            "9c498ccc-5a63-446b-9608-284b0995f33e" => [
-                                "question" => "Lorem Ipsum dolor sit amet",
-                                "answer" => "Lorem Ipsum dolor sit amet",
-                            ],
+                            "33b2e539-fda3-45c2-ac53-1ea7be2e7eb2" => [
+                                "question" => "O serviço também cobre sucessão familiar e herança?",
+                                "answer" => "Sim. Planejamos a sucessão de forma estratégica para garantir tranquilidade, segurança e continuidade para seu legado."
+                            ]
                         ],
                         "hero" => [
-                            "80e850c0-8487-4933-8a86-9db5a56ad7e9" => "80e850c0-8487-4933-8a86-9db5a56ad7e9",
-                        ],
-                    ],
+                            "80e850c0-8487-4933-8a86-9db5a56ad7e9" => "80e850c0-8487-4933-8a86-9db5a56ad7e9"
+                        ]
+                    ]
                 ],
                 "c2fefb39-b6f0-44f6-9dbe-1db7300ed55f" => [
                     "type" => "call-to-action-with-icon",
@@ -1643,14 +1640,14 @@ return [
                             "badge" => [
                                 "has_badge" => true,
                                 "icon" => "firece-logo",
-                                "label" => "Invista agora com a Code Capital",
+                                "label" => "Trabalhe conosco",
                             ],
                             "buttons" => [
                                 "has_actions" => true,
                                 "buttons" => [
                                     "ce58c3a2-274d-4f37-a4dc-5ee99ac6b474" => [
                                         "label" => "Começar meu planejamento",
-                                        "url" => "https://firece.com",
+                                        "url" => "https://www.educafire.com.br/mentoria",
                                         "icon" => "heroicon-c-chevron-right",
                                         "icon_position" => "trailing",
                                         "target" => "_blank",
@@ -1675,7 +1672,7 @@ return [
                             "badge" => [
                                 "has_badge" => true,
                                 "icon" => "firece-logo",
-                                "label" => "Invista agora com a Fire|ce",
+                                "label" => "Escolha a Fire|ce",
                             ],
                             "buttons" => [
                                 "has_actions" => false,
@@ -1765,36 +1762,32 @@ return [
                         "description" => "O Key Account é o modelo de atendimento premium da Fire|ce, pensado para clientes",
                     ],
                 ],
-                "0e3bc746-dc03-4481-9972-9bfb6c6f9502" => [
+                "dc24b903-cbf1-4ef9-94cb-0c4986a9d7d9" => [
                     "type" => "faq",
                     "data" => [
-                        "description" => "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam urna tellus, cursus vitae vestibulum quis, pretium eu dui.",
+                        "description" => null,
                         "solutions" => [
-                            "df98bf4b-7725-414a-8558-91e95b1d71f1" => [
-                                "question" => "Lorem Ipsum dolor sit amet",
-                                "answer" => "Lorem Ipsum dolor sit amet",
+                            "5474a2cb-83a0-4ad5-a1c7-270771a00981" => [
+                                "question" => "Quem pode se tornar parceiro da Fire|ce?",
+                                "answer" => "Qualquer profissional, empresa ou instituição com sinergia de trabalho alinhada e propósito alinhado ao nosso: transformar a vida financeira das pessoas com estratégia e impacto real."
                             ],
-                            "7a1fd300-dd51-48de-816b-1973c20d60dc" => [
-                                "question" => "Lorem Ipsum dolor sit amet",
-                                "answer" => "Lorem Ipsum dolor sit amet",
+                            "86cbedd5-13d5-4e1c-8921-8bae0069010a" => [
+                                "question" => "Quais são os formatos mais comuns de parceria?",
+                                "answer" => "Desde Joint Ventures e projetos educacionais até parcerias comerciais e e integração de serviços."
                             ],
-                            "154615ee-207f-4467-8f0d-d73a01bd95c2" => [
-                                "question" => "Lorem Ipsum dolor sit amet",
-                                "answer" => "Lorem Ipsum dolor sit amet",
+                            "07f3ddf2-f324-46c5-b5dd-93281ce7568b" => [
+                                "question" => "A Fire|ce investe em projetos em conjunto?",
+                                "answer" => "Sim. Avaliamos oportunidades de forma individual e, quando há sinergia, investimos tempo, estrutura e até recursos para gerar resultados sólidos em parceria."
                             ],
-                            "2cbf2f54-1dc5-4e4d-8761-76184502ad98" => [
-                                "question" => "Lorem Ipsum dolor sit amet",
-                                "answer" => "Lorem Ipsum dolor sit amet",
-                            ],
-                            "5cf46d35-2a68-426b-90c6-7b3e1c10c7f2" => [
-                                "question" => "Lorem Ipsum dolor sit amet",
-                                "answer" => "Lorem Ipsum dolor sit amet",
-                            ],
+                            "2be50b19-57c1-4aea-afab-ee1427fabe14" => [
+                                "question" => "Como iniciar uma conversa sobre parceria com a Fire|ce?",
+                                "answer" => "Basta entrar em contato pelo nosso formulário ou canais oficiais. Vamos marcar uma reunião para entender como nossas forças podem se complementar."
+                            ]
                         ],
                         "hero" => [
-                            "df77443e-c977-4766-a8b9-d330d42ef6f4" => "df77443e-c977-4766-a8b9-d330d42ef6f4",
-                        ],
-                    ],
+                            "df77443e-c977-4766-a8b9-d330d42ef6f4" => "df77443e-c977-4766-a8b9-d330d42ef6f4"
+                        ]
+                    ]
                 ],
                 "e0d099bc-bc25-4bf4-bca4-34491b01522b" => [
                     "type" => "call-to-action-with-icon",
@@ -1827,28 +1820,28 @@ return [
                 ],
             ],
             'content' => [
-                '81279e8e-f087-4cd8-a7cf-ed289bfb2422' => [
-                    'type' => 'hero-with-background-image',
-                    'data' => [
-                        'hero_size' => null,
-                        'headline' => [
-                            'heading' => 'Conteúdo que transforma',
-                            'keywords' => [],
-                            'size' => '3xl',
-                            'position' => 'center',
-                            'description' => 'Transformamos a forma como as pessoas lidam com dinheiro, capacitando-as a conquistar liberdade, segurança e crescimento financeiro sustentável.',
-                            'badge' => [
-                                'has_badge' => false,
-                                'icon' => null,
-                                'label' => null
+                "07897c02-54ec-408d-8479-497de7abc841" => [
+                    "type" => "hero-with-background-image",
+                    "data" => [
+                        "hero_size" => null,
+                        "headline" => [
+                            "heading" => "Conteúdo que transforma",
+                            "keywords" => [],
+                            "size" => "3xl",
+                            "position" => "center",
+                            "description" => "Transformamos a forma como as pessoas lidam com dinheiro, capacitando-as a conquistar liberdade, segurança e crescimento financeiro sustentável.",
+                            "badge" => [
+                                "has_badge" => true,
+                                "icon" => "firece-nb-logo",
+                                "label" => "Blog Fire|ce"
                             ],
-                            'buttons' => [
-                                'has_actions' => false,
-                                'buttons' => []
+                            "buttons" => [
+                                "has_actions" => false,
+                                "buttons" => []
                             ]
                         ],
-                        'hero' => [
-                            '6a3e8358-8aa3-4a19-878b-46d046cacb92' => '6a3e8358-8aa3-4a19-878b-46d046cacb92'
+                        "hero" => [
+                            "771d7702-b21c-4e75-9657-cfcf83890bb9" => "771d7702-b21c-4e75-9657-cfcf83890bb9"
                         ]
                     ]
                 ],
