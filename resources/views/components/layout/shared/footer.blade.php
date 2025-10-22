@@ -39,12 +39,12 @@
                         </a>
                     </li>
                     <li>
-                        <a href="/planejamento" class="hover:text-secondary transition">
+                        <a href="https://api.whatsapp.com/send/?phone=5511987201303&text=Visitei+o+site+da+Fire%7Cce+e+quero+mais+informa%C3%A7%C3%B5es&type=phone_number&app_absent=0" class="hover:text-secondary transition">
                             Planejamento
                         </a>
                     </li>
                     <li>
-                        <a href="/educa-fire" class="hover:text-secondary transition">
+                        <a href="https://www.educafire.com.br/mentoria" class="hover:text-secondary transition">
                             Educa Fire
                         </a>
                     </li>

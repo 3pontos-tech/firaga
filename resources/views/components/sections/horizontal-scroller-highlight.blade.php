@@ -19,7 +19,7 @@
                                     text-box="mt-2 gap-2 flex-col transition-discrete! duration-400 ease-in-out" emphasis="primary" :interactive="true"
                             >
                                 <x-slot:title class="text-3xl! ">{{ $card->title }}</x-slot:title>
-                                <x-slot:description>{{ $card->description }}</x-slot:description>
+                                <x-slot:description class="overflow-hidden break-words">{{ $card->description }}</x-slot:description>
                                 <x-slot:actions class="hidden transition ease-in-out group-hover/card:flex">
                                     @foreach($card->actions as $action)
                                         <div class="flex flex-row items-center gap-2">
