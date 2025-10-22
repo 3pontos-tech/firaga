@@ -4,9 +4,9 @@ namespace App\Filament\Components\Partials;
 
 use App\Enums\CustomComponent;
 use App\Filament\Components\AbstractCustomComponent;
+use App\Filament\Components\DTOs\HeadlineComponent;
 use App\Models\Testimonial;
 use Filament\Forms\Components\Select;
-use Filament\Forms\Components\TextInput;
 
 class TestimonialsComponent extends AbstractCustomComponent
 {
@@ -15,12 +15,7 @@ class TestimonialsComponent extends AbstractCustomComponent
     public static function blockSchema(): array
     {
         return [
-            'badge' => TextInput::make('badge')
-                ->label(__('Badge'))
-                ->required(),
-            'heading' => TextInput::make('heading')
-                ->label(__('Heading'))
-                ->required(),
+            ...HeadlineComponent::form(),
             'testimonials' => Select::make('testimonials')
                 ->label(__('Testimonials'))
                 ->options(fn () => Testimonial::all()->pluck('name', 'id'))
@@ -36,18 +31,8 @@ class TestimonialsComponent extends AbstractCustomComponent
     public static function setupRenderPayload(array $data): array
     {
         return [
-            'heading' => $data['heading'],
-            'badge' => $data['badge'],
-            'testimonials' => Testimonial::query()->whereIn('id', $data['testimonials'])->get()
-                ->map(function ($testimonial): array {
-                    return [
-                        'id' => $testimonial->id,
-                        'name' => $testimonial->name,
-                        'role' => $testimonial->role,
-                        'comment' => $testimonial->comment,
-                        'avatar_url' => $testimonial->getFirstMediaUrl('avatar'),
-                    ];
-                })->values(),
+            'headline' => HeadlineComponent::make($data['headline']),
+            'testimonials' => Testimonial::query()->whereIn('id', $data['testimonials'])->get(),
         ];
     }
 
@@ -56,8 +41,13 @@ class TestimonialsComponent extends AbstractCustomComponent
         return '';
     }
 
-    public static function imagePreview(): string
+    public static function featuredColor(): string
     {
-        return 'https://http.cat/301.png';
+        return '#00003c';
+    }
+
+    public static function getGroup(): string
+    {
+        return 'Integration';
     }
 }

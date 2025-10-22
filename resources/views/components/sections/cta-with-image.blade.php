@@ -1,7 +1,7 @@
 @props([
-    'heading',
-    'description',
+    'headline',
     'cta_label',
+    'cta_icon',
     'cta_url',
     'image',
 ])
@@ -12,19 +12,17 @@
             <img src="{{ $renderable?->getFirstMediaUrl(App\Enums\CustomComponent::CallToActionWithImage->value) ?? asset('images/stock/consultant.png') }}" alt="Consultant" class="w-full max-w-[696px] h-auto lg:h-[718px] object-cover rounded-lg">
         </div>
         <div class="w-full lg:w-1/2 relative flex flex-col gap-y-6 sm:gap-y-8 md:gap-y-10 order-1 lg:order-2">
-            <div class="absolute top-[-30px] left-[-30px] sm:top-[-40px] sm:left-[-40px] md:top-[-55px] md:left-[-55px] hidden sm:block">
+            <div class="absolute top-[-30px] left-[-30px] sm:top-[-40px] sm:left-[-40px] md:top-[-55px] md:left-[-55px] hidden md:block">
                 <x-partials.corner variant="brand" class="w-[60px] h-[60px] sm:w-[80px] sm:h-[80px] md:w-[100px] md:h-[100px]"/>
             </div>
-            <h2 class="text-text-high font-bold text-2xl sm:text-3xl md:text-4xl lg:text-5xl leading-tight">
-                {{ $heading }}
-            </h2>
-            <p class="text-text-medium text-base sm:text-lg md:text-xl leading-relaxed">
-                {{ $description }}
-            </p>
-            <div class="flex flex-col sm:flex-row gap-4 sm:gap-x-4">
-                <x-layout.shared.button :href="$cta_url" class="bg-brand-primary text-white p-3 sm:p-4 w-full sm:w-auto">
+
+            <x-headline :component="$headline" />
+
+            <div class="flex flex flex-col items-center sm:flex-row sm:justify-center sm:flex-row gap-4 sm:gap-x-4">
+                <x-button :icon="$cta_icon" icon-position="trailing" :href="$cta_url"
+                          class="bg-brand-primary text-brand-accent p-3 sm:p-4 sm:w-auto rounded-md lg:w-full">
                     {{ $cta_label }}
-                </x-layout.shared.button>
+                </x-button>
             </div>
         </div>
     </div>

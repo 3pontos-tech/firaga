@@ -2,10 +2,14 @@
 
 namespace App\Filament\Components\Partials;
 
+use App\Enums\CustomComponent;
 use App\Filament\Components\AbstractCustomComponent;
+use App\Filament\Components\DTOs\HeadlineComponent;
+use Filament\Forms\Components\Fieldset;
 use Filament\Forms\Components\Repeater;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\TextInput;
+use Filament\Forms\Components\Toggle;
 use Illuminate\Support\Fluent;
 
 class PlansComponent extends AbstractCustomComponent
@@ -15,63 +19,66 @@ class PlansComponent extends AbstractCustomComponent
     public static function blockSchema(): array
     {
         return [
-            TextInput::make('heading')
-                ->label(__('Heading'))
-                ->required(),
-            TextInput::make('subheading')
-                ->label(__('Subheading'))
-                ->required(),
-            Repeater::make('plans')
-                ->label(__('Plans'))
-                ->cloneable()
+            ...HeadlineComponent::form(),
+            Fieldset::make('Plans')
+                ->columnSpanFull()
                 ->schema([
-                    Select::make('best_plan')
-                        ->label(__('Best Plan?'))
-                        ->boolean()
-                        ->required(),
-                    Select::make('name')
-                        ->label(__('Plan Type'))
-                        ->options([
-                            'gold' => 'Gold',
-                            'platinum' => 'Platinum',
-                            'black' => 'Black',
-                        ])
-                        ->required(),
-                    TextInput::make('description')
-                        ->label(__('Description'))
-                        ->required(),
-                    TextInput::make('note')
-                        ->label(__('Note'))
-                        ->nullable(),
-                    Repeater::make('benefits')
-                        ->label(__('Features'))
+                    Repeater::make('plans')
+                        ->label(__('Plans'))
+                        ->cloneable()
+                        ->columnSpanFull()
+                        ->collapsible()
                         ->schema([
-                            TextInput::make('value')
-                                ->label(__('Feature'))
+                            Select::make('best_plan')
+                                ->label(__('Best Plan?'))
+                                ->boolean()
                                 ->required(),
-                        ]),
-                    TextInput::make('cta_label')
-                        ->label(__('Button Text'))
+                            Select::make('name')
+                                ->label(__('Plan Type'))
+                                ->options([
+                                    'gold' => 'Gold',
+                                    'platinum' => 'Platinum',
+                                    'black' => 'Black',
+                                ])
+                                ->required(),
+                            TextInput::make('description')
+                                ->label(__('Description'))
+                                ->required(),
+                            TextInput::make('note')
+                                ->label(__('Note'))
+                                ->nullable(),
+                            Repeater::make('benefits')
+                                ->label(__('Features'))
+                                ->cloneable()
+                                ->schema([
+                                    Toggle::make('is_highlighted')->default(false),
+
+                                    TextInput::make('value')
+                                        ->label(__('Feature'))
+                                        ->required(),
+                                ]),
+                            TextInput::make('cta_label')
+                                ->label(__('Button Text'))
+                                ->required(),
+                            TextInput::make('cta_url')
+                                ->label(__('Button URL'))
+                                ->required(),
+                        ])
+                        ->reorderableWithButtons()
                         ->required(),
-                    TextInput::make('cta_url')
-                        ->label(__('Button URL'))
-                        ->required(),
-                ])
-                ->reorderableWithButtons()
-                ->required(),
+                ]),
         ];
     }
 
     public static function fieldName(): string
     {
-        return 'plans';
+        return CustomComponent::Plans->value;
     }
 
     public static function setupRenderPayload(array $data): array
     {
         return [
-            'heading' => $data['heading'],
-            'subheading' => $data['subheading'],
+            'headline' => HeadlineComponent::make($data['headline']),
             'plans' => collect($data['plans'] ?? [])->map(fn ($plan) => Fluent::make([
                 'best_plan' => $plan['best_plan'] ?? false,
                 'name' => $plan['name'],
@@ -86,11 +93,16 @@ class PlansComponent extends AbstractCustomComponent
 
     public static function toSearchableContent(array $data): string
     {
-        return '';
+        return 'black';
     }
 
-    public static function imagePreview(): string
+    public static function featuredColor(): string
     {
-        return 'https://http.cat/599';
+        return 'black';
+    }
+
+    public static function getGroup(): string
+    {
+        return 'Section';
     }
 }

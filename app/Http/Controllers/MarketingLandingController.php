@@ -11,6 +11,8 @@ class MarketingLandingController extends Controller
     {
         abort_unless($page->is_landing, 404);
 
+        $page = $page->load('media');
+
         return view('marketing', [
             'page' => $page,
         ]);

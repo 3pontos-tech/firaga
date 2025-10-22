@@ -4,11 +4,13 @@ namespace App\Filament\Components\Partials;
 
 use App\Enums\CustomComponent;
 use App\Filament\Components\AbstractCustomComponent;
+use App\Filament\Components\DTOs\HeadlineComponent;
 use Filament\Forms\Components\Repeater;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\SpatieMediaLibraryFileUpload;
 use Filament\Forms\Components\Textarea;
 use Filament\Forms\Components\TextInput;
+use Guava\FilamentIconPicker\Forms\IconPicker;
 
 class SplitWithImageQuoteComponent extends AbstractCustomComponent
 {
@@ -17,6 +19,8 @@ class SplitWithImageQuoteComponent extends AbstractCustomComponent
     public static function blockSchema(): array
     {
         return [
+            ...HeadlineComponent::form(),
+
             SpatieMediaLibraryFileUpload::make('hero')
                 ->label('Hero Image')
                 ->collection(CustomComponent::SplitWithImageQuote->value)
@@ -32,37 +36,36 @@ class SplitWithImageQuoteComponent extends AbstractCustomComponent
                 ->default('left')
                 ->required(),
 
-            TextInput::make('badge')
-                ->label('Badge')
-                ->required(),
-            TextInput::make('heading')
-                ->label('Heading')
-                ->required(),
-            Textarea::make('description')
-                ->label('Description')
-                ->required(),
-            Repeater::make('insights')
-                ->label('Insights')
-                ->schema([
-                    TextInput::make('value')
-                        ->label('Value')
-                        ->required(),
-                ]),
             Textarea::make('quote')
                 ->label('Quote')
                 ->required(),
+
+            TextInput::make('badge')
+                ->label('Badge')
+                ->required(),
+
+            Textarea::make('start_description')
+                ->label('Start Description')
+                ->nullable(),
+
+            Repeater::make('insights')
+                ->label('Insights')
+                ->schema([
+                    IconPicker::make('icon')
+                        ->required(),
+                    TextInput::make('title')
+                        ->required(),
+                ]),
 
             Textarea::make('end_description')
                 ->label('End Description')
                 ->nullable(),
 
             TextInput::make('cta_label')
-                ->label('Call to Action Label')
-                ->required(),
+                ->label('Call to Action Label'),
             TextInput::make('cta_url')
                 ->label('Call to Action URL')
-                ->url()
-                ->required(),
+                ->url(),
         ];
     }
 
@@ -76,11 +79,11 @@ class SplitWithImageQuoteComponent extends AbstractCustomComponent
         return [
             'image_position' => $data['image_position'] ?? 'left',
             'badge' => $data['badge'],
-            'heading' => $data['heading'],
-            'end_description' => $data['end_description'] ?? '',
-            'description' => $data['description'],
+            'headline' => HeadlineComponent::make($data['headline']),
             'insights' => $data['insights'],
             'quote' => $data['quote'],
+            'start_description' => $data['start_description'] ?? '',
+            'end_description' => $data['end_description'] ?? '',
             'cta_label' => $data['cta_label'] ?? '',
             'cta_url' => $data['cta_url'] ?? '',
         ];
@@ -88,11 +91,16 @@ class SplitWithImageQuoteComponent extends AbstractCustomComponent
 
     public static function toSearchableContent(array $data): string
     {
-        return '';
+        return 'black';
     }
 
-    public static function imagePreview(): string
+    public static function featuredColor(): string
     {
-        return 'https://http.cat/500';
+        return 'black';
+    }
+
+    public static function getGroup(): string
+    {
+        return 'Section';
     }
 }

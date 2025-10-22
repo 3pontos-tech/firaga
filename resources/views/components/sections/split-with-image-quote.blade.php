@@ -1,11 +1,12 @@
 @props([
-    'heading',
-    'description',
+    'headline',
     'insights' => [],
     'quote',
     'cta_url',
     'cta_label',
+    'badge',
     'image_position',
+    'start_description' => '',
     'end_description' => '',
 ])
 
@@ -18,9 +19,9 @@
 
 <section class="py-8 sm:py-12 md:py-16 lg:py-20 xl:py-60">
     <div class="container mx-auto">
-        <div class="flex flex-col lg:flex-row gap-8 lg:gap-12 xl:gap-16 items-center justify-between">
-            <div class="w-full lg:w-1/2 xl:w-[60%] relative  {{ $imagePos }}">
-                <div class="aspect-square sm:aspect-[4/3] lg:aspect-square xl:aspect-[4/3] relative">
+        <div class="flex flex-col lg:flex-row gap-8 lg:gap-12 xl:gap-16">
+            <div class="w-full lg:w-1/2 xl:w-[40%] relative {{ $imagePos }}">
+                <div class="block h-full mb-16 sm:mb-20 lg:mb-0 relative">
                     <img
                         src="{{ $renderable?->getFirstMediaUrl(App\Enums\CustomComponent::SplitWithImageQuote->value) ?? asset('images/stock/our-work.png') }}"
                         alt="Our Work"
@@ -35,32 +36,36 @@
                     </div>
                 </div>
             </div>
-            <div class="w-full lg:w-1/2 xl:w-[40%] flex flex-col gap-y-4 sm:gap-y-6 lg:gap-y-8 {{ $contentPos }}">
-                <div class="space-y-4 sm:space-y-6 lg:space-y-8">
-                    <div class="space-y-3 sm:space-y-4 lg:space-y-6 flex flex-col">
-                        @if($badge)
-                            <x-layout.shared.chip :$variant class="px-4 py-2">
-                                {{ $badge }}
-                            </x-layout.shared.chip>
-                        @endif
-                        <h2 class="text-text-high font-bold text-xl sm:text-2xl lg:text-3xl xl:text-4xl leading-tight">
-                            {{ $heading }}
-                        </h2>
+            <div class="w-full lg:w-1/2 xl:w-[55%] flex flex-col gap-y-4 sm:gap-y-6 lg:gap-y-8 justify-center {{ $contentPos }}">
+                <div class="space-y-4 sm:space-y-6">
+                    <div class="flex flex-col items-center justify-center space-y-6">
+                        <x-headline class="text-start" :component="$headline" />
+                    </div>
+
+                    @if(!empty($badge))
+                        <h3 class="text-text-high text-lg sm:text-xl md:text-2xl lg:text-3xl leading-relaxed font-bold">
+                            {{ $badge }}
+                        </h3>
+                    @endif
+
+                    @if(!empty($start_description))
                         <p class="text-text-medium text-sm sm:text-base lg:text-lg leading-relaxed">
-                            {{ $description }}
+                            {{ $start_description }}
                         </p>
-                    </div>
-                    <div class="grid grid-cols-1 sm:grid-cols-1 lg:grid-cols-1 gap-3 sm:gap-4 w-full">
-                        @foreach($insights as $insight)
-                            <div class="flex items-start gap-x-2 sm:gap-x-3">
-                                <x-lucide-check
-                                    class="w-4 h-4 sm:w-5 sm:h-5 lg:w-6 lg:h-6 {{ $variant === 'default' ? 'text-brand-primary' : 'text-white'}} flex-shrink-0 mt-0.5"/>
-                                <h3 class="text-text-high font-medium text-sm sm:text-base lg:text-lg">
-                                    {{ $insight['value'] }}
-                                </h3>
-                            </div>
-                        @endforeach
-                    </div>
+                    @endif
+
+                    @if($insights)
+                        <div class="flex gap-6">
+                            @foreach($insights as $insight)
+                                <div class="flex gap-2">
+                                    <x-filament::icon :icon="$insight['icon']" class="w-6 h-6 text-text-medium" />
+                                    <p class="text-text-high text-sm sm:text-base lg:text-lg leading-relaxed">
+                                        {{ $insight['title'] }}
+                                    </p>
+                                </div>
+                            @endforeach
+                        </div>
+                    @endif
 
                     @if(!empty($end_description))
                         <p class="text-text-medium text-sm sm:text-base lg:text-lg leading-relaxed">
@@ -68,12 +73,14 @@
                         </p>
                     @endif
 
-                    <div class="flex flex-col sm:flex-row gap-3 sm:gap-4 lg:gap-6">
-                        <x-layout.shared.button :$variant :href="$cta_url"
-                                                class="w-full sm:w-auto px-4 py-2 sm:px-6 sm:py-3 lg:px-8 lg:py-4 font-bold text-xs sm:text-sm lg:text-base">
-                            {{ $cta_label }}
-                        </x-layout.shared.button>
-                    </div>
+                    @if(!empty($cta_label))
+                        <div class="flex flex-col sm:flex-row gap-3 sm:gap-4 lg:gap-6">
+                            <x-layout.shared.button :$variant :href="$cta_url"
+                                                    class="w-full sm:w-auto px-4 py-2 sm:px-6 sm:py-3 lg:px-8 lg:py-4 font-bold text-xs sm:text-sm lg:text-base">
+                                {{ $cta_label }}
+                            </x-layout.shared.button>
+                        </div>
+                    @endif
                 </div>
             </div>
         </div>

@@ -37,6 +37,7 @@ use Webid\Druid\Models\Traits\CanRenderContent;
  * @property string|null $opengraph_description
  * @property int|null $opengraph_picture
  * @property string|null $opengraph_picture_alt
+ * @property bool $deletable
  * @property Carbon|null $published_at
  * @property Carbon|null $created_at
  * @property Carbon|null $updated_at

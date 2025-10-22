@@ -2,6 +2,7 @@
 
 namespace App\Filament\Resources\CMS;
 
+use App\Filament\Components\FilamentComponentsService;
 use App\Filament\Resources\AuthorResource\Pages\EditAuthor;
 use App\Filament\Resources\CMS\PostResource\Pages\CreatePost;
 use App\Filament\Resources\CMS\PostResource\Pages\EditPost;
@@ -33,7 +34,6 @@ use Illuminate\Support\Str;
 use Webid\Druid\Enums\PostStatus;
 use Webid\Druid\Facades\Druid;
 // use Webid\Druid\Filament\Resources\CommonFields;
-use Webid\Druid\Services\Admin\FilamentComponentsService;
 
 class PostResource extends Resource
 {

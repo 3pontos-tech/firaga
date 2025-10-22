@@ -26,3 +26,4 @@ _ide_helper.php
 .pint.result.cache
 .rector.cache
 .DS_Store
+/.junie

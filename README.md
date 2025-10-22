@@ -11,6 +11,10 @@ technologies and aims to provide an intuitive user experience for managing websi
 - **Extensible**: Supports plugins and themes for customization.
 - **SEO Friendly**: Built-in tools for search engine optimization.
 
+### Application Monitoring
+Firaga also uses Laravel NightWatch to monitor the application
+- [NightWatch](docs/nightwatch.md): Environment configuration
+
 
 ## Documentation
 

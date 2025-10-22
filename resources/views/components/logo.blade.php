@@ -3,7 +3,7 @@
     'class' => '',
 ])
 
-<svg class="{{ $class }}" id="Camada_15" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="{{ $minimal ? '0 0 113.36 113.36' : '0 0 402.53 113.36' }}">
+<svg class="{{ $class }}" id="Camada_15" xmlns="http://www.w3.org/2000/svg" viewBox="{{ $minimal ? '0 0 113.36 113.36' : '0 0 402.53 113.36' }}">
     <!-- Generator: Adobe Illustrator 29.2.1, SVG Export Plug-In . SVG Version: 2.1.0 Build 116)  -->
     <defs>
         <style>
@@ -33,4 +33,3 @@
         <path class="st0" d="M92.82,59.05l-2.72,9.22c-1.31,4.44-5.19,7.63-9.79,8.06l-32.78,3.07c-2.02.19-3.16-2.25-1.73-3.68l9.71-9.71c2.04-2.04,4.63-3.43,7.46-4.01l27.43-5.59c1.55-.32,2.88,1.13,2.43,2.65Z"/>
     </g>
 </svg>
-

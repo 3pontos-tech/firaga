@@ -5,6 +5,9 @@
 @endphp
 
 <x-layout.guest xmlns:x-slot="http://www.w3.org/1999/html">
+    <x-slot:theme>
+        {{ $theme->value }}
+    </x-slot:theme>
 
 
     <x-slot:metatags>
@@ -26,10 +29,12 @@
     </x-slot:navbar>
 
     <div class="{{ $theme->getPageBackground() }}">
-        @foreach($page->content as $componentPayload)
-            {!! $builder->render($page, $componentPayload['type'], $componentPayload['data']) !!}
-        @endforeach
 
+        @foreach($page->content as $componentPayload)
+            <div class="pb-32">
+                {!! $builder->render($page, $componentPayload['type'], $componentPayload['data']) !!}
+            </div>
+        @endforeach
         <x-slot:footer>
             <x-layout.shared.footer :bg="$theme->getPageBackground()"/>
         </x-slot:footer>

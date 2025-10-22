@@ -41,8 +41,13 @@ class ContactFormComponent extends AbstractCustomComponent
         return '';
     }
 
-    public static function imagePreview(): string
+    public static function featuredColor(): string
     {
-        return 'https://http.cat/500';
+        return '#ffbbff';
+    }
+
+    public static function getGroup(): string
+    {
+        return 'Form';
     }
 }

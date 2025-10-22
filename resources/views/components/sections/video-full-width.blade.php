@@ -1,61 +1,64 @@
 @props([
-    'badge',
-    'heading',
-    'description',
+    'headline',
     'video_url'
 ])
+<section class="relative py-12 md:py-16 lg:py-32 xl:py-40">
+    <div class="absolute top-0 left-0 w-full h-4/6 metallic:bg-black dark:bg-black"></div>
 
-<section class="py-12 md:py-16 lg:py-32 xl:py-40">
-    <div class="container max-w-7xl mx-auto px-4 md:px-6 relative z-10">
-        <div class="text-center mb-8 md:mb-16 flex flex-col items-center gap-y-6">
-            <x-layout.shared.chip class="px-4 py-2">
-                {{ $badge ?? 'Vídeo' }}
-            </x-layout.shared.chip>
-            <x-layout.shared.section-header :$heading :$description />
-        </div>
-    </div>
-    <div class="relative w-full max-w-[1485px] mx-auto px-4 md:px-6">
-        <div class="relative w-full aspect-video md:aspect-[16/10] lg:aspect-[21/9] max-h-[780px]">
-            <video id="firece-video" class="w-full h-full object-cover rounded-lg md:rounded-2xl lg:rounded-4xl" muted loop playsinline>
-                <source src="{{ asset('video/firece_video.webm') }}" type="video/mp4">
-                Your browser does not support the video tag.
-            </video>
-            <button
-                id="play-button"
-                class="absolute inset-0 flex items-center justify-center hover:scale-105 transition-transform duration-200"
-                onclick="playVideo()"
-            >
-                <svg class="w-20 h-20 sm:w-24 sm:h-24 md:w-32 md:h-32 lg:w-36 lg:h-36" viewBox="0 0 147 148" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <circle cx="73.4995" cy="73.9995" r="73.062" fill="#E2410A"/>
-                    <path d="M99.1719 68.8024C103.172 71.1118 103.172 76.8853 99.1719 79.1947L65.1663 98.8278C61.1663 101.137 56.1663 98.2505 56.1663 93.6317L56.1663 54.3654C56.1663 49.7466 61.1663 46.8598 65.1663 49.1692L99.1719 68.8024Z" fill="#FDFDFD"/>
-                </svg>
-            </button>
+    <div class="absolute bottom-0 left-0 w-full h-2/6 bg-brand-primary"></div>
+
+    <div class="relative z-10 h-full flex flex-col">
+        <div class="px-4">
+            <x-headline :component="$headline"></x-headline>
         </div>
 
-{{--        <div class="flex flex-col items-center gap-y-4 mt-8 md:mt-12 lg:mt-16 text-center px-4">--}}
-{{--            <p class="font-bold text-text-medium text-lg sm:text-xl">Não encontrou o que procura?</p>--}}
-{{--            <a href="" class="font-bold text-brand-primary flex flex-col sm:flex-row items-center gap-x-2 gap-y-2 text-lg sm:text-xl py-3 px-4 sm:px-8 text-center">--}}
-{{--                <span>Fale conosco para uma sugestão personalizada</span>--}}
-{{--                <x-lucide-chevron-right class="w-4 h-4 sm:inline hidden" />--}}
-{{--            </a>--}}
-{{--        </div>--}}
+        <div class="flex-grow flex items-center justify-center">
+            <div class="w-full max-w-[90rem] mx-auto px-3 md:px-4">
+                <div class="relative w-full aspect-video max-w-lg sm:max-w-2xl md:max-w-5xl lg:max-w-none mx-auto">
+                    <video id="firece-video" class="w-full h-full object-cover rounded-lg md:rounded-xl lg:rounded-2xl shadow-2xl" muted loop playsinline>
+                        <source src="{{ asset('video/firece_video.mp4') }}" type="video/mp4">
+                        <source src="{{ asset('video/firece_video.webm') }}" type="video/webm">
+                        Your browser does not support the video tag.
+                    </video>
+                    <button
+                        id="play-button"
+                        class="absolute inset-0 flex items-center justify-center hover:scale-105 transition-transform duration-200"
+                        onclick="playVideo()"
+                    >
+                        <svg class="w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 lg:w-32 lg:h-32 xl:w-40 xl:h-40 drop-shadow-lg" viewBox="0 0 147 148" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="73.4995" cy="73.9995" r="73.062" fill="#E2410A"/>
+                            <path d="M99.1719 68.8024C103.172 71.1118 103.172 76.8853 99.1719 79.1947L65.1663 98.8278C61.1663 101.137 56.1663 98.2505 56.1663 93.6317L56.1663 54.3654C56.1663 49.7466 61.1663 46.8598 65.1663 49.1692L99.1719 68.8024Z" fill="#FDFDFD"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="flex-shrink-0 h-8 md:h-12"></div>
     </div>
+</section>
+<script>
 
-    <script>
-        function playVideo() {
-            const video = document.getElementById('firece-video');
-            const playButton = document.getElementById('play-button');
 
+
+    function playVideo() {
+        const video = document.getElementById('firece-video');
+        const playButton = document.getElementById('play-button');
+
+        if (video && playButton) {
             video.play();
+
+            video.controls = true;
+
             playButton.style.display = 'none';
 
-            video.addEventListener('pause', function() {
+            const showPlayButton = () => {
                 playButton.style.display = 'flex';
-            });
+                video.controls = false;
+            };
 
-            video.addEventListener('ended', function() {
-                playButton.style.display = 'flex';
-            });
+            video.addEventListener('pause', showPlayButton);
+            video.addEventListener('ended', showPlayButton);
         }
-    </script>
-</section>
+    }
+</script>

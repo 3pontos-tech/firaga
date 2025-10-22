@@ -11,6 +11,8 @@ interface ComponentContract
 
     public static function fieldName(): string;
 
+    public static function getGroup(): string;
+
     /**
      * @param  array<string, mixed>  $data
      */
@@ -21,5 +23,5 @@ interface ComponentContract
      */
     public static function toSearchableContent(array $data): string;
 
-    public static function imagePreview(): string;
+    public static function featuredColor(): string;
 }
