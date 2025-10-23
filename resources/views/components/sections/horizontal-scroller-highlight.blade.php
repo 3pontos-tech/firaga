@@ -15,8 +15,10 @@
                         @foreach($cards as $card)
                             <x-card-v2
                                 :$card
-                                class="min-w-[250px] animate-pulse hover:animate-none"
-                                text-box="mt-2 gap-2 flex-col transition-discrete! duration-400 ease-in-out" emphasis="primary" :interactive="true"
+                                class="min-w-[250px] animate-pulse hover:animate-none group/card transition-all duration-300 ease-in-out"
+                                text-box="mt-2 gap-2 flex-col transition-discrete! duration-400 ease-in-out"
+                                emphasis="primary"
+                                :interactive="true"
                             >
                                 <x-slot:title class="text-3xl! ">{{ $card->title }}</x-slot:title>
                                 <x-slot:description class="whitespace-normal break-words min-h-[50px]">
@@ -39,9 +41,3 @@
         </div>
     </div>
 </section>
-
-@section('styles')
-    <script>
-        alert(1)
-    </script>
-@endsection
