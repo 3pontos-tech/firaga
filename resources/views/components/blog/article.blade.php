@@ -81,7 +81,7 @@
                         {{ $post->author->name }}
                     </p>
                 </div>
-                <p class="text-sm text-text-medium mt-1">{{ $post->author->description }} das dasasdd asd asasd</p>
+                <p class="text-sm text-text-medium mt-1">{{ $post->author->description }}</p>
             </div>
         </div>
     </section>
