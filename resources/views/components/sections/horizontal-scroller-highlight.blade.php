@@ -21,7 +21,7 @@
                                 :interactive="true"
                             >
                                 <x-slot:title class="text-3xl! ">{{ $card->title }}</x-slot:title>
-                                <x-slot:description class="whitespace-normal break-words min-h-[50px]">
+                                <x-slot:description class="whitespace-normal line-clamp-1 group-hover/card:line-clamp-none">
                                     {{ Str::limit($card->description) }}
                                 </x-slot:description>
 
