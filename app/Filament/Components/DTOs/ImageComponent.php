@@ -9,34 +9,62 @@ use Filament\Forms\Components\SpatieMediaLibraryFileUpload;
 use Filament\Forms\Get;
 use Ramsey\Uuid\Uuid;
 
-class ImageComponent
+readonly class ImageComponent
 {
+    public function __construct(
+        public CustomComponent $component,
+        public string $field = 'image',
+        public string $componentId
+    )
+    {
+    }
+
     public static function form(
         CustomComponent $component,
         string $field = 'image',
+        bool $isRequired = true
     ) {
+        $componentId = sprintf('%s_id', $field);
+
         return [
-            Fieldset::make('Headline')
+            Fieldset::make('Image')
                 ->columns(1)
                 ->schema([
-                    Hidden::make('component_id')
+                    Hidden::make($componentId)
                         ->formatStateUsing(fn ($state) => $state ?? Uuid::uuid4()->toString()),
 
                     SpatieMediaLibraryFileUpload::make($field)
-                        ->label('Hero Image')
+                        ->label('Select Image')
                         ->customProperties(fn (Get $get): array => [
-                            'component_id' => $get('component_id'),
+                            $componentId => $get($componentId),
+                            'field' => $field,
                         ])
                         ->filterMediaUsing(
                             fn ($media, Get $get) => $media->where(
-                                'custom_properties.component_id',
-                                $get('component_id')
+                                sprintf('custom_properties.%s', $componentId),
+                                $get($componentId)
                             ),
                         )
                         ->collection($component->value)
                         ->image()
-                        ->required(),
+                        ->required($isRequired),
                 ]),
+        ];
+    }
+
+    public static function make(
+        CustomComponent $component,
+        string $field,
+        string $componentId
+    ): static {
+        return new static($component, $field, $componentId);
+    }
+
+    public function getCustomProperties(): array
+    {
+        return [
+            'field' => substr($this->field, 0, -3),
+            $this->field => $this->componentId,
         ];
     }
 }
