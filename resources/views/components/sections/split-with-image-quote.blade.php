@@ -54,7 +54,7 @@
                         class="absolute bottom-3 sm:bottom-4 lg:bottom-6 xl:bottom-8 left-1/2 transform -translate-x-1/2 text-white text-sm sm:text-base lg:text-lg xl:text-xl font-medium w-[85%] sm:w-[80%] lg:w-[85%] xl:w-[80%] flex flex-col sm:flex-row items-start gap-2 sm:gap-x-3 lg:gap-x-4 justify-center z-20">
                         <img src="{{ asset('images/quote-mark.svg') }}" alt="Quote"
                              class="w-5 h-5 sm:w-6 sm:h-6 lg:w-8 lg:h-8 xl:w-10 xl:h-10 flex-shrink-0" />
-                        <span class="leading-relaxed">
+                        <span class="leading-relaxed sm:text-2xl lg:text-3xl">
                             {{ $quote }}
                         </span>
                     </div>

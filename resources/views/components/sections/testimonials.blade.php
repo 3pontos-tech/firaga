@@ -15,7 +15,7 @@
     $sectionBg = $isMetallic ? 'bg-[#131314] border-y border-outline-dark' : 'bg-base-200/80';
 @endphp
 
-<section class="{{ $sectionBg }} bg-gradient-to-b from-brand-primary/1 to-brand-primary/2">
+<section class="{{ $sectionBg }}">
     <div
         class="py-8 sm:py-12 md:py-16 mx-auto flex flex-col
         md:container px-4 sm:px-6 lg:px-8">
