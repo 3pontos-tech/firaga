@@ -85,6 +85,27 @@ CREATE TABLE consultant_payments (
 **Location**: `app/Providers/Filament/ConsultantPanelServiceProvider.php`
 
 ```php
+<?php
+
+namespace App\Providers\Filament;
+
+use Filament\Http\Middleware\Authenticate;
+use Filament\Http\Middleware\AuthenticateSession;
+use Filament\Http\Middleware\DisableBladeIconComponents;
+use Filament\Http\Middleware\DispatchServingFilamentEvent;
+use Filament\Pages\Dashboard;
+use Filament\Panel;
+use Filament\PanelProvider;
+use Filament\Support\Colors\Color;
+use Filament\Widgets\AccountWidget;
+use Filament\Widgets\FilamentInfoWidget;
+use Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse;
+use Illuminate\Cookie\Middleware\EncryptCookies;
+use Illuminate\Foundation\Http\Middleware\VerifyCsrfToken;
+use Illuminate\Routing\Middleware\SubstituteBindings;
+use Illuminate\Session\Middleware\StartSession;
+use Illuminate\View\Middleware\ShareErrorsFromSession;
+
 class ConsultantPanelServiceProvider extends PanelProvider
 {
     public function panel(Panel $panel): Panel
@@ -97,12 +118,34 @@ class ConsultantPanelServiceProvider extends PanelProvider
             ->authGuard('web')
             ->authMiddleware([
                 Authenticate::class,
-                EnsureConsultantAccess::class, // Custom middleware
             ])
             ->discoverResources(in: app_path('Filament/Consultant/Resources'), for: 'App\\Filament\\Consultant\\Resources')
-            ->pages([Dashboard::class]);
+            ->pages([Dashboard::class])
+            ->pages([
+                Dashboard::class,
+            ])
+            ->discoverWidgets(in: app_path('Filament/Consultant/Widgets'), for: 'App\Filament\Consultant\Widgets')
+            ->widgets([
+                AccountWidget::class,
+                FilamentInfoWidget::class,
+            ])
+            ->middleware([
+                EncryptCookies::class,
+                AddQueuedCookiesToResponse::class,
+                StartSession::class,
+                AuthenticateSession::class,
+                ShareErrorsFromSession::class,
+                VerifyCsrfToken::class,
+                SubstituteBindings::class,
+                DisableBladeIconComponents::class,
+                DispatchServingFilamentEvent::class,
+            ])
+            ->authMiddleware([
+                Authenticate::class,
+            ]);
     }
 }
+
 ```
 
 ### 3. Authentication Middleware
@@ -185,7 +228,7 @@ class ConsultantPayment extends Model
 
 ### 3. Enhanced User Model
 
-Add consultant relationship to existing User model:
+Add consultant relationship and panel access control to existing User model:
 
 ```php
 public function consultants(): BelongsToMany
@@ -196,6 +239,12 @@ public function consultants(): BelongsToMany
 public function hasConsultantAccess(): bool
 {
     return $this->consultants()->exists();
+}
+
+public function canAccessPanel(Panel $panel): bool
+{
+    // Panel access control - will be implemented with consultant validation
+    return true; // This will be changed to validation logic
 }
 ```
 
