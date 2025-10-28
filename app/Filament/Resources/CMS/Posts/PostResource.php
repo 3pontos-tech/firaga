@@ -33,7 +33,6 @@ use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Table;
 use Illuminate\Support\Str;
 
-
 class PostResource extends Resource
 {
     protected static ?string $model = Post::class;

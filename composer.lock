@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "5850f02a77cd637a9586a5b9b3adc047",
+    "content-hash": "3f3589e240f19cfe09cc036aa164031f",
     "packages": [
         {
             "name": "3pontos-tech/filament-consultants-module",
@@ -233,6 +233,51 @@
                 "source": "https://github.com/Bacon/BaconQrCode/tree/v3.0.1"
             },
             "time": "2024-10-01T13:55:55+00:00"
+        },
+        {
+            "name": "basementdevs/abacatepay-php-sdk",
+            "version": "1.0.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/basementdevs/abacatepay-php-sdk.git",
+                "reference": "ad0406387aa4e0aa121e048b16619a3f78642310"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/basementdevs/abacatepay-php-sdk/zipball/ad0406387aa4e0aa121e048b16619a3f78642310",
+                "reference": "ad0406387aa4e0aa121e048b16619a3f78642310",
+                "shasum": ""
+            },
+            "require": {
+                "guzzlehttp/guzzle": "^7.10.0",
+                "php": "^8.3",
+                "symfony/http-foundation": "^v7.3.4"
+            },
+            "require-dev": {
+                "laravel/pint": "^v1.25.1",
+                "mockery/mockery": "^1.6",
+                "pestphp/pest": "^4.1",
+                "rector/rector": "^2.2"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Basement\\AbacatePay\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "description": "AbacatePay PHP SDK Client",
+            "keywords": [
+                "abacatepay",
+                "payment",
+                "php",
+                "sdk"
+            ],
+            "support": {
+                "issues": "https://github.com/basementdevs/abacatepay-php-sdk/issues",
+                "source": "https://github.com/basementdevs/abacatepay-php-sdk/tree/1.0.2"
+            },
+            "time": "2025-10-27T20:08:24+00:00"
         },
         {
             "name": "bezhansalleh/filament-plugin-essentials",

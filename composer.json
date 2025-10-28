@@ -21,6 +21,7 @@
     "require": {
         "php": "^8.3",
         "3pontos-tech/filament-consultants-module": "dev-main",
+        "basementdevs/abacatepay-php-sdk": "^1.0",
         "bezhansalleh/filament-shield": "^4.0",
         "blade-ui-kit/blade-icons": "^1.8",
         "danharrin/livewire-rate-limiting": "^2.1",
