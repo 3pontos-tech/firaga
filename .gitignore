@@ -3,6 +3,7 @@
 /public/build
 /public/hot
 /public/storage
+/public/fonts
 /storage/*.key
 /storage/pail
 /storage/media-library

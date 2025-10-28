@@ -4,7 +4,7 @@ namespace App\Filament\Components\DTOs;
 
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Components\Toggle;
-use Guava\FilamentIconPicker\Forms\IconPicker;
+use Guava\IconPicker\Forms\Components\IconPicker;
 
 class BadgeComponent
 {

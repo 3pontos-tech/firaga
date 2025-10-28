@@ -1,7 +1,6 @@
 <?php
 
 use App\Models\Author;
-use Awcodes\Curator\Models\Media;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -35,9 +34,6 @@ return new class extends Migration
             $table->longText('meta_keywords')->nullable();
             $table->longText('opengraph_title')->nullable();
             $table->longText('opengraph_description')->nullable();
-
-            $table->foreignIdFor(Media::class, 'opengraph_picture')->nullable();
-            $table->longText('opengraph_picture_alt')->nullable();
 
             $table->dateTime('published_at')->nullable();
             $table->timestamps();

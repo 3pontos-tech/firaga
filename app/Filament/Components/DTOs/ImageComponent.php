@@ -3,10 +3,10 @@
 namespace App\Filament\Components\DTOs;
 
 use App\Enums\CustomComponent;
-use Filament\Forms\Components\Fieldset;
 use Filament\Forms\Components\Hidden;
 use Filament\Forms\Components\SpatieMediaLibraryFileUpload;
-use Filament\Forms\Get;
+use Filament\Schemas\Components\Fieldset;
+use Filament\Schemas\Components\Utilities\Get;
 use Ramsey\Uuid\Uuid;
 
 readonly class ImageComponent

@@ -4,7 +4,6 @@ namespace App\Models\CMS;
 
 use App\Enums\PageStatus;
 use App\Enums\PageTheme;
-use Awcodes\Curator\Models\Media;
 use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
@@ -84,11 +83,6 @@ class Page extends Model implements HasMedia
     public function translationForLang(string $locale): Page
     {
         return $this->translations->where('lang', $locale)->firstOrFail();
-    }
-
-    public function openGraphPicture(): BelongsTo
-    {
-        return $this->belongsTo(Media::class, 'opengraph_picture', 'id');
     }
 
     public function fullUrlPath(): string

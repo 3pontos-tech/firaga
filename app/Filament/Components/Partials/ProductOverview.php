@@ -5,11 +5,11 @@ namespace App\Filament\Components\Partials;
 use App\Enums\CustomComponent;
 use App\Filament\Components\AbstractCustomComponent;
 use Filament\Forms\Components\ColorPicker;
-use Filament\Forms\Components\Fieldset;
-use Filament\Forms\Components\Group;
 use Filament\Forms\Components\Repeater;
 use Filament\Forms\Components\TextInput;
-use Guava\FilamentIconPicker\Forms\IconPicker;
+use Filament\Schemas\Components\Fieldset;
+use Filament\Schemas\Components\Group;
+use Guava\IconPicker\Forms\Components\IconPicker;
 
 class ProductOverview extends AbstractCustomComponent
 {

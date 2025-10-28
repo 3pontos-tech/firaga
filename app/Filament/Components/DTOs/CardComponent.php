@@ -2,13 +2,13 @@
 
 namespace App\Filament\Components\DTOs;
 
-use Filament\Forms\Components\Fieldset;
 use Filament\Forms\Components\Repeater;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\Textarea;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Components\Toggle;
-use Guava\FilamentIconPicker\Forms\IconPicker;
+use Filament\Schemas\Components\Fieldset;
+use Guava\IconPicker\Forms\Components\IconPicker;
 use Illuminate\Support\Collection;
 
 class CardComponent

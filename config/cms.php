@@ -3,14 +3,13 @@
 declare(strict_types=1);
 
 use App\Enums\CustomComponent;
-use App\Filament\Resources\CMS\MenuResource\RelationManagers\ItemsRelationManager;
+use App\Filament\Resources\CMS\Menus\RelationManagers\ItemsRelationManager;
 use App\Models\CMS\Category;
 use App\Models\CMS\Menu;
 use App\Models\CMS\MenuItem;
 use App\Models\CMS\Page;
 use App\Models\CMS\Post;
 use App\Models\User;
-use Awcodes\Curator\Models\Media;
 
 return [
     /*
@@ -21,7 +20,6 @@ return [
 
     'models' => [
         'user' => User::class,
-        'media' => Media::class,
         'page' => Page::class,
         'post' => Post::class,
         'category' => Category::class,
