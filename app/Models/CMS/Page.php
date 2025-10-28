@@ -2,8 +2,8 @@
 
 namespace App\Models\CMS;
 
+use App\Enums\PageStatus;
 use App\Enums\PageTheme;
-use Awcodes\Curator\Models\Media;
 use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
@@ -13,9 +13,6 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Support\Collection;
 use Spatie\MediaLibrary\HasMedia;
 use Spatie\MediaLibrary\InteractsWithMedia;
-use Webid\Druid\Enums\PageStatus;
-use Webid\Druid\Models\Contracts\IsMenuable;
-use Webid\Druid\Models\Traits\CanRenderContent;
 
 /**
  * @property int $id
@@ -47,9 +44,8 @@ use Webid\Druid\Models\Traits\CanRenderContent;
  * @property-read Page $translationOrigin
  * @property-read Collection<int, Page> $translations
  */
-class Page extends Model implements HasMedia, IsMenuable
+class Page extends Model implements HasMedia
 {
-    use CanRenderContent;
     use HasFactory;
     use InteractsWithMedia;
     use SoftDeletes;
@@ -87,11 +83,6 @@ class Page extends Model implements HasMedia, IsMenuable
     public function translationForLang(string $locale): Page
     {
         return $this->translations->where('lang', $locale)->firstOrFail();
-    }
-
-    public function openGraphPicture(): BelongsTo
-    {
-        return $this->belongsTo(Media::class, 'opengraph_picture', 'id');
     }
 
     public function fullUrlPath(): string

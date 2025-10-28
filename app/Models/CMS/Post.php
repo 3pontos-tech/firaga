@@ -2,6 +2,7 @@
 
 namespace App\Models\CMS;
 
+use App\Enums\PostStatus;
 use App\Models\Author;
 use Carbon\Carbon;
 use Illuminate\Auth\Authenticatable;
@@ -14,10 +15,6 @@ use Illuminate\Support\Str;
 use Spatie\MediaLibrary\HasMedia;
 use Spatie\MediaLibrary\InteractsWithMedia;
 use Spatie\MediaLibrary\MediaCollections\Models\Media;
-use Webid\Druid\Enums\PostStatus;
-use Webid\Druid\Models\Contracts\IsMenuable;
-use Webid\Druid\Models\Traits\CanRenderContent;
-use Webid\Druid\Models\Traits\IsTranslatable;
 
 /**
  * @property int $id
@@ -52,12 +49,10 @@ use Webid\Druid\Models\Traits\IsTranslatable;
  * @property-read string $fullUrlPath
  * @property-read string $url
  */
-class Post extends Model implements HasMedia, IsMenuable
+class Post extends Model implements HasMedia
 {
-    use CanRenderContent;
     use HasFactory;
     use InteractsWithMedia;
-    use IsTranslatable;
 
     protected $table = 'posts';
 

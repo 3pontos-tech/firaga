@@ -2,10 +2,10 @@
 
 namespace App\Filament\Components\DTOs;
 
-use Filament\Forms\Components\Fieldset;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\TagsInput;
 use Filament\Forms\Components\TextInput;
+use Filament\Schemas\Components\Fieldset;
 use Illuminate\Support\Collection;
 
 class HeadlineComponent

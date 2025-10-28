@@ -52,7 +52,7 @@ class FaqComponent extends AbstractCustomComponent
     {
         $solutions = collect($data['solutions'] ?? []);
 
-        return $solutions->map(function ($solution): string {
+        return $solutions->map(function (array $solution): string {
             return ($solution['question'] ?? '') . ' ' . ($solution['answer'] ?? '');
         })->implode(' ');
     }

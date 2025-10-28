@@ -3,12 +3,12 @@
 namespace Database\Factories\CMS;
 
 use App\Enums\CustomComponent;
+use App\Enums\PostStatus;
 use App\Models\Author;
 use App\Models\CMS\Category;
 use App\Models\CMS\Post;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Database\Eloquent\Model;
-use Webid\Druid\Enums\PostStatus;
 
 class PostFactory extends Factory
 {

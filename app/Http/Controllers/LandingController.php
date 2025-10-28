@@ -3,10 +3,12 @@
 namespace App\Http\Controllers;
 
 use App\Models\Testimonial;
+use Illuminate\Contracts\View\Factory;
+use Illuminate\Contracts\View\View;
 
 class LandingController extends Controller
 {
-    public function __invoke()
+    public function __invoke(): Factory|View
     {
         $testimonials = Testimonial::query()->inRandomOrder()->limit(4)->get();
 

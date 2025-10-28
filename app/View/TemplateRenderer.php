@@ -31,7 +31,7 @@ class TemplateRenderer
 
     private function resolveComponent(string $type): AbstractCustomComponent
     {
-        throw_unless(CustomComponent::tryFrom($type), new ViewException(sprintf("Component type '%s' is not recognized.", $type)));
+        throw_unless(CustomComponent::tryFrom($type), ViewException::class, sprintf("Component type '%s' is not recognized.", $type));
 
         return CustomComponent::from($type)->getComponent();
     }

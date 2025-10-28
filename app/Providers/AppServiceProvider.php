@@ -3,7 +3,6 @@
 namespace App\Providers;
 
 use App\View\Components\Navbar;
-use BezhanSalleh\FilamentShield\FilamentShield;
 use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Blade;
@@ -51,7 +50,6 @@ class AppServiceProvider extends ServiceProvider
 
     private function configureFilament(): void
     {
-        FilamentShield::prohibitDestructiveCommands($this->app->isProduction());
 
         Table::configureUsing(fn (Table $table): Table => $table->paginationPageOptions([10, 25, 50]));
     }

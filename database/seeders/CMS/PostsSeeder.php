@@ -14,7 +14,6 @@ use Illuminate\Support\Str;
 use Spatie\MediaLibrary\MediaCollections\Exceptions\FileCannotBeAdded;
 use Spatie\MediaLibrary\MediaCollections\Exceptions\FileDoesNotExist;
 use Spatie\MediaLibrary\MediaCollections\Exceptions\FileIsTooBig;
-use Webid\Druid\Facades\Druid;
 
 class PostsSeeder extends Seeder
 {
@@ -51,13 +50,13 @@ class PostsSeeder extends Seeder
             ->toMediaCollection('avatar');
 
         foreach ($this->getCategoriesStructure() as $categoryByLocale) {
-            if (! isset($categoryByLocale[Druid::getDefaultLocale()])) {
+            if (! isset($categoryByLocale['en'])) {
                 return;
             }
 
             CategoryFactory::new()->create([
-                ...$categoryByLocale[Druid::getDefaultLocale()],
-                'lang' => Druid::getDefaultLocale(),
+                ...$categoryByLocale['en'],
+                'lang' => 'en',
             ]);
         }
 

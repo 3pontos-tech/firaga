@@ -9,7 +9,6 @@ use App\Models\CMS\Page;
 use Database\Factories\CMS\MenuFactory;
 use Database\Factories\CMS\MenuItemFactory;
 use Illuminate\Database\Seeder;
-use Webid\Druid\Facades\Druid;
 
 class MenusSeeder extends Seeder
 {
@@ -23,7 +22,7 @@ class MenusSeeder extends Seeder
             /** @var Menu $menu */
             $menu = MenuFactory::new()->create([
                 ...$menuPayload,
-                'lang' => Druid::getDefaultLocale(),
+                'lang' => 'pt_BR',
             ]);
 
             foreach (config('firaga.pages') as $index => $page) {

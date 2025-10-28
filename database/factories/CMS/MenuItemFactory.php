@@ -2,11 +2,11 @@
 
 namespace Database\Factories\CMS;
 
+use App\Enums\MenuItemTarget;
 use App\Models\CMS\Menu;
 use App\Models\CMS\MenuItem;
 use App\Models\CMS\Page;
 use Illuminate\Database\Eloquent\Factories\Factory;
-use Webid\Druid\Enums\MenuItemTarget;
 
 class MenuItemFactory extends Factory
 {

@@ -6,7 +6,7 @@ use Filament\Forms\Components\Repeater;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Components\Toggle;
-use Guava\FilamentIconPicker\Forms\IconPicker;
+use Guava\IconPicker\Forms\Components\IconPicker;
 use Illuminate\Support\Collection;
 
 class ButtonComponent
@@ -21,7 +21,7 @@ class ButtonComponent
 
     public static function form(?string $parent = null): array
     {
-        $parent = $parent !== null && $parent !== '' && $parent !== '0' ? $parent . '.' : null;
+        $parent = in_array($parent, [null, '', '0'], true) ? null : $parent . '.';
 
         return [
             Toggle::make($parent . 'has_actions')
@@ -84,6 +84,6 @@ class ButtonComponent
         }
 
         return collect($payload['buttons'] ?? [])
-            ->map(fn ($button): ButtonComponent => self::make($button));
+            ->map(fn (array $button): ButtonComponent => self::make($button));
     }
 }

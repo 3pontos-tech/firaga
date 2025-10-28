@@ -8,7 +8,7 @@ return new class extends Migration
 {
     public function up(): void
     {
-        Schema::table('pages', function (Blueprint $table) {
+        Schema::table('pages', function (Blueprint $table): void {
             $table->boolean('deletable')
                 ->after('published_at')
                 ->default(true);
