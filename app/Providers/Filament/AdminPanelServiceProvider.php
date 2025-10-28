@@ -24,7 +24,6 @@ use Illuminate\Session\Middleware\StartSession;
 use Illuminate\View\Middleware\ShareErrorsFromSession;
 use Jeffgreco13\FilamentBreezy\BreezyCore;
 use pxlrbt\FilamentEnvironmentIndicator\EnvironmentIndicatorPlugin;
-use Swis\Filament\Backgrounds\FilamentBackgroundsPlugin;
 
 class AdminPanelServiceProvider extends PanelProvider
 {
@@ -67,7 +66,6 @@ class AdminPanelServiceProvider extends PanelProvider
                 FilamentShieldPlugin::make(),
                 BreezyCore::make()
                     ->myProfile(shouldRegisterUserMenu: true),
-                FilamentBackgroundsPlugin::make(),
                 ThemesPlugin::make(),
             ])
             ->theme(asset('css/filament/admin/theme.css'))
