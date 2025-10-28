@@ -15,7 +15,7 @@ class CreatePaymentLinkDTO
         public string $customerName,
         public string $customerCellphone,
         public string $customerEmail,
-        public string $tax_id,
+        public string $customerTaxId,
     ) {}
 
     public static function fromArray(array $data): self
@@ -31,7 +31,7 @@ class CreatePaymentLinkDTO
             customerName: $data['customerName'],
             customerCellphone: $data['customerCellphone'],
             customerEmail: $data['customerEmail'],
-            tax_id: $data['tax_id'],
+            customerTaxId: $data['tax_id'],
         );
     }
 }

@@ -8,7 +8,7 @@ use Filament\Support\Contracts\HasIcon;
 use Filament\Support\Contracts\HasLabel;
 use Filament\Support\Icons\Heroicon;
 
-enum PaymentStatusEnum: string implements HasLabel, HasIcon, HasColor
+enum PaymentStatusEnum: string implements HasColor, HasIcon, HasLabel
 {
     case PENDING = 'pending';
     case SUCCESS = 'success';

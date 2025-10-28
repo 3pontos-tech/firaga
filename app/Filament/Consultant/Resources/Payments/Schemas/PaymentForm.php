@@ -7,7 +7,6 @@ use Filament\Forms\Components\Select;
 use Filament\Forms\Components\TextInput;
 use Filament\Schemas\Components\Utilities\Set;
 use Filament\Schemas\Schema;
-use Livewire\Component;
 
 class PaymentForm
 {
@@ -15,60 +14,45 @@ class PaymentForm
     {
         return $schema
             ->components([
-                Select::make('customer_name')
-                    ->label('Customer Name')
+                Select::make('provider')
+                    ->enum(PaymentProviderEnum::class)
+                    ->options(PaymentProviderEnum::class)
+                    ->required(),
+
+                Select::make('plan')
+                    ->label('Plano')
                     ->reactive()
                     ->options([
-                        'johnDoe' => 'John Doe',
-                        'janeDoe' => 'Jane Doe',
-                        'joaozinhoJhow' => 'Joaozinho jhow',
+                        'gold' => 'Plano Gold',
+                        'platinum' => 'Plano Platinum',
+                        'black' => 'Plano Black',
                     ])
-                    ->afterStateUpdated(function ($state, Set $set) {
-                        $set('customer_email', "$state@email.com");
-                        $set('customer_phone_number', "(11) 90280018");
-                        $set('customer_cpf', "999.999.999-99");
+                    ->required(),
 
-                        if (is_null($state)) {
-                            $set('customer_email', "");
-                            $set('customer_phone_number', "");
-                            $set('customer_cpf', "");
-                        }
-                    })
+                TextInput::make('customer_name')
+                    ->label('Customer Name')
+                    ->reactive()
                     ->required(),
 
                 TextInput::make('customer_email')
                     ->label('Customer Email')
                     ->reactive()
-                    ->readonly()
                     ->required(),
 
                 TextInput::make('customer_phone_number')
                     ->label('Customer Phone Number')
-                    ->readonly()
                     ->mask('(99) 99999-9999')
                     ->reactive()
                     ->required(),
 
-                TextInput::make('customer_cpf')
+                TextInput::make('customer_tax_id')
                     ->label('Customer CPF')
-                    ->readonly()
                     ->mask('999.999.999-99')
-                    ->reactive()
                     ->required(),
 
                 TextInput::make('amount')
                     ->label('Amount')
                     ->numeric()
-                    ->required(),
-
-                TextInput::make('payment_url')
-                    ->label('Url')
-                    ->hiddenOn('create')
-                    ->required(),
-
-                Select::make('provider')
-                    ->enum(PaymentProviderEnum::class)
-                    ->options(PaymentProviderEnum::class)
                     ->required(),
             ]);
     }

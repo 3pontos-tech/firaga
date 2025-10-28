@@ -10,33 +10,29 @@ use Ramsey\Uuid\Uuid;
 
 class CreatePaymentLink
 {
-    public function handle()
+    public function handle(CreatePaymentLinkDTO $dto)
     {
-        $client = new AbacatePayClient('socorro');
+        $client = new AbacatePayClient(config('services.abacatepay.api_key'));
 
         $externalId = Uuid::uuid4()->toString();
 
-        $productId = 'gold_123';
-
-        $productName = 'Consultoria Gold';
-
-        $productDescription = 'Consultoria Gold mto foda';
-
-        $productPrice = 1000;
-
-        $product = new ProductRequest($productId, $productName, $productDescription, 1, $productPrice);
+        $product = new ProductRequest(
+            $dto->productId,
+            $dto->productName,
+            $dto->productDescription,
+            1,
+            $dto->productPrice,
+        );
 
         $customerId = Uuid::uuid4()->toString();
 
-        $customerName = 'Fulaninho';
-
-        $customerCellphone = '11999999999';
-
-        $customerEmail = 'aaaa@aaaa.com';
-
-        $customerTaxId = '99999999999';
-
-        $customer = new CustomerRequest($customerId, $customerName, $customerCellphone, $customerEmail, $customerTaxId);
+        $customer = new CustomerRequest(
+            $customerId,
+            $dto->customerName,
+            $dto->customerCellphone,
+            $dto->customerEmail,
+            $dto->customerTaxId,
+        );
 
         $request = CreateBillingRequest::oneTime()
             ->pix()
@@ -45,10 +41,10 @@ class CreatePaymentLink
             ->externalId($externalId)
             ->products($product)
             ->forCustomer($customer)
-            ->build()
-            ->toArray();
-        dd($request);
+            ->build();
 
-        $client->billing()->create($request);
+        $response = $client->billing()->create($request);
+
+        return CreatePaymentLinkResponse::make($externalId, $response);
     }
 }
