@@ -11,8 +11,16 @@
         "filament"
     ],
     "license": "MIT",
+
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "https://github.com/3pontos-tech/filament-consultants-module"
+        }
+    ],
     "require": {
         "php": "^8.3",
+        "3pontos-tech/filament-consultants-module": "dev-main",
         "bezhansalleh/filament-shield": "^4.0",
         "blade-ui-kit/blade-icons": "^1.8",
         "danharrin/livewire-rate-limiting": "^2.1",

@@ -21,6 +21,7 @@ use Illuminate\Session\Middleware\StartSession;
 use Illuminate\View\Middleware\ShareErrorsFromSession;
 use Jeffgreco13\FilamentBreezy\BreezyCore;
 use pxlrbt\FilamentEnvironmentIndicator\EnvironmentIndicatorPlugin;
+use TresPontosTech\Consultant\FilamentConsultantsPlugin;
 
 class AdminPanelServiceProvider extends PanelProvider
 {
@@ -56,6 +57,7 @@ class AdminPanelServiceProvider extends PanelProvider
                 DispatchServingFilamentEvent::class,
             ])
             ->plugins([
+                FilamentConsultantsPlugin::make(),
                 EnvironmentIndicatorPlugin::make()
                     ->visible(fn () => auth()->check())
                     ->showBadge(),
