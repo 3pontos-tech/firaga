@@ -43,6 +43,7 @@ readonly class ImageComponent
                                 $get($componentId)
                             ),
                         )
+                        ->visibility('public')
                         ->collection($component->value)
                         ->image()
                         ->required($isRequired),
