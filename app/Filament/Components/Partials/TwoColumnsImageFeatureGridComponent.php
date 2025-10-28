@@ -38,7 +38,7 @@ class TwoColumnsImageFeatureGridComponent extends AbstractCustomComponent
                         ->required(),
                 ])
                 ->minItems(1)
-                ->maxItems(4)
+                ->maxItems(6)
                 ->required(),
         ];
     }

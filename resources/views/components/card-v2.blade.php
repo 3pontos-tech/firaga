@@ -122,6 +122,8 @@
 
     </div>
 
+    {{ $slot }}
+
     {{-- Ações (opcional) --}}
     @isset($actions)
         <div {{ $actions->attributes->class('mt-2') }}>

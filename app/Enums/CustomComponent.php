@@ -25,6 +25,7 @@ use App\Filament\Components\Partials\FlowTimeline;
 use App\Filament\Components\Partials\HorizontalScrollerHighlightComponent;
 use App\Filament\Components\Partials\InfoStatsComponent;
 use App\Filament\Components\Partials\PlansComponent;
+use App\Filament\Components\Partials\ProductOverview;
 use App\Filament\Components\Partials\QuoteComponent;
 use App\Filament\Components\Partials\RoadmapComponent;
 use App\Filament\Components\Partials\SplitWithHorizontalStepsComponent;
@@ -65,6 +66,7 @@ enum CustomComponent: string
     case Plans = 'plans';
 
     case HorizontalScrollerHighlight = 'horizontal-scroller-highlight';
+    case ProductOverview = 'product-overview';
 
     case VideoTestimonial = 'video-testimonial';
     case FullWidthVideo = 'full-width-video';
@@ -93,6 +95,7 @@ enum CustomComponent: string
             self::SplitWithHorizontalSteps => SplitWithHorizontalStepsComponent::class,
             self::SplitWithImageQuote => SplitWithImageQuoteComponent::class,
             self::HorizontalScrollerHighlight => HorizontalScrollerHighlightComponent::class,
+            self::ProductOverview => ProductOverview::class,
             self::Plans => PlansComponent::class,
             self::FullWidthVideo => FullWidthVideoComponent::class,
             self::Testimonials => TestimonialsComponent::class,
@@ -104,7 +107,7 @@ enum CustomComponent: string
             self::ContactForm => ContactFormComponent::class,
             self::FlowTimeline => FlowTimeline::class,
             self::HeroWithTitleOnly => HeroWithTitleOnly::class,
-            self::HeroWithSplitImages => HeroWithSplitImages::class,
+            self::HeroWithSplitImages => HeroWithSplitImages::class
         };
     }
 

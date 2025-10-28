@@ -14,7 +14,7 @@ class CtaFullWidthComponent extends AbstractCustomComponent
     public static function blockSchema(): array
     {
         return [
-            ...ImageComponent::form(CustomComponent::CallToActionFullWidthSection),
+            ...ImageComponent::form(CustomComponent::CallToActionFullWidthSection, 'header'),
 
             ...HeadlineComponent::form(),
         ];
@@ -28,8 +28,8 @@ class CtaFullWidthComponent extends AbstractCustomComponent
     public static function setupRenderPayload(array $data): array
     {
         return [
-            'headline' => HeadlineComponent::make($data['headline']),
-            'component_id' => $data['component_id'],
+            'header' => ImageComponent::make(CustomComponent::CallToActionFullWidthSection, 'header_id', $data['header_id'] ?? ''),
+            'headline' => HeadlineComponent::make($data['headline'])
         ];
     }
 

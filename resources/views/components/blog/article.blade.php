@@ -64,13 +64,13 @@
         </article>
     </section>
     <section id="author" class="container mx-auto mt-12 pb-10">
-        <div class="max-w-4xl mx-auto mt-12 p-6 bg-elevation-02dp rounded-xl flex items-center gap-6">
+        <div class="max-w-4xl mx-auto mt-12 p-6 bg-elevation-02dp rounded-xl md:flex-row flex-col flex  md:items-center gap-6">
             <div class="w-30">
                 <img
                     alt="{{ $post->author->name ?? '' }}"
                     loading="lazy"
                     decoding="async"
-                    class="rounded-full object-cover object-center  border-2 border-elevation-04dp"
+                    class="rounded-xl object-cover object-center min-w-32 border-2 border-elevation-04dp"
                     src="{{ $post->author->getFirstMediaUrl('avatar') }}"
                 >
             </div>

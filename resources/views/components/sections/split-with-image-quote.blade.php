@@ -8,34 +8,59 @@
     'image_position',
     'start_description' => '',
     'end_description' => '',
+    'hero',
+    'header',
+    'header_text' => '',
+    'component_theme' => ''
 ])
 
 @php
+    use App\Filament\Components\DTOs\ImageComponent;
+
+    /** @var ImageComponent $header */
+    /** @var ImageComponent $hero */
+
     $imagePos = $image_position === 'left' ? 'order-1 lg:order-1' : 'order-1 lg:order-2';
     $contentPos = $image_position === 'left' ? 'order-1 lg:order-2' : 'order-2 lg:order-1';
     $variant = $renderable?->theme->value;
 @endphp
 
 
-<section class="py-8 sm:py-12 md:py-16 lg:py-20 xl:py-60">
-    <div class="container mx-auto">
+<section class="{{ $component_theme }} py-8 sm:py-12 md:py-16 lg:py-20 xl:py-60">
+    <div class="container mx-auto space-y-8">
+        @if ($renderable?->getFirstMedia($header->component->value, $header->getCustomProperties())?->getUrl())
+            <div class="hidden lg:block relative overflow-hidden max-h-[400px] h-[400px]">
+                <img
+                    src="{{ $renderable?->getFirstMedia($header->component->value, $header->getCustomProperties())?->getUrl() }}"
+                    alt="Our Work"
+                    class="absolute inset-0 w-full h-full object-cover object-center rounded-lg sm:rounded-xl lg:rounded-2xl">
+                <div class="absolute inset-0 flex items-center justify-center px-6 text-center z-20">
+                    <h3 class="text-text-high text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold drop-shadow-lg leading-tight max-w-3xl rounded-md sm:rounded-lg lg:rounded-xl">
+                        {{ $header_text }}
+                    </h3>
+                </div>
+                <div class="absolute inset-0 bg-gradient-to-t from-elevation-surface/100 via-elevation-surface/50 to-elevation-surface/20 z-10 pointer-events-none"></div>
+            </div>
+        @endif
         <div class="flex flex-col lg:flex-row gap-8 lg:gap-12 xl:gap-16">
             <div class="w-full lg:w-1/2 xl:w-[40%] relative {{ $imagePos }}">
-                <div class="block h-full mb-16 sm:mb-20 lg:mb-0 relative">
+                <div class="relative h-full mb-16 sm:mb-20 lg:mb-0 max-h-[600px]">
                     <img
-                        src="{{ $renderable?->getFirstMediaUrl(App\Enums\CustomComponent::SplitWithImageQuote->value) ?? asset('images/stock/our-work.png') }}"
+                        src="{{ $renderable?->getFirstMedia($hero->component->value, $hero->getCustomProperties())?->getUrl() ?? asset('images/stock/our-work.png') }}"
                         alt="Our Work"
-                        class="w-full h-full object-cover rounded-lg sm:rounded-xl lg:rounded-2xl">
+                        class="w-full h-full object-cover rounded-lg sm:rounded-xl lg:rounded-2xl z-0">
+                    <div class="absolute inset-0 rounded-lg sm:rounded-xl lg:rounded-xl bg-gradient-to-t from-elevation-surface/100 via-elevation-surface/50 to-elevation-surface/20 z-10 pointer-events-none"></div>
                     <div
-                        class="absolute bottom-3 sm:bottom-4 lg:bottom-6 xl:bottom-8 left-1/2 transform -translate-x-1/2 text-white text-sm sm:text-base lg:text-lg xl:text-xl font-medium w-[85%] sm:w-[80%] lg:w-[85%] xl:w-[80%] flex flex-col sm:flex-row items-start gap-2 sm:gap-x-3 lg:gap-x-4 justify-center">
+                        class="absolute bottom-3 sm:bottom-4 lg:bottom-6 xl:bottom-8 left-1/2 transform -translate-x-1/2 text-white text-sm sm:text-base lg:text-lg xl:text-xl font-medium w-[85%] sm:w-[80%] lg:w-[85%] xl:w-[80%] flex flex-col sm:flex-row items-start gap-2 sm:gap-x-3 lg:gap-x-4 justify-center z-20">
                         <img src="{{ asset('images/quote-mark.svg') }}" alt="Quote"
-                             class="w-5 h-5 sm:w-6 sm:h-6 lg:w-8 lg:h-8 xl:w-10 xl:h-10 flex-shrink-0"/>
-                        <span class="leading-relaxed">
+                             class="w-5 h-5 sm:w-6 sm:h-6 lg:w-8 lg:h-8 xl:w-10 xl:h-10 flex-shrink-0" />
+                        <span class="leading-relaxed sm:text-2xl lg:text-3xl">
                             {{ $quote }}
                         </span>
                     </div>
                 </div>
             </div>
+
             <div class="w-full lg:w-1/2 xl:w-[55%] flex flex-col gap-y-4 sm:gap-y-6 lg:gap-y-8 justify-center {{ $contentPos }}">
                 <div class="space-y-4 sm:space-y-6">
                     <div class="flex flex-col items-center justify-center space-y-6">
