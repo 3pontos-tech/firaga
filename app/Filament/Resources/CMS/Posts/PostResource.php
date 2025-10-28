@@ -5,6 +5,7 @@ namespace App\Filament\Resources\CMS\Posts;
 use App\Enums\PostStatus;
 use App\Filament\Components\FilamentComponentsService;
 use App\Filament\Resources\Authors\Pages\EditAuthor;
+use App\Filament\Resources\CMS\CommonFields;
 use App\Filament\Resources\CMS\Posts\Pages\CreatePost;
 use App\Filament\Resources\CMS\Posts\Pages\EditPost;
 use App\Filament\Resources\CMS\Posts\Pages\ListPosts;
@@ -32,7 +33,6 @@ use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Table;
 use Illuminate\Support\Str;
 
-// use Webid\Druid\Filament\Resources\CommonFields;
 
 class PostResource extends Resource
 {
