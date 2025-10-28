@@ -2,6 +2,7 @@
 
 namespace App\Filament\Resources\CMS;
 
+use App\Enums\PostStatus;
 use App\Filament\Components\FilamentComponentsService;
 use App\Filament\Resources\AuthorResource\Pages\EditAuthor;
 use App\Filament\Resources\CMS\PostResource\Pages\CreatePost;
@@ -29,10 +30,8 @@ use Filament\Tables\Actions\EditAction;
 use Filament\Tables\Columns\SpatieMediaLibraryImageColumn;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Table;
-use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Support\Str;
-use Webid\Druid\Enums\PostStatus;
-use Webid\Druid\Facades\Druid;
+
 // use Webid\Druid\Filament\Resources\CommonFields;
 
 class PostResource extends Resource
@@ -101,10 +100,7 @@ class PostResource extends Resource
                 ->helperText(__('Display this article in the top article section')),
             'categories' => Select::make('categories')
                 ->label(__('filament.category'))
-                ->options(Category::query()->where(['lang' => Druid::getDefaultLocale()])
-                    ->whereDoesntHave('translations', fn (Builder $query) => $query
-                        ->where('lang', Druid::getDefaultLocale()))
-                    ->get()->pluck('name', 'id'))
+                ->options(Category::query()->get()->pluck('name', 'id'))
                 ->multiple()
                 ->required()
                 ->relationship('categories', 'name')
@@ -141,7 +137,7 @@ class PostResource extends Resource
                 ->label(__('filament.title'))
                 ->color('primary')
                 ->url(
-                    url: fn (Post $record) => route('blog.show', ['post' => $record->slug]),
+                    url: fn (Post $record): string => route('blog.show', ['post' => $record->slug]),
                     shouldOpenInNewTab: true
                 )
                 ->searchable(),
@@ -196,10 +192,5 @@ class PostResource extends Resource
     public static function getRelations(): array
     {
         return [PostsRelationManager::class];
-    }
-
-    public static function canAccess(): bool
-    {
-        return Druid::isBlogModuleEnabled();
     }
 }

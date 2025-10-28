@@ -6,6 +6,7 @@ use App\Filament\Resources\CMS\CategoryResource\Pages\CreateCategory;
 use App\Filament\Resources\CMS\CategoryResource\Pages\EditCategory;
 use App\Filament\Resources\CMS\CategoryResource\Pages\ListCategories;
 use App\Filament\Resources\CMS\CategoryResource\RelationManagers\PostsRelationManager;
+use App\Models\CMS\Category;
 use Filament\Forms\Components\Section;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Form;
@@ -17,7 +18,6 @@ use Filament\Tables\Actions\EditAction;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Table;
 use Illuminate\Support\Str;
-use Webid\Druid\Models\Category;
 
 class CategoryResource extends Resource
 {

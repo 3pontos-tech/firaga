@@ -2,6 +2,7 @@
 
 namespace App\Filament\Resources\CMS;
 
+use App\Enums\PageStatus;
 use App\Enums\PageTheme;
 use App\Filament\Components\FilamentComponentsService;
 use App\Filament\Resources\CMS\PageResource\Pages\CreatePage;
@@ -30,7 +31,6 @@ use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Str;
-use Webid\Druid\Enums\PageStatus;
 
 class PageResource extends Resource
 {
@@ -61,7 +61,7 @@ class PageResource extends Resource
         $contentTab = [
             Grid::make(4)->schema([
                 Section::make('Content')
-                    ->columnSpan(fn($livewire): int => (int)($livewire->isJsonVisible ? 2 : 4))
+                    ->columnSpan(fn ($livewire): int => (int) ($livewire->isJsonVisible ? 2 : 4))
                     ->columns(1)
                     ->schema([
                         Fieldset::make('Content')
@@ -70,8 +70,7 @@ class PageResource extends Resource
                                 'title' => TextInput::make('title')
                                     ->label(__('filament.page_title'))
                                     ->live(debounce: 400)
-                                    ->afterStateUpdated(function(string $operation, string $state, Set $set) {
-
+                                    ->afterStateUpdated(function (string $operation, string $state, Set $set): void {
 
                                         $set('slug', Str::slug($state));
                                         $set('meta_title', $state);
@@ -84,7 +83,7 @@ class PageResource extends Resource
                                     ->label(__('filament.slug'))
                                     ->live(debounce: 400)
                                     ->afterStateUpdated(
-                                        fn(string $operation, string $state, Set $set): mixed => $operation === 'create'
+                                        fn (string $operation, string $state, Set $set): mixed => $operation === 'create'
                                             ? $set('slug', Str::slug($state)) : null
                                     )
                                     ->required(),
@@ -93,7 +92,7 @@ class PageResource extends Resource
                     ]),
                 View::make('filament.components.preview-json') // Preview
                     ->columnSpanFull()
-                    ->visible(fn($livewire): bool => $livewire->isJsonVisible)
+                    ->visible(fn ($livewire): bool => $livewire->isJsonVisible)
                     ->reactive(),
 
             ]),
@@ -114,7 +113,7 @@ class PageResource extends Resource
                 ->label(__('filament.parent_page'))
                 ->placeholder(__('Select a parent page'))
                 // @phpstan-ignore-next-line
-                ->options(fn(?Model $record): Collection => Page::query()->get()->pluck('title', 'id'))
+                ->options(fn (?Model $record): Collection => Page::query()->get()->pluck('title', 'id'))
                 ->searchable(),
             'status' => Select::make('status')
                 ->label(__('Status'))
@@ -154,7 +153,7 @@ class PageResource extends Resource
                 ->label(__('filament.page_title'))
                 ->color('primary')
                 ->url(
-                    url: fn(Page $record): string => $record->url(),
+                    url: fn (Page $record): string => $record->url(),
                     shouldOpenInNewTab: true
                 )
                 ->searchable(),
@@ -172,13 +171,13 @@ class PageResource extends Resource
         ];
 
         return $table
-            ->query(fn() => Page::query()->with('parent'))
+            ->query(fn () => Page::query()->with('parent'))
             ->columns($columns)
             ->defaultSort('published_at', 'desc')
             ->actions([
                 EditAction::make()->button()->outlined(),
                 DeleteAction::make()
-                    ->visible(fn($record) => $record->deletable)
+                    ->visible(fn ($record) => $record->deletable)
                     ->label(__('filament.delete')),
             ])
             ->bulkActions([

@@ -13,17 +13,15 @@ readonly class ImageComponent
 {
     public function __construct(
         public CustomComponent $component,
-        public string $field = 'image',
+        public string $field,
         public string $componentId
-    )
-    {
-    }
+    ) {}
 
     public static function form(
         CustomComponent $component,
         string $field = 'image',
         bool $isRequired = true
-    ) {
+    ): array {
         $componentId = sprintf('%s_id', $field);
 
         return [

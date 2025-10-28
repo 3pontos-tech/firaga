@@ -19,12 +19,12 @@ class EditPage extends EditRecord
     {
         return [
             Action::make('json')
-                ->action(fn () => $this->isJsonVisible = ! $this->isJsonVisible)
-                ->outlined(fn () => $this->isJsonVisible)
+                ->action(fn (): bool => $this->isJsonVisible = ! $this->isJsonVisible)
+                ->outlined(fn (): bool => $this->isJsonVisible)
                 ->label('Toggle Json'),
 
             DeleteAction::make()
-                ->visible(fn($record) => $record->deletable)
+                ->visible(fn ($record) => $record->deletable),
         ];
     }
 }

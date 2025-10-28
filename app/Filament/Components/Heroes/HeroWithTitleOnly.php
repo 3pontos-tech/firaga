@@ -5,8 +5,6 @@ namespace App\Filament\Components\Heroes;
 use App\Enums\CustomComponent;
 use App\Filament\Components\AbstractCustomComponent;
 use App\Filament\Components\DTOs\HeadlineComponent;
-use Filament\Forms\Components\MarkdownEditor;
-use Filament\Forms\Components\TextInput;
 
 class HeroWithTitleOnly extends AbstractCustomComponent
 {

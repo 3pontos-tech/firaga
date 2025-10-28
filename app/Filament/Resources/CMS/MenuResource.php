@@ -5,6 +5,7 @@ namespace App\Filament\Resources\CMS;
 use App\Filament\Resources\CMS\MenuResource\Pages\CreateMenu;
 use App\Filament\Resources\CMS\MenuResource\Pages\EditMenu;
 use App\Filament\Resources\CMS\MenuResource\Pages\ListMenus;
+use App\Models\CMS\Menu;
 use Filament\Forms\Components\Section;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Form;
@@ -14,11 +15,8 @@ use Filament\Tables\Actions\BulkActionGroup;
 use Filament\Tables\Actions\DeleteBulkAction;
 use Filament\Tables\Actions\EditAction;
 use Filament\Tables\Columns\TextColumn;
-use Filament\Tables\Columns\ViewColumn;
 use Filament\Tables\Table;
 use Illuminate\Support\Str;
-use Webid\Druid\Facades\Druid;
-use Webid\Druid\Models\Menu;
 
 class MenuResource extends Resource
 {
@@ -60,10 +58,6 @@ class MenuResource extends Resource
                 ->label(__('filament.menu_title')),
         ];
 
-        if (Druid::isMultilingualEnabled()) {
-            $columns[] = ViewColumn::make('translations')->view('druid::admin.menu.translations');
-        }
-
         return $table
             ->columns($columns)
             ->filters([
@@ -81,9 +75,7 @@ class MenuResource extends Resource
 
     public static function getRelations(): array
     {
-        return [
-            Druid::menuItemsRelationManager(),
-        ];
+        return [];
     }
 
     public static function getPages(): array
@@ -93,10 +85,5 @@ class MenuResource extends Resource
             'create' => CreateMenu::route('/create'),
             'edit' => EditMenu::route('/{record}/edit'),
         ];
-    }
-
-    public static function canAccess(): bool
-    {
-        return Druid::isMenuModuleEnabled();
     }
 }

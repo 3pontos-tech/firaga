@@ -11,8 +11,6 @@ use App\Models\CMS\Page;
 use App\Models\CMS\Post;
 use App\Models\User;
 use Awcodes\Curator\Models\Media;
-use Webid\Druid\Models\ReusableComponent;
-use Webid\Druid\Services\ContentRenderer\BladeRenderer;
 
 return [
     /*
@@ -29,7 +27,6 @@ return [
         'category' => Category::class,
         'menu' => Menu::class,
         'menu_item' => MenuItem::class,
-        'reusable_component' => ReusableComponent::class,
     ],
 
     /*

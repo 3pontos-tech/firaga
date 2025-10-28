@@ -29,7 +29,7 @@ class CtaFullWidthComponent extends AbstractCustomComponent
     {
         return [
             'header' => ImageComponent::make(CustomComponent::CallToActionFullWidthSection, 'header_id', $data['header_id'] ?? ''),
-            'headline' => HeadlineComponent::make($data['headline'])
+            'headline' => HeadlineComponent::make($data['headline']),
         ];
     }
 

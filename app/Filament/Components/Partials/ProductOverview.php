@@ -68,7 +68,7 @@ class ProductOverview extends AbstractCustomComponent
                     ])
                     ->columnSpan(1)
                     ->columns(1),
-            ])->columns()
+            ])->columns(),
         ];
     }
 

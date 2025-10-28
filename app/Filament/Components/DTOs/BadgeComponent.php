@@ -16,7 +16,7 @@ class BadgeComponent
 
     public static function form(?string $parent): array
     {
-        $parent = $parent !== null && $parent !== '' && $parent !== '0' ? $parent . '.' : null;
+        $parent = in_array($parent, [null, '', '0'], true) ? null : $parent . '.';
 
         return [
             Toggle::make($parent . 'has_badge')

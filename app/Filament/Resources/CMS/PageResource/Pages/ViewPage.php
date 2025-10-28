@@ -11,6 +11,7 @@ class ViewPage extends ViewRecord
     protected static string $resource = PageResource::class;
 
     public bool $isJsonVisible = false;
+
     protected function getHeaderActions(): array
     {
         return [

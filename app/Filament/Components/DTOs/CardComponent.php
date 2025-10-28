@@ -25,7 +25,7 @@ class CardComponent
 
     public static function form(?string $parent = null): array
     {
-        $parent = $parent !== null && $parent !== '' && $parent !== '0' ? $parent . '.' : null;
+        $parent = in_array($parent, [null, '', '0'], true) ? null : $parent . '.';
 
         return [
             Fieldset::make('Cards')
@@ -82,7 +82,7 @@ class CardComponent
             description: $data['description'],
             icon: $data['icon'] ?? null,
             actions: collect($data['buttons'] ?? [])
-                ->map(fn ($button): ButtonComponent => ButtonComponent::make($button)),
+                ->map(fn (array $button): ButtonComponent => ButtonComponent::make($button)),
         );
     }
 
@@ -95,7 +95,7 @@ class CardComponent
         return CardCollection::newCollection(
             cardType: $data['card_type'],
             columns: $data['grid_columns'],
-            items: array_map(fn ($item) => self::make($item), $data['items'] ?? []),
+            items: array_map(fn (array $item): CardComponent => self::make($item), $data['items'] ?? []),
         );
     }
 }

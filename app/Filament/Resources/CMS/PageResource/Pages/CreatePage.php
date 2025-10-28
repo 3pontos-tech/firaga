@@ -4,10 +4,7 @@ namespace App\Filament\Resources\CMS\PageResource\Pages;
 
 use App\Filament\Resources\CMS\PageResource;
 use Filament\Actions\Action;
-use Filament\Actions\DeleteAction;
 use Filament\Resources\Pages\CreateRecord;
-use Webid\Druid\Facades\Druid;
-use Webid\Druid\Models\Page;
 
 class CreatePage extends CreateRecord
 {
@@ -21,8 +18,8 @@ class CreatePage extends CreateRecord
     {
         return [
             Action::make('json')
-                ->action(fn () => $this->isJsonVisible = ! $this->isJsonVisible)
-                ->outlined(fn () => $this->isJsonVisible)
+                ->action(fn (): bool => $this->isJsonVisible = ! $this->isJsonVisible)
+                ->outlined(fn (): bool => $this->isJsonVisible)
                 ->label('Toggle Json'),
         ];
     }

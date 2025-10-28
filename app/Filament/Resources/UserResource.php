@@ -51,7 +51,7 @@ class UserResource extends Resource
                     ->confirmed()
                     ->columnSpan(1)
                     ->dehydrateStateUsing(fn ($state) => Hash::make($state))
-                    ->dehydrated(fn ($state) => filled($state))
+                    ->dehydrated(fn ($state): bool => filled($state))
                     ->required(fn (string $context): bool => $context === 'create'),
                 TextInput::make('password_confirmation')
                     ->label(__('filament.password_confirmation'))
