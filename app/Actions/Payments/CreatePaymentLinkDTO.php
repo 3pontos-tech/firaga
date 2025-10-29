@@ -9,7 +9,7 @@ class CreatePaymentLinkDTO
         public string $productId,
         public string $productName,
         public string $productDescription,
-        public int $productQuantity,
+        public int $productQuantity = 1,
         public int $productPrice,
         public string $customerId,
         public string $customerName,
@@ -25,13 +25,13 @@ class CreatePaymentLinkDTO
             productId: $data['productId'],
             productName: $data['productName'],
             productDescription: $data['productDescription'],
-            productQuantity: $data['productQuantity'],
+            productQuantity: $data['productQuantity'] ?? 1,
             productPrice: $data['productPrice'],
             customerId: $data['customerId'],
             customerName: $data['customerName'],
             customerCellphone: $data['customerCellphone'],
             customerEmail: $data['customerEmail'],
-            customerTaxId: $data['tax_id'],
+            customerTaxId: $data['customerTaxId'],
         );
     }
 }

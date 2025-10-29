@@ -2,10 +2,10 @@
 
 namespace App\Filament\Consultant\Resources\Payments\Schemas;
 
+use App\Enums\Payments\PaymentPlanType;
 use App\Enums\Payments\PaymentProviderEnum;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\TextInput;
-use Filament\Schemas\Components\Utilities\Set;
 use Filament\Schemas\Schema;
 
 class PaymentForm
@@ -22,11 +22,8 @@ class PaymentForm
                 Select::make('plan')
                     ->label('Plano')
                     ->reactive()
-                    ->options([
-                        'gold' => 'Plano Gold',
-                        'platinum' => 'Plano Platinum',
-                        'black' => 'Plano Black',
-                    ])
+                    ->enum(PaymentPlanType::class)
+                    ->options(PaymentPlanType::class)
                     ->required(),
 
                 TextInput::make('customer_name')
@@ -36,6 +33,7 @@ class PaymentForm
 
                 TextInput::make('customer_email')
                     ->label('Customer Email')
+                    ->email()
                     ->reactive()
                     ->required(),
 

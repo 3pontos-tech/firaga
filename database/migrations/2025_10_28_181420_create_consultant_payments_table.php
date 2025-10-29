@@ -17,9 +17,10 @@ return new class extends Migration
             $table->string('payment_url');
             $table->decimal('amount');
             $table->string('status');
+            $table->string('plan');
             $table->string('customer_name');
             $table->string('customer_email');
-            $table->string('customer_cpf');
+            $table->string('customer_tax_id');
             $table->string('customer_phone_number');
             $table->string('crm_opportunity_id');
             $table->timestamps();
