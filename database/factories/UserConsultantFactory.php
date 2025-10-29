@@ -2,10 +2,10 @@
 
 namespace Database\Factories;
 
+use Illuminate\Support\Facades\Date;
 use App\Models\Consultants\UserConsultant;
 use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\Factory;
-use Illuminate\Support\Carbon;
 use TresPontosTech\Consultant\Core\Models\Consultant;
 
 class UserConsultantFactory extends Factory
@@ -15,8 +15,8 @@ class UserConsultantFactory extends Factory
     public function definition(): array
     {
         return [
-            'created_at' => Carbon::now(), //
-            'updated_at' => Carbon::now(),
+            'created_at' => Date::now(), //
+            'updated_at' => Date::now(),
 
             'user_id' => User::factory(),
             'consultant_id' => Consultant::factory(),

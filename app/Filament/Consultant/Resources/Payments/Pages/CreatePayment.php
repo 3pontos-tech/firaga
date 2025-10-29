@@ -4,7 +4,6 @@ namespace App\Filament\Consultant\Resources\Payments\Pages;
 
 use App\Actions\Payments\CreatePaymentLink;
 use App\Actions\Payments\CreatePaymentLinkDTO;
-use App\Actions\Payments\CreatePaymentLinkResponse;
 use App\Enums\Payments\PaymentStatusEnum;
 use App\Filament\Consultant\Resources\Payments\PaymentResource;
 use Filament\Resources\Pages\CreateRecord;
@@ -35,10 +34,8 @@ class CreatePayment extends CreateRecord
 
         $response = app(CreatePaymentLink::class)->handle($dto);
 
-
         $data['consultant_id'] = auth()->id();
         $data['status'] = PaymentStatusEnum::PENDING;
-
 
         $data['crm_opportunity_id'] = 1;
         $data['payment_url'] = $response->data->data->url;

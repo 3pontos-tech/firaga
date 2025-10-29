@@ -9,7 +9,7 @@ class CreatePaymentLinkDTO
         public string $productId,
         public string $productName,
         public string $productDescription,
-        public int $productQuantity = 1,
+        public int $productQuantity,
         public int $productPrice,
         public string $customerId,
         public string $customerName,

@@ -2,9 +2,9 @@
 
 namespace Database\Factories;
 
+use Illuminate\Support\Facades\Date;
 use App\Models\Consultants\Payment;
 use Illuminate\Database\Eloquent\Factories\Factory;
-use Illuminate\Support\Carbon;
 use TresPontosTech\Consultant\Core\Models\Consultant;
 
 class PaymentFactory extends Factory
@@ -24,8 +24,8 @@ class PaymentFactory extends Factory
             'customer_cpf' => $this->faker->word(),
             'customer_phone_number' => $this->faker->phoneNumber(),
             'crm_opportunity_id' => $this->faker->word(),
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now(),
+            'created_at' => Date::now(),
+            'updated_at' => Date::now(),
 
             'consultant_id' => Consultant::factory(),
         ];

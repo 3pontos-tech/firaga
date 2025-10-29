@@ -2,7 +2,7 @@
 
 namespace App\Filament\Consultant\Resources\Payments\Tables;
 
-use _PHPStan_f9a2208af\Symfony\Component\Console\Color;
+use Filament\Support\Colors\Color;
 use App\Models\Consultants\Payment;
 use Filament\Actions\Action;
 use Filament\Actions\BulkActionGroup;
@@ -44,9 +44,9 @@ class PaymentsTable
                 ViewAction::make(),
                 EditAction::make(),
                 Action::make('link')
-                    ->url(fn(Payment $record) => $record->payment_url)
+                    ->url(fn (Payment $record) => $record->payment_url)
                     ->openUrlInNewTab()
-                    ->color(\Filament\Support\Colors\Color::Fuchsia)
+                    ->color(Color::Fuchsia)
                     ->icon(Heroicon::PaperClip),
             ])
             ->toolbarActions([

@@ -10,7 +10,7 @@ return new class extends Migration
 {
     public function up(): void
     {
-        Schema::create('user_consultants', function (Blueprint $table) {
+        Schema::create('user_consultants', function (Blueprint $table): void {
             $table->id();
             $table->foreignIdFor(User::class);
             $table->foreignIdFor(Consultant::class);

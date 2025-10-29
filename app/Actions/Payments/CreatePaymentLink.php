@@ -10,7 +10,7 @@ use Ramsey\Uuid\Uuid;
 
 class CreatePaymentLink
 {
-    public function handle(CreatePaymentLinkDTO $dto)
+    public function handle(CreatePaymentLinkDTO $dto): CreatePaymentLinkResponse
     {
         $client = new AbacatePayClient(config('services.abacatepay.api_key'));
 

@@ -25,7 +25,7 @@ class TestCommand extends Command
     /**
      * Execute the console command.
      */
-    public function handle(CreatePaymentLink $createPaymentLink)
+    public function handle(CreatePaymentLink $createPaymentLink): void
     {
 
         $paymentData = [

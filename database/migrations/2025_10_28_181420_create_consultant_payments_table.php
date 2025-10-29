@@ -9,7 +9,7 @@ return new class extends Migration
 {
     public function up(): void
     {
-        Schema::create('consultant_payments', function (Blueprint $table) {
+        Schema::create('consultant_payments', function (Blueprint $table): void {
             $table->id();
             $table->foreignIdFor(Consultant::class);
             $table->string('provider');
