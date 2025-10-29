@@ -33,7 +33,6 @@
         "laravel/nightwatch": "^1.12",
         "laravel/tinker": "^2.10.1",
         "mallardduck/blade-lucide-icons": "^1.23",
-        "outerweb/filament-settings": "^2.0",
         "owenvoke/blade-fontawesome": "^2.9",
         "pxlrbt/filament-environment-indicator": "^3.0"
     },
