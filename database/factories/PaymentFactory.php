@@ -2,9 +2,9 @@
 
 namespace Database\Factories;
 
-use Illuminate\Support\Facades\Date;
 use App\Models\Consultants\Payment;
 use Illuminate\Database\Eloquent\Factories\Factory;
+use Illuminate\Support\Facades\Date;
 use TresPontosTech\Consultant\Core\Models\Consultant;
 
 class PaymentFactory extends Factory

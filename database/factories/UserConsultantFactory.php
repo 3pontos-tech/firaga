@@ -2,10 +2,10 @@
 
 namespace Database\Factories;
 
-use Illuminate\Support\Facades\Date;
 use App\Models\Consultants\UserConsultant;
 use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\Factory;
+use Illuminate\Support\Facades\Date;
 use TresPontosTech\Consultant\Core\Models\Consultant;
 
 class UserConsultantFactory extends Factory
