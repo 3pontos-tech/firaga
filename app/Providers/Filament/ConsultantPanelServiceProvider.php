@@ -2,7 +2,6 @@
 
 namespace App\Providers\Filament;
 
-use App\Filament\Pages\Authentication;
 use Filament\Http\Middleware\Authenticate;
 use Filament\Http\Middleware\AuthenticateSession;
 use Filament\Http\Middleware\DisableBladeIconComponents;
@@ -19,28 +18,23 @@ use Illuminate\Foundation\Http\Middleware\VerifyCsrfToken;
 use Illuminate\Routing\Middleware\SubstituteBindings;
 use Illuminate\Session\Middleware\StartSession;
 use Illuminate\View\Middleware\ShareErrorsFromSession;
-use Jeffgreco13\FilamentBreezy\BreezyCore;
-use pxlrbt\FilamentEnvironmentIndicator\EnvironmentIndicatorPlugin;
-use TresPontosTech\Consultant\FilamentConsultantsPlugin;
 
-class AdminPanelServiceProvider extends PanelProvider
+class ConsultantPanelServiceProvider extends PanelProvider
 {
     public function panel(Panel $panel): Panel
     {
         return $panel
-            ->default()
-            ->id('admin')
-            ->path('admin')
-            ->login(Authentication::class)
+            ->id('consultant')
+            ->path('consultant')
             ->colors([
                 'primary' => Color::Amber,
             ])
-            ->discoverResources(in: app_path('Filament/Resources'), for: 'App\\Filament\\Resources')
-            ->discoverPages(in: app_path('Filament/Pages'), for: 'App\\Filament\\Pages')
+            ->discoverResources(in: app_path('Filament/Consultant/Resources'), for: 'App\Filament\Consultant\Resources')
+            ->discoverPages(in: app_path('Filament/Consultant/Pages'), for: 'App\Filament\Consultant\Pages')
             ->pages([
                 Dashboard::class,
             ])
-            ->discoverWidgets(in: app_path('Filament/Widgets'), for: 'App\\Filament\\Widgets')
+            ->discoverWidgets(in: app_path('Filament/Consultant/Widgets'), for: 'App\Filament\Consultant\Widgets')
             ->widgets([
                 AccountWidget::class,
                 FilamentInfoWidget::class,
@@ -55,14 +49,6 @@ class AdminPanelServiceProvider extends PanelProvider
                 SubstituteBindings::class,
                 DisableBladeIconComponents::class,
                 DispatchServingFilamentEvent::class,
-            ])
-            ->plugins([
-                FilamentConsultantsPlugin::make(),
-                EnvironmentIndicatorPlugin::make()
-                    ->visible(fn () => auth()->check())
-                    ->showBadge(),
-                BreezyCore::make()
-                    ->myProfile(shouldRegisterUserMenu: true),
             ])
             ->authMiddleware([
                 Authenticate::class,

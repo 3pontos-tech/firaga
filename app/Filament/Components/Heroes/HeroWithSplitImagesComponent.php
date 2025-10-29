@@ -9,7 +9,7 @@ use Filament\Forms\Components\SpatieMediaLibraryFileUpload;
 use Filament\Forms\Components\TextInput;
 use Guava\IconPicker\Forms\Components\IconPicker;
 
-class HeroWithSplitImages extends AbstractCustomComponent
+class HeroWithSplitImagesComponent extends AbstractCustomComponent
 {
     protected static string $view = 'components.heroes.hero-with-split-images';
 

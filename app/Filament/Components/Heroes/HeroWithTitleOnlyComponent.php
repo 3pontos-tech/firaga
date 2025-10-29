@@ -6,7 +6,7 @@ use App\Enums\CustomComponent;
 use App\Filament\Components\AbstractCustomComponent;
 use App\Filament\Components\DTOs\HeadlineComponent;
 
-class HeroWithTitleOnly extends AbstractCustomComponent
+class HeroWithTitleOnlyComponent extends AbstractCustomComponent
 {
     protected static string $view = 'components.heroes.hero-with-title-only';
 
