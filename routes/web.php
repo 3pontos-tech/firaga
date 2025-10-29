@@ -10,6 +10,8 @@ if (app()->isLocal()) {
     Route::view('/test', 'test');
 }
 
+Route::view('/consultoria/sucesso', 'success');
+
 Route::domain('lp.' . config('app.domain'))->group(function (): void {
 
     Route::redirect('/', config('app.url'));
