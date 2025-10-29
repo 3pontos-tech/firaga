@@ -16,8 +16,8 @@ class CreatePayment extends CreateRecord
     protected function mutateFormDataBeforeCreate(array $data): array
     {
         $externalData = [
-            'externalId' => 'EXT-' . uniqid(),
-            'productId' => uniqid(),
+            'externalId' => sprintf('firaga-%s-%s', $data['plan']->value, Uuid::uuid4()->toString()),
+            'productId' => sprintf('%s-%s', $data['plan']->value, time()),
             'productName' => $data['plan']->value,
             'productDescription' => $data['plan']->value,
             'productPrice' => (int) $data['amount'] * 100,

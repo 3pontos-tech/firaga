@@ -2,8 +2,6 @@
 
 namespace App\Console\Commands;
 
-use App\Actions\Payments\CreatePaymentLink;
-use App\Actions\Payments\CreatePaymentLinkDTO;
 use Illuminate\Console\Command;
 
 class TestCommand extends Command
@@ -25,25 +23,5 @@ class TestCommand extends Command
     /**
      * Execute the console command.
      */
-    public function handle(CreatePaymentLink $createPaymentLink): void
-    {
-
-        $paymentData = [
-            'externalId' => 'EXT-' . uniqid(),
-            'productId' => 'PROD-001',
-            'productName' => 'Product Name',
-            'productDescription' => 'Product description here',
-            'productQuantity' => 1,
-            'productPrice' => 10000,
-            'customerId' => 'CUST-' . uniqid(),
-            'customerName' => 'John Doe',
-            'customerCellphone' => '+5511999999999',
-            'customerEmail' => 'john.doe@example.com',
-            'tax_id' => '35061134885', // CPF or CNPJ
-        ];
-
-        $payment = CreatePaymentLinkDTO::fromArray($paymentData);
-
-        $createPaymentLink->handle($payment);
-    }
+    public function handle(): void {}
 }

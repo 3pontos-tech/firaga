@@ -11,8 +11,8 @@ use App\Filament\Components\CTAs\CtaFullWidthComponent;
 use App\Filament\Components\CTAs\CtaWithIconComponent;
 use App\Filament\Components\Heroes\HeroWithBackgroundImageComponent;
 use App\Filament\Components\Heroes\HeroWithCodeSnippetComponent;
-use App\Filament\Components\Heroes\HeroWithSplitImages;
-use App\Filament\Components\Heroes\HeroWithTitleOnly;
+use App\Filament\Components\Heroes\HeroWithSplitImagesComponent;
+use App\Filament\Components\Heroes\HeroWithTitleOnlyComponent;
 use App\Filament\Components\Media\FullWidthVideoComponent;
 use App\Filament\Components\Media\VideoTestimonialComponent;
 use App\Filament\Components\Partials\ContactFormComponent;
@@ -96,8 +96,8 @@ enum CustomComponent: string
             self::HeroWithBackgroundImage => HeroWithBackgroundImageComponent::class,
             self::ContactForm => ContactFormComponent::class,
             self::FlowTimeline => FlowTimeline::class,
-            self::HeroWithTitleOnly => HeroWithTitleOnly::class,
-            self::HeroWithSplitImages => HeroWithSplitImages::class
+            self::HeroWithTitleOnly => HeroWithTitleOnlyComponent::class,
+            self::HeroWithSplitImages => HeroWithSplitImagesComponent::class
         };
     }
 
