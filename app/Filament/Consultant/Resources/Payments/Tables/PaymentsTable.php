@@ -6,7 +6,6 @@ use App\Models\Consultants\Payment;
 use Filament\Actions\Action;
 use Filament\Actions\BulkActionGroup;
 use Filament\Actions\DeleteBulkAction;
-use Filament\Actions\EditAction;
 use Filament\Actions\ViewAction;
 use Filament\Support\Colors\Color;
 use Filament\Support\Icons\Heroicon;
@@ -18,13 +17,19 @@ class PaymentsTable
     public static function configure(Table $table): Table
     {
         return $table
+            ->modifyQueryUsing(fn ($query) => $query->where('consultant_id', auth()->user()->consultants()->first()->getKey()))
             ->columns([
                 TextColumn::make('provider')
                     ->label('Provider')
                     ->searchable()
                     ->badge(),
+                TextColumn::make('payment_method')
+                    ->label('Provider')
+                    ->searchable()
+                    ->badge(),
                 TextColumn::make('amount')
                     ->label('Amount')
+                    ->money('BRL')
                     ->sortable(),
 
                 TextColumn::make('status')
@@ -42,7 +47,6 @@ class PaymentsTable
             ])
             ->recordActions([
                 ViewAction::make(),
-                EditAction::make(),
                 Action::make('link')
                     ->url(fn (Payment $record) => $record->payment_url)
                     ->openUrlInNewTab()

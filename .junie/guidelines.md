@@ -1,3 +1,111 @@
+# WORKFLOW
+
+Replace the previously stated workflow with the following:
+
+1. Ingest the `Laravel Boost Guidelines` presented in this document and use all MCP's and tools in the next step  
+2. Review the `<issue_description>`
+3. If the user explicitly requests a workflow from the following list, use the appropriate workflow detailed below:
+    1. Review Workflow
+    2. Planning Workflow
+    3. Features Workflow
+    4. Implementation Workflow
+    5. Test Workflow
+4. If the user was not explicit, continue with the review workflow.
+
+IMPORTANT: You MUST complete all steps in the `<PLAN>`, including steps added as the workflows progress.
+
+Workflow Pre-Approval: If the `<initial_description>` explicitly indicates pre-approval of any workflows, then skip the 'ask the user' step and assume confirmation was given
+
+If `<issue_description>` directly contradicts any of these steps, follow the instructions from `<issue_description>` first.
+
+## Review Workflow
+
+Incorporate the following steps into the `<PLAN>` as a top level item called 'Review'
+
+1. Thoroughly review `<issue_description>`, considering both the simplest solution and a comprehensive range of edge cases.
+2. Review the project’s codebase, examining not only its structure but also the specific implementation details, to identify all segments that may contribute to or help resolve the issue described in `<issue_description>`.
+3. Ask the user to confirm or revise an outline plan defining the scope of work as an enumerated list
+4. If the user provides revisions, incorporate the revisions into the `<issue_description>` and continue review from step 1
+5. If the user confirms the outline plan, continue with the planning workflow
+
+## Planning Workflow
+
+Incorporate the following steps into the `<PLAN>` as a top level item called 'Planning'
+
+1. Write a comprehensive plan based on the `<issue_description>` and the project review to the Plans Directory
+2. Ask the user to review the plan and confirm or revise the plan.
+3. If the user revises the plan, incorporate those into the `<issue_description>` and continue planning from step 1
+4. If the user confirms the plan, incorporate the plan into the `<PLAN>` and continue with the features workflow
+
+## Features Workflow
+
+Incorporate the following steps into the `<PLAN>` as a top level item called 'Features'
+
+1. Write comprehensive acceptance tests beneath the Features Directory that describes the desired outcome from addressing the `<issue_description>` and incorporating the plan
+2. Ask the user to review the acceptance tests and confirm or revise the features.
+3. If the user revises the features, incorporate those into the `<issue_description>` and continue features from step 1
+4. If the user confirms the plan, continue with the implementation workflow
+
+## Implementation Workflow
+
+Incorporate the following steps into the `<PLAN>` as a top level item called 'Implementation'
+
+1. Add steps to the implementation plan item in `<PLAN>` that comprehensively describes the steps to alter the source code in the repo to resolve `<issue_description>` according to the plan and features, such that the acceptance criteria are met.
+2. Iteratively follow the steps in the implementation plan until all are complete.  Work sequentially.
+3. Ask the user to review and confirm or revise the implementation
+4. If the user provides revisions, incorporate those into the `<issue_description>` and continue implementation from step 1
+5. If the user confirms the implementation, continue with the test workflow
+
+## Test Workflow
+
+Incorporate the following steps into the `<PLAN>` as a top level item called 'Test'
+
+1. Ask the user if they wish to test the implementation.
+2. If the user declines testing, continue with the Checkpoint workflow
+3. If the user approves testing
+    1. Update steps in the test plan item in the `<PLAN>` that describes any outstanding or failing tests
+    2. If there are failing tests use context7 to retrieve documentation for technologies used to aid in the resolution of failing tests
+    3. Consider amendments to the test code or implementation, but do not alter the features other than to clarify or otherwise improve the DSL.  Maintain the intent of the features.
+    4. Ask the user for additional input if there are tests that are problematic to resolve (for example, mark the tests as pending rather than removing or faking a pass)
+    5. If the user declines or aborts testing, continue with the checkpoint workflow
+    6. When there are no failing tests, continue with the checkpoint workflow
+4. Repeat the test workflow whilst failing tests remain
+
+
+# Plans Directory
+
+- Use `.junie/plans/{plan-slug}`
+- Create a plan in markdown format whose name is formed from the current date in YYYY-MM-DDTHH-mm format, plus a terse summarization of the `<issue_description>`, with `.md` extension
+
+# Features Directory
+
+- Use `.junie/plans/{plan-slug}`
+- In the Features Directory, maintain a markdown file `dsl.md` with the domain specific language for steps. Ensure that the acceptance tests and the DSL are kept in sync.
+- Logically group the scenarios using semantically named files in Gherkin format with the `.feature` extension
+- Use the DSL to avoid variance in step definitions
+- Avoid repetitive steps, devise concise steps where possible
+
+
+# Reviewing the codebase
+
+- Search for all files including dot directories, but excluding the following:
+    - .idea directory
+    - .git directory
+    - node_modules directory
+    - vendor directory
+- Limit the search to 100 files
+
+# Ask the user
+
+- Use the `ask_user` tool
+- Provide the message in multiline plain text format
+
+# Testing
+
+- Use the Features as the source of truth
+
+===
+
 <laravel-boost-guidelines>
 === foundation rules ===
 
@@ -8,8 +116,8 @@ The Laravel Boost guidelines are specifically curated by Laravel maintainers for
 ## Foundational Context
 This application is a Laravel application and its main Laravel ecosystems package & versions are below. You are an expert with them all. Ensure you abide by these specific packages & versions.
 
-- php - 8.4.12
-- filament/filament (FILAMENT) - v3
+- php - 8.4.14
+- filament/filament (FILAMENT) - v4
 - laravel/framework (LARAVEL) - v12
 - laravel/nightwatch (NIGHTWATCH) - v1
 - laravel/prompts (PROMPTS) - v0
@@ -18,13 +126,12 @@ This application is a Laravel application and its main Laravel ecosystems packag
 - laravel/mcp (MCP) - v0
 - laravel/pint (PINT) - v1
 - laravel/sail (SAIL) - v1
-- pestphp/pest (PEST) - v3
-- phpunit/phpunit (PHPUNIT) - v11
+- pestphp/pest (PEST) - v4
+- phpunit/phpunit (PHPUNIT) - v12
 - rector/rector (RECTOR) - v2
 - alpinejs (ALPINEJS) - v3
 - laravel-echo (ECHO) - v2
 - tailwindcss (TAILWINDCSS) - v4
-
 
 ## Conventions
 - You must follow all existing code conventions used in this application. When creating or editing a file, check sibling files for the correct structure, approach, naming.
@@ -200,19 +307,25 @@ Forms\Components\Select::make('user_id')
 </code-snippet>
 
 
-=== filament/v3 rules ===
+=== filament/v4 rules ===
 
-## Filament 3
+## Filament 4
 
-## Version 3 Changes To Focus On
-- Resources are located in `app/Filament/Resources/` directory.
-- Resource pages (List, Create, Edit) are auto-generated within the resource's directory - e.g., `app/Filament/Resources/PostResource/Pages/`.
-- Forms use the `Forms\Components` namespace for form fields.
-- Tables use the `Tables\Columns` namespace for table columns.
-- A new `Filament\Forms\Components\RichEditor` component is available.
-- Form and table schemas now use fluent method chaining.
-- Added `php artisan filament:optimize` command for production optimization.
-- Requires implementing `FilamentUser` contract for production access control.
+### Important Version 4 Changes
+- File visibility is now `private` by default.
+- The `deferFilters` method from Filament v3 is now the default behavior in Filament v4, so users must click a button before the filters are applied to the table. To disable this behavior, you can use the `deferFilters(false)` method.
+- The `Grid`, `Section`, and `Fieldset` layout components no longer span all columns by default.
+- The `all` pagination page method is not available for tables by default.
+- All action classes extend `Filament\Actions\Action`. No action classes exist in `Filament\Tables\Actions`.
+- The `Form` & `Infolist` layout components have been moved to `Filament\Schemas\Components`, for example `Grid`, `Section`, `Fieldset`, `Tabs`, `Wizard`, etc.
+- A new `Repeater` component for Forms has been added.
+- Icons now use the `Filament\Support\Icons\Heroicon` Enum by default. Other options are available and documented.
+
+### Organize Component Classes Structure
+- Schema components: `Schemas/Components/`
+- Table columns: `Tables/Columns/`
+- Table filters: `Tables/Filters/`
+- Actions: `Actions/`
 
 
 === laravel/core rules ===
@@ -425,6 +538,51 @@ it('has emails', function (string $email) {
     'james' => 'james@laravel.com',
     'taylor' => 'taylor@laravel.com',
 ]);
+</code-snippet>
+
+
+=== pest/v4 rules ===
+
+## Pest 4
+
+- Pest v4 is a huge upgrade to Pest and offers: browser testing, smoke testing, visual regression testing, test sharding, and faster type coverage.
+- Browser testing is incredibly powerful and useful for this project.
+- Browser tests should live in `tests/Browser/`.
+- Use the `search-docs` tool for detailed guidance on utilizing these features.
+
+### Browser Testing
+- You can use Laravel features like `Event::fake()`, `assertAuthenticated()`, and model factories within Pest v4 browser tests, as well as `RefreshDatabase` (when needed) to ensure a clean state for each test.
+- Interact with the page (click, type, scroll, select, submit, drag-and-drop, touch gestures, etc.) when appropriate to complete the test.
+- If requested, test on multiple browsers (Chrome, Firefox, Safari).
+- If requested, test on different devices and viewports (like iPhone 14 Pro, tablets, or custom breakpoints).
+- Switch color schemes (light/dark mode) when appropriate.
+- Take screenshots or pause tests for debugging when appropriate.
+
+### Example Tests
+
+<code-snippet name="Pest Browser Test Example" lang="php">
+it('may reset the password', function () {
+    Notification::fake();
+
+    $this->actingAs(User::factory()->create());
+
+    $page = visit('/sign-in'); // Visit on a real browser...
+
+    $page->assertSee('Sign In')
+        ->assertNoJavascriptErrors() // or ->assertNoConsoleLogs()
+        ->click('Forgot Password?')
+        ->fill('email', 'nuno@laravel.com')
+        ->click('Send Reset Link')
+        ->assertSee('We have emailed your password reset link!')
+
+    Notification::assertSent(ResetPassword::class);
+});
+</code-snippet>
+
+<code-snippet name="Pest Smoke Testing Example" lang="php">
+$pages = visit(['/', '/about', '/contact']);
+
+$pages->assertNoJavascriptErrors()->assertNoConsoleLogs();
 </code-snippet>
 
 

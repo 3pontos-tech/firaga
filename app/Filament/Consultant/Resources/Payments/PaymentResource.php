@@ -3,9 +3,7 @@
 namespace App\Filament\Consultant\Resources\Payments;
 
 use App\Filament\Consultant\Resources\Payments\Pages\CreatePayment;
-use App\Filament\Consultant\Resources\Payments\Pages\EditPayment;
 use App\Filament\Consultant\Resources\Payments\Pages\ListPayments;
-use App\Filament\Consultant\Resources\Payments\Pages\ViewPayment;
 use App\Filament\Consultant\Resources\Payments\Schemas\PaymentForm;
 use App\Filament\Consultant\Resources\Payments\Schemas\PaymentInfolist;
 use App\Filament\Consultant\Resources\Payments\Tables\PaymentsTable;
@@ -49,8 +47,6 @@ class PaymentResource extends Resource
         return [
             'index' => ListPayments::route('/'),
             'create' => CreatePayment::route('/create'),
-            'view' => ViewPayment::route('/{record}'),
-            'edit' => EditPayment::route('/{record}/edit'),
         ];
     }
 }

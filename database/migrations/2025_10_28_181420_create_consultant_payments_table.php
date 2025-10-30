@@ -15,6 +15,7 @@ return new class extends Migration
             $table->string('provider');
             $table->string('provider_id');
             $table->string('payment_url');
+            $table->string('payment_method');
             $table->decimal('amount');
             $table->string('status');
             $table->string('plan');

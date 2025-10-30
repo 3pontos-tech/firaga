@@ -14,13 +14,13 @@
 
     "repositories": [
         {
-            "type": "vcs",
-            "url": "https://github.com/3pontos-tech/filament-consultants-module"
+            "type": "path",
+            "url": "../../packages/filament-consultants-module"
         }
     ],
     "require": {
         "php": "^8.3",
-        "3pontos-tech/filament-consultants-module": "dev-main",
+        "3pontos-tech/filament-consultants-module": "*",
         "basementdevs/abacatepay-php-sdk": "^1.0",
         "bezhansalleh/filament-shield": "^4.0",
         "blade-ui-kit/blade-icons": "^1.8",
@@ -43,7 +43,7 @@
         "fakerphp/faker": "^1.23",
         "filament/upgrade": "^4.0",
         "larastan/larastan": "^3.0",
-        "laravel/boost": "^1.1",
+        "laravel/boost": "^1.6",
         "laravel/pail": "^1.2.2",
         "laravel/pint": "^1.13",
         "laravel/sail": "^1.41",

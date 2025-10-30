@@ -16,6 +16,7 @@ use Filament\Schemas\Schema;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Table;
 use Illuminate\Support\Facades\Hash;
+use TresPontosTech\Consultant\Core\Models\Consultant;
 
 class UserResource extends Resource
 {
@@ -63,10 +64,17 @@ class UserResource extends Resource
                 Select::make('roles')
                     ->searchable()
                     ->preload()
-                    ->required()
                     ->multiple()
                     ->relationship('roles', 'name')
-                    ->label('filament.user_role'),
+                    ->label('Permissões'),
+
+                Select::make('consultants')
+                    ->searchable()
+                    ->options(Consultant::query()->pluck('name', 'id'))
+                    ->preload()
+                    ->multiple()
+                    ->relationship('consultants', 'name')
+                    ->label('Consultor (CRM)'),
             ]);
     }
 

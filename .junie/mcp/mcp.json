@@ -3,7 +3,7 @@
         "laravel-boost": {
             "command": "/usr/bin/php",
             "args": [
-                "/home/danielhe4rt/dev/3dots/firaga/artisan",
+                "/home/danielhe4rt/dev/3dots/projects/firaga/artisan",
                 "boost:mcp"
             ]
         }

@@ -2,6 +2,7 @@
 
 namespace App\Models\Consultants;
 
+use App\Enums\Payments\PaymentMethodEnum;
 use App\Enums\Payments\PaymentPlanType;
 use App\Enums\Payments\PaymentProviderEnum;
 use App\Enums\Payments\PaymentStatusEnum;
@@ -35,11 +36,12 @@ class Payment extends Model
         'provider',
         'provider_id',
         'payment_url',
+        'payment_method',
         'amount',
         'status',
         'customer_name',
         'customer_email',
-        'customer_cpf',
+        'customer_tax_id',
         'customer_phone_number',
         'crm_opportunity_id',
         'plan',
@@ -51,6 +53,7 @@ class Payment extends Model
             'provider' => PaymentProviderEnum::class,
             'status' => PaymentStatusEnum::class,
             'plan' => PaymentPlanType::class,
+            'payment_method' => PaymentMethodEnum::class,
         ];
     }
 

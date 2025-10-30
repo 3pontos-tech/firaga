@@ -13,7 +13,9 @@ return new class extends Migration
         if (! Schema::connection($connection)->hasTable('consultants')) {
             Schema::connection($connection)->create(config('filament-consultants-module.consultants.database.table.consultants', 'consultants'), function (Blueprint $table): void {
                 $table->id();
-                $table->string('external_id')->nullable();
+                $table->string('provider')->comment('CRM provider');
+                $table->string('provider_id')->nullable()->comment('CRM user identifier');
+                $table->boolean('enabled');
                 $table->string('name');
                 $table->string('slug');
                 $table->string('phone');

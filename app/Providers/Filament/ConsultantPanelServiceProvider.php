@@ -2,6 +2,7 @@
 
 namespace App\Providers\Filament;
 
+use App\Filament\Pages\Authentication;
 use Filament\Http\Middleware\Authenticate;
 use Filament\Http\Middleware\AuthenticateSession;
 use Filament\Http\Middleware\DisableBladeIconComponents;
@@ -27,8 +28,10 @@ class ConsultantPanelServiceProvider extends PanelProvider
             ->id('consultant')
             ->path('consultant')
             ->colors([
-                'primary' => Color::Amber,
+                'primary' => Color::Orange,
             ])
+            ->login(Authentication::class)
+            ->passwordReset()
             ->discoverResources(in: app_path('Filament/Consultant/Resources'), for: 'App\Filament\Consultant\Resources')
             ->discoverPages(in: app_path('Filament/Consultant/Pages'), for: 'App\Filament\Consultant\Pages')
             ->pages([
