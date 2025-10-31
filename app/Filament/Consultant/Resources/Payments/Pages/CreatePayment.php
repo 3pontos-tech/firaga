@@ -3,8 +3,6 @@
 namespace App\Filament\Consultant\Resources\Payments\Pages;
 
 use App\Actions\Payments\CreatePaymentLink;
-use App\Actions\Payments\CreatePaymentLinkDTO;
-use App\Contracts\PaymentGatewayContract;
 use App\Contracts\PaymentResponseContract;
 use App\Enums\Payments\PaymentProviderEnum;
 use App\Enums\Payments\PaymentStatusEnum;

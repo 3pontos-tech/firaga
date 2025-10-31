@@ -9,9 +9,7 @@ class FakeGatewayResponse implements PaymentResponseContract
     public function __construct(
         public string $paymentUrl,
         public string $externalId
-    )
-    {
-    }
+    ) {}
 
     public static function make(array $data): self
     {

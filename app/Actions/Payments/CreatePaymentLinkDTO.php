@@ -3,6 +3,7 @@
 namespace App\Actions\Payments;
 
 use App\Contracts\PaymentDtoContract;
+use Ramsey\Uuid\Uuid;
 
 class CreatePaymentLinkDTO implements PaymentDtoContract
 {

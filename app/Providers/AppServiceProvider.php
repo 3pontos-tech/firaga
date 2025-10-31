@@ -2,8 +2,6 @@
 
 namespace App\Providers;
 
-use App\Adapter\AbacatePayAdapter;
-use App\Contracts\PaymentGatewayContract;
 use App\View\Components\Navbar;
 use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Model;

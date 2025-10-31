@@ -12,12 +12,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/3pontos-tech/filament-consultants-module.git",
-                "reference": "7665f26063cf566e3de2ed63b70ad8033680ed0e"
+                "reference": "e769a428ce957c38bcb6b33a9c8686b56756d96b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/3pontos-tech/filament-consultants-module/zipball/7665f26063cf566e3de2ed63b70ad8033680ed0e",
-                "reference": "7665f26063cf566e3de2ed63b70ad8033680ed0e",
+                "url": "https://api.github.com/repos/3pontos-tech/filament-consultants-module/zipball/e769a428ce957c38bcb6b33a9c8686b56756d96b",
+                "reference": "e769a428ce957c38bcb6b33a9c8686b56756d96b",
                 "shasum": ""
             },
             "require": {
@@ -112,7 +112,7 @@
                     "url": "https://github.com/3Pontos - Tech Hub"
                 }
             ],
-            "time": "2025-10-31T16:59:45+00:00"
+            "time": "2025-10-31T17:02:03+00:00"
         },
         {
             "name": "anourvalar/eloquent-serialize",

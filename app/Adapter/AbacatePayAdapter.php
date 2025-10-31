@@ -2,7 +2,6 @@
 
 namespace App\Adapter;
 
-use App\Actions\Payments\CreatePaymentLinkDTO;
 use App\Actions\Payments\CreatePaymentLinkResponse;
 use App\Contracts\PaymentDtoContract;
 use App\Contracts\PaymentGatewayContract;
@@ -16,6 +15,7 @@ use Ramsey\Uuid\Uuid;
 final class AbacatePayAdapter implements PaymentGatewayContract
 {
     public readonly AbacatePayClient $client;
+
     public function __construct()
     {
         $this->client = new AbacatePayClient(config('services.abacatepay.api_key'));
