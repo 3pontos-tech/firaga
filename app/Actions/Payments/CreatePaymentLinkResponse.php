@@ -2,9 +2,10 @@
 
 namespace App\Actions\Payments;
 
+use App\Contracts\PaymentResponseContract;
 use Basement\AbacatePay\Billing\Http\Response\CreateBillingResponse;
 
-class CreatePaymentLinkResponse
+class CreatePaymentLinkResponse implements PaymentResponseContract
 {
     public function __construct(
         public string $externalId,
@@ -17,5 +18,15 @@ class CreatePaymentLinkResponse
             externalId: $externalId,
             data: $data,
         );
+    }
+
+    public function externalId(): string|int
+    {
+        return $this->externalId;
+    }
+
+    public function paymentUrl(): string|int
+    {
+        return $this->data->data->url;
     }
 }

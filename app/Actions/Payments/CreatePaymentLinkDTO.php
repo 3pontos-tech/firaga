@@ -2,7 +2,9 @@
 
 namespace App\Actions\Payments;
 
-class CreatePaymentLinkDTO
+use App\Contracts\PaymentDtoContract;
+
+class CreatePaymentLinkDTO implements PaymentDtoContract
 {
     public function __construct(
         public string $externalId,
