@@ -31,7 +31,7 @@ class FilamentComponentsService
             $name = sprintf('[%s] %s', $componentClass::getGroup(), str($componentClass::fieldName())->title()->replace('-', ' '));
             $blocks[] =
                 Block::make($componentClass::fieldName())
-                    ->label(fn () => new HtmlString(sprintf('<span style="display: inline-block; width: 1rem; height: 1rem; background-color: %s; margin-right: 0.5rem; vertical-align: middle;"></span>%s', $componentClass::featuredColor(), $name)))
+                    ->label(fn (): HtmlString => new HtmlString(sprintf('<span style="display: inline-block; width: 1rem; height: 1rem; background-color: %s; margin-right: 0.5rem; vertical-align: middle;"></span>%s', $componentClass::featuredColor(), $name)))
                     ->schema($componentClass::blockSchema());
         }
 

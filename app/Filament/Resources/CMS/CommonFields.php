@@ -2,12 +2,11 @@
 
 namespace App\Filament\Resources\CMS;
 
-use Awcodes\Curator\Components\Forms\CuratorPicker;
 use Filament\Forms\Components\Field;
-use Filament\Forms\Components\Section;
 use Filament\Forms\Components\Textarea;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Components\Toggle;
+use Filament\Schemas\Components\Section;
 
 class CommonFields
 {
@@ -39,9 +38,6 @@ class CommonFields
                         ->label(__('filament.open_graph_title')),
                     Textarea::make('opengraph_description')
                         ->label(__('filament.open_graph_description')),
-                    CuratorPicker::make('opengraph_picture')
-                        ->label(__('filament.open_graph_picture'))
-                        ->preserveFilenames(),
                     TextInput::make('opengraph_picture_alt')
                         ->label(__('filament.open_graph_picture_alt')),
                 ])

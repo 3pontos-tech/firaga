@@ -8,14 +8,12 @@ use App\Models\CMS\Page;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Str;
-use Spatie\MediaLibrary\MediaCollections\Models\Media;
 
 class PagesSeeder extends Seeder
 {
     public function run(): void
     {
         Page::query()->truncate();
-
 
         foreach (config('firaga.pages') as $page) {
             $medias = $page['medias'] ?? [];

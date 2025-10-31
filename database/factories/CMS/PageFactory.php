@@ -2,11 +2,11 @@
 
 namespace Database\Factories\CMS;
 
+use App\Enums\PageStatus;
 use App\Enums\PageTheme;
 use App\Models\CMS\Page;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Database\Eloquent\Model;
-use Webid\Druid\Enums\PageStatus;
 
 class PageFactory extends Factory
 {

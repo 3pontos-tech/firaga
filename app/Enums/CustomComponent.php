@@ -9,14 +9,10 @@ use App\Filament\Components\Blog\RichTextComponent;
 use App\Filament\Components\CTAs\CallToActionWithImageComponent;
 use App\Filament\Components\CTAs\CtaFullWidthComponent;
 use App\Filament\Components\CTAs\CtaWithIconComponent;
-use App\Filament\Components\Heroes\HeroWithSplitImages;
 use App\Filament\Components\Heroes\HeroWithBackgroundImageComponent;
-use App\Filament\Components\Heroes\HeroWithBottomImageComponent;
-use App\Filament\Components\Heroes\HeroWithCenteredTitleComponent;
 use App\Filament\Components\Heroes\HeroWithCodeSnippetComponent;
-use App\Filament\Components\Heroes\HeroWithImageComponent;
-use App\Filament\Components\Heroes\HeroWithStatsAndImageComponent;
-use App\Filament\Components\Heroes\HeroWithTitleOnly;
+use App\Filament\Components\Heroes\HeroWithSplitImagesComponent;
+use App\Filament\Components\Heroes\HeroWithTitleOnlyComponent;
 use App\Filament\Components\Media\FullWidthVideoComponent;
 use App\Filament\Components\Media\VideoTestimonialComponent;
 use App\Filament\Components\Partials\ContactFormComponent;
@@ -26,8 +22,6 @@ use App\Filament\Components\Partials\HorizontalScrollerHighlightComponent;
 use App\Filament\Components\Partials\InfoStatsComponent;
 use App\Filament\Components\Partials\PlansComponent;
 use App\Filament\Components\Partials\ProductOverview;
-use App\Filament\Components\Partials\QuoteComponent;
-use App\Filament\Components\Partials\RoadmapComponent;
 use App\Filament\Components\Partials\SplitWithHorizontalStepsComponent;
 use App\Filament\Components\Partials\SplitWithImageQuoteComponent;
 use App\Filament\Components\Partials\SplitWithVerticalStepsComponent;
@@ -53,13 +47,11 @@ enum CustomComponent: string
 
     case InfoStats = 'info-stats';
 
-
     case FlowTimeline = 'flow-timeline';
     case TwoColumnsImageFeatureGrid = 'two-columns-image-feature-grid';
 
     case SplitWithVerticalSteps = 'split-with-vertical-steps';
     case SplitWithImageQuote = 'split-with-image-quote';
-
 
     case SplitWithHorizontalSteps = 'split-with-horizontal-steps';
 
@@ -73,13 +65,11 @@ enum CustomComponent: string
 
     case Testimonials = 'testimonials';
 
-
     case CallToActionFullWidthSection = 'call-to-action-section';
     case CallToActionWithIconSection = 'call-to-action-with-icon';
     case CallToActionWithImage = 'call-to-action-with-image';
 
     case ContactForm = 'contact-form';
-
 
     public function getComponentClass(): string
     {
@@ -106,8 +96,8 @@ enum CustomComponent: string
             self::HeroWithBackgroundImage => HeroWithBackgroundImageComponent::class,
             self::ContactForm => ContactFormComponent::class,
             self::FlowTimeline => FlowTimeline::class,
-            self::HeroWithTitleOnly => HeroWithTitleOnly::class,
-            self::HeroWithSplitImages => HeroWithSplitImages::class
+            self::HeroWithTitleOnly => HeroWithTitleOnlyComponent::class,
+            self::HeroWithSplitImages => HeroWithSplitImagesComponent::class
         };
     }
 
@@ -118,6 +108,6 @@ enum CustomComponent: string
 
     public static function allComponents(): array
     {
-        return array_map(fn(CustomComponent $component): array => ['class' => $component->getComponent()], self::cases());
+        return array_map(fn (CustomComponent $component): array => ['class' => $component->getComponent()], self::cases());
     }
 }

@@ -2,10 +2,12 @@
 
 use App\Providers\AppServiceProvider;
 use App\Providers\Filament\AdminPanelServiceProvider;
-use Webid\Druid\DruidServiceProvider;
+use App\Providers\Filament\ConsultantPanelServiceProvider;
+use TresPontosTech\Consultant\ConsultantServiceProvider;
 
 return [
     AppServiceProvider::class,
     AdminPanelServiceProvider::class,
-    DruidServiceProvider::class,
+    ConsultantPanelServiceProvider::class,
+    ConsultantServiceProvider::class,
 ];

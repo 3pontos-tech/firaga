@@ -3,11 +3,12 @@
 namespace App\Providers;
 
 use App\View\Components\Navbar;
-use BezhanSalleh\FilamentShield\FilamentShield;
 use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Http\Client\PendingRequest;
 use Illuminate\Support\Facades\Blade;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Http;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -19,6 +20,8 @@ class AppServiceProvider extends ServiceProvider
 
     public function boot(): void
     {
+        //        Http::preventStrayRequests();
+
         Blade::component('navbar', Navbar::class);
 
         $this->configurePolicies();
@@ -29,7 +32,18 @@ class AppServiceProvider extends ServiceProvider
 
         $this->configureFilament();
 
-        //        URL::forceHttps($this->app->isProduction() || $this->app->environment('staging'));
+        PendingRequest::macro('withLocation', fn () => $this->withQueryParameters([
+            'locationId' => config('services.highlevel.location'),
+        ]));
+
+        PendingRequest::macro('withDefaultVersion', fn (?string $version = null) => $this->withHeader(
+            'Version',
+            $version ?? config('services.highlevel.version')
+        ));
+
+        PendingRequest::macro('withDefaultCompany', fn (?string $companyId = null) => $this->withQueryParameters(
+            ['companyId' => $companyId ?? config('services.highlevel.company')]
+        ));
 
     }
 
@@ -51,7 +65,6 @@ class AppServiceProvider extends ServiceProvider
 
     private function configureFilament(): void
     {
-        FilamentShield::prohibitDestructiveCommands($this->app->isProduction());
 
         Table::configureUsing(fn (Table $table): Table => $table->paginationPageOptions([10, 25, 50]));
     }

@@ -1,0 +1,521 @@
+# Documentation Search Results
+
+**Packages:** filament/filament@4.x
+**Results:** 34 documents, 592 chunks
+
+---
+
+## infolists/01-overview.md > Opening a URL when an entry is clicked
+Package: filament/filament@4.x
+
+## Opening a URL when an entry is clicked
+
+When an entry is clicked, you may open a URL. To do this, pass a URL to the `url()` method:
+
+```php
+use Filament\Infolists\Components\TextEntry;
+
+TextEntry::make('title')
+    ->url('/about/titles')
+```
+
+You may pass a function to the `url()` method to dynamically calculate the URL. For example, you may want to access the current Eloquent record for the infolist by injecting `$record` as an argument:
+
+```php
+use Filament\Infolists\Components\TextEntry;
+
+TextEntry::make('title')
+    ->url(fn (Post $record): string => route('posts.edit', ['post' => $record]))
+```
+
+If you're using a [panel resource](../resources), you can generate a link to a page for the record using the `getUrl()` method:
+
+```php
+use App\Filament\Posts\PostResource;
+use Filament\Infolists\Components\TextEntry;
+
+TextEntry::make('title')
+    ->url(fn (Post $record): string => PostResource::getUrl('edit', ['record' => $record]))
+```
+
+<UtilityInjection set="infolistEntries" version="4.x">The function passed to `url()` can inject various utilities as parameters.</UtilityInjection>
+
+You may also choose to open the URL in a new tab:
+
+```php
+use Filament\Infolists\Components\TextEntry;
+
+TextEntry::make('title')
+    ->url(fn (Post $record): string => PostResource::getUrl('edit', ['record' => $record]))
+    ->openUrlInNewTab()
+```
+
+Optionally, you may pass a boolean value to control if the URL should open in a new tab or not:
+
+```php
+use Filament\Infolists\Components\TextEntry;
+
+TextEntry::make('title')
+    ->url(fn (Post $record): string => PostResource::getUrl('edit', ['record' => $record]))
+    ->openUrlInNewTab(FeatureFlag::active())
+```
+
+<UtilityInjection set="infolistEntries" version="4.x">As well as allowing a static value, the `openUrlInNewTab()` method also accepts a function to dynamically calculate it. You can inject various utilities into the function as parameters.</UtilityInjection>
+
+---
+
+## schemas/03-sections.md > Using grid columns within a section
+Package: filament/filament@4.x
+
+## Using grid columns within a section
+
+You may use the `columns()` method to easily create a [grid](layouts#grid-system) within the section:
+
+```php
+use Filament\Schemas\Components\Section;
+
+Section::make('Heading')
+    ->schema([
+        // ...
+    ])
+    ->columns(2)
+```
+
+<UtilityInjection set="schemaComponents" version="4.x">As well as allowing a static value, the `columns()` method also accepts a function to dynamically calculate it. You can inject various utilities into the function as parameters.</UtilityInjection>
+
+---
+
+## docs/12-components/03-link.md > Adding a badge to a link
+Package: filament/filament@4.x
+
+## Adding a badge to a link
+
+You can render a [badge](badge) on top of a link by using the `badge` slot:
+
+```blade
+<x-filament::link>
+    Mark notifications as read
+
+    <x-slot name="badge">
+        3
+    </x-slot>
+</x-filament::link>
+```
+
+You can [change the color](badge#changing-the-color-of-the-badge) of the badge using the `badge-color` attribute:
+
+```blade
+<x-filament::link badge-color="danger">
+    Mark notifications as read
+
+    <x-slot name="badge">
+        3
+    </x-slot>
+</x-filament::link>
+```
+
+---
+
+## infolists/09-custom-entries.md > Allowing utility injection in a custom entry configuration method
+Package: filament/filament@4.x
+
+## Allowing utility injection in a custom entry configuration method
+
+[Utility injection](overview#entry-utility-injection) is a powerful feature of Filament that allows users to configure a component using functions that can access various utilities. You can allow utility injection by ensuring that the parameter type and property type of the configuration allows the user to pass a `Closure`. In the getter method, you should pass the configuration value to the `$this->evaluate()` method, which will inject utilities into the user's function if they pass one, or return the value if it is static:
+
+```php
+use Closure;
+use Filament\Infolists\Components\Entry;
+
+class AudioPlayerEntry extends Entry
+{
+    protected string $view = 'filament.infolists.components.audio-player-entry';
+
+    protected float | Closure | null $speed = null;
+
+    public function speed(float | Closure | null $speed): static
+    {
+        $this->speed = $speed;
+
+        return $this;
+    }
+
+    public function getSpeed(): ?float
+    {
+        return $this->evaluate($this->speed);
+    }
+}
+```
+
+Now, you can pass a static value or a function to the `speed()` method, and [inject any utility](overview#component-utility-injection) as a parameter:
+
+```php
+use App\Filament\Infolists\Components\AudioPlayerEntry;
+
+AudioPlayerEntry::make('recording')
+    ->speed(fn (Conference $record): float => $record->isGlobal() ? 1 : 0.5)
+```
+
+---
+
+## schemas/02-layouts.md > Fieldset component
+Package: filament/filament@4.x
+
+### Fieldset component
+
+You may want to group fields into a Fieldset. Each fieldset has a label, a border, and a two-column grid by default:
+
+```php
+use Filament\Schemas\Components\Fieldset;
+
+Fieldset::make('Label')
+    ->columns([
+        'default' => 1,
+        'md' => 2,
+        'xl' => 3,
+    ])
+    ->schema([
+        // ...
+    ])
+```
+
+<UtilityInjection set="schemaComponents" version="4.x">As well as allowing a static label, the `make()` method also accepts a function to dynamically calculate it. You can inject various utilities into the function as parameters.</UtilityInjection>
+
+<AutoScreenshot name="schemas/layout/fieldset/simple" alt="Fieldset" version="4.x" />
+
+---
+
+## schemas/02-layouts.md > An example of a responsive grid layout
+Package: filament/filament@4.x
+
+### An example of a responsive grid layout
+
+In this example, we have a schema with a [section](sections) layout component. Since all layout components support the `columns()` method, we can use it to create a responsive grid layout within the section itself.
+
+We pass an array to `columns()` as we want to specify different numbers of columns for different breakpoints. On devices smaller than the `sm` [Tailwind breakpoint](https://tailwindcss.com/docs/responsive-design#overview), we want to have 1 column, which is default. On devices larger than the `sm` breakpoint, we want to have 3 columns. On devices larger than the `xl` breakpoint, we want to have 6 columns. On devices larger than the `2xl` breakpoint, we want to have 8 columns.
+
+Inside the section, we have a [text input](../forms/text-input). Since text inputs are form fields and all components have a `columnSpan()` method, we can use it to specify how many columns the text input should fill. On devices smaller than the `sm` breakpoint, we want the text input to fill 1 column, which is default. On devices larger than the `sm` breakpoint, we want the text input to fill 2 columns. On devices larger than the `xl` breakpoint, we want the text input to fill 3 columns. On devices larger than the `2xl` breakpoint, we want the text input to fill 4 columns.
+
+Additionally, we're using the `columnOrder()` method to control the visual order of components in the grid based on screen size. This allows us to change the display order without altering the markup structure.
+
+```php
+use Filament\Forms\Components\TextInput;
+use Filament\Schemas\Components\Section;
+
+Section::make()
+    ->columns([
+        'sm' => 3,
+        'xl' => 6,
+        '2xl' => 8,
+    ])
+    ->schema([
+        TextInput::make('name')
+            ->columnSpan([
+                'default' => 1,
+                'sm' => 2,
+                'xl' => 3,
+                '2xl' => 4,
+            ])
+            ->columnOrder([
+                'default' => 2,
+                'xl' => 1,
+            ]),
+        TextInput::make('email')
+            ->columnSpan([
+                'default' => 1,
+                'xl' => 2,
+            ])
+            ->columnOrder([
+                'default' => 1,
+                'xl' => 2,
+            ]),
+        // ...
+    ])
+```
+
+In this example, on screens smaller than the `xl` breakpoint, the email field will appear first followed by the name field. On screens larger than the `xl` breakpoint, the order is reversed with the name field appearing first followed by the email field.
+
+---
+
+## docs/12-components/03-icon-button.md > Adding a badge to an icon button
+Package: filament/filament@4.x
+
+## Adding a badge to an icon button
+
+You can render a [badge](badge) on top of an icon button by using the `badge` slot:
+
+```blade
+<x-filament::icon-button
+    icon="heroicon-m-x-mark"
+    label="Mark notifications as read"
+>
+    <x-slot name="badge">
+        3
+    </x-slot>
+</x-filament::icon-button>
+```
+
+You can [change the color](badge#changing-the-color-of-the-badge) of the badge using the `badge-color` attribute:
+
+```blade
+<x-filament::icon-button
+    icon="heroicon-m-x-mark"
+    label="Mark notifications as read"
+    badge-color="danger"
+>
+    <x-slot name="badge">
+        3
+    </x-slot>
+</x-filament::icon-button>
+```
+
+---
+
+## infolists/09-custom-entries.md > Adding a configuration method to a custom entry class
+Package: filament/filament@4.x
+
+## Adding a configuration method to a custom entry class
+
+You may add a public method to the custom entry class that accepts a configuration value, stores it in a protected property, and returns it again from another public method:
+
+```php
+use Filament\Infolists\Components\Entry;
+
+class AudioPlayerEntry extends Entry
+{
+    protected string $view = 'filament.infolists.components.audio-player-entry';
+
+    protected ?float $speed = null;
+
+    public function speed(?float $speed): static
+    {
+        $this->speed = $speed;
+
+        return $this;
+    }
+
+    public function getSpeed(): ?float
+    {
+        return $this->speed;
+    }
+}
+```
+
+Now, in the Blade view for the custom entry, you may access the speed using the `$getSpeed()` function:
+
+```blade
+<x-dynamic-component
+    :component="$getEntryWrapperView()"
+    :entry="$entry"
+>
+    {{ $getSpeed() }}
+</x-dynamic-component>
+```
+
+Any public method that you define on the custom entry class can be accessed in the Blade view as a variable function in this way.
+
+To pass the configuration value to the custom entry class, you may use the public method:
+
+```php
+use App\Filament\Infolists\Components\AudioPlayerEntry;
+
+AudioPlayerEntry::make('recording')
+    ->speed(0.5)
+```
+
+---
+
+## infolists/06-code-entry.md > Allowing the code to be copied to the clipboard
+Package: filament/filament@4.x
+
+## Allowing the code to be copied to the clipboard
+
+You may make the code copyable, such that clicking on it copies the code to the clipboard, and optionally specify a custom confirmation message and duration in milliseconds. This feature only works when SSL is enabled for the app.
+
+```php
+use Filament\Infolists\Components\CodeEntry;
+
+CodeEntry::make('code')
+    ->copyable()
+    ->copyMessage('Copied!')
+    ->copyMessageDuration(1500)
+```
+
+Optionally, you may pass a boolean value to control if the code should be copyable or not:
+
+```php
+use Filament\Infolists\Components\CodeEntry;
+
+CodeEntry::make('code')
+    ->copyable(FeatureFlag::active())
+```
+
+<UtilityInjection set="infolistEntries" version="4.x">As well as allowing static values, the `copyable()`, `copyMessage()`, and `copyMessageDuration()` methods also accept functions to dynamically calculate them. You can inject various utilities into the function as parameters.</UtilityInjection>
+
+---
+
+## infolists/08-repeatable-entry.md > Grid layout
+Package: filament/filament@4.x
+
+## Grid layout
+
+You may organize repeatable items into columns by using the `grid()` method:
+
+```php
+use Filament\Infolists\Components\RepeatableEntry;
+
+RepeatableEntry::make('comments')
+    ->schema([
+        // ...
+    ])
+    ->grid(2)
+```
+
+This method accepts the same options as the `columns()` method of the [grid](../schemas/layouts#grid-system). This allows you to responsively customize the number of grid columns at various breakpoints.
+
+<UtilityInjection set="infolistEntries" version="4.x">As well as allowing a static value, the `grid()` method also accepts a function to dynamically calculate it. You can inject various utilities into the function as parameters.</UtilityInjection>
+
+<AutoScreenshot name="infolists/entries/repeatable/grid" alt="Repeatable entry in grid layout" version="4.x" />
+
+---
+
+## infolists/02-text-entry.md > Introduction
+Package: filament/filament@4.x
+
+## Introduction
+
+Text entries display simple text:
+
+```php
+use Filament\Infolists\Components\TextEntry;
+
+TextEntry::make('title')
+```
+
+<AutoScreenshot name="infolists/entries/text/simple" alt="Text entry" version="4.x" />
+
+---
+
+## infolists/02-text-entry.md > Displaying as a "badge"
+Package: filament/filament@4.x
+
+## Displaying as a "badge"
+
+By default, text is quite plain and has no background color. You can make it appear as a "badge" instead using the `badge()` method. A great use case for this is with statuses, where may want to display a badge with a [color](#customizing-the-color) that matches the status:
+
+```php
+use Filament\Infolists\Components\TextEntry;
+
+TextEntry::make('status')
+    ->badge()
+    ->color(fn (string $state): string => match ($state) {
+        'draft' => 'gray',
+        'reviewing' => 'warning',
+        'published' => 'success',
+        'rejected' => 'danger',
+    })
+```
+
+<AutoScreenshot name="infolists/entries/text/badge" alt="Text entry as badge" version="4.x" />
+
+You may add other things to the badge, like an [icon](#adding-an-icon).
+
+Optionally, you may pass a boolean value to control if the text should be in a badge or not:
+
+```php
+use Filament\Infolists\Components\TextEntry;
+
+TextEntry::make('status')
+    ->badge(FeatureFlag::active())
+```
+
+<UtilityInjection set="infolistEntries" version="4.x">As well as allowing a static value, the `badge()` method also accepts a function to dynamically calculate it. You can inject various utilities into the function as parameters.</UtilityInjection>
+
+---
+
+## docs/12-components/03-dropdown.md > Adding a badge to a dropdown item
+Package: filament/filament@4.x
+
+## Adding a badge to a dropdown item
+
+You can render a [badge](badge) on top of a dropdown item by using the `badge` slot:
+
+```blade
+<x-filament::dropdown.list.item>
+    Mark notifications as read
+
+    <x-slot name="badge">
+        3
+    </x-slot>
+</x-filament::dropdown.list.item>
+```
+
+You can [change the color](badge#changing-the-color-of-the-badge) of the badge using the `badge-color` attribute:
+
+```blade
+<x-filament::dropdown.list.item badge-color="danger">
+    Mark notifications as read
+
+    <x-slot name="badge">
+        3
+    </x-slot>
+</x-filament::dropdown.list.item>
+```
+
+---
+
+## infolists/09-custom-entries.md > Accessing the current entry instance in the Blade view
+Package: filament/filament@4.x
+
+## Accessing the current entry instance in the Blade view
+
+Inside the Blade view, you may access the current entry instance using `$entry`. You can call public methods on this object to access other information that may not be available in variables:
+
+```blade
+<x-dynamic-component
+    :component="$getEntryWrapperView()"
+    :entry="$entry"
+>
+    @if ($entry->isLabelHidden())
+        This is a new conference.
+    @endif
+</x-dynamic-component>
+```
+
+---
+
+## schemas/02-layouts.md > Flex component
+Package: filament/filament@4.x
+
+### Flex component
+
+The `Flex` component allows you to define layouts with flexible widths, using flexbox. This component does not use Filament's [grid system](#grid-system).
+
+```php
+use Filament\Forms\Components\Textarea;
+use Filament\Forms\Components\TextInput;
+use Filament\Forms\Components\Toggle;
+use Filament\Schemas\Components\Section;
+use Filament\Schemas\Components\Flex;
+
+Flex::make([
+    Section::make([
+        TextInput::make('title'),
+        Textarea::make('content'),
+    ]),
+    Section::make([
+        Toggle::make('is_published'),
+        Toggle::make('is_featured'),
+    ])->grow(false),
+])->from('md')
+```
+
+In this example, the first section will `grow()` to consume available horizontal space, without affecting the amount of space needed to render the second section. This creates a flexible width sidebar effect.
+
+The `from()` method is used to control the [Tailwind breakpoint](https://tailwindcss.com/docs/responsive-design#overview) (`sm`, `md`, `lg`, `xl`, `2xl`) at which the horizontally-split layout should be used. In this example, the horizontally-split layout will be used on medium devices and larger. On smaller devices, the sections will stack on top of each other.
+
+<UtilityInjection set="schemaComponents" version="4.x">As well as allowing static values, the `grow()` and `from()` methods also accept functions to dynamically calculate them. You can inject various utilities into the functions as parameters.</UtilityInjection>
+
+<AutoScreenshot name="schemas/layout/flex/simple" alt="Flex" version="4.x" />
+
+_[Content truncated due to token limit]_

@@ -6,7 +6,6 @@ use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasMany;
-use Webid\Druid\Models\Traits\IsTranslatable;
 
 /**
  * @property int $id
@@ -21,7 +20,6 @@ use Webid\Druid\Models\Traits\IsTranslatable;
 class Menu extends Model
 {
     use HasFactory;
-    use IsTranslatable;
 
     protected $table = 'menus';
 

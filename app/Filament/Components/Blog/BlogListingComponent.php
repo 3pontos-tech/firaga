@@ -36,7 +36,7 @@ class BlogListingComponent extends AbstractCustomComponent
         $featuredPost = Post::query()
             ->where('is_top_article', true)
             ->where('status', 'published')
-            ->orderByDesc('published_at')
+            ->latest('published_at')
             ->first();
         $categories = Category::all();
 

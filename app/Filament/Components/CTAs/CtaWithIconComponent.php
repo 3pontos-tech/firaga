@@ -5,7 +5,7 @@ namespace App\Filament\Components\CTAs;
 use App\Enums\CustomComponent;
 use App\Filament\Components\AbstractCustomComponent;
 use Filament\Forms\Components\TextInput;
-use Guava\FilamentIconPicker\Forms\IconPicker;
+use Guava\IconPicker\Forms\Components\IconPicker;
 
 class CtaWithIconComponent extends AbstractCustomComponent
 {

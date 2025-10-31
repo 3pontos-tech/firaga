@@ -6,7 +6,6 @@ use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
-use Webid\Druid\Models\Traits\IsTranslatable;
 
 /**
  * @property string $name
@@ -19,7 +18,6 @@ use Webid\Druid\Models\Traits\IsTranslatable;
 class Category extends Model
 {
     use HasFactory;
-    use IsTranslatable;
 
     protected $table = 'categories';
 

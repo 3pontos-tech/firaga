@@ -35,7 +35,7 @@ class SplitWithHorizontalStepsComponent extends AbstractCustomComponent
             'cards' => CardComponent::makeCollection($data['cards'] ?? []),
             'cta_description' => $data['cta_description'] ?? '',
             'actions' => collect($data['buttons'] ?? [])
-                ->map(fn ($button): ButtonComponent => ButtonComponent::make($button)),
+                ->map(fn (array $button): ButtonComponent => ButtonComponent::make($button)),
         ];
     }
 

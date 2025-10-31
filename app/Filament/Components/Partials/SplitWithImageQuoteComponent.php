@@ -11,7 +11,7 @@ use Filament\Forms\Components\Repeater;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\Textarea;
 use Filament\Forms\Components\TextInput;
-use Guava\FilamentIconPicker\Forms\IconPicker;
+use Guava\IconPicker\Forms\Components\IconPicker;
 
 class SplitWithImageQuoteComponent extends AbstractCustomComponent
 {
@@ -71,7 +71,7 @@ class SplitWithImageQuoteComponent extends AbstractCustomComponent
 
             Select::make('component_theme')
                 ->label('Component Theme')
-                ->options(PageTheme::class)
+                ->options(PageTheme::class),
         ];
     }
 
@@ -95,7 +95,7 @@ class SplitWithImageQuoteComponent extends AbstractCustomComponent
             'end_description' => $data['end_description'] ?? '',
             'cta_label' => $data['cta_label'] ?? '',
             'cta_url' => $data['cta_url'] ?? '',
-            'component_theme' => $data['component_theme'] ?? ''
+            'component_theme' => $data['component_theme'] ?? '',
         ];
     }
 

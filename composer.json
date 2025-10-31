@@ -11,44 +11,48 @@
         "filament"
     ],
     "license": "MIT",
+
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "https://github.com/3pontos-tech/filament-consultants-module"
+        }
+    ],
     "require": {
         "php": "^8.3",
-        "awcodes/filament-curator": "^3.7",
-        "bezhansalleh/filament-shield": "^3.3",
+        "3pontos-tech/filament-consultants-module": "dev-main",
+        "basementdevs/abacatepay-php-sdk": "^1.0",
+        "bezhansalleh/filament-shield": "^4.0",
         "blade-ui-kit/blade-icons": "^1.8",
         "danharrin/livewire-rate-limiting": "^2.1",
-        "filament/filament": "^3.2",
-        "filament/spatie-laravel-media-library-plugin": "^3.2",
-        "guava/filament-icon-picker": "^2.0",
-        "hasnayeen/themes": "^3.0.24",
-        "jeffgreco13/filament-breezy": "^2.6",
+        "filament/filament": "^4.0",
+        "filament/spatie-laravel-media-library-plugin": "^4.0",
+        "guava/filament-icon-picker": "^3.0",
+        "jeffgreco13/filament-breezy": "^3.0",
         "laravel/framework": "^12.0",
         "laravel/nightwatch": "^1.12",
         "laravel/tinker": "^2.10.1",
         "mallardduck/blade-lucide-icons": "^1.23",
-        "outerweb/filament-settings": "^1.3",
         "owenvoke/blade-fontawesome": "^2.9",
-        "pxlrbt/filament-environment-indicator": "^2.2",
-        "swisnl/filament-backgrounds": "^1.1",
-        "webid/druid": "^0.3.2",
-        "z3d0x/filament-logger": "^0.8.0"
+        "pxlrbt/filament-environment-indicator": "^3.0"
     },
     "require-dev": {
         "barryvdh/laravel-debugbar": "^3.15",
         "barryvdh/laravel-ide-helper": "^3.5",
         "driftingly/rector-laravel": "^2.0.4",
         "fakerphp/faker": "^1.23",
+        "filament/upgrade": "^4.0",
         "larastan/larastan": "^3.0",
-        "laravel/boost": "^1.1",
+        "laravel/boost": "^1.6",
         "laravel/pail": "^1.2.2",
         "laravel/pint": "^1.13",
         "laravel/sail": "^1.41",
         "mockery/mockery": "^1.6",
         "nunomaduro/collision": "^8.6",
-        "pestphp/pest": "^v3.8.2",
-        "pestphp/pest-plugin-laravel": "^v3.2.0",
-        "pestphp/pest-plugin-livewire": "^3.0",
-        "pestphp/pest-plugin-type-coverage": "^v3.5.1",
+        "pestphp/pest": "^v4.0",
+        "pestphp/pest-plugin-laravel": "^v4.0",
+        "pestphp/pest-plugin-livewire": "^4.0",
+        "pestphp/pest-plugin-type-coverage": "^v4.0",
         "rector/rector": "^2.0.15"
     },
     "autoload": {

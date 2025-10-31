@@ -3,16 +3,13 @@
 declare(strict_types=1);
 
 use App\Enums\CustomComponent;
-use App\Filament\Resources\CMS\MenuResource\RelationManagers\ItemsRelationManager;
+use App\Filament\Resources\CMS\Menus\RelationManagers\ItemsRelationManager;
 use App\Models\CMS\Category;
 use App\Models\CMS\Menu;
 use App\Models\CMS\MenuItem;
 use App\Models\CMS\Page;
 use App\Models\CMS\Post;
 use App\Models\User;
-use Awcodes\Curator\Models\Media;
-use Webid\Druid\Models\ReusableComponent;
-use Webid\Druid\Services\ContentRenderer\BladeRenderer;
 
 return [
     /*
@@ -23,13 +20,11 @@ return [
 
     'models' => [
         'user' => User::class,
-        'media' => Media::class,
         'page' => Page::class,
         'post' => Post::class,
         'category' => Category::class,
         'menu' => Menu::class,
         'menu_item' => MenuItem::class,
-        'reusable_component' => ReusableComponent::class,
     ],
 
     /*
