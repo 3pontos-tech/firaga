@@ -2,10 +2,13 @@
 
 namespace App\Actions\Payments;
 
+use Ramsey\Uuid\Uuid;
+
 class CreatePaymentLinkDTO
 {
     public function __construct(
         public string $externalId,
+        public string $paymentMethod,
         public string $productId,
         public string $productName,
         public string $productDescription,
@@ -20,8 +23,23 @@ class CreatePaymentLinkDTO
 
     public static function fromArray(array $data): self
     {
+        $data = [
+            'externalId' => sprintf('firaga-%s-%s', $data['plan']->value, Uuid::uuid4()->toString()),
+            'productId' => sprintf('%s-%s', $data['plan']->value, time()),
+            'paymentMethod' => $data['payment_method']->value,
+            'productName' => $data['plan']->value,
+            'productDescription' => $data['plan']->value,
+            'productPrice' => str(($data['amount'] * 100))->remove(['.', ','])->toInteger(),
+            'customerId' => Uuid::uuid4()->toString(),
+            'customerName' => $data['customer_name'],
+            'customerCellphone' => $data['customer_phone_number'],
+            'customerEmail' => $data['customer_email'],
+            'customerTaxId' => $data['customer_tax_id'],
+        ];
+
         return new self(
             externalId: $data['externalId'],
+            paymentMethod: $data['paymentMethod'],
             productId: $data['productId'],
             productName: $data['productName'],
             productDescription: $data['productDescription'],

@@ -21,7 +21,7 @@ class PaymentFactory extends Factory
             'status' => $this->faker->word(),
             'customer_name' => $this->faker->name(),
             'customer_email' => $this->faker->unique()->safeEmail(),
-            'customer_cpf' => $this->faker->word(),
+            'customer_tax_id' => $this->faker->word(),
             'customer_phone_number' => $this->faker->phoneNumber(),
             'crm_opportunity_id' => $this->faker->word(),
             'created_at' => Date::now(),

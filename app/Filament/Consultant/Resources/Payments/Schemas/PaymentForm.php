@@ -2,6 +2,7 @@
 
 namespace App\Filament\Consultant\Resources\Payments\Schemas;
 
+use App\Enums\Payments\PaymentMethodEnum;
 use App\Enums\Payments\PaymentPlanType;
 use App\Enums\Payments\PaymentProviderEnum;
 use Filament\Forms\Components\Select;
@@ -17,6 +18,11 @@ class PaymentForm
                 Select::make('provider')
                     ->enum(PaymentProviderEnum::class)
                     ->options(PaymentProviderEnum::class)
+                    ->required(),
+
+                Select::make('payment_method')
+                    ->enum(PaymentMethodEnum::class)
+                    ->options(PaymentMethodEnum::class)
                     ->required(),
 
                 Select::make('plan')
@@ -51,6 +57,8 @@ class PaymentForm
                 TextInput::make('amount')
                     ->label('Amount')
                     ->numeric()
+                    ->prefix('R$')
+                    ->mask('')
                     ->required(),
             ]);
     }

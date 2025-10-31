@@ -3,6 +3,7 @@
 namespace App\Actions\Payments;
 
 use Basement\AbacatePay\AbacatePayClient;
+use Basement\AbacatePay\Billing\Enum\BillingMethodEnum;
 use Basement\AbacatePay\Billing\Http\Request\CreateBillingRequest;
 use Basement\AbacatePay\Billing\Http\Request\ProductRequest;
 use Basement\AbacatePay\Customer\Http\Request\CustomerRequest;
@@ -35,7 +36,7 @@ class CreatePaymentLink
         );
 
         $request = CreateBillingRequest::oneTime()
-            ->pix()
+            ->addMethod(BillingMethodEnum::from(strtoupper($dto->paymentMethod)))
             ->completionUrl('https://firece.com.br')
             ->returnUrl('https://firece.com.br')
             ->externalId($externalId)
