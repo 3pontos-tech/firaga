@@ -1,0 +1,57 @@
+FROM debian:bookworm-slim
+
+ARG PHP_VERSION=8.3
+
+ENV TZ=America/Sao_Paulo \
+    DEBIAN_FRONTEND=noninteractive \
+    ENV=local \
+    COMPOSER_ALLOW_SUPERUSER=1
+
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    ca-certificates \
+    apt-transport-https \
+    lsb-release \
+    curl && \
+    echo "deb https://packages.sury.org/php/ $(lsb_release -cs) main" | tee /etc/apt/sources.list.d/sury-php.list && \
+    curl -fsSL https://packages.sury.org/php/apt.gpg | tee /etc/apt/trusted.gpg.d/sury-php.gpg > /dev/null && \
+    apt-get update
+
+RUN apt-get install -y --no-install-recommends \
+    unzip \
+    git \
+    zip \
+    php${PHP_VERSION}-fpm \
+    php${PHP_VERSION}-cli \
+    php${PHP_VERSION}-curl \
+    php${PHP_VERSION}-mbstring \
+    php${PHP_VERSION}-intl \
+    php${PHP_VERSION}-sqlite3 \
+    php${PHP_VERSION}-mysql \
+    php${PHP_VERSION}-xml \
+    php${PHP_VERSION}-gd \
+    php${PHP_VERSION}-bcmath \
+    php${PHP_VERSION}-memcached \
+    php${PHP_VERSION}-zip && \
+    rm -rf /var/lib/apt/lists/* /var/tmp/*
+
+COPY ./docker/php/conf.d/www.conf /etc/php/${PHP_VERSION}/fpm/pool.d/www.conf
+
+WORKDIR /var/www
+
+RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --2.7 --filename=composer
+
+COPY ./composer.json ./composer.lock ./
+RUN composer install --no-interaction --no-progress --prefer-dist --no-scripts
+
+COPY . .
+
+RUN mkdir -p storage/framework/sessions storage/framework/views storage/framework/cache storage/logs bootstrap/cache \
+    && chown -R www-data:www-data storage bootstrap/cache
+
+RUN composer dump-autoload --optimize
+
+COPY ./docker/php/docker-entrypoint.sh /usr/local/bin/docker-entrypoint.sh
+RUN chmod +x /usr/local/bin/docker-entrypoint.sh
+
+ENTRYPOINT ["docker-entrypoint.sh"]
+CMD ["php-fpm8.3", "--nodaemonize"]

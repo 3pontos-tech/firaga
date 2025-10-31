@@ -1,0 +1,24 @@
+services:
+  php:
+    build:
+      context: .
+      dockerfile: docker/php/Dockerfile.dev
+    volumes:
+      - ./:/var/www:cached
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+
+  nginx:
+    build:
+      context: .
+      dockerfile: docker/nginx/Dockerfile.dev
+    ports:
+      - "80:80"
+    volumes:
+      - ./:/var/www:cached
+    depends_on:
+      - php
+
+
+volumes:
+  db_data:
