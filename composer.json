@@ -34,7 +34,8 @@
         "laravel/tinker": "^2.10.1",
         "mallardduck/blade-lucide-icons": "^1.23",
         "owenvoke/blade-fontawesome": "^2.9",
-        "pxlrbt/filament-environment-indicator": "^3.0"
+        "pxlrbt/filament-environment-indicator": "^3.0",
+        "resend/resend-laravel": "^0.23.0"
     },
     "require-dev": {
         "barryvdh/laravel-debugbar": "^3.15",
