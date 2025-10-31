@@ -4,6 +4,9 @@ namespace App\Filament\Consultant\Resources\Payments\Pages;
 
 use App\Actions\Payments\CreatePaymentLink;
 use App\Actions\Payments\CreatePaymentLinkDTO;
+use App\Contracts\PaymentGatewayContract;
+use App\Contracts\PaymentResponseContract;
+use App\Enums\Payments\PaymentProviderEnum;
 use App\Enums\Payments\PaymentStatusEnum;
 use App\Filament\Consultant\Resources\Payments\PaymentResource;
 use Filament\Resources\Pages\CreateRecord;
@@ -14,18 +17,20 @@ class CreatePayment extends CreateRecord
 
     protected function mutateFormDataBeforeCreate(array $data): array
     {
+        $provider = PaymentProviderEnum::from($data['provider']->value);
+        $dto = $provider->getDto($data);
+        $driver = $provider->getDriver();
 
-        $dto = CreatePaymentLinkDTO::fromArray($data);
+        /* @var PaymentResponseContract $response */
 
-        /* @var CreatePaymentLinkResponse $response */
-        $response = app(CreatePaymentLink::class)->handle($dto);
+        $response = app(CreatePaymentLink::class)->handle($dto, $driver);
 
         $data['consultant_id'] = auth()->user()->consultants()->first()->getKey();
         $data['status'] = PaymentStatusEnum::PENDING;
 
         $data['crm_opportunity_id'] = 1;
-        $data['payment_url'] = $response->data->data->url;
-        $data['provider_id'] = $response->externalId;
+        $data['payment_url'] = $response->paymentUrl();
+        $data['provider_id'] = $response->externalId();
 
         return $data;
     }

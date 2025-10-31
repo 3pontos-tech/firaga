@@ -2,6 +2,10 @@
 
 namespace App\Enums\Payments;
 
+use App\Actions\Payments\CreatePaymentLinkDTO;
+use App\Adapter\AbacatePayAdapter;
+use App\Contracts\PaymentDtoContract;
+use App\Contracts\PaymentGatewayContract;
 use Filament\Support\Colors\Color;
 use Filament\Support\Contracts\HasColor;
 use Filament\Support\Contracts\HasIcon;
@@ -30,6 +34,20 @@ enum PaymentProviderEnum: string implements HasColor, HasIcon, HasLabel
     {
         return match ($this) {
             self::AbacatePay => 'Abacate Pay',
+        };
+    }
+
+    public function getDriver(): PaymentGatewayContract
+    {
+        return match ($this) {
+            self::AbacatePay => app(AbacatePayAdapter::class),
+        };
+    }
+
+    public function getDto(array $data): PaymentDtoContract
+    {
+        return match ($this) {
+            self::AbacatePay => CreatePaymentLinkDTO::fromArray($data),
         };
     }
 }

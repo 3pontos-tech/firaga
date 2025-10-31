@@ -2,9 +2,9 @@
 
 namespace App\Actions\Payments;
 
-use Ramsey\Uuid\Uuid;
+use App\Contracts\PaymentDtoContract;
 
-class CreatePaymentLinkDTO
+class CreatePaymentLinkDTO implements PaymentDtoContract
 {
     public function __construct(
         public string $externalId,
