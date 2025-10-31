@@ -37,8 +37,8 @@ class CreatePaymentLink
 
         $request = CreateBillingRequest::oneTime()
             ->addMethod(BillingMethodEnum::from(strtoupper($dto->paymentMethod)))
-            ->completionUrl('https://firece.com.br')
-            ->returnUrl('https://firece.com.br')
+            ->completionUrl(route('payment.success'))
+            ->returnUrl(route('landing'))
             ->externalId($externalId)
             ->products($product)
             ->forCustomer($customer)
