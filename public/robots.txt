@@ -1,2 +1,48 @@
+# robots.txt – Firece
+# Última atualização: 07/11/2025
+# Este arquivo orienta os mecanismos de busca sobre quais partes do site devem ser rastreadas.
+
 User-agent: *
-Disallow:
+# Permite o rastreamento completo do site
+Allow: /
+
+# Bloqueios comuns (áreas técnicas e administrativas)
+Disallow: /admin/
+Disallow: /wp-admin/
+Disallow: /wp-login.php
+Disallow: /cgi-bin/
+Disallow: /scripts/
+Disallow: /tmp/
+Disallow: /private/
+Disallow: /cart/
+Disallow: /checkout/
+Disallow: /thank-you/
+Disallow: /404
+Disallow: /?s=
+
+# Bloqueio de parâmetros dinâmicos (URLs com interrogações)
+Disallow: /*?
+
+# Políticas de rastreamento
+Crawl-delay: 10
+
+# Sitemap principal
+Sitemap: https://www.firece.com.br/sitemap.xml
+
+# Diretivas específicas para mecanismos de busca
+User-agent: Googlebot
+Allow: /
+Disallow: /tmp/
+Disallow: /private/
+
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 5
+
+User-agent: Yandex
+Disallow: /private/
+Crawl-delay: 10
+
+# Política de privacidade e segurança
+# Recomendação: mantenha apenas conteúdo público e institucional acessível
+# Conteúdos sensíveis ou em desenvolvimento devem ser bloqueados via Disallow

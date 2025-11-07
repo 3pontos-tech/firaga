@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<urlset 
+  xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+
+    <!-- Página inicial -->
+    <url>
+        <loc>https://www.firece.com.br/</loc>
+        <lastmod>2025-11-01</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+    </url>
+
+    <!-- Nossos Serviços -->
+    <url>
+        <loc>https://firece.com.br/nossos-servicos</loc>
+        <lastmod>2025-11-01</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.9</priority>
+    </url>
+
+    <!-- Code Capital -->
+    <url>
+        <loc>https://firece.com.br/code-capital</loc>
+        <lastmod>2025-11-01</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.9</priority>
+    </url>
+
+    <!-- Key Account -->
+    <url>
+        <loc>https://www.firece.com.br/educacao-financeira</loc>
+        <lastmod>2025-11-01</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.9</priority>
+    </url>
+
+    <!-- Parcerias -->
+    <url>
+        <loc>https://firece.com.br/parcerias</loc>
+        <lastmod>2025-11-01</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <!-- Blog -->
+    <url>
+        <loc>hhttps://firece.com.br/blog</loc>
+        <lastmod>2025-11-01</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.7</priority>
+    </url>
+
+    <!-- Trabalhe Conosco -->
+    <url>
+        <loc>https://www.firece.com.br/trabalhe-conosco</loc>
+        <lastmod>2025-11-07</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.9</priority>
+    </url>  
+
+</urlset>
