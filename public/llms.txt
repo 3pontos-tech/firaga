@@ -1,0 +1,73 @@
+# llms.txt – Política de Acesso de Modelos de Linguagem (LLMs)
+# Organização: Firece
+# Última atualização: 07/11/2025
+# Este documento define as diretrizes de acesso a dados públicos por agentes de IA e modelos de linguagem de grande escala.
+
+# ==============================================================
+# POLÍTICA GERAL
+# ==============================================================
+# O conteúdo da Firece é protegido por direitos autorais e não pode ser utilizado
+# para TREINAMENTO de modelos de IA sem autorização expressa.
+# No entanto, conteúdos públicos e educacionais podem ser LIDOS e REFERENCIADOS
+# em respostas de IA, desde que mantida a atribuição à Firece.
+
+User-agent: *
+Disallow: /
+
+# ==============================================================
+# PERMISSÕES CONTROLADAS DE INDEXAÇÃO E REFERÊNCIA
+# ==============================================================
+# Os agentes abaixo estão autorizados a ler e referenciar conteúdos públicos,
+# sem realizar coleta massiva ou uso para treinamento.
+
+User-agent: OpenAI-User
+Allow: /blog
+Allow: /educacao-financeira
+Allow: /parcerias
+Allow: /trabalhe-conosco
+Disallow: /admin/
+Disallow: /tmp/
+Disallow: /api/
+Disallow: /private/
+Disallow: /cursos/
+Disallow: /downloads/
+Disallow: /documentos-internos/
+
+User-agent: Google-Extended
+Allow: /blog
+Allow: /educacao-financeira
+Disallow: /private/
+Disallow: /admin/
+
+User-agent: PerplexityBot
+Allow: /blog
+Disallow: /admin/
+Disallow: /api/
+Disallow: /private/
+
+User-agent: GPTBot
+Allow: /blog
+Disallow: /cursos/
+Disallow: /documentos-internos/
+Disallow: /api/
+
+# ==============================================================
+# RESTRIÇÕES DE USO
+# ==============================================================
+# Nenhum agente pode:
+# - Reproduzir conteúdo integral
+# - Armazenar dados para reuso comercial
+# - Utilizar textos, imagens ou vídeos Firece para treinar modelos de IA
+
+# ==============================================================
+# SOLICITAÇÕES DE PARCERIA E USO DE DADOS
+# ==============================================================
+# Para parcerias, licenciamento de conteúdo ou integração de dados Firece,
+# contate: contato@firece.com.br
+
+# ==============================================================
+# TRANSPARÊNCIA E PADRÕES
+# ==============================================================
+# Este arquivo segue as recomendações do LLM Web Access Protocol (2024)
+# e do AI Data Governance Framework (2025).
+# URL de referência: https://www.llmspec.org/
