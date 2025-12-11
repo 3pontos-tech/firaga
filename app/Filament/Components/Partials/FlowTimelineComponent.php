@@ -9,7 +9,7 @@ use Filament\Forms\Components\Repeater;
 use Filament\Forms\Components\TextInput;
 use Guava\IconPicker\Forms\Components\IconPicker;
 
-class FlowTimeline extends AbstractCustomComponent
+class FlowTimelineComponent extends AbstractCustomComponent
 {
     protected static string $view = 'components.partials.flow-timeline';
 

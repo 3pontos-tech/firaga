@@ -38,7 +38,7 @@ class PaymentInfolist
                             ->label('Payment Link')
                             ->url(fn (Payment $record): ?string => $record->payment_url)
                             ->color('primary')
-                            ->state(fn () => 'Checkout')
+                            ->state(fn (): string => 'Checkout')
                             ->openUrlInNewTab()
                             ->icon(Heroicon::PaperClip),
                     ]),
@@ -63,7 +63,7 @@ class PaymentInfolist
 
                         TextEntry::make('crm_opportunity_id')
                             ->label('Opportunity ID')
-                            ->state(fn () => 'Não integrado')
+                            ->state(fn (): string => 'Não integrado')
                             ->placeholder('-')
                             ->copyable(),
                     ]),

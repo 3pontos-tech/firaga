@@ -17,11 +17,11 @@ use App\Filament\Components\Media\FullWidthVideoComponent;
 use App\Filament\Components\Media\VideoTestimonialComponent;
 use App\Filament\Components\Partials\ContactFormComponent;
 use App\Filament\Components\Partials\FaqComponent;
-use App\Filament\Components\Partials\FlowTimeline;
+use App\Filament\Components\Partials\FlowTimelineComponent;
 use App\Filament\Components\Partials\HorizontalScrollerHighlightComponent;
 use App\Filament\Components\Partials\InfoStatsComponent;
 use App\Filament\Components\Partials\PlansComponent;
-use App\Filament\Components\Partials\ProductOverview;
+use App\Filament\Components\Partials\ProductOverviewComponent;
 use App\Filament\Components\Partials\SplitWithHorizontalStepsComponent;
 use App\Filament\Components\Partials\SplitWithImageQuoteComponent;
 use App\Filament\Components\Partials\SplitWithVerticalStepsComponent;
@@ -85,7 +85,7 @@ enum CustomComponent: string
             self::SplitWithHorizontalSteps => SplitWithHorizontalStepsComponent::class,
             self::SplitWithImageQuote => SplitWithImageQuoteComponent::class,
             self::HorizontalScrollerHighlight => HorizontalScrollerHighlightComponent::class,
-            self::ProductOverview => ProductOverview::class,
+            self::ProductOverview => ProductOverviewComponent::class,
             self::Plans => PlansComponent::class,
             self::FullWidthVideo => FullWidthVideoComponent::class,
             self::Testimonials => TestimonialsComponent::class,
@@ -95,7 +95,7 @@ enum CustomComponent: string
             self::CallToActionWithImage => CallToActionWithImageComponent::class,
             self::HeroWithBackgroundImage => HeroWithBackgroundImageComponent::class,
             self::ContactForm => ContactFormComponent::class,
-            self::FlowTimeline => FlowTimeline::class,
+            self::FlowTimeline => FlowTimelineComponent::class,
             self::HeroWithTitleOnly => HeroWithTitleOnlyComponent::class,
             self::HeroWithSplitImages => HeroWithSplitImagesComponent::class
         };
