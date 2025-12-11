@@ -60,22 +60,22 @@
                 <h4 class="text-lg sm:text-xl font-semibold text-text-high mb-3 sm:mb-4">Redes Sociais</h4>
                 <div class="flex flex-col gap-4">
                     <a href="https://www.instagram.com/firece.oficial/" target="_blank" rel="noopener noreferrer"
-                       class="text-text-medium hover:text-secondary">
+                       class="text-text-medium hover:text-secondary" aria-label="Instagram da Firece">
                         <x-filament::icon icon="fab-instagram" class="w-5 h-5 sm:w-6 sm:h-6 transition transform hover:scale-105" />
                     </a>
 
                     <a href="https://www.linkedin.com/company/firece" target="_blank" rel="noopener noreferrer"
-                       class="text-text-medium hover:text-secondary">
+                       class="text-text-medium hover:text-secondary" aria-label="LinkedIn da Firece">
                         <x-filament::icon icon="fab-linkedin" class="w-5 h-5 sm:w-6 sm:h-6 transition transform hover:scale-105" />
                     </a>
 
                     <a href="https://www.youtube.com/@Firece.oficial" target="_blank" rel="noopener noreferrer"
-                       class="text-text-medium hover:text-secondary">
+                       class="text-text-medium hover:text-secondary" aria-label="YouTube da Firece">
                         <x-filament::icon icon="fab-youtube" class="w-5 h-5 sm:w-6 sm:h-6 transition transform hover:scale-105" />
                     </a>
 
                     <a href="https://www.facebook.com/share/16nACt4A39/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer"
-                       class="text-text-medium hover:text-secondary">
+                       class="text-text-medium hover:text-secondary" aria-label="Facebook da Firece">
                         <x-filament::icon icon="fab-facebook" class="w-5 h-5 sm:w-6 sm:h-6 transition transform hover:scale-105" />
                     </a>
                 </div>
