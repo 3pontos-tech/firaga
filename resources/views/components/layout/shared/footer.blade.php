@@ -87,7 +87,7 @@
                 <div class="flex items-center gap-2">
                     <img src="{{ asset('images/brasil-flag.png') }}" alt="Phone"
                          class="w-6 sm:w-7 h-4 sm:h-5 object-contain rounded-sm">
-                    <p class="text-text-medium text-sm sm:text-base">(11) 98720-1303</p>
+                    <p class="text-text-medium text-sm sm:text-base">(11) 95839-7432</p>
                 </div>
             </div>
 
