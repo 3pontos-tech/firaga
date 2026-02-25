@@ -11,7 +11,7 @@ use Filament\Schemas\Components\Fieldset;
 use Filament\Schemas\Components\Group;
 use Guava\IconPicker\Forms\Components\IconPicker;
 
-class ProductOverview extends AbstractCustomComponent
+class ProductOverviewComponent extends AbstractCustomComponent
 {
     protected static string $view = 'components.partials.product-overview';
 

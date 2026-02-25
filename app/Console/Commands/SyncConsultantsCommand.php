@@ -28,17 +28,17 @@ class SyncConsultantsCommand extends Command
     /**
      * Execute the console command.
      */
-    public function handle(HighLevelClient $client)
+    public function handle(HighLevelClient $client): void
     {
         collect($client->getCompanyEmployees()['users'])
-            ->map(fn ($employee) => [
+            ->map(fn ($employee): array => [
                 'id' => $employee['id'],
                 'name' => $employee['name'],
                 'email' => $employee['email'],
                 'phone' => $employee['phone'] ?? '+5540028922',
             ])
-            ->each(function ($employee) {
-                $this->info("Syncing consultant {$employee['name']}...");
+            ->each(function (array $employee): void {
+                $this->info(sprintf('Syncing consultant %s...', $employee['name']));
                 $user = User::query()->firstOrCreate(['email' => $employee['email']], [
                     'name' => $employee['name'],
                     'email' => $employee['email'],
@@ -59,7 +59,7 @@ class SyncConsultantsCommand extends Command
                 ]);
 
                 $user->consultants()->syncWithoutDetaching($consultant->id);
-                $this->info("Consultant {$consultant->name} synced");
+                $this->info(sprintf('Consultant %s synced', $consultant->name));
             });
 
     }

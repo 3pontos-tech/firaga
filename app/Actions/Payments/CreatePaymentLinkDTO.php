@@ -2,6 +2,7 @@
 
 namespace App\Actions\Payments;
 
+use Illuminate\Support\Facades\Date;
 use Ramsey\Uuid\Uuid;
 
 class CreatePaymentLinkDTO
@@ -25,7 +26,7 @@ class CreatePaymentLinkDTO
     {
         $data = [
             'externalId' => sprintf('firaga-%s-%s', $data['plan']->value, Uuid::uuid4()->toString()),
-            'productId' => sprintf('%s-%s', $data['plan']->value, time()),
+            'productId' => sprintf('%s-%s', $data['plan']->value, Date::now()->getTimestamp()),
             'paymentMethod' => $data['payment_method']->value,
             'productName' => $data['plan']->value,
             'productDescription' => $data['plan']->value,

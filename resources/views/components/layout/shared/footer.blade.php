@@ -4,7 +4,7 @@
 
 <footer class="bg-elevation-02dp border-t border-outline-light dark:border-outline-dark metallic:border-outline-dark text-base-content py-8 sm:py-12 lg:py-16">
     <div class="mx-auto container px-4 sm:px-6 lg:px-8">
-        <div class="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-6 gap-8 sm:gap-10 lg:gap-12 animate-fade-in items-start">
+        <div class="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-7 gap-8 sm:gap-10 lg:gap-12 animate-fade-in items-start">
 
             <div class="space-y-6 sm:space-y-8 lg:space-y-11 col-span-1 lg:col-span-2 xl:col-span-2">
                 <a href="/" class="flex flex-col">
@@ -56,13 +56,38 @@
                 </ul>
             </div>
 
+            <div class="col-span-1">
+                <h4 class="text-lg sm:text-xl font-semibold text-text-high mb-3 sm:mb-4">Redes Sociais</h4>
+                <div class="flex flex-col gap-4">
+                    <a href="https://www.instagram.com/firece.oficial/" target="_blank" rel="noopener noreferrer"
+                       class="text-text-medium hover:text-secondary" aria-label="Instagram da Firece">
+                        <x-filament::icon icon="fab-instagram" class="w-5 h-5 sm:w-6 sm:h-6 transition transform hover:scale-105" />
+                    </a>
+
+                    <a href="https://www.linkedin.com/company/firece" target="_blank" rel="noopener noreferrer"
+                       class="text-text-medium hover:text-secondary" aria-label="LinkedIn da Firece">
+                        <x-filament::icon icon="fab-linkedin" class="w-5 h-5 sm:w-6 sm:h-6 transition transform hover:scale-105" />
+                    </a>
+
+                    <a href="https://www.youtube.com/@Firece.oficial" target="_blank" rel="noopener noreferrer"
+                       class="text-text-medium hover:text-secondary" aria-label="YouTube da Firece">
+                        <x-filament::icon icon="fab-youtube" class="w-5 h-5 sm:w-6 sm:h-6 transition transform hover:scale-105" />
+                    </a>
+
+                    <a href="https://www.facebook.com/share/16nACt4A39/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer"
+                       class="text-text-medium hover:text-secondary" aria-label="Facebook da Firece">
+                        <x-filament::icon icon="fab-facebook" class="w-5 h-5 sm:w-6 sm:h-6 transition transform hover:scale-105" />
+                    </a>
+                </div>
+            </div>
+
             <div class="flex flex-col gap-y-3 sm:gap-y-4 col-span-1">
                 <h4 class="text-lg sm:text-xl font-semibold text-text-high">Contato e endereço</h4>
                 <p class="font-medium text-text-medium text-sm sm:text-base">contato@firece.com.br</p>
                 <div class="flex items-center gap-2">
                     <img src="{{ asset('images/brasil-flag.png') }}" alt="Phone"
                          class="w-6 sm:w-7 h-4 sm:h-5 object-contain rounded-sm">
-                    <p class="text-text-medium text-sm sm:text-base">(11) 98720-1303</p>
+                    <p class="text-text-medium text-sm sm:text-base">(11) 95839-7432</p>
                 </div>
             </div>
 
