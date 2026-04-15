@@ -97,7 +97,7 @@
 
             @if($terms->isNotEmpty())
                 <div class="col-span-1">
-                    <h4 class="text-lg sm:text-xl font-semibold text-text-high mb-3 sm:mb-4">Legal</h4>
+                    <h4 class="text-lg sm:text-xl font-semibold text-text-high mb-3 sm:mb-4">Termos</h4>
                     <ul class="space-y-1 sm:space-y-2 text-text-medium text-sm sm:text-base">
                         @foreach($terms as $term)
                             <li>
