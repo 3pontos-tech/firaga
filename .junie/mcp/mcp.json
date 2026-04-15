@@ -1,9 +1,9 @@
 {
     "mcpServers": {
         "laravel-boost": {
-            "command": "/usr/bin/php",
+            "command": "/Users/kaster/.config/herd-lite/bin/php",
             "args": [
-                "/home/danielhe4rt/dev/3dots/projects/firaga/artisan",
+                "/Users/kaster/Developer/3pontos/firaga/artisan",
                 "boost:mcp"
             ]
         }
