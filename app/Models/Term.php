@@ -2,8 +2,10 @@
 
 namespace App\Models;
 
+use Database\Factories\TermFactory;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Carbon;
 
 /**
  * @property int $id
@@ -12,12 +14,12 @@ use Illuminate\Database\Eloquent\Model;
  * @property string|null $description
  * @property array<int, array{id: string, title: string, body: string, show_in_sidebar: bool}>|null $content
  * @property bool $is_active
- * @property \Illuminate\Support\Carbon|null $created_at
- * @property \Illuminate\Support\Carbon|null $updated_at
+ * @property Carbon|null $created_at
+ * @property Carbon|null $updated_at
  */
 class Term extends Model
 {
-    /** @use HasFactory<\Database\Factories\TermFactory> */
+    /** @use HasFactory<TermFactory> */
     use HasFactory;
 
     protected $guarded = ['id'];

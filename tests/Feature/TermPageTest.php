@@ -4,7 +4,7 @@ use App\Models\CMS\Menu;
 use App\Models\Term;
 
 beforeEach(function (): void {
-    Menu::create(['title' => 'Main Menu', 'slug' => 'main-menu']);
+    Menu::query()->create(['title' => 'Main Menu', 'slug' => 'main-menu']);
 });
 
 it('displays an active term with its sections', function (): void {
