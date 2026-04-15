@@ -4,6 +4,9 @@ use App\Http\Controllers\ArticlesController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\MarketingLandingController;
 use App\Http\Controllers\PagesController;
+use App\Models\Term;
+use Illuminate\Contracts\View\Factory;
+use Illuminate\Contracts\View\View;
 use Illuminate\Support\Facades\Route;
 
 if (app()->isLocal()) {
@@ -26,6 +29,18 @@ Route::domain(config('app.domain'))->group(function (): void {
         Route::get('/{post:slug}', [ArticlesController::class, 'show'])
             ->name('blog.show');
     });
+
+    Route::get('/terms/{slug}', function (string $slug): Factory|View {
+        $term = Term::query()
+            ->where('slug', $slug)
+            ->where('is_active', true)
+            ->firstOrFail();
+
+        return view('terms.show', [
+            'term' => $term,
+            'sections' => $term->content ?? [],
+        ]);
+    })->name('terms.show');
 
     Route::get(config('app.url'))->name('landing');
 
