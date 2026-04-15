@@ -1,10 +1,14 @@
+@php
+    $terms = \App\Models\Term::query()->where('is_active', true)->orderBy('title')->get();
+@endphp
+
 @props([
     'bg' => 'bg-elevation-02dp'
 ])
 
 <footer class="bg-elevation-02dp border-t border-outline-light dark:border-outline-dark metallic:border-outline-dark text-base-content py-8 sm:py-12 lg:py-16">
     <div class="mx-auto container px-4 sm:px-6 lg:px-8">
-        <div class="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-7 gap-8 sm:gap-10 lg:gap-12 animate-fade-in items-start">
+        <div class="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-8 gap-8 sm:gap-10 lg:gap-12 animate-fade-in items-start">
 
             <div class="space-y-6 sm:space-y-8 lg:space-y-11 col-span-1 lg:col-span-2 xl:col-span-2">
                 <a href="/" class="flex flex-col">
@@ -90,6 +94,21 @@
                     <p class="text-text-medium text-sm sm:text-base">(11) 95839-7432</p>
                 </div>
             </div>
+
+            @if($terms->isNotEmpty())
+                <div class="col-span-1">
+                    <h4 class="text-lg sm:text-xl font-semibold text-text-high mb-3 sm:mb-4">Termos</h4>
+                    <ul class="space-y-1 sm:space-y-2 text-text-medium text-sm sm:text-base">
+                        @foreach($terms as $term)
+                            <li>
+                                <a href="{{ route('terms.show', $term->slug) }}" class="hover:text-secondary transition">
+                                    {{ $term->title }}
+                                </a>
+                            </li>
+                        @endforeach
+                    </ul>
+                </div>
+            @endif
 
             <div class="flex flex-col gap-y-3 sm:gap-y-4 col-span-1 lg:col-span-2 xl:col-span-2">
                 <h4 class="text-lg sm:text-xl font-semibold text-text-high">Nossa Newsletter</h4>
