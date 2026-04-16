@@ -1,0 +1,78 @@
+<?php
+
+declare(strict_types=1);
+
+namespace He4rt\Identity\Database\Factories\Users;
+
+use He4rt\Identity\Permissions\Roles;
+use He4rt\Identity\Users\User;
+use Illuminate\Database\Eloquent\Factories\Factory;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Str;
+
+/**
+ * @extends Factory<User>
+ */
+final class UserFactory extends Factory
+{
+    protected $model = User::class;
+
+    /**
+     * The current password being used by the factory.
+     */
+    private static ?string $password = null;
+
+    /**
+     * Define the model's default state.
+     *
+     * @return array<string, mixed>
+     */
+    public function definition(): array
+    {
+        return [
+            'name' => fake()->name(),
+            'email' => fake()->unique()->safeEmail(),
+            'email_verified_at' => now(),
+            'password' => self::$password ??= Hash::make('password'),
+            'remember_token' => Str::random(10),
+            'locale' => fake()->randomElement(['en', 'pt_BR']),
+            'theme_color' => fake()->hexColor(),
+        ];
+    }
+
+    /**
+     * Indicate that the model's email address should be unverified.
+     */
+    public function unverified(): self
+    {
+        return $this->state(fn (array $attributes): array => [
+            'email_verified_at' => null,
+        ]);
+    }
+
+    /**
+     * Create a self-contained admin
+     */
+    public function admin(): self
+    {
+        return $this->state(fn (array $attributes): array => [
+            'name' => 'admin',
+            'email' => 'admin@admin.com',
+        ])->afterCreating(function (User $user): void {
+            $user->assignRole(Roles::SuperAdmin);
+        });
+    }
+
+    /**
+     * Create a self-contained user
+     */
+    public function user(): self
+    {
+        return $this->state(fn (array $attributes): array => [
+            'name' => 'user',
+            'email' => 'user@user.com',
+        ])->afterCreating(function (User $user): void {
+            $user->assignRole(Roles::User);
+        });
+    }
+}

@@ -1,0 +1,7 @@
+parameters:
+    ignoreErrors:
+        -
+            identifier: trait.unused
+            paths:
+                - src/ExternalIdentity/Concerns/HasIdentityResource.php
+                - src/ExternalIdentity/Concerns/HasIdentityTenantRelationships.php
