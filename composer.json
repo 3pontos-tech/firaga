@@ -11,23 +11,15 @@
         "filament"
     ],
     "license": "MIT",
-
-    "repositories": [
-        {
-            "type": "vcs",
-            "url": "https://github.com/3pontos-tech/filament-consultants-module"
-        }
-    ],
     "require": {
         "php": "^8.3",
-        "3pontos-tech/filament-consultants-module": "dev-main",
         "basementdevs/abacatepay-php-sdk": "^1.0",
         "bezhansalleh/filament-shield": "^4.0",
         "blade-ui-kit/blade-icons": "^1.8",
         "danharrin/livewire-rate-limiting": "^2.1",
-        "filament/filament": "^4.0",
-        "filament/spatie-laravel-media-library-plugin": "^4.0",
-        "guava/filament-icon-picker": "^3.0",
+        "filament/filament": "^5.0",
+        "filament/spatie-laravel-media-library-plugin": "^5.0",
+        "guava/filament-icon-picker": "^4.0",
         "jeffgreco13/filament-breezy": "^3.0",
         "laravel/framework": "^12.0",
         "laravel/nightwatch": "^1.12",
@@ -42,7 +34,7 @@
         "barryvdh/laravel-ide-helper": "^3.5",
         "driftingly/rector-laravel": "^2.0.4",
         "fakerphp/faker": "^1.23",
-        "filament/upgrade": "^4.0",
+        "filament/upgrade": "^5.0",
         "larastan/larastan": "^3.0",
         "laravel/boost": "^1.8",
         "laravel/pail": "^1.2.2",
@@ -120,6 +112,15 @@
             "php-http/discovery": true
         }
     },
+    "repositories": [
+        {
+            "type": "path",
+            "url": "app-modules/*",
+            "options": {
+                "symlink": true
+            }
+        }
+    ],
     "minimum-stability": "stable",
     "prefer-stable": true
 }
