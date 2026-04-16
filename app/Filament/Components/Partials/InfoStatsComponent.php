@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Filament\Components\Partials;
 
 use App\Enums\CustomComponent;

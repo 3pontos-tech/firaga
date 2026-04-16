@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Livewire;
 
 use App\Enums\ContactIntent;
@@ -61,6 +63,14 @@ class ContactForm extends Component
         $this->reset();
     }
 
+    public function render(): View
+    {
+        return view('livewire.contact-form', [
+            'intents' => ContactIntent::cases(),
+            'preferences' => ContactPreference::cases(),
+        ]);
+    }
+
     /**
      * @return string[]
      */
@@ -79,13 +89,5 @@ class ContactForm extends Component
             'phoneNumber.required' => 'O telefone é obrigatório.',
             'phoneNumber.regex' => 'O telefone deve conter apenas números e ter entre 10 e 11 dígitos.',
         ];
-    }
-
-    public function render(): View
-    {
-        return view('livewire.contact-form', [
-            'intents' => ContactIntent::cases(),
-            'preferences' => ContactPreference::cases(),
-        ]);
     }
 }

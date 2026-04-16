@@ -1,9 +1,12 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Http\Controllers;
 
 use App\Models\CMS\Category;
 use App\Models\CMS\Post;
+use Illuminate\Contracts\Database\Query\Builder;
 use Illuminate\View\View;
 
 class ArticlesController extends Controller
@@ -33,7 +36,7 @@ class ArticlesController extends Controller
 
         if ($relatedPosts->isEmpty()) {
             $relatedPosts = Post::query()
-                ->whereHas('categories', function ($query) use ($post): void {
+                ->whereHas('categories', function (Builder $query) use ($post): void {
                     $query->whereIn('id', $post->categories->pluck('id'));
                 })
                 ->where('id', '!=', $post->id)

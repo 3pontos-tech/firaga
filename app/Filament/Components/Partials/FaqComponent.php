@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Filament\Components\Partials;
 
 use App\Enums\CustomComponent;
@@ -52,9 +54,7 @@ class FaqComponent extends AbstractCustomComponent
     {
         $solutions = collect($data['solutions'] ?? []);
 
-        return $solutions->map(function (array $solution): string {
-            return ($solution['question'] ?? '') . ' ' . ($solution['answer'] ?? '');
-        })->implode(' ');
+        return $solutions->map(fn (array $solution): string => ($solution['question'] ?? '').' '.($solution['answer'] ?? ''))->implode(' ');
     }
 
     public static function featuredColor(): string

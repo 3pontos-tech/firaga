@@ -1,11 +1,14 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Models\CMS;
 
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
+use Illuminate\Database\Eloquent\Relations\Pivot;
 
 /**
  * @property string $name
@@ -19,9 +22,9 @@ class Category extends Model
 {
     use HasFactory;
 
-    protected $table = 'categories';
-
     public $timestamps = false;
+
+    protected $table = 'categories';
 
     protected $fillable = [
         'name',
@@ -30,6 +33,9 @@ class Category extends Model
         'translation_origin_model_id',
     ];
 
+    /**
+     * @return BelongsToMany<Post, $this, Pivot>
+     */
     public function posts(): BelongsToMany
     {
 

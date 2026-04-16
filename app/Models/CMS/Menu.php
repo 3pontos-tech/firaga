@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Models\CMS;
 
 use Illuminate\Database\Eloquent\Collection;
@@ -29,6 +31,9 @@ class Menu extends Model
         'lang',
     ];
 
+    /**
+     * @return HasMany<MenuItem, $this>
+     */
     public function items(): HasMany
     {
         return $this->hasMany(MenuItem::class);

@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Database\Factories\CMS;
 
 use App\Enums\PageStatus;
@@ -8,6 +10,9 @@ use App\Models\CMS\Page;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Database\Eloquent\Model;
 
+/**
+ * @extends Factory<Page>
+ */
 class PageFactory extends Factory
 {
     protected $model = Page::class;
@@ -15,19 +20,19 @@ class PageFactory extends Factory
     public function definition(): array
     {
         return [
-            'title' => $this->faker->name,
-            'slug' => $this->faker->slug,
+            'title' => fake()->name,
+            'slug' => fake()->slug,
             'is_landing' => false,
             'status' => PageStatus::PUBLISHED->value,
-            'published_at' => $this->faker->dateTimeBetween('-1 year', 'now'),
+            'published_at' => fake()->dateTimeBetween('-1 year', 'now'),
             'disable_indexation' => false,
             'lang' => 'pt_BR',
             'theme' => PageTheme::Default,
-            'meta_title' => $this->faker->text(30),
-            'meta_description' => $this->faker->text(50),
-            'meta_keywords' => $this->faker->word . ',' . $this->faker->word,
-            'opengraph_title' => $this->faker->text(30),
-            'opengraph_description' => $this->faker->text(30),
+            'meta_title' => fake()->text(30),
+            'meta_description' => fake()->text(50),
+            'meta_keywords' => fake()->word.','.fake()->word,
+            'opengraph_title' => fake()->text(30),
+            'opengraph_description' => fake()->text(30),
         ];
     }
 
@@ -45,20 +50,16 @@ class PageFactory extends Factory
 
     public function draft(): static
     {
-        return $this->state(function (): array {
-            return [
-                'status' => PageStatus::DRAFT->value,
-            ];
-        });
+        return $this->state(fn (): array => [
+            'status' => PageStatus::DRAFT->value,
+        ]);
     }
 
     public function asATranslationFrom(Page $page, string $lang): static
     {
-        return $this->state(function (array $attributes) use ($lang, $page): array {
-            return [
-                'lang' => $lang,
-                'translation_origin_model_id' => $page->getKey(),
-            ];
-        });
+        return $this->state(fn (array $attributes): array => [
+            'lang' => $lang,
+            'translation_origin_model_id' => $page->getKey(),
+        ]);
     }
 }

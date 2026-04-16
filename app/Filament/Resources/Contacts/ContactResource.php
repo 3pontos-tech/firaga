@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Filament\Resources\Contacts;
 
 use App\Enums\MessageIntent;
@@ -7,6 +9,7 @@ use App\Filament\Resources\Contacts\Pages\CreateContact;
 use App\Filament\Resources\Contacts\Pages\EditContact;
 use App\Filament\Resources\Contacts\Pages\ListContacts;
 use App\Models\Contact;
+use BackedEnum;
 use Filament\Actions\BulkActionGroup;
 use Filament\Actions\DeleteAction;
 use Filament\Actions\DeleteBulkAction;
@@ -25,7 +28,7 @@ class ContactResource extends Resource
 
     protected static ?string $slug = 'contacts';
 
-    protected static string|\BackedEnum|null $navigationIcon = 'heroicon-o-folder-open';
+    protected static string|BackedEnum|null $navigationIcon = 'heroicon-o-folder-open';
 
     protected static ?string $label = null;
 
@@ -100,7 +103,7 @@ class ContactResource extends Resource
                 TextColumn::make('contact_preference'),
             ])
             ->filters([
-                //
+
             ])
             ->recordActions([
                 EditAction::make(),

@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Filament\Resources\CMS\Pages\Pages;
 
 use App\Filament\Resources\CMS\Pages\PageResource;
@@ -9,9 +11,9 @@ use Filament\Support\Enums\Width;
 
 class CreatePage extends CreateRecord
 {
-    protected static string $resource = PageResource::class;
-
     public bool $isJsonVisible = false;
+
+    protected static string $resource = PageResource::class;
 
     protected Width|string|null $maxContentWidth = 'full';
 
@@ -19,7 +21,7 @@ class CreatePage extends CreateRecord
     {
         return [
             Action::make('json')
-                ->action(fn (): bool => $this->isJsonVisible = ! $this->isJsonVisible)
+                ->action(fn (): bool => $this->isJsonVisible = !$this->isJsonVisible)
                 ->outlined(fn (): bool => $this->isJsonVisible)
                 ->label('Toggle Json'),
         ];

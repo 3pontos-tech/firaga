@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Enums;
 
 use App\Filament\Components\AbstractCustomComponent;
@@ -71,6 +73,11 @@ enum CustomComponent: string
 
     case ContactForm = 'contact-form';
 
+    public static function allComponents(): array
+    {
+        return array_map(fn (CustomComponent $component): array => ['class' => $component->getComponent()], self::cases());
+    }
+
     public function getComponentClass(): string
     {
         return match ($this) {
@@ -103,11 +110,6 @@ enum CustomComponent: string
 
     public function getComponent(): AbstractCustomComponent
     {
-        return app($this->getComponentClass());
-    }
-
-    public static function allComponents(): array
-    {
-        return array_map(fn (CustomComponent $component): array => ['class' => $component->getComponent()], self::cases());
+        return resolve($this->getComponentClass());
     }
 }

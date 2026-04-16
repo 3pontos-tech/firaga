@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Filament\Components\DTOs;
 
 use App\Enums\CustomComponent;
@@ -62,7 +64,7 @@ readonly class ImageComponent
     public function getCustomProperties(): array
     {
         return [
-            'field' => substr($this->field, 0, -3),
+            'field' => mb_substr($this->field, 0, -3),
             $this->field => $this->componentId,
         ];
     }

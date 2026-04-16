@@ -1,11 +1,16 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Database\Factories\CMS;
 
 use App\Models\CMS\Menu;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Database\Eloquent\Model;
 
+/**
+ * @extends Factory<Menu>
+ */
 class MenuFactory extends Factory
 {
     protected $model = Menu::class;
@@ -13,8 +18,8 @@ class MenuFactory extends Factory
     public function definition(): array
     {
         return [
-            'title' => $this->faker->name,
-            'slug' => $this->faker->slug,
+            'title' => fake()->name,
+            'slug' => fake()->slug,
             'lang' => 'en',
         ];
     }
@@ -33,11 +38,9 @@ class MenuFactory extends Factory
 
     public function asATranslationFrom(Menu $menu, string $lang): static
     {
-        return $this->state(function (array $attributes) use ($lang, $menu): array {
-            return [
-                'lang' => $lang,
-                'translation_origin_model_id' => $menu->getKey(),
-            ];
-        });
+        return $this->state(fn (array $attributes): array => [
+            'lang' => $lang,
+            'translation_origin_model_id' => $menu->getKey(),
+        ]);
     }
 }

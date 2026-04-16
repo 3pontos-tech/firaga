@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 /**
  * Portuguese (Brazil) language file for titles.
  */

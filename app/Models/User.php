@@ -1,20 +1,18 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Models;
 
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
-use App\Enums\IntegrationProvider;
-use App\Models\Consultants\UserConsultant;
 use Database\Factories\UserFactory;
 use Filament\Models\Contracts\FilamentUser;
 use Filament\Panel;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\Relations\HasOne;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Spatie\Permission\Traits\HasRoles;
-use TresPontosTech\Consultant\Core\Models\Consultant;
 
 class User extends Authenticatable implements FilamentUser
 {
@@ -29,15 +27,9 @@ class User extends Authenticatable implements FilamentUser
         'remember_token',
     ];
 
-    protected $casts = [
-        'email_verified_at' => 'datetime',
-        'password' => 'hashed',
-        'provider' => IntegrationProvider::class,
-    ];
-
     public function canAccessPanel(Panel $panel): bool
     {
-        if (! app()->isProduction()) {
+        if (!app()->isProduction()) {
             return true;
         }
 
@@ -48,14 +40,19 @@ class User extends Authenticatable implements FilamentUser
         };
     }
 
+    /**
+     * @return HasOne<Author, $this>
+     */
     public function author(): HasOne
     {
         return $this->hasOne(Author::class);
     }
 
-    public function consultants(): BelongsToMany
+    protected function casts(): array
     {
-        return $this->belongsToMany(Consultant::class, 'user_consultants', 'user_id', 'consultant_id')
-            ->using(UserConsultant::class);
+        return [
+            'email_verified_at' => 'datetime',
+            'password' => 'hashed',
+        ];
     }
 }

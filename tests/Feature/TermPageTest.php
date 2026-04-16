@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 use App\Models\CMS\Menu;
 use App\Models\Term;
 
@@ -29,7 +31,7 @@ it('displays an active term with its sections', function (): void {
         'is_active' => true,
     ]);
 
-    $response = $this->get('/terms/' . $term->slug);
+    $response = $this->get('/terms/'.$term->slug);
 
     $response->assertSuccessful()
         ->assertSee('Política de Privacidade')
@@ -40,7 +42,7 @@ it('displays an active term with its sections', function (): void {
 it('returns 404 for an inactive term', function (): void {
     $term = Term::factory()->inactive()->create();
 
-    $response = $this->get('/terms/' . $term->slug);
+    $response = $this->get('/terms/'.$term->slug);
 
     $response->assertNotFound();
 });
@@ -69,7 +71,7 @@ it('renders sidebar navigation for sections with show_in_sidebar enabled', funct
         ],
     ]);
 
-    $response = $this->get('/terms/' . $term->slug);
+    $response = $this->get('/terms/'.$term->slug);
 
     $response->assertSuccessful()
         ->assertSee('Seção Visível')
@@ -96,7 +98,7 @@ it('displays active term links in the footer', function (): void {
         'slug' => 'termo-inativo',
     ]);
 
-    $response = $this->get('/terms/' . $activeTerm->slug);
+    $response = $this->get('/terms/'.$activeTerm->slug);
 
     $response->assertSuccessful()
         ->assertSee('Termos de Uso')

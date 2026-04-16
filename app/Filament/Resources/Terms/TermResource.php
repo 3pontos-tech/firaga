@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Filament\Resources\Terms;
 
 use App\Filament\Resources\Terms\Pages\CreateTerm;

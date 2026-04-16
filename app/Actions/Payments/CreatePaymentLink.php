@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Actions\Payments;
 
 use Basement\AbacatePay\AbacatePayClient;
@@ -36,7 +38,7 @@ class CreatePaymentLink
         );
 
         $request = CreateBillingRequest::oneTime()
-            ->addMethod(BillingMethodEnum::from(strtoupper($dto->paymentMethod)))
+            ->addMethod(BillingMethodEnum::from(mb_strtoupper($dto->paymentMethod)))
             ->completionUrl(route('payment.success'))
             ->returnUrl(route('landing'))
             ->externalId($externalId)

@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Filament\Components;
 
 use Filament\Forms\Components\Builder;
@@ -21,16 +23,16 @@ class FilamentComponentsService
             $componentClass = $component['class'];
 
             if (
-                isset($component['disabled_for']) &&
-                is_array($component['disabled_for']) &&
-                in_array($modelClassName, $component['disabled_for'], true)
+                isset($component['disabled_for'])
+                && is_array($component['disabled_for'])
+                && in_array($modelClassName, $component['disabled_for'], true)
             ) {
                 continue;
             }
 
             $name = sprintf('[%s] %s', $componentClass::getGroup(), str($componentClass::fieldName())->title()->replace('-', ' '));
-            $blocks[] =
-                Block::make($componentClass::fieldName())
+            $blocks[]
+                = Block::make($componentClass::fieldName())
                     ->label(fn (): HtmlString => new HtmlString(sprintf('<span style="display: inline-block; width: 1rem; height: 1rem; background-color: %s; margin-right: 0.5rem; vertical-align: middle;"></span>%s', $componentClass::featuredColor(), $name)))
                     ->schema($componentClass::blockSchema());
         }

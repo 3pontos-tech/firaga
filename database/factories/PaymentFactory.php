@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Database\Factories;
 
 use App\Models\Consultants\Payment;
@@ -7,6 +9,9 @@ use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Support\Facades\Date;
 use TresPontosTech\Consultant\Core\Models\Consultant;
 
+/**
+ * @extends Factory<\App\Models\Consultants\Payment>
+ */
 class PaymentFactory extends Factory
 {
     protected $model = Payment::class;
@@ -14,16 +19,16 @@ class PaymentFactory extends Factory
     public function definition(): array
     {
         return [
-            'provider' => $this->faker->word(),
-            'provider_id' => $this->faker->word(),
-            'payment_url' => $this->faker->url(),
-            'amount' => $this->faker->randomFloat(),
-            'status' => $this->faker->word(),
-            'customer_name' => $this->faker->name(),
-            'customer_email' => $this->faker->unique()->safeEmail(),
-            'customer_tax_id' => $this->faker->word(),
-            'customer_phone_number' => $this->faker->phoneNumber(),
-            'crm_opportunity_id' => $this->faker->word(),
+            'provider' => fake()->word(),
+            'provider_id' => fake()->word(),
+            'payment_url' => fake()->url(),
+            'amount' => fake()->randomFloat(),
+            'status' => fake()->word(),
+            'customer_name' => fake()->name(),
+            'customer_email' => fake()->unique()->safeEmail(),
+            'customer_tax_id' => fake()->word(),
+            'customer_phone_number' => fake()->phoneNumber(),
+            'crm_opportunity_id' => fake()->word(),
             'created_at' => Date::now(),
             'updated_at' => Date::now(),
 

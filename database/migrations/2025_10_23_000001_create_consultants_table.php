@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -8,9 +10,9 @@ return new class extends Migration
 {
     public function up(): void
     {
-        $connection = (string) config('filament-consultants-module.consultants.connection');
+        $connection = config()->string('filament-consultants-module.consultants.connection');
 
-        if (! Schema::connection($connection)->hasTable('consultants')) {
+        if (!Schema::connection($connection)->hasTable('consultants')) {
             Schema::connection($connection)->create(config('filament-consultants-module.consultants.database.table.consultants', 'consultants'), function (Blueprint $table): void {
                 $table->id();
                 $table->string('provider')->comment('CRM provider');

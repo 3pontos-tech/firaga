@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Filament\Resources\CMS\Menus\RelationManagers;
 
 use App\Enums\MenuItemTarget;
@@ -44,9 +46,7 @@ class ItemsRelationManager extends RelationManager
                     ->options(fn () => Menu::all()
                         ->when($menuId, fn ($query) => $query->where('menu_id', $menuId))
                         ->pluck('label', 'id')
-                        ->map(function ($label, $id) {
-                            return $label ?? 'Item ID #' . $id;
-                        })
+                        ->map(fn ($label, $id) => $label ?? 'Item ID #'.$id)
                         ->toArray()),
                 TextInput::make('order')
                     ->label(__('Order'))

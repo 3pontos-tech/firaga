@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Models\CMS;
 
 use App\Enums\PostStatus;
@@ -10,6 +12,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
+use Illuminate\Database\Eloquent\Relations\Pivot;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Str;
 use Spatie\MediaLibrary\HasMedia;
@@ -78,13 +81,6 @@ class Post extends Model implements HasMedia
         'translation_origin_model_id',
     ];
 
-    protected $casts = [
-        'published_at' => 'datetime',
-        'content' => 'array',
-        'status' => PostStatus::class,
-        'disable_indexation' => 'boolean',
-    ];
-
     protected $appends = [
         'read_time_in_minutes',
     ];
@@ -100,9 +96,9 @@ class Post extends Model implements HasMedia
     {
         $path = '';
 
-        $path .= config('cms.blog.prefix') . '/';
+        $path .= config('cms.blog.prefix').'/';
 
-        return $path . ($this->categories->first()->slug . '/' . $this->slug);
+        return $path.($this->categories->first()->slug.'/'.$this->slug);
     }
 
     public function url(): string
@@ -116,19 +112,28 @@ class Post extends Model implements HasMedia
             return $this->excerpt;
         }
 
-        return Str::words(strip_tags($this->searchable_content), 100);
+        return Str::words(strip_tags((string) $this->searchable_content), 100);
     }
 
+    /**
+     * @return BelongsToMany<Category, $this, Pivot>
+     */
     public function categories(): BelongsToMany
     {
         return $this->belongsToMany(Category::class, 'category_post', 'post_id', 'category_id');
     }
 
+    /**
+     * @return BelongsTo<Media, $this>
+     */
     public function openGraphPicture(): BelongsTo
     {
         return $this->belongsTo(Media::class, 'opengraph_picture', 'id');
     }
 
+    /**
+     * @return BelongsTo<Author, $this>
+     */
     public function author(): BelongsTo
     {
         return $this->belongsTo(Author::class, 'author_id', 'id');
@@ -144,19 +149,30 @@ class Post extends Model implements HasMedia
         return $this->status === PostStatus::PUBLISHED;
     }
 
+    /**
+     * @return BelongsToMany<Post, $this, Pivot>
+     */
     public function relatedPosts(): BelongsToMany
     {
-        return $this->belongsToMany(Post::class, 'related_posts', 'post_id', 'related_post_id');
+        return $this->belongsToMany(self::class, 'related_posts', 'post_id', 'related_post_id');
     }
 
     protected function getReadTimeInMinutesAttribute(): int
     {
-        $wordCount = collect($this->content)->reduce(function ($carry, array $item): int|array {
-            return $carry + str_word_count(strip_tags($item['data']['content'] ?? ''));
-        }, 0);
+        $wordCount = collect($this->content)->reduce(fn ($carry, array $item): int|array => $carry + str_word_count(strip_tags($item['data']['content'] ?? '')), 0);
 
         $averageReadingSpeed = 200; // Average reading speed in words per minute
 
         return (int) ceil($wordCount / $averageReadingSpeed);
+    }
+
+    protected function casts(): array
+    {
+        return [
+            'published_at' => 'datetime',
+            'content' => 'array',
+            'status' => PostStatus::class,
+            'disable_indexation' => 'boolean',
+        ];
     }
 }

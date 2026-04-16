@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 use App\Models\Author;
 use App\Models\CMS\Post;
 use Illuminate\Database\Migrations\Migration;

@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 use App\Http\Controllers\ArticlesController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\MarketingLandingController;
@@ -15,7 +17,7 @@ if (app()->isLocal()) {
 
 Route::view('/consultoria/sucesso', 'success')->name('payment.success');
 
-Route::domain('lp.' . config('app.domain'))->group(function (): void {
+Route::domain('lp.'.config('app.domain'))->group(function (): void {
 
     Route::redirect('/', config('app.url'));
 

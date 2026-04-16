@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Filament\Components\DTOs;
 
 use Filament\Forms\Components\TextInput;
@@ -16,19 +18,19 @@ class BadgeComponent
 
     public static function form(?string $parent): array
     {
-        $parent = in_array($parent, [null, '', '0'], true) ? null : $parent . '.';
+        $parent = in_array($parent, [null, '', '0'], true) ? null : $parent.'.';
 
         return [
-            Toggle::make($parent . 'has_badge')
+            Toggle::make($parent.'has_badge')
                 ->label('Has Badge?')
                 ->live(debounce: 50)
                 ->default(false),
-            IconPicker::make($parent . 'icon')
+            IconPicker::make($parent.'icon')
                 ->label('Icon')
-                ->visible(fn ($get) => $get($parent . 'has_badge'))
+                ->visible(fn ($get) => $get($parent.'has_badge'))
                 ->default('heroicon-o-tag'),
-            TextInput::make($parent . 'label')
-                ->visible(fn ($get) => $get($parent . 'has_badge'))
+            TextInput::make($parent.'label')
+                ->visible(fn ($get) => $get($parent.'has_badge'))
                 ->label('Badge')
                 ->nullable()
                 ->default('Consultoria Financeira'),
@@ -37,7 +39,7 @@ class BadgeComponent
 
     public static function make(array $data): self
     {
-        if (! isset($data['badge'])) {
+        if (!isset($data['badge'])) {
             return new self(
                 label: null,
                 icon: null,

@@ -29,7 +29,7 @@ class PostsSeeder extends Seeder
 
             $imagePath = public_path(sprintf('images/consultants/%s.jpeg', $consultant['slug']));
             $extension = pathinfo($imagePath, PATHINFO_EXTENSION);
-            $filePath = storage_path('app/tmp/' . Str::uuid() . '.' . $extension);
+            $filePath = storage_path('app/tmp/'.Str::uuid().'.'.$extension);
 
             File::ensureDirectoryExists(dirname($filePath));
 
@@ -50,7 +50,7 @@ class PostsSeeder extends Seeder
             ->toMediaCollection('avatar');
 
         foreach ($this->getCategoriesStructure() as $categoryByLocale) {
-            if (! isset($categoryByLocale['en'])) {
+            if (!isset($categoryByLocale['en'])) {
                 return;
             }
 
@@ -68,7 +68,7 @@ class PostsSeeder extends Seeder
 
             $imagePath = public_path('images/stock/office-coworkers.png');
             $extension = pathinfo($imagePath, PATHINFO_EXTENSION);
-            $filePath = storage_path('app/tmp/' . Str::uuid() . '.' . $extension);
+            $filePath = storage_path('app/tmp/'.Str::uuid().'.'.$extension);
 
             File::ensureDirectoryExists(dirname($filePath));
 

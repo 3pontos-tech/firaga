@@ -1,11 +1,14 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Filament\Resources\CMS\Menus;
 
 use App\Filament\Resources\CMS\Menus\Pages\CreateMenu;
 use App\Filament\Resources\CMS\Menus\Pages\EditMenu;
 use App\Filament\Resources\CMS\Menus\Pages\ListMenus;
 use App\Models\CMS\Menu;
+use BackedEnum;
 use Filament\Actions\BulkActionGroup;
 use Filament\Actions\DeleteBulkAction;
 use Filament\Actions\EditAction;
@@ -22,7 +25,7 @@ class MenuResource extends Resource
 {
     protected static ?string $model = Menu::class;
 
-    protected static string|\BackedEnum|null $navigationIcon = 'heroicon-o-rectangle-stack';
+    protected static string|BackedEnum|null $navigationIcon = 'heroicon-o-rectangle-stack';
 
     public static function getNavigationGroup(): ?string
     {
@@ -36,7 +39,7 @@ class MenuResource extends Resource
             TextInput::make('title')
                 ->label(__('filament.menu_title'))
                 ->live(debounce: 500)
-                ->afterStateUpdated(fn (Set $set, ?string $state): mixed => $set('slug', Str::slug(strval($state))))
+                ->afterStateUpdated(fn (Set $set, ?string $state): mixed => $set('slug', Str::slug((string) $state)))
                 ->required(),
             TextInput::make('slug')
                 ->label(__('filament.menu_slug'))
@@ -61,7 +64,7 @@ class MenuResource extends Resource
         return $table
             ->columns($columns)
             ->filters([
-                //
+
             ])
             ->recordActions([
                 EditAction::make(),

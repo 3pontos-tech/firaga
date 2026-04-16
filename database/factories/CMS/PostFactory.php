@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Database\Factories\CMS;
 
 use App\Enums\CustomComponent;
@@ -10,6 +12,9 @@ use App\Models\CMS\Post;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Database\Eloquent\Model;
 
+/**
+ * @extends Factory<Post>
+ */
 class PostFactory extends Factory
 {
     protected $model = Post::class;
@@ -32,11 +37,11 @@ class PostFactory extends Factory
                     ],
                 ],
             ],
-            'meta_title' => $this->faker->text(30),
-            'meta_description' => $this->faker->text(50),
-            'meta_keywords' => $this->faker->word . ',' . $this->faker->word,
-            'opengraph_title' => $this->faker->text(30),
-            'opengraph_description' => $this->faker->text(30),
+            'meta_title' => fake()->text(30),
+            'meta_description' => fake()->text(50),
+            'meta_keywords' => fake()->word.','.fake()->word,
+            'opengraph_title' => fake()->text(30),
+            'opengraph_description' => fake()->text(30),
             'opengraph_picture' => null,
             'disable_indexation' => false,
             'published_at' => fake()->dateTimeBetween('-1 year', 'now'),
@@ -55,21 +60,17 @@ class PostFactory extends Factory
 
     public function draft(): static
     {
-        return $this->state(function (): array {
-            return [
-                'status' => PostStatus::DRAFT->value,
-            ];
-        });
+        return $this->state(fn (): array => [
+            'status' => PostStatus::DRAFT->value,
+        ]);
     }
 
     public function asATranslationFrom(Post $post, string $lang): static
     {
-        return $this->state(function (array $attributes) use ($lang, $post): array {
-            return [
-                'lang' => $lang,
-                'translation_origin_model_id' => $post->getKey(),
-            ];
-        });
+        return $this->state(fn (array $attributes): array => [
+            'lang' => $lang,
+            'translation_origin_model_id' => $post->getKey(),
+        ]);
     }
 
     public function forCategory(Category $category): static

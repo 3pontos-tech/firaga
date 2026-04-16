@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Filament\Resources\CMS\Posts;
 
 use App\Enums\PostStatus;
@@ -13,6 +15,7 @@ use App\Filament\Resources\CMS\Posts\Pages\ViewPost;
 use App\Filament\Resources\CMS\Posts\RelationManagers\PostsRelationManager;
 use App\Models\CMS\Category;
 use App\Models\CMS\Post;
+use BackedEnum;
 use Filament\Actions\BulkActionGroup;
 use Filament\Actions\DeleteAction;
 use Filament\Actions\DeleteBulkAction;
@@ -32,6 +35,7 @@ use Filament\Tables\Columns\SpatieMediaLibraryImageColumn;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Table;
 use Illuminate\Support\Str;
+use UnitEnum;
 
 class PostResource extends Resource
 {
@@ -39,11 +43,11 @@ class PostResource extends Resource
 
     // protected static ?string $modelLabel = 'Post';
 
-    protected static string|\BackedEnum|null $navigationIcon = 'heroicon-o-newspaper';
+    protected static string|BackedEnum|null $navigationIcon = 'heroicon-o-newspaper';
 
     protected static ?string $recordTitleAttribute = 'title';
 
-    protected static string|\UnitEnum|null $navigationGroup = 'Blog';
+    protected static string|UnitEnum|null $navigationGroup = 'Blog';
 
     protected static ?int $navigationSort = 0;
 
@@ -56,7 +60,7 @@ class PostResource extends Resource
 
     public static function form(Schema $schema): Schema
     {
-        $filamentComponentService = app(FilamentComponentsService::class);
+        $filamentComponentService = resolve(FilamentComponentsService::class);
 
         $contentTab = [
             'title' => TextInput::make('title')

@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 use App\Filament\Components\AbstractCustomComponent;
 use Illuminate\Support\Facades\Config;
 

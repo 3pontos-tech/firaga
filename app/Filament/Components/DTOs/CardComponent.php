@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Filament\Components\DTOs;
 
 use Filament\Forms\Components\Repeater;
@@ -25,38 +27,38 @@ class CardComponent
 
     public static function form(?string $parent = null): array
     {
-        $parent = in_array($parent, [null, '', '0'], true) ? null : $parent . '.';
+        $parent = in_array($parent, [null, '', '0'], true) ? null : $parent.'.';
 
         return [
             Fieldset::make('Cards')
                 ->columns(1)
                 ->schema([
-                    Toggle::make($parent . 'has_cards')
+                    Toggle::make($parent.'has_cards')
                         ->label('Has Cards?')
                         ->live(debounce: 50)
                         ->default(false),
-                    Select::make($parent . 'grid_columns')
+                    Select::make($parent.'grid_columns')
                         ->options([
                             2 => '2 Columns',
                             3 => '3 Columns',
                             4 => '4 Columns',
                         ])
                         ->label('Grid Columns')
-                        ->visible(fn ($get) => $get($parent . 'has_cards'))
+                        ->visible(fn ($get) => $get($parent.'has_cards'))
                         ->default(3)
                         ->required(),
-                    Select::make($parent . 'card_type')
+                    Select::make($parent.'card_type')
                         ->options([
                             'cta' => 'CTA',
                             'slim' => 'Slim',
                         ])
-                        ->visible(fn ($get) => $get($parent . 'has_cards'))
+                        ->visible(fn ($get) => $get($parent.'has_cards'))
                         ->label('Card Type')
                         ->default('cta')
                         ->required(),
-                    Repeater::make($parent . 'items')
+                    Repeater::make($parent.'items')
                         ->label('Cards')
-                        ->visible(fn ($get) => $get($parent . 'has_cards'))
+                        ->visible(fn ($get) => $get($parent.'has_cards'))
                         ->cloneable()
                         ->schema([
                             TextInput::make('title')
@@ -95,7 +97,7 @@ class CardComponent
         return CardCollection::newCollection(
             cardType: $data['card_type'],
             columns: $data['grid_columns'],
-            items: array_map(fn (array $item): CardComponent => self::make($item), $data['items'] ?? []),
+            items: array_map(self::make(...), $data['items'] ?? []),
         );
     }
 }
