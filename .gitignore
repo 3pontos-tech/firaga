@@ -3,6 +3,12 @@
 /public/build
 /public/hot
 /public/storage
+/.claude
+/.kiro
+/.junie
+/public/css
+/public/js
+/.ai/mcp
 /public/fonts
 /storage/*.key
 /storage/pail
