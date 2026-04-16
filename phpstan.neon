@@ -1,15 +1,9 @@
 includes:
-    - vendor/larastan/larastan/extension.neon
-    - vendor/nesbot/carbon/extension.neon
+    - phpstan.modules.php
+    - phpstan.ignore.neon
 
 parameters:
-    level: max
+    level: 6
+
     paths:
         - app
-        - config
-        - bootstrap
-        - database/factories
-        - routes
-        - tests
-    excludePaths:
-        - bootstrap/cache
