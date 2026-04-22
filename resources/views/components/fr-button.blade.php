@@ -3,7 +3,8 @@
     'href' => null,
     'type' => 'button',
     'size' => 'md',
-    'rounded' => 'full',
+    'rounded' => 'md',
+    'variant' => 'solid',
     'block' => false,
     'disabled' => false,
     'loading' => false
@@ -22,6 +23,7 @@
         'fr-button',
         'fr-button-size-' . $size,
         'fr-button-rounded-' . $rounded,
+        $variant ? 'fr-button-variant-' . $variant : null,
         $block ? 'fr-button-block' : null,
         $isSquare ? 'fr-button-square' : null,
     ])

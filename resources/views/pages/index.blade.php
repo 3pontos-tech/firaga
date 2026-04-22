@@ -13,7 +13,7 @@
     </x-slot:metatags>
 
     <section class="section-first">
-        <div class="container">
+        <div class="container flex flex-col items-center gap-8">
             <x-fr-headline>
                 <x-slot:title>
                     Você sabe quanto ganha. <mark>Mas você sabe quanto perde?</mark>
@@ -23,6 +23,10 @@
                     exatamente o que está acontecendo
                 </x-slot:description>
             </x-fr-headline>
+
+            <div class="flex w-full flex-col gap-4">
+                <x-fr-button> Descobrir meu plano </x-fr-button>
+            </div>
         </div>
     </section>
 

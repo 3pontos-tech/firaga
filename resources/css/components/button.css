@@ -74,6 +74,15 @@
     @apply w-full;
 }
 
+/* Variants */
+.fr-button-variant-solid {
+    @apply bg-brand-primary text-text-light w-full px-8 py-4 font-sans font-semibold;
+
+    @variant md {
+        @apply w-auto;
+    }
+}
+
 /* Spinner */
 .fr-button-spinner {
     @apply absolute inline-flex items-center justify-center;
