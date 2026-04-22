@@ -1,0 +1,82 @@
+/* ==========================================================================
+   Headline — Title + description + actions composition
+   Usage: <x-fr-headline size="xl" align="center">...</x-fr-headline>
+
+   Note: cor e borda ficaram fora de propósito — ajustar conforme a
+   identidade visual do firaga.
+   ========================================================================== */
+
+.fr-headline {
+    @apply mx-auto flex w-full max-w-full flex-col;
+}
+
+.fr-headline-container {
+    @apply flex w-full flex-col gap-4;
+}
+
+/* Alignment */
+.fr-headline-align-center .fr-headline-container {
+    @apply items-center text-center;
+}
+
+.fr-headline-align-left .fr-headline-container {
+    @apply items-center text-center sm:items-start sm:text-left;
+}
+
+/* Title */
+.fr-headline-title {
+    @apply font-display leading-[120%] font-medium;
+}
+
+.fr-headline-size-sm .fr-headline-title {
+    @apply sm:text-md text-sm;
+}
+
+.fr-headline-size-md .fr-headline-title {
+    @apply text-md sm:text-lg md:text-xl;
+}
+
+.fr-headline-size-lg .fr-headline-title {
+    @apply text-md lg:text-xl;
+}
+
+.fr-headline-size-xl .fr-headline-title {
+    @apply text-xl md:text-3xl;
+}
+
+.fr-headline-size-2xl .fr-headline-title {
+    @apply text-2xl sm:text-3xl md:text-4xl lg:text-5xl;
+}
+
+.fr-headline-size-3xl .fr-headline-title {
+    @apply text-3xl sm:text-4xl md:text-5xl lg:text-6xl;
+}
+
+/* Description */
+.fr-headline-description {
+    @apply max-w-full font-sans font-medium;
+}
+
+.fr-headline-size-sm .fr-headline-description {
+    @apply text-xxs;
+}
+
+.fr-headline-size-md .fr-headline-description,
+.fr-headline-size-lg .fr-headline-description {
+    @apply text-xs;
+}
+
+.fr-headline-size-xl .fr-headline-description,
+.fr-headline-size-2xl .fr-headline-description,
+.fr-headline-size-3xl .fr-headline-description {
+    @apply text-xs;
+}
+
+/* Actions */
+.fr-headline-actions {
+    @apply mt-4 flex w-full flex-col items-center justify-center gap-4 sm:flex-row sm:gap-6;
+}
+
+.fr-headline-align-left .fr-headline-actions {
+    @apply justify-center sm:justify-start;
+}

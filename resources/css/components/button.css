@@ -1,0 +1,80 @@
+/* ==========================================================================
+   Button — Interactive button / link
+   Usage: <x-fr-button size="md" rounded="full">...</x-fr-button>
+
+   Note: variantes de cor/borda/fundo ficaram fora de propósito — aplicar
+   conforme a identidade visual do firaga.
+   ========================================================================== */
+
+.fr-button {
+    @apply font-display relative inline-flex h-fit items-center justify-center gap-2 font-medium;
+
+    @apply disabled:pointer-events-none disabled:opacity-60;
+    &[aria-disabled='true'] {
+        @apply pointer-events-none opacity-60;
+    }
+}
+
+/* Sizes */
+.fr-button-size-xs {
+    @apply text-xxxs px-2 py-1;
+
+    &.fr-button-square {
+        @apply size-6 p-0;
+    }
+}
+
+.fr-button-size-sm {
+    @apply text-xxs px-3 py-1.5;
+
+    &.fr-button-square {
+        @apply size-8 p-0;
+    }
+}
+
+.fr-button-size-md {
+    @apply px-8 py-2 text-xs;
+
+    &.fr-button-square {
+        @apply size-10 p-0;
+    }
+}
+
+.fr-button-size-lg {
+    @apply px-8 py-3 text-xs;
+
+    &.fr-button-square {
+        @apply size-12 p-0;
+    }
+}
+
+/* Rounded */
+.fr-button-rounded-sm {
+    @apply rounded-xs;
+}
+
+.fr-button-rounded-md {
+    @apply rounded-sm;
+}
+
+.fr-button-rounded-lg {
+    @apply rounded-md;
+}
+
+.fr-button-rounded-xl {
+    @apply rounded-xl;
+}
+
+.fr-button-rounded-full {
+    @apply rounded-pill;
+}
+
+/* Block */
+.fr-button-block {
+    @apply w-full;
+}
+
+/* Spinner */
+.fr-button-spinner {
+    @apply absolute inline-flex items-center justify-center;
+}
