@@ -12,7 +12,7 @@
         <meta property="og:image:alt" content="{{ $page?->opengraph_picture_alt }}" />
     </x-slot:metatags>
 
-    <section class="section-first flex flex-col items-center gap-8">
+    <section class="section-first flex min-h-[calc(100dvh-var(--header-height))] flex-col items-center gap-4">
         <div class="container flex flex-col items-center gap-8">
             <x-fr-headline>
                 <x-slot:title>
@@ -30,7 +30,7 @@
             </div>
         </div>
 
-        <div class="relative w-full">
+        <div class="relative mt-auto w-full">
             <div
                 class="from-brand-primary to-brand-secondary absolute inset-0 top-10 -z-1 rounded-t-lg bg-linear-to-b"
             ></div>
