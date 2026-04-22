@@ -37,7 +37,13 @@ Route::domain(config('app.domain'))->group(function (): void {
         ]);
     })->name('terms.show');
 
-    Route::get(config('app.url'))->name('landing');
+    Route::get('/', [PagesController::class, 'show'])->name('home');
+    Route::view('/key-account', 'pages.key-account')->name('key-account');
+    Route::view('/code-capital', 'pages.code-capital')->name('code-capital');
+    Route::view('/nossos-servicos', 'pages.nossos-servicos')->name('nossos-servicos');
+    Route::view('/trabalhe-conosco', 'pages.trabalhe-conosco')->name('trabalhe-conosco');
+    Route::view('/blog', 'pages.blog')->name('blog');
+    Route::view('/parcerias', 'pages.parcerias')->name('parcerias');
 
     Route::get('/{page?}', [PagesController::class, 'show'])
         ->name('page.show')

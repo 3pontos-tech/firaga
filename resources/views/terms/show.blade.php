@@ -1,35 +1,49 @@
 @php
     $sidebarSections = collect($sections)
-        ->filter(fn (array $section): bool => $section['show_in_sidebar'])
-        ->map(fn (array $section): array => [
-            'id' => $section['id'],
-            'title' => $section['title'],
-        ])
+        ->filter(fn(array $section): bool => $section['show_in_sidebar'])
+        ->map(
+            fn(array $section): array => [
+                'id' => $section['id'],
+                'title' => $section['title'],
+            ],
+        )
         ->values()
         ->all();
 @endphp
 
-<x-layout.guest>
+<x-layout.landing>
     <x-slot:metatags>
         <title>{{ $term->title }} - {{ config('app.name') }}</title>
-        <meta name="description" content="{{ $term->description }}">
+        <meta name="description" content="{{ $term->description }}" />
     </x-slot:metatags>
 
     <div class="bg-elevation-surface min-h-screen">
-        <div class="mx-auto container px-4 sm:px-6 lg:px-8 py-12 mt-[var(--navbar-height)]">
+        <div class="container mx-auto mt-[var(--navbar-height)] px-4 py-12 sm:px-6 lg:px-8">
             <div class="flex flex-col gap-8">
-                <div class="bg-elevation-02dp relative h-48 sm:h-56 overflow-hidden rounded-lg border border-outline-dark">
-                    <div class="absolute inset-0 bg-gradient-to-br from-brand-primary/10 via-transparent to-transparent"></div>
-                    <div class="absolute top-0 left-0 h-full w-1 bg-brand-primary"></div>
-                    <div class="absolute bottom-0 left-0 h-1 w-full bg-gradient-to-r from-brand-primary to-transparent"></div>
+                <div
+                    class="bg-elevation-02dp border-outline-dark relative h-48 overflow-hidden rounded-lg border sm:h-56"
+                >
+                    <div
+                        class="from-brand-primary/10 absolute inset-0 bg-gradient-to-br via-transparent to-transparent"
+                    ></div>
+                    <div class="bg-brand-primary absolute top-0 left-0 h-full w-1"></div>
+                    <div
+                        class="from-brand-primary absolute bottom-0 left-0 h-1 w-full bg-gradient-to-r to-transparent"
+                    ></div>
                     <div class="relative flex h-full items-center p-8">
                         <div class="flex items-center gap-6">
-                            <div class="hidden sm:flex h-16 w-16 shrink-0 items-center justify-center rounded-lg bg-brand-primary/10 border border-brand-primary/20">
-                                <x-filament::icon icon="heroicon-o-document-text" class="h-8 w-8 text-brand-primary" />
+                            <div
+                                class="bg-brand-primary/10 border-brand-primary/20 hidden h-16 w-16 shrink-0 items-center justify-center rounded-lg border sm:flex"
+                            >
+                                <x-filament::icon icon="heroicon-o-document-text" class="text-brand-primary h-8 w-8" />
                             </div>
                             <div>
-                                <span class="text-xs font-semibold uppercase tracking-widest text-brand-primary">Documentação de termos</span>
-                                <h1 class="mt-1 text-2xl sm:text-3xl font-bold text-text-high">{{ config('app.name') }}</h1>
+                                <span class="text-brand-primary text-xs font-semibold tracking-widest uppercase"
+                                    >Documentação de termos</span
+                                >
+                                <h1 class="text-text-high mt-1 text-2xl font-bold sm:text-3xl">
+                                    {{ config('app.name') }}
+                                </h1>
                             </div>
                         </div>
                     </div>
@@ -38,19 +52,17 @@
                 <div class="grid grid-cols-1 gap-8 lg:grid-cols-[1fr_250px]">
                     <div class="min-w-0 flex-1 space-y-8">
                         <div>
-                            <h2 class="mb-4 text-3xl sm:text-4xl font-bold text-text-high">
-                                {{ $term->title }}
-                            </h2>
-                            @if($term->description)
-                                <p class="text-text-medium">
-                                    {{ $term->description }}
-                                </p>
+                            <h2 class="text-text-high mb-4 text-3xl font-bold sm:text-4xl">{{ $term->title }}</h2>
+                            @if ($term->description)
+                                <p class="text-text-medium">{{ $term->description }}</p>
                             @endif
                         </div>
                         <hr class="border-outline-dark" />
                         @foreach ($sections as $section)
                             <section id="{{ $section['id'] }}" class="scroll-mt-24">
-                                <div class="prose dark:prose-invert prose-headings:text-text-high prose-strong:text-text-high prose-p:text-text-medium prose-a:text-primary max-w-none">
+                                <div
+                                    class="prose dark:prose-invert prose-headings:text-text-high prose-strong:text-text-high prose-p:text-text-medium prose-a:text-primary max-w-none"
+                                >
                                     {!! $section['body'] !!}
                                 </div>
                             </section>
@@ -76,6 +88,5 @@
                 </div>
             </div>
         </div>
-
     </div>
-</x-layout.guest>
+</x-layout.landing>
