@@ -12,7 +12,7 @@
         <meta property="og:image:alt" content="{{ $page?->opengraph_picture_alt }}" />
     </x-slot:metatags>
 
-    <section class="section-first">
+    <section class="section-first flex flex-col items-center gap-8">
         <div class="container flex flex-col items-center gap-8">
             <x-fr-headline>
                 <x-slot:title>
@@ -26,13 +26,15 @@
 
             <div class="flex w-full flex-col items-center gap-4">
                 <x-fr-button> Descobrir meu plano </x-fr-button>
-                <div class="flex items-center justify-center gap-1">
-                    <x-logo size="sm" />
-                    <x-fr-text class="text-brand-primary!" size="sm">
-                        Sem custo, sem compromisso, uma conversa rápida
-                    </x-fr-text>
-                </div>
+                <x-logo-badge class="justify-center"> Sem custo, sem compromisso, uma conversa rápida </x-logo-badge>
             </div>
+        </div>
+
+        <div class="relative w-full">
+            <div
+                class="from-brand-primary to-brand-secondary absolute inset-0 top-10 -z-1 rounded-t-lg bg-linear-to-b"
+            ></div>
+            <img src="{{ asset('images/image-1.webp') }}" alt="Imagem de homem" class="w-full" />
         </div>
     </section>
 

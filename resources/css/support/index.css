@@ -15,6 +15,7 @@
     --font-smooth: never;
 
     --color-brand-primary: var(--brand-primary);
+    --color-brand-secondary: var(--brand-secondary);
     --color-brand-accent: var(--brand-accent);
 
     --color-red-primary: var(--red-primary);
