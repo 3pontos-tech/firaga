@@ -2,7 +2,7 @@
 
 @php
     $height = match ($size) {
-        'sm' => '14.5px',
+        'sm' => '16px',
         default => '22px',
     };
 @endphp

@@ -24,8 +24,14 @@
                 </x-slot:description>
             </x-fr-headline>
 
-            <div class="flex w-full flex-col gap-4">
+            <div class="flex w-full flex-col items-center gap-4">
                 <x-fr-button> Descobrir meu plano </x-fr-button>
+                <div class="flex items-center justify-center gap-1">
+                    <x-logo size="sm" />
+                    <x-fr-text class="text-brand-primary!" size="sm">
+                        Sem custo, sem compromisso, uma conversa rápida
+                    </x-fr-text>
+                </div>
             </div>
         </div>
     </section>
