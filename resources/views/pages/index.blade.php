@@ -12,11 +12,23 @@
         <meta property="og:image:alt" content="{{ $page?->opengraph_picture_alt }}" />
     </x-slot:metatags>
 
-    <section class="flex items-center justify-center">
-        <div class="text-center">
-            <p class="text-text-medium text-sm tracking-widest uppercase">{{ config('app.name') }}</p>
-            <h1 class="text-text-high mt-4 text-5xl font-bold">Landing em construção</h1>
-            <p class="text-text-medium mt-4">Conteúdo hardcoded virá aqui.</p>
+    <section class="section-first">
+        <div class="container">
+            <x-fr-headline>
+                <x-slot:title>
+                    Você sabe quanto ganha. <mark>Mas você sabe quanto perde?</mark>
+                </x-slot:title>
+                <x-slot:description>
+                    Em média, brasileiros perdem 23% da renda sem saber para onde foi. A <mark>Firece</mark> mostra
+                    exatamente o que está acontecendo
+                </x-slot:description>
+            </x-fr-headline>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <p>Conteudo 2</p>
         </div>
     </section>
 </x-layout.landing>

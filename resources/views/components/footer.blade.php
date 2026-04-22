@@ -1,4 +1,4 @@
-<div class="border-outline-low bg-elevation-01dp border-t px-6 py-8 sm:px-12 lg:px-24">
+<div class="border-outline-low bg-elevation-01dp mt-20 border-t px-6 py-8 sm:px-12 lg:px-24">
     <div class="flex flex-col gap-7">
         <div class="flex flex-col items-start justify-between gap-8 lg:flex-row lg:items-center">
             <div class="flex flex-col gap-4">

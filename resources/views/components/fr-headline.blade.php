@@ -10,7 +10,7 @@
 <div {{ $attributes->class($classes) }}>
     <div class="fr-headline-container">
         @isset ($title)
-            <h2 {{ $title->attributes->class(['fr-headline-title']) }}> {{ $title }}</h2>
+            <h2 {{ $title->attributes->class(['fr-headline-title']) }}> {!! $title !!}</h2>
         @endisset
 
         @isset ($description)
@@ -21,12 +21,12 @@
                     ])
                 }}
             >
-                {{ $description }}
+                {!! $description !!}
             </p>
         @endisset
 
         @isset ($actions)
-            <div {{ $actions->attributes->class(['fr-headline-actions']) }}> {{ $actions }}</div>
+            <div {{ $actions->attributes->class(['fr-headline-actions']) }}>{{ $actions }}</div>
         @endisset
     </div>
 </div>

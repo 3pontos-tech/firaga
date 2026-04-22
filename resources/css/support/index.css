@@ -7,7 +7,8 @@
    ========================================================================== */
 
 @theme inline {
-    --breakpoint-md: 821px;
+    --breakpoint-md: 940px;
+    --breakpoint-lg: 1300px;
 
     --font-sans: 'Satoshi', ui-sans-serif, system-ui, sans-serif;
     --font-display: 'Cal Sans', ui-sans-serif, system-ui, sans-serif;
@@ -198,6 +199,8 @@
 
 @theme {
     --header-height: 4rem; /* 64px */
+    --section-gap: 5rem; /* 80px — gap between sections (mobile) */
+    --section-first-gap: 2rem; /* 32px — first section gap from navbar (mobile) */
 
     /* Font Size */
     --text-xxxs: 0.75rem; /* 12px */

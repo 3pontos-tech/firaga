@@ -31,3 +31,11 @@
         max-width: 1856px;
     }
 }
+
+@utility section {
+    padding-block-start: var(--section-gap);
+}
+
+@utility section-first {
+    padding-block-start: var(--section-first-gap);
+}

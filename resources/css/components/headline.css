@@ -41,7 +41,7 @@
 }
 
 .fr-headline-size-xl .fr-headline-title {
-    @apply text-xl md:text-3xl;
+    @apply text-lg md:text-3xl;
 }
 
 .fr-headline-size-2xl .fr-headline-title {
@@ -54,7 +54,7 @@
 
 /* Description */
 .fr-headline-description {
-    @apply max-w-full font-sans font-medium;
+    @apply text-text-medium max-w-full font-sans leading-6 font-medium;
 }
 
 .fr-headline-size-sm .fr-headline-description {
@@ -70,6 +70,12 @@
 .fr-headline-size-2xl .fr-headline-description,
 .fr-headline-size-3xl .fr-headline-description {
     @apply text-xs;
+}
+
+/* Keyword highlight — use <mark> directly in slot content */
+.fr-headline-title mark,
+.fr-headline-description mark {
+    @apply text-brand-primary bg-transparent;
 }
 
 /* Actions */
