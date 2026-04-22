@@ -15,10 +15,6 @@
         <meta name="description" content="{{ $term->description }}">
     </x-slot:metatags>
 
-    <x-slot:navbar>
-        <x-navbar />
-    </x-slot:navbar>
-
     <div class="bg-elevation-surface min-h-screen">
         <div class="mx-auto container px-4 sm:px-6 lg:px-8 py-12 mt-[var(--navbar-height)]">
             <div class="flex flex-col gap-8">
@@ -81,8 +77,5 @@
             </div>
         </div>
 
-        <x-slot:footer>
-            <x-layout.shared.footer />
-        </x-slot:footer>
     </div>
 </x-layout.guest>

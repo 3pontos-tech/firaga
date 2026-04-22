@@ -2,8 +2,6 @@
 
 declare(strict_types=1);
 
-use App\Http\Controllers\ArticlesController;
-use App\Http\Controllers\ContactController;
 use App\Http\Controllers\MarketingLandingController;
 use App\Http\Controllers\PagesController;
 use App\Models\Term;
@@ -27,11 +25,6 @@ Route::domain('lp.'.config('app.domain'))->group(function (): void {
 
 Route::domain(config('app.domain'))->group(function (): void {
 
-    Route::prefix('blog')->group(function (): void {
-        Route::get('/{post:slug}', [ArticlesController::class, 'show'])
-            ->name('blog.show');
-    });
-
     Route::get('/terms/{slug}', function (string $slug): Factory|View {
         $term = Term::query()
             ->where('slug', $slug)
@@ -49,8 +42,5 @@ Route::domain(config('app.domain'))->group(function (): void {
     Route::get('/{page?}', [PagesController::class, 'show'])
         ->name('page.show')
         ->where('page', '[a-zA-Z0-9\-]+');
-
-    Route::get('/contact', ContactController::class)
-        ->name('contact');
 
 });

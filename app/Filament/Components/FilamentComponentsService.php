@@ -7,7 +7,6 @@ namespace App\Filament\Components;
 use Filament\Forms\Components\Builder;
 use Filament\Forms\Components\Builder\Block;
 use Illuminate\Support\HtmlString;
-use Webmozart\Assert\Assert;
 
 class FilamentComponentsService
 {
@@ -15,8 +14,7 @@ class FilamentComponentsService
     {
         $blocks = [];
 
-        $componentsConfig = config('cms.components');
-        Assert::isArray($componentsConfig);
+        $componentsConfig = config('cms.components') ?? [];
 
         foreach ($componentsConfig as $component) {
             /** @var ComponentContract $componentClass */

@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Database\Factories\CMS;
 
-use App\Enums\CustomComponent;
 use App\Enums\PostStatus;
 use App\Models\Author;
 use App\Models\CMS\Category;
@@ -29,14 +28,7 @@ class PostFactory extends Factory
             'status' => PostStatus::PUBLISHED,
             'lang' => 'en',
             'excerpt' => fake()->text,
-            'content' => [
-                [
-                    'type' => CustomComponent::BlogMarkdownText->value,
-                    'data' => [
-                        'content' => '# Some title',
-                    ],
-                ],
-            ],
+            'content' => [],
             'meta_title' => fake()->text(30),
             'meta_description' => fake()->text(50),
             'meta_keywords' => fake()->word.','.fake()->word,
