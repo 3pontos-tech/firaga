@@ -75,6 +75,8 @@
 
     <section class="section dark bg-elevation-surface px-4 py-20">
         <div class="container flex flex-col gap-8">
+            <img src="{{ asset('images/Image.webp') }}" alt="Imagem dos caras" class="h-50 w-auto" />
+
             <x-fr-headline align="left">
                 <x-slot:title>
                     Por que a <mark>Firece</mark>?
