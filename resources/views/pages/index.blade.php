@@ -72,4 +72,34 @@
             <x-logo-badge class="justify-center"> Não é falta de disciplina. É falta de um plano </x-logo-badge>
         </div>
     </section>
+
+    <section class="section dark bg-elevation-surface px-4 py-20">
+        <div class="container flex flex-col gap-8">
+            <x-fr-headline align="left">
+                <x-slot:title>
+                    Por que a <mark>Firece</mark>?
+                </x-slot:title>
+                <x-slot:description>
+                    Em média, brasileiros perdem 23% da renda sem saber para onde foi. A Firece mostra exatamente o que
+                    está acontecendo
+                </x-slot:description>
+            </x-fr-headline>
+
+            <div class="flex flex-col gap-4 p-4">
+                <div
+                    class="bg-brand-primary/12 border-brand-primary/16 size-11 items-center justify-center rounded-xs border p-2.5"
+                >
+                    <x-heroicon-c-user class="text-brand-primary h-full w-auto" />
+                </div>
+                <x-fr-headline size="sm">
+                    <x-slot:title>
+                        Mais de 2 mil clientes atendidos
+                    </x-slot:title>
+                    <x-slot:description>
+                        Em média, brasileiros perdem 23% da renda sem saber para onde foi.
+                    </x-slot:description>
+                </x-fr-headline>
+            </div>
+        </div>
+    </section>
 </x-layout.landing>

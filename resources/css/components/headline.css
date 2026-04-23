@@ -20,16 +20,16 @@
 }
 
 .fr-headline-align-left .fr-headline-container {
-    @apply items-center text-center sm:items-start sm:text-left;
+    @apply items-start text-left;
 }
 
 /* Title */
 .fr-headline-title {
-    @apply font-display leading-[120%] font-medium;
+    @apply font-display text-text-high leading-[120%] font-medium;
 }
 
 .fr-headline-size-sm .fr-headline-title {
-    @apply sm:text-md text-sm;
+    @apply text-sm;
 }
 
 .fr-headline-size-md .fr-headline-title {
@@ -55,10 +55,6 @@
 /* Description */
 .fr-headline-description {
     @apply text-text-medium max-w-full font-sans leading-6 font-medium;
-}
-
-.fr-headline-size-sm .fr-headline-description {
-    @apply text-xxs;
 }
 
 .fr-headline-size-md .fr-headline-description,

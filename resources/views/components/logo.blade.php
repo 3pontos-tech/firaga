@@ -1,4 +1,4 @@
-@props (['size' => 'md'])
+@props (['size' => 'md', 'clickable' => true])
 
 @php
     $height = match ($size) {
@@ -7,6 +7,15 @@
     };
 @endphp
 
-<a href="{{ route('home') }}" {{ $attributes }}>
-    <img src="{{ asset('images/logos/logo.svg') }}" alt="{{ config('app.name') }}" style="height: {{ $height }}" />
-</a>
+@if ($clickable)
+    <a href="{{ route('home') }}" {{ $attributes }}>
+        <img src="{{ asset('images/logos/logo.svg') }}" alt="{{ config('app.name') }}" style="height: {{ $height }}" />
+    </a>
+@else
+    <img
+        src="{{ asset('images/logos/logo.svg') }}"
+        alt="{{ config('app.name') }}"
+        style="height: {{ $height }}"
+        {{ $attributes }}
+    />
+@endif
