@@ -43,7 +43,7 @@
             <x-fr-heading size="lg"> Reconhece alguma dessas histórias? </x-fr-heading>
             <div class="flex flex-col items-start gap-3 text-left">
                 <div class="flex flex-col">
-                    <span class="text-brand-primary text-lg font-bold">”</span>
+                    <x-fas-quote-left class="text-brand-primary mb-4 size-4" />
                     <x-fr-text class="text-text-low font-medium! italic">
                         Tenho dívidas que parecem não ter fim. Pago o mínimo e o saldo não cai
                     </x-fr-text>
@@ -52,7 +52,7 @@
                 <hr class="border-border-base w-full" />
 
                 <div class="flex flex-col">
-                    <span class="text-brand-primary text-lg font-bold">”</span>
+                    <x-fas-quote-left class="text-brand-primary mb-4 size-4" />
                     <x-fr-text class="text-text-low font-medium! italic">
                         Trabalho muito, ganho bem mas no fim do mês não sobra nada. E eu não sei por quê.
                     </x-fr-text>
@@ -61,7 +61,7 @@
                 <hr class="border-border-base w-full" />
 
                 <div class="flex flex-col">
-                    <span class="text-brand-primary text-lg font-bold">”</span>
+                    <x-fas-quote-left class="text-brand-primary mb-4 size-4" />
                     <x-fr-text class="text-text-low font-medium! italic">
                         Já poupo alguma coisa, mas sinto que meu dinheiro poderia estar rendendo muito mais.
                     </x-fr-text>
@@ -126,6 +126,30 @@
             </div>
 
             <hr class="border-border-base" />
+
+            <div class="flex flex-col gap-3">
+                <div class="flex items-center justify-between">
+                    <x-fas-quote-left class="text-brand-primary size-4" />
+                    <x-fr-text size="sm" class="text-brand-primary!"> 0% → 20% da renda investida </x-fr-text>
+                </div>
+
+                <hr class="border-brand-primary w-full" />
+
+                <x-fr-text class="text-text-high! font-medium! italic">
+                    Nunca achei que ia conseguir sair das dívidas. Em 5 meses com o
+                    <span class="text-brand-primary font-bold">Matheus</span>, pela primeira vez na vida eu tenho
+                    reserva de emergência.
+                </x-fr-text>
+
+                <div class="flex items-center justify-center gap-2">
+                    <p>avatar</p>
+                    <x-fr-text size="sm"> Felipe Rosa </x-fr-text>
+                    <div class="bg-text-high size-1 rounded-full"></div>
+                    <x-fr-text size="sm"> Design </x-fr-text>
+                    <div class="bg-text-high size-1 rounded-full"></div>
+                    <x-fr-text size="sm" class="text-brand-primary!"> Plano Gold </x-fr-text>
+                </div>
+            </div>
         </div>
     </section>
 </x-layout.landing>
