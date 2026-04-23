@@ -1,6 +1,7 @@
 @props ([
     'align' => 'center',
-    'size' => 'xl'
+    'size' => 'xl',
+    'containerClass' => ''
 ])
 
 @php
@@ -8,7 +9,7 @@
 @endphp
 
 <div {{ $attributes->class($classes) }}>
-    <div class="fr-headline-container">
+    <div @class (['fr-headline-container', $containerClass => $containerClass])>
         @isset ($title)
             <h2 {{ $title->attributes->class(['fr-headline-title']) }}> {!! $title !!}</h2>
         @endisset

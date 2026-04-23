@@ -86,20 +86,46 @@
             </x-fr-headline>
 
             <div class="flex flex-col gap-4 p-4">
-                <div
-                    class="bg-brand-primary/12 border-brand-primary/16 size-11 items-center justify-center rounded-xs border p-2.5"
-                >
-                    <x-heroicon-c-user class="text-brand-primary h-full w-auto" />
-                </div>
-                <x-fr-headline size="sm">
+                <x-icon-box icon="heroicon-c-user" />
+                <x-fr-headline align="left" size="sm" container-class="gap-2!">
                     <x-slot:title>
-                        Mais de 2 mil clientes atendidos
+                        Mais de <mark>2 mil clientes</mark> atendidos
                     </x-slot:title>
                     <x-slot:description>
                         Em média, brasileiros perdem 23% da renda sem saber para onde foi.
                     </x-slot:description>
                 </x-fr-headline>
             </div>
+
+            <hr class="border-border-base" />
+
+            <div class="flex flex-col gap-4 p-4">
+                <x-icon-box icon="heroicon-c-user" />
+                <x-fr-headline align="left" size="sm" container-class="gap-2!">
+                    <x-slot:title>
+                        <mark>+10 anos</mark> de experiência de mercado
+                    </x-slot:title>
+                    <x-slot:description>
+                        Em média, brasileiros perdem 23% da renda sem saber para onde foi.
+                    </x-slot:description>
+                </x-fr-headline>
+            </div>
+
+            <hr class="border-border-base" />
+
+            <div class="flex flex-col gap-4 p-4">
+                <x-icon-box icon="heroicon-c-user" />
+                <x-fr-headline align="left" size="sm" container-class="gap-2!">
+                    <x-slot:title>
+                        <mark>R$4M+</mark> em dívidas eliminadas
+                    </x-slot:title>
+                    <x-slot:description>
+                        Em média, brasileiros perdem 23% da renda sem saber para onde foi.
+                    </x-slot:description>
+                </x-fr-headline>
+            </div>
+
+            <hr class="border-border-base" />
         </div>
     </section>
 </x-layout.landing>
