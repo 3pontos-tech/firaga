@@ -141,8 +141,8 @@
                     reserva de emergência.
                 </x-fr-text>
 
-                <div class="flex items-center justify-center gap-2">
-                    <p>avatar</p>
+                <div class="flex items-center gap-2">
+                    <x-avatar src="https://i.pravatar.cc/80?img=12" alt="Felipe Rosa" />
                     <x-fr-text size="sm"> Felipe Rosa </x-fr-text>
                     <div class="bg-text-high size-1 rounded-full"></div>
                     <x-fr-text size="sm"> Design </x-fr-text>
