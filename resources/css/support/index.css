@@ -180,6 +180,8 @@
     --color-outline-light: var(--outline-light);
     --color-outline-dark: var(--outline-dark);
 
+    --color-border-base: var(--border-base);
+
     --color-helper-success: var(--helper-success);
     --color-helper-warning: var(--helper-warning);
     --color-helper-error: var(--helper-error);

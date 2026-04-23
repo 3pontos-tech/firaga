@@ -142,7 +142,7 @@
     /* Semantic Aliases — Light */
     --text-high: #09090a;
     --text-medium: #4f4f4f;
-    --text-low: #707070;
+    --text-low: #626266;
     --text-light: #fdfdfd;
     --text-dark: #09090a;
     --icon-high: #09090a;
@@ -155,6 +155,7 @@
     --outline-low: #909098;
     --outline-light: #e8e9f1;
     --outline-dark: #2c2c2d;
+    --border-base: #e2e6f2;
     --helper-success: var(--green-800);
     --helper-warning: var(--yellow-800);
     --helper-error: var(--red-800);

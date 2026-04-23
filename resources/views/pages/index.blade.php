@@ -39,8 +39,37 @@
     </section>
 
     <section class="section">
-        <div class="container">
-            <p>Conteudo 2</p>
+        <div class="container flex flex-col items-center gap-8 text-center">
+            <x-fr-heading size="lg"> Reconhece alguma dessas histórias? </x-fr-heading>
+            <div class="flex flex-col items-start gap-3 text-left">
+                <div class="flex flex-col">
+                    <span class="text-brand-primary text-lg font-bold">”</span>
+                    <x-fr-text class="text-text-low font-medium! italic">
+                        Tenho dívidas que parecem não ter fim. Pago o mínimo e o saldo não cai
+                    </x-fr-text>
+                </div>
+
+                <hr class="border-border-base w-full" />
+
+                <div class="flex flex-col">
+                    <span class="text-brand-primary text-lg font-bold">”</span>
+                    <x-fr-text class="text-text-low font-medium! italic">
+                        Trabalho muito, ganho bem mas no fim do mês não sobra nada. E eu não sei por quê.
+                    </x-fr-text>
+                </div>
+
+                <hr class="border-border-base w-full" />
+
+                <div class="flex flex-col">
+                    <span class="text-brand-primary text-lg font-bold">”</span>
+                    <x-fr-text class="text-text-low font-medium! italic">
+                        Já poupo alguma coisa, mas sinto que meu dinheiro poderia estar rendendo muito mais.
+                    </x-fr-text>
+                </div>
+
+                <hr class="border-border-base w-full" />
+            </div>
+            <x-logo-badge class="justify-center"> Não é falta de disciplina. É falta de um plano </x-logo-badge>
         </div>
     </section>
 </x-layout.landing>
