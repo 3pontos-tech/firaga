@@ -154,4 +154,86 @@
             </div>
         </div>
     </section>
+
+    <section class="section flex flex-col items-center gap-8">
+        <div class="container flex flex-col items-center gap-8">
+            <x-fr-headline>
+                <x-slot:title>
+                    Três encontros, uma <mark>vida financeira</mark> diferente
+                </x-slot:title>
+                <x-slot:description>
+                    Sem curso, sem palestra, sem planilha genérica. Um plano construído para a
+                    <mark>sua realidade</mark> e só para ela.
+                </x-slot:description>
+            </x-fr-headline>
+        </div>
+
+        <div class="border-border-base divide-border-base grid w-full grid-cols-1 divide-y border-y">
+            <div class="flex flex-col gap-3 p-8">
+                <div class="flex items-center justify-between">
+                    <p class="text-brand-primary font-display text-xl font-medium">01</p>
+                    <x-heroicon-c-chevron-right class="text-icon-medium size-7" />
+                </div>
+
+                <x-fr-headline align="left" size="sm" container-class="gap-2!">
+                    <x-slot:title>
+                        Análise
+                    </x-slot:title>
+                    <x-slot:description>
+                        Entendemos onde você está de verdade. Renda, dívidas, hábitos, objetivos. Sem julgamento.
+                    </x-slot:description>
+                </x-fr-headline>
+
+                <x-fr-text size="sm" class="text-brand-primary!">
+                    Não é falta de disciplina. É falta de um plano
+                </x-fr-text>
+            </div>
+
+            <div class="flex flex-col gap-3 p-8">
+                <div class="flex items-center justify-between">
+                    <p class="text-brand-primary font-display text-xl font-medium">01</p>
+                    <x-heroicon-c-chevron-right class="text-icon-medium size-7" />
+                </div>
+
+                <x-fr-headline align="left" size="sm" container-class="gap-2!">
+                    <x-slot:title>
+                        Análise
+                    </x-slot:title>
+                    <x-slot:description>
+                        Entendemos onde você está de verdade. Renda, dívidas, hábitos, objetivos. Sem julgamento.
+                    </x-slot:description>
+                </x-fr-headline>
+
+                <x-fr-text size="sm" class="text-brand-primary!">
+                    Não é falta de disciplina. É falta de um plano
+                </x-fr-text>
+            </div>
+
+            <div class="flex flex-col gap-3 p-8">
+                <div class="flex items-center justify-between">
+                    <p class="text-brand-primary font-display text-xl font-medium">01</p>
+                    <x-heroicon-c-chevron-right class="text-icon-medium size-7" />
+                </div>
+
+                <x-fr-headline align="left" size="sm" container-class="gap-2!">
+                    <x-slot:title>
+                        Análise
+                    </x-slot:title>
+                    <x-slot:description>
+                        Entendemos onde você está de verdade. Renda, dívidas, hábitos, objetivos. Sem julgamento.
+                    </x-slot:description>
+                </x-fr-headline>
+
+                <x-fr-text size="sm" class="text-brand-primary!">
+                    Não é falta de disciplina. É falta de um plano
+                </x-fr-text>
+            </div>
+        </div>
+
+        <div class="container flex flex-col items-center gap-8">
+            <x-fr-button> Descobrir meu plano </x-fr-button>
+
+            <x-logo-badge> Simples assim. Sem enrolação. </x-logo-badge>
+        </div>
+    </section>
 </x-layout.landing>
