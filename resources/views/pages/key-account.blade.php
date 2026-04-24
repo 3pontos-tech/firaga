@@ -297,4 +297,35 @@
             <x-fr-button data-reveal="up"> Esse sou eu </x-fr-button>
         </div>
     </section>
+
+    <section class="section mt-28 mb-11">
+        <div class="container flex flex-col gap-8">
+            <x-fr-headline data-reveal="up">
+                <x-slot:title>
+                    Perguntas frequentes
+                </x-slot:title>
+                <x-slot:description>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam urna tellus, cursus vitae vestibulum
+                    quis, pretium eu dui.
+                </x-slot:description>
+            </x-fr-headline>
+
+            <div class="flex flex-col gap-3" data-reveal-stagger="140">
+                <x-faq-item data-reveal="up" question="O Key Account é para qualquer pessoa?">
+                    Não. O modelo é pensado para quem já tem patrimônio relevante, renda acima da média ou decisões
+                    financeiras complexas que exigem acompanhamento próximo e personalizado.
+                </x-faq-item>
+
+                <x-faq-item data-reveal="up" question="Qual a diferença entre o Key Account e os outros planos?">
+                    No Key Account você tem um consultor dedicado, atendimento prioritário, estratégia patrimonial
+                    avançada e acesso a alocação internacional — sem a padronização dos planos convencionais.
+                </x-faq-item>
+
+                <x-faq-item data-reveal="up" question="Como funciona o primeiro contato?">
+                    Agendamos uma conversa de 30 minutos para entender o seu momento financeiro. Sem compromisso e sem
+                    proposta antes de ouvir você.
+                </x-faq-item>
+            </div>
+        </div>
+    </section>
 </x-layout.landing>
