@@ -281,4 +281,20 @@
             </div>
         </div>
     </section>
+
+    <section class="section metallic-light bg-elevation-surface mt-28">
+        <div class="container flex flex-col gap-8 py-20">
+            <x-fr-headline data-reveal="up">
+                <x-slot:title>
+                    Pronto para o próximo nível?
+                </x-slot:title>
+                <x-slot:description>
+                    Uma conversa de 30 minutos é suficiente para entender se o Key Account faz sentido para o seu
+                    momento. Sem compromisso. Sem proposta antes de ouvir você.
+                </x-slot:description>
+            </x-fr-headline>
+
+            <x-fr-button data-reveal="up"> Esse sou eu </x-fr-button>
+        </div>
+    </section>
 </x-layout.landing>
