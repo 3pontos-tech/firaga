@@ -13,8 +13,8 @@
     </x-slot:metatags>
 
     <section class="section-first flex min-h-[calc(100dvh-var(--header-height))] flex-col items-center gap-4">
-        <div class="container flex flex-col items-center gap-8">
-            <x-fr-headline>
+        <div class="container flex flex-col items-center gap-8" data-reveal-stagger="140">
+            <x-fr-headline data-reveal="up">
                 <x-slot:header>
                     <div class="flex w-full flex-col items-center justify-center gap-2">
                         <x-avatar-group />
@@ -33,13 +33,13 @@
                 </x-slot:description>
             </x-fr-headline>
 
-            <div class="flex w-full flex-col items-center gap-4">
+            <div class="flex w-full flex-col items-center gap-4" data-reveal="up">
                 <x-fr-button> Descobrir meu plano </x-fr-button>
                 <x-logo-badge class="justify-center"> Sem custo, sem compromisso, uma conversa rápida </x-logo-badge>
             </div>
         </div>
 
-        <div class="relative mt-auto w-full">
+        <div class="relative mt-auto w-full" data-reveal="scale">
             <div
                 class="from-brand-primary to-brand-secondary absolute inset-0 top-10 -z-1 rounded-t-lg bg-linear-to-b"
             ></div>
@@ -49,9 +49,9 @@
 
     <section class="section">
         <div class="container flex flex-col items-center gap-8 text-center">
-            <x-fr-heading size="lg"> Reconhece alguma dessas histórias? </x-fr-heading>
-            <div class="flex flex-col items-start gap-3 text-left">
-                <div class="flex flex-col">
+            <x-fr-heading size="lg" data-reveal="up"> Reconhece alguma dessas histórias? </x-fr-heading>
+            <div class="flex flex-col items-start gap-3 text-left" data-reveal-stagger="100">
+                <div class="flex flex-col" data-reveal="up">
                     <x-fas-quote-left class="text-brand-primary mb-4 size-4" />
                     <x-fr-text class="text-text-low font-medium! italic">
                         Tenho dívidas que parecem não ter fim. Pago o mínimo e o saldo não cai
@@ -60,7 +60,7 @@
 
                 <hr class="border-border-base w-full" />
 
-                <div class="flex flex-col">
+                <div class="flex flex-col" data-reveal="up">
                     <x-fas-quote-left class="text-brand-primary mb-4 size-4" />
                     <x-fr-text class="text-text-low font-medium! italic">
                         Trabalho muito, ganho bem mas no fim do mês não sobra nada. E eu não sei por quê.
@@ -69,7 +69,7 @@
 
                 <hr class="border-border-base w-full" />
 
-                <div class="flex flex-col">
+                <div class="flex flex-col" data-reveal="up">
                     <x-fas-quote-left class="text-brand-primary mb-4 size-4" />
                     <x-fr-text class="text-text-low font-medium! italic">
                         Já poupo alguma coisa, mas sinto que meu dinheiro poderia estar rendendo muito mais.
@@ -83,10 +83,10 @@
     </section>
 
     <section class="section dark bg-elevation-surface px-4 py-20">
-        <div class="container flex flex-col gap-8">
-            <img src="{{ asset('images/Image.webp') }}" alt="Imagem dos caras" class="h-50 w-auto" />
+        <div class="container flex flex-col gap-8" data-reveal-stagger="120">
+            <img src="{{ asset('images/Image.webp') }}" alt="Imagem dos caras" class="h-50 w-auto" data-reveal="left" />
 
-            <x-fr-headline align="left">
+            <x-fr-headline align="left" data-reveal="up">
                 <x-slot:title>
                     Por que a <mark>Firece</mark>?
                 </x-slot:title>
@@ -96,7 +96,7 @@
                 </x-slot:description>
             </x-fr-headline>
 
-            <div class="flex flex-col gap-4 p-4">
+            <div class="flex flex-col gap-4 p-4" data-reveal="up">
                 <x-icon-box icon="heroicon-c-user" />
                 <x-fr-headline align="left" size="sm" container-class="gap-2!">
                     <x-slot:title>
@@ -110,7 +110,7 @@
 
             <hr class="border-border-base" />
 
-            <div class="flex flex-col gap-4 p-4">
+            <div class="flex flex-col gap-4 p-4" data-reveal="up">
                 <x-icon-box icon="heroicon-c-user" />
                 <x-fr-headline align="left" size="sm" container-class="gap-2!">
                     <x-slot:title>
@@ -124,7 +124,7 @@
 
             <hr class="border-border-base" />
 
-            <div class="flex flex-col gap-4 p-4">
+            <div class="flex flex-col gap-4 p-4" data-reveal="up">
                 <x-icon-box icon="heroicon-c-user" />
                 <x-fr-headline align="left" size="sm" container-class="gap-2!">
                     <x-slot:title>
@@ -139,6 +139,7 @@
             <hr class="border-border-base" />
 
             <x-testimonial
+                data-reveal="up"
                 name="Felipe Rosa"
                 role="Design"
                 plan="Plano Gold"
@@ -154,7 +155,7 @@
 
     <section class="section flex flex-col items-center gap-8">
         <div class="container flex flex-col items-center gap-8">
-            <x-fr-headline>
+            <x-fr-headline data-reveal="up">
                 <x-slot:title>
                     Três encontros, uma <mark>vida financeira</mark> diferente
                 </x-slot:title>
@@ -165,8 +166,11 @@
             </x-fr-headline>
         </div>
 
-        <div class="border-border-base divide-border-base grid w-full grid-cols-1 divide-y border-y">
-            <div class="flex flex-col gap-3 p-8">
+        <div
+            class="border-border-base divide-border-base grid w-full grid-cols-1 divide-y border-y"
+            data-reveal-stagger="140"
+        >
+            <div class="flex flex-col gap-3 p-8" data-reveal="up">
                 <div class="flex items-center justify-between">
                     <p class="text-brand-primary font-display text-xl font-medium">01</p>
                     <x-heroicon-c-chevron-right class="text-icon-medium size-7" />
@@ -186,7 +190,7 @@
                 </x-fr-text>
             </div>
 
-            <div class="flex flex-col gap-3 p-8">
+            <div class="flex flex-col gap-3 p-8" data-reveal="up">
                 <div class="flex items-center justify-between">
                     <p class="text-brand-primary font-display text-xl font-medium">01</p>
                     <x-heroicon-c-chevron-right class="text-icon-medium size-7" />
@@ -206,7 +210,7 @@
                 </x-fr-text>
             </div>
 
-            <div class="flex flex-col gap-3 p-8">
+            <div class="flex flex-col gap-3 p-8" data-reveal="up">
                 <div class="flex items-center justify-between">
                     <p class="text-brand-primary font-display text-xl font-medium">01</p>
                     <x-heroicon-c-chevron-right class="text-icon-medium size-7" />
@@ -236,7 +240,7 @@
 
     <section class="section">
         <div class="container flex flex-col gap-8">
-            <x-fr-headline>
+            <x-fr-headline data-reveal="up">
                 <x-slot:title>
                     Qual é o seu momento?
                 </x-slot:title>
@@ -246,8 +250,9 @@
                 </x-slot:description>
             </x-fr-headline>
 
-            <div class="grid grid-cols-1 gap-8">
+            <div class="grid grid-cols-1 gap-8" data-reveal-stagger="140">
                 <x-testimonial
+                    data-reveal="up"
                     variant="centered"
                     class="bg-elevation-01dp border-border-base border p-4"
                     name="Felipe Rosa"
@@ -262,6 +267,7 @@
                 </x-testimonial>
 
                 <x-testimonial
+                    data-reveal="up"
                     variant="centered"
                     class="bg-elevation-01dp border-border-base border p-4"
                     name="Felipe Rosa"
@@ -280,7 +286,7 @@
 
     <section class="section">
         <div class="container flex flex-col gap-8">
-            <x-fr-headline>
+            <x-fr-headline data-reveal="up">
                 <x-slot:title>
                     Qual é o seu momento?
                 </x-slot:title>
@@ -290,8 +296,8 @@
                 </x-slot:description>
             </x-fr-headline>
 
-            <div class="md:grid-cols-auto grid grid-cols-1 gap-8">
-                <x-plan-card tagline="“Meu dinheiro some sem explicação”">
+            <div class="md:grid-cols-auto grid grid-cols-1 gap-8" data-reveal-stagger="140">
+                <x-plan-card data-reveal="up" tagline="“Meu dinheiro some sem explicação”">
                     <x-fr-heading>Perfil Gold</x-fr-heading>
                     <x-fr-text>
                         Para quem quer organizar as finanças do zero e finalmente respirar no fim do mês
@@ -310,7 +316,7 @@
                     <x-fr-button variant="outline">Esse sou eu</x-fr-button>
                 </x-plan-card>
 
-                <x-plan-card variant="highlighted" tagline="“Meu dinheiro some sem explicação”">
+                <x-plan-card data-reveal="up" variant="highlighted" tagline="“Meu dinheiro some sem explicação”">
                     <x-fr-heading>Perfil Gold</x-fr-heading>
                     <x-fr-text>
                         Para quem quer organizar as finanças do zero e finalmente respirar no fim do mês
@@ -329,7 +335,7 @@
                     <x-fr-button>Esse sou eu</x-fr-button>
                 </x-plan-card>
 
-                <x-plan-card tagline="“Meu dinheiro some sem explicação”">
+                <x-plan-card data-reveal="up" tagline="“Meu dinheiro some sem explicação”">
                     <x-fr-heading>Perfil Gold</x-fr-heading>
                     <x-fr-text>
                         Para quem quer organizar as finanças do zero e finalmente respirar no fim do mês
@@ -357,7 +363,7 @@
 
     <section class="section bg-brand-primary py-20">
         <div class="container flex flex-col gap-8">
-            <x-fr-headline>
+            <x-fr-headline data-reveal="up">
                 <x-slot:header>
                     <div class="flex w-full flex-col items-center justify-center gap-2">
                         <x-avatar-group />
@@ -383,7 +389,7 @@
 
     <section class="section">
         <div class="container flex flex-col items-center gap-8">
-            <x-fr-headline>
+            <x-fr-headline data-reveal="up">
                 <x-slot:header>
                     <div class="flex w-full flex-col items-center justify-center gap-2">
                         <x-avatar-group />

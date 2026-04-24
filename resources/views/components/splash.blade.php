@@ -22,6 +22,7 @@
 </script>
 
 <div
+    data-splash
     x-data="splash({ storageKey: @js($storageKey) })"
     x-show="active"
     x-init="init()"
