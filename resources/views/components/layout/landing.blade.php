@@ -86,6 +86,8 @@
 <body
     class="bg-elevation-surface text-text-high grid min-h-dvh grid-cols-[1fr] grid-rows-[auto_1fr_auto] font-sans antialiased [grid-template-areas:'header''main''footer']"
 >
+    <x-splash />
+
     <noscript>
         <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KTVLGCHG" class="hidden h-0 w-0"></iframe>
     </noscript>
