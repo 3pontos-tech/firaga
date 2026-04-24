@@ -42,7 +42,7 @@
         </div>
     </section>
 
-    <section class="section bg-elevation-01dp border-border-base rounded-t-lg border-t px-4 py-11">
+    <section class="section bg-elevation-01dp border-border-base rounded-t-lg border-y px-4 py-11">
         <div class="container flex flex-col gap-8" data-reveal-stagger="120">
             <div class="relative">
                 <div
@@ -131,6 +131,108 @@
             </x-testimonial>
 
             <x-fr-button data-reveal="up"> Esse sou eu </x-fr-button>
+        </div>
+    </section>
+
+    <section class="section mt-28 flex flex-col items-center gap-8">
+        <div class="container flex flex-col items-center gap-8">
+            <x-fr-headline data-reveal="up">
+                <x-slot:title>
+                    Quatro pilares. Uma parceria completa.
+                </x-slot:title>
+            </x-fr-headline>
+        </div>
+
+        <div
+            class="border-border-base divide-border-base grid w-full grid-cols-1 divide-y border-y"
+            data-reveal-stagger="140"
+        >
+            <div class="flex flex-col gap-3 p-8" data-reveal="up">
+                <div class="flex items-center justify-between">
+                    <p class="text-brand-primary font-display text-xl font-medium">01</p>
+                    <x-heroicon-c-chevron-right class="text-icon-medium size-7" />
+                </div>
+
+                <x-fr-headline align="left" size="sm" container-class="gap-2!">
+                    <x-slot:title>
+                        Estratégia patrimonial avançada
+                    </x-slot:title>
+                    <x-slot:description>
+                        A empresa contrata pacotes de horas mensais, semestrais ou anuais disponíveis para todos os
+                        colaboradores.
+                    </x-slot:description>
+                </x-fr-headline>
+
+                <div class="flex items-center gap-3">
+                    <x-fr-text size="sm" class="text-text-high!"> Proteção </x-fr-text>
+                    <div class="bg-text-high size-1 rounded-full"></div>
+                    <x-fr-text size="sm" class="text-text-high!"> Crescimento </x-fr-text>
+                </div>
+            </div>
+
+            <div class="flex flex-col gap-3 p-8" data-reveal="up">
+                <div class="flex items-center justify-between">
+                    <p class="text-brand-primary font-display text-xl font-medium">02</p>
+                    <x-heroicon-c-chevron-right class="text-icon-medium size-7" />
+                </div>
+
+                <x-fr-headline align="left" size="sm" container-class="gap-2!">
+                    <x-slot:title>
+                        Gestão e alocação internacional
+                    </x-slot:title>
+                    <x-slot:description>
+                        Cada colaborador agenda seu atendimento diretamente pela plataforma Flamma, quando quiser.
+                    </x-slot:description>
+                </x-fr-headline>
+
+                <div class="flex items-center gap-3">
+                    <x-fr-text size="sm" class="text-text-high!"> Diversificação </x-fr-text>
+                </div>
+            </div>
+
+            <div class="flex flex-col gap-3 p-8" data-reveal="up">
+                <div class="flex items-center justify-between">
+                    <p class="text-brand-primary font-display text-xl font-medium">03</p>
+                    <x-heroicon-c-chevron-right class="text-icon-medium size-7" />
+                </div>
+
+                <x-fr-headline align="left" size="sm" container-class="gap-2!">
+                    <x-slot:title>
+                        Planejamento sucessório
+                    </x-slot:title>
+                    <x-slot:description>
+                        Sessões individuais de 60 minutos com consultores especializados, online ou presencial.
+                    </x-slot:description>
+                </x-fr-headline>
+
+                <div class="flex items-center gap-3">
+                    <x-fr-text size="sm" class="text-text-high!"> Família </x-fr-text>
+                    <div class="bg-text-high size-1 rounded-full"></div>
+                    <x-fr-text size="sm" class="text-text-high!"> Legado </x-fr-text>
+                </div>
+            </div>
+
+            <div class="flex flex-col gap-3 p-8" data-reveal="up">
+                <div class="flex items-center justify-between">
+                    <p class="text-brand-primary font-display text-xl font-medium">04</p>
+                    <x-heroicon-c-chevron-right class="text-icon-medium size-7" />
+                </div>
+
+                <x-fr-headline align="left" size="sm" container-class="gap-2!">
+                    <x-slot:title>
+                        Acompanhamento contínuo
+                    </x-slot:title>
+                    <x-slot:description>
+                        O RH acompanha a adesão e os resultados com relatórios consolidados de uso e evolução.
+                    </x-slot:description>
+                </x-fr-headline>
+
+                <div class="flex items-center gap-3">
+                    <x-fr-text size="sm" class="text-text-high!"> Parceria </x-fr-text>
+                    <div class="bg-text-high size-1 rounded-full"></div>
+                    <x-fr-text size="sm" class="text-text-high!"> Suporte </x-fr-text>
+                </div>
+            </div>
         </div>
     </section>
 </x-layout.landing>
