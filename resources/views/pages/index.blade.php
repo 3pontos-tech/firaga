@@ -129,29 +129,17 @@
 
             <hr class="border-border-base" />
 
-            <div class="flex flex-col gap-3">
-                <div class="flex items-center justify-between">
-                    <x-fas-quote-left class="text-brand-primary size-4" />
-                    <x-fr-text size="sm" class="text-brand-primary!"> 0% → 20% da renda investida </x-fr-text>
-                </div>
-
-                <hr class="border-brand-primary w-full" />
-
-                <x-fr-text class="text-text-high! font-medium! italic">
-                    Nunca achei que ia conseguir sair das dívidas. Em 5 meses com o
-                    <span class="text-brand-primary font-bold">Matheus</span>, pela primeira vez na vida eu tenho
-                    reserva de emergência.
-                </x-fr-text>
-
-                <div class="flex items-center gap-2">
-                    <x-avatar src="https://i.pravatar.cc/80?img=12" alt="Felipe Rosa" />
-                    <x-fr-text size="sm"> Felipe Rosa </x-fr-text>
-                    <div class="bg-text-high size-1 rounded-full"></div>
-                    <x-fr-text size="sm"> Design </x-fr-text>
-                    <div class="bg-text-high size-1 rounded-full"></div>
-                    <x-fr-text size="sm" class="text-brand-primary!"> Plano Gold </x-fr-text>
-                </div>
-            </div>
+            <x-testimonial
+                name="Felipe Rosa"
+                role="Design"
+                plan="Plano Gold"
+                avatar="https://i.pravatar.cc/80?img=12"
+                metric="0% → 20% da renda investida"
+            >
+                Nunca achei que ia conseguir sair das dívidas. Em 5 meses com o
+                <span class="text-brand-primary font-bold">Matheus</span>, pela primeira vez na vida eu tenho reserva de
+                emergência.
+            </x-testimonial>
         </div>
     </section>
 
@@ -234,6 +222,50 @@
             <x-fr-button> Descobrir meu plano </x-fr-button>
 
             <x-logo-badge> Simples assim. Sem enrolação. </x-logo-badge>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container flex flex-col gap-8">
+            <x-fr-headline>
+                <x-slot:title>
+                    Qual é o seu momento?
+                </x-slot:title>
+                <x-slot:description>
+                    Sem curso, sem palestra, sem planilha genérica. Um plano construído para a
+                    <mark>sua realidade</mark> e só para ela.
+                </x-slot:description>
+            </x-fr-headline>
+
+            <div class="grid grid-cols-1 gap-8">
+                <x-testimonial
+                    variant="centered"
+                    class="bg-elevation-01dp border-border-base border p-4"
+                    name="Felipe Rosa"
+                    role="Design"
+                    plan="Plano Gold"
+                    avatar="https://i.pravatar.cc/80?img=12"
+                    metric="0% → 20% da renda investida"
+                >
+                    Nunca achei que ia conseguir sair das dívidas. Em 5 meses com o
+                    <span class="text-brand-primary font-bold">Matheus</span>, pela primeira vez na vida eu tenho
+                    reserva de emergência.
+                </x-testimonial>
+
+                <x-testimonial
+                    variant="centered"
+                    class="bg-elevation-01dp border-border-base border p-4"
+                    name="Felipe Rosa"
+                    role="Design"
+                    plan="Plano Gold"
+                    avatar="https://i.pravatar.cc/80?img=12"
+                    metric="0% → 20% da renda investida"
+                >
+                    Nunca achei que ia conseguir sair das dívidas. Em 5 meses com o
+                    <span class="text-brand-primary font-bold">Matheus</span>, pela primeira vez na vida eu tenho
+                    reserva de emergência.
+                </x-testimonial>
+            </div>
         </div>
     </section>
 </x-layout.landing>
