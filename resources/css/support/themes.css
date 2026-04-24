@@ -188,7 +188,7 @@
     --gray-100: #dddddd;
     --gray-50: #f3f3f4;
     --text-high: #fdfdfd;
-    --text-medium: #9c9c9c;
+    --text-medium: #8e93a1;
     --text-low: #7a7a7b;
     --text-light: #fdfdfd;
     --text-dark: #09090a;
@@ -202,16 +202,52 @@
     --outline-low: #5e5e64;
     --outline-light: #e8e9f1;
     --outline-dark: #2c2c2d;
+    --border-base: #262629;
     --helper-success: var(--green-300);
     --helper-warning: var(--yellow-300);
     --helper-error: var(--red-300);
     --helper-neutral: var(--brand-50);
     --elevation-surface: #09090a;
-    --elevation-01dp: #0f0f10;
+    --elevation-01dp: #121213;
     --elevation-02dp: #131314;
     --elevation-03dp: #151516;
     --elevation-04dp: #181819;
     --elevation-05dp: #1c1c1f;
+}
+
+/* --------------------------------------------------------------------------
+   Metallic Light Theme
+   -------------------------------------------------------------------------- */
+
+.metallic-light {
+    --brand-primary: #111111;
+    --brand-secondary: #ff642f;
+    --brand-accent: #09090a;
+    --text-high: #09090a;
+    --text-medium: #454549;
+    --text-low: #6b6b70;
+    --text-light: #fdfdff;
+    --text-dark: #09090a;
+    --icon-high: #09090a;
+    --icon-medium: #454549;
+    --icon-low: #9b9b9c;
+    --icon-light: #fdfdff;
+    --icon-dark: #09090a;
+    --outline-high: #585861;
+    --outline-medium: #70707a;
+    --outline-low: #909098;
+    --outline-light: #e8e9f1;
+    --outline-dark: #2c2c2d;
+    --border-base: #e2e6f2;
+    --helper-success: var(--green-800);
+    --helper-warning: var(--yellow-800);
+    --helper-error: var(--red-800);
+    --elevation-surface: #fdfdff;
+    --elevation-01dp: #f7f8fc;
+    --elevation-02dp: #f2f4fa;
+    --elevation-03dp: #edeff7;
+    --elevation-04dp: #e8ebf5;
+    --elevation-05dp: #e2e6f2;
 }
 
 /* --------------------------------------------------------------------------

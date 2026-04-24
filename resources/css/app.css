@@ -16,6 +16,7 @@
 
 @custom-variant dark (&:where(.dark, .dark *));
 @custom-variant metallic (&:where(.metallic, .metallic *));
+@custom-variant metallic-light (&:where(.metallic-light, .metallic-light *));
 
 @utility container {
     padding-inline: 16px;

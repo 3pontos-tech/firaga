@@ -7,6 +7,10 @@
     @apply font-display font-medium tracking-tight wrap-break-word;
 }
 
+.fr-heading-size-xxs {
+    @apply text-xxs;
+}
+
 .fr-heading-size-xs {
     @apply text-xs sm:text-sm;
 }

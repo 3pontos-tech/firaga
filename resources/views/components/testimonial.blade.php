@@ -63,11 +63,11 @@
             @endif
             <x-fr-text size="sm">{{ $name }}</x-fr-text>
             @if ($role)
-                <div class="bg-text-high size-1 rounded-full"></div>
+                <div class="bg-border-base size-1 rounded-full"></div>
                 <x-fr-text size="sm">{{ $role }}</x-fr-text>
             @endif
             @if ($plan)
-                <div class="bg-text-high size-1 rounded-full"></div>
+                <div class="bg-border-base size-1 rounded-full"></div>
                 <x-fr-text size="sm" class="text-brand-primary!">{{ $plan }}</x-fr-text>
             @endif
         </div>
