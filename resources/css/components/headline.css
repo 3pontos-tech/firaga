@@ -71,7 +71,7 @@
 /* Keyword highlight — use <mark> directly in slot content */
 .fr-headline-title mark,
 .fr-headline-description mark {
-    @apply text-brand-primary bg-transparent;
+    @apply text-brand-primary metallic:text-text-medium bg-transparent;
 }
 
 /* Actions */
