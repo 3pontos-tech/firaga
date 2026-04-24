@@ -4,7 +4,7 @@
    ========================================================================== */
 
 .fr-text {
-    @apply text-text-medium font-semibold;
+    @apply text-text-medium font-medium;
 }
 
 .fr-text-xs {

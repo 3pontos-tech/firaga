@@ -8,5 +8,5 @@
     }}
 >
     <x-logo :size="$size" :clickable="false" />
-    <x-fr-text size="sm" class="text-inherit!">{{ $slot }}</x-fr-text>
+    <x-fr-text size="sm" class="font-semibold! text-inherit!">{{ $slot }}</x-fr-text>
 </div>

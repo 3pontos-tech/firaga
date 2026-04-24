@@ -268,4 +268,81 @@
             </div>
         </div>
     </section>
+
+    <section class="section">
+        <div class="container flex flex-col gap-8">
+            <x-fr-headline>
+                <x-slot:title>
+                    Qual é o seu momento?
+                </x-slot:title>
+                <x-slot:description>
+                    Sem curso, sem palestra, sem planilha genérica. Um plano construído para a
+                    <mark>sua realidade</mark> e só para ela.
+                </x-slot:description>
+            </x-fr-headline>
+
+            <div class="md:grid-cols-auto grid grid-cols-1 gap-8">
+                <x-plan-card tagline="“Meu dinheiro some sem explicação”">
+                    <x-fr-heading>Perfil Gold</x-fr-heading>
+                    <x-fr-text>
+                        Para quem quer organizar as finanças do zero e finalmente respirar no fim do mês
+                    </x-fr-text>
+
+                    <hr class="border-border-base" />
+
+                    <ul class="flex flex-col gap-4">
+                        <x-plan-feature featured>Organização Anual</x-plan-feature>
+                        <x-plan-feature>Mapa financeiro</x-plan-feature>
+                        <x-plan-feature>Construção de Reserva</x-plan-feature>
+                        <x-plan-feature>Planilha de fluxo de caixa</x-plan-feature>
+                        <x-plan-feature>Planilha de patrimônio</x-plan-feature>
+                    </ul>
+
+                    <x-fr-button variant="outline">Esse sou eu</x-fr-button>
+                </x-plan-card>
+
+                <x-plan-card variant="highlighted" tagline="“Meu dinheiro some sem explicação”">
+                    <x-fr-heading>Perfil Gold</x-fr-heading>
+                    <x-fr-text>
+                        Para quem quer organizar as finanças do zero e finalmente respirar no fim do mês
+                    </x-fr-text>
+
+                    <hr class="border-border-base" />
+
+                    <ul class="flex flex-col gap-4">
+                        <x-plan-feature featured>Organização Anual</x-plan-feature>
+                        <x-plan-feature>Mapa financeiro</x-plan-feature>
+                        <x-plan-feature>Construção de Reserva</x-plan-feature>
+                        <x-plan-feature>Planilha de fluxo de caixa</x-plan-feature>
+                        <x-plan-feature>Planilha de patrimônio</x-plan-feature>
+                    </ul>
+
+                    <x-fr-button>Esse sou eu</x-fr-button>
+                </x-plan-card>
+
+                <x-plan-card tagline="“Meu dinheiro some sem explicação”">
+                    <x-fr-heading>Perfil Gold</x-fr-heading>
+                    <x-fr-text>
+                        Para quem quer organizar as finanças do zero e finalmente respirar no fim do mês
+                    </x-fr-text>
+
+                    <hr class="border-border-base" />
+
+                    <ul class="flex flex-col gap-4">
+                        <x-plan-feature featured>Organização Anual</x-plan-feature>
+                        <x-plan-feature>Mapa financeiro</x-plan-feature>
+                        <x-plan-feature>Construção de Reserva</x-plan-feature>
+                        <x-plan-feature>Planilha de fluxo de caixa</x-plan-feature>
+                        <x-plan-feature>Planilha de patrimônio</x-plan-feature>
+                    </ul>
+
+                    <x-fr-button variant="outline">Esse sou eu</x-fr-button>
+                </x-plan-card>
+            </div>
+
+            <x-logo-badge class="flex-col justify-center text-center">
+                Não tem certeza qual é o seu? A gente descobre juntos na primeira conversa
+            </x-logo-badge>
+        </div>
+    </section>
 </x-layout.landing>
