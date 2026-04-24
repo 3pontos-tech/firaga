@@ -15,6 +15,15 @@
     <section class="section-first flex min-h-[calc(100dvh-var(--header-height))] flex-col items-center gap-4">
         <div class="container flex flex-col items-center gap-8">
             <x-fr-headline>
+                <x-slot:header>
+                    <div class="flex w-full flex-col items-center justify-center gap-2">
+                        <x-avatar-group />
+                        <x-fr-text class="font-semibold!" size="sm">
+                            Mais de 9.000 investidores já fazem parte
+                        </x-fr-text>
+                    </div>
+                </x-slot:header>
+
                 <x-slot:title>
                     Você sabe quanto ganha. <mark>Mas você sabe quanto perde?</mark>
                 </x-slot:title>
@@ -343,6 +352,32 @@
             <x-logo-badge class="flex-col justify-center text-center">
                 Não tem certeza qual é o seu? A gente descobre juntos na primeira conversa
             </x-logo-badge>
+        </div>
+    </section>
+
+    <section class="section bg-brand-primary py-20">
+        <div class="container flex flex-col gap-8">
+            <x-fr-headline>
+                <x-slot:header>
+                    <div class="flex w-full flex-col items-center justify-center gap-2">
+                        <x-avatar-group />
+                        <x-fr-text class="text-text-light! font-semibold!" size="sm">
+                            Mais de 9.000 investidores já fazem parte
+                        </x-fr-text>
+                    </div>
+                </x-slot:header>
+                <x-slot:title class="text-text-light!">
+                    Venha fazer parte da Firece
+                </x-slot:title>
+                <x-slot:description class="text-text-light!">
+                    Em média, brasileiros perdem 23% da renda sem saber para onde foi. A Firece mostra exatamente o que
+                    está acontecendo
+                </x-slot:description>
+            </x-fr-headline>
+
+            <x-fr-button variant="white"> Descobrir meu plano </x-fr-button>
+
+            <x-logo-badge class="text-text-light!"> Sem custo, sem compromisso, uma conversa rápida </x-logo-badge>
         </div>
     </section>
 </x-layout.landing>

@@ -9,21 +9,13 @@
     ]
 ])
 
-@php
-    // size-8 = 32px, -ml-2 = 8px overlap, border-2 = 2px
-    // Mask cuts a circle where the NEXT avatar sits, removing this avatar's
-    // border at the intersection so strokes don't visually double up.
-    $mask = 'radial-gradient(circle at 40px 16px, transparent 18px, black 19px)';
-@endphp
-
 <div {{ $attributes->class(['flex items-center']) }}>
     @foreach ($avatars as $avatar)
         <img
             src="{{ $avatar['src'] }}"
             alt="{{ $avatar['alt'] ?? '' }}"
-            @class (['border-border-base size-8 rounded-full border-2 object-cover', '-ml-2' => !$loop->first])
+            @class ([ 'border-elevation-surface size-8 rounded-full border-2 object-cover', '-ml-3' => !$loop->first ])
             @if (!$loop->last)
-                style="mask-image: {{ $mask }}; -webkit-mask-image: {{ $mask }};"
             @endif
         />
     @endforeach
