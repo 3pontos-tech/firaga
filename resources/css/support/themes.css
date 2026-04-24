@@ -188,7 +188,7 @@
     --gray-100: #dddddd;
     --gray-50: #f3f3f4;
     --text-high: #fdfdfd;
-    --text-medium: #9c9c9c;
+    --text-medium: #8e93a1;
     --text-low: #7a7a7b;
     --text-light: #fdfdfd;
     --text-dark: #09090a;
@@ -202,6 +202,7 @@
     --outline-low: #5e5e64;
     --outline-light: #e8e9f1;
     --outline-dark: #2c2c2d;
+    --border-base: #262629;
     --helper-success: var(--green-300);
     --helper-warning: var(--yellow-300);
     --helper-error: var(--red-300);

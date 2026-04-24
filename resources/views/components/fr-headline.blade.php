@@ -33,5 +33,9 @@
         @isset ($actions)
             <div {{ $actions->attributes->class(['fr-headline-actions']) }}>{{ $actions }}</div>
         @endisset
+
+        @isset ($footer)
+            {{ $footer }}
+        @endisset
     </div>
 </div>

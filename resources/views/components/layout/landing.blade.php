@@ -1,4 +1,8 @@
-@props (['theme' => null])
+@props ([
+    'theme' => null,
+    'splashFrom' => 'var(--color-brand-primary)',
+    'splashTo' => 'var(--color-brand-secondary)'
+])
 
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}" x-data @if ($theme) class="{{ $theme }}" @endif>
@@ -86,7 +90,7 @@
 <body
     class="bg-elevation-surface text-text-high grid min-h-dvh grid-cols-[1fr] grid-rows-[auto_1fr_auto] font-sans antialiased [grid-template-areas:'header''main''footer']"
 >
-    <x-splash />
+    <x-splash :from="$splashFrom" :to="$splashTo" />
 
     <noscript>
         <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KTVLGCHG" class="hidden h-0 w-0"></iframe>

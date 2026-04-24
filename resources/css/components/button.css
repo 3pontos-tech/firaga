@@ -76,7 +76,7 @@
 
 /* Variants */
 .fr-button-variant-solid {
-    @apply bg-brand-primary text-text-light w-full px-8 py-4 font-sans font-semibold;
+    @apply bg-brand-primary text-text-light metallic:text-text-dark w-full px-8 py-4 font-sans font-semibold;
 
     @variant md {
         @apply w-auto;
