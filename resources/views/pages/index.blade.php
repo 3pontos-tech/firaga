@@ -380,4 +380,27 @@
             <x-logo-badge class="text-text-light!"> Sem custo, sem compromisso, uma conversa rápida </x-logo-badge>
         </div>
     </section>
+
+    <section class="section">
+        <div class="container flex flex-col items-center gap-8">
+            <x-fr-headline>
+                <x-slot:header>
+                    <div class="flex w-full flex-col items-center justify-center gap-2">
+                        <x-avatar-group />
+                        <x-fr-text class="text-text-high! font-semibold!" size="sm">
+                            Mais de 50 investidores já fazem parte
+                        </x-fr-text>
+                    </div>
+                </x-slot:header>
+
+                <x-slot:title>
+                    Você sabe quanto ganha. Mas você sabe quanto perde?
+                </x-slot:title>
+                <x-slot:description>
+                    Acreditamos que educação financeira é poder. E, por aqui, formamos um time que une propósito,
+                    inovação, e alta performance para levar esse poder a mais pessoas
+                </x-slot:description>
+            </x-fr-headline>
+        </div>
+    </section>
 </x-layout.landing>
