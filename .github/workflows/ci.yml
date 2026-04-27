@@ -15,7 +15,7 @@ concurrency:
   cancel-in-progress: true
 
 env:
-  PHP_VERSION: 8.3
+  PHP_VERSION: 8.4
   PHP_EXTENSIONS: mbstring,pdo,xml,ctype,fileinfo,json,curl,openssl,dom,zip
   PHP_INI_PROPERTIES: post_max_size=256M,upload_max_filesize=256M
 
@@ -50,7 +50,7 @@ jobs:
       - name: Install composer dependencies
         uses: ramsey/composer-install@57532f8be5bda426838819c5ee9afb8af389d51a # v3.0.0
         with:
-          composer-options: "--prefer-dist"
+          composer-options: '--prefer-dist'
           custom-cache-key: ${{ steps.prepare-env.outputs.combined-key }}
   pint:
     name: Perform Pint format
@@ -73,7 +73,7 @@ jobs:
       - name: Install composer dependencies
         uses: ramsey/composer-install@57532f8be5bda426838819c5ee9afb8af389d51a # v3.0.0
         with:
-          composer-options: "--prefer-dist"
+          composer-options: '--prefer-dist'
           custom-cache-key: ${{ needs.setup.outputs.combined-key }}
 
       - name: Run Pint
@@ -103,16 +103,12 @@ jobs:
       - name: Install composer dependencies
         uses: ramsey/composer-install@57532f8be5bda426838819c5ee9afb8af389d51a # v3.0.0
         with:
-          composer-options: "--prefer-dist"
+          composer-options: '--prefer-dist'
           custom-cache-key: ${{ needs.setup.outputs.combined-key }}
 
       - name: Run Rector
         run: |
           composer run-script test:rector
-
-
-
-
 
   pest:
     name: Run Pest Tests
