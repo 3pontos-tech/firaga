@@ -146,4 +146,103 @@
             </div>
         </div>
     </section>
+
+    <section class="section mt-28">
+        <div class="container flex flex-col gap-8">
+            <x-fr-headline>
+                <x-slot:title>
+                    Caso real
+                </x-slot:title>
+                <x-slot:description>
+                    Sem curso, sem palestra, sem planilha genérica. Um plano construído para a sua realidade e só para
+                    ela.
+                </x-slot:description>
+            </x-fr-headline>
+
+            <div class="flex flex-col gap-3" data-reveal="up">
+                <x-fas-quote-left class="text-text-high size-4" />
+                <x-fr-text class="text-text-low italic">
+                    Antes, ao ver o saldo, acabava <span class="text-brand-primary">gastando por impulso</span>. Hoje,
+                    meu dinheiro tem um propósito.
+                </x-fr-text>
+                <hr class="border-border-base w-full" />
+                <div class="flex items-center gap-2">
+                    <x-avatar src="https://i.pravatar.cc/80?img=12" alt="Image Danilo" />
+                    <x-fr-text size="sm">Danilo</x-fr-text>
+                    <div class="bg-border-base size-1 rounded-full"></div>
+                    <x-fr-text size="sm">Desenvolvedor</x-fr-text>
+                </div>
+            </div>
+
+            <div class="flex flex-col gap-8">
+                <x-fr-text>
+                    Danilo é desenvolvedor backend, trabalha como PJ e tinha um problema comum: faturava bem, mas o fim
+                    do mês não refletia isso. Sem estrutura de distribuição de lucros ou destino definido para os
+                    investimentos, o dinheiro simplesmente sumia.
+                </x-fr-text>
+                <x-fr-text>
+                    Depois da consultoria com a Code Capital, organizou o CNPJ, montou uma carteira com propósito e
+                    passou a não mexer nem na reserva de emergência. O diferencial foi ter uma consultoria que constrói
+                    estratégia em vez de empurrar produto.
+                </x-fr-text>
+            </div>
+        </div>
+    </section>
+
+    <section class="section bg-brand-primary mt-28 py-20">
+        <div class="container flex flex-col gap-8">
+            <x-fr-headline data-reveal="up">
+                <x-slot:header>
+                    <div class="flex w-full flex-col items-center justify-center gap-2">
+                        <x-avatar-group />
+                        <x-fr-text class="text-text-light! font-semibold!" size="sm">
+                            Mais de 9.000 investidores já fazem parte
+                        </x-fr-text>
+                    </div>
+                </x-slot:header>
+                <x-slot:title class="text-text-light!">
+                    Venha fazer parte da Firece
+                </x-slot:title>
+                <x-slot:description class="text-text-light!">
+                    Em média, brasileiros perdem 23% da renda sem saber para onde foi. A Firece mostra exatamente o que
+                    está acontecendo
+                </x-slot:description>
+            </x-fr-headline>
+
+            <x-fr-button variant="white"> Descobrir meu plano </x-fr-button>
+
+            <x-logo-badge class="text-text-light!"> Sem custo, sem compromisso, uma conversa rápida </x-logo-badge>
+        </div>
+    </section>
+
+    <section class="section mt-28 mb-11">
+        <div class="container flex flex-col gap-8">
+            <x-fr-headline data-reveal="up">
+                <x-slot:title>
+                    Perguntas frequentes
+                </x-slot:title>
+                <x-slot:description>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam urna tellus, cursus vitae vestibulum
+                    quis, pretium eu dui.
+                </x-slot:description>
+            </x-fr-headline>
+
+            <div class="flex flex-col gap-3" data-reveal-stagger="140">
+                <x-faq-item data-reveal="up" question="O Key Account é para qualquer pessoa?">
+                    Não. O modelo é pensado para quem já tem patrimônio relevante, renda acima da média ou decisões
+                    financeiras complexas que exigem acompanhamento próximo e personalizado.
+                </x-faq-item>
+
+                <x-faq-item data-reveal="up" question="Qual a diferença entre o Key Account e os outros planos?">
+                    No Key Account você tem um consultor dedicado, atendimento prioritário, estratégia patrimonial
+                    avançada e acesso a alocação internacional — sem a padronização dos planos convencionais.
+                </x-faq-item>
+
+                <x-faq-item data-reveal="up" question="Como funciona o primeiro contato?">
+                    Agendamos uma conversa de 30 minutos para entender o seu momento financeiro. Sem compromisso e sem
+                    proposta antes de ouvir você.
+                </x-faq-item>
+            </div>
+        </div>
+    </section>
 </x-layout.landing>
