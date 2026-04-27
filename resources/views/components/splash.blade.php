@@ -1,6 +1,7 @@
 @props ([
     'from' => 'var(--color-brand-primary)',
     'to' => 'var(--color-brand-secondary)',
+    'logoClass' => 'text-white',
     'key' => null
 ])
 
@@ -32,6 +33,6 @@
     aria-hidden="true"
 >
     <div class="splash-logo" :class="{ 'splash-logo--hidden': logoHidden }">
-        <x-logo-with-text size="xl" :clickable="false" class="text-white" />
+        <x-logo-with-text size="xl" :clickable="false" class="{{ $logoClass }}" />
     </div>
 </div>

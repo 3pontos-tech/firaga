@@ -1,7 +1,8 @@
 @props ([
     'theme' => null,
     'splashFrom' => 'var(--color-brand-primary)',
-    'splashTo' => 'var(--color-brand-secondary)'
+    'splashTo' => 'var(--color-brand-secondary)',
+    'splashLogoClass' => 'text-white'
 ])
 
 <!DOCTYPE html>
@@ -90,7 +91,7 @@
 <body
     class="bg-elevation-surface text-text-high grid min-h-dvh grid-cols-[1fr] grid-rows-[auto_1fr_auto] font-sans antialiased [grid-template-areas:'header''main''footer']"
 >
-    <x-splash :from="$splashFrom" :to="$splashTo" />
+    <x-splash :from="$splashFrom" :to="$splashTo" :logoClass="$splashLogoClass" />
 
     <noscript>
         <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KTVLGCHG" class="hidden h-0 w-0"></iframe>
