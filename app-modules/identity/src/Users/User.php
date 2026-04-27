@@ -72,7 +72,7 @@ final class User extends Authenticatable implements FilamentUser, HasMedia
 
     public function canAccessPanel(Panel $panel): bool
     {
-        return match ($panel->currentPanel()) {
+        return match (FilamentPanel::tryFrom($panel->getId())) {
             FilamentPanel::Admin => $this->hasRole(Roles::SuperAdmin),
             default => false,
         };

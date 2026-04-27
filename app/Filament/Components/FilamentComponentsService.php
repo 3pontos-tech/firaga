@@ -14,7 +14,7 @@ class FilamentComponentsService
     {
         $blocks = [];
 
-        $componentsConfig = config('cms.components') ?? [];
+        $componentsConfig = config('cms.components', []);
 
         foreach ($componentsConfig as $component) {
             /** @var ComponentContract $componentClass */

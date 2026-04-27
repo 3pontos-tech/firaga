@@ -10,7 +10,7 @@ return new class extends Migration
 {
     public function up(): void
     {
-        Schema::create(config('settings.database_table_name'), function (Blueprint $table): void {
+        Schema::create('settings', function (Blueprint $table): void {
             $table->id();
             $table->string('key')
                 ->unique()
@@ -23,6 +23,6 @@ return new class extends Migration
 
     public function down(): void
     {
-        Schema::dropIfExists(config('settings.database_table_name'));
+        Schema::dropIfExists('settings');
     }
 };
