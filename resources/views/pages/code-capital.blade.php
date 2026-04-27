@@ -50,4 +50,100 @@
             </div>
         </div>
     </section>
+
+    <section class="section dark bg-elevation-surface mt-28 py-20">
+        <div class="container flex flex-col gap-8">
+            <x-fr-headline align="left">
+                <x-slot:title>
+                    Atendemos <mark>todo tipo</mark> de dev
+                </x-slot:title>
+                <x-slot:description>
+                    CLT, PJ, freela ou remoto o planejamento é adaptado para o seu regime, não para um genérico.
+                </x-slot:description>
+            </x-fr-headline>
+
+            <div class="flex flex-col gap-4" data-reveal="up">
+                <x-fr-heading size="xs"> O que buscamos </x-fr-heading>
+
+                <div class="flex flex-col gap-8" data-reveal-stagger="120">
+                    <div class="flex gap-3">
+                        <x-heroicon-c-arrow-right class="text-brand-primary size-5" />
+
+                        <div class="flex flex-col gap-2">
+                            <x-fr-text class="text-brand-primary! font-semibold!" size="xs">Especialidade</x-fr-text>
+                            <x-fr-heading size="xxs"> PJ / CNPJ </x-fr-heading>
+                            <x-fr-text size="sm">
+                                Pró-labore, distribuição de lucros e regime tributário usados a favor do seu patrimônio.
+                            </x-fr-text>
+                        </div>
+                    </div>
+
+                    <div class="flex gap-3">
+                        <x-heroicon-c-arrow-right class="text-brand-primary size-5" />
+
+                        <div class="flex flex-col gap-2">
+                            <x-fr-text class="text-brand-primary! font-semibold!" size="xs">Atendemos</x-fr-text>
+                            <x-fr-heading size="xxs"> Remoto USD / EUR </x-fr-heading>
+                            <x-fr-text size="sm">
+                                Câmbio como estratégia de patrimônio, não só uma variável. Alocação inteligente em moeda
+                                forte.
+                            </x-fr-text>
+                        </div>
+                    </div>
+
+                    <div class="flex gap-3">
+                        <x-heroicon-c-arrow-right class="text-brand-primary size-5" />
+
+                        <div class="flex flex-col gap-2">
+                            <x-fr-text class="text-brand-primary! font-semibold!" size="xs">Atendemos</x-fr-text>
+                            <x-fr-heading size="xxs"> Stock Options </x-fr-heading>
+                            <x-fr-text size="sm">
+                                Quando e como exercer, com visão de impacto tributário e estratégia de patrimônio de
+                                longo prazo.
+                            </x-fr-text>
+                        </div>
+                    </div>
+
+                    <div class="flex gap-3">
+                        <x-heroicon-c-arrow-right class="text-brand-primary size-5" />
+
+                        <div class="flex flex-col gap-2">
+                            <x-fr-text class="text-brand-primary! font-semibold!" size="xs">Atendemos</x-fr-text>
+                            <x-fr-heading size="xxs"> CLT </x-fr-heading>
+                            <x-fr-text size="sm">
+                                Planejamento financeiro além do salário: investimentos, reservas e objetivos de longo
+                                prazo.
+                            </x-fr-text>
+                        </div>
+                    </div>
+
+                    <div class="flex gap-3">
+                        <x-heroicon-c-arrow-right class="text-brand-primary size-5" />
+
+                        <div class="flex flex-col gap-2">
+                            <x-fr-text class="text-brand-primary! font-semibold!" size="xs">Atendemos</x-fr-text>
+                            <x-fr-heading size="xxs"> Freela </x-fr-heading>
+                            <x-fr-text size="sm">
+                                Renda variável com estrutura sólida: reserva de emergência, fluxo de caixa e crescimento
+                                sustentável.
+                            </x-fr-text>
+                        </div>
+                    </div>
+
+                    <div class="flex gap-3">
+                        <x-heroicon-c-arrow-right class="text-brand-primary size-5" />
+
+                        <div class="flex flex-col gap-2">
+                            <x-fr-text class="text-brand-primary! font-semibold!" size="xs">Atendemos</x-fr-text>
+                            <x-fr-heading size="xxs"> Mix de regimes </x-fr-heading>
+                            <x-fr-text size="sm">
+                                CLT + freela + crypto + USD ao mesmo tempo. A realidade de muitos profissionais de tech
+                                hoje.
+                            </x-fr-text>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 </x-layout.landing>
