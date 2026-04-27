@@ -76,7 +76,7 @@
 
 /* Actions */
 .fr-headline-actions {
-    @apply mt-4 flex w-full flex-col items-center justify-center gap-4 sm:flex-row sm:gap-6;
+    @apply flex w-full flex-col items-center justify-center gap-4 sm:flex-row sm:gap-6;
 }
 
 .fr-headline-align-left .fr-headline-actions {

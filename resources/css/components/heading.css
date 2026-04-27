@@ -4,7 +4,7 @@
    ========================================================================== */
 
 .fr-heading {
-    @apply font-display font-medium tracking-tight wrap-break-word;
+    @apply font-display text-text-high font-medium tracking-tight wrap-break-word;
 }
 
 .fr-heading-size-xxs {
