@@ -347,6 +347,18 @@
                     </div>
                 </div>
             </div>
+
+            <x-testimonial
+                data-reveal="up"
+                name="Felipe Rosa"
+                role="Design"
+                avatar="https://i.pravatar.cc/80?img=12"
+                metric="0% → 20% da renda investida"
+            >
+                Nunca achei que ia conseguir sair das dívidas. Em 5 meses com o
+                <span class="text-brand-primary font-bold">Matheus</span>, pela primeira vez na vida eu tenho reserva de
+                emergência.
+            </x-testimonial>
         </div>
     </section>
 </x-layout.landing>
