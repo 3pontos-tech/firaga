@@ -18,6 +18,9 @@
     --color-brand-secondary: var(--brand-secondary);
     --color-brand-accent: var(--brand-accent);
 
+    --color-flamma-primary: var(--flamma-primary);
+    --color-flamma-secondary: var(--flamma-secondary);
+
     --color-red-primary: var(--red-primary);
     --color-red-900: var(--red-900);
     --color-red-800: var(--red-800);

@@ -75,4 +75,90 @@
             </x-fr-headline>
         </div>
     </section>
+
+    <section class="section from-flamma-primary to-flamma-secondary bg-linear-to-r py-20">
+        <div class="container flex flex-col gap-8">
+            <x-fr-headline size="2xl" align="left">
+                <x-slot:title class="text-text-light!">
+                    Como funciona?
+                </x-slot:title>
+                <x-slot:description class="text-text-light!">
+                    A Flamma surge como um benefício corporativo inovador, desenhado para empoderar seus colaboradores
+                    com educação financeira de alta qualidade.
+                </x-slot:description>
+            </x-fr-headline>
+
+            <div
+                class="border-border-base divide-border-base grid w-full grid-cols-1 divide-y border-y"
+                data-reveal-stagger="140"
+            >
+                <div class="flex flex-col gap-3 py-8" data-reveal="up">
+                    <div class="flex items-center justify-between">
+                        <p class="text-text-light font-display text-xl font-medium">01</p>
+                        <x-heroicon-c-chevron-right class="text-text-light size-7" />
+                    </div>
+
+                    <x-fr-headline align="left" size="sm" container-class="gap-2!">
+                        <x-slot:title class="text-text-light!">
+                            Contratação
+                        </x-slot:title>
+                        <x-slot:description class="text-text-light!">
+                            A empresa contrata pacotes de horas mensais, semestrais ou anuais disponíveis para todos os
+                            colaboradores.
+                        </x-slot:description>
+                    </x-fr-headline>
+                </div>
+
+                <div class="flex flex-col gap-3 py-8" data-reveal="up">
+                    <div class="flex items-center justify-between">
+                        <p class="text-text-light font-display text-xl font-medium">02</p>
+                        <x-heroicon-c-chevron-right class="text-text-light size-7" />
+                    </div>
+
+                    <x-fr-headline align="left" size="sm" container-class="gap-2!">
+                        <x-slot:title class="text-text-light!">
+                            Agendamento
+                        </x-slot:title>
+                        <x-slot:description class="text-text-light!">
+                            Cada colaborador agenda seu atendimento diretamente pela plataforma Flamma, quando quiser.
+                        </x-slot:description>
+                    </x-fr-headline>
+                </div>
+
+                <div class="flex flex-col gap-3 py-8" data-reveal="up">
+                    <div class="flex items-center justify-between">
+                        <p class="text-text-light font-display text-xl font-medium">03</p>
+                        <x-heroicon-c-chevron-right class="text-text-light size-7" />
+                    </div>
+
+                    <x-fr-headline align="left" size="sm" container-class="gap-2!">
+                        <x-slot:title class="text-text-light!">
+                            Atendimento
+                        </x-slot:title>
+                        <x-slot:description class="text-text-light!">
+                            Sessões individuais de 60 minutos com consultores especializados, online ou presencial.
+                        </x-slot:description>
+                    </x-fr-headline>
+                </div>
+
+                <div class="flex flex-col gap-3 py-8" data-reveal="up">
+                    <div class="flex items-center justify-between">
+                        <p class="text-text-light font-display text-xl font-medium">04</p>
+                        <x-heroicon-c-chevron-right class="text-text-light size-7" />
+                    </div>
+
+                    <x-fr-headline align="left" size="sm" container-class="gap-2!">
+                        <x-slot:title class="text-text-light!">
+                            Relatórios de impacto
+                        </x-slot:title>
+                        <x-slot:description class="text-text-light!">
+                            O RH acompanha a adesão e os resultados com relatórios consolidados de uso e evolução.
+                        </x-slot:description>
+                    </x-fr-headline>
+                </div>
+            </div>
+
+            <x-fr-button variant="white"> Descobrir meu plano </x-fr-button>
+        </div>
+    </section>
 </x-layout.landing>
