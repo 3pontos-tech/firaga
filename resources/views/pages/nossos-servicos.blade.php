@@ -161,4 +161,179 @@
             <x-fr-button variant="white"> Descobrir meu plano </x-fr-button>
         </div>
     </section>
+
+    <section class="section">
+        <div class="container flex flex-col gap-16">
+            <div class="flex flex-col gap-8">
+                <x-fr-headline align="left">
+                    <x-slot:header>
+                        <x-fr-text size="sm" class="text-brand-primary! font-semibold!">
+                            Planejamento financeiro
+                        </x-fr-text>
+                    </x-slot:header>
+                    <x-slot:title>
+                        O ponto de partida de <mark>2.347 histórias</mark>
+                    </x-slot:title>
+                    <x-slot:description>
+                        O Planejamento Financeiro é onde tudo começa. Três encontros com um consultor dedicado que vai
+                        entender sua realidade dívidas, hábitos, objetivos e construir uma estratégia feita para você.
+                        Não para um perfil genérico. Para você.
+                    </x-slot:description>
+                </x-fr-headline>
+
+                <div class="flex flex-col gap-4" data-reveal="up">
+                    <x-fr-heading size="xs"> O que buscamos </x-fr-heading>
+
+                    <div class="flex flex-col gap-8" data-reveal-stagger="120">
+                        <div class="flex items-center gap-3">
+                            <x-heroicon-c-arrow-right class="text-brand-primary size-5" />
+
+                            <div class="flex flex-col gap-2">
+                                <x-fr-text size="sm">
+                                    Você sabe, pela primeira vez, para onde vai cada real da sua renda
+                                </x-fr-text>
+                            </div>
+                        </div>
+
+                        <div class="flex items-center gap-3">
+                            <x-heroicon-c-arrow-right class="text-brand-primary size-5" />
+
+                            <div class="flex flex-col gap-2">
+                                <x-fr-text size="sm">
+                                    Tem um plano real para os próximos 12 meses com metas que cabem na sua realidade
+                                </x-fr-text>
+                            </div>
+                        </div>
+
+                        <div class="flex items-center gap-3">
+                            <x-heroicon-c-arrow-right class="text-brand-primary size-5" />
+
+                            <div class="flex flex-col gap-2">
+                                <x-fr-text size="sm">
+                                    Começa a construir reserva de emergência sem precisar ganhar mais
+                                </x-fr-text>
+                            </div>
+                        </div>
+
+                        <div class="flex items-center gap-3">
+                            <x-heroicon-c-arrow-right class="text-brand-primary size-5" />
+
+                            <div class="flex flex-col gap-2">
+                                <x-fr-text size="sm">
+                                    Toma decisões financeiras com clareza, não com ansiedade
+                                </x-fr-text>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="flex flex-col items-center gap-8" x-data="{ selected: 'gold' }">
+                <x-fr-text size="sm" class="”text-brand-primary!" font-semibold!”> Escolha seu momento </x-fr-text>
+
+                <div class="flex w-full">
+                    <button
+                        class="w-full border-b pb-2 transition-colors"
+                        :class="selected === 'gold' ? 'border-brand-primary' : 'border-border-base'"
+                        @click="selected = 'gold'"
+                    >
+                        <x-fr-text
+                            x-bind:class="selected === 'gold' ? 'text-brand-primary! font-semibold!' : 'font-semibold!'"
+                        >
+                            Gold
+                        </x-fr-text>
+                    </button>
+                    <button
+                        class="w-full border-b pb-2 transition-colors"
+                        :class="selected === 'platinum' ? 'border-brand-primary' : 'border-border-base'"
+                        @click="selected = 'platinum'"
+                    >
+                        <x-fr-text
+                            x-bind:class="
+                                selected === 'platinum' ? 'text-brand-primary! font-semibold!' : 'font-semibold!'
+                            "
+                        >
+                            Platinum
+                        </x-fr-text>
+                    </button>
+                    <button
+                        class="w-full border-b pb-2 transition-colors"
+                        :class="selected === 'black' ? 'border-brand-primary' : 'border-border-base'"
+                        @click="selected = 'black'"
+                    >
+                        <x-fr-text
+                            x-bind:class="
+                                selected === 'black' ? 'text-brand-primary! font-semibold!' : 'font-semibold!'
+                            "
+                        >
+                            Black
+                        </x-fr-text>
+                    </button>
+                </div>
+
+                <div x-show="selected === 'gold'" x-transition class="w-full">
+                    <x-plan-card :tagline="'Meu dinheiro some sem explicação'">
+                        <x-fr-heading>Perfil Gold</x-fr-heading>
+                        <x-fr-text>
+                            Para quem quer organizar as finanças do zero e finalmente respirar no fim do mês
+                        </x-fr-text>
+
+                        <hr class="border-border-base" />
+
+                        <ul class="flex flex-col gap-4">
+                            <x-plan-feature featured>Organização Anual</x-plan-feature>
+                            <x-plan-feature>Mapa financeiro</x-plan-feature>
+                            <x-plan-feature>Construção de Reserva</x-plan-feature>
+                            <x-plan-feature>Planilha de fluxo de caixa</x-plan-feature>
+                            <x-plan-feature>Planilha de patrimônio</x-plan-feature>
+                        </ul>
+
+                        <x-fr-button variant="outline">Esse sou eu</x-fr-button>
+                    </x-plan-card>
+                </div>
+
+                <div x-show="selected === 'platinum'" x-transition class="w-full" style="display: none">
+                    <x-plan-card variant="highlighted" :tagline="'Meu dinheiro some sem explicação'">
+                        <x-fr-heading>Perfil Platinum</x-fr-heading>
+                        <x-fr-text>
+                            Para quem quer organizar as finanças do zero e finalmente respirar no fim do mês
+                        </x-fr-text>
+
+                        <hr class="border-border-base" />
+
+                        <ul class="flex flex-col gap-4">
+                            <x-plan-feature featured>Organização Anual</x-plan-feature>
+                            <x-plan-feature>Mapa financeiro</x-plan-feature>
+                            <x-plan-feature>Construção de Reserva</x-plan-feature>
+                            <x-plan-feature>Planilha de fluxo de caixa</x-plan-feature>
+                            <x-plan-feature>Planilha de patrimônio</x-plan-feature>
+                        </ul>
+
+                        <x-fr-button>Esse sou eu</x-fr-button>
+                    </x-plan-card>
+                </div>
+
+                <div x-show="selected === 'black'" x-transition class="w-full" style="display: none">
+                    <x-plan-card :tagline="'Meu dinheiro some sem explicação'">
+                        <x-fr-heading>Perfil Black</x-fr-heading>
+                        <x-fr-text>
+                            Para quem quer organizar as finanças do zero e finalmente respirar no fim do mês
+                        </x-fr-text>
+
+                        <hr class="border-border-base" />
+
+                        <ul class="flex flex-col gap-4">
+                            <x-plan-feature featured>Organização Anual</x-plan-feature>
+                            <x-plan-feature>Mapa financeiro</x-plan-feature>
+                            <x-plan-feature>Construção de Reserva</x-plan-feature>
+                            <x-plan-feature>Planilha de fluxo de caixa</x-plan-feature>
+                            <x-plan-feature>Planilha de patrimônio</x-plan-feature>
+                        </ul>
+
+                        <x-fr-button variant="outline">Esse sou eu</x-fr-button>
+                    </x-plan-card>
+                </div>
+            </div>
+        </div>
+    </section>
 </x-layout.landing>

@@ -317,7 +317,7 @@
                 </x-plan-card>
 
                 <x-plan-card data-reveal="up" variant="highlighted" tagline="“Meu dinheiro some sem explicação”">
-                    <x-fr-heading>Perfil Gold</x-fr-heading>
+                    <x-fr-heading>Perfil Platinum</x-fr-heading>
                     <x-fr-text>
                         Para quem quer organizar as finanças do zero e finalmente respirar no fim do mês
                     </x-fr-text>
@@ -336,7 +336,7 @@
                 </x-plan-card>
 
                 <x-plan-card data-reveal="up" tagline="“Meu dinheiro some sem explicação”">
-                    <x-fr-heading>Perfil Gold</x-fr-heading>
+                    <x-fr-heading>Perfil Black</x-fr-heading>
                     <x-fr-text>
                         Para quem quer organizar as finanças do zero e finalmente respirar no fim do mês
                     </x-fr-text>
