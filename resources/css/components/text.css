@@ -1,0 +1,28 @@
+/* ==========================================================================
+   Text — Body text paragraph
+   Usage: <x-fr-text size="md">...</x-fr-text>
+   ========================================================================== */
+
+.fr-text {
+    @apply text-text-medium font-medium;
+}
+
+.fr-text-xs {
+    @apply text-xxxs;
+}
+
+.fr-text-sm {
+    @apply text-xxs;
+}
+
+.fr-text-md {
+    @apply text-xs;
+}
+
+.fr-text-lg {
+    @apply text-xs sm:text-sm;
+}
+
+.fr-text-xl {
+    @apply sm:text-md text-sm;
+}

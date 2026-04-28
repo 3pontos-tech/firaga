@@ -1,0 +1,41 @@
+/* Cal Sans — display/headings */
+@font-face {
+    font-family: 'Cal Sans';
+    src: url('../../../public/fonts/cal-sans/CalSans-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* Satoshi — body text */
+@font-face {
+    font-family: 'Satoshi';
+    src: url('../../../public/fonts/satoshi/Satoshi-Light.otf') format('opentype');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Satoshi';
+    src: url('../../../public/fonts/satoshi/Satoshi-Regular.otf') format('opentype');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Satoshi';
+    src: url('../../../public/fonts/satoshi/Satoshi-Medium.otf') format('opentype');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Satoshi';
+    src: url('../../../public/fonts/satoshi/Satoshi-Bold.otf') format('opentype');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}

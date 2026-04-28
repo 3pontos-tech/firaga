@@ -1,0 +1,30 @@
+[x-cloak] {
+    display: none !important;
+}
+
+.splash-seen .splash-overlay {
+    display: none !important;
+}
+
+.splash-overlay {
+    transition: transform 600ms cubic-bezier(0.65, 0, 0.35, 1);
+    transform: translateY(0);
+    will-change: transform;
+}
+
+.splash-overlay--sliding {
+    transform: translateY(100%);
+}
+
+.splash-logo {
+    transition:
+        opacity 300ms ease,
+        transform 300ms ease;
+    opacity: 1;
+    transform: scale(1);
+}
+
+.splash-logo--hidden {
+    opacity: 0;
+    transform: scale(0.92);
+}

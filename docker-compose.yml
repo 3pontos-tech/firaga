@@ -1,41 +1,41 @@
 services:
-  sycorax-db:
+  firaga-db:
     build:
       dockerfile: docker/postgres.Dockerfile
       context: .
     image: postgres.local:18
-    container_name: sycorax-db
+    container_name: firaga-db
     restart: no
     hostname: dev
     environment:
-      POSTGRES_USER: postgres
-      POSTGRES_PASSWORD: postgres
-      POSTGRES_DB: dev_sycorax
+      POSTGRES_USER: ${DB_USERNAME}
+      POSTGRES_PASSWORD: ${DB_PASSWORD}
+      POSTGRES_DB: ${DB_DATABASE}
     ports:
       - '5432:5432'
     volumes:
-      - sycorax-db:/var/lib/postgresql
+      - firaga-db:/var/lib/postgresql
     networks:
-      - dev-sycorax
+      - dev-firaga
     healthcheck:
-      test: ['CMD-SHELL', 'pg_isready --quiet --username=postgres --dbname=postgres || exit 1']
+      test: ['CMD-SHELL', 'pg_isready --quiet --username=firaga --dbname=dev_firaga || exit 1']
       interval: 10s
       retries: 5
       timeout: 10s
       start_period: 15s
 
-  sycorax-redis:
+  firaga-redis:
     build:
       dockerfile: docker/redis.Dockerfile
       context: .
     image: redis.local:8
-    container_name: sycorax-redis
+    container_name: firaga-redis
     restart: no
     hostname: dev
     ports:
       - '6379:6379'
     networks:
-      - dev-sycorax
+      - dev-firaga
     healthcheck:
       test: ['CMD-SHELL', 'redis-cli --raw incr ping || exit 1']
       interval: 10s
@@ -43,19 +43,19 @@ services:
       timeout: 10s
       start_period: 15s
 
-  sycorax-mailpit:
+  firaga-mailpit:
     build:
       dockerfile: docker/mailpit.Dockerfile
       context: .
     image: mailpit.local:1
-    container_name: sycorax-mailpit
+    container_name: firaga-mailpit
     restart: no
     hostname: dev
     ports:
       - '1025:1025'
       - '8025:8025'
     networks:
-      - dev-sycorax
+      - dev-firaga
     healthcheck:
       test: ['CMD', '/mailpit', 'readyz']
       interval: 10s
@@ -64,13 +64,13 @@ services:
       start_period: 10s
 
 volumes:
-  sycorax-db:
-    name: sycorax-db
+  firaga-db:
+    name: firaga-db
 
 networks:
-  dev-sycorax:
-    name: dev-sycorax
+  dev-firaga:
+    name: dev-firaga
     driver: bridge
     driver_opts:
-      com.docker.network.bridge.name: dev-sycorax
+      com.docker.network.bridge.name: dev-firaga
       com.docker.network.bridge.host_binding_ipv4: '127.0.0.1'
