@@ -273,67 +273,78 @@
                     </button>
                 </div>
 
-                <div x-show="selected === 'gold'" class="w-full">
-                    <x-plan-card :tagline="'Meu dinheiro some sem explicação'">
-                        <x-fr-heading>Perfil Gold</x-fr-heading>
-                        <x-fr-text>
-                            Para quem quer organizar as finanças do zero e finalmente respirar no fim do mês
-                        </x-fr-text>
+                <div class="grid w-full [grid-template-areas:'card']">
+                    <div
+                        class="transition-opacity duration-300 [grid-area:card]"
+                        :class="selected === 'gold' ? 'opacity-100' : 'opacity-0 pointer-events-none'"
+                    >
+                        <x-plan-card :tagline="'Meu dinheiro some sem explicação'">
+                            <x-fr-heading>Perfil Gold</x-fr-heading>
+                            <x-fr-text>
+                                Para quem quer organizar as finanças do zero e finalmente respirar no fim do mês
+                            </x-fr-text>
 
-                        <hr class="border-border-base" />
+                            <hr class="border-border-base" />
 
-                        <ul class="flex flex-col gap-4">
-                            <x-plan-feature featured>Organização Anual</x-plan-feature>
-                            <x-plan-feature>Mapa financeiro</x-plan-feature>
-                            <x-plan-feature>Construção de Reserva</x-plan-feature>
-                            <x-plan-feature>Planilha de fluxo de caixa</x-plan-feature>
-                            <x-plan-feature>Planilha de patrimônio</x-plan-feature>
-                        </ul>
+                            <ul class="flex flex-col gap-4">
+                                <x-plan-feature featured>Organização Anual</x-plan-feature>
+                                <x-plan-feature>Mapa financeiro</x-plan-feature>
+                                <x-plan-feature>Construção de Reserva</x-plan-feature>
+                                <x-plan-feature>Planilha de fluxo de caixa</x-plan-feature>
+                                <x-plan-feature>Planilha de patrimônio</x-plan-feature>
+                            </ul>
 
-                        <x-fr-button variant="outline">Esse sou eu</x-fr-button>
-                    </x-plan-card>
-                </div>
+                            <x-fr-button variant="outline">Esse sou eu</x-fr-button>
+                        </x-plan-card>
+                    </div>
 
-                <div x-show="selected === 'platinum'" class="w-full" style="display: none">
-                    <x-plan-card variant="highlighted" :tagline="'Meu dinheiro some sem explicação'">
-                        <x-fr-heading>Perfil Platinum</x-fr-heading>
-                        <x-fr-text>
-                            Para quem quer organizar as finanças do zero e finalmente respirar no fim do mês
-                        </x-fr-text>
+                    <div
+                        class="transition-opacity duration-300 [grid-area:card]"
+                        :class="selected === 'platinum' ? 'opacity-100' : 'opacity-0 pointer-events-none'"
+                    >
+                        <x-plan-card variant="highlighted" :tagline="'Meu dinheiro some sem explicação'">
+                            <x-fr-heading>Perfil Platinum</x-fr-heading>
+                            <x-fr-text>
+                                Para quem quer organizar as finanças do zero e finalmente respirar no fim do mês
+                            </x-fr-text>
 
-                        <hr class="border-border-base" />
+                            <hr class="border-border-base" />
 
-                        <ul class="flex flex-col gap-4">
-                            <x-plan-feature featured>Organização Anual</x-plan-feature>
-                            <x-plan-feature>Mapa financeiro</x-plan-feature>
-                            <x-plan-feature>Construção de Reserva</x-plan-feature>
-                            <x-plan-feature>Planilha de fluxo de caixa</x-plan-feature>
-                            <x-plan-feature>Planilha de patrimônio</x-plan-feature>
-                        </ul>
+                            <ul class="flex flex-col gap-4">
+                                <x-plan-feature featured>Organização Anual</x-plan-feature>
+                                <x-plan-feature>Mapa financeiro</x-plan-feature>
+                                <x-plan-feature>Construção de Reserva</x-plan-feature>
+                                <x-plan-feature>Planilha de fluxo de caixa</x-plan-feature>
+                                <x-plan-feature>Planilha de patrimônio</x-plan-feature>
+                            </ul>
 
-                        <x-fr-button>Esse sou eu</x-fr-button>
-                    </x-plan-card>
-                </div>
+                            <x-fr-button>Esse sou eu</x-fr-button>
+                        </x-plan-card>
+                    </div>
 
-                <div x-show="selected === 'black'" class="w-full" style="display: none">
-                    <x-plan-card :tagline="'Meu dinheiro some sem explicação'">
-                        <x-fr-heading>Perfil Black</x-fr-heading>
-                        <x-fr-text>
-                            Para quem quer organizar as finanças do zero e finalmente respirar no fim do mês
-                        </x-fr-text>
+                    <div
+                        class="transition-opacity duration-300 [grid-area:card]"
+                        :class="selected === 'black' ? 'opacity-100' : 'opacity-0 pointer-events-none'"
+                    >
+                        <x-plan-card :tagline="'Meu dinheiro some sem explicação'">
+                            <x-fr-heading>Perfil Black</x-fr-heading>
+                            <x-fr-text>
+                                Para quem quer organizar as finanças do zero e finalmente respirar no fim do mês
+                            </x-fr-text>
 
-                        <hr class="border-border-base" />
+                            <hr class="border-border-base" />
 
-                        <ul class="flex flex-col gap-4">
-                            <x-plan-feature featured>Organização Anual</x-plan-feature>
-                            <x-plan-feature>Mapa financeiro</x-plan-feature>
-                            <x-plan-feature>Construção de Reserva</x-plan-feature>
-                            <x-plan-feature>Planilha de fluxo de caixa</x-plan-feature>
-                            <x-plan-feature>Planilha de patrimônio</x-plan-feature>
-                        </ul>
+                            <ul class="flex flex-col gap-4">
+                                <x-plan-feature featured>Organização Anual</x-plan-feature>
+                                <x-plan-feature>Mapa financeiro</x-plan-feature>
+                                <x-plan-feature>Construção de Reserva</x-plan-feature>
+                                <x-plan-feature>Planilha de fluxo de caixa</x-plan-feature>
+                                <x-plan-feature>Planilha de patrimônio</x-plan-feature>
+                            </ul>
 
-                        <x-fr-button variant="outline">Esse sou eu</x-fr-button>
-                    </x-plan-card>
+                            <x-fr-button variant="outline">Esse sou eu</x-fr-button>
+                        </x-plan-card>
+                    </div>
                 </div>
             </div>
         </div>
