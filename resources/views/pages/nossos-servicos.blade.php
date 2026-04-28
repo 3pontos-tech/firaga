@@ -3,7 +3,7 @@
         <div class="container flex flex-col gap-8">
             <x-fr-headline size="2xl">
                 <x-slot:header>
-                    <x-logo-badge> Nossos serviços </x-logo-badge>
+                    <x-logo-badge> Nossos serviços</x-logo-badge>
                 </x-slot:header>
                 <x-slot:title>
                     Qual é o seu próximo capítulo?
@@ -65,7 +65,8 @@
             </div>
             <x-fr-headline>
                 <x-slot:title>
-                    Educação financeira pessoal como <mark>benefício corporativo</mark>
+                    Educação financeira pessoal como
+                    <mark>benefício corporativo</mark>
                 </x-slot:title>
                 <x-slot:description>
                     Com pacotes flexíveis, sua empresa garante orientação individualizada para os colaboradores,
@@ -158,7 +159,7 @@
                 </div>
             </div>
 
-            <x-fr-button variant="white"> Descobrir meu plano </x-fr-button>
+            <x-fr-button variant="white"> Descobrir meu plano</x-fr-button>
         </div>
     </section>
 
@@ -172,7 +173,8 @@
                         </x-fr-text>
                     </x-slot:header>
                     <x-slot:title>
-                        O ponto de partida de <mark>2.347 histórias</mark>
+                        O ponto de partida de
+                        <mark>2.347 histórias</mark>
                     </x-slot:title>
                     <x-slot:description>
                         O Planejamento Financeiro é onde tudo começa. Três encontros com um consultor dedicado que vai
@@ -182,7 +184,7 @@
                 </x-fr-headline>
 
                 <div class="flex flex-col gap-4" data-reveal="up">
-                    <x-fr-heading size="xs"> O que buscamos </x-fr-heading>
+                    <x-fr-heading size="xs"> O que buscamos</x-fr-heading>
 
                     <div class="flex flex-col gap-8" data-reveal-stagger="120">
                         <div class="flex items-center gap-3">
@@ -229,7 +231,7 @@
             </div>
 
             <div class="flex flex-col items-center gap-8" x-data="{ selected: 'gold' }">
-                <x-fr-text size="sm" class="”text-brand-primary!" font-semibold!”> Escolha seu momento </x-fr-text>
+                <x-fr-text size="sm" class="text-brand-primary! font-semibold!"> Escolha seu momento</x-fr-text>
 
                 <div class="flex w-full">
                     <button
@@ -271,7 +273,7 @@
                     </button>
                 </div>
 
-                <div x-show="selected === 'gold'" x-transition class="w-full">
+                <div x-show="selected === 'gold'" class="w-full">
                     <x-plan-card :tagline="'Meu dinheiro some sem explicação'">
                         <x-fr-heading>Perfil Gold</x-fr-heading>
                         <x-fr-text>
@@ -292,7 +294,7 @@
                     </x-plan-card>
                 </div>
 
-                <div x-show="selected === 'platinum'" x-transition class="w-full" style="display: none">
+                <div x-show="selected === 'platinum'" class="w-full" style="display: none">
                     <x-plan-card variant="highlighted" :tagline="'Meu dinheiro some sem explicação'">
                         <x-fr-heading>Perfil Platinum</x-fr-heading>
                         <x-fr-text>
@@ -313,7 +315,7 @@
                     </x-plan-card>
                 </div>
 
-                <div x-show="selected === 'black'" x-transition class="w-full" style="display: none">
+                <div x-show="selected === 'black'" class="w-full" style="display: none">
                     <x-plan-card :tagline="'Meu dinheiro some sem explicação'">
                         <x-fr-heading>Perfil Black</x-fr-heading>
                         <x-fr-text>
