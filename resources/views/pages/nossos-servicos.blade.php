@@ -1,10 +1,5 @@
-<x-layout.landing
-    theme="dark"
-    splashFrom="var(--color-elevation-surface)"
-    splashTo="var(--color-elevation-surface)"
-    splashLogoClass="text-brand-primary"
->
-    <section class="section-first">
+<x-layout.landing headerTheme="dark" splashFrom="#09090a" splashTo="#09090a" splashLogoClass="text-brand-primary">
+    <section class="dark bg-elevation-surface pt-(--section-first-gap) pb-(--section-gap)">
         <div class="container flex flex-col gap-8">
             <x-fr-headline size="2xl">
                 <x-slot:header>
@@ -60,6 +55,24 @@
                     <x-heroicon-c-chevron-right class="text-brand-primary size-5" />
                 </div>
             </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container flex flex-col gap-8">
+            <div class="mx-auto mb-2.5">
+                <img src="{{ asset('images/logos/flamma-logo.svg') }}" alt="Logo Flamma" class="h-9 w-auto" />
+            </div>
+            <x-fr-headline>
+                <x-slot:title>
+                    Educação financeira pessoal como <mark>benefício corporativo</mark>
+                </x-slot:title>
+                <x-slot:description>
+                    Com pacotes flexíveis, sua empresa garante orientação individualizada para os colaboradores,
+                    reduzindo o estresse financeiro, aumentando a produtividade e promovendo segurança e bem-estar no
+                    ambiente corporativo.
+                </x-slot:description>
+            </x-fr-headline>
         </div>
     </section>
 </x-layout.landing>

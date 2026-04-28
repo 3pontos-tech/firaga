@@ -14,6 +14,7 @@
 
 @plugin '@tailwindcss/typography';
 
+@custom-variant light (&:where(.light, .light *));
 @custom-variant dark (&:where(.dark, .dark *));
 @custom-variant metallic (&:where(.metallic, .metallic *));
 @custom-variant metallic-light (&:where(.metallic-light, .metallic-light *));

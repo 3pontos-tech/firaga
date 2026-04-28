@@ -2,7 +2,8 @@
    Primitive Color Tokens + Semantic Aliases
    ========================================================================== */
 
-:root {
+:root,
+.light {
     --brand-primary: #e2410a;
     --brand-secondary: #ff642f;
     --brand-accent: #09090a;

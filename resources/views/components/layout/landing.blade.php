@@ -1,5 +1,6 @@
 @props ([
     'theme' => null,
+    'headerTheme' => null,
     'splashFrom' => 'var(--color-brand-primary)',
     'splashTo' => 'var(--color-brand-secondary)',
     'splashLogoClass' => 'text-white'
@@ -97,7 +98,9 @@
         <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KTVLGCHG" class="hidden h-0 w-0"></iframe>
     </noscript>
 
-    <header class="bg-elevation-surface fixed inset-x-0 top-0 z-50 h-(--header-height) [grid-area:header]">
+    <header
+        class="bg-elevation-surface fixed inset-x-0 top-0 z-50 h-(--header-height) [grid-area:header] {{ $headerTheme }}"
+    >
         <x-navbar />
     </header>
 
