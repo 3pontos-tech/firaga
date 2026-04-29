@@ -45,7 +45,7 @@
 }
 
 .fr-headline-size-2xl .fr-headline-title {
-    @apply text-2xl sm:text-3xl md:text-4xl lg:text-5xl;
+    @apply text-xl;
 }
 
 .fr-headline-size-3xl .fr-headline-title {
@@ -59,12 +59,6 @@
 
 .fr-headline-size-md .fr-headline-description,
 .fr-headline-size-lg .fr-headline-description {
-    @apply text-xs;
-}
-
-.fr-headline-size-xl .fr-headline-description,
-.fr-headline-size-2xl .fr-headline-description,
-.fr-headline-size-3xl .fr-headline-description {
     @apply text-xs;
 }
 
