@@ -19,7 +19,7 @@
         <div class="flex items-center justify-between">
             <x-fas-quote-left class="text-brand-primary size-4" />
             @if ($metric)
-                <x-fr-text size="sm" class="text-brand-primary!">{{ $metric }}</x-fr-text>
+                <x-fr-text size="sm" class="text-brand-primary! font-semibold!">{{ $metric }}</x-fr-text>
             @endif
         </div>
 
@@ -49,7 +49,7 @@
         <div class="flex items-center justify-between">
             <x-fas-quote-left class="text-brand-primary size-4" />
             @if ($metric)
-                <x-fr-text size="sm" class="text-brand-primary!">{{ $metric }}</x-fr-text>
+                <x-fr-text size="sm" class="text-brand-primary! font-semibold!">{{ $metric }}</x-fr-text>
             @endif
         </div>
 
