@@ -527,4 +527,72 @@
             </x-fr-headline>
         </div>
     </section>
+
+    <section class="section bg-brand-primary py-20">
+        <div class="container flex flex-col gap-8">
+            <x-fr-headline align="left" data-reveal="up">
+                <x-slot:header>
+                    <x-logo-badge class="text-text-light!"> Parcerias </x-logo-badge>
+                </x-slot:header>
+                <x-slot:title class="text-text-light!">
+                    Parcerias que geram impacto real
+                </x-slot:title>
+                <x-slot:description class="text-text-light!">
+                    Se você tem sinergia com a missão da Firece, existe um formato de parceria para você. Avaliamos cada
+                    oportunidade individualmente e investimos tempo e estrutura quando há alinhamento.
+                </x-slot:description>
+            </x-fr-headline>
+
+            <div
+                class="border-border-base divide-border-base grid w-full grid-cols-1 divide-y border-y"
+                data-reveal-stagger="140"
+            >
+                <div class="flex flex-col gap-4 px-4 py-8" data-reveal="up">
+                    <x-fr-headline align="left" size="sm" container-class="gap-2!">
+                        <x-slot:title class="text-text-light!">
+                            Joint Ventures
+                        </x-slot:title>
+                        <x-slot:description class="text-text-light!">
+                            Projetos conjuntos com estrutura compartilhada e metas alinhadas
+                        </x-slot:description>
+                    </x-fr-headline>
+                </div>
+
+                <div class="flex flex-col gap-3 px-4 py-8" data-reveal="up">
+                    <x-fr-headline align="left" size="sm" container-class="gap-2!">
+                        <x-slot:title class="text-text-light!">
+                            Projetos Educacionais
+                        </x-slot:title>
+                        <x-slot:description class="text-text-light!">
+                            Co-criação de conteúdo, cursos e programas de educação financeira
+                        </x-slot:description>
+                    </x-fr-headline>
+                </div>
+
+                <div class="flex flex-col gap-3 px-4 py-8" data-reveal="up">
+                    <x-fr-headline align="left" size="sm" container-class="gap-2!">
+                        <x-slot:title class="text-text-light!">
+                            Atendimento
+                        </x-slot:title>
+                        <x-slot:description class="text-text-light!">
+                            Sessões individuais de 60 minutos com consultores especializados, online ou presencial.
+                        </x-slot:description>
+                    </x-fr-headline>
+                </div>
+
+                <div class="flex flex-col gap-3 px-4 py-8" data-reveal="up">
+                    <x-fr-headline align="left" size="sm" container-class="gap-2!">
+                        <x-slot:title class="text-text-light!">
+                            Parcerias Comerciais
+                        </x-slot:title>
+                        <x-slot:description class="text-text-light!">
+                            Modelos de afiliação e indicação com remuneração inteligente
+                        </x-slot:description>
+                    </x-fr-headline>
+                </div>
+            </div>
+
+            <x-fr-button variant="white"> Conhecer o code capital </x-fr-button>
+        </div>
+    </section>
 </x-layout.landing>
