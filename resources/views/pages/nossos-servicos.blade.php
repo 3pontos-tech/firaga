@@ -361,4 +361,65 @@
             </x-testimonial>
         </div>
     </section>
+
+    <section class="section">
+        <div class="container flex flex-col gap-4">
+            <x-fr-headline align="left">
+                <x-slot:header>
+                    <x-fr-text size="sm" class="text-brand-primary! font-semibold!"> Code Capital </x-fr-text>
+                </x-slot:header>
+                <x-slot:title>
+                    Você trabalha com tech. Seu plano também.
+                </x-slot:title>
+                <x-slot:description>
+                    Consultoria financeira especializada para profissionais do mercado de tecnologia. Porque a renda de
+                    quem trabalha com tech tem características únicas e merece uma estratégia à altura.
+                </x-slot:description>
+            </x-fr-headline>
+            <div class="bg-elevation-01dp border-border-base text-xxxs rounded-sm border p-4 font-mono leading-7">
+                <div class="mb-3 flex gap-1.5">
+                    <span class="size-3 rounded-full bg-red-300"></span>
+                    <span class="size-3 rounded-full bg-yellow-100"></span>
+                    <span class="size-3 rounded-full bg-green-300"></span>
+                </div>
+                <div class="flex flex-col gap-4">
+                    <p class="flex flex-wrap items-center gap-x-1">
+                        <span class="text-brand-primary">$</span>
+                        <span class="text-text-medium">Diagnóstico:</span>
+                        <span class="text-brand-primary">renda variável</span>
+                        <span class="inline-flex items-center gap-1 text-green-600">
+                            <x-heroicon-o-check class="size-3 text-green-600" />
+                            mapeada
+                        </span>
+                    </p>
+                    <p class="flex flex-wrap items-center gap-x-1">
+                        <span class="text-brand-primary">$</span>
+                        <span class="text-text-medium">Stock options:</span>
+                        <span class="text-brand-primary">estratégia de exercício</span>
+                        <span class="inline-flex items-center gap-1 text-green-600">
+                            <x-heroicon-o-check class="size-3 text-green-600" />
+                            definida
+                        </span>
+                    </p>
+                    <p class="flex flex-wrap items-center gap-x-1">
+                        <span class="text-brand-primary">$</span>
+                        <span class="text-text-medium">Câmbio:</span>
+                        <span class="text-brand-primary">Proteção USD/BRL</span>
+                        <span class="inline-flex items-center gap-1 text-green-600">
+                            <x-heroicon-o-check class="size-3 text-green-600" />
+                            estruturada
+                        </span>
+                    </p>
+                    <p class="flex flex-wrap items-center gap-x-1">
+                        <span class="text-brand-primary">$</span>
+                        <span class="text-text-medium">PLR + Bônus:</span>
+                        <span class="text-brand-primary">Alocação estratégica</span>
+                        <span class="text-green-600">planejada</span>
+                    </p>
+                </div>
+            </div>
+
+            <x-fr-button class="mt-4"> Conhecer o code capital </x-fr-button>
+        </div>
+    </section>
 </x-layout.landing>
