@@ -422,4 +422,89 @@
             <x-fr-button class="mt-4"> Conhecer o code capital </x-fr-button>
         </div>
     </section>
+
+    <section class="section metallic bg-elevation-surface py-20">
+        <div class="container flex flex-col gap-8">
+            <div class="relative">
+                <div
+                    class="from-elevation-surface/0 to-elevation-surface/10 absolute inset-0 z-10 bg-linear-to-b"
+                ></div>
+                <img
+                    src="{{ asset('images/guys-looking-at-notebook-but-gray.webp') }}"
+                    alt="Imagem dos caras cinza"
+                    class="h-50 w-auto"
+                    data-reveal="left"
+                />
+            </div>
+
+            <x-fr-headline align="left" data-reveal="up">
+                <x-slot:header>
+                    <x-fr-text size="sm" class="text-text-high! font-semibold!"> Key Account </x-fr-text>
+                </x-slot:header>
+                <x-slot:title>
+                    Não é uma consultoria, <mark>é uma parceria</mark>
+                </x-slot:title>
+                <x-slot:description>
+                    O <span class="text-text-high">Key Account</span> é para quem já passou pelo
+                    <span class="text-text-high">Planejamento</span> e quer ir além ou para quem, desde o início,
+                    precisa de acompanhamento contínuo e acesso direto ao seu consultor. É uma relação de longo prazo,
+                    não de três encontros.
+                </x-slot:description>
+            </x-fr-headline>
+
+            <div class="flex flex-col gap-4" data-reveal="up">
+                <x-fr-heading size="xs"> O que muda na sua vida: </x-fr-heading>
+
+                <div class="flex flex-col gap-8" data-reveal-stagger="120">
+                    <div class="flex items-center gap-3">
+                        <x-heroicon-c-arrow-right class="text-text-high size-5" />
+
+                        <div class="flex flex-col gap-2">
+                            <x-fr-text size="sm"> Acompanhamento contínuo com revisões mensais do seu plano </x-fr-text>
+                        </div>
+                    </div>
+
+                    <div class="flex items-center gap-3">
+                        <x-heroicon-c-arrow-right class="text-text-high size-5" />
+
+                        <div class="flex flex-col gap-2">
+                            <x-fr-text size="sm"> Acesso direto ao seu consultor sem fila, sem espera </x-fr-text>
+                        </div>
+                    </div>
+
+                    <div class="flex items-center gap-3">
+                        <x-heroicon-c-arrow-right class="text-text-high size-5" />
+
+                        <div class="flex flex-col gap-2">
+                            <x-fr-text size="sm"> Estratégias exclusivas adaptadas ao seu momento de vida </x-fr-text>
+                        </div>
+                    </div>
+
+                    <div class="flex items-center gap-3">
+                        <x-heroicon-c-arrow-right class="text-text-high size-5" />
+
+                        <div class="flex flex-col gap-2">
+                            <x-fr-text size="sm"> Decisões financeiras com suporte em tempo real </x-fr-text>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <x-testimonial
+                class="mt-12"
+                data-reveal="up"
+                name="Felipe Rosa"
+                role="Design"
+                plan="Plano Gold"
+                avatar="https://i.pravatar.cc/80?img=12"
+                metric="0% → 20% da renda investida"
+            >
+                Nunca achei que ia conseguir sair das dívidas. Em 5 meses com o
+                <span class="text-brand-primary font-bold">Matheus</span>, pela primeira vez na vida eu tenho reserva de
+                emergência.
+            </x-testimonial>
+
+            <x-fr-button data-reveal="up"> Esse sou eu </x-fr-button>
+        </div>
+    </section>
 </x-layout.landing>
