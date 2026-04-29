@@ -185,7 +185,7 @@
                     </x-slot:description>
                 </x-fr-headline>
 
-                <x-fr-text size="sm" class="text-brand-primary!">
+                <x-fr-text size="sm" class="text-brand-primary! font-semibold!">
                     Não é falta de disciplina. É falta de um plano
                 </x-fr-text>
             </div>
@@ -205,7 +205,7 @@
                     </x-slot:description>
                 </x-fr-headline>
 
-                <x-fr-text size="sm" class="text-brand-primary!">
+                <x-fr-text size="sm" class="text-brand-primary! font-semibold!">
                     Não é falta de disciplina. É falta de um plano
                 </x-fr-text>
             </div>
@@ -225,7 +225,7 @@
                     </x-slot:description>
                 </x-fr-headline>
 
-                <x-fr-text size="sm" class="text-brand-primary!">
+                <x-fr-text size="sm" class="text-brand-primary! font-semibold!">
                     Não é falta de disciplina. É falta de um plano
                 </x-fr-text>
             </div>
