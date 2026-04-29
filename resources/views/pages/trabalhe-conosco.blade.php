@@ -200,4 +200,65 @@
             </div>
         </div>
     </section>
+
+    <section class="section dark bg-elevation-surface py-20">
+        <div class="container flex flex-col gap-8">
+            <x-fr-headline align="left" data-reveal="up">
+                <x-slot:title>
+                    Eles começaram do mesmo lugar
+                </x-slot:title>
+                <x-slot:description>
+                    Para qualquer vaga, o que mais importa é para quê você quer estar aqui. Experiência se constrói
+                    postura e propósito são suas.
+                </x-slot:description>
+            </x-fr-headline>
+
+            <div class="grid grid-cols-1 gap-8" data-reveal-stagger="140">
+                <x-testimonial
+                    data-reveal="up"
+                    variant="centered"
+                    class="bg-elevation-01dp border-border-base border p-4"
+                    name="Felipe Rosa"
+                    role="Design"
+                    plan="Plano Gold"
+                    avatar="https://i.pravatar.cc/80?img=12"
+                    metric="0% → 20% da renda investida"
+                >
+                    Nunca achei que ia conseguir sair das dívidas. Em 5 meses com o
+                    <span class="text-brand-primary font-bold">Matheus</span>, pela primeira vez na vida eu tenho
+                    reserva de emergência.
+                </x-testimonial>
+
+                <x-testimonial
+                    data-reveal="up"
+                    variant="centered"
+                    class="bg-elevation-01dp border-border-base border p-4"
+                    name="Felipe Rosa"
+                    role="Design"
+                    plan="Plano Gold"
+                    avatar="https://i.pravatar.cc/80?img=12"
+                    metric="0% → 20% da renda investida"
+                >
+                    Nunca achei que ia conseguir sair das dívidas. Em 5 meses com o
+                    <span class="text-brand-primary font-bold">Matheus</span>, pela primeira vez na vida eu tenho
+                    reserva de emergência.
+                </x-testimonial>
+
+                <x-testimonial
+                    data-reveal="up"
+                    variant="centered"
+                    class="bg-elevation-01dp border-border-base border p-4"
+                    name="Felipe Rosa"
+                    role="Design"
+                    plan="Plano Gold"
+                    avatar="https://i.pravatar.cc/80?img=12"
+                    metric="0% → 20% da renda investida"
+                >
+                    Nunca achei que ia conseguir sair das dívidas. Em 5 meses com o
+                    <span class="text-brand-primary font-bold">Matheus</span>, pela primeira vez na vida eu tenho
+                    reserva de emergência.
+                </x-testimonial>
+            </div>
+        </div>
+    </section>
 </x-layout.landing>
