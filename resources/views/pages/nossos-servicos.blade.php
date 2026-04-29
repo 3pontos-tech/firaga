@@ -18,41 +18,41 @@
                 class="divide-border-base border-border-base grid grid-cols-1 gap-3 divide-y border-y"
                 data-reveal-stagger="140"
             >
-                <div class="flex items-center justify-between py-4">
+                <div class="flex items-center justify-between gap-3 py-4">
                     <x-fr-text size="sm" class="text-text-high! font-semibold!">
                         Bem-estar financeiro para equipes
                     </x-fr-text>
-                    <x-heroicon-c-chevron-right class="text-brand-primary size-5" />
+                    <x-heroicon-c-chevron-right class="text-brand-primary size-5 shrink-0" />
                 </div>
-                <div class="flex items-center justify-between py-4">
+                <div class="flex items-center justify-between gap-3 py-4">
                     <x-fr-text size="sm" class="text-text-high! font-semibold!">
                         Quero organizar minha vida financeira
                     </x-fr-text>
-                    <x-heroicon-c-chevron-right class="text-brand-primary size-5" />
+                    <x-heroicon-c-chevron-right class="text-brand-primary size-5 shrink-0" />
                 </div>
-                <div class="flex items-center justify-between py-4">
+                <div class="flex items-center justify-between gap-3 py-4">
                     <x-fr-text size="sm" class="text-text-high! font-semibold!">
                         Sou dev, PJ ou recebo em dólar
                     </x-fr-text>
-                    <x-heroicon-c-chevron-right class="text-brand-primary size-5" />
+                    <x-heroicon-c-chevron-right class="text-brand-primary size-5 shrink-0" />
                 </div>
-                <div class="flex items-center justify-between py-4">
+                <div class="flex items-center justify-between gap-3 py-4">
                     <x-fr-text size="sm" class="text-text-high! font-semibold!">
                         Tenho patrimônio e quero proteger
                     </x-fr-text>
-                    <x-heroicon-c-chevron-right class="text-brand-primary size-5" />
+                    <x-heroicon-c-chevron-right class="text-brand-primary size-5 shrink-0" />
                 </div>
-                <div class="flex items-center justify-between py-4">
+                <div class="flex items-center justify-between gap-3 py-4">
                     <x-fr-text size="sm" class="text-text-high! font-semibold!">
                         Quero ensinar finanças e ganhar com isso
                     </x-fr-text>
-                    <x-heroicon-c-chevron-right class="text-brand-primary size-5" />
+                    <x-heroicon-c-chevron-right class="text-brand-primary size-5 shrink-0" />
                 </div>
-                <div class="flex items-center justify-between py-4">
+                <div class="flex items-center justify-between gap-3 py-4">
                     <x-fr-text size="sm" class="text-text-high! font-semibold!">
                         Quero ser parceiro da Firece
                     </x-fr-text>
-                    <x-heroicon-c-chevron-right class="text-brand-primary size-5" />
+                    <x-heroicon-c-chevron-right class="text-brand-primary size-5 shrink-0" />
                 </div>
             </div>
         </div>
@@ -388,7 +388,7 @@
                         <span class="text-text-medium">Diagnóstico:</span>
                         <span class="text-brand-primary">renda variável</span>
                         <span class="inline-flex items-center gap-1 text-green-600">
-                            <x-heroicon-o-check class="size-3 text-green-600" />
+                            <x-heroicon-o-check class="size-3 shrink-0 text-green-600" />
                             mapeada
                         </span>
                     </p>
@@ -397,7 +397,7 @@
                         <span class="text-text-medium">Stock options:</span>
                         <span class="text-brand-primary">estratégia de exercício</span>
                         <span class="inline-flex items-center gap-1 text-green-600">
-                            <x-heroicon-o-check class="size-3 text-green-600" />
+                            <x-heroicon-o-check class="size-3 shrink-0 text-green-600" />
                             definida
                         </span>
                     </p>
@@ -406,7 +406,7 @@
                         <span class="text-text-medium">Câmbio:</span>
                         <span class="text-brand-primary">Proteção USD/BRL</span>
                         <span class="inline-flex items-center gap-1 text-green-600">
-                            <x-heroicon-o-check class="size-3 text-green-600" />
+                            <x-heroicon-o-check class="size-3 shrink-0 text-green-600" />
                             estruturada
                         </span>
                     </p>
@@ -593,6 +593,55 @@
             </div>
 
             <x-fr-button variant="white"> Conhecer o code capital </x-fr-button>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container flex flex-col gap-8">
+            <x-fr-headline>
+                <x-slot:title>
+                    Qual situação mais se parece com a sua?
+                </x-slot:title>
+                <x-slot:description>
+                    Selecione e a gente te indica o caminho certo
+                </x-slot:description>
+            </x-fr-headline>
+
+            <div
+                class="divide-border-base border-border-base grid grid-cols-1 gap-3 divide-y border-y"
+                data-reveal-stagger="140"
+            >
+                <div class="flex items-center justify-between gap-3 py-4">
+                    <x-fr-text size="sm" class="text-text-high! font-semibold!">
+                        Represento uma empresa e quero cuidar do bem-estar financeiro do meu time
+                    </x-fr-text>
+                    <x-heroicon-c-chevron-right class="text-brand-primary size-5 shrink-0" />
+                </div>
+                <div class="flex items-center justify-between gap-3 py-4">
+                    <x-fr-text size="sm" class="text-text-high! font-semibold!">
+                        Meu dinheiro some e não entendo para onde vai
+                    </x-fr-text>
+                    <x-heroicon-c-chevron-right class="text-brand-primary size-5 shrink-0" />
+                </div>
+                <div class="flex items-center justify-between gap-3 py-4">
+                    <x-fr-text size="sm" class="text-text-high! font-semibold!">
+                        Sou dev, tenho CNPJ ou rcebo em dólar e não sei como estruturar
+                    </x-fr-text>
+                    <x-heroicon-c-chevron-right class="text-brand-primary size-5 shrink-0" />
+                </div>
+                <div class="flex items-center justify-between gap-3 py-4">
+                    <x-fr-text size="sm" class="text-text-high! font-semibold!">
+                        Tenho patrimônio e preciso de uma estratégia mais sofisticada
+                    </x-fr-text>
+                    <x-heroicon-c-chevron-right class="text-brand-primary size-5 shrink-0" />
+                </div>
+                <div class="flex items-center justify-between gap-3 py-4">
+                    <x-fr-text size="sm" class="text-text-high! font-semibold!">
+                        Quero aprender a ensinar finanças e aganhar com isso
+                    </x-fr-text>
+                    <x-heroicon-c-chevron-right class="text-brand-primary size-5 shrink-0" />
+                </div>
+            </div>
         </div>
     </section>
 </x-layout.landing>
