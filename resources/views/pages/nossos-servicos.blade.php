@@ -507,4 +507,24 @@
             <x-fr-button data-reveal="up"> Esse sou eu </x-fr-button>
         </div>
     </section>
+
+    <section class="section">
+        <div class="container">
+            <x-fr-headline>
+                <x-slot:header>
+                    <x-fr-text size="sm" class="text-brand-primary! font-semibold!"> Educafire </x-fr-text>
+                </x-slot:header>
+                <x-slot:title>
+                    Aprenda a <mark>transformar</mark> vidas com finanças.
+                </x-slot:title>
+                <x-slot:description>
+                    O Educa Fire é para quem quer ir além aprender a ensinar finanças e construir liberdade financeira
+                    ajudando outras pessoas. Workshop, mentoria e formação com a metodologia Firece.
+                </x-slot:description>
+                <x-slot:actions>
+                    <x-fr-button> Conhecer a EducaFire </x-fr-button>
+                </x-slot:actions>
+            </x-fr-headline>
+        </div>
+    </section>
 </x-layout.landing>
