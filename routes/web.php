@@ -2,6 +2,7 @@
 
 declare(strict_types=1);
 
+use App\Http\Controllers\BlogController;
 use App\Http\Controllers\MarketingLandingController;
 use App\Http\Controllers\PagesController;
 use App\Models\Term;
@@ -42,7 +43,7 @@ Route::domain(config('app.domain'))->group(function (): void {
     Route::view('/code-capital', 'pages.code-capital')->name('code-capital');
     Route::view('/nossos-servicos', 'pages.nossos-servicos')->name('nossos-servicos');
     Route::view('/trabalhe-conosco', 'pages.trabalhe-conosco')->name('trabalhe-conosco');
-    Route::view('/blog', 'pages.blog')->name('blog');
+    Route::get('/blog', BlogController::class)->name('blog');
     Route::view('/parcerias', 'pages.parcerias')->name('parcerias');
 
     Route::get('/{page?}', [PagesController::class, 'show'])
