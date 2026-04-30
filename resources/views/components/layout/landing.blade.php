@@ -102,7 +102,7 @@
     <header
         class="{{ $headerBg }} fixed inset-x-0 top-0 z-50 h-(--header-height) [grid-area:header] {{ $headerTheme }}"
     >
-        <x-navbar />
+        <x-navbar :header-bg="$headerBg" :header-theme="$headerTheme ?? ''" />
     </header>
 
     <main class="pt-(--header-height) [grid-area:main]">{{ $slot }}</main>
