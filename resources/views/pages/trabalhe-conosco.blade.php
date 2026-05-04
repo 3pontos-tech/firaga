@@ -67,57 +67,47 @@
             class="border-border-base divide-border-base grid w-full grid-cols-1 divide-y border-y"
             data-reveal-stagger="140"
         >
-            <div class="flex flex-col gap-3 p-8" data-reveal="up">
-                <div class="flex items-center justify-between">
-                    <p class="text-brand-primary font-display text-xl font-medium">01</p>
-                </div>
+            <x-numbered-step
+                class="p-8"
+                data-reveal="up"
+                number="01"
+                title="Imersão na metodologia"
+                :show-chevron="false"
+            >
+                Você aprende o jeito Firece de diagnosticar, planejar e acompanhar com casos reais desde o início
 
-                <x-fr-headline align="left" size="sm" container-class="gap-2!">
-                    <x-slot:title>
-                        Imersão na metodologia
-                    </x-slot:title>
-                    <x-slot:description>
-                        Você aprende o jeito Firece de diagnosticar, planejar e acompanhar com casos reais desde o
-                        início
-                    </x-slot:description>
-                </x-fr-headline>
+                <x-slot:footer>
+                    <x-fr-text size="sm" class="text-brand-primary! font-semibold!"> Semanas 1–2 </x-fr-text>
+                </x-slot:footer>
+            </x-numbered-step>
 
-                <x-fr-text size="sm" class="text-brand-primary! font-semibold!"> Semanas 1–2 </x-fr-text>
-            </div>
+            <x-numbered-step
+                class="p-8"
+                data-reveal="up"
+                number="02"
+                title="Primeiros atendimentos com mentoria"
+                :show-chevron="false"
+            >
+                Você atende com um consultor sênior ao lado. Aprende na prática, com suporte real.
 
-            <div class="flex flex-col gap-3 p-8" data-reveal="up">
-                <div class="flex items-center justify-between">
-                    <p class="text-brand-primary font-display text-xl font-medium">02</p>
-                </div>
+                <x-slot:footer>
+                    <x-fr-text size="sm" class="text-brand-primary!"> Mês 1–2 </x-fr-text>
+                </x-slot:footer>
+            </x-numbered-step>
 
-                <x-fr-headline align="left" size="sm" container-class="gap-2!">
-                    <x-slot:title>
-                        Primeiros atendimentos com mentoria
-                    </x-slot:title>
-                    <x-slot:description>
-                        Você atende com um consultor sênior ao lado. Aprende na prática, com suporte real.
-                    </x-slot:description>
-                </x-fr-headline>
+            <x-numbered-step
+                class="p-8"
+                data-reveal="up"
+                number="03"
+                title="Carteira própria e autonomia"
+                :show-chevron="false"
+            >
+                Com a base construída, você assume sua carteira e cresce no ritmo que seu resultado permite
 
-                <x-fr-text size="sm" class="text-brand-primary!"> Mês 1–2 </x-fr-text>
-            </div>
-
-            <div class="flex flex-col gap-3 p-8" data-reveal="up">
-                <div class="flex items-center justify-between">
-                    <p class="text-brand-primary font-display text-xl font-medium">03</p>
-                </div>
-
-                <x-fr-headline align="left" size="sm" container-class="gap-2!">
-                    <x-slot:title>
-                        Carteira própria e autonomia
-                    </x-slot:title>
-                    <x-slot:description>
-                        Com a base construída, você assume sua carteira e cresce no ritmo que seu resultado permite
-                    </x-slot:description>
-                </x-fr-headline>
-
-                <x-fr-text size="sm" class="text-brand-primary!"> A partir do mês 3 </x-fr-text>
-            </div>
+                <x-slot:footer>
+                    <x-fr-text size="sm" class="text-brand-primary!"> A partir do mês 3 </x-fr-text>
+                </x-slot:footer>
+            </x-numbered-step>
         </div>
 
         <div class="container flex flex-col items-center gap-8">
@@ -155,47 +145,21 @@
                 <x-fr-heading size="xs"> O que buscamos </x-fr-heading>
 
                 <div class="flex flex-col gap-8" data-reveal-stagger="120">
-                    <div class="flex gap-3">
-                        <x-heroicon-c-arrow-right class="text-brand-primary size-5 shrink-0" />
+                    <x-arrow-block title="Orientado a resultado com propósito genuíno">
+                        Você quer impactar a vida das pessoas, não só bater meta.
+                    </x-arrow-block>
 
-                        <div class="flex flex-col gap-2">
-                            <x-fr-heading size="xxs"> Orientado a resultado com propósito genuíno </x-fr-heading>
-                            <x-fr-text size="sm"> Você quer impactar a vida das pessoas, não só bater meta. </x-fr-text>
-                        </div>
-                    </div>
+                    <x-arrow-block title="Comunicação clara e escuta ativa">
+                        Sabe ouvir, criar confiança e explicar o complexo de forma simples
+                    </x-arrow-block>
 
-                    <div class="flex gap-3">
-                        <x-heroicon-c-arrow-right class="text-brand-primary size-5 shrink-0" />
+                    <x-arrow-block title="Disciplina e consistência">
+                        A carreira tem altos e baixos. Buscamos quem se mantém firme
+                    </x-arrow-block>
 
-                        <div class="flex flex-col gap-2">
-                            <x-fr-heading size="xxs"> Comunicação clara e escuta ativa </x-fr-heading>
-                            <x-fr-text size="sm">
-                                Sabe ouvir, criar confiança e explicar o complexo de forma simples
-                            </x-fr-text>
-                        </div>
-                    </div>
-
-                    <div class="flex gap-3">
-                        <x-heroicon-c-arrow-right class="text-brand-primary size-5 shrink-0" />
-
-                        <div class="flex flex-col gap-2">
-                            <x-fr-heading size="xxs"> Disciplina e consistência </x-fr-heading>
-                            <x-fr-text size="sm">
-                                A carreira tem altos e baixos. Buscamos quem se mantém firme
-                            </x-fr-text>
-                        </div>
-                    </div>
-
-                    <div class="flex gap-3">
-                        <x-heroicon-c-arrow-right class="text-brand-primary size-5 shrink-0" />
-
-                        <div class="flex flex-col gap-2">
-                            <x-fr-heading size="xxs"> Alinhamento com os valores da Firece </x-fr-heading>
-                            <x-fr-text size="sm">
-                                Transparência, impacto real, sem empurrar produto. É assim que trabalhamos
-                            </x-fr-text>
-                        </div>
-                    </div>
+                    <x-arrow-block title="Alinhamento com os valores da Firece">
+                        Transparência, impacto real, sem empurrar produto. É assim que trabalhamos
+                    </x-arrow-block>
                 </div>
             </div>
         </div>
