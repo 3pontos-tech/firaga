@@ -57,70 +57,30 @@
                 <x-fr-heading size="xs"> O que buscamos </x-fr-heading>
 
                 <div class="flex flex-col gap-8" data-reveal-stagger="120">
-                    <div class="flex gap-3">
-                        <x-heroicon-c-arrow-right class="text-brand-primary size-5 shrink-0" />
+                    <x-arrow-block eyebrow="Audiencia" title="Influenciadores e criadores de conteúdo">
+                        Você tem seguidores que confiam em você. A gente tem o produto e a metodologia. Juntos, você
+                        monetiza sua influência enquanto entrega valor real para sua audiência
+                    </x-arrow-block>
 
-                        <div class="flex flex-col gap-2">
-                            <x-fr-text class="text-brand-primary! font-semibold!" size="xs">Audiencia</x-fr-text>
-                            <x-fr-heading size="xxs"> Influenciadores e criadores de conteúdo </x-fr-heading>
-                            <x-fr-text size="sm">
-                                Você tem seguidores que confiam em você. A gente tem o produto e a metodologia. Juntos,
-                                você monetiza sua influência enquanto entrega valor real para sua audiência
-                            </x-fr-text>
-                        </div>
-                    </div>
+                    <x-arrow-block eyebrow="Corporativo" title="Empresas e RH corporativo">
+                        Quer oferecer educação financeira como benefício para sua equipe? A Flamma foi criada exatamente
+                        para isso e a Firece cuida de tudo
+                    </x-arrow-block>
 
-                    <div class="flex gap-3">
-                        <x-heroicon-c-arrow-right class="text-brand-primary size-5 shrink-0" />
+                    <x-arrow-block eyebrow="Expertise" title="Profissionais e especialistas de mercado">
+                        Contador, advogado, coach, terapeuta financeiro você atende pessoas que precisam de planejamento
+                        financeiro. A parceria amplia o que você oferece sem aumentar sua operação
+                    </x-arrow-block>
 
-                        <div class="flex flex-col gap-2">
-                            <x-fr-text class="text-brand-primary! font-semibold!" size="xs">Corporativo</x-fr-text>
-                            <x-fr-heading size="xxs"> Empresas e RH corporativo </x-fr-heading>
-                            <x-fr-text size="sm">
-                                Quer oferecer educação financeira como benefício para sua equipe? A Flamma foi criada
-                                exatamente para isso e a Firece cuida de tudo
-                            </x-fr-text>
-                        </div>
-                    </div>
+                    <x-arrow-block eyebrow="Educação" title="Instituições educacionais">
+                        Escolas, universidades e cursos que querem integrar educação financeira real no currículo não
+                        teoria, mas prática com metodologia comprovada
+                    </x-arrow-block>
 
-                    <div class="flex gap-3">
-                        <x-heroicon-c-arrow-right class="text-brand-primary size-5 shrink-0" />
-
-                        <div class="flex flex-col gap-2">
-                            <x-fr-text class="text-brand-primary! font-semibold!" size="xs">Expertise</x-fr-text>
-                            <x-fr-heading size="xxs"> Profissionais e especialistas de mercado </x-fr-heading>
-                            <x-fr-text size="sm">
-                                Contador, advogado, coach, terapeuta financeiro você atende pessoas que precisam de
-                                planejamento financeiro. A parceria amplia o que você oferece sem aumentar sua operação
-                            </x-fr-text>
-                        </div>
-                    </div>
-
-                    <div class="flex gap-3">
-                        <x-heroicon-c-arrow-right class="text-brand-primary size-5 shrink-0" />
-
-                        <div class="flex flex-col gap-2">
-                            <x-fr-text class="text-brand-primary! font-semibold!" size="xs">Educação</x-fr-text>
-                            <x-fr-heading size="xxs"> Instituições educacionais </x-fr-heading>
-                            <x-fr-text size="sm">
-                                Escolas, universidades e cursos que querem integrar educação financeira real no
-                                currículo não teoria, mas prática com metodologia comprovada
-                            </x-fr-text>
-                        </div>
-                    </div>
-
-                    <div class="flex gap-3">
-                        <x-heroicon-c-arrow-right class="text-brand-primary size-5 shrink-0" />
-
-                        <div class="flex flex-col gap-2">
-                            <x-fr-text class="text-brand-primary! font-semibold!" size="xs">Tech</x-fr-text>
-                            <x-fr-heading size="xxs"> Instituições educacionais </x-fr-heading>
-                            <x-fr-text size="sm">
-                                Produtos financeiros, fintechs, plataformas de benefícios se você tem tech e precisa de
-                                conteúdo, metodologia ou consultoria para seu usuário, tem conversa a ter
-                            </x-fr-text>
-                        </div>
-                    </div>
+                    <x-arrow-block eyebrow="Tech" title="Instituições educacionais">
+                        Produtos financeiros, fintechs, plataformas de benefícios se você tem tech e precisa de
+                        conteúdo, metodologia ou consultoria para seu usuário, tem conversa a ter
+                    </x-arrow-block>
                 </div>
             </div>
         </div>
@@ -143,76 +103,67 @@
             class="border-border-base divide-border-base grid w-full grid-cols-1 divide-y border-y"
             data-reveal-stagger="140"
         >
-            <div class="bg-elevation-01dp flex flex-col gap-3 p-8" data-reveal="up">
-                <div class="flex items-center justify-between">
-                    <p class="text-brand-primary font-display text-xl font-medium">01</p>
-                </div>
+            <x-numbered-step
+                class="bg-elevation-01dp p-8"
+                data-reveal="up"
+                number="01"
+                title="Parceria comercial"
+                :show-chevron="false"
+            >
+                Você indica clientes para a Firece e recebe por isso. Modelo simples, sem burocracia você foca no
+                relacionamento, a gente foca no atendimento. Ideal para quem tem audiência ou rede de contatos
+                qualificada.
 
-                <x-fr-headline align="left" size="sm" container-class="gap-2!">
-                    <x-slot:title>
-                        Parceria comercial
-                    </x-slot:title>
-                    <x-slot:description>
-                        Você indica clientes para a Firece e recebe por isso. Modelo simples, sem burocracia você foca
-                        no relacionamento, a gente foca no atendimento. Ideal para quem tem audiência ou rede de
-                        contatos qualificada.
-                    </x-slot:description>
-                </x-fr-headline>
+                <x-slot:footer>
+                    <div class="flex items-center gap-2">
+                        <x-fr-text size="sm" class="text-brand-primary! font-semibold!"> Indicação </x-fr-text>
+                        <div class="bg-brand-primary size-1 rounded-full"></div>
+                        <x-fr-text size="sm" class="text-brand-primary! font-semibold!"> Comissão </x-fr-text>
+                        <div class="bg-brand-primary size-1 rounded-full"></div>
+                        <x-fr-text size="sm" class="text-brand-primary! font-semibold!"> Sem operação </x-fr-text>
+                    </div>
+                </x-slot:footer>
+            </x-numbered-step>
 
-                <div class="flex items-center gap-2">
-                    <x-fr-text size="sm" class="text-brand-primary! font-semibold!"> Indicação </x-fr-text>
-                    <div class="bg-brand-primary size-1 rounded-full"></div>
-                    <x-fr-text size="sm" class="text-brand-primary! font-semibold!"> Comissão </x-fr-text>
-                    <div class="bg-brand-primary size-1 rounded-full"></div>
-                    <x-fr-text size="sm" class="text-brand-primary! font-semibold!"> Sem operação </x-fr-text>
-                </div>
-            </div>
+            <x-numbered-step
+                class="bg-elevation-01dp p-8"
+                data-reveal="up"
+                number="02"
+                title="Projeto educacional conjunto"
+                :show-chevron="false"
+            >
+                Co-criamos conteúdo, cursos, workshops ou programas de educação financeira com a sua marca. A Firece
+                entra com metodologia, especialistas e estrutura você entra com canal e audiência.
 
-            <div class="bg-elevation-01dp flex flex-col gap-3 p-8" data-reveal="up">
-                <div class="flex items-center justify-between">
-                    <p class="text-brand-primary font-display text-xl font-medium">02</p>
-                </div>
+                <x-slot:footer>
+                    <div class="flex items-center gap-2">
+                        <x-fr-text size="sm" class="text-brand-primary! font-semibold!"> Co-criação </x-fr-text>
+                        <div class="bg-brand-primary size-1 rounded-full"></div>
+                        <x-fr-text size="sm" class="text-brand-primary! font-semibold!"> Conteúdo </x-fr-text>
+                        <div class="bg-brand-primary size-1 rounded-full"></div>
+                        <x-fr-text size="sm" class="text-brand-primary! font-semibold!"> Workshops </x-fr-text>
+                    </div>
+                </x-slot:footer>
+            </x-numbered-step>
 
-                <x-fr-headline align="left" size="sm" container-class="gap-2!">
-                    <x-slot:title>
-                        Projeto educacional conjunto
-                    </x-slot:title>
-                    <x-slot:description>
-                        Co-criamos conteúdo, cursos, workshops ou programas de educação financeira com a sua marca. A
-                        Firece entra com metodologia, especialistas e estrutura você entra com canal e audiência.
-                    </x-slot:description>
-                </x-fr-headline>
+            <x-numbered-step
+                class="bg-elevation-01dp p-8"
+                data-reveal="up"
+                number="03"
+                title="Joint Venture estratégico"
+                :show-chevron="false"
+            >
+                Para quem quer construir algo maior um produto, uma solução, um canal novo. Avaliamos projetos com
+                potencial real e, quando há sinergia, investimos tempo, estrutura e recursos juntos.
 
-                <div class="flex items-center gap-2">
-                    <x-fr-text size="sm" class="text-brand-primary! font-semibold!"> Co-criação </x-fr-text>
-                    <div class="bg-brand-primary size-1 rounded-full"></div>
-                    <x-fr-text size="sm" class="text-brand-primary! font-semibold!"> Conteúdo </x-fr-text>
-                    <div class="bg-brand-primary size-1 rounded-full"></div>
-                    <x-fr-text size="sm" class="text-brand-primary! font-semibold!"> Workshops </x-fr-text>
-                </div>
-            </div>
-
-            <div class="bg-elevation-01dp flex flex-col gap-3 p-8" data-reveal="up">
-                <div class="flex items-center justify-between">
-                    <p class="text-brand-primary font-display text-xl font-medium">03</p>
-                </div>
-
-                <x-fr-headline align="left" size="sm" container-class="gap-2!">
-                    <x-slot:title>
-                        Joint Venture estratégico
-                    </x-slot:title>
-                    <x-slot:description>
-                        Para quem quer construir algo maior um produto, uma solução, um canal novo. Avaliamos projetos
-                        com potencial real e, quando há sinergia, investimos tempo, estrutura e recursos juntos.
-                    </x-slot:description>
-                </x-fr-headline>
-
-                <div class="flex items-center gap-2">
-                    <x-fr-text size="sm" class="text-brand-primary! font-semibold!"> Produto Conjunto </x-fr-text>
-                    <div class="bg-brand-primary size-1 rounded-full"></div>
-                    <x-fr-text size="sm" class="text-brand-primary! font-semibold!"> Investimento mútuo </x-fr-text>
-                </div>
-            </div>
+                <x-slot:footer>
+                    <div class="flex items-center gap-2">
+                        <x-fr-text size="sm" class="text-brand-primary! font-semibold!"> Produto Conjunto </x-fr-text>
+                        <div class="bg-brand-primary size-1 rounded-full"></div>
+                        <x-fr-text size="sm" class="text-brand-primary! font-semibold!"> Investimento mútuo </x-fr-text>
+                    </div>
+                </x-slot:footer>
+            </x-numbered-step>
         </div>
     </section>
 
@@ -262,80 +213,16 @@
         </div>
     </section>
 
-    <section class="section">
-        <div class="container flex flex-col gap-8">
-            <x-fr-headline>
-                <x-slot:title>
-                    Pronto para começar?
-                </x-slot:title>
-                <x-slot:description>
-                    Preencha abaixo e a gente entra em contato em até 2 dias úteis
-                </x-slot:description>
-            </x-fr-headline>
-
-            <form class="flex flex-col gap-6">
-                <div class="flex flex-col gap-2">
-                    <x-fr-text class="text-text-high!">Nome</x-fr-text>
-                    <input
-                        type="text"
-                        name="name"
-                        class="border-border-base focus:border-brand-primary w-full rounded-sm border p-4 focus:outline-none"
-                    />
-                </div>
-
-                <div class="flex flex-col gap-2">
-                    <x-fr-text class="text-text-high!">E-mail</x-fr-text>
-                    <input
-                        type="email"
-                        name="email"
-                        class="border-border-base focus:border-brand-primary w-full rounded-sm border p-4 focus:outline-none"
-                    />
-                </div>
-
-                <div class="flex flex-col gap-2">
-                    <x-fr-text class="text-text-high!">Telefone</x-fr-text>
-                    <input
-                        type="tel"
-                        name="phone"
-                        class="border-border-base focus:border-brand-primary w-full rounded-sm border p-4 focus:outline-none"
-                    />
-                </div>
-
-                <div class="flex flex-col gap-2">
-                    <x-fr-text class="text-text-high!">LinkedIn</x-fr-text>
-                    <input
-                        type="url"
-                        name="linkedin"
-                        class="border-border-base focus:border-brand-primary w-full rounded-sm border p-4 focus:outline-none"
-                    />
-                </div>
-
-                <div class="flex flex-col gap-2">
-                    <x-fr-text class="text-text-high!">Vaga de interesse</x-fr-text>
-                    <select
-                        name="role"
-                        class="border-border-base focus:border-brand-primary w-full rounded-sm border p-4 focus:outline-none"
-                    >
-                        <option value="" disabled selected></option>
-                        <option value="consultor-financeiro">Consultor Financeiro</option>
-                        <option value="trainee">Trainee</option>
-                        <option value="marketing">Marketing</option>
-                        <option value="tecnologia">Tecnologia</option>
-                        <option value="operacoes">Operações</option>
-                    </select>
-                </div>
-
-                <div class="flex flex-col gap-2">
-                    <x-fr-text class="text-text-high!">Por que a Firece?</x-fr-text>
-                    <textarea
-                        name="message"
-                        placeholder="Digite sua mensagem"
-                        class="border-border-base placeholder:text-text-medium focus:border-brand-primary h-50 w-full resize-none rounded-sm border p-4 focus:outline-none"
-                    ></textarea>
-                </div>
-            </form>
-
-            <x-fr-button> Enviar currículo </x-fr-button>
-        </div>
-    </section>
+    <x-lead-form
+        :select-options="
+            [
+           'consultor-financeiro' => 'Consultor Financeiro',
+           'trainee' => 'Trainee',
+           'marketing' => 'Marketing',
+           'tecnologia' => 'Tecnologia',
+           'operacoes' => 'Operações',
+     ]
+        "
+        submit-label="Enviar currículo"
+    />
 </x-layout.landing>

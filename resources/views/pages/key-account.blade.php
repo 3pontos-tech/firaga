@@ -17,26 +17,15 @@
                 </x-slot:description>
 
                 <x-slot:footer>
-                    <div class="mt-4 flex w-full items-center justify-between">
-                        <div class="flex flex-col items-start gap-2">
-                            <x-fr-heading> +10 anos </x-fr-heading>
-                            <x-fr-text size="xs"> DE MERCADO </x-fr-text>
-                        </div>
-
-                        <div class="bg-border-base w-px self-stretch"></div>
-
-                        <div class="flex flex-col items-start gap-2">
-                            <x-fr-heading> 300% </x-fr-heading>
-                            <x-fr-text size="xs"> CRES. ANUAL </x-fr-text>
-                        </div>
-
-                        <div class="bg-border-base w-px self-stretch"></div>
-
-                        <div class="flex flex-col items-start gap-2">
-                            <x-fr-heading> +2 mil </x-fr-heading>
-                            <x-fr-text size="xs"> CLIENTES </x-fr-text>
-                        </div>
-                    </div>
+                    <x-stat-grid
+                        :stats="
+                            [
+       ['value' => '+10 anos', 'label' => 'DE MERCADO'],
+       ['value' => '300%', 'label' => 'CRES. ANUAL'],
+       ['value' => '+2 mil', 'label' => 'CLIENTES'],
+    ]
+                        "
+                    />
                 </x-slot:footer>
             </x-fr-headline>
         </div>
@@ -69,50 +58,22 @@
                 <x-fr-heading size="xs"> O que buscamos </x-fr-heading>
 
                 <div class="flex flex-col gap-8" data-reveal-stagger="120">
-                    <div class="flex gap-3">
-                        <x-heroicon-c-arrow-right class="text-text-high size-5" />
+                    <x-arrow-block icon-color="text-text-high" title="Patrimônio relevante, objetivos de longo prazo">
+                        Você construiu algo que precisa ser protegido e expandido com inteligência
+                    </x-arrow-block>
 
-                        <div class="flex flex-col gap-2">
-                            <x-fr-heading size="xxs"> Patrimônio relevante, objetivos de longo prazo </x-fr-heading>
-                            <x-fr-text size="sm">
-                                Você construiu algo que precisa ser protegido e expandido com inteligência
-                            </x-fr-text>
-                        </div>
-                    </div>
+                    <x-arrow-block icon-color="text-text-high" title="Decisões financeiras complexas e recorrentes">
+                        Investimentos, estrutura familiar, bens você precisa de alguém que pense junto
+                    </x-arrow-block>
 
-                    <div class="flex gap-3">
-                        <x-heroicon-c-arrow-right class="text-text-high size-5" />
+                    <x-arrow-block icon-color="text-text-high" title="Interesse em exposição internacional">
+                        Dólar, libra, ativos em NY e Londres parte da sua estratégia já está ou deveria estar fora do
+                        Brasil
+                    </x-arrow-block>
 
-                        <div class="flex flex-col gap-2">
-                            <x-fr-heading size="xxs"> Decisões financeiras complexas e recorrentes </x-fr-heading>
-                            <x-fr-text size="sm">
-                                Investimentos, estrutura familiar, bens você precisa de alguém que pense junto
-                            </x-fr-text>
-                        </div>
-                    </div>
-
-                    <div class="flex gap-3">
-                        <x-heroicon-c-arrow-right class="text-text-high size-5" />
-
-                        <div class="flex flex-col gap-2">
-                            <x-fr-heading size="xxs"> Interesse em exposição internacional </x-fr-heading>
-                            <x-fr-text size="sm">
-                                Dólar, libra, ativos em NY e Londres parte da sua estratégia já está ou deveria estar
-                                fora do Brasil
-                            </x-fr-text>
-                        </div>
-                    </div>
-
-                    <div class="flex gap-3">
-                        <x-heroicon-c-arrow-right class="text-text-high size-5" />
-
-                        <div class="flex flex-col gap-2">
-                            <x-fr-heading size="xxs"> Discrição e exclusividade como padrão </x-fr-heading>
-                            <x-fr-text size="sm">
-                                Você não quer um atendente. Quer um consultor que te conhece de verdade
-                            </x-fr-text>
-                        </div>
-                    </div>
+                    <x-arrow-block icon-color="text-text-high" title="Discrição e exclusividade como padrão">
+                        Você não quer um atendente. Quer um consultor que te conhece de verdade
+                    </x-arrow-block>
                 </div>
             </div>
 
@@ -147,92 +108,52 @@
             class="border-border-base divide-border-base grid w-full grid-cols-1 divide-y border-y"
             data-reveal-stagger="140"
         >
-            <div class="flex flex-col gap-3 p-8" data-reveal="up">
-                <div class="flex items-center justify-between">
-                    <p class="text-brand-primary font-display text-xl font-medium">01</p>
-                    <x-heroicon-c-chevron-right class="text-icon-medium size-7" />
-                </div>
+            <x-numbered-step class="p-8" data-reveal="up" number="01" title="Estratégia patrimonial avançada">
+                A empresa contrata pacotes de horas mensais, semestrais ou anuais disponíveis para todos os
+                colaboradores.
 
-                <x-fr-headline align="left" size="sm" container-class="gap-2!">
-                    <x-slot:title>
-                        Estratégia patrimonial avançada
-                    </x-slot:title>
-                    <x-slot:description>
-                        A empresa contrata pacotes de horas mensais, semestrais ou anuais disponíveis para todos os
-                        colaboradores.
-                    </x-slot:description>
-                </x-fr-headline>
+                <x-slot:footer>
+                    <div class="flex items-center gap-3">
+                        <x-fr-text size="sm" class="text-text-high!"> Proteção </x-fr-text>
+                        <div class="bg-text-high size-1 rounded-full"></div>
+                        <x-fr-text size="sm" class="text-text-high!"> Crescimento </x-fr-text>
+                    </div>
+                </x-slot:footer>
+            </x-numbered-step>
 
-                <div class="flex items-center gap-3">
-                    <x-fr-text size="sm" class="text-text-high!"> Proteção </x-fr-text>
-                    <div class="bg-text-high size-1 rounded-full"></div>
-                    <x-fr-text size="sm" class="text-text-high!"> Crescimento </x-fr-text>
-                </div>
-            </div>
+            <x-numbered-step class="p-8" data-reveal="up" number="02" title="Gestão e alocação internacional">
+                Cada colaborador agenda seu atendimento diretamente pela plataforma Flamma, quando quiser.
 
-            <div class="flex flex-col gap-3 p-8" data-reveal="up">
-                <div class="flex items-center justify-between">
-                    <p class="text-brand-primary font-display text-xl font-medium">02</p>
-                    <x-heroicon-c-chevron-right class="text-icon-medium size-7" />
-                </div>
+                <x-slot:footer>
+                    <div class="flex items-center gap-3">
+                        <x-fr-text size="sm" class="text-text-high!"> Diversificação </x-fr-text>
+                    </div>
+                </x-slot:footer>
+            </x-numbered-step>
 
-                <x-fr-headline align="left" size="sm" container-class="gap-2!">
-                    <x-slot:title>
-                        Gestão e alocação internacional
-                    </x-slot:title>
-                    <x-slot:description>
-                        Cada colaborador agenda seu atendimento diretamente pela plataforma Flamma, quando quiser.
-                    </x-slot:description>
-                </x-fr-headline>
+            <x-numbered-step class="p-8" data-reveal="up" number="03" title="Planejamento sucessório">
+                Sessões individuais de 60 minutos com consultores especializados, online ou presencial.
 
-                <div class="flex items-center gap-3">
-                    <x-fr-text size="sm" class="text-text-high!"> Diversificação </x-fr-text>
-                </div>
-            </div>
+                <x-slot:footer>
+                    <div class="flex items-center gap-3">
+                        <x-fr-text size="sm" class="text-text-high!"> Família </x-fr-text>
+                        <div class="bg-text-high size-1 rounded-full"></div>
+                        <x-fr-text size="sm" class="text-text-high!"> Legado </x-fr-text>
+                    </div>
+                </x-slot:footer>
+            </x-numbered-step>
 
-            <div class="flex flex-col gap-3 p-8" data-reveal="up">
-                <div class="flex items-center justify-between">
-                    <p class="text-brand-primary font-display text-xl font-medium">03</p>
-                    <x-heroicon-c-chevron-right class="text-icon-medium size-7" />
-                </div>
+            <x-numbered-step class="p-8" data-reveal="up" number="04" title="Acompanhamento contínuo">
+                O RH acompanha a adesão e os resultados com relatórios consolidados de uso e evolução.
 
-                <x-fr-headline align="left" size="sm" container-class="gap-2!">
-                    <x-slot:title>
-                        Planejamento sucessório
-                    </x-slot:title>
-                    <x-slot:description>
-                        Sessões individuais de 60 minutos com consultores especializados, online ou presencial.
-                    </x-slot:description>
-                </x-fr-headline>
-
-                <div class="flex items-center gap-3">
-                    <x-fr-text size="sm" class="text-text-high!"> Família </x-fr-text>
-                    <div class="bg-text-high size-1 rounded-full"></div>
-                    <x-fr-text size="sm" class="text-text-high!"> Legado </x-fr-text>
-                </div>
-            </div>
-
-            <div class="flex flex-col gap-3 p-8" data-reveal="up">
-                <div class="flex items-center justify-between">
-                    <p class="text-brand-primary font-display text-xl font-medium">04</p>
-                    <x-heroicon-c-chevron-right class="text-icon-medium size-7" />
-                </div>
-
-                <x-fr-headline align="left" size="sm" container-class="gap-2!">
-                    <x-slot:title>
-                        Acompanhamento contínuo
-                    </x-slot:title>
-                    <x-slot:description>
-                        O RH acompanha a adesão e os resultados com relatórios consolidados de uso e evolução.
-                    </x-slot:description>
-                </x-fr-headline>
-
-                <div class="flex items-center gap-3">
-                    <x-fr-text size="sm" class="text-text-high!"> Parceria </x-fr-text>
-                    <div class="bg-text-high size-1 rounded-full"></div>
-                    <x-fr-text size="sm" class="text-text-high!"> Suporte </x-fr-text>
-                </div>
-            </div>
+                <x-slot:footer>
+                    <div class="flex items-center gap-3">
+                        <x-fr-text size="sm" class="text-text-high!"> Parceria </x-fr-text>
+                        <div class="bg-text-high size-1 rounded-full"></div>
+                        <x-fr-text size="sm" class="text-text-high!"> Suporte </x-fr-text>
+                    </div>
+                </x-slot:footer>
+            </x-numbered-step>
         </div>
     </section>
 
@@ -282,21 +203,15 @@
         </div>
     </section>
 
-    <section class="section metallic-light bg-elevation-surface mt-28">
-        <div class="container flex flex-col gap-8 py-20">
-            <x-fr-headline data-reveal="up">
-                <x-slot:title>
-                    Pronto para o próximo nível?
-                </x-slot:title>
-                <x-slot:description>
-                    Uma conversa de 30 minutos é suficiente para entender se o Key Account faz sentido para o seu
-                    momento. Sem compromisso. Sem proposta antes de ouvir você.
-                </x-slot:description>
-            </x-fr-headline>
-
-            <x-fr-button data-reveal="up"> Esse sou eu </x-fr-button>
-        </div>
-    </section>
+    <x-cta-banner class="mt-28" variant="light" cta-label="Esse sou eu">
+        <x-slot:title>
+            Pronto para o próximo nível?
+        </x-slot:title>
+        <x-slot:description>
+            Uma conversa de 30 minutos é suficiente para entender se o Key Account faz sentido para o seu momento. Sem
+            compromisso. Sem proposta antes de ouvir você.
+        </x-slot:description>
+    </x-cta-banner>
 
     <section class="section mt-28 mb-11">
         <div class="container flex flex-col gap-8">

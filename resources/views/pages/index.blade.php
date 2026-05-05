@@ -16,12 +16,7 @@
         <div class="container flex flex-col items-center gap-8" data-reveal-stagger="140">
             <x-fr-headline data-reveal="up">
                 <x-slot:header>
-                    <div class="flex w-full flex-col items-center justify-center gap-2">
-                        <x-avatar-group />
-                        <x-fr-text class="font-semibold!" size="sm">
-                            Mais de 9.000 investidores já fazem parte
-                        </x-fr-text>
-                    </div>
+                    <x-social-proof>Mais de 9.000 investidores já fazem parte</x-social-proof>
                 </x-slot:header>
 
                 <x-slot:title>
@@ -170,65 +165,35 @@
             class="border-border-base divide-border-base grid w-full grid-cols-1 divide-y border-y"
             data-reveal-stagger="140"
         >
-            <div class="flex flex-col gap-3 p-8" data-reveal="up">
-                <div class="flex items-center justify-between">
-                    <p class="text-brand-primary font-display text-xl font-medium">01</p>
-                    <x-heroicon-c-chevron-right class="text-icon-medium size-7" />
-                </div>
+            <x-numbered-step class="p-8" data-reveal="up" number="01" title="Análise">
+                Entendemos onde você está de verdade. Renda, dívidas, hábitos, objetivos. Sem julgamento.
 
-                <x-fr-headline align="left" size="sm" container-class="gap-2!">
-                    <x-slot:title>
-                        Análise
-                    </x-slot:title>
-                    <x-slot:description>
-                        Entendemos onde você está de verdade. Renda, dívidas, hábitos, objetivos. Sem julgamento.
-                    </x-slot:description>
-                </x-fr-headline>
+                <x-slot:footer>
+                    <x-fr-text size="sm" class="text-brand-primary! font-semibold!">
+                        Não é falta de disciplina. É falta de um plano
+                    </x-fr-text>
+                </x-slot:footer>
+            </x-numbered-step>
 
-                <x-fr-text size="sm" class="text-brand-primary! font-semibold!">
-                    Não é falta de disciplina. É falta de um plano
-                </x-fr-text>
-            </div>
+            <x-numbered-step class="p-8" data-reveal="up" number="01" title="Análise">
+                Entendemos onde você está de verdade. Renda, dívidas, hábitos, objetivos. Sem julgamento.
 
-            <div class="flex flex-col gap-3 p-8" data-reveal="up">
-                <div class="flex items-center justify-between">
-                    <p class="text-brand-primary font-display text-xl font-medium">01</p>
-                    <x-heroicon-c-chevron-right class="text-icon-medium size-7" />
-                </div>
+                <x-slot:footer>
+                    <x-fr-text size="sm" class="text-brand-primary! font-semibold!">
+                        Não é falta de disciplina. É falta de um plano
+                    </x-fr-text>
+                </x-slot:footer>
+            </x-numbered-step>
 
-                <x-fr-headline align="left" size="sm" container-class="gap-2!">
-                    <x-slot:title>
-                        Análise
-                    </x-slot:title>
-                    <x-slot:description>
-                        Entendemos onde você está de verdade. Renda, dívidas, hábitos, objetivos. Sem julgamento.
-                    </x-slot:description>
-                </x-fr-headline>
+            <x-numbered-step class="p-8" data-reveal="up" number="01" title="Análise">
+                Entendemos onde você está de verdade. Renda, dívidas, hábitos, objetivos. Sem julgamento.
 
-                <x-fr-text size="sm" class="text-brand-primary! font-semibold!">
-                    Não é falta de disciplina. É falta de um plano
-                </x-fr-text>
-            </div>
-
-            <div class="flex flex-col gap-3 p-8" data-reveal="up">
-                <div class="flex items-center justify-between">
-                    <p class="text-brand-primary font-display text-xl font-medium">01</p>
-                    <x-heroicon-c-chevron-right class="text-icon-medium size-7" />
-                </div>
-
-                <x-fr-headline align="left" size="sm" container-class="gap-2!">
-                    <x-slot:title>
-                        Análise
-                    </x-slot:title>
-                    <x-slot:description>
-                        Entendemos onde você está de verdade. Renda, dívidas, hábitos, objetivos. Sem julgamento.
-                    </x-slot:description>
-                </x-fr-headline>
-
-                <x-fr-text size="sm" class="text-brand-primary! font-semibold!">
-                    Não é falta de disciplina. É falta de um plano
-                </x-fr-text>
-            </div>
+                <x-slot:footer>
+                    <x-fr-text size="sm" class="text-brand-primary! font-semibold!">
+                        Não é falta de disciplina. É falta de um plano
+                    </x-fr-text>
+                </x-slot:footer>
+            </x-numbered-step>
         </div>
 
         <div class="container flex flex-col items-center gap-8">
@@ -361,42 +326,24 @@
         </div>
     </section>
 
-    <section class="section bg-brand-primary py-20">
-        <div class="container flex flex-col gap-8">
-            <x-fr-headline data-reveal="up">
-                <x-slot:header>
-                    <div class="flex w-full flex-col items-center justify-center gap-2">
-                        <x-avatar-group />
-                        <x-fr-text class="text-text-light! font-semibold!" size="sm">
-                            Mais de 9.000 investidores já fazem parte
-                        </x-fr-text>
-                    </div>
-                </x-slot:header>
-                <x-slot:title class="text-text-light!">
-                    Venha fazer parte da Firece
-                </x-slot:title>
-                <x-slot:description class="text-text-light!">
-                    Em média, brasileiros perdem 23% da renda sem saber para onde foi. A Firece mostra exatamente o que
-                    está acontecendo
-                </x-slot:description>
-            </x-fr-headline>
-
-            <x-fr-button variant="white"> Descobrir meu plano </x-fr-button>
-
-            <x-logo-badge class="text-text-light!"> Sem custo, sem compromisso, uma conversa rápida </x-logo-badge>
-        </div>
-    </section>
+    <x-cta-banner cta-label="Descobrir meu plano" footer="Sem custo, sem compromisso, uma conversa rápida">
+        <x-slot:proof>
+            <x-social-proof variant="dark">Mais de 9.000 investidores já fazem parte</x-social-proof>
+        </x-slot:proof>
+        <x-slot:title>
+            Venha fazer parte da Firece
+        </x-slot:title>
+        <x-slot:description>
+            Em média, brasileiros perdem 23% da renda sem saber para onde foi. A Firece mostra exatamente o que está
+            acontecendo
+        </x-slot:description>
+    </x-cta-banner>
 
     <section class="section">
         <div class="container flex flex-col items-center gap-8">
             <x-fr-headline data-reveal="up">
                 <x-slot:header>
-                    <div class="flex w-full flex-col items-center justify-center gap-2">
-                        <x-avatar-group />
-                        <x-fr-text class="text-text-high! font-semibold!" size="sm">
-                            Mais de 50 investidores já fazem parte
-                        </x-fr-text>
-                    </div>
+                    <x-social-proof variant="high">Mais de 50 investidores já fazem parte</x-social-proof>
                 </x-slot:header>
 
                 <x-slot:title>
