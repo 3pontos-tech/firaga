@@ -25,26 +25,16 @@
                 </x-slot:actions>
 
                 <x-slot:footer>
-                    <div class="mt-4 flex w-full items-center justify-between">
-                        <div class="flex flex-col items-start gap-2">
-                            <x-fr-heading class="text-brand-primary!"> +10 anos </x-fr-heading>
-                            <x-fr-text size="xs"> DE MERCADO </x-fr-text>
-                        </div>
-
-                        <div class="bg-border-base w-px self-stretch"></div>
-
-                        <div class="flex flex-col items-start gap-2">
-                            <x-fr-heading class="text-brand-primary!"> 300% </x-fr-heading>
-                            <x-fr-text size="xs"> CRES. ANUAL </x-fr-text>
-                        </div>
-
-                        <div class="bg-border-base w-px self-stretch"></div>
-
-                        <div class="flex flex-col items-start gap-2">
-                            <x-fr-heading class="text-brand-primary!"> +2 mil </x-fr-heading>
-                            <x-fr-text size="xs"> CLIENTES </x-fr-text>
-                        </div>
-                    </div>
+                    <x-stat-grid
+                        highlight
+                        :stats="
+                            [
+       ['value' => '+10 anos', 'label' => 'DE MERCADO'],
+       ['value' => '300%', 'label' => 'CRES. ANUAL'],
+       ['value' => '+2 mil', 'label' => 'CLIENTES'],
+    ]
+                        "
+                    />
                 </x-slot:footer>
             </x-fr-headline>
         </div>
@@ -226,80 +216,16 @@
         </div>
     </section>
 
-    <section class="section">
-        <div class="container flex flex-col gap-8">
-            <x-fr-headline>
-                <x-slot:title>
-                    Pronto para começar?
-                </x-slot:title>
-                <x-slot:description>
-                    Preencha abaixo e a gente entra em contato em até 2 dias úteis
-                </x-slot:description>
-            </x-fr-headline>
-
-            <form class="flex flex-col gap-6">
-                <div class="flex flex-col gap-2">
-                    <x-fr-text class="text-text-high!">Nome</x-fr-text>
-                    <input
-                        type="text"
-                        name="name"
-                        class="border-border-base focus:border-brand-primary w-full rounded-sm border p-4 focus:outline-none"
-                    />
-                </div>
-
-                <div class="flex flex-col gap-2">
-                    <x-fr-text class="text-text-high!">E-mail</x-fr-text>
-                    <input
-                        type="email"
-                        name="email"
-                        class="border-border-base focus:border-brand-primary w-full rounded-sm border p-4 focus:outline-none"
-                    />
-                </div>
-
-                <div class="flex flex-col gap-2">
-                    <x-fr-text class="text-text-high!">Telefone</x-fr-text>
-                    <input
-                        type="tel"
-                        name="phone"
-                        class="border-border-base focus:border-brand-primary w-full rounded-sm border p-4 focus:outline-none"
-                    />
-                </div>
-
-                <div class="flex flex-col gap-2">
-                    <x-fr-text class="text-text-high!">LinkedIn</x-fr-text>
-                    <input
-                        type="url"
-                        name="linkedin"
-                        class="border-border-base focus:border-brand-primary w-full rounded-sm border p-4 focus:outline-none"
-                    />
-                </div>
-
-                <div class="flex flex-col gap-2">
-                    <x-fr-text class="text-text-high!">Vaga de interesse</x-fr-text>
-                    <select
-                        name="role"
-                        class="border-border-base focus:border-brand-primary w-full rounded-sm border p-4 focus:outline-none"
-                    >
-                        <option value="" disabled selected></option>
-                        <option value="consultor-financeiro">Consultor Financeiro</option>
-                        <option value="trainee">Trainee</option>
-                        <option value="marketing">Marketing</option>
-                        <option value="tecnologia">Tecnologia</option>
-                        <option value="operacoes">Operações</option>
-                    </select>
-                </div>
-
-                <div class="flex flex-col gap-2">
-                    <x-fr-text class="text-text-high!">Por que a Firece?</x-fr-text>
-                    <textarea
-                        name="message"
-                        placeholder="Digite sua mensagem"
-                        class="border-border-base placeholder:text-text-medium focus:border-brand-primary h-50 w-full resize-none rounded-sm border p-4 focus:outline-none"
-                    ></textarea>
-                </div>
-            </form>
-
-            <x-fr-button> Enviar currículo </x-fr-button>
-        </div>
-    </section>
+    <x-lead-form
+        :select-options="
+            [
+           'consultor-financeiro' => 'Consultor Financeiro',
+           'trainee' => 'Trainee',
+           'marketing' => 'Marketing',
+           'tecnologia' => 'Tecnologia',
+           'operacoes' => 'Operações',
+     ]
+        "
+        submit-label="Enviar currículo"
+    />
 </x-layout.landing>

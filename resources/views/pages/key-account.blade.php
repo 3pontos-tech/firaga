@@ -17,26 +17,15 @@
                 </x-slot:description>
 
                 <x-slot:footer>
-                    <div class="mt-4 flex w-full items-center justify-between">
-                        <div class="flex flex-col items-start gap-2">
-                            <x-fr-heading> +10 anos </x-fr-heading>
-                            <x-fr-text size="xs"> DE MERCADO </x-fr-text>
-                        </div>
-
-                        <div class="bg-border-base w-px self-stretch"></div>
-
-                        <div class="flex flex-col items-start gap-2">
-                            <x-fr-heading> 300% </x-fr-heading>
-                            <x-fr-text size="xs"> CRES. ANUAL </x-fr-text>
-                        </div>
-
-                        <div class="bg-border-base w-px self-stretch"></div>
-
-                        <div class="flex flex-col items-start gap-2">
-                            <x-fr-heading> +2 mil </x-fr-heading>
-                            <x-fr-text size="xs"> CLIENTES </x-fr-text>
-                        </div>
-                    </div>
+                    <x-stat-grid
+                        :stats="
+                            [
+       ['value' => '+10 anos', 'label' => 'DE MERCADO'],
+       ['value' => '300%', 'label' => 'CRES. ANUAL'],
+       ['value' => '+2 mil', 'label' => 'CLIENTES'],
+    ]
+                        "
+                    />
                 </x-slot:footer>
             </x-fr-headline>
         </div>
@@ -214,21 +203,15 @@
         </div>
     </section>
 
-    <section class="section metallic-light bg-elevation-surface mt-28">
-        <div class="container flex flex-col gap-8 py-20">
-            <x-fr-headline data-reveal="up">
-                <x-slot:title>
-                    Pronto para o próximo nível?
-                </x-slot:title>
-                <x-slot:description>
-                    Uma conversa de 30 minutos é suficiente para entender se o Key Account faz sentido para o seu
-                    momento. Sem compromisso. Sem proposta antes de ouvir você.
-                </x-slot:description>
-            </x-fr-headline>
-
-            <x-fr-button data-reveal="up"> Esse sou eu </x-fr-button>
-        </div>
-    </section>
+    <x-cta-banner class="mt-28" variant="light" cta-label="Esse sou eu">
+        <x-slot:title>
+            Pronto para o próximo nível?
+        </x-slot:title>
+        <x-slot:description>
+            Uma conversa de 30 minutos é suficiente para entender se o Key Account faz sentido para o seu momento. Sem
+            compromisso. Sem proposta antes de ouvir você.
+        </x-slot:description>
+    </x-cta-banner>
 
     <section class="section mt-28 mb-11">
         <div class="container flex flex-col gap-8">
