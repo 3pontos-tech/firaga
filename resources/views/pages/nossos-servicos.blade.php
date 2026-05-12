@@ -93,70 +93,22 @@
                 class="border-border-base divide-border-base grid w-full grid-cols-1 divide-y border-y"
                 data-reveal-stagger="140"
             >
-                <div class="flex flex-col gap-3 py-8" data-reveal="up">
-                    <div class="flex items-center justify-between">
-                        <p class="text-text-light font-display text-xl font-medium">01</p>
-                        <x-heroicon-c-chevron-right class="text-text-light size-7" />
-                    </div>
+                <x-numbered-step class="py-8" data-reveal="up" number="01" title="Contratação" inverted>
+                    A empresa contrata pacotes de horas mensais, semestrais ou anuais disponíveis para todos os
+                    colaboradores.
+                </x-numbered-step>
 
-                    <x-fr-headline align="left" size="sm" container-class="gap-2!">
-                        <x-slot:title class="text-text-light!">
-                            Contratação
-                        </x-slot:title>
-                        <x-slot:description class="text-text-light!">
-                            A empresa contrata pacotes de horas mensais, semestrais ou anuais disponíveis para todos os
-                            colaboradores.
-                        </x-slot:description>
-                    </x-fr-headline>
-                </div>
+                <x-numbered-step class="py-8" data-reveal="up" number="02" title="Agendamento" inverted>
+                    Cada colaborador agenda seu atendimento diretamente pela plataforma Flamma, quando quiser.
+                </x-numbered-step>
 
-                <div class="flex flex-col gap-3 py-8" data-reveal="up">
-                    <div class="flex items-center justify-between">
-                        <p class="text-text-light font-display text-xl font-medium">02</p>
-                        <x-heroicon-c-chevron-right class="text-text-light size-7" />
-                    </div>
+                <x-numbered-step class="py-8" data-reveal="up" number="03" title="Atendimento" inverted>
+                    Sessões individuais de 60 minutos com consultores especializados, online ou presencial.
+                </x-numbered-step>
 
-                    <x-fr-headline align="left" size="sm" container-class="gap-2!">
-                        <x-slot:title class="text-text-light!">
-                            Agendamento
-                        </x-slot:title>
-                        <x-slot:description class="text-text-light!">
-                            Cada colaborador agenda seu atendimento diretamente pela plataforma Flamma, quando quiser.
-                        </x-slot:description>
-                    </x-fr-headline>
-                </div>
-
-                <div class="flex flex-col gap-3 py-8" data-reveal="up">
-                    <div class="flex items-center justify-between">
-                        <p class="text-text-light font-display text-xl font-medium">03</p>
-                        <x-heroicon-c-chevron-right class="text-text-light size-7" />
-                    </div>
-
-                    <x-fr-headline align="left" size="sm" container-class="gap-2!">
-                        <x-slot:title class="text-text-light!">
-                            Atendimento
-                        </x-slot:title>
-                        <x-slot:description class="text-text-light!">
-                            Sessões individuais de 60 minutos com consultores especializados, online ou presencial.
-                        </x-slot:description>
-                    </x-fr-headline>
-                </div>
-
-                <div class="flex flex-col gap-3 py-8" data-reveal="up">
-                    <div class="flex items-center justify-between">
-                        <p class="text-text-light font-display text-xl font-medium">04</p>
-                        <x-heroicon-c-chevron-right class="text-text-light size-7" />
-                    </div>
-
-                    <x-fr-headline align="left" size="sm" container-class="gap-2!">
-                        <x-slot:title class="text-text-light!">
-                            Relatórios de impacto
-                        </x-slot:title>
-                        <x-slot:description class="text-text-light!">
-                            O RH acompanha a adesão e os resultados com relatórios consolidados de uso e evolução.
-                        </x-slot:description>
-                    </x-fr-headline>
-                </div>
+                <x-numbered-step class="py-8" data-reveal="up" number="04" title="Relatórios de impacto" inverted>
+                    O RH acompanha a adesão e os resultados com relatórios consolidados de uso e evolução.
+                </x-numbered-step>
             </div>
 
             <x-fr-button variant="white"> Descobrir meu plano</x-fr-button>
@@ -187,45 +139,21 @@
                     <x-fr-heading size="xs"> O que buscamos</x-fr-heading>
 
                     <div class="flex flex-col gap-8" data-reveal-stagger="120">
-                        <div class="flex items-center gap-3">
-                            <x-heroicon-c-arrow-right class="text-brand-primary size-5" />
+                        <x-arrow-block align="center">
+                            Você sabe, pela primeira vez, para onde vai cada real da sua renda
+                        </x-arrow-block>
 
-                            <div class="flex flex-col gap-2">
-                                <x-fr-text size="sm">
-                                    Você sabe, pela primeira vez, para onde vai cada real da sua renda
-                                </x-fr-text>
-                            </div>
-                        </div>
+                        <x-arrow-block align="center">
+                            Tem um plano real para os próximos 12 meses com metas que cabem na sua realidade
+                        </x-arrow-block>
 
-                        <div class="flex items-center gap-3">
-                            <x-heroicon-c-arrow-right class="text-brand-primary size-5" />
+                        <x-arrow-block align="center">
+                            Começa a construir reserva de emergência sem precisar ganhar mais
+                        </x-arrow-block>
 
-                            <div class="flex flex-col gap-2">
-                                <x-fr-text size="sm">
-                                    Tem um plano real para os próximos 12 meses com metas que cabem na sua realidade
-                                </x-fr-text>
-                            </div>
-                        </div>
-
-                        <div class="flex items-center gap-3">
-                            <x-heroicon-c-arrow-right class="text-brand-primary size-5" />
-
-                            <div class="flex flex-col gap-2">
-                                <x-fr-text size="sm">
-                                    Começa a construir reserva de emergência sem precisar ganhar mais
-                                </x-fr-text>
-                            </div>
-                        </div>
-
-                        <div class="flex items-center gap-3">
-                            <x-heroicon-c-arrow-right class="text-brand-primary size-5" />
-
-                            <div class="flex flex-col gap-2">
-                                <x-fr-text size="sm">
-                                    Toma decisões financeiras com clareza, não com ansiedade
-                                </x-fr-text>
-                            </div>
-                        </div>
+                        <x-arrow-block align="center">
+                            Toma decisões financeiras com clareza, não com ansiedade
+                        </x-arrow-block>
                     </div>
                 </div>
             </div>
@@ -456,37 +384,21 @@
                 <x-fr-heading size="xs"> O que muda na sua vida: </x-fr-heading>
 
                 <div class="flex flex-col gap-8" data-reveal-stagger="120">
-                    <div class="flex items-center gap-3">
-                        <x-heroicon-c-arrow-right class="text-text-high size-5" />
+                    <x-arrow-block align="center" icon-color="text-text-high">
+                        Acompanhamento contínuo com revisões mensais do seu plano
+                    </x-arrow-block>
 
-                        <div class="flex flex-col gap-2">
-                            <x-fr-text size="sm"> Acompanhamento contínuo com revisões mensais do seu plano </x-fr-text>
-                        </div>
-                    </div>
+                    <x-arrow-block align="center" icon-color="text-text-high">
+                        Acesso direto ao seu consultor sem fila, sem espera
+                    </x-arrow-block>
 
-                    <div class="flex items-center gap-3">
-                        <x-heroicon-c-arrow-right class="text-text-high size-5" />
+                    <x-arrow-block align="center" icon-color="text-text-high">
+                        Estratégias exclusivas adaptadas ao seu momento de vida
+                    </x-arrow-block>
 
-                        <div class="flex flex-col gap-2">
-                            <x-fr-text size="sm"> Acesso direto ao seu consultor sem fila, sem espera </x-fr-text>
-                        </div>
-                    </div>
-
-                    <div class="flex items-center gap-3">
-                        <x-heroicon-c-arrow-right class="text-text-high size-5" />
-
-                        <div class="flex flex-col gap-2">
-                            <x-fr-text size="sm"> Estratégias exclusivas adaptadas ao seu momento de vida </x-fr-text>
-                        </div>
-                    </div>
-
-                    <div class="flex items-center gap-3">
-                        <x-heroicon-c-arrow-right class="text-text-high size-5" />
-
-                        <div class="flex flex-col gap-2">
-                            <x-fr-text size="sm"> Decisões financeiras com suporte em tempo real </x-fr-text>
-                        </div>
-                    </div>
+                    <x-arrow-block align="center" icon-color="text-text-high">
+                        Decisões financeiras com suporte em tempo real
+                    </x-arrow-block>
                 </div>
             </div>
 

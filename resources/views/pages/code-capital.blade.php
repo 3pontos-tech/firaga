@@ -66,82 +66,31 @@
                 <x-fr-heading size="xs"> O que buscamos </x-fr-heading>
 
                 <div class="flex flex-col gap-8" data-reveal-stagger="120">
-                    <div class="flex gap-3">
-                        <x-heroicon-c-arrow-right class="text-brand-primary size-5" />
+                    <x-arrow-block eyebrow="Especialidade" title="PJ / CNPJ">
+                        Pró-labore, distribuição de lucros e regime tributário usados a favor do seu patrimônio.
+                    </x-arrow-block>
 
-                        <div class="flex flex-col gap-2">
-                            <x-fr-text class="text-brand-primary! font-semibold!" size="xs">Especialidade</x-fr-text>
-                            <x-fr-heading size="xxs"> PJ / CNPJ </x-fr-heading>
-                            <x-fr-text size="sm">
-                                Pró-labore, distribuição de lucros e regime tributário usados a favor do seu patrimônio.
-                            </x-fr-text>
-                        </div>
-                    </div>
+                    <x-arrow-block eyebrow="Atendemos" title="Remoto USD / EUR">
+                        Câmbio como estratégia de patrimônio, não só uma variável. Alocação inteligente em moeda forte.
+                    </x-arrow-block>
 
-                    <div class="flex gap-3">
-                        <x-heroicon-c-arrow-right class="text-brand-primary size-5" />
+                    <x-arrow-block eyebrow="Atendemos" title="Stock Options">
+                        Quando e como exercer, com visão de impacto tributário e estratégia de patrimônio de longo
+                        prazo.
+                    </x-arrow-block>
 
-                        <div class="flex flex-col gap-2">
-                            <x-fr-text class="text-brand-primary! font-semibold!" size="xs">Atendemos</x-fr-text>
-                            <x-fr-heading size="xxs"> Remoto USD / EUR </x-fr-heading>
-                            <x-fr-text size="sm">
-                                Câmbio como estratégia de patrimônio, não só uma variável. Alocação inteligente em moeda
-                                forte.
-                            </x-fr-text>
-                        </div>
-                    </div>
+                    <x-arrow-block eyebrow="Atendemos" title="CLT">
+                        Planejamento financeiro além do salário: investimentos, reservas e objetivos de longo prazo.
+                    </x-arrow-block>
 
-                    <div class="flex gap-3">
-                        <x-heroicon-c-arrow-right class="text-brand-primary size-5" />
+                    <x-arrow-block eyebrow="Atendemos" title="Freela">
+                        Renda variável com estrutura sólida: reserva de emergência, fluxo de caixa e crescimento
+                        sustentável.
+                    </x-arrow-block>
 
-                        <div class="flex flex-col gap-2">
-                            <x-fr-text class="text-brand-primary! font-semibold!" size="xs">Atendemos</x-fr-text>
-                            <x-fr-heading size="xxs"> Stock Options </x-fr-heading>
-                            <x-fr-text size="sm">
-                                Quando e como exercer, com visão de impacto tributário e estratégia de patrimônio de
-                                longo prazo.
-                            </x-fr-text>
-                        </div>
-                    </div>
-
-                    <div class="flex gap-3">
-                        <x-heroicon-c-arrow-right class="text-brand-primary size-5" />
-
-                        <div class="flex flex-col gap-2">
-                            <x-fr-text class="text-brand-primary! font-semibold!" size="xs">Atendemos</x-fr-text>
-                            <x-fr-heading size="xxs"> CLT </x-fr-heading>
-                            <x-fr-text size="sm">
-                                Planejamento financeiro além do salário: investimentos, reservas e objetivos de longo
-                                prazo.
-                            </x-fr-text>
-                        </div>
-                    </div>
-
-                    <div class="flex gap-3">
-                        <x-heroicon-c-arrow-right class="text-brand-primary size-5" />
-
-                        <div class="flex flex-col gap-2">
-                            <x-fr-text class="text-brand-primary! font-semibold!" size="xs">Atendemos</x-fr-text>
-                            <x-fr-heading size="xxs"> Freela </x-fr-heading>
-                            <x-fr-text size="sm">
-                                Renda variável com estrutura sólida: reserva de emergência, fluxo de caixa e crescimento
-                                sustentável.
-                            </x-fr-text>
-                        </div>
-                    </div>
-
-                    <div class="flex gap-3">
-                        <x-heroicon-c-arrow-right class="text-brand-primary size-5" />
-
-                        <div class="flex flex-col gap-2">
-                            <x-fr-text class="text-brand-primary! font-semibold!" size="xs">Atendemos</x-fr-text>
-                            <x-fr-heading size="xxs"> Mix de regimes </x-fr-heading>
-                            <x-fr-text size="sm">
-                                CLT + freela + crypto + USD ao mesmo tempo. A realidade de muitos profissionais de tech
-                                hoje.
-                            </x-fr-text>
-                        </div>
-                    </div>
+                    <x-arrow-block eyebrow="Atendemos" title="Mix de regimes">
+                        CLT + freela + crypto + USD ao mesmo tempo. A realidade de muitos profissionais de tech hoje.
+                    </x-arrow-block>
                 </div>
             </div>
         </div>
@@ -189,31 +138,22 @@
         </div>
     </section>
 
-    <section class="section bg-brand-primary mt-28 py-20">
-        <div class="container flex flex-col gap-8">
-            <x-fr-headline data-reveal="up">
-                <x-slot:header>
-                    <div class="flex w-full flex-col items-center justify-center gap-2">
-                        <x-avatar-group />
-                        <x-fr-text class="text-text-light! font-semibold!" size="sm">
-                            Mais de 9.000 investidores já fazem parte
-                        </x-fr-text>
-                    </div>
-                </x-slot:header>
-                <x-slot:title class="text-text-light!">
-                    Venha fazer parte da Firece
-                </x-slot:title>
-                <x-slot:description class="text-text-light!">
-                    Em média, brasileiros perdem 23% da renda sem saber para onde foi. A Firece mostra exatamente o que
-                    está acontecendo
-                </x-slot:description>
-            </x-fr-headline>
-
-            <x-fr-button variant="white"> Descobrir meu plano </x-fr-button>
-
-            <x-logo-badge class="text-text-light!"> Sem custo, sem compromisso, uma conversa rápida </x-logo-badge>
-        </div>
-    </section>
+    <x-cta-banner
+        class="mt-28"
+        cta-label="Descobrir meu plano"
+        footer="Sem custo, sem compromisso, uma conversa rápida"
+    >
+        <x-slot:proof>
+            <x-social-proof variant="dark">Mais de 9.000 investidores já fazem parte</x-social-proof>
+        </x-slot:proof>
+        <x-slot:title>
+            Venha fazer parte da Firece
+        </x-slot:title>
+        <x-slot:description>
+            Em média, brasileiros perdem 23% da renda sem saber para onde foi. A Firece mostra exatamente o que está
+            acontecendo
+        </x-slot:description>
+    </x-cta-banner>
 
     <section class="section mt-28 mb-11">
         <div class="container flex flex-col gap-8">
