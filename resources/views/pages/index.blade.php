@@ -101,7 +101,10 @@
     </section>
 
     <section class="section dark bg-elevation-surface px-4 py-20">
-        <div class="container flex flex-col gap-8 md:flex-row md:items-stretch md:gap-12" data-reveal-stagger="120">
+        <div
+            class="container flex flex-col gap-8 md:flex-row md:items-stretch md:gap-12 md:gap-x-28"
+            data-reveal-stagger="120"
+        >
             <div class="md:order-2 md:basis-1/3 md:self-stretch" data-reveal="left">
                 <img
                     src="{{ asset('images/Image.webp') }}"
