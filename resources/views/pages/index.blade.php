@@ -187,58 +187,59 @@
         </div>
     </section>
 
-    <section class="section flex flex-col items-center gap-8">
-        <div class="container flex flex-col items-center gap-8">
-            <x-fr-headline data-reveal="up">
-                <x-slot:title>
-                    Três encontros, uma <mark>vida financeira</mark> diferente
-                </x-slot:title>
-                <x-slot:description>
-                    Sem curso, sem palestra, sem planilha genérica. Um plano construído para a
-                    <mark>sua realidade</mark> e só para ela.
-                </x-slot:description>
-            </x-fr-headline>
-        </div>
+    <section class="section">
+        <div class="container grid grid-cols-1 items-center gap-8 md:grid-cols-2 md:gap-12 md:gap-x-28">
+            <div class="flex flex-col items-center gap-8 md:items-start">
+                <x-fr-headline align="left-desk" data-reveal="up">
+                    <x-slot:title>
+                        Três encontros, uma <mark>vida financeira</mark> diferente
+                    </x-slot:title>
+                    <x-slot:description>
+                        Sem curso, sem palestra, sem planilha genérica. Um plano construído para a
+                        <mark>sua realidade</mark> e só para ela.
+                    </x-slot:description>
+                </x-fr-headline>
 
-        <div
-            class="border-border-base divide-border-base grid w-full grid-cols-1 divide-y border-y"
-            data-reveal-stagger="140"
-        >
-            <x-numbered-step class="p-8" data-reveal="up" number="01" title="Análise">
-                Entendemos onde você está de verdade. Renda, dívidas, hábitos, objetivos. Sem julgamento.
+                <div class="flex w-full flex-col items-center gap-4" data-reveal="up">
+                    <x-fr-button class="w-full!"> Descobrir meu plano </x-fr-button>
+                    <x-logo-badge class="justify-center md:justify-start"> Simples assim. Sem enrolação. </x-logo-badge>
+                </div>
+            </div>
 
-                <x-slot:footer>
-                    <x-fr-text size="sm" class="text-brand-primary! font-semibold!">
-                        Não é falta de disciplina. É falta de um plano
-                    </x-fr-text>
-                </x-slot:footer>
-            </x-numbered-step>
+            <div
+                class="border-border-base divide-border-base grid w-full grid-cols-1 divide-y md:border"
+                data-reveal-stagger="140"
+            >
+                <x-numbered-step class="p-8" data-reveal="up" number="01" title="Análise">
+                    Entendemos onde você está de verdade. Renda, dívidas, hábitos, objetivos. Sem julgamento.
 
-            <x-numbered-step class="p-8" data-reveal="up" number="01" title="Análise">
-                Entendemos onde você está de verdade. Renda, dívidas, hábitos, objetivos. Sem julgamento.
+                    <x-slot:footer>
+                        <x-fr-text size="sm" class="text-brand-primary! font-semibold!">
+                            Não é falta de disciplina. É falta de um plano
+                        </x-fr-text>
+                    </x-slot:footer>
+                </x-numbered-step>
 
-                <x-slot:footer>
-                    <x-fr-text size="sm" class="text-brand-primary! font-semibold!">
-                        Não é falta de disciplina. É falta de um plano
-                    </x-fr-text>
-                </x-slot:footer>
-            </x-numbered-step>
+                <x-numbered-step class="p-8" data-reveal="up" number="01" title="Análise">
+                    Entendemos onde você está de verdade. Renda, dívidas, hábitos, objetivos. Sem julgamento.
 
-            <x-numbered-step class="p-8" data-reveal="up" number="01" title="Análise">
-                Entendemos onde você está de verdade. Renda, dívidas, hábitos, objetivos. Sem julgamento.
+                    <x-slot:footer>
+                        <x-fr-text size="sm" class="text-brand-primary! font-semibold!">
+                            Não é falta de disciplina. É falta de um plano
+                        </x-fr-text>
+                    </x-slot:footer>
+                </x-numbered-step>
 
-                <x-slot:footer>
-                    <x-fr-text size="sm" class="text-brand-primary! font-semibold!">
-                        Não é falta de disciplina. É falta de um plano
-                    </x-fr-text>
-                </x-slot:footer>
-            </x-numbered-step>
-        </div>
+                <x-numbered-step class="p-8" data-reveal="up" number="01" title="Análise">
+                    Entendemos onde você está de verdade. Renda, dívidas, hábitos, objetivos. Sem julgamento.
 
-        <div class="container flex flex-col items-center gap-8">
-            <x-fr-button> Descobrir meu plano </x-fr-button>
-
-            <x-logo-badge> Simples assim. Sem enrolação. </x-logo-badge>
+                    <x-slot:footer>
+                        <x-fr-text size="sm" class="text-brand-primary! font-semibold!">
+                            Não é falta de disciplina. É falta de um plano
+                        </x-fr-text>
+                    </x-slot:footer>
+                </x-numbered-step>
+            </div>
         </div>
     </section>
 
