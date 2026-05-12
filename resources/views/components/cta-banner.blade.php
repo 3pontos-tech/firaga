@@ -13,7 +13,7 @@
 @endphp
 
 <section {{ $attributes->class('section ' . $sectionClass) }}>
-    <div class="container flex flex-col gap-8">
+    <div class="container flex flex-col items-center gap-8">
         <x-fr-headline data-reveal="up">
             @isset ($proof)
                 <x-slot:header>
