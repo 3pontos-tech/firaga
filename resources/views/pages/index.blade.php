@@ -12,7 +12,9 @@
         <meta property="og:image:alt" content="{{ $page?->opengraph_picture_alt }}" />
     </x-slot:metatags>
 
-    <section class="section-first flex min-h-[calc(100dvh-var(--header-height))] flex-col items-center gap-4">
+    <section
+        class="section-first flex min-h-[calc(100dvh-var(--header-height))] flex-col items-center gap-4 md:min-h-0"
+    >
         <div
             class="container flex flex-col items-center gap-8 md:flex-1 md:flex-row md:items-center md:justify-between md:gap-12"
             data-reveal-stagger="140"
@@ -40,7 +42,7 @@
                 </div>
             </div>
 
-            <div class="relative hidden w-full md:block md:min-h-[700px] md:basis-2/5" data-reveal="scale">
+            <div class="relative hidden w-full md:block md:min-h-150 md:basis-2/5" data-reveal="scale">
                 <div
                     class="from-brand-primary to-brand-secondary absolute inset-0 -z-1 rounded-lg bg-linear-to-b"
                 ></div>
@@ -63,33 +65,36 @@
     <section class="section">
         <div class="container flex flex-col items-center gap-8 text-center">
             <x-fr-heading size="lg" data-reveal="up"> Reconhece alguma dessas histórias? </x-fr-heading>
-            <div class="flex flex-col items-start gap-3 text-left" data-reveal-stagger="100">
-                <div class="flex flex-col" data-reveal="up">
-                    <x-fas-quote-left class="text-brand-primary mb-4 size-4" />
+            <div class="grid grid-cols-1 items-start gap-3 text-left md:grid-cols-3 md:gap-6" data-reveal-stagger="100">
+                <div class="group flex flex-col gap-4" data-reveal="up">
+                    <x-fas-quote-left class="text-brand-primary size-4" />
                     <x-fr-text class="text-text-low font-medium! italic">
                         Tenho dívidas que parecem não ter fim. Pago o mínimo e o saldo não cai
                     </x-fr-text>
+                    <hr
+                        class="border-border-base group-hover:border-brand-primary w-full transition-colors duration-300"
+                    />
                 </div>
 
-                <hr class="border-border-base w-full" />
-
-                <div class="flex flex-col" data-reveal="up">
-                    <x-fas-quote-left class="text-brand-primary mb-4 size-4" />
+                <div class="group flex flex-col gap-4" data-reveal="up">
+                    <x-fas-quote-left class="text-brand-primary size-4" />
                     <x-fr-text class="text-text-low font-medium! italic">
                         Trabalho muito, ganho bem mas no fim do mês não sobra nada. E eu não sei por quê.
                     </x-fr-text>
+                    <hr
+                        class="border-border-base group-hover:border-brand-primary w-full transition-colors duration-300"
+                    />
                 </div>
 
-                <hr class="border-border-base w-full" />
-
-                <div class="flex flex-col" data-reveal="up">
-                    <x-fas-quote-left class="text-brand-primary mb-4 size-4" />
+                <div class="group flex flex-col gap-4" data-reveal="up">
+                    <x-fas-quote-left class="text-brand-primary size-4" />
                     <x-fr-text class="text-text-low font-medium! italic">
                         Já poupo alguma coisa, mas sinto que meu dinheiro poderia estar rendendo muito mais.
                     </x-fr-text>
+                    <hr
+                        class="border-border-base group-hover:border-brand-primary w-full transition-colors duration-300"
+                    />
                 </div>
-
-                <hr class="border-border-base w-full" />
             </div>
             <x-logo-badge class="justify-center"> Não é falta de disciplina. É falta de um plano </x-logo-badge>
         </div>
