@@ -45,11 +45,11 @@
 }
 
 .fr-headline-size-xl .fr-headline-title {
-    @apply text-lg md:text-3xl;
+    @apply text-lg;
 }
 
 .fr-headline-size-2xl .fr-headline-title {
-    @apply text-xl;
+    @apply text-xl md:text-7xl;
 }
 
 .fr-headline-size-3xl .fr-headline-title {

@@ -20,7 +20,7 @@
             data-reveal-stagger="140"
         >
             <div class="flex w-full flex-col items-center gap-8 md:basis-3/5 md:items-start">
-                <x-fr-headline align="left-desk" data-reveal="up">
+                <x-fr-headline size="2xl" align="left-desk" data-reveal="up">
                     <x-slot:header>
                         <x-social-proof align="left-desk">Mais de 9.000 investidores já fazem parte</x-social-proof>
                     </x-slot:header>
@@ -42,7 +42,7 @@
                 </div>
             </div>
 
-            <div class="relative hidden w-full md:block md:min-h-150 md:basis-2/5" data-reveal="scale">
+            <div class="relative hidden w-full md:block md:min-h-160 md:basis-2/5" data-reveal="scale">
                 <div
                     class="from-brand-primary to-brand-secondary absolute inset-0 -z-1 rounded-lg bg-linear-to-b"
                 ></div>
@@ -101,73 +101,89 @@
     </section>
 
     <section class="section dark bg-elevation-surface px-4 py-20">
-        <div class="container flex flex-col gap-8" data-reveal-stagger="120">
-            <img src="{{ asset('images/Image.webp') }}" alt="Imagem dos caras" class="h-50 w-auto" data-reveal="left" />
-
-            <x-fr-headline align="left" data-reveal="up">
-                <x-slot:title>
-                    Por que a <mark>Firece</mark>?
-                </x-slot:title>
-                <x-slot:description>
-                    Em média, brasileiros perdem 23% da renda sem saber para onde foi. A Firece mostra exatamente o que
-                    está acontecendo
-                </x-slot:description>
-            </x-fr-headline>
-
-            <div class="flex flex-col gap-4 p-4" data-reveal="up">
-                <x-icon-box icon="heroicon-c-user" />
-                <x-fr-headline align="left" size="sm" container-class="gap-2!">
-                    <x-slot:title>
-                        Mais de <mark>2 mil clientes</mark> atendidos
-                    </x-slot:title>
-                    <x-slot:description>
-                        Em média, brasileiros perdem 23% da renda sem saber para onde foi.
-                    </x-slot:description>
-                </x-fr-headline>
+        <div class="container flex flex-col gap-8 md:flex-row md:items-stretch md:gap-12" data-reveal-stagger="120">
+            <div class="md:order-2 md:basis-1/3 md:self-stretch" data-reveal="left">
+                <img
+                    src="{{ asset('images/Image.webp') }}"
+                    alt="Imagem dos caras"
+                    class="h-50 w-auto md:h-full md:w-full md:rounded-lg md:object-cover"
+                />
             </div>
 
-            <hr class="border-border-base" />
-
-            <div class="flex flex-col gap-4 p-4" data-reveal="up">
-                <x-icon-box icon="heroicon-c-user" />
-                <x-fr-headline align="left" size="sm" container-class="gap-2!">
+            <div class="flex flex-col gap-8 md:order-1 md:basis-2/3 md:gap-11">
+                <x-fr-headline align="left" data-reveal="up">
                     <x-slot:title>
-                        <mark>+10 anos</mark> de experiência de mercado
+                        Por que a <mark>Firece</mark>?
                     </x-slot:title>
                     <x-slot:description>
-                        Em média, brasileiros perdem 23% da renda sem saber para onde foi.
+                        Em média, brasileiros perdem 23% da renda sem saber para onde foi. A Firece mostra exatamente o
+                        que está acontecendo
                     </x-slot:description>
                 </x-fr-headline>
+
+                <div
+                    class="divide-border-base grid grid-cols-1 divide-y md:grid-cols-3 md:divide-x md:divide-y-0"
+                    data-reveal-stagger="140"
+                >
+                    <div
+                        class="flex flex-col gap-4 py-6 first:pt-0 last:pb-0 md:px-4 md:py-0 md:first:pl-0 md:last:pr-0"
+                        data-reveal="up"
+                    >
+                        <x-icon-box icon="heroicon-c-user" />
+                        <x-fr-headline align="left" size="sm" container-class="gap-2!">
+                            <x-slot:title>
+                                Mais de <mark>2 mil clientes</mark> atendidos
+                            </x-slot:title>
+                            <x-slot:description>
+                                Em média, brasileiros perdem 23% da renda sem saber para onde foi.
+                            </x-slot:description>
+                        </x-fr-headline>
+                    </div>
+
+                    <div
+                        class="flex flex-col gap-4 py-6 first:pt-0 last:pb-0 md:px-4 md:py-0 md:first:pl-0 md:last:pr-0"
+                        data-reveal="up"
+                    >
+                        <x-icon-box icon="heroicon-c-user" />
+                        <x-fr-headline align="left" size="sm" container-class="gap-2!">
+                            <x-slot:title>
+                                <mark>+10 anos</mark> de experiência de mercado
+                            </x-slot:title>
+                            <x-slot:description>
+                                Em média, brasileiros perdem 23% da renda sem saber para onde foi.
+                            </x-slot:description>
+                        </x-fr-headline>
+                    </div>
+
+                    <div
+                        class="flex flex-col gap-4 py-6 first:pt-0 last:pb-0 md:px-4 md:py-0 md:first:pl-0 md:last:pr-0"
+                        data-reveal="up"
+                    >
+                        <x-icon-box icon="heroicon-c-user" />
+                        <x-fr-headline align="left" size="sm" container-class="gap-2!">
+                            <x-slot:title>
+                                <mark>R$4M+</mark> em dívidas eliminadas
+                            </x-slot:title>
+                            <x-slot:description>
+                                Em média, brasileiros perdem 23% da renda sem saber para onde foi.
+                            </x-slot:description>
+                        </x-fr-headline>
+                    </div>
+                </div>
+
+                <x-testimonial
+                    data-reveal="up"
+                    name="Felipe Rosa"
+                    role="Design"
+                    plan="Plano Gold"
+                    avatar="https://i.pravatar.cc/80?img=12"
+                    metric="0% → 20% da renda investida"
+                >
+                    Nunca achei que ia conseguir sair das dívidas. Em 5 meses com o
+                    <span class="text-brand-primary font-bold">Matheus</span>, pela primeira vez na vida eu tenho
+                    reserva de emergência.
+                </x-testimonial>
             </div>
-
-            <hr class="border-border-base" />
-
-            <div class="flex flex-col gap-4 p-4" data-reveal="up">
-                <x-icon-box icon="heroicon-c-user" />
-                <x-fr-headline align="left" size="sm" container-class="gap-2!">
-                    <x-slot:title>
-                        <mark>R$4M+</mark> em dívidas eliminadas
-                    </x-slot:title>
-                    <x-slot:description>
-                        Em média, brasileiros perdem 23% da renda sem saber para onde foi.
-                    </x-slot:description>
-                </x-fr-headline>
-            </div>
-
-            <hr class="border-border-base" />
-
-            <x-testimonial
-                data-reveal="up"
-                name="Felipe Rosa"
-                role="Design"
-                plan="Plano Gold"
-                avatar="https://i.pravatar.cc/80?img=12"
-                metric="0% → 20% da renda investida"
-            >
-                Nunca achei que ia conseguir sair das dívidas. Em 5 meses com o
-                <span class="text-brand-primary font-bold">Matheus</span>, pela primeira vez na vida eu tenho reserva de
-                emergência.
-            </x-testimonial>
         </div>
     </section>
 
