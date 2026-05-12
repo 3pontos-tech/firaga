@@ -12,29 +12,49 @@
         <meta property="og:image:alt" content="{{ $page?->opengraph_picture_alt }}" />
     </x-slot:metatags>
 
-    <section class="section-first flex min-h-[calc(100dvh-var(--header-height))] flex-col items-center gap-4">
-        <div class="container flex flex-col items-center gap-8" data-reveal-stagger="140">
-            <x-fr-headline data-reveal="up">
-                <x-slot:header>
-                    <x-social-proof>Mais de 9.000 investidores já fazem parte</x-social-proof>
-                </x-slot:header>
+    <section
+        class="section-first flex min-h-[calc(100dvh-var(--header-height))] flex-col items-center gap-4 md:min-h-0"
+    >
+        <div
+            class="container flex flex-col items-center gap-8 md:flex-1 md:flex-row md:items-center md:justify-between md:gap-12"
+            data-reveal-stagger="140"
+        >
+            <div class="flex w-full flex-col items-center gap-8 md:basis-3/5 md:items-start">
+                <x-fr-headline size="2xl" align="left-desk" data-reveal="up">
+                    <x-slot:header>
+                        <x-social-proof align="left-desk">Mais de 9.000 investidores já fazem parte</x-social-proof>
+                    </x-slot:header>
 
-                <x-slot:title>
-                    Você sabe quanto ganha. <mark>Mas você sabe quanto perde?</mark>
-                </x-slot:title>
-                <x-slot:description>
-                    Em média, brasileiros perdem 23% da renda sem saber para onde foi. A <mark>Firece</mark> mostra
-                    exatamente o que está acontecendo
-                </x-slot:description>
-            </x-fr-headline>
+                    <x-slot:title>
+                        Você sabe quanto ganha. <mark>Mas você sabe quanto perde?</mark>
+                    </x-slot:title>
+                    <x-slot:description>
+                        Em média, brasileiros perdem 23% da renda sem saber para onde foi. A <mark>Firece</mark> mostra
+                        exatamente o que está acontecendo
+                    </x-slot:description>
+                </x-fr-headline>
 
-            <div class="flex w-full flex-col items-center gap-4" data-reveal="up">
-                <x-fr-button> Descobrir meu plano </x-fr-button>
-                <x-logo-badge class="justify-center"> Sem custo, sem compromisso, uma conversa rápida </x-logo-badge>
+                <div class="flex w-full flex-col items-center gap-4 md:items-start" data-reveal="up">
+                    <x-fr-button> Descobrir meu plano </x-fr-button>
+                    <x-logo-badge class="justify-center md:justify-start">
+                        Sem custo, sem compromisso, uma conversa rápida
+                    </x-logo-badge>
+                </div>
+            </div>
+
+            <div class="relative hidden w-full md:block md:min-h-160 md:basis-2/5" data-reveal="scale">
+                <div
+                    class="from-brand-primary to-brand-secondary absolute inset-0 -z-1 rounded-lg bg-linear-to-b"
+                ></div>
+                <img
+                    src="{{ asset('images/image-1.webp') }}"
+                    alt="Imagem de homem"
+                    class="absolute inset-0 h-full w-full rounded-lg object-contain object-bottom"
+                />
             </div>
         </div>
 
-        <div class="relative mt-auto w-full" data-reveal="scale">
+        <div class="relative mt-auto w-full md:hidden" data-reveal="scale">
             <div
                 class="from-brand-primary to-brand-secondary absolute inset-0 top-10 -z-1 rounded-t-lg bg-linear-to-b"
             ></div>
@@ -45,206 +65,183 @@
     <section class="section">
         <div class="container flex flex-col items-center gap-8 text-center">
             <x-fr-heading size="lg" data-reveal="up"> Reconhece alguma dessas histórias? </x-fr-heading>
-            <div class="flex flex-col items-start gap-3 text-left" data-reveal-stagger="100">
-                <div class="flex flex-col" data-reveal="up">
-                    <x-fas-quote-left class="text-brand-primary mb-4 size-4" />
+            <div class="grid grid-cols-1 items-start gap-3 text-left md:grid-cols-3 md:gap-6" data-reveal-stagger="100">
+                <div class="group flex flex-col gap-4" data-reveal="up">
+                    <x-fas-quote-left class="text-brand-primary size-4" />
                     <x-fr-text class="text-text-low font-medium! italic">
                         Tenho dívidas que parecem não ter fim. Pago o mínimo e o saldo não cai
                     </x-fr-text>
+                    <hr
+                        class="border-border-base group-hover:border-brand-primary w-full transition-colors duration-300"
+                    />
                 </div>
 
-                <hr class="border-border-base w-full" />
-
-                <div class="flex flex-col" data-reveal="up">
-                    <x-fas-quote-left class="text-brand-primary mb-4 size-4" />
+                <div class="group flex flex-col gap-4" data-reveal="up">
+                    <x-fas-quote-left class="text-brand-primary size-4" />
                     <x-fr-text class="text-text-low font-medium! italic">
                         Trabalho muito, ganho bem mas no fim do mês não sobra nada. E eu não sei por quê.
                     </x-fr-text>
+                    <hr
+                        class="border-border-base group-hover:border-brand-primary w-full transition-colors duration-300"
+                    />
                 </div>
 
-                <hr class="border-border-base w-full" />
-
-                <div class="flex flex-col" data-reveal="up">
-                    <x-fas-quote-left class="text-brand-primary mb-4 size-4" />
+                <div class="group flex flex-col gap-4" data-reveal="up">
+                    <x-fas-quote-left class="text-brand-primary size-4" />
                     <x-fr-text class="text-text-low font-medium! italic">
                         Já poupo alguma coisa, mas sinto que meu dinheiro poderia estar rendendo muito mais.
                     </x-fr-text>
+                    <hr
+                        class="border-border-base group-hover:border-brand-primary w-full transition-colors duration-300"
+                    />
                 </div>
-
-                <hr class="border-border-base w-full" />
             </div>
             <x-logo-badge class="justify-center"> Não é falta de disciplina. É falta de um plano </x-logo-badge>
         </div>
     </section>
 
     <section class="section dark bg-elevation-surface px-4 py-20">
-        <div class="container flex flex-col gap-8" data-reveal-stagger="120">
-            <img src="{{ asset('images/Image.webp') }}" alt="Imagem dos caras" class="h-50 w-auto" data-reveal="left" />
-
-            <x-fr-headline align="left" data-reveal="up">
-                <x-slot:title>
-                    Por que a <mark>Firece</mark>?
-                </x-slot:title>
-                <x-slot:description>
-                    Em média, brasileiros perdem 23% da renda sem saber para onde foi. A Firece mostra exatamente o que
-                    está acontecendo
-                </x-slot:description>
-            </x-fr-headline>
-
-            <div class="flex flex-col gap-4 p-4" data-reveal="up">
-                <x-icon-box icon="heroicon-c-user" />
-                <x-fr-headline align="left" size="sm" container-class="gap-2!">
-                    <x-slot:title>
-                        Mais de <mark>2 mil clientes</mark> atendidos
-                    </x-slot:title>
-                    <x-slot:description>
-                        Em média, brasileiros perdem 23% da renda sem saber para onde foi.
-                    </x-slot:description>
-                </x-fr-headline>
-            </div>
-
-            <hr class="border-border-base" />
-
-            <div class="flex flex-col gap-4 p-4" data-reveal="up">
-                <x-icon-box icon="heroicon-c-user" />
-                <x-fr-headline align="left" size="sm" container-class="gap-2!">
-                    <x-slot:title>
-                        <mark>+10 anos</mark> de experiência de mercado
-                    </x-slot:title>
-                    <x-slot:description>
-                        Em média, brasileiros perdem 23% da renda sem saber para onde foi.
-                    </x-slot:description>
-                </x-fr-headline>
-            </div>
-
-            <hr class="border-border-base" />
-
-            <div class="flex flex-col gap-4 p-4" data-reveal="up">
-                <x-icon-box icon="heroicon-c-user" />
-                <x-fr-headline align="left" size="sm" container-class="gap-2!">
-                    <x-slot:title>
-                        <mark>R$4M+</mark> em dívidas eliminadas
-                    </x-slot:title>
-                    <x-slot:description>
-                        Em média, brasileiros perdem 23% da renda sem saber para onde foi.
-                    </x-slot:description>
-                </x-fr-headline>
-            </div>
-
-            <hr class="border-border-base" />
-
-            <x-testimonial
-                data-reveal="up"
-                name="Felipe Rosa"
-                role="Design"
-                plan="Plano Gold"
-                avatar="https://i.pravatar.cc/80?img=12"
-                metric="0% → 20% da renda investida"
-            >
-                Nunca achei que ia conseguir sair das dívidas. Em 5 meses com o
-                <span class="text-brand-primary font-bold">Matheus</span>, pela primeira vez na vida eu tenho reserva de
-                emergência.
-            </x-testimonial>
-        </div>
-    </section>
-
-    <section class="section flex flex-col items-center gap-8">
-        <div class="container flex flex-col items-center gap-8">
-            <x-fr-headline data-reveal="up">
-                <x-slot:title>
-                    Três encontros, uma <mark>vida financeira</mark> diferente
-                </x-slot:title>
-                <x-slot:description>
-                    Sem curso, sem palestra, sem planilha genérica. Um plano construído para a
-                    <mark>sua realidade</mark> e só para ela.
-                </x-slot:description>
-            </x-fr-headline>
-        </div>
-
         <div
-            class="border-border-base divide-border-base grid w-full grid-cols-1 divide-y border-y"
-            data-reveal-stagger="140"
+            class="container flex flex-col gap-8 md:flex-row md:items-stretch md:gap-12 md:gap-x-28"
+            data-reveal-stagger="120"
         >
-            <x-numbered-step class="p-8" data-reveal="up" number="01" title="Análise">
-                Entendemos onde você está de verdade. Renda, dívidas, hábitos, objetivos. Sem julgamento.
+            <div class="md:order-2 md:basis-1/3 md:self-stretch" data-reveal="left">
+                <img
+                    src="{{ asset('images/Image.webp') }}"
+                    alt="Imagem dos caras"
+                    class="h-50 w-auto md:h-full md:w-full md:rounded-lg md:object-cover"
+                />
+            </div>
 
-                <x-slot:footer>
-                    <x-fr-text size="sm" class="text-brand-primary! font-semibold!">
-                        Não é falta de disciplina. É falta de um plano
-                    </x-fr-text>
-                </x-slot:footer>
-            </x-numbered-step>
+            <div class="flex flex-col gap-8 md:order-1 md:basis-2/3 md:gap-11">
+                <x-fr-headline align="left" data-reveal="up">
+                    <x-slot:title>
+                        Por que a <mark>Firece</mark>?
+                    </x-slot:title>
+                    <x-slot:description>
+                        Em média, brasileiros perdem 23% da renda sem saber para onde foi. A Firece mostra exatamente o
+                        que está acontecendo
+                    </x-slot:description>
+                </x-fr-headline>
 
-            <x-numbered-step class="p-8" data-reveal="up" number="01" title="Análise">
-                Entendemos onde você está de verdade. Renda, dívidas, hábitos, objetivos. Sem julgamento.
+                <div
+                    class="divide-border-base grid grid-cols-1 divide-y md:grid-cols-3 md:divide-x md:divide-y-0"
+                    data-reveal-stagger="140"
+                >
+                    <div
+                        class="flex flex-col gap-4 py-6 first:pt-0 last:pb-0 md:px-4 md:py-0 md:first:pl-0 md:last:pr-0"
+                        data-reveal="up"
+                    >
+                        <x-icon-box icon="heroicon-c-user" />
+                        <x-fr-headline align="left" size="sm" container-class="gap-2!">
+                            <x-slot:title>
+                                Mais de <mark>2 mil clientes</mark> atendidos
+                            </x-slot:title>
+                            <x-slot:description>
+                                Em média, brasileiros perdem 23% da renda sem saber para onde foi.
+                            </x-slot:description>
+                        </x-fr-headline>
+                    </div>
 
-                <x-slot:footer>
-                    <x-fr-text size="sm" class="text-brand-primary! font-semibold!">
-                        Não é falta de disciplina. É falta de um plano
-                    </x-fr-text>
-                </x-slot:footer>
-            </x-numbered-step>
+                    <div
+                        class="flex flex-col gap-4 py-6 first:pt-0 last:pb-0 md:px-4 md:py-0 md:first:pl-0 md:last:pr-0"
+                        data-reveal="up"
+                    >
+                        <x-icon-box icon="heroicon-c-user" />
+                        <x-fr-headline align="left" size="sm" container-class="gap-2!">
+                            <x-slot:title>
+                                <mark>+10 anos</mark> de experiência de mercado
+                            </x-slot:title>
+                            <x-slot:description>
+                                Em média, brasileiros perdem 23% da renda sem saber para onde foi.
+                            </x-slot:description>
+                        </x-fr-headline>
+                    </div>
 
-            <x-numbered-step class="p-8" data-reveal="up" number="01" title="Análise">
-                Entendemos onde você está de verdade. Renda, dívidas, hábitos, objetivos. Sem julgamento.
+                    <div
+                        class="flex flex-col gap-4 py-6 first:pt-0 last:pb-0 md:px-4 md:py-0 md:first:pl-0 md:last:pr-0"
+                        data-reveal="up"
+                    >
+                        <x-icon-box icon="heroicon-c-user" />
+                        <x-fr-headline align="left" size="sm" container-class="gap-2!">
+                            <x-slot:title>
+                                <mark>R$4M+</mark> em dívidas eliminadas
+                            </x-slot:title>
+                            <x-slot:description>
+                                Em média, brasileiros perdem 23% da renda sem saber para onde foi.
+                            </x-slot:description>
+                        </x-fr-headline>
+                    </div>
+                </div>
 
-                <x-slot:footer>
-                    <x-fr-text size="sm" class="text-brand-primary! font-semibold!">
-                        Não é falta de disciplina. É falta de um plano
-                    </x-fr-text>
-                </x-slot:footer>
-            </x-numbered-step>
-        </div>
-
-        <div class="container flex flex-col items-center gap-8">
-            <x-fr-button> Descobrir meu plano </x-fr-button>
-
-            <x-logo-badge> Simples assim. Sem enrolação. </x-logo-badge>
+                <x-testimonial
+                    data-reveal="up"
+                    name="Felipe Rosa"
+                    role="Design"
+                    plan="Plano Gold"
+                    avatar="https://i.pravatar.cc/80?img=12"
+                    metric="0% → 20% da renda investida"
+                >
+                    Nunca achei que ia conseguir sair das dívidas. Em 5 meses com o
+                    <span class="text-brand-primary font-bold">Matheus</span>, pela primeira vez na vida eu tenho
+                    reserva de emergência.
+                </x-testimonial>
+            </div>
         </div>
     </section>
 
     <section class="section">
-        <div class="container flex flex-col gap-8">
-            <x-fr-headline data-reveal="up">
-                <x-slot:title>
-                    Qual é o seu momento?
-                </x-slot:title>
-                <x-slot:description>
-                    Sem curso, sem palestra, sem planilha genérica. Um plano construído para a
-                    <mark>sua realidade</mark> e só para ela.
-                </x-slot:description>
-            </x-fr-headline>
+        <div class="container grid grid-cols-1 items-center gap-8 md:grid-cols-2 md:gap-12 md:gap-x-28">
+            <div class="flex flex-col items-center gap-8 md:items-start">
+                <x-fr-headline align="left-desk" data-reveal="up">
+                    <x-slot:title>
+                        Três encontros, uma <mark>vida financeira</mark> diferente
+                    </x-slot:title>
+                    <x-slot:description>
+                        Sem curso, sem palestra, sem planilha genérica. Um plano construído para a
+                        <mark>sua realidade</mark> e só para ela.
+                    </x-slot:description>
+                </x-fr-headline>
 
-            <div class="grid grid-cols-1 gap-8" data-reveal-stagger="140">
-                <x-testimonial
-                    data-reveal="up"
-                    variant="centered"
-                    class="bg-elevation-01dp border-border-base border p-4"
-                    name="Felipe Rosa"
-                    role="Design"
-                    plan="Plano Gold"
-                    avatar="https://i.pravatar.cc/80?img=12"
-                    metric="0% → 20% da renda investida"
-                >
-                    Nunca achei que ia conseguir sair das dívidas. Em 5 meses com o
-                    <span class="text-brand-primary font-bold">Matheus</span>, pela primeira vez na vida eu tenho
-                    reserva de emergência.
-                </x-testimonial>
+                <div class="flex w-full flex-col items-center gap-4" data-reveal="up">
+                    <x-fr-button class="w-full!"> Descobrir meu plano </x-fr-button>
+                    <x-logo-badge class="justify-center md:justify-start"> Simples assim. Sem enrolação. </x-logo-badge>
+                </div>
+            </div>
 
-                <x-testimonial
-                    data-reveal="up"
-                    variant="centered"
-                    class="bg-elevation-01dp border-border-base border p-4"
-                    name="Felipe Rosa"
-                    role="Design"
-                    plan="Plano Gold"
-                    avatar="https://i.pravatar.cc/80?img=12"
-                    metric="0% → 20% da renda investida"
-                >
-                    Nunca achei que ia conseguir sair das dívidas. Em 5 meses com o
-                    <span class="text-brand-primary font-bold">Matheus</span>, pela primeira vez na vida eu tenho
-                    reserva de emergência.
-                </x-testimonial>
+            <div
+                class="border-border-base divide-border-base grid w-full grid-cols-1 divide-y md:border"
+                data-reveal-stagger="140"
+            >
+                <x-numbered-step class="p-8" data-reveal="up" number="01" title="Análise">
+                    Entendemos onde você está de verdade. Renda, dívidas, hábitos, objetivos. Sem julgamento.
+
+                    <x-slot:footer>
+                        <x-fr-text size="sm" class="text-brand-primary! font-semibold!">
+                            Não é falta de disciplina. É falta de um plano
+                        </x-fr-text>
+                    </x-slot:footer>
+                </x-numbered-step>
+
+                <x-numbered-step class="p-8" data-reveal="up" number="01" title="Análise">
+                    Entendemos onde você está de verdade. Renda, dívidas, hábitos, objetivos. Sem julgamento.
+
+                    <x-slot:footer>
+                        <x-fr-text size="sm" class="text-brand-primary! font-semibold!">
+                            Não é falta de disciplina. É falta de um plano
+                        </x-fr-text>
+                    </x-slot:footer>
+                </x-numbered-step>
+
+                <x-numbered-step class="p-8" data-reveal="up" number="01" title="Análise">
+                    Entendemos onde você está de verdade. Renda, dívidas, hábitos, objetivos. Sem julgamento.
+
+                    <x-slot:footer>
+                        <x-fr-text size="sm" class="text-brand-primary! font-semibold!">
+                            Não é falta de disciplina. É falta de um plano
+                        </x-fr-text>
+                    </x-slot:footer>
+                </x-numbered-step>
             </div>
         </div>
     </section>
@@ -261,7 +258,7 @@
                 </x-slot:description>
             </x-fr-headline>
 
-            <div class="md:grid-cols-auto grid grid-cols-1 gap-8" data-reveal-stagger="140">
+            <div class="grid grid-cols-1 gap-8 md:grid-cols-3" data-reveal-stagger="140">
                 <x-plan-card data-reveal="up" tagline="“Meu dinheiro some sem explicação”">
                     <x-fr-heading>Perfil Gold</x-fr-heading>
                     <x-fr-text>
@@ -323,6 +320,67 @@
             <x-logo-badge class="flex-col justify-center text-center">
                 Não tem certeza qual é o seu? A gente descobre juntos na primeira conversa
             </x-logo-badge>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container flex flex-col gap-8">
+            <x-fr-headline data-reveal="up">
+                <x-slot:title>
+                    Qual é o seu momento?
+                </x-slot:title>
+                <x-slot:description>
+                    Sem curso, sem palestra, sem planilha genérica. Um plano construído para a
+                    <mark>sua realidade</mark> e só para ela.
+                </x-slot:description>
+            </x-fr-headline>
+
+            <div class="grid grid-cols-1 gap-8 md:grid-cols-3" data-reveal-stagger="140">
+                <x-testimonial
+                    data-reveal="up"
+                    variant="centered"
+                    class="bg-elevation-01dp border-border-base border p-4"
+                    name="Felipe Rosa"
+                    role="Design"
+                    plan="Plano Gold"
+                    avatar="https://i.pravatar.cc/80?img=12"
+                    metric="0% → 20% da renda investida"
+                >
+                    Nunca achei que ia conseguir sair das dívidas. Em 5 meses com o
+                    <span class="text-brand-primary font-bold">Matheus</span>, pela primeira vez na vida eu tenho
+                    reserva de emergência.
+                </x-testimonial>
+
+                <x-testimonial
+                    data-reveal="up"
+                    variant="centered"
+                    class="bg-elevation-01dp border-border-base border p-4"
+                    name="Felipe Rosa"
+                    role="Design"
+                    plan="Plano Gold"
+                    avatar="https://i.pravatar.cc/80?img=12"
+                    metric="0% → 20% da renda investida"
+                >
+                    Nunca achei que ia conseguir sair das dívidas. Em 5 meses com o
+                    <span class="text-brand-primary font-bold">Matheus</span>, pela primeira vez na vida eu tenho
+                    reserva de emergência.
+                </x-testimonial>
+
+                <x-testimonial
+                    data-reveal="up"
+                    variant="centered"
+                    class="bg-elevation-01dp border-border-base border p-4"
+                    name="Felipe Rosa"
+                    role="Design"
+                    plan="Plano Gold"
+                    avatar="https://i.pravatar.cc/80?img=12"
+                    metric="0% → 20% da renda investida"
+                >
+                    Nunca achei que ia conseguir sair das dívidas. Em 5 meses com o
+                    <span class="text-brand-primary font-bold">Matheus</span>, pela primeira vez na vida eu tenho
+                    reserva de emergência.
+                </x-testimonial>
+            </div>
         </div>
     </section>
 

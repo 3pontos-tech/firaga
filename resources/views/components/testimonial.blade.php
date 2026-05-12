@@ -9,7 +9,7 @@
 ])
 
 @if ($variant === 'centered')
-    <div {{ $attributes->class(['flex flex-col gap-4']) }}>
+    <div {{ $attributes->class(['flex flex-col gap-4 rounded-md']) }}>
         @if ($avatar)
             <div class="flex items-center justify-center">
                 <x-avatar :src="$avatar" :alt="$avatarAlt ?: $name" size="lg" />

@@ -23,6 +23,10 @@
     @apply items-start text-left;
 }
 
+.fr-headline-align-left-desk .fr-headline-container {
+    @apply items-center text-center md:items-start md:text-left;
+}
+
 /* Title */
 .fr-headline-title {
     @apply font-display text-text-high leading-[120%] font-medium;
@@ -41,11 +45,11 @@
 }
 
 .fr-headline-size-xl .fr-headline-title {
-    @apply text-lg md:text-3xl;
+    @apply text-lg;
 }
 
 .fr-headline-size-2xl .fr-headline-title {
-    @apply text-xl;
+    @apply text-xl md:text-7xl;
 }
 
 .fr-headline-size-3xl .fr-headline-title {
@@ -75,4 +79,8 @@
 
 .fr-headline-align-left .fr-headline-actions {
     @apply justify-center sm:justify-start;
+}
+
+.fr-headline-align-left-desk .fr-headline-actions {
+    @apply justify-center md:justify-start;
 }
