@@ -1,4 +1,4 @@
-@props (['variant' => 'default'])
+@props (['variant' => 'default', 'align' => 'center'])
 
 @php
     $textColor = match ($variant) {
@@ -6,12 +6,18 @@
         'dark' => 'text-text-light!',
         default => '',
     };
+
+    $alignmentClasses = match ($align) {
+        'left' => 'items-start',
+        'left-desk' => 'items-center md:items-start',
+        default => 'items-center justify-center',
+    };
 @endphp
 
 <div
     {{
         $attributes->class(
-            'flex w-full flex-col items-center justify-center gap-2',
+            'flex w-full flex-col gap-2 ' . $alignmentClasses,
         )
     }}
 >

@@ -23,6 +23,10 @@
     @apply items-start text-left;
 }
 
+.fr-headline-align-left-desk .fr-headline-container {
+    @apply items-center text-center md:items-start md:text-left;
+}
+
 /* Title */
 .fr-headline-title {
     @apply font-display text-text-high leading-[120%] font-medium;
@@ -75,4 +79,8 @@
 
 .fr-headline-align-left .fr-headline-actions {
     @apply justify-center sm:justify-start;
+}
+
+.fr-headline-align-left-desk .fr-headline-actions {
+    @apply justify-center md:justify-start;
 }

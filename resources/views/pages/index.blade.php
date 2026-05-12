@@ -13,28 +13,46 @@
     </x-slot:metatags>
 
     <section class="section-first flex min-h-[calc(100dvh-var(--header-height))] flex-col items-center gap-4">
-        <div class="container flex flex-col items-center gap-8" data-reveal-stagger="140">
-            <x-fr-headline data-reveal="up">
-                <x-slot:header>
-                    <x-social-proof>Mais de 9.000 investidores já fazem parte</x-social-proof>
-                </x-slot:header>
+        <div
+            class="container flex flex-col items-center gap-8 md:flex-1 md:flex-row md:items-center md:justify-between md:gap-12"
+            data-reveal-stagger="140"
+        >
+            <div class="flex w-full flex-col items-center gap-8 md:basis-3/5 md:items-start">
+                <x-fr-headline align="left-desk" data-reveal="up">
+                    <x-slot:header>
+                        <x-social-proof align="left-desk">Mais de 9.000 investidores já fazem parte</x-social-proof>
+                    </x-slot:header>
 
-                <x-slot:title>
-                    Você sabe quanto ganha. <mark>Mas você sabe quanto perde?</mark>
-                </x-slot:title>
-                <x-slot:description>
-                    Em média, brasileiros perdem 23% da renda sem saber para onde foi. A <mark>Firece</mark> mostra
-                    exatamente o que está acontecendo
-                </x-slot:description>
-            </x-fr-headline>
+                    <x-slot:title>
+                        Você sabe quanto ganha. <mark>Mas você sabe quanto perde?</mark>
+                    </x-slot:title>
+                    <x-slot:description>
+                        Em média, brasileiros perdem 23% da renda sem saber para onde foi. A <mark>Firece</mark> mostra
+                        exatamente o que está acontecendo
+                    </x-slot:description>
+                </x-fr-headline>
 
-            <div class="flex w-full flex-col items-center gap-4" data-reveal="up">
-                <x-fr-button> Descobrir meu plano </x-fr-button>
-                <x-logo-badge class="justify-center"> Sem custo, sem compromisso, uma conversa rápida </x-logo-badge>
+                <div class="flex w-full flex-col items-center gap-4 md:items-start" data-reveal="up">
+                    <x-fr-button> Descobrir meu plano </x-fr-button>
+                    <x-logo-badge class="justify-center md:justify-start">
+                        Sem custo, sem compromisso, uma conversa rápida
+                    </x-logo-badge>
+                </div>
+            </div>
+
+            <div class="relative hidden w-full md:block md:min-h-[700px] md:basis-2/5" data-reveal="scale">
+                <div
+                    class="from-brand-primary to-brand-secondary absolute inset-0 -z-1 rounded-lg bg-linear-to-b"
+                ></div>
+                <img
+                    src="{{ asset('images/image-1.webp') }}"
+                    alt="Imagem de homem"
+                    class="absolute inset-0 h-full w-full rounded-lg object-contain object-bottom"
+                />
             </div>
         </div>
 
-        <div class="relative mt-auto w-full" data-reveal="scale">
+        <div class="relative mt-auto w-full md:hidden" data-reveal="scale">
             <div
                 class="from-brand-primary to-brand-secondary absolute inset-0 top-10 -z-1 rounded-t-lg bg-linear-to-b"
             ></div>

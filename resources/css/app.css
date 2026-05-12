@@ -20,19 +20,17 @@
 @custom-variant metallic-light (&:where(.metallic-light, .metallic-light *));
 
 @utility container {
+    margin-inline: auto;
     padding-inline: 16px;
     @variant sm {
         padding-inline: 24px;
     }
     @variant md {
         padding-inline: 32px;
+        max-width: 80rem;
     }
     @variant lg {
-        padding-inline: 48px;
-    }
-    @variant xl {
-        padding-inline: 64px;
-        max-width: 1856px;
+        padding-inline: 0;
     }
 }
 
