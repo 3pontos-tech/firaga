@@ -3,127 +3,154 @@
     splashTo="var(--color-elevation-surface)"
     splashLogoClass="text-brand-primary"
 >
-    <section class="section-first">
-        <div class="container flex flex-col gap-8">
-            <x-fr-headline>
-                <x-slot:title>
-                    Você ganhou <mark>autonomia</mark> no trabalho. Mas ainda não ganhou <mark>nas finanças</mark>
-                </x-slot:title>
-                <x-slot:description>
-                    Consultoria financeira para profissionais de tecnologia a única que entende PJ, renda em dólar e
-                    stock options sem você precisar traduzir sua realidade
-                </x-slot:description>
-                <x-slot:actions>
-                    <x-fr-button> Conhecer o code capital </x-fr-button>
-                </x-slot:actions>
-            </x-fr-headline>
+    <section
+        class="section-first flex min-h-[calc(100dvh-var(--header-height))] flex-col items-center gap-4 md:min-h-[60dvh]"
+    >
+        <div
+            class="container flex flex-col items-center gap-8 md:flex-1 md:flex-row md:items-center md:justify-between md:gap-16"
+            data-reveal-stagger="140"
+        >
+            <div class="flex w-full flex-col items-center gap-8 md:basis-3/5 md:items-start">
+                <x-fr-headline size="2xl" align="left-desk" data-reveal="up">
+                    <x-slot:title>
+                        Você ganhou <mark>autonomia</mark> no trabalho. Mas ainda não ganhou <mark>nas finanças</mark>
+                    </x-slot:title>
+                    <x-slot:description>
+                        Consultoria financeira para profissionais de tecnologia a única que entende PJ, renda em dólar e
+                        stock options sem você precisar traduzir sua realidade
+                    </x-slot:description>
+                    <x-slot:actions>
+                        <x-fr-button> Conhecer o code capital </x-fr-button>
+                    </x-slot:actions>
+                </x-fr-headline>
+            </div>
 
-            <div class="bg-elevation-01dp border-border-base text-xxxs rounded-sm border p-4 font-mono leading-7">
-                <div class="mb-3 flex gap-1.5">
-                    <span class="size-3 rounded-full bg-red-300"></span>
-                    <span class="size-3 rounded-full bg-yellow-100"></span>
-                    <span class="size-3 rounded-full bg-green-300"></span>
-                </div>
-                <div>
-                    <p><span class="text-text-low">// TODO: entender pra onde o dinheiro foi</span></p>
-                    <p>
-                        <span class="text-indigo-300">const </span
-                        ><span class="text-text-high font-medium">patrimônio</span
-                        ><span class="text-text-medium"> = [];</span>
-                    </p>
-                    <p>
-                        <span class="text-indigo-300">let </span
-                        ><span class="text-text-high font-medium">propósito</span
-                        ><span class="text-text-medium"> = </span><span class="text-orange-300">undefined</span
-                        ><span class="text-text-medium">;</span>
-                    </p>
-                    <p>&nbsp;</p>
-                    <p><span class="text-text-low">// ERROR: CNPJ sem estratégia de distribuição</span></p>
-                    <p><span class="text-text-low">// ERROR: USD sem alocação → reserva = null</span></p>
-                    <p>&nbsp;</p>
-                    <p>
-                        <span class="text-indigo-300">function </span><span class="text-text-high">fix</span
-                        ><span class="text-text-medium">() { </span><span class="text-indigo-300">return </span
-                        ><span class="text-brand-primary">Code.Capital</span><span class="text-text-medium">; }</span>
-                    </p>
+            <div class="w-full md:basis-2/5" data-reveal="scale">
+                <div class="bg-elevation-01dp border-border-base text-xxxs rounded-sm border p-4 font-mono leading-7">
+                    <div class="mb-3 flex gap-1.5">
+                        <span class="size-3 rounded-full bg-red-300"></span>
+                        <span class="size-3 rounded-full bg-yellow-100"></span>
+                        <span class="size-3 rounded-full bg-green-300"></span>
+                    </div>
+                    <div>
+                        <p><span class="text-text-low">// TODO: entender pra onde o dinheiro foi</span></p>
+                        <p>
+                            <span class="text-indigo-300">const </span>
+                            <span class="text-text-high font-medium">patrimônio</span>
+                            <span class="text-text-medium"> = [];</span>
+                        </p>
+                        <p>
+                            <span class="text-indigo-300">let </span>
+                            <span class="text-text-high font-medium">propósito</span>
+                            <span class="text-text-medium"> = </span>
+                            <span class="text-orange-300">undefined</span>
+                            <span class="text-text-medium">;</span>
+                        </p>
+                        <p>&nbsp;</p>
+                        <p><span class="text-text-low">// ERROR: CNPJ sem estratégia de distribuição</span></p>
+                        <p><span class="text-text-low">// ERROR: USD sem alocação → reserva = null</span></p>
+                        <p>&nbsp;</p>
+                        <p>
+                            <span class="text-indigo-300">function </span>
+                            <span class="text-text-high">fix</span>
+                            <span class="text-text-medium">() { </span>
+                            <span class="text-indigo-300">return </span>
+                            <span class="text-brand-primary">Code.Capital</span>
+                            <span class="text-text-medium">; }</span>
+                        </p>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="section dark bg-elevation-surface mt-28 py-20">
-        <div class="container flex flex-col gap-8">
-            <x-fr-headline align="left">
-                <x-slot:title>
-                    Atendemos <mark>todo tipo</mark> de dev
-                </x-slot:title>
-                <x-slot:description>
-                    CLT, PJ, freela ou remoto o planejamento é adaptado para o seu regime, não para um genérico.
-                </x-slot:description>
-            </x-fr-headline>
+    <section class="section dark bg-elevation-surface px-4 py-20">
+        <div class="container flex flex-col gap-8 md:flex-row md:items-stretch md:gap-12" data-reveal-stagger="120">
+            <div class="md:order-2 md:basis-1/3 md:self-stretch" data-reveal="left">
+                <img
+                    src="{{ asset('images/guys-looking-at-notebook-but-gray.webp') }}"
+                    alt="Devs analisando finanças"
+                    class="h-50 w-auto md:h-full md:w-full md:rounded-lg md:object-cover"
+                />
+            </div>
 
-            <div class="flex flex-col gap-4" data-reveal="up">
-                <x-fr-heading size="xs"> O que buscamos </x-fr-heading>
+            <div class="flex flex-col gap-8 md:order-1 md:basis-2/3 md:gap-11">
+                <x-fr-headline align="left" data-reveal="up">
+                    <x-slot:title>
+                        Atendemos <mark>todo tipo</mark> de dev
+                    </x-slot:title>
+                    <x-slot:description>
+                        CLT, PJ, freela ou remoto o planejamento é adaptado para o seu regime, não para um genérico.
+                    </x-slot:description>
+                </x-fr-headline>
 
-                <div class="flex flex-col gap-8" data-reveal-stagger="120">
-                    <x-arrow-block eyebrow="Especialidade" title="PJ / CNPJ">
-                        Pró-labore, distribuição de lucros e regime tributário usados a favor do seu patrimônio.
-                    </x-arrow-block>
+                <div class="flex flex-col gap-4" data-reveal="up">
+                    <x-fr-heading size="xs"> O que buscamos </x-fr-heading>
 
-                    <x-arrow-block eyebrow="Atendemos" title="Remoto USD / EUR">
-                        Câmbio como estratégia de patrimônio, não só uma variável. Alocação inteligente em moeda forte.
-                    </x-arrow-block>
+                    <div class="grid grid-cols-1 gap-6 md:grid-cols-3 md:gap-8" data-reveal-stagger="120">
+                        <x-arrow-block eyebrow="Especialidade" title="PJ / CNPJ">
+                            Pró-labore, distribuição de lucros e regime tributário usados a favor do seu patrimônio.
+                        </x-arrow-block>
 
-                    <x-arrow-block eyebrow="Atendemos" title="Stock Options">
-                        Quando e como exercer, com visão de impacto tributário e estratégia de patrimônio de longo
-                        prazo.
-                    </x-arrow-block>
+                        <x-arrow-block eyebrow="Atendemos" title="Remoto USD / EUR">
+                            Câmbio como estratégia de patrimônio, não só uma variável. Alocação inteligente em moeda
+                            forte.
+                        </x-arrow-block>
 
-                    <x-arrow-block eyebrow="Atendemos" title="CLT">
-                        Planejamento financeiro além do salário: investimentos, reservas e objetivos de longo prazo.
-                    </x-arrow-block>
+                        <x-arrow-block eyebrow="Atendemos" title="Stock Options">
+                            Quando e como exercer, com visão de impacto tributário e estratégia de patrimônio de longo
+                            prazo.
+                        </x-arrow-block>
 
-                    <x-arrow-block eyebrow="Atendemos" title="Freela">
-                        Renda variável com estrutura sólida: reserva de emergência, fluxo de caixa e crescimento
-                        sustentável.
-                    </x-arrow-block>
+                        <x-arrow-block eyebrow="Atendemos" title="CLT">
+                            Planejamento financeiro além do salário: investimentos, reservas e objetivos de longo prazo.
+                        </x-arrow-block>
 
-                    <x-arrow-block eyebrow="Atendemos" title="Mix de regimes">
-                        CLT + freela + crypto + USD ao mesmo tempo. A realidade de muitos profissionais de tech hoje.
-                    </x-arrow-block>
+                        <x-arrow-block eyebrow="Atendemos" title="Freela">
+                            Renda variável com estrutura sólida: reserva de emergência, fluxo de caixa e crescimento
+                            sustentável.
+                        </x-arrow-block>
+
+                        <x-arrow-block eyebrow="Atendemos" title="Mix de regimes">
+                            CLT + freela + crypto + USD ao mesmo tempo. A realidade de muitos profissionais de tech
+                            hoje.
+                        </x-arrow-block>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="section mt-28">
-        <div class="container flex flex-col gap-8">
-            <x-fr-headline>
-                <x-slot:title>
-                    Caso real
-                </x-slot:title>
-                <x-slot:description>
-                    Sem curso, sem palestra, sem planilha genérica. Um plano construído para a sua realidade e só para
-                    ela.
-                </x-slot:description>
-            </x-fr-headline>
+    <section class="section">
+        <div class="container grid grid-cols-1 items-center gap-8 md:grid-cols-2 md:gap-12">
+            <div class="flex flex-col items-center gap-8 md:items-start">
+                <x-fr-headline align="left-desk" data-reveal="up">
+                    <x-slot:title>
+                        Caso real
+                    </x-slot:title>
+                    <x-slot:description>
+                        Sem curso, sem palestra, sem planilha genérica. Um plano construído para a sua realidade e só
+                        para ela.
+                    </x-slot:description>
+                </x-fr-headline>
 
-            <div class="flex flex-col gap-3" data-reveal="up">
-                <x-fas-quote-left class="text-text-high size-4" />
-                <x-fr-text class="text-text-low italic">
-                    Antes, ao ver o saldo, acabava <span class="text-brand-primary">gastando por impulso</span>. Hoje,
-                    meu dinheiro tem um propósito.
-                </x-fr-text>
-                <hr class="border-border-base w-full" />
-                <div class="flex items-center gap-2">
-                    <x-avatar src="https://i.pravatar.cc/80?img=12" alt="Image Danilo" />
-                    <x-fr-text size="sm">Danilo</x-fr-text>
-                    <div class="bg-border-base size-1 rounded-full"></div>
-                    <x-fr-text size="sm">Desenvolvedor</x-fr-text>
+                <div class="flex w-full flex-col gap-3" data-reveal="up">
+                    <x-fas-quote-left class="text-text-high size-4" />
+                    <x-fr-text class="text-text-low italic">
+                        Antes, ao ver o saldo, acabava <span class="text-brand-primary">gastando por impulso</span>.
+                        Hoje, meu dinheiro tem um propósito.
+                    </x-fr-text>
+                    <hr class="border-border-base w-full" />
+                    <div class="flex items-center gap-2">
+                        <x-avatar src="https://i.pravatar.cc/80?img=12" alt="Image Danilo" />
+                        <x-fr-text size="sm">Danilo</x-fr-text>
+                        <div class="bg-border-base size-1 rounded-full"></div>
+                        <x-fr-text size="sm">Desenvolvedor</x-fr-text>
+                    </div>
                 </div>
             </div>
 
-            <div class="flex flex-col gap-8">
+            <div class="flex flex-col gap-8" data-reveal="up">
                 <x-fr-text>
                     Danilo é desenvolvedor backend, trabalha como PJ e tinha um problema comum: faturava bem, mas o fim
                     do mês não refletia isso. Sem estrutura de distribuição de lucros ou destino definido para os
@@ -138,11 +165,7 @@
         </div>
     </section>
 
-    <x-cta-banner
-        class="mt-28"
-        cta-label="Descobrir meu plano"
-        footer="Sem custo, sem compromisso, uma conversa rápida"
-    >
+    <x-cta-banner cta-label="Descobrir meu plano" footer="Sem custo, sem compromisso, uma conversa rápida">
         <x-slot:proof>
             <x-social-proof variant="dark">Mais de 9.000 investidores já fazem parte</x-social-proof>
         </x-slot:proof>
@@ -155,9 +178,9 @@
         </x-slot:description>
     </x-cta-banner>
 
-    <section class="section mt-28 mb-11">
+    <section class="section">
         <div class="container flex flex-col gap-8">
-            <x-fr-headline data-reveal="up">
+            <x-fr-headline align="left-desk" data-reveal="up">
                 <x-slot:title>
                     Perguntas frequentes
                 </x-slot:title>

@@ -25,7 +25,7 @@
                         <x-social-proof align="left-desk">Mais de 9.000 investidores já fazem parte</x-social-proof>
                     </x-slot:header>
 
-                    <x-slot:title>
+                    <x-slot:title class="md:text-7xl!">
                         Você sabe quanto ganha. <mark>Mas você sabe quanto perde?</mark>
                     </x-slot:title>
                     <x-slot:description>
