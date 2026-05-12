@@ -49,7 +49,7 @@
 }
 
 .fr-headline-size-2xl .fr-headline-title {
-    @apply text-xl md:text-7xl;
+    @apply text-xl md:text-3xl;
 }
 
 .fr-headline-size-3xl .fr-headline-title {
