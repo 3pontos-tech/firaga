@@ -53,51 +53,53 @@
             </x-fr-headline>
         </div>
 
-        <div
-            class="border-border-base divide-border-base grid w-full grid-cols-1 divide-y border-y"
-            data-reveal-stagger="140"
-        >
-            <x-numbered-step
-                class="p-8"
-                data-reveal="up"
-                number="01"
-                title="Imersão na metodologia"
-                :show-chevron="false"
+        <div class="w-full md:container md:mx-auto">
+            <div
+                class="border-border-base divide-border-base grid w-full grid-cols-1 divide-y border-y md:grid-cols-3 md:gap-6 md:divide-y-0 md:border-y-0"
+                data-reveal-stagger="140"
             >
-                Você aprende o jeito Firece de diagnosticar, planejar e acompanhar com casos reais desde o início
+                <x-numbered-step
+                    class="md:border-border-base p-8 md:rounded-lg md:border"
+                    data-reveal="up"
+                    number="01"
+                    title="Imersão na metodologia"
+                    :show-chevron="false"
+                >
+                    Você aprende o jeito Firece de diagnosticar, planejar e acompanhar com casos reais desde o início
 
-                <x-slot:footer>
-                    <x-fr-text size="sm" class="text-brand-primary! font-semibold!"> Semanas 1–2 </x-fr-text>
-                </x-slot:footer>
-            </x-numbered-step>
+                    <x-slot:footer>
+                        <x-fr-text size="sm" class="text-brand-primary! font-semibold!"> Semanas 1–2 </x-fr-text>
+                    </x-slot:footer>
+                </x-numbered-step>
 
-            <x-numbered-step
-                class="p-8"
-                data-reveal="up"
-                number="02"
-                title="Primeiros atendimentos com mentoria"
-                :show-chevron="false"
-            >
-                Você atende com um consultor sênior ao lado. Aprende na prática, com suporte real.
+                <x-numbered-step
+                    class="md:border-border-base p-8 md:rounded-lg md:border"
+                    data-reveal="up"
+                    number="02"
+                    title="Primeiros atendimentos com mentoria"
+                    :show-chevron="false"
+                >
+                    Você atende com um consultor sênior ao lado. Aprende na prática, com suporte real.
 
-                <x-slot:footer>
-                    <x-fr-text size="sm" class="text-brand-primary!"> Mês 1–2 </x-fr-text>
-                </x-slot:footer>
-            </x-numbered-step>
+                    <x-slot:footer>
+                        <x-fr-text size="sm" class="text-brand-primary!"> Mês 1–2 </x-fr-text>
+                    </x-slot:footer>
+                </x-numbered-step>
 
-            <x-numbered-step
-                class="p-8"
-                data-reveal="up"
-                number="03"
-                title="Carteira própria e autonomia"
-                :show-chevron="false"
-            >
-                Com a base construída, você assume sua carteira e cresce no ritmo que seu resultado permite
+                <x-numbered-step
+                    class="md:border-border-base p-8 md:rounded-lg md:border"
+                    data-reveal="up"
+                    number="03"
+                    title="Carteira própria e autonomia"
+                    :show-chevron="false"
+                >
+                    Com a base construída, você assume sua carteira e cresce no ritmo que seu resultado permite
 
-                <x-slot:footer>
-                    <x-fr-text size="sm" class="text-brand-primary!"> A partir do mês 3 </x-fr-text>
-                </x-slot:footer>
-            </x-numbered-step>
+                    <x-slot:footer>
+                        <x-fr-text size="sm" class="text-brand-primary!"> A partir do mês 3 </x-fr-text>
+                    </x-slot:footer>
+                </x-numbered-step>
+            </div>
         </div>
 
         <div class="container flex flex-col items-center gap-8">
@@ -106,7 +108,7 @@
     </section>
 
     <section class="section">
-        <div class="bg-brand-primary relative my-28 h-56 w-full overflow-hidden">
+        <div class="bg-brand-primary relative my-28 h-56 w-full overflow-hidden md:hidden">
             <x-logo
                 class="text-brand-secondary absolute top-0 left-0 z-0 h-75! w-auto -translate-x-1/4 -translate-y-1/6"
             />
@@ -120,37 +122,50 @@
             ></div>
         </div>
 
-        <div class="container flex flex-col gap-8">
-            <x-fr-headline align="left" data-reveal="up">
-                <x-slot:title>
-                    Mais <mark>propósito</mark> do que currículo
-                </x-slot:title>
-                <x-slot:description>
-                    Para qualquer vaga, o que mais importa é para quê você quer estar aqui. Experiência se constrói
-                    postura e propósito são suas.
-                </x-slot:description>
-            </x-fr-headline>
+        <div class="container flex flex-col gap-8 md:flex-row md:items-center md:gap-16">
+            <div class="flex flex-col gap-8 md:basis-3/5">
+                <x-fr-headline align="left" data-reveal="up">
+                    <x-slot:title>
+                        Mais <mark>propósito</mark> do que currículo
+                    </x-slot:title>
+                    <x-slot:description>
+                        Para qualquer vaga, o que mais importa é para quê você quer estar aqui. Experiência se constrói
+                        postura e propósito são suas.
+                    </x-slot:description>
+                </x-fr-headline>
 
-            <div class="flex flex-col gap-4" data-reveal="up">
-                <x-fr-heading size="xs"> O que buscamos </x-fr-heading>
+                <div class="flex flex-col gap-4" data-reveal="up">
+                    <x-fr-heading size="xs"> O que buscamos </x-fr-heading>
 
-                <div class="flex flex-col gap-8" data-reveal-stagger="120">
-                    <x-arrow-block title="Orientado a resultado com propósito genuíno">
-                        Você quer impactar a vida das pessoas, não só bater meta.
-                    </x-arrow-block>
+                    <div class="flex flex-col gap-8" data-reveal-stagger="120">
+                        <x-arrow-block title="Orientado a resultado com propósito genuíno">
+                            Você quer impactar a vida das pessoas, não só bater meta.
+                        </x-arrow-block>
 
-                    <x-arrow-block title="Comunicação clara e escuta ativa">
-                        Sabe ouvir, criar confiança e explicar o complexo de forma simples
-                    </x-arrow-block>
+                        <x-arrow-block title="Comunicação clara e escuta ativa">
+                            Sabe ouvir, criar confiança e explicar o complexo de forma simples
+                        </x-arrow-block>
 
-                    <x-arrow-block title="Disciplina e consistência">
-                        A carreira tem altos e baixos. Buscamos quem se mantém firme
-                    </x-arrow-block>
+                        <x-arrow-block title="Disciplina e consistência">
+                            A carreira tem altos e baixos. Buscamos quem se mantém firme
+                        </x-arrow-block>
 
-                    <x-arrow-block title="Alinhamento com os valores da Firece">
-                        Transparência, impacto real, sem empurrar produto. É assim que trabalhamos
-                    </x-arrow-block>
+                        <x-arrow-block title="Alinhamento com os valores da Firece">
+                            Transparência, impacto real, sem empurrar produto. É assim que trabalhamos
+                        </x-arrow-block>
+                    </div>
                 </div>
+            </div>
+
+            <div class="relative hidden w-full md:block md:min-h-160 md:basis-2/5" data-reveal="scale">
+                <div
+                    class="from-brand-primary to-brand-secondary absolute inset-0 -z-1 rounded-lg bg-linear-to-b"
+                ></div>
+                <img
+                    src="{{ asset('images/image-1.webp') }}"
+                    alt="Imagem de homem"
+                    class="absolute inset-0 h-full w-full rounded-lg object-contain object-bottom"
+                />
             </div>
         </div>
     </section>
@@ -167,7 +182,7 @@
                 </x-slot:description>
             </x-fr-headline>
 
-            <div class="grid grid-cols-1 gap-8" data-reveal-stagger="140">
+            <div class="grid grid-cols-1 gap-8 md:grid-cols-3" data-reveal-stagger="140">
                 <x-testimonial
                     data-reveal="up"
                     variant="centered"
