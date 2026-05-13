@@ -2,22 +2,27 @@
     {{-- Featured article --}}
     @if ($featured)
         <section class="bg-brand-primary py-(--section-first-gap)">
-            <div class="container flex flex-col gap-11">
-                <x-fr-headline size="2xl">
-                    <x-slot:title class="text-text-light!">
-                        Conheça nosso blog
-                    </x-slot:title>
-                    <x-slot:description class="text-text-light!">
-                        Transformamos a forma como as pessoas lidam com dinheiro, capacitando-as a conquistar liberdade,
-                        segurança e crescimento financeiro sustentável.
-                    </x-slot:description>
-                </x-fr-headline>
+            <div class="container flex flex-col gap-11 md:flex-row md:items-center md:gap-16">
+                <div class="flex flex-col gap-8 md:basis-2/5">
+                    <x-fr-headline size="2xl" align="left-desk">
+                        <x-slot:title class="text-text-light!">
+                            Conheça nosso blog
+                        </x-slot:title>
+                        <x-slot:description class="text-text-light!">
+                            Transformamos a forma como as pessoas lidam com dinheiro, capacitando-as a conquistar
+                            liberdade, segurança e crescimento financeiro sustentável.
+                        </x-slot:description>
+                        <x-slot:actions>
+                            <x-fr-button variant="white"> Ver todos os artigos </x-fr-button>
+                        </x-slot:actions>
+                    </x-fr-headline>
+                </div>
 
-                <div class="flex flex-col gap-4">
+                <div class="flex flex-col gap-4 md:basis-3/5">
                     <img
                         src="{{ $featured->getFirstMediaUrl('cover') ?: asset('images/guys-looking-at-notebook-but-gray.webp') }}"
                         alt="{{ $featured->thumbnail_alt ?: $featured->title }}"
-                        class="h-50 w-full rounded-sm object-cover"
+                        class="h-50 w-full rounded-sm object-cover md:h-80"
                     />
 
                     <x-fr-headline align="left" size="sm">
