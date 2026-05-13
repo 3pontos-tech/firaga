@@ -78,8 +78,8 @@
     </section>
 
     <section class="section from-flamma-primary to-flamma-secondary bg-linear-to-r py-20">
-        <div class="container flex flex-col gap-8">
-            <x-fr-headline size="2xl" align="left">
+        <div class="container flex flex-col gap-8 md:grid md:grid-cols-2 md:gap-x-12 md:gap-y-8">
+            <x-fr-headline size="2xl" align="left" class="md:self-end">
                 <x-slot:title class="text-text-light!">
                     Como funciona?
                 </x-slot:title>
@@ -90,7 +90,7 @@
             </x-fr-headline>
 
             <div
-                class="border-border-base divide-border-base grid w-full grid-cols-1 divide-y border-y"
+                class="border-border-base divide-border-base grid w-full grid-cols-1 divide-y border-y md:col-start-2 md:row-span-2 md:row-start-1"
                 data-reveal-stagger="140"
             >
                 <x-numbered-step class="py-8" data-reveal="up" number="01" title="Contratação" inverted>
@@ -111,57 +111,72 @@
                 </x-numbered-step>
             </div>
 
-            <x-fr-button variant="white"> Descobrir meu plano</x-fr-button>
+            <x-fr-button variant="white" class="md:self-start"> Descobrir meu plano</x-fr-button>
         </div>
     </section>
 
     <section class="section">
-        <div class="container flex flex-col gap-16">
-            <div class="flex flex-col gap-8">
-                <x-fr-headline align="left">
-                    <x-slot:header>
-                        <x-fr-text size="sm" class="text-brand-primary! font-semibold!">
-                            Planejamento financeiro
-                        </x-fr-text>
-                    </x-slot:header>
-                    <x-slot:title>
-                        O ponto de partida de
-                        <mark>2.347 histórias</mark>
-                    </x-slot:title>
-                    <x-slot:description>
-                        O Planejamento Financeiro é onde tudo começa. Três encontros com um consultor dedicado que vai
-                        entender sua realidade dívidas, hábitos, objetivos e construir uma estratégia feita para você.
-                        Não para um perfil genérico. Para você.
-                    </x-slot:description>
-                </x-fr-headline>
+        <div class="container flex flex-col gap-16 md:gap-32">
+            <div class="flex flex-col gap-8 md:flex-row md:items-center md:gap-16">
+                <div class="flex flex-col gap-8 md:basis-3/5">
+                    <x-fr-headline align="left">
+                        <x-slot:header>
+                            <x-fr-text size="sm" class="text-brand-primary! font-semibold!">
+                                Planejamento financeiro
+                            </x-fr-text>
+                        </x-slot:header>
+                        <x-slot:title>
+                            O ponto de partida de
+                            <mark>2.347 histórias</mark>
+                        </x-slot:title>
+                        <x-slot:description>
+                            O Planejamento Financeiro é onde tudo começa. Três encontros com um consultor dedicado que
+                            vai entender sua realidade dívidas, hábitos, objetivos e construir uma estratégia feita para
+                            você. Não para um perfil genérico. Para você.
+                        </x-slot:description>
+                    </x-fr-headline>
 
-                <div class="flex flex-col gap-4" data-reveal="up">
-                    <x-fr-heading size="xs"> O que buscamos</x-fr-heading>
+                    <div class="flex flex-col gap-4" data-reveal="up">
+                        <x-fr-heading size="xs"> O que buscamos</x-fr-heading>
 
-                    <div class="flex flex-col gap-8" data-reveal-stagger="120">
-                        <x-arrow-block align="center">
-                            Você sabe, pela primeira vez, para onde vai cada real da sua renda
-                        </x-arrow-block>
+                        <div class="flex flex-col gap-8" data-reveal-stagger="120">
+                            <x-arrow-block align="center">
+                                Você sabe, pela primeira vez, para onde vai cada real da sua renda
+                            </x-arrow-block>
 
-                        <x-arrow-block align="center">
-                            Tem um plano real para os próximos 12 meses com metas que cabem na sua realidade
-                        </x-arrow-block>
+                            <x-arrow-block align="center">
+                                Tem um plano real para os próximos 12 meses com metas que cabem na sua realidade
+                            </x-arrow-block>
 
-                        <x-arrow-block align="center">
-                            Começa a construir reserva de emergência sem precisar ganhar mais
-                        </x-arrow-block>
+                            <x-arrow-block align="center">
+                                Começa a construir reserva de emergência sem precisar ganhar mais
+                            </x-arrow-block>
 
-                        <x-arrow-block align="center">
-                            Toma decisões financeiras com clareza, não com ansiedade
-                        </x-arrow-block>
+                            <x-arrow-block align="center">
+                                Toma decisões financeiras com clareza, não com ansiedade
+                            </x-arrow-block>
+                        </div>
                     </div>
+                </div>
+
+                <div class="relative hidden w-full md:block md:min-h-160 md:basis-2/5" data-reveal="scale">
+                    <div
+                        class="from-brand-primary to-brand-secondary absolute inset-0 -z-1 rounded-lg bg-linear-to-b"
+                    ></div>
+                    <img
+                        src="{{ asset('images/image-1.webp') }}"
+                        alt="Planejamento financeiro"
+                        class="absolute inset-0 h-full w-full rounded-lg object-contain object-bottom"
+                    />
                 </div>
             </div>
 
             <div class="flex flex-col items-center gap-8" x-data="{ selected: 'gold' }">
-                <x-fr-text size="sm" class="text-brand-primary! font-semibold!"> Escolha seu momento</x-fr-text>
+                <x-fr-text size="sm" class="text-brand-primary! font-semibold! md:hidden">
+                    Escolha seu momento
+                </x-fr-text>
 
-                <div class="flex w-full">
+                <div class="flex w-full md:hidden">
                     <button
                         class="w-full border-b pb-2 transition-colors"
                         :class="selected === 'gold' ? 'border-brand-primary' : 'border-border-base'"
@@ -201,9 +216,9 @@
                     </button>
                 </div>
 
-                <div class="grid w-full [grid-template-areas:'card']">
+                <div class="grid w-full [grid-template-areas:'card'] md:grid-cols-3 md:gap-6">
                     <div
-                        class="transition-opacity duration-300 [grid-area:card]"
+                        class="transition-opacity duration-300 [grid-area:card] md:pointer-events-auto! md:opacity-100! md:[grid-area:auto]"
                         :class="selected === 'gold' ? 'opacity-100' : 'opacity-0 pointer-events-none'"
                     >
                         <x-plan-card :tagline="'Meu dinheiro some sem explicação'">
@@ -227,7 +242,7 @@
                     </div>
 
                     <div
-                        class="transition-opacity duration-300 [grid-area:card]"
+                        class="transition-opacity duration-300 [grid-area:card] md:pointer-events-auto! md:opacity-100! md:[grid-area:auto]"
                         :class="selected === 'platinum' ? 'opacity-100' : 'opacity-0 pointer-events-none'"
                     >
                         <x-plan-card variant="highlighted" :tagline="'Meu dinheiro some sem explicação'">
@@ -251,7 +266,7 @@
                     </div>
 
                     <div
-                        class="transition-opacity duration-300 [grid-area:card]"
+                        class="transition-opacity duration-300 [grid-area:card] md:pointer-events-auto! md:opacity-100! md:[grid-area:auto]"
                         :class="selected === 'black' ? 'opacity-100' : 'opacity-0 pointer-events-none'"
                     >
                         <x-plan-card :tagline="'Meu dinheiro some sem explicação'">
@@ -291,8 +306,8 @@
     </section>
 
     <section class="section">
-        <div class="container flex flex-col gap-4">
-            <x-fr-headline align="left">
+        <div class="container flex flex-col gap-4 md:grid md:grid-cols-[3fr_2fr] md:gap-x-16 md:gap-y-0">
+            <x-fr-headline align="left" class="md:self-end">
                 <x-slot:header>
                     <x-fr-text size="sm" class="text-brand-primary! font-semibold!"> Code Capital </x-fr-text>
                 </x-slot:header>
@@ -304,119 +319,124 @@
                     quem trabalha com tech tem características únicas e merece uma estratégia à altura.
                 </x-slot:description>
             </x-fr-headline>
-            <div class="bg-elevation-01dp border-border-base text-xxxs rounded-sm border p-4 font-mono leading-7">
-                <div class="mb-3 flex gap-1.5">
-                    <span class="size-3 rounded-full bg-red-300"></span>
-                    <span class="size-3 rounded-full bg-yellow-100"></span>
-                    <span class="size-3 rounded-full bg-green-300"></span>
-                </div>
-                <div class="flex flex-col gap-4">
-                    <p class="flex flex-wrap items-center gap-x-1">
-                        <span class="text-brand-primary">$</span>
-                        <span class="text-text-medium">Diagnóstico:</span>
-                        <span class="text-brand-primary">renda variável</span>
-                        <span class="inline-flex items-center gap-1 text-green-600">
-                            <x-heroicon-o-check class="size-3 shrink-0 text-green-600" />
-                            mapeada
-                        </span>
-                    </p>
-                    <p class="flex flex-wrap items-center gap-x-1">
-                        <span class="text-brand-primary">$</span>
-                        <span class="text-text-medium">Stock options:</span>
-                        <span class="text-brand-primary">estratégia de exercício</span>
-                        <span class="inline-flex items-center gap-1 text-green-600">
-                            <x-heroicon-o-check class="size-3 shrink-0 text-green-600" />
-                            definida
-                        </span>
-                    </p>
-                    <p class="flex flex-wrap items-center gap-x-1">
-                        <span class="text-brand-primary">$</span>
-                        <span class="text-text-medium">Câmbio:</span>
-                        <span class="text-brand-primary">Proteção USD/BRL</span>
-                        <span class="inline-flex items-center gap-1 text-green-600">
-                            <x-heroicon-o-check class="size-3 shrink-0 text-green-600" />
-                            estruturada
-                        </span>
-                    </p>
-                    <p class="flex flex-wrap items-center gap-x-1">
-                        <span class="text-brand-primary">$</span>
-                        <span class="text-text-medium">PLR + Bônus:</span>
-                        <span class="text-brand-primary">Alocação estratégica</span>
-                        <span class="text-green-600">planejada</span>
-                    </p>
+
+            <div class="w-full md:col-start-2 md:row-span-2 md:row-start-1">
+                <div class="bg-elevation-01dp border-border-base text-xxxs rounded-sm border p-4 font-mono leading-7">
+                    <div class="mb-3 flex gap-1.5">
+                        <span class="size-3 rounded-full bg-red-300"></span>
+                        <span class="size-3 rounded-full bg-yellow-100"></span>
+                        <span class="size-3 rounded-full bg-green-300"></span>
+                    </div>
+                    <div class="flex flex-col gap-4">
+                        <p class="flex flex-wrap items-center gap-x-1">
+                            <span class="text-brand-primary">$</span>
+                            <span class="text-text-medium">Diagnóstico:</span>
+                            <span class="text-brand-primary">renda variável</span>
+                            <span class="inline-flex items-center gap-1 text-green-600">
+                                <x-heroicon-o-check class="size-3 shrink-0 text-green-600" />
+                                mapeada
+                            </span>
+                        </p>
+                        <p class="flex flex-wrap items-center gap-x-1">
+                            <span class="text-brand-primary">$</span>
+                            <span class="text-text-medium">Stock options:</span>
+                            <span class="text-brand-primary">estratégia de exercício</span>
+                            <span class="inline-flex items-center gap-1 text-green-600">
+                                <x-heroicon-o-check class="size-3 shrink-0 text-green-600" />
+                                definida
+                            </span>
+                        </p>
+                        <p class="flex flex-wrap items-center gap-x-1">
+                            <span class="text-brand-primary">$</span>
+                            <span class="text-text-medium">Câmbio:</span>
+                            <span class="text-brand-primary">Proteção USD/BRL</span>
+                            <span class="inline-flex items-center gap-1 text-green-600">
+                                <x-heroicon-o-check class="size-3 shrink-0 text-green-600" />
+                                estruturada
+                            </span>
+                        </p>
+                        <p class="flex flex-wrap items-center gap-x-1">
+                            <span class="text-brand-primary">$</span>
+                            <span class="text-text-medium">PLR + Bônus:</span>
+                            <span class="text-brand-primary">Alocação estratégica</span>
+                            <span class="text-green-600">planejada</span>
+                        </p>
+                    </div>
                 </div>
             </div>
 
-            <x-fr-button class="mt-4"> Conhecer o code capital </x-fr-button>
+            <x-fr-button class="mt-4 md:mt-0 md:self-start"> Conhecer o code capital </x-fr-button>
         </div>
     </section>
 
     <section class="section metallic bg-elevation-surface py-20">
-        <div class="container flex flex-col gap-8">
-            <div class="relative">
+        <div class="container flex flex-col gap-8 md:flex-row md:items-start md:gap-16">
+            <div class="relative md:order-2 md:basis-2/5 md:self-stretch">
                 <div
-                    class="from-elevation-surface/0 to-elevation-surface/10 absolute inset-0 z-10 bg-linear-to-b"
+                    class="from-elevation-surface/0 to-elevation-surface/10 absolute inset-0 z-10 bg-linear-to-b md:hidden"
                 ></div>
                 <img
                     src="{{ asset('images/guys-looking-at-notebook-but-gray.webp') }}"
-                    alt="Imagem dos caras cinza"
-                    class="h-50 w-auto"
+                    alt="Key Account"
+                    class="h-50 w-auto md:h-full md:w-full md:rounded-lg md:object-cover"
                     data-reveal="left"
                 />
             </div>
 
-            <x-fr-headline align="left" data-reveal="up">
-                <x-slot:header>
-                    <x-fr-text size="sm" class="text-text-high! font-semibold!"> Key Account </x-fr-text>
-                </x-slot:header>
-                <x-slot:title>
-                    Não é uma consultoria, <mark>é uma parceria</mark>
-                </x-slot:title>
-                <x-slot:description>
-                    O <span class="text-text-high">Key Account</span> é para quem já passou pelo
-                    <span class="text-text-high">Planejamento</span> e quer ir além ou para quem, desde o início,
-                    precisa de acompanhamento contínuo e acesso direto ao seu consultor. É uma relação de longo prazo,
-                    não de três encontros.
-                </x-slot:description>
-            </x-fr-headline>
+            <div class="flex flex-col gap-8 md:order-1 md:flex-1">
+                <x-fr-headline align="left" data-reveal="up">
+                    <x-slot:header>
+                        <x-fr-text size="sm" class="text-text-high! font-semibold!"> Key Account </x-fr-text>
+                    </x-slot:header>
+                    <x-slot:title>
+                        Não é uma consultoria, <mark>é uma parceria</mark>
+                    </x-slot:title>
+                    <x-slot:description>
+                        O <span class="text-text-high">Key Account</span> é para quem já passou pelo
+                        <span class="text-text-high">Planejamento</span> e quer ir além ou para quem, desde o início,
+                        precisa de acompanhamento contínuo e acesso direto ao seu consultor. É uma relação de longo
+                        prazo, não de três encontros.
+                    </x-slot:description>
+                </x-fr-headline>
 
-            <div class="flex flex-col gap-4" data-reveal="up">
-                <x-fr-heading size="xs"> O que muda na sua vida: </x-fr-heading>
+                <div class="flex flex-col gap-4" data-reveal="up">
+                    <x-fr-heading size="xs"> O que muda na sua vida: </x-fr-heading>
 
-                <div class="flex flex-col gap-8" data-reveal-stagger="120">
-                    <x-arrow-block align="center" icon-color="text-text-high">
-                        Acompanhamento contínuo com revisões mensais do seu plano
-                    </x-arrow-block>
+                    <div class="flex flex-col gap-8" data-reveal-stagger="120">
+                        <x-arrow-block align="center" icon-color="text-text-high">
+                            Acompanhamento contínuo com revisões mensais do seu plano
+                        </x-arrow-block>
 
-                    <x-arrow-block align="center" icon-color="text-text-high">
-                        Acesso direto ao seu consultor sem fila, sem espera
-                    </x-arrow-block>
+                        <x-arrow-block align="center" icon-color="text-text-high">
+                            Acesso direto ao seu consultor sem fila, sem espera
+                        </x-arrow-block>
 
-                    <x-arrow-block align="center" icon-color="text-text-high">
-                        Estratégias exclusivas adaptadas ao seu momento de vida
-                    </x-arrow-block>
+                        <x-arrow-block align="center" icon-color="text-text-high">
+                            Estratégias exclusivas adaptadas ao seu momento de vida
+                        </x-arrow-block>
 
-                    <x-arrow-block align="center" icon-color="text-text-high">
-                        Decisões financeiras com suporte em tempo real
-                    </x-arrow-block>
+                        <x-arrow-block align="center" icon-color="text-text-high">
+                            Decisões financeiras com suporte em tempo real
+                        </x-arrow-block>
+                    </div>
                 </div>
+
+                <x-testimonial
+                    class="mt-12"
+                    data-reveal="up"
+                    name="Felipe Rosa"
+                    role="Design"
+                    plan="Plano Gold"
+                    avatar="https://i.pravatar.cc/80?img=12"
+                    metric="0% → 20% da renda investida"
+                >
+                    Nunca achei que ia conseguir sair das dívidas. Em 5 meses com o
+                    <span class="text-brand-primary font-bold">Matheus</span>, pela primeira vez na vida eu tenho
+                    reserva de emergência.
+                </x-testimonial>
+
+                <x-fr-button data-reveal="up"> Esse sou eu </x-fr-button>
             </div>
-
-            <x-testimonial
-                class="mt-12"
-                data-reveal="up"
-                name="Felipe Rosa"
-                role="Design"
-                plan="Plano Gold"
-                avatar="https://i.pravatar.cc/80?img=12"
-                metric="0% → 20% da renda investida"
-            >
-                Nunca achei que ia conseguir sair das dívidas. Em 5 meses com o
-                <span class="text-brand-primary font-bold">Matheus</span>, pela primeira vez na vida eu tenho reserva de
-                emergência.
-            </x-testimonial>
-
-            <x-fr-button data-reveal="up"> Esse sou eu </x-fr-button>
         </div>
     </section>
 
@@ -441,8 +461,8 @@
     </section>
 
     <section class="section bg-brand-primary py-20">
-        <div class="container flex flex-col gap-8">
-            <x-fr-headline align="left" data-reveal="up">
+        <div class="container flex flex-col gap-8 md:grid md:grid-cols-2 md:gap-x-12 md:gap-y-8">
+            <x-fr-headline align="left" class="md:self-end" data-reveal="up">
                 <x-slot:header>
                     <x-logo-badge class="text-text-light!"> Parcerias </x-logo-badge>
                 </x-slot:header>
@@ -456,7 +476,7 @@
             </x-fr-headline>
 
             <div
-                class="border-border-base divide-border-base grid w-full grid-cols-1 divide-y border-y"
+                class="border-border-base divide-border-base grid w-full grid-cols-1 divide-y border-y md:col-start-2 md:row-span-2 md:row-start-1"
                 data-reveal-stagger="140"
             >
                 <div class="flex flex-col gap-4 px-4 py-8" data-reveal="up">
@@ -504,7 +524,7 @@
                 </div>
             </div>
 
-            <x-fr-button variant="white"> Conhecer o code capital </x-fr-button>
+            <x-fr-button variant="white" class="md:self-start"> Conhecer o code capital </x-fr-button>
         </div>
     </section>
 
