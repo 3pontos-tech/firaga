@@ -13,7 +13,7 @@
                 </x-slot:header>
 
                 <x-slot:title>
-                    <mark>Transforme</mark> vidas Começando pela sua
+                    <mark>Transforme</mark> vidas começando pela sua
                 </x-slot:title>
                 <x-slot:description>
                     O modelo de atendimento premium da Firece para quem exige personalização, estratégia avançada e
@@ -113,7 +113,7 @@
                 class="text-brand-secondary absolute top-0 left-0 z-0 h-75! w-auto -translate-x-1/4 -translate-y-1/6"
             />
             <img
-                src="{{ asset('images/image-1.webp') }}"
+                src="{{ asset('images/man-with-clock.png') }}"
                 alt="Imagem de homem"
                 class="absolute right-0 bottom-0 z-0 h-full w-auto object-cover"
             />
@@ -162,7 +162,7 @@
                     class="from-brand-primary to-brand-secondary absolute inset-0 -z-1 rounded-lg bg-linear-to-b"
                 ></div>
                 <img
-                    src="{{ asset('images/image-1.webp') }}"
+                    src="{{ asset('images/man-with-clock.png') }}"
                     alt="Imagem de homem"
                     class="absolute inset-0 h-full w-full rounded-lg object-contain object-bottom"
                 />

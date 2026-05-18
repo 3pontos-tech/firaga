@@ -68,7 +68,7 @@
         <div class="container flex flex-col gap-8 md:flex-row md:items-stretch md:gap-12" data-reveal-stagger="120">
             <div class="md:order-2 md:basis-1/3 md:self-stretch" data-reveal="left">
                 <img
-                    src="{{ asset('images/guys-looking-at-notebook-but-gray.webp') }}"
+                    src="{{ asset('images/guys-looking-at-notebook-but-gray.png') }}"
                     alt="Devs analisando finanças"
                     class="h-50 w-auto md:h-full md:w-full md:rounded-lg md:object-cover"
                 />

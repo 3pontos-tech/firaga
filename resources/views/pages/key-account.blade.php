@@ -38,7 +38,7 @@
                     class="from-elevation-surface/0 to-elevation-surface/10 absolute inset-0 z-10 bg-linear-to-b md:hidden"
                 ></div>
                 <img
-                    src="{{ asset('images/guys-looking-at-notebook-but-gray.webp') }}"
+                    src="{{ asset('images/guys-looking-at-notebook-but-gray.png') }}"
                     alt="Imagem dos caras cinza"
                     class="h-50 w-auto md:h-full md:w-full md:rounded-lg md:object-cover"
                     data-reveal="left"
