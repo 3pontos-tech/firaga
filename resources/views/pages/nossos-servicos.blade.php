@@ -18,47 +18,65 @@
                 class="divide-border-base border-border-base grid grid-cols-1 gap-3 divide-y border-y"
                 data-reveal-stagger="140"
             >
-                <div class="flex items-center justify-between gap-3 py-4">
+                <a
+                    href="#flamma"
+                    class="flex items-center justify-between gap-3 py-4 transition-opacity hover:opacity-70"
+                >
                     <x-fr-text size="sm" class="text-text-high! font-semibold!">
                         Bem-estar financeiro para equipes
                     </x-fr-text>
                     <x-heroicon-c-chevron-right class="text-brand-primary size-5 shrink-0" />
-                </div>
-                <div class="flex items-center justify-between gap-3 py-4">
+                </a>
+                <a
+                    href="#planejamento"
+                    class="flex items-center justify-between gap-3 py-4 transition-opacity hover:opacity-70"
+                >
                     <x-fr-text size="sm" class="text-text-high! font-semibold!">
                         Quero organizar minha vida financeira
                     </x-fr-text>
                     <x-heroicon-c-chevron-right class="text-brand-primary size-5 shrink-0" />
-                </div>
-                <div class="flex items-center justify-between gap-3 py-4">
+                </a>
+                <a
+                    href="#code-capital"
+                    class="flex items-center justify-between gap-3 py-4 transition-opacity hover:opacity-70"
+                >
                     <x-fr-text size="sm" class="text-text-high! font-semibold!">
                         Sou dev, PJ ou recebo em dólar
                     </x-fr-text>
                     <x-heroicon-c-chevron-right class="text-brand-primary size-5 shrink-0" />
-                </div>
-                <div class="flex items-center justify-between gap-3 py-4">
+                </a>
+                <a
+                    href="#key-account"
+                    class="flex items-center justify-between gap-3 py-4 transition-opacity hover:opacity-70"
+                >
                     <x-fr-text size="sm" class="text-text-high! font-semibold!">
                         Tenho patrimônio e quero proteger
                     </x-fr-text>
                     <x-heroicon-c-chevron-right class="text-brand-primary size-5 shrink-0" />
-                </div>
-                <div class="flex items-center justify-between gap-3 py-4">
+                </a>
+                <a
+                    href="#educafire"
+                    class="flex items-center justify-between gap-3 py-4 transition-opacity hover:opacity-70"
+                >
                     <x-fr-text size="sm" class="text-text-high! font-semibold!">
                         Quero ensinar finanças e ganhar com isso
                     </x-fr-text>
                     <x-heroicon-c-chevron-right class="text-brand-primary size-5 shrink-0" />
-                </div>
-                <div class="flex items-center justify-between gap-3 py-4">
+                </a>
+                <a
+                    href="#parcerias"
+                    class="flex items-center justify-between gap-3 py-4 transition-opacity hover:opacity-70"
+                >
                     <x-fr-text size="sm" class="text-text-high! font-semibold!">
                         Quero ser parceiro da Firece
                     </x-fr-text>
                     <x-heroicon-c-chevron-right class="text-brand-primary size-5 shrink-0" />
-                </div>
+                </a>
             </div>
         </div>
     </section>
 
-    <section class="section">
+    <section id="flamma" class="section scroll-mt-24">
         <div class="container flex flex-col gap-8">
             <div class="mx-auto mb-2.5">
                 <img src="{{ asset('images/logos/flamma-logo.svg') }}" alt="Logo Flamma" class="h-9 w-auto" />
@@ -115,7 +133,7 @@
         </div>
     </section>
 
-    <section class="section">
+    <section id="planejamento" class="section scroll-mt-24">
         <div class="container flex flex-col gap-16 md:gap-32">
             <div class="flex flex-col gap-8 md:flex-row md:items-center md:gap-16">
                 <div class="flex flex-col gap-8 md:basis-3/5">
@@ -305,7 +323,7 @@
         </div>
     </section>
 
-    <section class="section">
+    <section id="code-capital" class="section scroll-mt-24">
         <div class="container flex flex-col gap-4 md:grid md:grid-cols-[3fr_2fr] md:gap-x-16 md:gap-y-0">
             <x-fr-headline align="left" class="md:self-end">
                 <x-slot:header>
@@ -369,7 +387,7 @@
         </div>
     </section>
 
-    <section class="section metallic bg-elevation-surface py-20">
+    <section id="key-account" class="section metallic bg-elevation-surface scroll-mt-16 py-20">
         <div class="container flex flex-col gap-8 md:flex-row md:items-start md:gap-16">
             <div class="relative md:order-2 md:basis-2/5 md:self-stretch">
                 <div
@@ -440,7 +458,7 @@
         </div>
     </section>
 
-    <section class="section">
+    <section id="educafire" class="section scroll-mt-24">
         <div class="container">
             <x-fr-headline>
                 <x-slot:header>
@@ -460,7 +478,7 @@
         </div>
     </section>
 
-    <section class="section bg-brand-primary py-20">
+    <section id="parcerias" class="section bg-brand-primary scroll-mt-16 py-20">
         <div class="container flex flex-col gap-8 md:grid md:grid-cols-2 md:gap-x-12 md:gap-y-8">
             <x-fr-headline align="left" class="md:self-end" data-reveal="up">
                 <x-slot:header>
@@ -543,36 +561,51 @@
                 class="divide-border-base border-border-base grid grid-cols-1 gap-3 divide-y border-y"
                 data-reveal-stagger="140"
             >
-                <div class="flex items-center justify-between gap-3 py-4">
+                <a
+                    href="#flamma"
+                    class="flex items-center justify-between gap-3 py-4 transition-opacity hover:opacity-70"
+                >
                     <x-fr-text size="sm" class="text-text-high! font-semibold!">
                         Represento uma empresa e quero cuidar do bem-estar financeiro do meu time
                     </x-fr-text>
                     <x-heroicon-c-chevron-right class="text-brand-primary size-5 shrink-0" />
-                </div>
-                <div class="flex items-center justify-between gap-3 py-4">
+                </a>
+                <a
+                    href="#planejamento"
+                    class="flex items-center justify-between gap-3 py-4 transition-opacity hover:opacity-70"
+                >
                     <x-fr-text size="sm" class="text-text-high! font-semibold!">
                         Meu dinheiro some e não entendo para onde vai
                     </x-fr-text>
                     <x-heroicon-c-chevron-right class="text-brand-primary size-5 shrink-0" />
-                </div>
-                <div class="flex items-center justify-between gap-3 py-4">
+                </a>
+                <a
+                    href="#code-capital"
+                    class="flex items-center justify-between gap-3 py-4 transition-opacity hover:opacity-70"
+                >
                     <x-fr-text size="sm" class="text-text-high! font-semibold!">
-                        Sou dev, tenho CNPJ ou rcebo em dólar e não sei como estruturar
+                        Sou dev, tenho CNPJ ou recebo em dólar e não sei como estruturar
                     </x-fr-text>
                     <x-heroicon-c-chevron-right class="text-brand-primary size-5 shrink-0" />
-                </div>
-                <div class="flex items-center justify-between gap-3 py-4">
+                </a>
+                <a
+                    href="#key-account"
+                    class="flex items-center justify-between gap-3 py-4 transition-opacity hover:opacity-70"
+                >
                     <x-fr-text size="sm" class="text-text-high! font-semibold!">
                         Tenho patrimônio e preciso de uma estratégia mais sofisticada
                     </x-fr-text>
                     <x-heroicon-c-chevron-right class="text-brand-primary size-5 shrink-0" />
-                </div>
-                <div class="flex items-center justify-between gap-3 py-4">
+                </a>
+                <a
+                    href="#educafire"
+                    class="flex items-center justify-between gap-3 py-4 transition-opacity hover:opacity-70"
+                >
                     <x-fr-text size="sm" class="text-text-high! font-semibold!">
-                        Quero aprender a ensinar finanças e aganhar com isso
+                        Quero aprender a ensinar finanças e ganhar com isso
                     </x-fr-text>
                     <x-heroicon-c-chevron-right class="text-brand-primary size-5 shrink-0" />
-                </div>
+                </a>
             </div>
         </div>
     </section>
