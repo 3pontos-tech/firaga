@@ -32,66 +32,71 @@
     </section>
 
     <section class="section bg-elevation-01dp border-border-base rounded-t-lg border-y px-4 py-11">
-        <div class="container flex flex-col gap-8" data-reveal-stagger="120">
-            <div class="relative">
+        <div class="container flex flex-col gap-8 md:flex-row md:items-start md:gap-16" data-reveal-stagger="120">
+            <div class="relative md:order-2 md:basis-2/5 md:self-stretch">
                 <div
-                    class="from-elevation-surface/0 to-elevation-surface/10 absolute inset-0 z-10 bg-linear-to-b"
+                    class="from-elevation-surface/0 to-elevation-surface/10 absolute inset-0 z-10 bg-linear-to-b md:hidden"
                 ></div>
                 <img
                     src="{{ asset('images/guys-looking-at-notebook-but-gray.webp') }}"
                     alt="Imagem dos caras cinza"
-                    class="h-50 w-auto"
+                    class="h-50 w-auto md:h-full md:w-full md:rounded-lg md:object-cover"
                     data-reveal="left"
                 />
             </div>
 
-            <x-fr-headline align="left" data-reveal="up">
-                <x-slot:header>
-                    <x-fr-text size="sm" class="text-text-high! font-semibold!"> Key Account </x-fr-text>
-                </x-slot:header>
-                <x-slot:title>
-                    Para quem não aceita menos do que <mark>alta performance</mark>
-                </x-slot:title>
-            </x-fr-headline>
+            <div class="flex flex-col gap-8 md:order-1 md:flex-1">
+                <x-fr-headline align="left" data-reveal="up">
+                    <x-slot:header>
+                        <x-fr-text size="sm" class="text-text-high! font-semibold!"> Key Account </x-fr-text>
+                    </x-slot:header>
+                    <x-slot:title>
+                        Para quem não aceita menos do que <mark>alta performance</mark>
+                    </x-slot:title>
+                </x-fr-headline>
 
-            <div class="flex flex-col gap-4" data-reveal="up">
-                <x-fr-heading size="xs"> O que buscamos </x-fr-heading>
+                <div class="flex flex-col gap-4" data-reveal="up">
+                    <x-fr-heading size="xs"> O que buscamos </x-fr-heading>
 
-                <div class="flex flex-col gap-8" data-reveal-stagger="120">
-                    <x-arrow-block icon-color="text-text-high" title="Patrimônio relevante, objetivos de longo prazo">
-                        Você construiu algo que precisa ser protegido e expandido com inteligência
-                    </x-arrow-block>
+                    <div class="flex flex-col gap-8" data-reveal-stagger="120">
+                        <x-arrow-block
+                            icon-color="text-text-high"
+                            title="Patrimônio relevante, objetivos de longo prazo"
+                        >
+                            Você construiu algo que precisa ser protegido e expandido com inteligência
+                        </x-arrow-block>
 
-                    <x-arrow-block icon-color="text-text-high" title="Decisões financeiras complexas e recorrentes">
-                        Investimentos, estrutura familiar, bens você precisa de alguém que pense junto
-                    </x-arrow-block>
+                        <x-arrow-block icon-color="text-text-high" title="Decisões financeiras complexas e recorrentes">
+                            Investimentos, estrutura familiar, bens você precisa de alguém que pense junto
+                        </x-arrow-block>
 
-                    <x-arrow-block icon-color="text-text-high" title="Interesse em exposição internacional">
-                        Dólar, libra, ativos em NY e Londres parte da sua estratégia já está ou deveria estar fora do
-                        Brasil
-                    </x-arrow-block>
+                        <x-arrow-block icon-color="text-text-high" title="Interesse em exposição internacional">
+                            Dólar, libra, ativos em NY e Londres parte da sua estratégia já está ou deveria estar fora
+                            do Brasil
+                        </x-arrow-block>
 
-                    <x-arrow-block icon-color="text-text-high" title="Discrição e exclusividade como padrão">
-                        Você não quer um atendente. Quer um consultor que te conhece de verdade
-                    </x-arrow-block>
+                        <x-arrow-block icon-color="text-text-high" title="Discrição e exclusividade como padrão">
+                            Você não quer um atendente. Quer um consultor que te conhece de verdade
+                        </x-arrow-block>
+                    </div>
                 </div>
+
+                <x-testimonial
+                    class="mt-12"
+                    data-reveal="up"
+                    name="Felipe Rosa"
+                    role="Design"
+                    plan="Plano Gold"
+                    avatar="https://i.pravatar.cc/80?img=12"
+                    metric="0% → 20% da renda investida"
+                >
+                    Nunca achei que ia conseguir sair das dívidas. Em 5 meses com o
+                    <span class="text-brand-primary font-bold">Matheus</span>, pela primeira vez na vida eu tenho
+                    reserva de emergência.
+                </x-testimonial>
+
+                <x-fr-button data-reveal="up"> Esse sou eu </x-fr-button>
             </div>
-
-            <x-testimonial
-                class="mt-12"
-                data-reveal="up"
-                name="Felipe Rosa"
-                role="Design"
-                plan="Plano Gold"
-                avatar="https://i.pravatar.cc/80?img=12"
-                metric="0% → 20% da renda investida"
-            >
-                Nunca achei que ia conseguir sair das dívidas. Em 5 meses com o
-                <span class="text-brand-primary font-bold">Matheus</span>, pela primeira vez na vida eu tenho reserva de
-                emergência.
-            </x-testimonial>
-
-            <x-fr-button data-reveal="up"> Esse sou eu </x-fr-button>
         </div>
     </section>
 
@@ -104,56 +109,78 @@
             </x-fr-headline>
         </div>
 
-        <div
-            class="border-border-base divide-border-base grid w-full grid-cols-1 divide-y border-y"
-            data-reveal-stagger="140"
-        >
-            <x-numbered-step class="p-8" data-reveal="up" number="01" title="Estratégia patrimonial avançada">
-                A empresa contrata pacotes de horas mensais, semestrais ou anuais disponíveis para todos os
-                colaboradores.
+        <div class="w-full md:container md:mx-auto">
+            <div
+                class="border-border-base divide-border-base grid w-full grid-cols-1 divide-y border-y md:grid-cols-2 md:gap-6 md:divide-y-0 md:border-y-0"
+                data-reveal-stagger="140"
+            >
+                <x-numbered-step
+                    class="md:border-border-base p-8 md:rounded-lg md:border"
+                    data-reveal="up"
+                    number="01"
+                    title="Estratégia patrimonial avançada"
+                >
+                    A empresa contrata pacotes de horas mensais, semestrais ou anuais disponíveis para todos os
+                    colaboradores.
 
-                <x-slot:footer>
-                    <div class="flex items-center gap-3">
-                        <x-fr-text size="sm" class="text-text-high!"> Proteção </x-fr-text>
-                        <div class="bg-text-high size-1 rounded-full"></div>
-                        <x-fr-text size="sm" class="text-text-high!"> Crescimento </x-fr-text>
-                    </div>
-                </x-slot:footer>
-            </x-numbered-step>
+                    <x-slot:footer>
+                        <div class="flex items-center gap-3">
+                            <x-fr-text size="sm" class="text-text-high!"> Proteção </x-fr-text>
+                            <div class="bg-text-high size-1 rounded-full"></div>
+                            <x-fr-text size="sm" class="text-text-high!"> Crescimento </x-fr-text>
+                        </div>
+                    </x-slot:footer>
+                </x-numbered-step>
 
-            <x-numbered-step class="p-8" data-reveal="up" number="02" title="Gestão e alocação internacional">
-                Cada colaborador agenda seu atendimento diretamente pela plataforma Flamma, quando quiser.
+                <x-numbered-step
+                    class="md:border-border-base p-8 md:rounded-lg md:border"
+                    data-reveal="up"
+                    number="02"
+                    title="Gestão e alocação internacional"
+                >
+                    Cada colaborador agenda seu atendimento diretamente pela plataforma Flamma, quando quiser.
 
-                <x-slot:footer>
-                    <div class="flex items-center gap-3">
-                        <x-fr-text size="sm" class="text-text-high!"> Diversificação </x-fr-text>
-                    </div>
-                </x-slot:footer>
-            </x-numbered-step>
+                    <x-slot:footer>
+                        <div class="flex items-center gap-3">
+                            <x-fr-text size="sm" class="text-text-high!"> Diversificação </x-fr-text>
+                        </div>
+                    </x-slot:footer>
+                </x-numbered-step>
 
-            <x-numbered-step class="p-8" data-reveal="up" number="03" title="Planejamento sucessório">
-                Sessões individuais de 60 minutos com consultores especializados, online ou presencial.
+                <x-numbered-step
+                    class="md:border-border-base p-8 md:rounded-lg md:border"
+                    data-reveal="up"
+                    number="03"
+                    title="Planejamento sucessório"
+                >
+                    Sessões individuais de 60 minutos com consultores especializados, online ou presencial.
 
-                <x-slot:footer>
-                    <div class="flex items-center gap-3">
-                        <x-fr-text size="sm" class="text-text-high!"> Família </x-fr-text>
-                        <div class="bg-text-high size-1 rounded-full"></div>
-                        <x-fr-text size="sm" class="text-text-high!"> Legado </x-fr-text>
-                    </div>
-                </x-slot:footer>
-            </x-numbered-step>
+                    <x-slot:footer>
+                        <div class="flex items-center gap-3">
+                            <x-fr-text size="sm" class="text-text-high!"> Família </x-fr-text>
+                            <div class="bg-text-high size-1 rounded-full"></div>
+                            <x-fr-text size="sm" class="text-text-high!"> Legado </x-fr-text>
+                        </div>
+                    </x-slot:footer>
+                </x-numbered-step>
 
-            <x-numbered-step class="p-8" data-reveal="up" number="04" title="Acompanhamento contínuo">
-                O RH acompanha a adesão e os resultados com relatórios consolidados de uso e evolução.
+                <x-numbered-step
+                    class="md:border-border-base p-8 md:rounded-lg md:border"
+                    data-reveal="up"
+                    number="04"
+                    title="Acompanhamento contínuo"
+                >
+                    O RH acompanha a adesão e os resultados com relatórios consolidados de uso e evolução.
 
-                <x-slot:footer>
-                    <div class="flex items-center gap-3">
-                        <x-fr-text size="sm" class="text-text-high!"> Parceria </x-fr-text>
-                        <div class="bg-text-high size-1 rounded-full"></div>
-                        <x-fr-text size="sm" class="text-text-high!"> Suporte </x-fr-text>
-                    </div>
-                </x-slot:footer>
-            </x-numbered-step>
+                    <x-slot:footer>
+                        <div class="flex items-center gap-3">
+                            <x-fr-text size="sm" class="text-text-high!"> Parceria </x-fr-text>
+                            <div class="bg-text-high size-1 rounded-full"></div>
+                            <x-fr-text size="sm" class="text-text-high!"> Suporte </x-fr-text>
+                        </div>
+                    </x-slot:footer>
+                </x-numbered-step>
+            </div>
         </div>
     </section>
 
@@ -169,7 +196,7 @@
                 </x-slot:description>
             </x-fr-headline>
 
-            <div class="grid grid-cols-1 gap-8" data-reveal-stagger="140">
+            <div class="grid grid-cols-1 gap-8 md:grid-cols-2" data-reveal-stagger="140">
                 <x-testimonial
                     data-reveal="up"
                     variant="centered"
