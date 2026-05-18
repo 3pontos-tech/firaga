@@ -47,7 +47,7 @@
                     class="from-brand-primary to-brand-secondary absolute inset-0 -z-1 rounded-lg bg-linear-to-b"
                 ></div>
                 <img
-                    src="{{ asset('images/image-1.webp') }}"
+                    src="{{ asset('images/man-with-clock.png') }}"
                     alt="Imagem de homem"
                     class="absolute inset-0 h-full w-full rounded-lg object-contain object-bottom"
                 />
@@ -58,7 +58,7 @@
             <div
                 class="from-brand-primary to-brand-secondary absolute inset-0 top-10 -z-1 rounded-t-lg bg-linear-to-b"
             ></div>
-            <img src="{{ asset('images/image-1.webp') }}" alt="Imagem de homem" class="w-full" />
+            <img src="{{ asset('images/man-with-clock.png') }}" alt="Imagem de homem" class="w-full" />
         </div>
     </section>
 
@@ -107,7 +107,7 @@
         >
             <div class="md:order-2 md:basis-1/3 md:self-stretch" data-reveal="left">
                 <img
-                    src="{{ asset('images/Image.webp') }}"
+                    src="{{ asset('images/guys-looking-at-notebook.png') }}"
                     alt="Imagem dos caras"
                     class="h-50 w-auto md:h-full md:w-full md:rounded-lg md:object-cover"
                 />
@@ -223,8 +223,8 @@
                     </x-slot:footer>
                 </x-numbered-step>
 
-                <x-numbered-step class="p-8" data-reveal="up" number="01" title="Análise">
-                    Entendemos onde você está de verdade. Renda, dívidas, hábitos, objetivos. Sem julgamento.
+                <x-numbered-step class="p-8" data-reveal="up" number="02" title="Plano">
+                    Criamos sua estratégia para os próximos 12 meses. Com metas reais, no seu ritmo.
 
                     <x-slot:footer>
                         <x-fr-text size="sm" class="text-brand-primary! font-semibold!">
@@ -233,8 +233,8 @@
                     </x-slot:footer>
                 </x-numbered-step>
 
-                <x-numbered-step class="p-8" data-reveal="up" number="01" title="Análise">
-                    Entendemos onde você está de verdade. Renda, dívidas, hábitos, objetivos. Sem julgamento.
+                <x-numbered-step class="p-8" data-reveal="up" number="03" title="Acompanhamento">
+                    Ajustamos junto com você, todo mês. Porque a vida muda e o plano também
 
                     <x-slot:footer>
                         <x-fr-text size="sm" class="text-brand-primary! font-semibold!">
