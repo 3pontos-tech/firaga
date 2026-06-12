@@ -129,7 +129,15 @@
                 </x-numbered-step>
             </div>
 
-            <x-fr-button variant="white" class="md:self-start"> Descobrir meu plano</x-fr-button>
+            <x-fr-button
+                variant="white"
+                class="md:self-start"
+                tag="a"
+                href="https://flammabeneficios.com/"
+                target="_blank"
+            >
+                Conheça o Flamma
+            </x-fr-button>
         </div>
     </section>
 
@@ -239,11 +247,12 @@
                         class="transition-opacity duration-300 [grid-area:card] md:pointer-events-auto! md:opacity-100! md:[grid-area:auto]"
                         :class="selected === 'gold' ? 'opacity-100' : 'opacity-0 pointer-events-none'"
                     >
-                        <x-plan-card :tagline="'Meu dinheiro some sem explicação'">
+                        <x-plan-card data-reveal="up" tagline="“Meu dinheiro some sem explicação”">
                             <x-fr-heading>Perfil Gold</x-fr-heading>
                             <x-fr-text>
-                                Para quem quer organizar as finanças do zero e finalmente respirar no fim do mês
+                                Para quem está começando a organizar sua vida finaceira e deseja mais tranquilidade.
                             </x-fr-text>
+                            <x-fr-text size="sm" class="text-brand-primary! font-semibold!">Base</x-fr-text>
 
                             <hr class="border-border-base" />
 
@@ -255,7 +264,14 @@
                                 <x-plan-feature>Planilha de patrimônio</x-plan-feature>
                             </ul>
 
-                            <x-fr-button variant="outline">Esse sou eu</x-fr-button>
+                            <x-fr-button
+                                variant="outline"
+                                tag="a"
+                                href="https://api.whatsapp.com/send/?phone=5511958397432&text=Visitei+o+site+da+Fire%7Cce+e+quero+mais+informa%C3%A7%C3%B5es+sobre+o+plano+gold&type=phone_number&app_absent=0"
+                                target="_blank"
+                            >
+                                Esse sou eu
+                            </x-fr-button>
                         </x-plan-card>
                     </div>
 
@@ -263,23 +279,34 @@
                         class="transition-opacity duration-300 [grid-area:card] md:pointer-events-auto! md:opacity-100! md:[grid-area:auto]"
                         :class="selected === 'platinum' ? 'opacity-100' : 'opacity-0 pointer-events-none'"
                     >
-                        <x-plan-card variant="highlighted" :tagline="'Meu dinheiro some sem explicação'">
+                        <x-plan-card
+                            data-reveal="up"
+                            variant="highlighted"
+                            tagline="“Quero fazer meu dinheiro trabalhar por mim”"
+                        >
                             <x-fr-heading>Perfil Platinum</x-fr-heading>
                             <x-fr-text>
-                                Para quem quer organizar as finanças do zero e finalmente respirar no fim do mês
+                                Para quem quer clareza sobre o presente e confiança para planejar o futuro.
                             </x-fr-text>
+                            <x-fr-text size="sm" class="text-brand-primary! font-semibold!">+Gold</x-fr-text>
 
                             <hr class="border-border-base" />
 
                             <ul class="flex flex-col gap-4">
-                                <x-plan-feature featured>Organização Anual</x-plan-feature>
-                                <x-plan-feature>Mapa financeiro</x-plan-feature>
-                                <x-plan-feature>Construção de Reserva</x-plan-feature>
-                                <x-plan-feature>Planilha de fluxo de caixa</x-plan-feature>
-                                <x-plan-feature>Planilha de patrimônio</x-plan-feature>
+                                <x-plan-feature featured>Preenchimento de Fluxo de Caixa</x-plan-feature>
+                                <x-plan-feature>Diagnóstico de Carteira</x-plan-feature>
+                                <x-plan-feature>Estruturar aquisição de bens</x-plan-feature>
+                                <x-plan-feature>Parceiros de Investimento</x-plan-feature>
+                                <x-plan-feature>Custo Oportunidade</x-plan-feature>
                             </ul>
 
-                            <x-fr-button>Esse sou eu</x-fr-button>
+                            <x-fr-button
+                                tag="a"
+                                href="https://api.whatsapp.com/send/?phone=5511958397432&text=Visitei+o+site+da+Fire%7Cce+e+quero+mais+informa%C3%A7%C3%B5es+sobre+o+plano+platinum&type=phone_number&app_absent=0"
+                                target="_blank"
+                            >
+                                Esse sou eu
+                            </x-fr-button>
                         </x-plan-card>
                     </div>
 
@@ -287,23 +314,31 @@
                         class="transition-opacity duration-300 [grid-area:card] md:pointer-events-auto! md:opacity-100! md:[grid-area:auto]"
                         :class="selected === 'black' ? 'opacity-100' : 'opacity-0 pointer-events-none'"
                     >
-                        <x-plan-card :tagline="'Meu dinheiro some sem explicação'">
+                        <x-plan-card data-reveal="up" tagline="“Quero acelerar minha independência financeira”">
                             <x-fr-heading>Perfil Black</x-fr-heading>
                             <x-fr-text>
-                                Para quem quer organizar as finanças do zero e finalmente respirar no fim do mês
+                                Para quem quer organizar as finanças do zero e finalmente respirar no fim do mês.
                             </x-fr-text>
+                            <x-fr-text size="sm" class="text-brand-primary! font-semibold!">+Platinum</x-fr-text>
 
                             <hr class="border-border-base" />
 
                             <ul class="flex flex-col gap-4">
-                                <x-plan-feature featured>Organização Anual</x-plan-feature>
-                                <x-plan-feature>Mapa financeiro</x-plan-feature>
-                                <x-plan-feature>Construção de Reserva</x-plan-feature>
-                                <x-plan-feature>Planilha de fluxo de caixa</x-plan-feature>
-                                <x-plan-feature>Planilha de patrimônio</x-plan-feature>
+                                <x-plan-feature featured>Revisão do Progresso</x-plan-feature>
+                                <x-plan-feature>Construção de Reserva Internacional</x-plan-feature>
+                                <x-plan-feature>Estratégias Exclusivas</x-plan-feature>
+                                <x-plan-feature>Carteiras Personalizadas</x-plan-feature>
+                                <x-plan-feature>Acompanhamento personalizado</x-plan-feature>
                             </ul>
 
-                            <x-fr-button variant="outline">Esse sou eu</x-fr-button>
+                            <x-fr-button
+                                variant="outline"
+                                tag="a"
+                                href="https://api.whatsapp.com/send/?phone=5511958397432&text=Visitei+o+site+da+Fire%7Cce+e+quero+mais+informa%C3%A7%C3%B5es+sobre+o+plano+black&type=phone_number&app_absent=0"
+                                target="_blank"
+                            >
+                                Esse sou eu
+                            </x-fr-button>
                         </x-plan-card>
                     </div>
                 </div>
@@ -311,14 +346,16 @@
 
             <x-testimonial
                 data-reveal="up"
-                name="Felipe Rosa"
-                role="Design"
-                avatar="https://i.pravatar.cc/80?img=12"
+                name="Juliana Lopes"
+                role="Plano Gold"
+                avatar="https://lh3.googleusercontent.com/a-/ALV-UjVFnVWTd4QGn0sji9hI14-JJSG3CGbLuQocjLPoTBdPUgyYxEfW=w36-h36-p-rp-mo-br100"
                 metric="0% → 20% da renda investida"
             >
-                Nunca achei que ia conseguir sair das dívidas. Em 5 meses com o
-                <span class="text-brand-primary font-bold">Matheus</span>, pela primeira vez na vida eu tenho reserva de
-                emergência.
+                Tem sido uma experiência transformadora, mudando completamente minha vida financeira e a forma como eu
+                cuido do meu dinheiro.
+                <span class="text-brand-primary font-bold"
+                    >Me sinto muito mais segura, organizada e no controle das minhas finanças!</span
+                >
             </x-testimonial>
         </div>
     </section>
@@ -383,7 +420,9 @@
                 </div>
             </div>
 
-            <x-fr-button class="mt-4 md:mt-0 md:self-start"> Conhecer o code capital </x-fr-button>
+            <x-fr-button class="mt-4 md:mt-0 md:self-start" href="{{ route('code-capital') }}">
+                Conhecer o code capital
+            </x-fr-button>
         </div>
     </section>
 
@@ -453,7 +492,7 @@
                     reserva de emergência.
                 </x-testimonial>
 
-                <x-fr-button data-reveal="up"> Esse sou eu </x-fr-button>
+                <x-fr-button data-reveal="up" href="{{ route('key-account') }}"> Saiba mais </x-fr-button>
             </div>
         </div>
     </section>
@@ -472,7 +511,12 @@
                     ajudando outras pessoas. Workshop, mentoria e formação com a metodologia Firece.
                 </x-slot:description>
                 <x-slot:actions>
-                    <x-fr-button> Conhecer a EducaFire </x-fr-button>
+                    <x-fr-button
+                        href="https://api.whatsapp.com/send/?phone=5511958397432&text=Visitei+o+site+da+Fire%7Cce+e+quero+mais+informa%C3%A7%C3%B5es+sobre+o+plano+black&type=phone_number&app_absent=0"
+                        target="_blank"
+                    >
+                        Conhecer a EducaFire
+                    </x-fr-button>
                 </x-slot:actions>
             </x-fr-headline>
         </div>
@@ -542,7 +586,9 @@
                 </div>
             </div>
 
-            <x-fr-button variant="white" class="md:self-start"> Conhecer o code capital </x-fr-button>
+            <x-fr-button variant="white" class="md:self-start" href="{{ route('parcerias') }}">
+                Saber mais sobre parcerias
+            </x-fr-button>
         </div>
     </section>
 

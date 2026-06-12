@@ -1,10 +1,9 @@
 @props ([
-    'title' => 'Pronto para começar?',
-    'description' => 'Preencha abaixo e a gente entra em contato em até 2 dias úteis',
-    'selectLabel' => 'Vaga de interesse',
-    'selectOptions' => [],
-    'messageLabel' => 'Por que a Firece?',
-    'submitLabel' => 'Enviar'
+    'title' => 'Vamos construir algo juntos?',
+    'description' =>
+        'Conte um pouco sobre você e sua proposta. Nossa equipe analisa cada oportunidade individualmente e retorna em até 2 dias úteis.',
+    'messageLabel' => 'Como podemos construir juntos?',
+    'submitLabel' => 'Enviar proposta'
 ])
 
 @php
@@ -13,7 +12,8 @@
         ['name' => 'name', 'label' => 'Nome', 'type' => 'text'],
         ['name' => 'email', 'label' => 'E-mail', 'type' => 'email'],
         ['name' => 'phone', 'label' => 'Telefone', 'type' => 'tel'],
-        ['name' => 'linkedin', 'label' => 'LinkedIn', 'type' => 'url'],
+        ['name' => 'company', 'label' => 'Empresa, Projeto ou Instituição', 'type' => 'text'],
+        ['name' => 'website', 'label' => 'Site ou Rede Social', 'type' => 'url'],
     ];
 @endphp
 
@@ -32,26 +32,29 @@
             @csrf
             @foreach ($fields as $field)
                 <div class="flex flex-col gap-2">
-                    <x-fr-text class="text-text-high!">{{ $field['label'] }}</x-fr-text>
+                    <x-fr-text class="text-text-high!"> {{ $field['label'] }} </x-fr-text>
+
                     <input type="{{ $field['type'] }}" name="{{ $field['name'] }}" class="{{ $inputClass }}" />
                 </div>
             @endforeach
 
             <div class="flex flex-col gap-2">
-                <x-fr-text class="text-text-high!">{{ $selectLabel }}</x-fr-text>
-                <select name="role" class="{{ $inputClass }}">
-                    <option value="" disabled selected></option>
-                    @foreach ($selectOptions as $value => $label)
-                        <option value="{{ $value }}">{{ $label }}</option>
-                    @endforeach
-                </select>
+                <x-fr-text class="text-text-high!"> Tipo de proposta </x-fr-text>
+
+                <input
+                    type="text"
+                    name="proposal_type"
+                    placeholder="Ex.: Parceria comercial, projeto educacional, conteúdo, tecnologia..."
+                    class="{{ $inputClass }}"
+                />
             </div>
 
             <div class="flex flex-col gap-2">
-                <x-fr-text class="text-text-high!">{{ $messageLabel }}</x-fr-text>
+                <x-fr-text class="text-text-high!"> {{ $messageLabel }} </x-fr-text>
+
                 <textarea
                     name="message"
-                    placeholder="Digite sua mensagem"
+                    placeholder="Conte um pouco sobre sua ideia, público, empresa ou objetivo da parceria."
                     class="{{ $inputClass }} placeholder:text-text-medium h-50 resize-none"
                 ></textarea>
             </div>

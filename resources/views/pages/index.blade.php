@@ -26,16 +26,23 @@
                     </x-slot:header>
 
                     <x-slot:title class="md:text-7xl!">
-                        Você sabe quanto ganha. <mark>Mas você sabe quanto perde?</mark>
+                        Sua próxima conquista começa com <mark>Planejamento Financeiro</mark>
                     </x-slot:title>
                     <x-slot:description>
-                        Em média, brasileiros perdem 23% da renda sem saber para onde foi. A <mark>Firece</mark> mostra
-                        exatamente o que está acontecendo
+                        A <mark>Fire|ce</mark> ajuda a organizar sua vida financeira, controlar seu dinheiro com clareza
+                        e tomar decisões inteligentes, sem depender de produtos empurrados por bancos ou investimentos
+                        da moda.
                     </x-slot:description>
                 </x-fr-headline>
 
                 <div class="flex w-full flex-col items-center gap-4 md:items-start" data-reveal="up">
-                    <x-fr-button> Descobrir meu plano </x-fr-button>
+                    <x-fr-button
+                        tag="a"
+                        href="https://api.whatsapp.com/send/?phone=5511958397432&text=Visitei+o+site+da+Fire%7Cce+e+quero+mais+informa%C3%A7%C3%B5es&type=phone_number&app_absent=0"
+                        target="_blank"
+                    >
+                        Falar com um consultor
+                    </x-fr-button>
                     <x-logo-badge class="justify-center md:justify-start">
                         Sem custo, sem compromisso, uma conversa rápida
                     </x-logo-badge>
@@ -116,11 +123,10 @@
             <div class="flex flex-col gap-8 md:order-1 md:basis-2/3 md:gap-11">
                 <x-fr-headline align="left" data-reveal="up">
                     <x-slot:title>
-                        Por que a <mark>Firece</mark>?
+                        <mark>Independência para recomendar</mark> o que realmente faz sentido para você
                     </x-slot:title>
                     <x-slot:description>
-                        Em média, brasileiros perdem 23% da renda sem saber para onde foi. A Firece mostra exatamente o
-                        que está acontecendo
+                        A <mark>Fire|ce</mark> não possui vínculo com bancos, seguradoras ou instituições financeiras.
                     </x-slot:description>
                 </x-fr-headline>
 
@@ -135,11 +141,13 @@
                         <x-icon-box icon="heroicon-c-user" />
                         <x-fr-headline align="left" size="sm" container-class="gap-2!">
                             <x-slot:title>
-                                Mais de <mark>2 mil clientes</mark> atendidos
+                                Isso significa que
+                                <mark
+                                    >nossas recomendações não são feitas com base em metas comerciais, comissões ou
+                                    produtos específicos</mark
+                                >
                             </x-slot:title>
-                            <x-slot:description>
-                                Em média, brasileiros perdem 23% da renda sem saber para onde foi.
-                            </x-slot:description>
+                            <x-slot:description></x-slot:description>
                         </x-fr-headline>
                     </div>
 
@@ -150,11 +158,13 @@
                         <x-icon-box icon="heroicon-c-user" />
                         <x-fr-headline align="left" size="sm" container-class="gap-2!">
                             <x-slot:title>
-                                <mark>+10 anos</mark> de experiência de mercado
+                                Nosso compromisso é
+                                <mark
+                                    >construir estratégias alinhadas aos objetivos, momento de vida e realidade de cada
+                                    cliente</mark
+                                >
                             </x-slot:title>
-                            <x-slot:description>
-                                Em média, brasileiros perdem 23% da renda sem saber para onde foi.
-                            </x-slot:description>
+                            <x-slot:description></x-slot:description>
                         </x-fr-headline>
                     </div>
 
@@ -165,11 +175,13 @@
                         <x-icon-box icon="heroicon-c-user" />
                         <x-fr-headline align="left" size="sm" container-class="gap-2!">
                             <x-slot:title>
-                                <mark>R$4M+</mark> em dívidas eliminadas
+                                Porque
+                                <mark
+                                    >planejamento financeiro de verdade começa pela confiança em quem está do seu
+                                    lado</mark
+                                >.
                             </x-slot:title>
-                            <x-slot:description>
-                                Em média, brasileiros perdem 23% da renda sem saber para onde foi.
-                            </x-slot:description>
+                            <x-slot:description></x-slot:description>
                         </x-fr-headline>
                     </div>
                 </div>
@@ -195,7 +207,7 @@
             <div class="flex flex-col items-center gap-8 md:items-start">
                 <x-fr-headline align="left-desk" data-reveal="up">
                     <x-slot:title>
-                        Três encontros, uma <mark>vida financeira</mark> diferente
+                        Clareza <mark>financeira</mark> começa com estratégia.
                     </x-slot:title>
                     <x-slot:description>
                         Sem curso, sem palestra, sem planilha genérica. Um plano construído para a
@@ -204,7 +216,14 @@
                 </x-fr-headline>
 
                 <div class="flex w-full flex-col items-center gap-4" data-reveal="up">
-                    <x-fr-button class="w-full!"> Descobrir meu plano </x-fr-button>
+                    <x-fr-button
+                        class="w-full!"
+                        tag="a"
+                        href="https://api.whatsapp.com/send/?phone=5511958397432&text=Visitei+o+site+da+Fire%7Cce+e+quero+mais+informa%C3%A7%C3%B5es&type=phone_number&app_absent=0"
+                        target="_blank"
+                    >
+                        Descobrir meu plano
+                    </x-fr-button>
                     <x-logo-badge class="justify-center md:justify-start"> Simples assim. Sem enrolação. </x-logo-badge>
                 </div>
             </div>
@@ -213,32 +232,42 @@
                 class="border-border-base divide-border-base grid w-full grid-cols-1 divide-y md:border"
                 data-reveal-stagger="140"
             >
-                <x-numbered-step class="p-8" data-reveal="up" number="01" title="Análise">
-                    Entendemos onde você está de verdade. Renda, dívidas, hábitos, objetivos. Sem julgamento.
+                <x-numbered-step class="p-8" data-reveal="up" number="01" title="Diagnóstico financeiro">
+                    Entendemos sua realidade atual, hábitos financeiros, objetivos e desafios.
 
                     <x-slot:footer>
                         <x-fr-text size="sm" class="text-brand-primary! font-semibold!">
-                            Não é falta de disciplina. É falta de um plano
+                            Clareza primeiro. Estratégia depois.
                         </x-fr-text>
                     </x-slot:footer>
                 </x-numbered-step>
 
-                <x-numbered-step class="p-8" data-reveal="up" number="02" title="Plano">
-                    Criamos sua estratégia para os próximos 12 meses. Com metas reais, no seu ritmo.
+                <x-numbered-step class="p-8" data-reveal="up" number="02" title="Planejamento personalizado">
+                    Criamos uma estratégia alinhada ao seu perfil e ao momento que você está vivendo.
 
                     <x-slot:footer>
                         <x-fr-text size="sm" class="text-brand-primary! font-semibold!">
-                            Não é falta de disciplina. É falta de um plano
+                            Seu plano. Do seu jeito. Para o seu momento.
                         </x-fr-text>
                     </x-slot:footer>
                 </x-numbered-step>
 
-                <x-numbered-step class="p-8" data-reveal="up" number="03" title="Acompanhamento">
-                    Ajustamos junto com você, todo mês. Porque a vida muda e o plano também
+                <x-numbered-step class="p-8" data-reveal="up" number="03" title="Organização financeira">
+                    Estruturamos sua vida financeira para gerar mais clareza, controle e previsibilidade.
 
                     <x-slot:footer>
                         <x-fr-text size="sm" class="text-brand-primary! font-semibold!">
-                            Não é falta de disciplina. É falta de um plano
+                            Menos surpresas. Mais previsibilidade. Sempre.
+                        </x-fr-text>
+                    </x-slot:footer>
+                </x-numbered-step>
+
+                <x-numbered-step class="p-8" data-reveal="up" number="04" title="Acompanhamento contínuo">
+                    Agendamos reuniões periódicas para acompanhar sua evolução, ajustando estratégias quando necessário.
+
+                    <x-slot:footer>
+                        <x-fr-text size="sm" class="text-brand-primary! font-semibold!">
+                            Menos surpresas. Mais previsibilidade. Sempre.
                         </x-fr-text>
                     </x-slot:footer>
                 </x-numbered-step>
@@ -262,8 +291,9 @@
                 <x-plan-card data-reveal="up" tagline="“Meu dinheiro some sem explicação”">
                     <x-fr-heading>Perfil Gold</x-fr-heading>
                     <x-fr-text>
-                        Para quem quer organizar as finanças do zero e finalmente respirar no fim do mês
+                        Para quem está começando a organizar sua vida financeira e deseja mais tranquilidade.
                     </x-fr-text>
+                    <x-fr-text size="sm" class="text-brand-primary! font-semibold!">Base</x-fr-text>
 
                     <hr class="border-border-base" />
 
@@ -275,45 +305,69 @@
                         <x-plan-feature>Planilha de patrimônio</x-plan-feature>
                     </ul>
 
-                    <x-fr-button variant="outline">Esse sou eu</x-fr-button>
+                    <x-fr-button
+                        variant="outline"
+                        tag="a"
+                        href="https://api.whatsapp.com/send/?phone=5511958397432&text=Visitei+o+site+da+Fire%7Cce+e+quero+mais+informa%C3%A7%C3%B5es+sobre+o+plano+gold&type=phone_number&app_absent=0"
+                        target="_blank"
+                    >
+                        Esse sou eu
+                    </x-fr-button>
                 </x-plan-card>
 
-                <x-plan-card data-reveal="up" variant="highlighted" tagline="“Meu dinheiro some sem explicação”">
+                <x-plan-card
+                    data-reveal="up"
+                    variant="highlighted"
+                    tagline="“Quero fazer meu dinheiro trabalhar por mim”"
+                >
                     <x-fr-heading>Perfil Platinum</x-fr-heading>
-                    <x-fr-text>
-                        Para quem quer organizar as finanças do zero e finalmente respirar no fim do mês
-                    </x-fr-text>
+                    <x-fr-text> Para quem quer clareza sobre o presente e confiança para planejar o futuro. </x-fr-text>
+                    <x-fr-text size="sm" class="text-brand-primary! font-semibold!">+Gold</x-fr-text>
 
                     <hr class="border-border-base" />
 
                     <ul class="flex flex-col gap-4">
-                        <x-plan-feature featured>Organização Anual</x-plan-feature>
-                        <x-plan-feature>Mapa financeiro</x-plan-feature>
-                        <x-plan-feature>Construção de Reserva</x-plan-feature>
-                        <x-plan-feature>Planilha de fluxo de caixa</x-plan-feature>
-                        <x-plan-feature>Planilha de patrimônio</x-plan-feature>
+                        <x-plan-feature featured>Preenchimento de Fluxo de Caixa</x-plan-feature>
+                        <x-plan-feature>Diagnóstico de Carteira</x-plan-feature>
+                        <x-plan-feature>Estruturar aquisição de bens</x-plan-feature>
+                        <x-plan-feature>Parceiros de Investimento</x-plan-feature>
+                        <x-plan-feature>Custo Oportunidade</x-plan-feature>
                     </ul>
 
-                    <x-fr-button>Esse sou eu</x-fr-button>
+                    <x-fr-button
+                        tag="a"
+                        href="https://api.whatsapp.com/send/?phone=5511958397432&text=Visitei+o+site+da+Fire%7Cce+e+quero+mais+informa%C3%A7%C3%B5es+sobre+o+plano+platinum&type=phone_number&app_absent=0"
+                        target="_blank"
+                    >
+                        Esse sou eu
+                    </x-fr-button>
                 </x-plan-card>
 
-                <x-plan-card data-reveal="up" tagline="“Meu dinheiro some sem explicação”">
+                <x-plan-card data-reveal="up" tagline="“Quero acelerar minha independência financeira”">
                     <x-fr-heading>Perfil Black</x-fr-heading>
                     <x-fr-text>
-                        Para quem quer organizar as finanças do zero e finalmente respirar no fim do mês
+                        Para quem quer organizar as finanças do zero e finalmente respirar no fim do mês.
                     </x-fr-text>
+                    <x-fr-text size="sm" class="text-brand-primary! font-semibold!">+Platinum</x-fr-text>
 
                     <hr class="border-border-base" />
 
                     <ul class="flex flex-col gap-4">
-                        <x-plan-feature featured>Organização Anual</x-plan-feature>
-                        <x-plan-feature>Mapa financeiro</x-plan-feature>
-                        <x-plan-feature>Construção de Reserva</x-plan-feature>
-                        <x-plan-feature>Planilha de fluxo de caixa</x-plan-feature>
-                        <x-plan-feature>Planilha de patrimônio</x-plan-feature>
+                        <x-plan-feature featured>Revisão do Progresso</x-plan-feature>
+                        <x-plan-feature>Construção de Reserva Internacional</x-plan-feature>
+                        <x-plan-feature>Estratégias Exclusivas</x-plan-feature>
+                        <x-plan-feature>Carteiras Personalizadas</x-plan-feature>
+                        <x-plan-feature>Acompanhamento personalizado</x-plan-feature>
                     </ul>
 
-                    <x-fr-button variant="outline">Esse sou eu</x-fr-button>
+                    <x-fr-button
+                        variant="outline"
+                        tag="a"
+                        href="https://api.whatsapp.com/send/?phone=5511958397432&text=Visitei+o+site+da+Fire%7Cce+e+quero+mais+informa%C3%A7%C3%B5es+sobre+o+plano+black&type=phone_number&app_absent=0"
+                        target="_blank"
+                    >
+                        Esse sou eu
+                    </x-fr-button>
                 </x-plan-card>
             </div>
 
@@ -340,60 +394,73 @@
                     data-reveal="up"
                     variant="centered"
                     class="bg-elevation-01dp border-border-base border p-4"
-                    name="Felipe Rosa"
+                    name="Emilly Monteiro Gomes"
                     role="Design"
                     plan="Plano Gold"
-                    avatar="https://i.pravatar.cc/80?img=12"
+                    avatar="https://lh3.googleusercontent.com/a-/ALV-UjVOkOLWGbS9XPq1JU32VcUkJAH1Sa1b0JhIGRYjlRr8oYto8Fgi=w90-h90-p-rp-mo-br100"
                     metric="0% → 20% da renda investida"
                 >
-                    Nunca achei que ia conseguir sair das dívidas. Em 5 meses com o
-                    <span class="text-brand-primary font-bold">Matheus</span>, pela primeira vez na vida eu tenho
-                    reserva de emergência.
+                    O atendimento da Firece é
+                    <span class="text-brand-primary font-bold">atencioso, profissional e personalizado</span>, o que
+                    torna todo o processo mais tranquilo e eficiente. Tenho me sentido mais confiante em relação à minha
+                    vida financeira. Recomendo o trabalho com total segurança.
                 </x-testimonial>
 
                 <x-testimonial
                     data-reveal="up"
                     variant="centered"
                     class="bg-elevation-01dp border-border-base border p-4"
-                    name="Felipe Rosa"
+                    name="Paulo Lima"
                     role="Design"
                     plan="Plano Gold"
-                    avatar="https://i.pravatar.cc/80?img=12"
+                    avatar="https://lh3.googleusercontent.com/a/ACg8ocJZRAYVtNhUwcGWdv3MP2mP7RbRFQH4w-T08u78BprvC-AWNg=w90-h90-p-rp-mo-br100"
                     metric="0% → 20% da renda investida"
                 >
-                    Nunca achei que ia conseguir sair das dívidas. Em 5 meses com o
-                    <span class="text-brand-primary font-bold">Matheus</span>, pela primeira vez na vida eu tenho
-                    reserva de emergência.
+                    Fechei a consultoria a três meses. Estou muito satisfeito, hoje tenho
+                    <span class="text-brand-primary font-bold"
+                        >visão de todos meus gastos, estou conseguindo guardar parte do meu rendimento</span
+                    >, e tenho uma visão futura de como vai estar o meu dinheiro e alcançar os meus objetivos
+                    financeiro.
                 </x-testimonial>
 
                 <x-testimonial
                     data-reveal="up"
                     variant="centered"
                     class="bg-elevation-01dp border-border-base border p-4"
-                    name="Felipe Rosa"
+                    name="Mariana Shah Coury"
                     role="Design"
                     plan="Plano Gold"
-                    avatar="https://i.pravatar.cc/80?img=12"
+                    avatar="https://lh3.googleusercontent.com/a-/ALV-UjXRkXe2TX0jhbnpEfo6DRjqPHJLgWT-j_6uQDtEurYLwua9FPfA=w90-h90-p-rp-mo-br100"
                     metric="0% → 20% da renda investida"
                 >
-                    Nunca achei que ia conseguir sair das dívidas. Em 5 meses com o
-                    <span class="text-brand-primary font-bold">Matheus</span>, pela primeira vez na vida eu tenho
-                    reserva de emergência.
+                    Os
+                    <span class="text-brand-primary font-bold"
+                        >insights sobre organização financeira, entendimento dos meus gastos e tomada de decisões mais
+                        conscientes</span
+                    >
+                    foram extremamente valiosos e continuam fazendo sentido até hoje. Recomendo muito e agradeço de
+                    verdade pelo cuidado e dedicação.
                 </x-testimonial>
             </div>
         </div>
     </section>
 
-    <x-cta-banner cta-label="Descobrir meu plano" footer="Sem custo, sem compromisso, uma conversa rápida">
+    <x-cta-banner
+        cta-label="Descobrir meu plano"
+        cta-href="https://api.whatsapp.com/send/?phone=5511958397432&text=Visitei+o+site+da+Fire%7Cce+e+quero+mais+informa%C3%A7%C3%B5es&type=phone_number&app_absent=0"
+        cta-target="_blank"
+        footer="O objetivo não é encontrar atalhos. É construir uma vida financeira mais organizada, segura e alinhada aos seus objetivos."
+    >
         <x-slot:proof>
             <x-social-proof variant="dark">Mais de 9.000 investidores já fazem parte</x-social-proof>
         </x-slot:proof>
         <x-slot:title>
-            Venha fazer parte da Firece
+            O que muda quando existe planejamento financeiro?
         </x-slot:title>
         <x-slot:description>
-            Em média, brasileiros perdem 23% da renda sem saber para onde foi. A Firece mostra exatamente o que está
-            acontecendo
+            Mais organização financeira - Clareza para tomar decisões importantes - Segurança para investir - Controle
+            sobre o próprio dinheiro - Construção patrimonial sustentável<br />
+            Mais tranquilidade para planejar o futuro
         </x-slot:description>
     </x-cta-banner>
 
@@ -405,13 +472,21 @@
                 </x-slot:header>
 
                 <x-slot:title>
-                    Você sabe quanto ganha. Mas você sabe quanto perde?
+                    <mark>Planejamento financeiro</mark> é o primeiro passo para todos os outros que você vai dar na sua
+                    vida.
                 </x-slot:title>
                 <x-slot:description>
-                    Acreditamos que educação financeira é poder. E, por aqui, formamos um time que une propósito,
-                    inovação, e alta performance para levar esse poder a mais pessoas
+                    Se tem alguma dúvida que a consultoria vai ajudar sua vida, por que não testa?<br />
+                    A primeira análise é gratuita.
                 </x-slot:description>
             </x-fr-headline>
+            <x-fr-button
+                tag="a"
+                href="https://api.whatsapp.com/send/?phone=5511958397432&text=Visitei+o+site+da+Fire%7Cce+e+quero+mais+informa%C3%A7%C3%B5es&type=phone_number&app_absent=0"
+                target="_blank"
+            >
+                Falar com um consultor
+            </x-fr-button>
         </div>
     </section>
 </x-layout.landing>

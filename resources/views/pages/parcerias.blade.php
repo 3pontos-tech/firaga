@@ -21,7 +21,13 @@
                 </x-slot:description>
 
                 <x-slot:actions class="my-4">
-                    <x-fr-button> Quero fazer parte </x-fr-button>
+                    <x-fr-button
+                        tag="a"
+                        href="https://api.whatsapp.com/send/?phone=5511958397432&text=Visitei+o+site+da+Fire%7Cce+e+quero+ser+parceiro&type=phone_number&app_absent=0"
+                        target="_blank"
+                    >
+                        Quero fazer parte
+                    </x-fr-button>
                 </x-slot:actions>
             </x-fr-headline>
         </div>
@@ -186,77 +192,25 @@
         </div>
     </section>
 
-    <section class="section py-20">
-        <div class="container flex flex-col gap-8">
-            <x-fr-headline align="left" data-reveal="up">
-                <x-slot:title>
-                    Eles começaram do mesmo lugar
-                </x-slot:title>
-                <x-slot:description>
-                    Para qualquer vaga, o que mais importa é para quê você quer estar aqui. Experiência se constrói
-                    postura e propósito são suas.
-                </x-slot:description>
-            </x-fr-headline>
+    <x-cta-banner
+        cta-label="Quero ser parceiro"
+        cta-href="https://api.whatsapp.com/send/?phone=5511958397432&text=Visitei+a+página+de+Parcerias+da+Fire%7Cce+e+quero+conversar+sobre+uma+possível+parceria&type=phone_number&app_absent=0"
+        cta-target="_blank"
+        footer="Toda parceria começa com uma conversa. O próximo projeto pode gerar valor para sua audiência, sua empresa e milhares de pessoas."
+    >
+        <x-slot:proof>
+            <x-social-proof variant="dark">Parcerias construídas com propósito e resultado</x-social-proof>
+        </x-slot:proof>
 
-            <div class="grid grid-cols-1 gap-8 md:grid-cols-3" data-reveal-stagger="140">
-                <x-testimonial
-                    data-reveal="up"
-                    variant="centered"
-                    class="bg-elevation-01dp border-border-base border p-4"
-                    name="Felipe Rosa"
-                    role="Design"
-                    plan="Plano Gold"
-                    avatar="https://i.pravatar.cc/80?img=12"
-                    metric="0% → 20% da renda investida"
-                >
-                    Nunca achei que ia conseguir sair das dívidas. Em 5 meses com o
-                    <span class="text-brand-primary font-bold">Matheus</span>, pela primeira vez na vida eu tenho
-                    reserva de emergência.
-                </x-testimonial>
+        <x-slot:title>
+            Vamos construir algo relevante juntos?
+        </x-slot:title>
 
-                <x-testimonial
-                    data-reveal="up"
-                    variant="centered"
-                    class="bg-elevation-01dp border-border-base border p-4"
-                    name="Felipe Rosa"
-                    role="Design"
-                    plan="Plano Gold"
-                    avatar="https://i.pravatar.cc/80?img=12"
-                    metric="0% → 20% da renda investida"
-                >
-                    Nunca achei que ia conseguir sair das dívidas. Em 5 meses com o
-                    <span class="text-brand-primary font-bold">Matheus</span>, pela primeira vez na vida eu tenho
-                    reserva de emergência.
-                </x-testimonial>
+        <x-slot:description>
+            Seja para educação financeira, conteúdo, tecnologia ou novos produtos, buscamos parceiros que compartilhem
+            nossa visão de transformar a relação das pessoas com o dinheiro através de soluções práticas e acessíveis.
+        </x-slot:description>
+    </x-cta-banner>
 
-                <x-testimonial
-                    data-reveal="up"
-                    variant="centered"
-                    class="bg-elevation-01dp border-border-base border p-4"
-                    name="Felipe Rosa"
-                    role="Design"
-                    plan="Plano Gold"
-                    avatar="https://i.pravatar.cc/80?img=12"
-                    metric="0% → 20% da renda investida"
-                >
-                    Nunca achei que ia conseguir sair das dívidas. Em 5 meses com o
-                    <span class="text-brand-primary font-bold">Matheus</span>, pela primeira vez na vida eu tenho
-                    reserva de emergência.
-                </x-testimonial>
-            </div>
-        </div>
-    </section>
-
-    <x-lead-form
-        :select-options="
-            [
-           'consultor-financeiro' => 'Consultor Financeiro',
-           'trainee' => 'Trainee',
-           'marketing' => 'Marketing',
-           'tecnologia' => 'Tecnologia',
-           'operacoes' => 'Operações',
-     ]
-        "
-        submit-label="Enviar currículo"
-    />
+    <x-partner-form submit-label="Enviar proposta" />
 </x-layout.landing>

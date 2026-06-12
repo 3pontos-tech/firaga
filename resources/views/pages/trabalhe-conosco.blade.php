@@ -21,7 +21,13 @@
                 </x-slot:description>
 
                 <x-slot:actions class="my-4">
-                    <x-fr-button> Quero fazer parte </x-fr-button>
+                    <x-fr-button
+                        tag="a"
+                        href="https://api.whatsapp.com/send/?phone=5511958397432&text=Visitei+o+site+da+Fire%7Cce+e+quero+fazer+parte&type=phone_number&app_absent=0"
+                        target="_blank"
+                    >
+                        Quero fazer parte
+                    </x-fr-button>
                 </x-slot:actions>
 
                 <x-slot:footer>
@@ -103,7 +109,13 @@
         </div>
 
         <div class="container flex flex-col items-center gap-8">
-            <x-fr-button> Descobrir meu plano </x-fr-button>
+            <x-fr-button
+                tag="a"
+                href="https://api.whatsapp.com/send/?phone=5511958397432&text=Visitei+o+site+da+Fire%7Cce+e+quero+ser+trainee&type=phone_number&app_absent=0"
+                target="_blank"
+            >
+                Quero ser Trainee
+            </x-fr-button>
         </div>
     </section>
 
@@ -170,66 +182,91 @@
         </div>
     </section>
 
-    <section class="section dark bg-elevation-surface py-20">
-        <div class="container flex flex-col gap-8">
-            <x-fr-headline align="left" data-reveal="up">
-                <x-slot:title>
-                    Eles começaram do mesmo lugar
-                </x-slot:title>
-                <x-slot:description>
-                    Para qualquer vaga, o que mais importa é para quê você quer estar aqui. Experiência se constrói
-                    postura e propósito são suas.
-                </x-slot:description>
-            </x-fr-headline>
+    <x-cta-banner
+        cta-label="Quero participar do programa"
+        cta-href="https://api.whatsapp.com/send/?phone=5511958397432&text=Visitei+o+site+da+Fire%7Cce+e+quero+ser+trainee&type=phone_number&app_absent=0"
+        footer="O crescimento profissional não acontece por acaso. Ele é construído com método, prática e acompanhamento."
+    >
+        <x-slot:proof>
+            <x-social-proof variant="dark">Desenvolvimento baseado em experiência real</x-social-proof>
+        </x-slot:proof>
 
-            <div class="grid grid-cols-1 gap-8 md:grid-cols-3" data-reveal-stagger="140">
-                <x-testimonial
-                    data-reveal="up"
-                    variant="centered"
-                    class="bg-elevation-01dp border-border-base border p-4"
-                    name="Felipe Rosa"
-                    role="Design"
-                    plan="Plano Gold"
-                    avatar="https://i.pravatar.cc/80?img=12"
-                    metric="0% → 20% da renda investida"
-                >
-                    Nunca achei que ia conseguir sair das dívidas. Em 5 meses com o
-                    <span class="text-brand-primary font-bold">Matheus</span>, pela primeira vez na vida eu tenho
-                    reserva de emergência.
-                </x-testimonial>
+        <x-slot:title>
+            Sua carreira pode começar antes da experiência.
+        </x-slot:title>
 
-                <x-testimonial
-                    data-reveal="up"
-                    variant="centered"
-                    class="bg-elevation-01dp border-border-base border p-4"
-                    name="Felipe Rosa"
-                    role="Design"
-                    plan="Plano Gold"
-                    avatar="https://i.pravatar.cc/80?img=12"
-                    metric="0% → 20% da renda investida"
-                >
-                    Nunca achei que ia conseguir sair das dívidas. Em 5 meses com o
-                    <span class="text-brand-primary font-bold">Matheus</span>, pela primeira vez na vida eu tenho
-                    reserva de emergência.
-                </x-testimonial>
+        <x-slot:description>
+            O programa trainee da Firece foi criado para quem quer aprender na prática, desenvolver habilidades
+            consultivas e construir uma trajetória sólida no mercado financeiro com acompanhamento próximo desde o
+            primeiro dia.
+        </x-slot:description>
+    </x-cta-banner>
 
-                <x-testimonial
-                    data-reveal="up"
-                    variant="centered"
-                    class="bg-elevation-01dp border-border-base border p-4"
-                    name="Felipe Rosa"
-                    role="Design"
-                    plan="Plano Gold"
-                    avatar="https://i.pravatar.cc/80?img=12"
-                    metric="0% → 20% da renda investida"
-                >
-                    Nunca achei que ia conseguir sair das dívidas. Em 5 meses com o
-                    <span class="text-brand-primary font-bold">Matheus</span>, pela primeira vez na vida eu tenho
-                    reserva de emergência.
-                </x-testimonial>
+    {{--  TODO: substituir por depoimentos reais 
+
+        <section class="section dark bg-elevation-surface py-20">
+            <div class="container flex flex-col gap-8">
+                <x-fr-headline align="left" data-reveal="up">
+                    <x-slot:title>
+                        Eles começaram do mesmo lugar
+                    </x-slot:title>
+                    <x-slot:description>
+                        Para qualquer vaga, o que mais importa é para quê você quer estar aqui. Experiência se constrói
+                        postura e propósito são suas.
+                    </x-slot:description>
+                </x-fr-headline>
+
+                    <div class="grid grid-cols-1 gap-8 md:grid-cols-3" data-reveal-stagger="140">
+                        <x-testimonial
+                            data-reveal="up"
+                            variant="centered"
+                            class="bg-elevation-01dp border-border-base border p-4"
+                            name="Felipe Rosa"
+                            role="Design"
+                            plan="Plano Gold"
+                            avatar="https://i.pravatar.cc/80?img=12"
+                            metric="0% → 20% da renda investida"
+                        >
+                            Nunca achei que ia conseguir sair das dívidas. Em 5 meses com o
+                            <span class="text-brand-primary font-bold">Matheus</span>, pela primeira vez na vida eu tenho
+                            reserva de emergência.
+                        </x-testimonial>
+
+                        <x-testimonial
+                            data-reveal="up"
+                            variant="centered"
+                            class="bg-elevation-01dp border-border-base border p-4"
+                            name="Felipe Rosa"
+                            role="Design"
+                            plan="Plano Gold"
+                            avatar="https://i.pravatar.cc/80?img=12"
+                            metric="0% → 20% da renda investida"
+                        >
+                            Nunca achei que ia conseguir sair das dívidas. Em 5 meses com o
+                            <span class="text-brand-primary font-bold">Matheus</span>, pela primeira vez na vida eu tenho
+                            reserva de emergência.
+                        </x-testimonial>
+
+                        <x-testimonial
+                            data-reveal="up"
+                            variant="centered"
+                            class="bg-elevation-01dp border-border-base border p-4"
+                            name="Felipe Rosa"
+                            role="Design"
+                            plan="Plano Gold"
+                            avatar="https://i.pravatar.cc/80?img=12"
+                            metric="0% → 20% da renda investida"
+                        >
+                            Nunca achei que ia conseguir sair das dívidas. Em 5 meses com o
+                            <span class="text-brand-primary font-bold">Matheus</span>, pela primeira vez na vida eu tenho
+                            reserva de emergência.
+                        </x-testimonial>
+                    </div>
             </div>
-        </div>
-    </section>
+            
+        </section>
+
+    --}}
 
     <x-lead-form
         :select-options="
