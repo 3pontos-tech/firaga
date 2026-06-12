@@ -291,7 +291,7 @@
                 <x-plan-card data-reveal="up" tagline="“Meu dinheiro some sem explicação”">
                     <x-fr-heading>Perfil Gold</x-fr-heading>
                     <x-fr-text>
-                        Para quem está começando a organizar sua vida finaceira e deseja mais tranquilidade.
+                        Para quem está começando a organizar sua vida financeira e deseja mais tranquilidade.
                     </x-fr-text>
                     <x-fr-text size="sm" class="text-brand-primary! font-semibold!">Base</x-fr-text>
 

@@ -184,7 +184,7 @@
 
     <x-cta-banner
         cta-label="Quero participar do programa"
-        cta-href="#formulario"
+        cta-href="https://api.whatsapp.com/send/?phone=5511958397432&text=Visitei+o+site+da+Fire%7Cce+e+quero+ser+trainee&type=phone_number&app_absent=0"
         footer="O crescimento profissional não acontece por acaso. Ele é construído com método, prática e acompanhamento."
     >
         <x-slot:proof>
