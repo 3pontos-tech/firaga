@@ -43,16 +43,19 @@
                 <h3 class="text-xxs text-text-high font-bold tracking-wider uppercase">Redes sociais</h3>
                 <a
                     href="https://www.facebook.com/share/16nACt4A39/?mibextid=wwXIfr"
+                    target="_blank"
                     class="text-text-medium hover:text-text-high transition-colors"
                     >Facebook</a
                 >
                 <a
                     href="https://www.instagram.com/firece.oficial/"
+                    target="_blank"
                     class="text-text-medium hover:text-text-high transition-colors"
                     >Instagram</a
                 >
                 <a
                     href="https://www.linkedin.com/company/firece"
+                    target="_blank"
                     class="text-text-medium hover:text-text-high transition-colors"
                     >LinkedIn</a
                 >
