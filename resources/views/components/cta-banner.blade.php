@@ -2,6 +2,7 @@
     'variant' => 'primary',
     'ctaLabel',
     'ctaHref' => null,
+    'ctaTarget' => null,
     'footer' => null
 ])
 
@@ -30,7 +31,9 @@
             </x-slot:description>
         </x-fr-headline>
 
-        <x-fr-button data-reveal="up" :variant="$buttonVariant" :href="$ctaHref"> {{ $ctaLabel }} </x-fr-button>
+        <x-fr-button data-reveal="up" :variant="$buttonVariant" :href="$ctaHref" :target="$ctaTarget">
+            {{ $ctaLabel }}
+        </x-fr-button>
 
         @if (filled($footer))
             <x-logo-badge :class="$textClass">{{ $footer }}</x-logo-badge>

@@ -95,7 +95,14 @@
                     reserva de emergência.
                 </x-testimonial>
 
-                <x-fr-button data-reveal="up"> Esse sou eu </x-fr-button>
+                <x-fr-button
+                    data-reveal="up"
+                    tag="a"
+                    href="https://api.whatsapp.com/send/?phone=5511958397432&text=Visitei+o+site+da+Fire%7Cce+e+quero+mais+informa%C3%A7%C3%B5es+sobre+o+key+account&type=phone_number&app_absent=0"
+                    target="_blank"
+                >
+                    Esse sou eu
+                </x-fr-button>
             </div>
         </div>
     </section>
@@ -104,8 +111,12 @@
         <div class="container flex flex-col items-center gap-8">
             <x-fr-headline data-reveal="up">
                 <x-slot:title>
-                    Quatro pilares. Uma parceria completa.
+                    Você busca inteligência, discrição e excelência no cuidado com o seu patrimônio?
                 </x-slot:title>
+                <x-slot:description>
+                    O Key Account é para quem não aceita menos do que alta performance. Vamos construir o próximo nível
+                    da sua jornada financeira.
+                </x-slot:description>
             </x-fr-headline>
         </div>
 
@@ -118,10 +129,10 @@
                     class="md:border-border-base p-8 md:rounded-lg md:border"
                     data-reveal="up"
                     number="01"
-                    title="Estratégia patrimonial avançada"
+                    title="Qual o perfil ideal para o Key Account?"
                 >
-                    A empresa contrata pacotes de horas mensais, semestrais ou anuais disponíveis para todos os
-                    colaboradores.
+                    Pessoas com patrimônio relevante que buscam estratégias avançadas de proteção e crescimento, com
+                    atendimento altamente personalizado.
 
                     <x-slot:footer>
                         <div class="flex items-center gap-3">
@@ -136,13 +147,16 @@
                     class="md:border-border-base p-8 md:rounded-lg md:border"
                     data-reveal="up"
                     number="02"
-                    title="Gestão e alocação internacional"
+                    title="É possível contratar o Key Account para gestão internacional?"
                 >
-                    Cada colaborador agenda seu atendimento diretamente pela plataforma Flamma, quando quiser.
+                    Sim. O Key Account inclui estratégias de blindagem patrimonial e alocação internacional, respeitando
+                    o perfil do cliente e as normas regulatórias.
 
                     <x-slot:footer>
                         <div class="flex items-center gap-3">
-                            <x-fr-text size="sm" class="text-text-high!"> Diversificação </x-fr-text>
+                            <x-fr-text size="sm" class="text-text-high!"> Blindagem Patrimonial </x-fr-text>
+                            <div class="bg-text-high size-1 rounded-full"></div>
+                            <x-fr-text size="sm" class="text-text-high!"> Internacionalização </x-fr-text>
                         </div>
                     </x-slot:footer>
                 </x-numbered-step>
@@ -151,15 +165,16 @@
                     class="md:border-border-base p-8 md:rounded-lg md:border"
                     data-reveal="up"
                     number="03"
-                    title="Planejamento sucessório"
+                    title="Com que frequência acontecem as reuniões?"
                 >
-                    Sessões individuais de 60 minutos com consultores especializados, online ou presencial.
+                    O acompanhamento é contínuo, com revisões periódicas e disponibilidade para reuniões emergenciais
+                    sempre que necessário.
 
                     <x-slot:footer>
                         <div class="flex items-center gap-3">
-                            <x-fr-text size="sm" class="text-text-high!"> Família </x-fr-text>
+                            <x-fr-text size="sm" class="text-text-high!"> Acompanhamento </x-fr-text>
                             <div class="bg-text-high size-1 rounded-full"></div>
-                            <x-fr-text size="sm" class="text-text-high!"> Legado </x-fr-text>
+                            <x-fr-text size="sm" class="text-text-high!"> Disponibilidade </x-fr-text>
                         </div>
                     </x-slot:footer>
                 </x-numbered-step>
@@ -168,15 +183,16 @@
                     class="md:border-border-base p-8 md:rounded-lg md:border"
                     data-reveal="up"
                     number="04"
-                    title="Acompanhamento contínuo"
+                    title="Planejamento Sucessório"
                 >
-                    O RH acompanha a adesão e os resultados com relatórios consolidados de uso e evolução.
+                    Sim. Planejamos a sucessão de forma estratégica para garantir tranquilidade, segurança e
+                    continuidade para seu legado
 
                     <x-slot:footer>
                         <div class="flex items-center gap-3">
-                            <x-fr-text size="sm" class="text-text-high!"> Parceria </x-fr-text>
+                            <x-fr-text size="sm" class="text-text-high!"> Sucessão </x-fr-text>
                             <div class="bg-text-high size-1 rounded-full"></div>
-                            <x-fr-text size="sm" class="text-text-high!"> Suporte </x-fr-text>
+                            <x-fr-text size="sm" class="text-text-high!"> Legado </x-fr-text>
                         </div>
                     </x-slot:footer>
                 </x-numbered-step>
@@ -201,36 +217,42 @@
                     data-reveal="up"
                     variant="centered"
                     class="bg-elevation-01dp border-border-base border p-4"
-                    name="Felipe Rosa"
-                    role="Design"
-                    plan="Plano Gold"
-                    avatar="https://i.pravatar.cc/80?img=12"
+                    name="Isabelly Victória"
+                    plan="Plano Platinum"
+                    avatar="https://lh3.googleusercontent.com/a-/ALV-UjWI5RyOf8Nhr9tlBG2g5XqtbTwqLIDu9ABSM1jlCBIxJ36Dn-ZiBw=w72-h72-p-rp-mo-br100"
                     metric="0% → 20% da renda investida"
                 >
-                    Nunca achei que ia conseguir sair das dívidas. Em 5 meses com o
-                    <span class="text-brand-primary font-bold">Matheus</span>, pela primeira vez na vida eu tenho
-                    reserva de emergência.
+                    Quando falamos em organizar nossas finanças sempre imaginamos que é possível sozinho, mas garanto
+                    que com a orientação certa o objetivo é alcançado muito mais rápido e de forma consciente.
+                    <span class="text-brand-primary font-bold"
+                        >A consultoria é excepcional e traz clareza sobre gastos x investimentos x lazer.</span
+                    >
                 </x-testimonial>
 
                 <x-testimonial
                     data-reveal="up"
                     variant="centered"
                     class="bg-elevation-01dp border-border-base border p-4"
-                    name="Felipe Rosa"
-                    role="Design"
-                    plan="Plano Gold"
-                    avatar="https://i.pravatar.cc/80?img=12"
+                    name="Paulo Lima"
+                    plan="Plano Black"
+                    avatar="https://lh3.googleusercontent.com/a-/ALV-UjV9yCw5Vw5oINtOnjLuCrpfCke-DHgX9lDXhRZayImkNc1AsaF_Pw=w72-h72-p-rp-mo-br100"
                     metric="0% → 20% da renda investida"
                 >
-                    Nunca achei que ia conseguir sair das dívidas. Em 5 meses com o
-                    <span class="text-brand-primary font-bold">Matheus</span>, pela primeira vez na vida eu tenho
-                    reserva de emergência.
-                </x-testimonial>
+                    O trabalho da Fire me surpreendeu, porque já entendo de finanças, investimentos até que
+                    razoavelmente e pensei que seria mais uma empresa querendo vender qualquer coisa, mas aqui é um
+                    <span class="text-brand-primary font-bold">trabalho minucioso com visão de futuro.</x-testimonial
+                >
             </div>
         </div>
     </section>
 
-    <x-cta-banner class="mt-28" variant="light" cta-label="Esse sou eu">
+    <x-cta-banner
+        class="mt-28"
+        variant="light"
+        cta-label="Ir para o proximo nível"
+        cta-href="https://api.whatsapp.com/send/?phone=5511958397432&text=Visitei+o+site+da+Fire%7Cce+e+quero+mais+informa%C3%A7%C3%B5es+sobre+o+key+account&type=phone_number&app_absent=0"
+        cta-target="_blank"
+    >
         <x-slot:title>
             Pronto para o próximo nível?
         </x-slot:title>
@@ -246,13 +268,16 @@
                 <x-slot:title>
                     Perguntas frequentes
                 </x-slot:title>
-                <x-slot:description>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam urna tellus, cursus vitae vestibulum
-                    quis, pretium eu dui.
-                </x-slot:description>
+                <x-slot:description></x-slot:description>
             </x-fr-headline>
 
             <div class="flex flex-col gap-3" data-reveal-stagger="140">
+                <x-faq-item data-reveal="up" question="Como funciona?">
+                    Atuamos lado a lado com quem busca proteção, inteligência e alta performance na gestão do
+                    patrimônio. Aqui, o planejamento financeiro vai além da organização: ele se transforma em um
+                    instrumento de segurança, expansão e legado.
+                </x-faq-item>
+
                 <x-faq-item data-reveal="up" question="O Key Account é para qualquer pessoa?">
                     Não. O modelo é pensado para quem já tem patrimônio relevante, renda acima da média ou decisões
                     financeiras complexas que exigem acompanhamento próximo e personalizado.
@@ -266,6 +291,15 @@
                 <x-faq-item data-reveal="up" question="Como funciona o primeiro contato?">
                     Agendamos uma conversa de 30 minutos para entender o seu momento financeiro. Sem compromisso e sem
                     proposta antes de ouvir você.
+                </x-faq-item>
+
+                <x-faq-item data-reveal="up" question="Por que optar pelo Key Account?">
+                    Mais do que um serviço financeiro, o Key Account é uma experiência de parceria contínua. Analisamos
+                    profundamente sua vida financeira, cruzamos dados patrimoniais e familiares, entendemos seus
+                    objetivos de longo prazo e criamos um plano sob medida que evolui com você. Acompanhamos cada tomada
+                    de decisão importante, alertamos sobre riscos e oportunidades e adaptamos a estratégia conforme sua
+                    realidade muda. O cliente Key Account não é um número: é um relacionamento que atravessa fases, gera
+                    confiança e entrega resultados consistentes.
                 </x-faq-item>
             </div>
         </div>

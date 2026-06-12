@@ -20,7 +20,13 @@
                         stock options sem você precisar traduzir sua realidade
                     </x-slot:description>
                     <x-slot:actions>
-                        <x-fr-button> Conhecer o code capital </x-fr-button>
+                        <x-fr-button
+                            tag="a"
+                            href="https://api.whatsapp.com/send/?phone=5511958397432&text=Visitei+o+site+da+Fire%7Cce+e+quero+saber+sobre+o+code+capital&type=phone_number&app_absent=0"
+                            target="_blank"
+                        >
+                            Conhecer o code capital
+                        </x-fr-button>
                     </x-slot:actions>
                 </x-fr-headline>
             </div>
@@ -142,7 +148,7 @@
                     </x-fr-text>
                     <hr class="border-border-base w-full" />
                     <div class="flex items-center gap-2">
-                        <x-avatar src="https://i.pravatar.cc/80?img=12" alt="Image Danilo" />
+                        <x-avatar src="https://avatars.githubusercontent.com/u/14351173?v=4" alt="Image Danilo" />
                         <x-fr-text size="sm">Danilo</x-fr-text>
                         <div class="bg-border-base size-1 rounded-full"></div>
                         <x-fr-text size="sm">Desenvolvedor</x-fr-text>
@@ -165,47 +171,82 @@
         </div>
     </section>
 
-    <x-cta-banner cta-label="Descobrir meu plano" footer="Sem custo, sem compromisso, uma conversa rápida">
+    <x-cta-banner
+        cta-label="Quero organizar minhas finanças"
+        cta-href="https://api.whatsapp.com/send/?phone=5511958397432&text=Visitei+a+página+Code+Capital+e+quero+entender+como+organizar+minhas+finanças&type=phone_number&app_absent=0"
+        cta-target="_blank"
+        footer="Sem custos, sem compromisso. Apenas uma conversa para entender sua realidade financeira."
+    >
         <x-slot:proof>
             <x-social-proof variant="dark">Mais de 9.000 investidores já fazem parte</x-social-proof>
         </x-slot:proof>
+
         <x-slot:title>
-            Venha fazer parte da Firece
+            Você já evoluiu na carreira. Seu patrimônio está evoluindo junto?
         </x-slot:title>
+
         <x-slot:description>
-            Em média, brasileiros perdem 23% da renda sem saber para onde foi. A Firece mostra exatamente o que está
-            acontecendo
+            Ganhar bem não garante construção de patrimônio. Ajudamos profissionais de tecnologia a transformar renda em
+            estratégia, organização e crescimento financeiro sustentável.
         </x-slot:description>
     </x-cta-banner>
 
+    {{-- TODO: FAQ específico para o Code Capital, com perguntas como "O Code Capital é só para devs?", "Como funciona a consultoria?", "Qual o diferencial do Code Capital?" e etc
+        <section class="section">
+            <div class="container flex flex-col gap-8">
+                <x-fr-headline align="left-desk" data-reveal="up">
+                    <x-slot:title>
+                        Perguntas frequentes
+                    </x-slot:title>
+                    <x-slot:description>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam urna tellus, cursus vitae vestibulum
+                        quis, pretium eu dui.
+                    </x-slot:description>
+                </x-fr-headline>
+
+                <div class="flex flex-col gap-3" data-reveal-stagger="140">
+                    <x-faq-item data-reveal="up" question="O Key Account é para qualquer pessoa?">
+                        Não. O modelo é pensado para quem já tem patrimônio relevante, renda acima da média ou decisões
+                        financeiras complexas que exigem acompanhamento próximo e personalizado.
+                    </x-faq-item>
+
+                    <x-faq-item data-reveal="up" question="Qual a diferença entre o Key Account e os outros planos?">
+                        No Key Account você tem um consultor dedicado, atendimento prioritário, estratégia patrimonial
+                        avançada e acesso a alocação internacional — sem a padronização dos planos convencionais.
+                    </x-faq-item>
+
+                    <x-faq-item data-reveal="up" question="Como funciona o primeiro contato?">
+                        Agendamos uma conversa de 30 minutos para entender o seu momento financeiro. Sem compromisso e sem
+                        proposta antes de ouvir você.
+                    </x-faq-item>
+                </div>
+            </div>
+        </section>
+    --}}
+
     <section class="section">
-        <div class="container flex flex-col gap-8">
-            <x-fr-headline align="left-desk" data-reveal="up">
+        <div class="container flex flex-col items-center gap-8">
+            <x-fr-headline data-reveal="up">
+                <x-slot:header>
+                    <x-social-proof variant="high">Mais de 50 investidores já fazem parte</x-social-proof>
+                </x-slot:header>
+
                 <x-slot:title>
-                    Perguntas frequentes
+                    <mark>Planejamento financeiro</mark> é o primeiro passo para todos os outros que você vai dar na sua
+                    vida.
                 </x-slot:title>
                 <x-slot:description>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam urna tellus, cursus vitae vestibulum
-                    quis, pretium eu dui.
+                    Se tem alguma dúvida que a consultoria vai ajudar sua vida, por que não testa?<br />
+                    A primeira análise é gratuita.
                 </x-slot:description>
             </x-fr-headline>
-
-            <div class="flex flex-col gap-3" data-reveal-stagger="140">
-                <x-faq-item data-reveal="up" question="O Key Account é para qualquer pessoa?">
-                    Não. O modelo é pensado para quem já tem patrimônio relevante, renda acima da média ou decisões
-                    financeiras complexas que exigem acompanhamento próximo e personalizado.
-                </x-faq-item>
-
-                <x-faq-item data-reveal="up" question="Qual a diferença entre o Key Account e os outros planos?">
-                    No Key Account você tem um consultor dedicado, atendimento prioritário, estratégia patrimonial
-                    avançada e acesso a alocação internacional — sem a padronização dos planos convencionais.
-                </x-faq-item>
-
-                <x-faq-item data-reveal="up" question="Como funciona o primeiro contato?">
-                    Agendamos uma conversa de 30 minutos para entender o seu momento financeiro. Sem compromisso e sem
-                    proposta antes de ouvir você.
-                </x-faq-item>
-            </div>
+            <x-fr-button
+                tag="a"
+                href="https://api.whatsapp.com/send/?phone=5511958397432&text=Visitei+o+site+da+Fire%7Cce+e+quero+mais+informa%C3%A7%C3%B5es&type=phone_number&app_absent=0"
+                target="_blank"
+            >
+                Falar com um consultor
+            </x-fr-button>
         </div>
     </section>
 </x-layout.landing>
