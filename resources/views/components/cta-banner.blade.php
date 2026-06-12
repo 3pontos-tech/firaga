@@ -2,7 +2,7 @@
     'variant' => 'primary',
     'ctaLabel',
     'ctaHref' => null,
-    'ctaTarget' => null,
+    'ctaTarget' => '_blank',
     'footer' => null
 ])
 

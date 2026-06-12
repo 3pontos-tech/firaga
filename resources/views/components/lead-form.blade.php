@@ -29,6 +29,7 @@
         </x-fr-headline>
 
         <form class="flex flex-col gap-6">
+            @csrf
             @foreach ($fields as $field)
                 <div class="flex flex-col gap-2">
                     <x-fr-text class="text-text-high!">{{ $field['label'] }}</x-fr-text>
@@ -54,8 +55,7 @@
                     class="{{ $inputClass }} placeholder:text-text-medium h-50 resize-none"
                 ></textarea>
             </div>
+            <x-fr-button type="submit"> {{ $submitLabel }} </x-fr-button>
         </form>
-
-        <x-fr-button>{{ $submitLabel }}</x-fr-button>
     </div>
 </section>
