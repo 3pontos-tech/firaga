@@ -224,8 +224,9 @@
                 >
                     Quando falamos em organizar nossas finanças sempre imaginamos que é possível sozinho, mas garanto
                     que com a orientação certa o objetivo é alcançado muito mais rápido e de forma consciente.
-                    <span class="text-brand-primary font-bold"
-                        >A consultoria é excepcional e traz clareza sobre gastos x investimentos x lazer.</span
+                    <span class="text-brand-primary font-bold">
+                        A consultoria é excepcional e traz clareza sobre gastos x investimentos x lazer.
+                    </span>
                     >
                 </x-testimonial>
 
@@ -240,8 +241,8 @@
                 >
                     O trabalho da Fire me surpreendeu, porque já entendo de finanças, investimentos até que
                     razoavelmente e pensei que seria mais uma empresa querendo vender qualquer coisa, mas aqui é um
-                    <span class="text-brand-primary font-bold">trabalho minucioso com visão de futuro.</x-testimonial
-                >
+                    <span class="text-brand-primary font-bold">trabalho minucioso com visão de futuro.</span>
+                </x-testimonial>
             </div>
         </div>
     </section>
