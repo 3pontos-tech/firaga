@@ -13,7 +13,7 @@ return new class extends Migration
         Schema::create('authors', function (Blueprint $table): void {
             $table->id();
             $table->string('slug');
-            $table->foreignUuid('user_id')->constrained('identity_users');
+            $table->foreignId('user_id')->constrained('users');
             $table->string('name');
             $table->string('role')->nullable();
             $table->text('description');
