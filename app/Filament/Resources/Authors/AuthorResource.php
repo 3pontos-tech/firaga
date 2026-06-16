@@ -1,11 +1,14 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Filament\Resources\Authors;
 
 use App\Filament\Resources\Authors\Pages\CreateAuthor;
 use App\Filament\Resources\Authors\Pages\EditAuthor;
 use App\Filament\Resources\Authors\Pages\ListAuthors;
 use App\Models\Author;
+use BackedEnum;
 use Filament\Actions\BulkActionGroup;
 use Filament\Actions\DeleteBulkAction;
 use Filament\Actions\EditAction;
@@ -20,6 +23,7 @@ use Filament\Tables\Columns\SpatieMediaLibraryImageColumn;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Table;
 use Illuminate\Support\Str;
+use UnitEnum;
 
 class AuthorResource extends Resource
 {
@@ -27,9 +31,9 @@ class AuthorResource extends Resource
 
     protected static ?string $model = Author::class;
 
-    protected static string|\BackedEnum|null $navigationIcon = 'heroicon-o-book-open';
+    protected static string|BackedEnum|null $navigationIcon = 'heroicon-o-book-open';
 
-    protected static string|\UnitEnum|null $navigationGroup = 'Blog';
+    protected static string|UnitEnum|null $navigationGroup = 'Blog';
 
     public static function getLabel(): ?string
     {
@@ -92,7 +96,7 @@ class AuthorResource extends Resource
                     ->searchable(),
             ])
             ->filters([
-                //
+
             ])
             ->recordActions([
                 EditAction::make(),
@@ -107,7 +111,7 @@ class AuthorResource extends Resource
     public static function getRelations(): array
     {
         return [
-            //
+
         ];
     }
 

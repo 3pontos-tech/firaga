@@ -1,0 +1,44 @@
+/* ==========================================================================
+   Heading — Section headings h1–h6
+   Usage: <x-fr-heading level="2" size="md">...</x-fr-heading>
+   ========================================================================== */
+
+.fr-heading {
+    @apply font-display text-text-high font-medium tracking-tight wrap-break-word;
+}
+
+.fr-heading-size-xxs {
+    @apply text-xxs;
+}
+
+.fr-heading-size-xs {
+    @apply text-xs sm:text-sm;
+}
+
+.fr-heading-size-sm {
+    @apply sm:text-md text-sm md:text-lg;
+}
+
+.fr-heading-size-md {
+    @apply text-md sm:text-lg md:text-xl;
+}
+
+.fr-heading-size-lg {
+    @apply text-lg sm:text-xl md:text-2xl;
+}
+
+.fr-heading-size-xl {
+    @apply text-xl sm:text-2xl md:text-3xl;
+}
+
+.fr-heading-size-2xl {
+    @apply text-2xl sm:text-3xl md:text-4xl;
+}
+
+.fr-heading-size-3xl {
+    @apply text-3xl sm:text-4xl md:text-5xl lg:text-6xl;
+}
+
+.fr-heading-size-4xl {
+    @apply text-4xl sm:text-5xl md:text-6xl lg:text-7xl;
+}

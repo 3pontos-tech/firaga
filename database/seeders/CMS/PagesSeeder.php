@@ -22,8 +22,8 @@ class PagesSeeder extends Seeder
             $page = Page::factory()->create($page);
 
             foreach ($medias as $media) {
-                $extension = pathinfo($media['path'], PATHINFO_EXTENSION);
-                $filePath = storage_path('app/tmp/' . Str::uuid() . '.' . $extension);
+                $extension = pathinfo((string) $media['path'], PATHINFO_EXTENSION);
+                $filePath = storage_path('app/tmp/'.Str::uuid().'.'.$extension);
 
                 File::ensureDirectoryExists(dirname($filePath));
 

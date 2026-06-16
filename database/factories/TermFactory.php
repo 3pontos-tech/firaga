@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Database\Factories;
 
 use App\Models\Term;
@@ -26,13 +28,13 @@ class TermFactory extends Factory
                 [
                     'id' => 'introduction',
                     'title' => 'Introduction',
-                    'body' => '<p>' . fake()->paragraphs(2, true) . '</p>',
+                    'body' => '<p>'.fake()->paragraphs(2, true).'</p>',
                     'show_in_sidebar' => true,
                 ],
                 [
                     'id' => 'usage',
                     'title' => 'Usage',
-                    'body' => '<p>' . fake()->paragraphs(3, true) . '</p>',
+                    'body' => '<p>'.fake()->paragraphs(3, true).'</p>',
                     'show_in_sidebar' => true,
                 ],
             ],

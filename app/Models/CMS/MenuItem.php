@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Models\CMS;
 
 use App\Enums\MenuItemTarget;
@@ -24,10 +26,6 @@ class MenuItem extends Model
 {
     use HasFactory;
 
-    protected $casts = [
-        'target' => MenuItemTarget::class,
-    ];
-
     protected $fillable = [
         'menu_id',
         'label',
@@ -41,13 +39,26 @@ class MenuItem extends Model
         return $this->morphTo();
     }
 
+    /**
+     * @return BelongsTo<Menu, $this>
+     */
     public function menu(): BelongsTo
     {
         return $this->belongsTo(Menu::class);
     }
 
+    /**
+     * @return HasMany<MenuItem, $this>
+     */
     public function children(): HasMany
     {
-        return $this->hasMany(MenuItem::class, 'parent_item_id');
+        return $this->hasMany(self::class, 'parent_item_id');
+    }
+
+    protected function casts(): array
+    {
+        return [
+            'target' => MenuItemTarget::class,
+        ];
     }
 }

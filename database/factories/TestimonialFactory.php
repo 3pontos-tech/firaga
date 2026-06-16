@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Database\Factories;
 
 use App\Models\Testimonial;
@@ -15,11 +17,11 @@ class TestimonialFactory extends Factory
     public function definition(): array
     {
         return [
-            'name' => $this->faker->name(),
-            'role' => $this->faker->word(),
-            'rating' => $this->faker->numberBetween(1, 5),
-            'comment' => $this->faker->paragraph(),
-            'posted_at' => $this->faker->dateTime(),
+            'name' => fake()->name(),
+            'role' => fake()->word(),
+            'rating' => fake()->numberBetween(1, 5),
+            'comment' => fake()->paragraph(),
+            'posted_at' => fake()->dateTime(),
         ];
     }
 }

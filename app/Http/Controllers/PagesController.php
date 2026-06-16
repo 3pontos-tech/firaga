@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Http\Controllers;
 
 use App\Models\CMS\Page;
@@ -17,7 +19,7 @@ class PagesController extends Controller
             ->where('status', 'published')
             ->with('media')
             ->whereNull('deleted_at')
-            ->firstOrFail();
+            ->first();
 
         return view('pages.index', [
             'page' => $page,

@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Models;
 
 use App\Models\CMS\Post;
@@ -26,11 +28,17 @@ class Author extends Model implements HasMedia
         'linkedin_url',
     ];
 
+    /**
+     * @return BelongsTo<User, $this>
+     */
     public function user(): BelongsTo
     {
         return $this->belongsTo(User::class);
     }
 
+    /**
+     * @return HasMany<Post, $this>
+     */
     public function posts(): HasMany
     {
         return $this->hasMany(Post::class, '');

@@ -1,0 +1,6 @@
+{
+    "reject": [],
+    "interactive": true,
+    "format": ["group"],
+    "packageManager": "bun"
+}

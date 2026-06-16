@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Filament\Resources\CMS\Posts\RelationManagers;
 
 use App\Models\CMS\Post;
@@ -40,7 +42,7 @@ class PostsRelationManager extends RelationManager
                 TextColumn::make('title'),
             ])
             ->filters([
-                //
+
             ])
             ->headerActions([
                 CreateAction::make(),
@@ -53,11 +55,9 @@ class PostsRelationManager extends RelationManager
                     ->form([
                         Select::make('related_posts')
                             ->relationship('relatedPosts', 'title')
-                            ->options(function () {
-                                return Post::query()->distinct('title')
-                                    ->pluck('title', 'id')
-                                    ->toArray();
-                            }),
+                            ->options(fn () => Post::query()->distinct('title')
+                                ->pluck('title', 'id')
+                                ->toArray()),
                     ]),
             ])
             ->recordActions([

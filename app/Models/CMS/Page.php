@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Models\CMS;
 
 use App\Enums\PageStatus;
@@ -56,31 +58,31 @@ class Page extends Model implements HasMedia
         'id',
     ];
 
-    protected $casts = [
-        'published_at' => 'datetime',
-        'content' => 'array',
-        'status' => PageStatus::class,
-        'disable_indexation' => 'boolean',
-        'is_landing' => 'boolean',
-        'theme' => PageTheme::class,
-    ];
-
+    /**
+     * @return BelongsTo<Page, $this>
+     */
     public function parent(): BelongsTo
     {
-        return $this->belongsTo(Page::class, 'parent_page_id');
+        return $this->belongsTo(self::class, 'parent_page_id');
     }
 
+    /**
+     * @return BelongsTo<Page, $this>
+     */
     public function translationOrigin(): BelongsTo
     {
-        return $this->belongsTo(Page::class, 'translation_origin_model_id');
+        return $this->belongsTo(self::class, 'translation_origin_model_id');
     }
 
+    /**
+     * @return HasMany<Page, $this>
+     */
     public function translations(): HasMany
     {
-        return $this->hasMany(Page::class, 'translation_origin_model_id');
+        return $this->hasMany(self::class, 'translation_origin_model_id');
     }
 
-    public function translationForLang(string $locale): Page
+    public function translationForLang(string $locale): self
     {
         return $this->translations->where('lang', $locale)->firstOrFail();
     }
@@ -92,8 +94,8 @@ class Page extends Model implements HasMedia
         $parent = $this->parent;
         $parentsPath = '';
         while ($parent) {
-            if ($parent->slug != 'index') {
-                $parentsPath = $parent->slug . '/' . $parentsPath;
+            if ($parent->slug !== 'index') {
+                $parentsPath = $parent->slug.'/'.$parentsPath;
             }
 
             $parent = $parent->parent;
@@ -120,5 +122,17 @@ class Page extends Model implements HasMedia
     public function isPublished(): bool
     {
         return $this->status === PageStatus::PUBLISHED;
+    }
+
+    protected function casts(): array
+    {
+        return [
+            'published_at' => 'datetime',
+            'content' => 'array',
+            'status' => PageStatus::class,
+            'disable_indexation' => 'boolean',
+            'is_landing' => 'boolean',
+            'theme' => PageTheme::class,
+        ];
     }
 }

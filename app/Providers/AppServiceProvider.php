@@ -1,27 +1,22 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Providers;
 
-use App\View\Components\Navbar;
 use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Http\Client\PendingRequest;
-use Illuminate\Support\Facades\Blade;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
 {
-    public function register(): void
-    {
-        //
-    }
+    public function register(): void {}
 
     public function boot(): void
     {
         //        Http::preventStrayRequests();
-
-        Blade::component('navbar', Navbar::class);
 
         $this->configurePolicies();
 

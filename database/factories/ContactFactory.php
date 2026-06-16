@@ -1,11 +1,16 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Database\Factories;
 
 use App\Models\Contact;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Support\Facades\Date;
 
+/**
+ * @extends Factory<Contact>
+ */
 class ContactFactory extends Factory
 {
     protected $model = Contact::class;
@@ -13,13 +18,13 @@ class ContactFactory extends Factory
     public function definition(): array
     {
         return [
-            'name' => $this->faker->name(),
-            'email' => $this->faker->unique()->safeEmail(),
-            'phone_number' => $this->faker->phone_number(),
-            'ip_address' => $this->faker->ipv4(),
-            'message' => $this->faker->word(),
-            'message_intent' => $this->faker->word(),
-            'contact_preference' => $this->faker->word(),
+            'name' => fake()->name(),
+            'email' => fake()->unique()->safeEmail(),
+            'phone_number' => fake()->phone_number(),
+            'ip_address' => fake()->ipv4(),
+            'message' => fake()->word(),
+            'message_intent' => fake()->word(),
+            'contact_preference' => fake()->word(),
             'created_at' => Date::now(),
             'updated_at' => Date::now(),
         ];

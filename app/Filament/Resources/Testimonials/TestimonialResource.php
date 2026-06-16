@@ -1,11 +1,14 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Filament\Resources\Testimonials;
 
 use App\Filament\Resources\Testimonials\Pages\CreateTestimonial;
 use App\Filament\Resources\Testimonials\Pages\EditTestimonial;
 use App\Filament\Resources\Testimonials\Pages\ListTestimonials;
 use App\Models\Testimonial;
+use BackedEnum;
 use Filament\Actions\BulkActionGroup;
 use Filament\Actions\DeleteBulkAction;
 use Filament\Actions\EditAction;
@@ -25,7 +28,7 @@ class TestimonialResource extends Resource
 {
     protected static ?string $model = Testimonial::class;
 
-    protected static string|\BackedEnum|null $navigationIcon = 'heroicon-o-chat-bubble-left-ellipsis';
+    protected static string|BackedEnum|null $navigationIcon = 'heroicon-o-chat-bubble-left-ellipsis';
 
     protected static ?string $label = null;
 
@@ -105,7 +108,7 @@ class TestimonialResource extends Resource
                     ->sortable(),
             ])
             ->filters([
-                //
+
             ])
             ->recordActions([
                 EditAction::make(),
@@ -120,7 +123,7 @@ class TestimonialResource extends Resource
     public static function getRelations(): array
     {
         return [
-            //
+
         ];
     }
 

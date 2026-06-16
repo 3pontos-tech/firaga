@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Database\Factories\CMS;
 
 use App\Enums\MenuItemTarget;
@@ -8,6 +10,9 @@ use App\Models\CMS\MenuItem;
 use App\Models\CMS\Page;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
+/**
+ * @extends Factory<MenuItem>
+ */
 class MenuItemFactory extends Factory
 {
     protected $model = MenuItem::class;
@@ -16,8 +21,8 @@ class MenuItemFactory extends Factory
     {
         return [
             'menu_id' => MenuFactory::new(),
-            'label' => $this->faker->name,
-            'order' => $this->faker->numberBetween(0, 30),
+            'label' => fake()->name,
+            'order' => fake()->numberBetween(0, 30),
             'parent_item_id' => null,
             'target' => MenuItemTarget::SELF->value,
             'type' => 'page',
@@ -26,11 +31,9 @@ class MenuItemFactory extends Factory
 
     public function forMenu(Menu $menu): self
     {
-        return $this->state(function () use ($menu): array {
-            return [
-                'menu_id' => $menu->getKey(),
-            ];
-        });
+        return $this->state(fn (): array => [
+            'menu_id' => $menu->getKey(),
+        ]);
     }
 
     /**
@@ -52,26 +55,22 @@ class MenuItemFactory extends Factory
 
     public function forExistingPage(Page $page): self
     {
-        return $this->state(function () use ($page): array {
-            return [
-                'model_id' => $page->getKey(),
-                'model_type' => $page->getMorphClass(),
-                'label' => $page->getMenuLabel(),
-                'type' => 'page',
-            ];
-        });
+        return $this->state(fn (): array => [
+            'model_id' => $page->getKey(),
+            'model_type' => $page->getMorphClass(),
+            'label' => $page->getMenuLabel(),
+            'type' => 'page',
+        ]);
     }
 
     public function forCustomUrl(string $url, string $label): self
     {
-        return $this->state(function () use ($url, $label): array {
-            return [
-                'model_id' => null,
-                'model_type' => null,
-                'custom_url' => $url,
-                'label' => $label,
-                'type' => 'custom',
-            ];
-        });
+        return $this->state(fn (): array => [
+            'model_id' => null,
+            'model_type' => null,
+            'custom_url' => $url,
+            'label' => $label,
+            'type' => 'custom',
+        ]);
     }
 }

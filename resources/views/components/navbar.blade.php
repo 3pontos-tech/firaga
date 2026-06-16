@@ -1,131 +1,92 @@
-@php use App\Models\CMS\Menu; @endphp
-
-@props([
-    'menu' => [], // expects ['main-menu' => ...]
-    'mobileVar' => 'mobileOpen',
-    'languageSwitcher' => null,
-    'bg' => 'bg-elevation-02dp',
-])
+@props (['headerBg' => 'bg-elevation-surface', 'headerTheme' => ''])
 
 @php
-    $menus = Menu::all()->keyBy("slug");
-    $menu = $menus->get('main-menu') ?? collect(['items' => []]);
+    // Propagate simple theme class (dark, metallic, etc.) to the overlay
+    $overlayThemeClass = collect(['dark', 'metallic', 'metallic-light', 'light'])->first(
+        fn($t) => str_contains($headerTheme, $t),
+        '',
+    );
+
+    // Detect if the header has a solid branded (non-surface) background
+    $isColoredBg = !in_array($headerBg, ['bg-elevation-surface', '']);
+
+    $navLinks = [
+        ['route' => 'home', 'label' => 'Home'],
+        ['route' => 'nossos-servicos', 'label' => 'Nossos Serviços'],
+        ['route' => 'key-account', 'label' => 'Key Account'],
+        ['route' => 'parcerias', 'label' => 'Parcerias'],
+        ['route' => 'trabalhe-conosco', 'label' => 'Trabalhe Conosco'],
+        ['route' => 'blog', 'label' => 'Blog'],
+        ['route' => 'code-capital', 'label' => 'Code Capital'],
+    ];
 @endphp
 
-<nav
-    x-data="{ {{ $mobileVar }}: false }"
-    class="xs:relative {{ $bg }} backdrop-blur-xl sticky top-0 z-50 shadow-sm transition-all duration-300 overflow-visible animate-fade-in-navbar"
+<div
+    x-data="{ open: false }"
+    @keydown.escape.window="open = false"
+    x-effect="document.body.style.overflow = open ? 'hidden' : ''"
+    class="h-full"
 >
-    <div class="py-4 relative z-10 container flex items-center justify-between mx-auto">
-        <div class="flex items-center w-full lg:w-auto space-x-4 lg:space-x-6">
-            {{-- Logo and Brand Name --}}
-            <a href="/">
-                <div class="flex items-center gap-3">
-                    <x-logo :minimal="true" class="w-8 h-8 fill-brand-primary"/>
-                    <h2 class="text-2xl font-bold text-text-high">{{ config('app.name') }}</h2>
-                </div>
-            </a>
-        </div>
-        <ul class="hidden lg:flex lg:items-center lg:space-x-7">
-            @foreach ($menu->items as $menuItem)
-                @if ($menuItem->children && $menuItem->children->isNotEmpty())
-                    <li class="relative group" x-data="{ open: false }" @mouseenter="open = true"
-                        @mouseleave="open = false">
-                        <a href="{{ $menuItem->model?->url() ?? $menuItem->custom_url}}"
-                           class="flex items-center px-3 py-2 rounded-lg font-medium  transition-colors duration-200 text-text-dark dark:text-text-light hover:text-primary"
-                           @click="open = !open">
-                            {{ $menuItem->label }}
-                            <svg
-                                class="ml-1 h-4 w-4 text-text-medium group-hover:text-primary transition-colors duration-200"
-                                viewBox="0 0 20 20">
-                                <path fill-rule="evenodd"
-                                      d="M5.23 7.21a.75.75 0 011.06-.02L10 10.584l3.71-3.396a.75.75 0 011.04 1.084l-4.25 3.89a.75.75 0 01-1.04 0l-4.25-3.89a.75.75 0 01-.02-1.06z"
-                                      clip-rule="evenodd"/>
-                            </svg>
-                        </a>
-                        <ul class="absolute left-0 mt-1 w-48 bg-elevation-02dp dark:bg-elevation-03dp border-0 rounded-lg shadow-lg transition-all duration-200 z-50"
-                            x-show="open"
-                            x-transition:enter="transition ease-out duration-200"
-                            x-transition:enter-start="opacity-0 translate-y-1"
-                            x-transition:enter-end="opacity-100 translate-y-0"
-                            x-transition:leave="transition ease-in duration-150"
-                            x-transition:leave-start="opacity-100 translate-y-0"
-                            x-transition:leave-end="opacity-0 translate-y-1"
-                            @click.away="open = false">
-                            @foreach ($menuItem->children as $subMenuItem)
-                                <li>
-                                    <a href="{{ $subMenuItem->custom_url  }}"
-                                       target="{{ $subMenuItem->target->getHtmlProperty() }}"
-                                       class="block px-4 py-2 text-text-dark dark:text-text-light hover:text-primary hover:bg-accent-bg dark:hover:bg-gray-800 rounded-md transition-colors duration-200">
-                                        {{ $subMenuItem->label }}
-                                    </a>
-                                </li>
-                            @endforeach
-                        </ul>
-                    </li>
-                @else
-                    <li>
-                        @php
-                            $url = $menuItem->model?->url() ?? $menuItem->custom_url;
-                        @endphp
-                        <a href="{{ $url }}"
-                           target="{{ $menuItem->target->getHtmlProperty() }}"
-                           class="hover:text-text-high border-b-2 px-2 py-2 pb-1 font-medium transition-colors duration-200
-                                  {{ request()->fullUrlIs($url) ? 'text-text-high border-primary' : 'text-text-high/70 border-transparent' }}">
-                            {{ $menuItem->label }}
-                        </a>
-                    </li>
-                @endif
-            @endforeach
+    <nav class="mx-auto flex h-full items-center justify-between px-4 sm:px-12 lg:px-24">
+        <x-logo />
 
-        </ul>
-        @if(config('firaga.themes.enabled', false))
-        <x-layout.shared.theme-toggle class="hidden lg:flex"/>
-        @endif
-
-        <div class="flex lg:hidden gap-3">
-            @if(config('firaga.themes.enabled', false))
-                <x-layout.shared.theme-toggle/>
-            @endif
-            <button
-                @click="{{ $mobileVar }} = !{{ $mobileVar }}"
-                class="p-2 text-text-high/70 hover:text-text-high border border-white/70 hover:border-white rounded-lg focus:outline-none relative group hover:text-primary hover:border-primary"
-                aria-label="Toggle menu"
-            >
-                <span class="sr-only">Open main menu</span>
-                <x-filament::icon icon="heroicon-o-bars-3" class="h-6 w-6 transition-transform duration-300"
-                                  x-bind:class="{
-                            'rotate-90': {{ $mobileVar }}
-                        }"
-                />
-            </button>
-        </div>
-    </div>
-
-    {{-- === Mobile Menu (toggleable) === --}}
-    <div class="lg:hidden">
-        <div
-            x-show="{{ $mobileVar }}"
-            class="bg-elevation-02dp dark:bg-elevation-03dp shadow-md"
-            x-transition:enter="transition ease-out duration-200"
-            x-transition:enter-start="opacity-0 -translate-y-2"
-            x-transition:enter-end="opacity-100 translate-y-0"
-            x-transition:leave="transition ease-in duration-150"
-            x-transition:leave-start="opacity-100 translate-y-0"
-            x-transition:leave-end="opacity-0 -translate-y-2"
-            x-cloak
+        <button
+            type="button"
+            @click="open = !open"
+            class="text-brand-primary transition-opacity hover:opacity-80"
+            :aria-expanded="open"
+            aria-label="Menu"
         >
-            <ul class="px-4 py-4 space-y-2 bg-elevation-02dp dark:bg-elevation-03dp">
-                @foreach($menu->items as $menuItem)
-                    <li>
-                        <a href="{{ $menuItem->model?->url() ?? $menuItem->custom_url }}"
-                           target="{{ $menuItem->target->getHtmlProperty() }}"
-                           class="block text-text-high/70 hover:text-text-high px-4 py-2 rounded-lg transition-colors duration-200">
-                            {{  $menuItem->label  }}
-                        </a>
-                    </li>
-                @endforeach
-            </ul>
+            <svg x-show="
+                    !open
+                " xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="size-6">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+            </svg>
+            <svg x-show="
+                    open
+                " x-cloak xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="size-6">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+            </svg>
+        </button>
+    </nav>
+
+    <div
+        x-show="open"
+        x-cloak
+        x-transition:enter="transition duration-200 ease-out"
+        x-transition:enter-start="opacity-0 -translate-y-3"
+        x-transition:enter-end="opacity-100 translate-y-0"
+        x-transition:leave="transition duration-150 ease-in"
+        x-transition:leave-start="opacity-100 translate-y-0"
+        x-transition:leave-end="opacity-0 -translate-y-3"
+        @class ([
+            $headerBg,
+            $overlayThemeClass,
+            'fixed inset-x-0 bottom-0 z-40 overflow-y-auto border-t',
+            'border-border-base' => !$isColoredBg,
+            'border-text-light/20' => $isColoredBg
+        ])
+        style="top: var(--header-height)"
+    >
+        <div class="mx-auto flex flex-col px-4 py-8 sm:px-12 lg:px-24">
+            @foreach ($navLinks as $link)
+                @php $isActive = request()->routeIs($link['route']); @endphp
+                <a
+                    href="{{ route($link['route']) }}"
+                    @click="open = false"
+                    @class ([
+                        'border-b py-5 font-sans text-sm font-semibold transition-opacity hover:opacity-70',
+                        'border-border-base' => !$isColoredBg,
+                        'border-text-light/20' => $isColoredBg,
+                        'text-brand-primary' => !$isColoredBg && $isActive,
+                        'text-text-high' => !$isColoredBg && !$isActive,
+                        'text-text-light' => $isColoredBg && $isActive,
+                        'text-text-light/70' => $isColoredBg && !$isActive
+                    ])
+                >
+                    {{ $link['label'] }}
+                </a>
+            @endforeach
         </div>
     </div>
-</nav>
+</div>

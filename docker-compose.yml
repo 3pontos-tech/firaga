@@ -1,0 +1,76 @@
+services:
+  firaga-db:
+    build:
+      dockerfile: docker/postgres.Dockerfile
+      context: .
+    image: postgres.local:18
+    container_name: firaga-db
+    restart: no
+    hostname: dev
+    environment:
+      POSTGRES_USER: ${DB_USERNAME}
+      POSTGRES_PASSWORD: ${DB_PASSWORD}
+      POSTGRES_DB: ${DB_DATABASE}
+    ports:
+      - '5432:5432'
+    volumes:
+      - firaga-db:/var/lib/postgresql
+    networks:
+      - dev-firaga
+    healthcheck:
+      test: ['CMD-SHELL', 'pg_isready --quiet --username=firaga --dbname=dev_firaga || exit 1']
+      interval: 10s
+      retries: 5
+      timeout: 10s
+      start_period: 15s
+
+  firaga-redis:
+    build:
+      dockerfile: docker/redis.Dockerfile
+      context: .
+    image: redis.local:8
+    container_name: firaga-redis
+    restart: no
+    hostname: dev
+    ports:
+      - '6379:6379'
+    networks:
+      - dev-firaga
+    healthcheck:
+      test: ['CMD-SHELL', 'redis-cli --raw incr ping || exit 1']
+      interval: 10s
+      retries: 5
+      timeout: 10s
+      start_period: 15s
+
+  firaga-mailpit:
+    build:
+      dockerfile: docker/mailpit.Dockerfile
+      context: .
+    image: mailpit.local:1
+    container_name: firaga-mailpit
+    restart: no
+    hostname: dev
+    ports:
+      - '1025:1025'
+      - '8025:8025'
+    networks:
+      - dev-firaga
+    healthcheck:
+      test: ['CMD', '/mailpit', 'readyz']
+      interval: 10s
+      retries: 5
+      timeout: 10s
+      start_period: 10s
+
+volumes:
+  firaga-db:
+    name: firaga-db
+
+networks:
+  dev-firaga:
+    name: dev-firaga
+    driver: bridge
+    driver_opts:
+      com.docker.network.bridge.name: dev-firaga
+      com.docker.network.bridge.host_binding_ipv4: '127.0.0.1'

@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 return [
 
     /*
@@ -18,27 +20,14 @@ return [
         'token' => env('POSTMARK_TOKEN'),
     ],
 
+    'resend' => [
+        'key' => env('RESEND_KEY'),
+    ],
+
     'ses' => [
         'key' => env('AWS_ACCESS_KEY_ID'),
         'secret' => env('AWS_SECRET_ACCESS_KEY'),
         'region' => env('AWS_DEFAULT_REGION', 'us-east-1'),
-    ],
-
-    'abacatepay' => [
-        'api_key' => env('ABACATEPAY_API_KEY'),
-    ],
-
-    'highlevel' => [
-        'key' => env('HIGHLEVEL_ACCESS_KEY_ID'),
-        'secret' => env('HIGHLEVEL_SECRET_ACCESS_KEY'),
-        'location' => env('HIGHLEVEL_DEFAULT_LOCATION', 'us-east-1'),
-        'pipeline' => env('HIGHLEVEL_DEFAULT_PIPELINE', 'miSaf2ppCkOQd6icQu9e'),
-        'version' => env('HIGHLEVEL_API_VERSION', '2021-07-28'),
-        'company' => env('HIGHLEVEL_COMPANY_ID', 'qaCJB3XmO2nXwz6GeQbk'),
-    ],
-
-    'resend' => [
-        'key' => env('RESEND_KEY'),
     ],
 
     'slack' => [
@@ -48,12 +37,4 @@ return [
         ],
     ],
 
-    'google' => [
-        'analytics_debug' => env('GOOGLE_ANALYTICS_DEVELOPER_MODE', true),
-    ],
-
-    'posthog' => [
-        'api_key' => env('POSTHOG_API_KEY'),
-        'host' => env('POSTHOG_HOST', 'https://us.i.posthog.com'),
-    ],
 ];

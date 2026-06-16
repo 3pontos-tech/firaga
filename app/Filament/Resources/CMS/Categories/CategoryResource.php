@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Filament\Resources\CMS\Categories;
 
 use App\Filament\Resources\CMS\Categories\Pages\CreateCategory;
@@ -7,6 +9,7 @@ use App\Filament\Resources\CMS\Categories\Pages\EditCategory;
 use App\Filament\Resources\CMS\Categories\Pages\ListCategories;
 use App\Filament\Resources\CMS\Categories\RelationManagers\PostsRelationManager;
 use App\Models\CMS\Category;
+use BackedEnum;
 use Filament\Actions\BulkActionGroup;
 use Filament\Actions\DeleteBulkAction;
 use Filament\Actions\EditAction;
@@ -18,16 +21,17 @@ use Filament\Schemas\Schema;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Table;
 use Illuminate\Support\Str;
+use UnitEnum;
 
 class CategoryResource extends Resource
 {
     protected static ?string $model = Category::class;
 
-    protected static string|\BackedEnum|null $navigationIcon = 'heroicon-o-tag';
+    protected static string|BackedEnum|null $navigationIcon = 'heroicon-o-tag';
 
     protected static ?string $recordTitleAttribute = 'name';
 
-    protected static string|\UnitEnum|null $navigationGroup = 'Blog';
+    protected static string|UnitEnum|null $navigationGroup = 'Blog';
 
     protected static ?int $navigationSort = 1;
 

@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Enums\Payments;
 
 use Filament\Support\Colors\Color;

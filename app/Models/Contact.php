@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Models;
 
 use App\Enums\ContactIntent;
@@ -21,8 +23,11 @@ class Contact extends Model
         'contact_preference',
     ];
 
-    protected $casts = [
-        'message_intent' => ContactIntent::class,
-        'contact_preference' => ContactPreference::class,
-    ];
+    protected function casts(): array
+    {
+        return [
+            'message_intent' => ContactIntent::class,
+            'contact_preference' => ContactPreference::class,
+        ];
+    }
 }

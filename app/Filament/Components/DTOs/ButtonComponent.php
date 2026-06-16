@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Filament\Components\DTOs;
 
 use Filament\Forms\Components\Repeater;
@@ -21,15 +23,15 @@ class ButtonComponent
 
     public static function form(?string $parent = null): array
     {
-        $parent = in_array($parent, [null, '', '0'], true) ? null : $parent . '.';
+        $parent = in_array($parent, [null, '', '0'], true) ? null : $parent.'.';
 
         return [
-            Toggle::make($parent . 'has_actions')
+            Toggle::make($parent.'has_actions')
                 ->label('Has Buttons?')
                 ->live(debounce: 50)
                 ->default(false),
-            Repeater::make($parent . 'buttons')
-                ->visible(fn ($get) => $get($parent . 'has_actions'))
+            Repeater::make($parent.'buttons')
+                ->visible(fn ($get) => $get($parent.'has_actions'))
                 ->label('Buttons')
                 ->schema([
                     TextInput::make('label')
@@ -73,13 +75,13 @@ class ButtonComponent
 
     public static function makeCollection(array $payload): Collection
     {
-        if (! isset($payload['buttons'])) {
+        if (!isset($payload['buttons'])) {
             return collect();
         }
 
         $payload = $payload['buttons'];
 
-        if (! $payload['has_actions']) {
+        if (!$payload['has_actions']) {
             return collect();
         }
 

@@ -2,9 +2,18 @@
     "agents": [
         "claude_code"
     ],
-    "editors": [
-        "claude_code",
-        "phpstorm"
+    "guidelines": true,
+    "herd_mcp": false,
+    "mcp": true,
+    "nightwatch_mcp": false,
+    "packages": [
+        "internachi/modular",
+        "filament/filament"
     ],
-    "guidelines": []
+    "sail": false,
+    "skills": [
+        "pest-testing",
+        "tailwindcss-development",
+        "modular"
+    ]
 }

@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Filament\Resources\CMS\Pages;
 
 use App\Enums\PageStatus;
@@ -11,6 +13,7 @@ use App\Filament\Resources\CMS\Pages\Pages\EditPage;
 use App\Filament\Resources\CMS\Pages\Pages\ListPages;
 use App\Filament\Resources\CMS\Pages\Pages\ViewPage;
 use App\Models\CMS\Page;
+use BackedEnum;
 use Filament\Actions\BulkActionGroup;
 use Filament\Actions\DeleteAction;
 use Filament\Actions\DeleteBulkAction;
@@ -32,6 +35,7 @@ use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Str;
+use UnitEnum;
 
 class PageResource extends Resource
 {
@@ -39,9 +43,9 @@ class PageResource extends Resource
 
     // protected static ?string $modelLabel = 'Page';
 
-    protected static string|\BackedEnum|null $navigationIcon = 'heroicon-o-document-text';
+    protected static string|BackedEnum|null $navigationIcon = 'heroicon-o-document-text';
 
-    protected static string|\UnitEnum|null $navigationGroup = null; // 'Pages';
+    protected static string|UnitEnum|null $navigationGroup = null; // 'Pages';
 
     protected static ?string $label = null;
 
@@ -57,7 +61,7 @@ class PageResource extends Resource
 
     public static function form(Schema $schema): Schema
     {
-        $filamentComponentService = app(FilamentComponentsService::class);
+        $filamentComponentService = resolve(FilamentComponentsService::class);
 
         $contentTab = [
             Grid::make(4)->schema([
