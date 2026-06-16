@@ -41,9 +41,9 @@ jobs:
       postgres:
         image: postgres:18-alpine
         env:
-          POSTGRES_USER: postgres
-          POSTGRES_PASSWORD: postgres
-          POSTGRES_DB: test_sycorax
+          POSTGRES_USER: firaga
+          POSTGRES_PASSWORD: firaga
+          POSTGRES_DB: test_firaga
         ports:
           - 5432/tcp
         options: >-
