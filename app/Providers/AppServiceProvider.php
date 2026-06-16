@@ -4,11 +4,8 @@ declare(strict_types=1);
 
 namespace App\Providers;
 
-use App\Models\Author;
-use App\Models\CMS\Post;
 use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\Relations\Relation;
 use Illuminate\Http\Client\PendingRequest;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\ServiceProvider;
@@ -58,11 +55,6 @@ class AppServiceProvider extends ServiceProvider
         Model::automaticallyEagerLoadRelationships();
 
         Model::unguard();
-
-        Relation::morphMap([
-            'post' => Post::class,
-            'author' => Author::class,
-        ]);
     }
 
     private function configureFilament(): void

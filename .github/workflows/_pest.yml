@@ -41,9 +41,9 @@ jobs:
       postgres:
         image: postgres:18-alpine
         env:
-          POSTGRES_USER: postgres
-          POSTGRES_PASSWORD: postgres
-          POSTGRES_DB: test_sycorax
+          POSTGRES_USER: firaga
+          POSTGRES_PASSWORD: firaga
+          POSTGRES_DB: test_firaga
         ports:
           - 5432/tcp
         options: >-
@@ -68,11 +68,10 @@ jobs:
           coverage: xdebug
           tools: composer:v2
 
-      - name: Setup Node
-        uses: actions/setup-node@v4
+      - name: Setup Bun
+        uses: oven-sh/setup-bun@v2
         with:
-          node-version: '22'
-          cache: 'npm'
+          bun-version-file: .bun-version
 
       - name: Add Flux credentials
         run: composer config http-basic.composer.fluxui.dev "${{ secrets.FLUX_USERNAME }}" "${{ secrets.FLUX_LICENSE_KEY }}"
@@ -84,7 +83,7 @@ jobs:
           custom-cache-key: ${{ inputs.CACHE_KEY }}
 
       - name: Install node dependencies
-        run: npm ci
+        run: bun install --frozen-lockfile
 
       - name: Copy environment file
         run: cp .env.example .env
@@ -93,7 +92,7 @@ jobs:
         run: php artisan key:generate
 
       - name: Build assets
-        run: npm run build
+        run: bun run build
 
       - name: Run tests
         env:
