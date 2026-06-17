@@ -13,21 +13,25 @@
                             liberdade, segurança e crescimento financeiro sustentável.
                         </x-slot:description>
                         <x-slot:actions>
-                            <x-fr-button variant="white"> Ver todos os artigos </x-fr-button>
+                            <x-fr-button href="#artigos" variant="white"> Ver todos os artigos </x-fr-button>
                         </x-slot:actions>
                     </x-fr-headline>
                 </div>
 
                 <div class="flex flex-col gap-4 md:basis-3/5">
-                    <img
-                        src="{{ $featured->getFirstMediaUrl('cover') ?: asset('images/guys-looking-at-notebook-but-gray.webp') }}"
-                        alt="{{ $featured->thumbnail_alt ?: $featured->title }}"
-                        class="h-50 w-full rounded-sm object-cover md:h-80"
-                    />
+                    <a href="{{ route('blog.show', $featured) }}" class="group block overflow-hidden rounded-sm">
+                        <img
+                            src="{{ $featured->getFirstMediaUrl('cover') ?: asset('images/guys-looking-at-notebook-but-gray.png') }}"
+                            alt="{{ $featured->thumbnail_alt ?: $featured->title }}"
+                            class="h-50 w-full object-cover transition-transform duration-300 group-hover:scale-105 md:h-80"
+                        />
+                    </a>
 
                     <x-fr-headline align="left" size="sm">
                         <x-slot:title class="text-text-light!">
-                            {{ $featured->title }}
+                            <a href="{{ route('blog.show', $featured) }}" class="hover:underline">
+                                {{ $featured->title }}
+                            </a>
                         </x-slot:title>
                         <x-slot:description class="text-text-light!">
                             {{ $featured->excerpt() }}
