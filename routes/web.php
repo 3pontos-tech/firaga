@@ -43,7 +43,8 @@ Route::domain(config('app.domain'))->group(function (): void {
     Route::view('/code-capital', 'pages.code-capital')->name('code-capital');
     Route::view('/nossos-servicos', 'pages.nossos-servicos')->name('nossos-servicos');
     Route::view('/trabalhe-conosco', 'pages.trabalhe-conosco')->name('trabalhe-conosco');
-    Route::get('/blog', BlogController::class)->name('blog');
+    Route::get('/blog', [BlogController::class, 'index'])->name('blog');
+    Route::get('/blog/{post:slug}', [BlogController::class, 'show'])->name('blog.show');
     Route::view('/parcerias', 'pages.parcerias')->name('parcerias');
 
     Route::get('/{page?}', [PagesController::class, 'show'])

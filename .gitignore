@@ -26,6 +26,7 @@
 /storage/*.key
 /storage/pail
 /vendor
+/media-backup
 Homestead.json
 Homestead.yaml
 Thumbs.db

@@ -26,7 +26,7 @@ new class extends Component
 };
 ?>
 
-<section class="section">
+<section id="artigos" class="section scroll-mt-(--header-height)">
     <div class="container flex flex-col gap-6">
         <x-fr-headline align="left">
             <x-slot:title>
@@ -40,15 +40,20 @@ new class extends Component
         <div class="divide-border-base border-border-base divide-y border-y">
             @forelse ($this->posts as $post)
                 @php $postAuthor = $post->author; @endphp
-                <article class="flex items-center gap-4 py-6">
+                <a href="{{ route('blog.show', $post) }}" class="group flex items-center gap-4 py-6">
                     <img
-                        src="{{ $post->getFirstMediaUrl('cover') ?: asset('images/guys-looking-at-notebook-but-gray.webp') }}"
+                        src="{{ $post->getFirstMediaUrl('cover') ?: asset('images/guys-looking-at-notebook-but-gray.png') }}"
                         alt="{{ $post->thumbnail_alt ?: $post->title }}"
                         class="size-18 shrink-0 rounded-sm object-cover"
                     />
 
                     <div class="flex min-w-0 flex-1 flex-col justify-center gap-2">
-                        <x-fr-heading :level="3" size="xs">{{ $post->title }}</x-fr-heading>
+                        <x-fr-heading
+                            :level="3"
+                            size="xs"
+                            class="group-hover:text-brand-primary transition-colors"
+                            >{{ $post->title }}</x-fr-heading
+                        >
 
                         <div class="flex flex-wrap items-center gap-2 truncate">
                             @if ($postAuthor->getFirstMediaUrl('avatar'))
@@ -69,7 +74,7 @@ new class extends Component
                             @endif
                         </div>
                     </div>
-                </article>
+                </a>
             @empty
                 <p class="text-text-medium py-8 text-center">Nenhum artigo encontrado.</p>
             @endforelse

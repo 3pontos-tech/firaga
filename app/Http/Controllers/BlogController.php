@@ -10,7 +10,7 @@ use Illuminate\Contracts\View\View;
 
 class BlogController extends Controller
 {
-    public function __invoke(): View
+    public function index(): View
     {
         $featured = Post::query()
             ->where('status', PostStatus::PUBLISHED)
@@ -27,5 +27,31 @@ class BlogController extends Controller
             ->paginate(5);
 
         return view('pages.blog', ['featured' => $featured, 'posts' => $posts]);
+    }
+
+    public function show(Post $post): View
+    {
+        abort_unless($post->isPublished(), 404);
+
+        $post->load(['author', 'categories']);
+
+        $relatedPosts = $post->relatedPosts()
+            ->where('status', PostStatus::PUBLISHED)
+            ->with(['author', 'categories'])
+            ->latest('published_at')
+            ->take(3)
+            ->get();
+
+        if ($relatedPosts->isEmpty()) {
+            $relatedPosts = Post::query()
+                ->where('status', PostStatus::PUBLISHED)
+                ->whereKeyNot($post->getKey())
+                ->with(['author', 'categories'])
+                ->latest('published_at')
+                ->take(3)
+                ->get();
+        }
+
+        return view('pages.blog-show', ['post' => $post, 'relatedPosts' => $relatedPosts]);
     }
 }
