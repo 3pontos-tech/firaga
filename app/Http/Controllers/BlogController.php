@@ -39,7 +39,7 @@ class BlogController extends Controller
             ->where('status', PostStatus::PUBLISHED)
             ->with(['author', 'categories'])
             ->latest('published_at')
-            ->take(3)
+            ->take(6)
             ->get();
 
         if ($relatedPosts->isEmpty()) {

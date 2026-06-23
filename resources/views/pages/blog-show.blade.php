@@ -1,4 +1,4 @@
-<x-layout.landing headerBg="bg-brand-primary" headerTheme="[&_a]:text-text-light [&_button]:text-text-light">
+<x-layout.landing>
     <x-slot:metatags>
         <title>{{ $post->meta_title ?: $post->title }} - {{ config('app.name') }}</title>
         <meta name="description" content="{{ $post->meta_description ?: $post->excerpt() }}" />
@@ -15,84 +15,93 @@
         <meta property="og:image" content="{{ $post->getFirstMediaUrl('cover') ?: asset('images/meta-logo.png') }}" />
     </x-slot:metatags>
 
-    <article>
-        {{-- Hero --}}
-        <header class="bg-brand-primary py-(--section-first-gap)">
-            <div class="container flex flex-col gap-8">
-                <a
-                    href="{{ route('blog') }}"
-                    class="text-text-light/80 hover:text-text-light inline-flex w-fit items-center gap-2 transition-colors"
-                >
-                    <x-heroicon-o-arrow-left class="size-4 shrink-0" />
-                    <span class="text-sm font-medium">Voltar ao blog</span>
-                </a>
+    @php $author = $post->author; @endphp
 
-                <div class="flex flex-col gap-6 md:max-w-3xl">
-                    @if ($post->categories->isNotEmpty())
-                        <div class="flex flex-wrap items-center gap-2">
-                            @foreach ($post->categories as $category)
-                                <span
-                                    class="bg-text-light/15 text-text-light rounded-pill px-3 py-1 text-xs font-semibold"
-                                >
-                                    {{ $category->name }}
-                                </span>
-                            @endforeach
-                        </div>
-                    @endif
+    <article class="pt-8 md:pt-12">
+        {{-- Back link --}}
+        <div class="container">
+            <a
+                href="{{ route('blog') }}"
+                class="text-text-medium hover:text-brand-primary mx-auto flex w-full max-w-4xl items-center gap-2 transition-colors"
+            >
+                <x-heroicon-o-arrow-left class="size-4 shrink-0" />
+                <span class="text-sm font-medium">Voltar ao blog</span>
+            </a>
+        </div>
 
-                    <x-fr-heading :level="1" size="2xl" class="text-text-light!"> {{ $post->title }} </x-fr-heading>
+        {{-- Cover image first (dev.to style) --}}
+        <div class="container mt-6">
+            <img
+                src="{{ $post->getFirstMediaUrl('cover') ?: asset('images/guys-looking-at-notebook-but-gray.png') }}"
+                alt="{{ $post->thumbnail_alt ?: $post->title }}"
+                class="mx-auto aspect-[16/9] w-full max-w-4xl rounded-xl object-cover md:aspect-[2/1]"
+            />
+        </div>
 
-                    @php $author = $post->author; @endphp
+        {{-- Title + meta --}}
+        <div class="container mt-8 md:mt-10">
+            <div class="mx-auto flex max-w-3xl flex-col gap-5">
+                @if ($post->categories->isNotEmpty())
                     <div class="flex flex-wrap items-center gap-2">
-                        @if ($author?->getFirstMediaUrl('avatar'))
-                            <x-avatar :src="$author->getFirstMediaUrl('avatar')" :alt="$author->name" />
-                        @endif
-                        @if ($author)
-                            <x-fr-text class="text-text-light!" size="sm">{{ $author->name }}</x-fr-text>
-                            @if ($author->role)
-                                <div class="bg-outline-light/40 size-1 shrink-0 rounded-full"></div>
-                                <x-fr-text class="text-text-light/70!" size="sm">{{ $author->role }}</x-fr-text>
-                            @endif
-                        @endif
-                        @if ($post->published_at)
-                            <div class="bg-outline-light/40 size-1 shrink-0 rounded-full"></div>
-                            <x-fr-text class="text-text-light/70!" size="sm">
-                                {{ $post->published_at->format('d/m/Y') }}
-                            </x-fr-text>
-                        @endif
-                        @if ($post->read_time_in_minutes > 0)
-                            <div class="bg-outline-light/40 size-1 shrink-0 rounded-full"></div>
-                            <x-fr-text class="text-text-light/70!" size="sm">
-                                {{ $post->read_time_in_minutes }} min de leitura
-                            </x-fr-text>
-                        @endif
+                        @foreach ($post->categories as $category)
+                            <span
+                                class="bg-brand-primary/10 text-brand-primary rounded-pill px-3 py-1 text-xs font-semibold"
+                            >
+                                {{ $category->name }}
+                            </span>
+                        @endforeach
                     </div>
-                </div>
-            </div>
-        </header>
+                @endif
 
-        {{-- Cover --}}
-        <div class="bg-brand-primary">
-            <div class="container">
-                <img
-                    src="{{ $post->getFirstMediaUrl('cover') ?: asset('images/guys-looking-at-notebook-but-gray.png') }}"
-                    alt="{{ $post->thumbnail_alt ?: $post->title }}"
-                    class="h-56 w-full -translate-y-px rounded-sm object-cover md:h-96"
-                />
+                <x-fr-heading :level="1" size="2xl" class="text-text-high!">{{ $post->title }}</x-fr-heading>
+
+                <div class="flex flex-wrap items-center gap-2">
+                    @if ($author?->getFirstMediaUrl('avatar'))
+                        <x-avatar :src="$author->getFirstMediaUrl('avatar')" :alt="$author->name" />
+                    @endif
+                    @if ($author)
+                        <x-fr-text class="text-text-high! font-semibold!" size="sm">{{ $author->name }}</x-fr-text>
+                        @if ($author->role)
+                            <div class="bg-border-base size-1 shrink-0 rounded-full"></div>
+                            <x-fr-text class="text-text-medium!" size="sm">{{ $author->role }}</x-fr-text>
+                        @endif
+                    @endif
+                    @if ($post->published_at)
+                        <div class="bg-border-base size-1 shrink-0 rounded-full"></div>
+                        <x-fr-text class="text-text-medium!" size="sm">
+                            {{ $post->published_at->format('d/m/Y') }}
+                        </x-fr-text>
+                    @endif
+                    @if ($post->read_time_in_minutes > 0)
+                        <div class="bg-border-base size-1 shrink-0 rounded-full"></div>
+                        <x-fr-text class="text-text-medium!" size="sm">
+                            {{ $post->read_time_in_minutes }} min de leitura
+                        </x-fr-text>
+                    @endif
+                </div>
             </div>
         </div>
 
         {{-- Body --}}
-        <div class="section-first">
-            <div class="container flex flex-col gap-8 md:max-w-3xl">
+        <div class="container mt-10 md:mt-12">
+            <div class="mx-auto flex max-w-3xl flex-col gap-8">
                 @if ($post->excerpt)
-                    <x-fr-text size="md" class="text-text-medium!">{{ $post->excerpt }}</x-fr-text>
+                    <x-fr-text
+                        size="lg"
+                        class="text-text-medium! border-brand-primary/30 border-l-2 pl-4 font-medium! italic"
+                    >
+                        {{ $post->excerpt }}
+                    </x-fr-text>
                 @endif
 
                 @if (filled($post->content))
-                    <div class="flex flex-col gap-6">
+                    <div
+                        class="prose prose-lg prose-headings:text-text-high prose-headings:font-semibold prose-h2:mt-10 prose-h3:mt-8 prose-p:text-text-high prose-li:text-text-high prose-strong:text-text-high prose-blockquote:text-text-medium prose-blockquote:border-brand-primary prose-a:text-brand-primary prose-a:font-medium prose-a:no-underline hover:prose-a:underline prose-img:rounded-sm marker:text-brand-primary max-w-none"
+                    >
                         @foreach ($post->content as $block)
-                            @if (\App\Enums\CustomComponent::tryFrom($block['type'] ?? ''))
+                            @if (($block['type'] ?? null) === 'blog-markdown-text' && filled(data_get($block, 'data.content')))
+                                {!! str(data_get($block, 'data.content'))->markdown() !!}
+                            @elseif (\App\Enums\CustomComponent::tryFrom($block['type'] ?? ''))
                                 {!!
                                     \App\View\TemplateRenderer::make()->render(
                                         $post,
@@ -110,9 +119,9 @@
         {{-- Author bio --}}
         @if ($author?->description)
             <div class="section">
-                <div class="container md:max-w-3xl">
+                <div class="container">
                     <div
-                        class="bg-elevation-02dp border-border-base flex flex-col gap-4 rounded-lg border p-6 sm:flex-row sm:items-center"
+                        class="bg-elevation-02dp border-border-base mx-auto flex max-w-3xl flex-col gap-4 rounded-lg border p-6 sm:flex-row sm:items-center"
                     >
                         @if ($author->getFirstMediaUrl('avatar'))
                             <x-avatar
@@ -135,9 +144,9 @@
             </div>
         @endif
 
-        {{-- Related posts --}}
+        {{-- Related posts (carousel) --}}
         @if ($relatedPosts->isNotEmpty())
-            <section class="section">
+            <section class="section mb-(--section-gap)">
                 <div class="container flex flex-col gap-8">
                     <x-fr-headline align="left">
                         <x-slot:title>
@@ -145,10 +154,15 @@
                         </x-slot:title>
                     </x-fr-headline>
 
-                    <div class="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
+                    <div
+                        class="[&::-webkit-scrollbar]:hidden flex snap-x snap-mandatory gap-6 overflow-x-auto pb-2 [scrollbar-width:none]"
+                    >
                         @foreach ($relatedPosts as $related)
                             @php $relatedAuthor = $related->author; @endphp
-                            <a href="{{ route('blog.show', $related) }}" class="group flex flex-col gap-3">
+                            <a
+                                href="{{ route('blog.show', $related) }}"
+                                class="group flex w-72 shrink-0 snap-start flex-col gap-3 sm:w-80"
+                            >
                                 <div class="overflow-hidden rounded-sm">
                                     <img
                                         src="{{ $related->getFirstMediaUrl('cover') ?: asset('images/guys-looking-at-notebook-but-gray.png') }}"
@@ -190,12 +204,5 @@
                 </div>
             </section>
         @endif
-
-        {{-- Back to blog --}}
-        <div class="section mb-(--section-gap)">
-            <div class="container flex justify-center">
-                <x-fr-button :href="route('blog')" variant="outline">Ver todos os artigos</x-fr-button>
-            </div>
-        </div>
     </article>
 </x-layout.landing>
