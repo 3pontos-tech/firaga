@@ -50,11 +50,9 @@
             </div>
 
             <div class="relative hidden w-full md:block md:min-h-160 md:basis-2/5" data-reveal="scale">
-                <div
-                    class="from-brand-primary to-brand-secondary absolute inset-0 -z-1 rounded-lg bg-linear-to-b"
-                ></div>
+                <div class="absolute inset-0 -z-1 rounded-lg bg-linear-to-b"></div>
                 <img
-                    src="{{ asset('images/man-with-clock.png') }}"
+                    src="{{ asset('images/hero-section-imagem.png') }}"
                     alt="Imagem de homem"
                     class="absolute inset-0 h-full w-full rounded-lg object-contain object-bottom"
                 />
@@ -62,10 +60,8 @@
         </div>
 
         <div class="relative mt-auto w-full md:hidden" data-reveal="scale">
-            <div
-                class="from-brand-primary to-brand-secondary absolute inset-0 top-10 -z-1 rounded-t-lg bg-linear-to-b"
-            ></div>
-            <img src="{{ asset('images/man-with-clock.png') }}" alt="Imagem de homem" class="w-full" />
+            <div class="absolute inset-0 top-10 -z-1 rounded-t-lg bg-linear-to-b"></div>
+            <img src="{{ asset('images/hero-section-imagem.png') }}" alt="Imagem de homem" class="w-full" />
         </div>
     </section>
 
