@@ -45,6 +45,7 @@ Route::domain(config('app.domain'))->group(function (): void {
     Route::view('/trabalhe-conosco', 'pages.trabalhe-conosco')->name('trabalhe-conosco');
     Route::get('/blog', BlogController::class)->name('blog');
     Route::view('/parcerias', 'pages.parcerias')->name('parcerias');
+    Route::view('/quem-somos', 'pages.quem-somos')->name('quem-somos');
 
     Route::get('/{page?}', [PagesController::class, 'show'])
         ->name('page.show')
