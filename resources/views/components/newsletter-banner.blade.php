@@ -7,12 +7,14 @@
 ])
 
 <section {{ $attributes->class('section') }}>
-    <div class="container">
+    <div class="md:container">
         <div
-            class="bg-brand-primary flex flex-col overflow-hidden rounded-lg md:flex-row md:items-stretch"
+            class="bg-brand-primary flex flex-col overflow-hidden rounded-none md:flex-row md:items-stretch md:rounded-lg"
             data-reveal="up"
         >
             <div class="flex flex-col justify-center gap-6 p-8 md:basis-3/5 md:p-12">
+                <x-logo :clickable="false" size="lg" class="text-text-light! md:hidden" />
+
                 <div class="flex flex-col gap-3">
                     <x-fr-heading :level="2" size="lg" class="text-text-light!">{{ $title }}</x-fr-heading>
                     <x-fr-text size="sm" class="text-text-light/80!">{{ $description }}</x-fr-text>

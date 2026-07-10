@@ -3,14 +3,10 @@
 @php
     $postAuthor = $post->author;
     $cover = $post->getFirstMediaUrl('cover') ?: asset('images/guys-looking-at-notebook.png');
+@endphp
 
-    $cardRadius = $featured ? 'rounded-none' : 'rounded-sm';
-    $imageRadius = $featured ? 'rounded-none' : 'rounded-md';
-    $imageSize = $featured ? 'h-56 md:h-64' : 'aspect-[385.33/204]';
-    $cardGap = $featured ? 'gap-4' : 'gap-3';
-
-    $titleHtml = null;
-    if ($featured) {
+@if ($featured)
+    @php
         $words = preg_split('/\s+/', trim($post->title)) ?: [];
         $titleHtml = collect($words)
             ->map(
@@ -19,43 +15,77 @@
                     : e($word),
             )
             ->implode(' ');
-    }
-@endphp
+    @endphp
+    <article
+        {{
+            $attributes->class(
+                'border-border-base flex flex-col gap-4 rounded-none border p-4',
+            )
+        }}
+    >
+        <img
+            src="{{ $cover }}"
+            alt="{{ $post->thumbnail_alt ?: $post->title }}"
+            class="h-56 w-full rounded-none object-cover md:h-64"
+        />
 
-<article
-    {{
-        $attributes->class(
-            "border-border-base flex flex-col {$cardGap} border p-4 {$cardRadius}",
-        )
-    }}
->
-    <img
-        src="{{ $cover }}"
-        alt="{{ $post->thumbnail_alt ?: $post->title }}"
-        class="{{ $imageSize }} {{ $imageRadius }} w-full object-cover"
-    />
-
-    <div class="flex flex-1 flex-col gap-3">
-        @if ($featured)
+        <div class="flex flex-1 flex-col gap-3">
             <h3 class="fr-heading fr-heading-size-sm">{!! $titleHtml !!}</h3>
-        @else
-            <x-fr-heading :level="3" size="xs" class="line-clamp-2">{{ $post->title }}</x-fr-heading>
-        @endif
-
-        <x-fr-text size="sm" class="line-clamp-2">{{ $post->excerpt() }}</x-fr-text>
-    </div>
-
-    <hr class="border-border-base" />
-
-    <div class="flex items-center gap-3">
-        @if ($postAuthor->getFirstMediaUrl('avatar'))
-            <x-avatar :src="$postAuthor->getFirstMediaUrl('avatar')" :alt="$postAuthor->name" size="md" />
-        @endif
-        <div class="flex flex-col">
-            <x-fr-text class="text-brand-primary! font-semibold!" size="xs">{{ $postAuthor->name }}</x-fr-text>
-            @if ($postAuthor->role)
-                <x-fr-text size="xs">{{ $postAuthor->role }}</x-fr-text>
-            @endif
+            <x-fr-text size="sm" class="line-clamp-2">{{ $post->excerpt() }}</x-fr-text>
         </div>
-    </div>
-</article>
+
+        <hr class="border-border-base" />
+
+        <div class="flex items-center gap-3">
+            @if ($postAuthor->getFirstMediaUrl('avatar'))
+                <x-avatar :src="$postAuthor->getFirstMediaUrl('avatar')" :alt="$postAuthor->name" size="md" />
+            @endif
+            <div class="flex flex-col">
+                <x-fr-text class="text-brand-primary! font-semibold!" size="xs">{{ $postAuthor->name }}</x-fr-text>
+                @if ($postAuthor->role)
+                    <x-fr-text size="xs">{{ $postAuthor->role }}</x-fr-text>
+                @endif
+            </div>
+        </div>
+    </article>
+@else
+    {{-- Listing card: horizontal on mobile (small image right, no avatar/description), vertical on desktop --}}
+    <article
+        {{
+            $attributes->class(
+                'border-border-base flex items-center gap-4 rounded-sm border p-4 md:flex-col md:items-stretch md:gap-3',
+            )
+        }}
+    >
+        <img
+            src="{{ $cover }}"
+            alt="{{ $post->thumbnail_alt ?: $post->title }}"
+            class="order-2 h-24 w-24 shrink-0 rounded-md object-cover md:order-none md:aspect-[385.33/204] md:h-auto md:w-full"
+        />
+
+        <div class="order-1 flex flex-1 flex-col gap-2 md:order-none md:gap-3">
+            <x-fr-heading :level="3" size="xs" class="line-clamp-2">{{ $post->title }}</x-fr-heading>
+
+            <x-fr-text size="sm" class="line-clamp-2 hidden md:block">{{ $post->excerpt() }}</x-fr-text>
+
+            <hr class="border-border-base hidden md:mt-auto md:block" />
+
+            <div class="flex items-center gap-3">
+                @if ($postAuthor->getFirstMediaUrl('avatar'))
+                    <x-avatar
+                        :src="$postAuthor->getFirstMediaUrl('avatar')"
+                        :alt="$postAuthor->name"
+                        size="md"
+                        class="hidden md:block"
+                    />
+                @endif
+                <div class="flex flex-col">
+                    <x-fr-text class="text-brand-primary! font-semibold!" size="xs">{{ $postAuthor->name }}</x-fr-text>
+                    @if ($postAuthor->role)
+                        <x-fr-text size="xs">{{ $postAuthor->role }}</x-fr-text>
+                    @endif
+                </div>
+            </div>
+        </div>
+    </article>
+@endif

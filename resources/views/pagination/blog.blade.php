@@ -3,8 +3,8 @@
     $last = $paginator->lastPage();
 
     $windowSize = 4;
-    $start = $current;
-    $end = $current + $windowSize - 1;
+    $start = max(1, $current - 1);
+    $end = $start + $windowSize - 1;
 
     if ($end > $last) {
         $end = $last;
@@ -27,8 +27,8 @@
 @endphp
 
 @if ($paginator->hasPages())
-    <div class="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
-        <p class="text-xxs text-text-high font-sans font-semibold">
+    <div class="flex flex-col items-center gap-4 md:flex-row md:items-center md:justify-between">
+        <p class="text-xxs text-text-high hidden font-sans font-semibold md:block">
             Exibindo {{ $paginator->count() }} {{ $paginator->count() === 1 ? 'resultado' : 'resultados' }}
         </p>
 
@@ -47,11 +47,11 @@
 
             {{-- Back --}}
             @if ($paginator->onFirstPage())
-                <span class="text-text-low cursor-not-allowed px-2 text-xs">Back</span>
+                <span class="text-text-low hidden cursor-not-allowed px-2 text-xs md:block">Back</span>
             @else
                 <button
                     wire:click.prevent="previousPage()"
-                    class="text-text-high px-2 text-xs transition-opacity hover:opacity-70"
+                    class="text-text-high hidden px-2 text-xs transition-opacity hover:opacity-70 md:block"
                 >
                     Back
                 </button>
@@ -79,12 +79,12 @@
             @if ($paginator->hasMorePages())
                 <button
                     wire:click.prevent="nextPage()"
-                    class="text-text-high px-2 text-xs font-semibold transition-opacity hover:opacity-70"
+                    class="text-text-high hidden px-2 text-xs font-semibold transition-opacity hover:opacity-70 md:block"
                 >
                     Next
                 </button>
             @else
-                <span class="text-text-low cursor-not-allowed px-2 text-xs font-semibold">Next</span>
+                <span class="text-text-low hidden cursor-not-allowed px-2 text-xs font-semibold md:block">Next</span>
             @endif
 
             {{-- Last --}}

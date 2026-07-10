@@ -29,7 +29,7 @@ new class extends Component
 
 <section class="section md:mt-20!">
     <div class="container flex flex-col gap-8">
-        <x-fr-headline align="left">
+        <x-fr-headline align="left-desk">
             <x-slot:title>
                 Confira todos os <mark>nossos artigos</mark>
             </x-slot:title>
