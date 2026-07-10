@@ -69,17 +69,17 @@
                     A Flamma surge como um benefício corporativo inovador, desenhado para empoderar seus colaboradores
                     com educação financeira de alta qualidade.
                 </x-slot:description>
-                <x-slot:actions>
-                    <x-fr-button
-                        variant="white"
-                        tag="a"
-                        href="https://api.whatsapp.com/send/?phone=5511958397432&text=Visitei+o+site+da+Fire%7Cce+e+quero+mais+informa%C3%A7%C3%B5es&type=phone_number&app_absent=0"
-                        target="_blank"
-                    >
-                        Descobrir meu plano
-                    </x-fr-button>
-                </x-slot:actions>
             </x-fr-headline>
+
+            <x-fr-button
+                class="order-last md:order-none"
+                variant="white"
+                tag="a"
+                href="https://api.whatsapp.com/send/?phone=5511958397432&text=Visitei+o+site+da+Fire%7Cce+e+quero+mais+informa%C3%A7%C3%B5es&type=phone_number&app_absent=0"
+                target="_blank"
+            >
+                Descobrir meu plano
+            </x-fr-button>
 
             <div
                 class="grid w-full grid-cols-1 divide-y divide-white/25 overflow-hidden rounded-md border border-white/25 md:grid-cols-2 md:divide-x lg:grid-cols-4 lg:divide-y-0"
