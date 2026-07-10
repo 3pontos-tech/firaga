@@ -1,4 +1,4 @@
-@props (['number', 'title' => null, 'showChevron' => true, 'inverted' => false])
+@props (['number', 'title' => null, 'showChevron' => false, 'inverted' => false])
 
 @php
     $numberColor = $inverted ? 'text-text-light' : 'text-brand-primary';

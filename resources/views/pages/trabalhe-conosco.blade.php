@@ -5,7 +5,7 @@
 >
     <section class="flex flex-col items-center gap-4 pt-8 pb-8 md:pt-8 md:pb-8">
         <div
-            class="container flex flex-col items-center gap-8 md:flex-row md:items-center md:justify-between md:gap-12"
+            class="container flex flex-col items-center gap-8 md:flex-row md:items-center md:gap-16"
             data-reveal-stagger="140"
         >
             <div class="flex w-full flex-col items-center gap-8 md:basis-3/5 md:items-start">
@@ -15,8 +15,7 @@
                     </x-slot:header>
 
                     <x-slot:title class="sm:text-5xl! md:text-7xl!">
-                        <mark>Transforme vidas</mark><br />
-                        começando pela sua
+                        <mark>Transforme</mark> vidas começando pela sua
                     </x-slot:title>
                     <x-slot:description>
                         Se você tem experiência na área comercial, gosta do mercado financeiro e quer receber comissões
@@ -24,7 +23,7 @@
                     </x-slot:description>
 
                     <x-slot:footer>
-                        <div class="flex w-full flex-col gap-4">
+                        <div class="flex w-full max-w-xl flex-col gap-4">
                             <hr class="border-border-base w-full" />
                             <x-stat-grid
                                 highlight
@@ -43,6 +42,7 @@
                 <div class="relative hidden w-full md:block md:h-full md:basis-2/5" data-reveal="up">
                     <x-fr-button
                         tag="a"
+                        rel="noopener noreferrer"
                         href="https://forms.monday.com/forms/70a696032cb3a829f81b7735b8b6ab9f?r=use1"
                         target="_blank"
                     >
@@ -62,15 +62,16 @@
     </section>
 
     <section class="section flex flex-col items-center gap-8 md:mt-20!">
-        <div class="container flex flex-col items-center gap-8">
+        <div class="container flex max-w-3xl flex-col items-center gap-8">
             <x-fr-headline data-reveal="up">
                 <x-slot:title>
                     <mark>Comece sua carreira</mark> no mercado financeiro
                 </x-slot:title>
                 <x-slot:description>
                     Se você sente que pode mais, mas ainda não encontrou o ambiente certo para evoluir, o Programa de
-                    Trainee da Fire|ce 2026 pode ser o próximo passo estratégico da sua trajetória. Uma formação
-                    estruturada para quem quer construir carreira em consultoria financeira mesmo vindo de outra área.
+                    Trainee da Fire|ce 2026 pode ser o próximo passo estratégico da sua trajetória.<br />
+                    Uma formação estruturada para quem quer construir carreira em consultoria financeira mesmo vindo de
+                    outra área.
                 </x-slot:description>
             </x-fr-headline>
         </div>
@@ -81,11 +82,10 @@
                 data-reveal-stagger="140"
             >
                 <x-numbered-step
-                    class="md:border-border-base bg-elevation-01dp p-8 md:rounded-lg md:border"
+                    class="md:border-border-base bg-elevation-01dp p-8 md:border"
                     data-reveal="up"
                     number="01"
                     title="Imersão na metodologia."
-                    :show-chevron="false"
                 >
                     Você aprende o jeito Firece de diagnosticar, planejar e acompanhar com casos reais desde o início.
 
@@ -95,11 +95,10 @@
                 </x-numbered-step>
 
                 <x-numbered-step
-                    class="md:border-border-base bg-elevation-01dp p-8 md:rounded-lg md:border"
+                    class="md:border-border-base bg-elevation-01dp p-8 md:border"
                     data-reveal="up"
                     number="02"
                     title="Primeiros atendimentos com mentoria."
-                    :show-chevron="false"
                 >
                     Você atende com um consultor sênior ao lado. Aprende na prática, com suporte real.
 
@@ -109,7 +108,7 @@
                 </x-numbered-step>
 
                 <x-numbered-step
-                    class="md:border-border-base bg-elevation-01dp p-8 md:rounded-lg md:border"
+                    class="md:border-border-base bg-elevation-01dp p-8 md:border"
                     data-reveal="up"
                     number="03"
                     title="Carteira própria e autonomia."
