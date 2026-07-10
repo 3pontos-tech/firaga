@@ -15,10 +15,10 @@
         >
             <div class="flex w-full flex-col items-center gap-8 md:basis-3/5 md:items-start">
                 <x-fr-headline size="2xl" align="left-desk" data-reveal="up">
-                    <x-slot:title class="font-bold! md:text-7xl!">
+                    <x-slot:title class="md:text-7xl!">
                         Estratégia hoje, liberdade <mark>amanhã</mark>
                     </x-slot:title>
-                    <x-slot:description class="font-normal!">
+                    <x-slot:description>
                         Ajudamos pessoas, famílias e empresas a transformarem objetivos em estratégias — porque
                         compreender as próprias finanças é o primeiro passo para decidir com <mark>consciência</mark>.
                     </x-slot:description>
@@ -35,11 +35,10 @@
         </div>
     </section>
 
-    {{-- 2. SEÇÃO ESCURA — Missão e Visão --}}
     <section class="section dark bg-elevation-surface py-20">
         <div class="container flex flex-col gap-8">
             <x-fr-headline data-reveal="up">
-                <x-slot:title class="font-bold!">
+                <x-slot:title>
                     O futuro que queremos construir
                 </x-slot:title>
                 <x-slot:description>
@@ -50,9 +49,9 @@
 
             <div class="grid grid-cols-1 gap-8 md:grid-cols-2 md:gap-12" data-reveal-stagger="140">
                 <div class="flex flex-col gap-4" data-reveal="up">
-                    <p class="font-display text-brand-primary text-xl font-semibold md:text-7xl">01</p>
+                    <p class="font-display text-brand-primary text-xl md:text-7xl">01</p>
                     <div class="flex flex-col gap-1">
-                        <p class="font-display text-text-high text-md font-semibold">Nossa Missão</p>
+                        <p class="font-display text-text-high text-md">Nossa Missão</p>
                         <p class="text-text-medium font-sans text-xs leading-6 font-medium">Ampliar o acesso à educação financeira e ajudar pessoas, famílias e empresas a transformarem objetivos em estratégias por meio do planejamento financeiro.</p>
                     </div>
                     <hr class="border-border-base w-full" />
@@ -63,9 +62,9 @@
                 </div>
 
                 <div class="flex flex-col gap-4" data-reveal="up">
-                    <p class="font-display text-brand-primary text-xl font-semibold md:text-7xl">02</p>
+                    <p class="font-display text-brand-primary text-xl md:text-7xl">02</p>
                     <div class="flex flex-col gap-1">
-                        <p class="font-display text-text-high text-md font-semibold">Nossa visão</p>
+                        <p class="font-display text-text-high text-md">Nossa visão</p>
                         <p class="text-text-medium font-sans text-xs leading-6 font-medium">Ser referência em planejamento e educação financeira no Brasil, ampliando o acesso à informação de qualidade para decisões financeiras mais conscientes.</p>
                     </div>
                     <hr class="border-border-base w-full" />
@@ -96,32 +95,32 @@
                 data-reveal-stagger="120"
             >
                 <div class="dark bg-elevation-surface flex flex-col gap-2 p-8" data-reveal="up">
-                    <p class="font-display text-brand-primary text-xl font-semibold md:text-3xl">01</p>
-                    <p class="font-display text-text-high text-md font-semibold">Educação</p>
+                    <p class="font-display text-brand-primary text-xl md:text-3xl">01</p>
+                    <p class="font-display text-text-high text-md">Educação</p>
                     <p class="text-text-medium font-sans text-xs leading-6 font-medium">Acreditamos que o conhecimento transforma decisões e orienta escolhas financeiras mais conscientes.</p>
                 </div>
 
                 <div class="flex flex-col gap-2 p-8" data-reveal="up">
-                    <p class="font-display text-brand-primary text-xl font-semibold md:text-3xl">02</p>
-                    <p class="font-display text-text-high text-md font-semibold">Transparência</p>
+                    <p class="font-display text-brand-primary text-xl md:text-3xl">02</p>
+                    <p class="font-display text-text-high text-md">Transparência</p>
                     <p class="text-text-high font-sans text-xs leading-6 font-medium">Construímos relações baseadas em clareza, ética e confiança em cada etapa da jornada financeira.</p>
                 </div>
 
                 <div class="flex flex-col gap-2 p-8" data-reveal="up">
-                    <p class="font-display text-brand-primary text-xl font-semibold md:text-3xl">03</p>
-                    <p class="font-display text-text-high text-md font-semibold">Desenvolvimento contínuo</p>
+                    <p class="font-display text-brand-primary text-xl md:text-3xl">03</p>
+                    <p class="font-display text-text-high text-md">Desenvolvimento contínuo</p>
                     <p class="text-text-high font-sans text-xs leading-6 font-medium">Investimos constantemente na evolução dos nossos profissionais, da nossa metodologia e da experiência entregue.</p>
                 </div>
 
                 <div class="flex flex-col gap-2 p-8" data-reveal="up">
-                    <p class="font-display text-brand-primary text-xl font-semibold md:text-3xl">04</p>
-                    <p class="font-display text-text-high text-md font-semibold">Compromisso com o cliente</p>
+                    <p class="font-display text-brand-primary text-xl md:text-3xl">04</p>
+                    <p class="font-display text-text-high text-md">Compromisso com o cliente</p>
                     <p class="text-text-high font-sans text-xs leading-6 font-medium">Colocamos os objetivos de cada cliente no centro de todas as decisões, com atenção, estratégia e responsabilidade.</p>
                 </div>
 
                 <div class="flex flex-col gap-2 p-8" data-reveal="up">
-                    <p class="font-display text-brand-primary text-xl font-semibold md:text-3xl">05</p>
-                    <p class="font-display text-text-high text-md font-semibold">Visão de longo prazo</p>
+                    <p class="font-display text-brand-primary text-xl md:text-3xl">05</p>
+                    <p class="font-display text-text-high text-md">Visão de longo prazo</p>
                     <p class="text-text-high font-sans text-xs leading-6 font-medium">Valorizamos decisões conscientes e estratégias construídas para gerar resultados sustentáveis ao longo do tempo.</p>
                 </div>
             </div>
@@ -132,7 +131,7 @@
     <section class="section">
         <div class="container flex flex-col gap-8">
             <x-fr-headline data-reveal="up">
-                <x-slot:title class="font-bold!">
+                <x-slot:title>
                     Confira nosso <mark>Blog</mark>
                 </x-slot:title>
                 <x-slot:description>

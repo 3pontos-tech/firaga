@@ -21,7 +21,7 @@
     />
 
     <div class="flex min-w-0 flex-1 flex-col gap-2 md:w-full md:flex-none">
-        <p class="font-display text-text-high md:text-md text-xs leading-tight font-semibold">{{ $title }}</p>
+        <p class="font-display text-text-high md:text-md text-xs leading-tight">{{ $title }}</p>
 
         @if ($description)
             <x-fr-text size="xs" class="text-text-high! hidden md:block">{{ $description }}</x-fr-text>
