@@ -34,7 +34,6 @@ class PostFactory extends Factory
             'meta_keywords' => fake()->word.','.fake()->word,
             'opengraph_title' => fake()->text(30),
             'opengraph_description' => fake()->text(30),
-            'opengraph_picture' => null,
             'disable_indexation' => false,
             'published_at' => fake()->dateTimeBetween('-1 year', 'now'),
         ];
