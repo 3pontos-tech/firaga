@@ -22,6 +22,9 @@
                     >Parcerias</a
                 >
                 <a href="{{ route('blog') }}" class="text-text-medium hover:text-text-high transition-colors">Blog</a>
+                <a href="{{ route('quem-somos') }}" class="text-text-medium hover:text-text-high transition-colors"
+                    >Quem somos</a
+                >
                 <a
                     href="{{ route('trabalhe-conosco') }}"
                     class="text-text-medium hover:text-text-high transition-colors"
