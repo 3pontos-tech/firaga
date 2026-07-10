@@ -33,8 +33,7 @@
             <div class="flex flex-col gap-8 md:basis-3/5">
                 <x-fr-headline align="left" data-reveal="up">
                     <x-slot:title>
-                        Quem pode ser parceiro da <strong><mark>Fire</mark>|<mark>ce</mark></strong
-                        >?
+                        Quem pode ser parceiro da <mark>Fire</mark>|<mark>ce</mark>?
                     </x-slot:title>
                     <x-slot:description>
                         Qualquer profissional, empresa ou instituição com sinergia de propósito. Se você quer
@@ -104,11 +103,10 @@
                 data-reveal-stagger="140"
             >
                 <x-numbered-step
-                    class="bg-elevation-01dp md:border-border-base p-8 md:rounded-lg md:border"
+                    class="bg-elevation-01dp md:border-border-base p-8 md:border"
                     data-reveal="up"
                     number="01"
                     title="Parceria comercial"
-                    :show-chevron="false"
                 >
                     Você indica clientes para a Firece e recebe por isso. Modelo simples, sem burocracia você foca no
                     relacionamento, a gente foca no atendimento. Ideal para quem tem audiência ou rede de contatos
@@ -126,11 +124,10 @@
                 </x-numbered-step>
 
                 <x-numbered-step
-                    class="bg-elevation-01dp md:border-border-base p-8 md:rounded-lg md:border"
+                    class="bg-elevation-01dp md:border-border-base p-8 md:border"
                     data-reveal="up"
                     number="02"
                     title="Projeto educacional conjunto"
-                    :show-chevron="false"
                 >
                     Co-criamos conteúdo, cursos, workshops ou programas de educação financeira com a sua marca. A Firece
                     entra com metodologia, especialistas e estrutura você entra com canal e audiência.
@@ -147,11 +144,10 @@
                 </x-numbered-step>
 
                 <x-numbered-step
-                    class="bg-elevation-01dp md:border-border-base p-8 md:rounded-lg md:border"
+                    class="bg-elevation-01dp md:border-border-base p-8 md:border"
                     data-reveal="up"
                     number="03"
                     title="Joint Venture estratégico"
-                    :show-chevron="false"
                 >
                     Para quem quer construir algo maior um produto, uma solução, um canal novo. Avaliamos projetos com
                     potencial real e, quando há sinergia, investimos tempo, estrutura e recursos juntos.
@@ -172,5 +168,5 @@
         </div>
     </section>
 
-    <x-partner-form class="pt-8 pb-8 md:mt-15 md:pt-8 md:pr-80 md:pb-8 md:pl-80" submit-label="Enviar proposta" />
+    <x-partner-form class="mx-auto max-w-3xl pt-8 pb-8 md:mt-15 md:pt-8 md:pb-8" submit-label="Enviar proposta" />
 </x-layout.landing>
