@@ -25,6 +25,7 @@
 /public/storage
 /storage/*.key
 /storage/pail
+/media-backup
 /vendor
 Homestead.json
 Homestead.yaml
