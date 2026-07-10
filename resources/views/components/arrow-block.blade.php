@@ -17,11 +17,11 @@
 
     <div class="flex flex-col gap-2">
         @if (filled($eyebrow))
-            <x-fr-text class="text-brand-primary! font-semibold!" size="xs">{{ $eyebrow }}</x-fr-text>
+            <x-fr-text class="text-brand-primary! font-semibold!">{{ $eyebrow }}</x-fr-text>
         @endif
 
         @if (filled($title))
-            <x-fr-heading size="xxs">{{ $title }}</x-fr-heading>
+            <x-fr-heading size="xs">{{ $title }}</x-fr-heading>
         @endif
 
         <x-fr-text size="sm">{{ $slot }}</x-fr-text>
