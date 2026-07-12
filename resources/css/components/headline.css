@@ -29,7 +29,7 @@
 
 /* Title */
 .fr-headline-title {
-    @apply font-display text-text-high leading-[120%] font-medium;
+    @apply font-display text-text-high leading-[120%] font-bold;
 }
 
 .fr-headline-size-sm .fr-headline-title {
