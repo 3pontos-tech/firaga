@@ -20,8 +20,8 @@
 /public/build
 /public/hot
 /public/css
-/public/fonts
 /public/js
+/public/fonts/filament
 /public/storage
 /storage/*.key
 /storage/pail
