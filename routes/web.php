@@ -2,9 +2,11 @@
 
 declare(strict_types=1);
 
+use App\Enums\PostStatus;
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\MarketingLandingController;
 use App\Http\Controllers\PagesController;
+use App\Models\CMS\Post;
 use App\Models\Term;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Contracts\View\View;
@@ -45,7 +47,14 @@ Route::domain(config('app.domain'))->group(function (): void {
     Route::view('/trabalhe-conosco', 'pages.trabalhe-conosco')->name('trabalhe-conosco');
     Route::get('/blog', BlogController::class)->name('blog');
     Route::view('/parcerias', 'pages.parcerias')->name('parcerias');
-    Route::view('/quem-somos', 'pages.quem-somos')->name('quem-somos');
+    Route::get('/quem-somos', fn (): View => view('pages.quem-somos', [
+        'posts' => Post::query()
+            ->where('status', PostStatus::PUBLISHED)
+            ->with(['author', 'categories'])
+            ->latest('published_at')
+            ->take(3)
+            ->get(),
+    ]))->name('quem-somos');
 
     Route::get('/{page?}', [PagesController::class, 'show'])
         ->name('page.show')

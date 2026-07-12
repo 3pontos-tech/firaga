@@ -23,13 +23,13 @@
                 {{-- Visual only: no back-end handler wired yet --}}
                 <form class="flex w-full flex-col gap-3 sm:flex-row" onsubmit="return false;">
                     @csrf
-                    <div class="flex flex-1 items-center gap-2 rounded-lg border border-white/70 px-4">
+                    <div class="flex flex-1 items-center gap-2 rounded-md border border-white/70 px-4">
                         <x-heroicon-o-envelope class="size-5 shrink-0 text-white" />
                         <input
                             type="email"
                             name="email"
                             placeholder="Digite seu e-mail"
-                            class="w-full border-0 bg-transparent py-4 text-sm text-white placeholder:text-white/70 focus:outline-none"
+                            class="w-full border-0 bg-transparent py-3 text-sm text-white placeholder:text-white/70 focus:outline-none"
                         />
                     </div>
                     <x-fr-button type="submit" variant="white" rounded="lg" size="lg">{{ $submitLabel }}</x-fr-button>
@@ -53,7 +53,7 @@
                         </clipPath>
                     </defs>
                     <image
-                        href="{{ $image ?: asset('images/guys-looking-at-notebook.png') }}"
+                        href="{{ $image ?: asset('images/woman-with-coffee.jpg') }}"
                         x="809.316"
                         y="1.84766"
                         width="667.717"

@@ -139,37 +139,13 @@
                 </x-slot:description>
             </x-fr-headline>
 
-            <div class="grid grid-cols-1 gap-8 md:grid-cols-3" data-reveal-stagger="140">
-                <x-blog-card
-                    data-reveal="up"
-                    :image="asset('images/guys-looking-at-notebook.png')"
-                    title="Orçamento Individual e Familiar"
-                    description="Controle, organização e consciência para sua vida financeira com apoio especializado."
-                    author-name="Laura Papaiano"
-                    author-role="Consultora Financeira"
-                    author-avatar="https://i.pravatar.cc/80?img=45"
-                />
-
-                <x-blog-card
-                    data-reveal="up"
-                    :image="asset('images/guys-looking-at-notebook.png')"
-                    title="Orçamento Individual e Familiar"
-                    description="Controle, organização e consciência para sua vida financeira com apoio especializado."
-                    author-name="Laura Papaiano"
-                    author-role="Consultora Financeira"
-                    author-avatar="https://i.pravatar.cc/80?img=45"
-                />
-
-                <x-blog-card
-                    data-reveal="up"
-                    :image="asset('images/guys-looking-at-notebook.png')"
-                    title="Orçamento Individual e Familiar"
-                    description="Controle, organização e consciência para sua vida financeira com apoio especializado."
-                    author-name="Laura Papaiano"
-                    author-role="Consultora Financeira"
-                    author-avatar="https://i.pravatar.cc/80?img=45"
-                />
-            </div>
+            @if ($posts->isNotEmpty())
+                <div class="grid grid-cols-1 gap-8 md:grid-cols-3" data-reveal-stagger="140">
+                    @foreach ($posts as $post)
+                        <x-blog-card :post="$post" data-reveal="up" />
+                    @endforeach
+                </div>
+            @endif
         </div>
     </section>
 </x-layout.landing>
