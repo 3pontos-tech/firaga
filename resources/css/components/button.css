@@ -7,7 +7,7 @@
    ========================================================================== */
 
 .fr-button {
-    @apply font-display relative inline-flex h-fit items-center justify-center gap-2 font-medium;
+    @apply font-display relative inline-flex h-fit items-center justify-center gap-2 font-bold;
 
     @apply disabled:pointer-events-none disabled:opacity-60;
     &[aria-disabled='true'] {
@@ -76,7 +76,7 @@
 
 /* Variants */
 .fr-button-variant-solid {
-    @apply bg-brand-primary text-text-light metallic:text-text-dark metallic-light:text-text-light w-full px-8 py-4 font-sans font-semibold;
+    @apply bg-brand-primary text-text-light metallic:text-text-dark metallic-light:text-text-light w-full px-8 py-4 font-bold;
 
     @variant md {
         @apply w-auto;
@@ -84,7 +84,7 @@
 }
 
 .fr-button-variant-outline {
-    @apply bg-elevation-surface text-text-high border-border-base w-full border px-8 py-4 font-sans font-semibold;
+    @apply bg-elevation-surface text-text-high border-border-base w-full border px-8 py-4 font-bold;
 
     @variant md {
         @apply w-auto;
@@ -92,7 +92,7 @@
 }
 
 .fr-button-variant-white {
-    @apply text-brand-primary w-full border border-white bg-white px-8 py-4 font-sans font-semibold;
+    @apply text-brand-primary w-full border border-white bg-white px-8 py-4 font-bold;
 
     @variant md {
         @apply w-auto;
