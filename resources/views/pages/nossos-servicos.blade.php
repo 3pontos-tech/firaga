@@ -11,7 +11,7 @@
     <section class="dark bg-elevation-surface pt-(--section-first-gap) pb-(--section-gap)">
         <div class="container flex flex-col items-center gap-12">
             <x-fr-headline size="2xl" data-reveal="up">
-                <x-slot:title class="font-bold!">
+                <x-slot:title>
                     <mark>Como podemos</mark> te ajudar?
                 </x-slot:title>
                 <x-slot:description>
@@ -23,15 +23,15 @@
             <div class="border-border-base flex w-full max-w-lg border-t pt-6" data-reveal="up">
                 <div class="divide-border-base grid w-full grid-cols-3 divide-x">
                     <div class="flex flex-col items-center gap-1 px-4 text-center">
-                        <p class="font-display text-brand-primary text-md font-bold">+10 anos</p>
+                        <p class="font-display text-brand-primary text-md font-medium">+10 anos</p>
                         <p class="text-text-medium text-xxxs font-semibold tracking-wider uppercase">De mercado</p>
                     </div>
                     <div class="flex flex-col items-center gap-1 px-4 text-center">
-                        <p class="font-display text-brand-primary text-md font-bold">300%</p>
+                        <p class="font-display text-brand-primary text-md font-medium">300%</p>
                         <p class="text-text-medium text-xxxs font-semibold tracking-wider uppercase">Cres. anual</p>
                     </div>
                     <div class="flex flex-col items-center gap-1 px-4 text-center">
-                        <p class="font-display text-brand-primary text-md font-bold">+7 mil</p>
+                        <p class="font-display text-brand-primary text-md font-medium">+7 mil</p>
                         <p class="text-text-medium text-xxxs font-semibold tracking-wider uppercase">Clientes</p>
                     </div>
                 </div>
@@ -46,7 +46,7 @@
                 <img src="{{ asset('images/logos/flamma-logo.svg') }}" alt="Logo Flamma" class="h-9 w-auto" />
             </div>
             <x-fr-headline data-reveal="up">
-                <x-slot:title class="font-bold!">
+                <x-slot:title>
                     Educação financeira pessoal como
                     <mark>benefício corporativo</mark>
                 </x-slot:title>
@@ -62,7 +62,7 @@
     <section class="section from-flamma-primary to-flamma-secondary bg-linear-to-r py-20">
         <div class="container flex flex-col items-center gap-10">
             <x-fr-headline data-reveal="up">
-                <x-slot:title class="text-text-light! font-bold!">
+                <x-slot:title class="text-text-light!">
                     Como funciona?
                 </x-slot:title>
                 <x-slot:description class="text-text-light! mx-auto max-w-[42rem]">
@@ -85,47 +85,19 @@
                 class="grid w-full grid-cols-1 divide-y divide-white/25 overflow-hidden rounded-md border border-white/25 md:grid-cols-2 md:divide-x lg:grid-cols-4 lg:divide-y-0"
                 data-reveal-stagger="140"
             >
-                <x-numbered-step
-                    class="p-8"
-                    data-reveal="up"
-                    number="01"
-                    title="Contratação"
-                    :show-chevron="false"
-                    inverted
-                >
+                <x-numbered-step class="p-8" data-reveal="up" number="01" title="Contratação" inverted>
                     A empresa contrata pacotes de horas mensais, semestrais ou anuais para todos os colaboradores.
                 </x-numbered-step>
 
-                <x-numbered-step
-                    class="p-8"
-                    data-reveal="up"
-                    number="02"
-                    title="Agendamento"
-                    :show-chevron="false"
-                    inverted
-                >
+                <x-numbered-step class="p-8" data-reveal="up" number="02" title="Agendamento" inverted>
                     Cada colaborador agenda seu atendimento diretamente pela plataforma Flamma, quando quiser.
                 </x-numbered-step>
 
-                <x-numbered-step
-                    class="p-8"
-                    data-reveal="up"
-                    number="03"
-                    title="Atendimento"
-                    :show-chevron="false"
-                    inverted
-                >
+                <x-numbered-step class="p-8" data-reveal="up" number="03" title="Atendimento" inverted>
                     Sessões individuais de 60 minutos com consultores especializados, online ou presencial.
                 </x-numbered-step>
 
-                <x-numbered-step
-                    class="p-8"
-                    data-reveal="up"
-                    number="04"
-                    title="Relatórios de impacto"
-                    :show-chevron="false"
-                    inverted
-                >
+                <x-numbered-step class="p-8" data-reveal="up" number="04" title="Relatórios de impacto" inverted>
                     O RH acompanha a adesão e os resultados com relatórios consolidados de uso e evolução.
                 </x-numbered-step>
             </div>
@@ -142,7 +114,7 @@
                             Planejamento financeiro
                         </x-fr-text>
                     </x-slot:header>
-                    <x-slot:title class="font-bold!">
+                    <x-slot:title>
                         O que muda na sua vida quando existe planejamento financeiro?
                     </x-slot:title>
                     <x-slot:description>
@@ -182,7 +154,7 @@
     <section class="section">
         <div class="container flex flex-col gap-8">
             <x-fr-headline data-reveal="up">
-                <x-slot:title class="font-bold!">
+                <x-slot:title>
                     Qual é o seu momento?
                 </x-slot:title>
                 <x-slot:description>
@@ -374,7 +346,7 @@
                             class="h-6 w-auto self-start"
                         />
                         <x-fr-headline align="left">
-                            <x-slot:title class="font-bold! lg:text-nowrap">
+                            <x-slot:title class="lg:text-nowrap">
                                 Seu dinheiro organizado com IA
                             </x-slot:title>
                             <x-slot:description class="text-text-medium!">
@@ -394,7 +366,7 @@
                                     type="text"
                                     name="name"
                                     placeholder="Digite seu nome"
-                                    class="border-border-base focus:border-brand-primary placeholder:text-text-medium w-full rounded-sm border p-4 focus:outline-none"
+                                    class="border-border-base focus:border-brand-primary placeholder:text-text-medium w-full rounded-sm border p-3 focus:outline-none"
                                 />
                             </div>
                             <div class="flex flex-col gap-2">
@@ -403,7 +375,7 @@
                                     type="email"
                                     name="email"
                                     placeholder="exemplo@email.com"
-                                    class="border-border-base focus:border-brand-primary placeholder:text-text-medium w-full rounded-sm border p-4 focus:outline-none"
+                                    class="border-border-base focus:border-brand-primary placeholder:text-text-medium w-full rounded-sm border p-3 focus:outline-none"
                                 />
                             </div>
                             <div class="flex flex-col gap-2">
@@ -412,12 +384,12 @@
                                     type="tel"
                                     name="phone"
                                     placeholder="(12) 9 0000-0000"
-                                    class="border-border-base focus:border-brand-primary placeholder:text-text-medium w-full rounded-sm border p-4 focus:outline-none"
+                                    class="border-border-base focus:border-brand-primary placeholder:text-text-medium w-full rounded-sm border p-3 focus:outline-none"
                                 />
                             </div>
                             <button
                                 type="submit"
-                                class="bg-yellow-primary text-text-dark font-display rounded-sm px-8 py-4 font-sans font-semibold transition-opacity hover:opacity-90"
+                                class="bg-yellow-primary text-text-dark rounded-sm px-8 py-3 font-sans font-semibold transition-opacity hover:opacity-90"
                             >
                                 Me avise quando estiver disponível
                             </button>
@@ -436,7 +408,7 @@
                     <x-slot:header>
                         <x-fr-text size="sm" class="text-text-high! font-semibold!"> Atendimento premium </x-fr-text>
                     </x-slot:header>
-                    <x-slot:title class="font-bold!">
+                    <x-slot:title>
                         Dê a atenção que seu
                         <span class="text-text-medium">patrimônio e seus investimentos</span> merecem.
                     </x-slot:title>
@@ -492,7 +464,7 @@
                 <x-slot:header>
                     <x-fr-text size="sm" class="text-brand-primary! font-semibold!"> Educa Fire </x-fr-text>
                 </x-slot:header>
-                <x-slot:title class="font-bold!">
+                <x-slot:title>
                     Aprenda a <mark>transformar vidas</mark> com finanças.
                 </x-slot:title>
                 <x-slot:description class="text-xxs!">
