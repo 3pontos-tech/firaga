@@ -26,7 +26,8 @@
                     </x-slot:header>
 
                     <x-slot:title class="md:text-7xl!">
-                        Sua próxima conquista começa com <mark>Planejamento Financeiro</mark>
+                        Sua próxima conquista começa com
+                        <mark>Planejamento Financeiro</mark>
                     </x-slot:title>
                     <x-slot:description>
                         A Fire|ce ajuda a organizar sua vida financeira, controlar seu dinheiro com clareza e tomar
@@ -94,7 +95,7 @@
 
     <section class="section mt-20">
         <div class="container flex flex-col items-center gap-8 text-center">
-            <x-fr-heading size="lg" data-reveal="up"> Reconhece alguma dessas histórias? </x-fr-heading>
+            <x-fr-heading size="lg" data-reveal="up"> Reconhece alguma dessas histórias?</x-fr-heading>
             <div class="grid grid-cols-1 items-start gap-3 text-left md:grid-cols-3 md:gap-6" data-reveal-stagger="100">
                 <div class="group flex flex-col gap-4" data-reveal="up">
                     <x-fas-quote-left class="text-brand-primary size-4" />
@@ -126,7 +127,7 @@
                     />
                 </div>
             </div>
-            <x-logo-badge class="justify-center"> Não é falta de disciplina. É falta de um plano </x-logo-badge>
+            <x-logo-badge class="justify-center"> Não é falta de disciplina. É falta de um plano</x-logo-badge>
         </div>
     </section>
 
@@ -148,10 +149,13 @@
             <div class="flex flex-col gap-8 md:order-1 md:basis-2/3 md:gap-16">
                 <x-fr-headline align="left" data-reveal="up">
                     <x-slot:title>
-                        Por que a <mark>Firece</mark>?
+                        Por que a
+                        <mark>Firece</mark>
+                        ?
                     </x-slot:title>
                     <x-slot:description>
-                        Em média, brasileiros perdem 23% da renda sem saber para onde foi. A <mark>Fire|ce</mark>
+                        Em média, brasileiros perdem 23% da renda sem saber para onde foi. A
+                        <mark>Fire|ce</mark>
                         mostra exatamente o que está acontecendo.
                     </x-slot:description>
                 </x-fr-headline>
@@ -167,7 +171,8 @@
                         <x-icon-box icon="heroicon-c-scale" />
                         <x-fr-headline align="left" size="sm" container-class="gap-2!">
                             <x-slot:title>
-                                <mark>Orientação financeira</mark> sem conflito de interesse
+                                <mark>Orientação financeira</mark>
+                                sem conflito de interesse
                             </x-slot:title>
                             <x-slot:description>
                                 Recomendações sem metas comerciais, comissões ou produtos específicos para vender.
@@ -182,7 +187,8 @@
                         <x-icon-box icon="heroicon-c-adjustments-horizontal" />
                         <x-fr-headline align="left" size="sm" container-class="gap-2!">
                             <x-slot:title>
-                                Estratégias feitas para a <mark>sua realidade</mark>
+                                Estratégias feitas para a
+                                <mark>sua realidade</mark>
                             </x-slot:title>
                             <x-slot:description>
                                 Estratégias alinhadas aos seus objetivos, momento de vida e realidade financeira.
@@ -197,7 +203,8 @@
                         <x-icon-box icon="fas-handshake" />
                         <x-fr-headline align="left" size="sm" container-class="gap-2!">
                             <x-slot:title>
-                                <mark>Planejamento financeiro</mark> baseado em confiança
+                                <mark>Planejamento financeiro</mark>
+                                baseado em confiança
                             </x-slot:title>
                             <x-slot:description>
                                 Planejamento financeiro começa com confiança em quem está caminhando ao seu lado.
@@ -220,36 +227,35 @@
     </section>
 
     <section class="section mt-20">
-        <div class="container grid grid-cols-1 items-center gap-8 md:grid-cols-2 md:gap-12 md:gap-x-28">
-            <div class="flex flex-col items-center gap-8 md:items-start">
-                <x-fr-headline align="left-desk" data-reveal="up">
-                    <x-slot:title>
-                        Clareza <mark>financeira</mark> começa com estratégia.
-                    </x-slot:title>
-                    <x-slot:description>
-                        Sem curso, sem palestra, sem planilha genérica. Um plano construído para a
-                        <mark>sua realidade</mark> e só para ela.
-                    </x-slot:description>
-                </x-fr-headline>
-
-                <div class="flex w-full flex-col items-center gap-4" data-reveal="up">
-                    <x-fr-button
-                        class="w-full!"
-                        tag="a"
-                        href="https://api.whatsapp.com/send/?phone=5511958397432&text=Visitei+o+site+da+Fire%7Cce+e+quero+mais+informa%C3%A7%C3%B5es&type=phone_number&app_absent=0"
-                        target="_blank"
-                    >
-                        Descobrir meu plano
-                    </x-fr-button>
-                    <x-logo-badge class="justify-center md:justify-start"> Simples assim. Sem enrolação. </x-logo-badge>
-                </div>
-            </div>
+        <div class="container grid grid-cols-1 items-center gap-8">
+            <x-fr-headline data-reveal="up">
+                <x-slot:title>
+                    Clareza
+                    <mark>financeira</mark>
+                    começa com estratégia.
+                </x-slot:title>
+                <x-slot:description>
+                    Sem curso, sem palestra, sem planilha genérica. Um plano construído para a
+                    <mark>sua realidade</mark>
+                    e só para ela.
+                </x-slot:description>
+            </x-fr-headline>
 
             <div
-                class="border-border-base divide-border-base grid w-full grid-cols-1 divide-y md:border"
+                class="border-border-base divide-border-base grid w-full grid-cols-1 divide-y rounded-md border md:grid-cols-4 md:divide-x"
                 data-reveal-stagger="140"
             >
-                <x-numbered-step class="p-8" data-reveal="up" number="01" title="Diagnóstico financeiro">
+                <x-numbered-step
+                    class="rounded-tl-md rounded-tr-md p-8 md:rounded-tr-none md:rounded-bl-md"
+                    style="
+                        background:
+                            linear-gradient(270deg, rgba(253, 253, 253, 0) 0%, rgba(253, 253, 253, 0.12) 100%), #121213;
+                    "
+                    data-reveal="up"
+                    number="01"
+                    title="Diagnóstico financeiro"
+                    light-text
+                >
                     Entendemos sua realidade atual, hábitos financeiros, objetivos e desafios.
 
                     <x-slot:footer>
@@ -279,7 +285,12 @@
                     </x-slot:footer>
                 </x-numbered-step>
 
-                <x-numbered-step class="p-8" data-reveal="up" number="04" title="Acompanhamento contínuo">
+                <x-numbered-step
+                    class="rounded-br-md rounded-bl-md p-8 md:rounded-tr-md md:rounded-bl-none"
+                    data-reveal="up"
+                    number="04"
+                    title="Acompanhamento contínuo"
+                >
                     Agendamos reuniões periódicas para acompanhar sua evolução, ajustando estratégias quando necessário.
 
                     <x-slot:footer>
@@ -288,6 +299,17 @@
                         </x-fr-text>
                     </x-slot:footer>
                 </x-numbered-step>
+            </div>
+
+            <div class="flex w-full flex-col items-center gap-4" data-reveal="up">
+                <x-fr-button
+                    tag="a"
+                    href="https://api.whatsapp.com/send/?phone=5511958397432&text=Visitei+o+site+da+Fire%7Cce+e+quero+mais+informa%C3%A7%C3%B5es&type=phone_number&app_absent=0"
+                    target="_blank"
+                >
+                    Descobrir meu plano
+                </x-fr-button>
+                <x-logo-badge class="justify-center md:justify-start"> Simples assim. Sem enrolação.</x-logo-badge>
             </div>
         </div>
     </section>
@@ -300,7 +322,8 @@
                 </x-slot:title>
                 <x-slot:description>
                     Sem curso, sem palestra, sem planilha genérica. Um plano construído para a
-                    <mark>sua realidade</mark> e só para ela.
+                    <mark>sua realidade</mark>
+                    e só para ela.
                 </x-slot:description>
             </x-fr-headline>
 
@@ -338,7 +361,7 @@
                     tagline="“Quero fazer meu dinheiro trabalhar por mim”"
                 >
                     <x-fr-heading>Perfil Platinum</x-fr-heading>
-                    <x-fr-text> Para quem quer clareza sobre o presente e confiança para planejar o futuro. </x-fr-text>
+                    <x-fr-text> Para quem quer clareza sobre o presente e confiança para planejar o futuro.</x-fr-text>
                     <x-fr-text size="sm" class="text-brand-primary! font-semibold!">+Gold</x-fr-text>
 
                     <hr class="border-border-base" />
@@ -402,7 +425,8 @@
                 </x-slot:title>
                 <x-slot:description>
                     Sem curso, sem palestra, sem planilha genérica. Um plano construído para a
-                    <mark>sua realidade</mark> e só para ela.
+                    <mark>sua realidade</mark>
+                    e só para ela.
                 </x-slot:description>
             </x-fr-headline>
 
@@ -483,8 +507,8 @@
                 </x-slot:header>
 
                 <x-slot:title>
-                    <mark>Planejamento financeiro</mark> é o primeiro passo para todos os outros que você vai dar na sua
-                    vida.
+                    <mark>Planejamento financeiro</mark>
+                    é o primeiro passo para todos os outros que você vai dar na sua vida.
                 </x-slot:title>
                 <x-slot:description>
                     Se tem alguma dúvida que a consultoria vai ajudar sua vida, por que não testa?<br />
