@@ -314,7 +314,7 @@
         </div>
     </section>
 
-    <section class="section">
+    <section class="section bg-elevation-01dp border-border-base border border-y p-8 md:p-16">
         <div class="container flex flex-col gap-8">
             <x-fr-headline data-reveal="up">
                 <x-slot:title>
@@ -328,22 +328,11 @@
             </x-fr-headline>
 
             <div class="grid grid-cols-1 gap-8 md:grid-cols-3" data-reveal-stagger="140">
-                <x-plan-card data-reveal="up" tagline="“Meu dinheiro some sem explicação”">
+                <x-plan-card data-reveal="up" variant="highlighted" tagline="“Meu dinheiro some sem explicação”">
                     <x-fr-heading>Perfil Gold</x-fr-heading>
                     <x-fr-text>
                         Para quem está começando a organizar sua vida financeira e deseja mais tranquilidade.
                     </x-fr-text>
-                    <x-fr-text size="sm" class="text-brand-primary! font-semibold!">Base</x-fr-text>
-
-                    <hr class="border-border-base" />
-
-                    <ul class="flex flex-col gap-4">
-                        <x-plan-feature featured>Organização Anual</x-plan-feature>
-                        <x-plan-feature>Mapa financeiro</x-plan-feature>
-                        <x-plan-feature>Construção de Reserva</x-plan-feature>
-                        <x-plan-feature>Planilha de fluxo de caixa</x-plan-feature>
-                        <x-plan-feature>Planilha de patrimônio</x-plan-feature>
-                    </ul>
 
                     <x-fr-button
                         variant="outline"
@@ -353,6 +342,18 @@
                     >
                         Esse sou eu
                     </x-fr-button>
+
+                    <hr class="border-border-base" />
+
+                    <x-fr-text size="sm" class="text-brand-primary! font-semibold!">Base</x-fr-text>
+
+                    <ul class="flex flex-col gap-4">
+                        <x-plan-feature featured>Organização Anual</x-plan-feature>
+                        <x-plan-feature>Mapa financeiro</x-plan-feature>
+                        <x-plan-feature>Construção de Reserva</x-plan-feature>
+                        <x-plan-feature>Planilha de fluxo de caixa</x-plan-feature>
+                        <x-plan-feature>Planilha de patrimônio</x-plan-feature>
+                    </ul>
                 </x-plan-card>
 
                 <x-plan-card
@@ -362,9 +363,19 @@
                 >
                     <x-fr-heading>Perfil Platinum</x-fr-heading>
                     <x-fr-text> Para quem quer clareza sobre o presente e confiança para planejar o futuro.</x-fr-text>
-                    <x-fr-text size="sm" class="text-brand-primary! font-semibold!">+Gold</x-fr-text>
+
+                    <x-fr-button
+                        variant="outline"
+                        tag="a"
+                        href="https://api.whatsapp.com/send/?phone=5511958397432&text=Visitei+o+site+da+Fire%7Cce+e+quero+mais+informa%C3%A7%C3%B5es+sobre+o+plano+platinum&type=phone_number&app_absent=0"
+                        target="_blank"
+                    >
+                        Esse sou eu
+                    </x-fr-button>
 
                     <hr class="border-border-base" />
+
+                    <x-fr-text size="sm" class="text-brand-primary! font-semibold!">+Gold</x-fr-text>
 
                     <ul class="flex flex-col gap-4">
                         <x-plan-feature featured>Preenchimento de Fluxo de Caixa</x-plan-feature>
@@ -373,41 +384,38 @@
                         <x-plan-feature>Parceiros de Investimento</x-plan-feature>
                         <x-plan-feature>Custo Oportunidade</x-plan-feature>
                     </ul>
-
-                    <x-fr-button
-                        tag="a"
-                        href="https://api.whatsapp.com/send/?phone=5511958397432&text=Visitei+o+site+da+Fire%7Cce+e+quero+mais+informa%C3%A7%C3%B5es+sobre+o+plano+platinum&type=phone_number&app_absent=0"
-                        target="_blank"
-                    >
-                        Esse sou eu
-                    </x-fr-button>
                 </x-plan-card>
 
-                <x-plan-card data-reveal="up" tagline="“Quero acelerar minha independência financeira”">
-                    <x-fr-heading>Perfil Black</x-fr-heading>
-                    <x-fr-text>
+                <x-plan-card
+                    data-reveal="up"
+                    variant="filled"
+                    tagline="“Quero acelerar minha independência financeira”"
+                >
+                    <x-fr-heading class="text-text-light!">Perfil Black</x-fr-heading>
+                    <x-fr-text class="text-text-light!">
                         Para quem quer organizar as finanças do zero e finalmente respirar no fim do mês.
                     </x-fr-text>
-                    <x-fr-text size="sm" class="text-brand-primary! font-semibold!">+Platinum</x-fr-text>
-
-                    <hr class="border-border-base" />
-
-                    <ul class="flex flex-col gap-4">
-                        <x-plan-feature featured>Revisão do Progresso</x-plan-feature>
-                        <x-plan-feature>Construção de Reserva Internacional</x-plan-feature>
-                        <x-plan-feature>Estratégias Exclusivas</x-plan-feature>
-                        <x-plan-feature>Carteiras Personalizadas</x-plan-feature>
-                        <x-plan-feature>Acompanhamento personalizado</x-plan-feature>
-                    </ul>
 
                     <x-fr-button
-                        variant="outline"
+                        variant="white"
                         tag="a"
                         href="https://api.whatsapp.com/send/?phone=5511958397432&text=Visitei+o+site+da+Fire%7Cce+e+quero+mais+informa%C3%A7%C3%B5es+sobre+o+plano+black&type=phone_number&app_absent=0"
                         target="_blank"
                     >
                         Esse sou eu
                     </x-fr-button>
+
+                    <hr class="border-white/30" />
+
+                    <x-fr-text size="sm" class="text-text-light! font-semibold!">+Platinum</x-fr-text>
+
+                    <ul class="flex flex-col gap-4">
+                        <x-plan-feature featured inverted>Revisão do Progresso</x-plan-feature>
+                        <x-plan-feature inverted>Construção de Reserva Internacional</x-plan-feature>
+                        <x-plan-feature inverted>Estratégias Exclusivas</x-plan-feature>
+                        <x-plan-feature inverted>Carteiras Personalizadas</x-plan-feature>
+                        <x-plan-feature inverted>Acompanhamento personalizado</x-plan-feature>
+                    </ul>
                 </x-plan-card>
             </div>
 
