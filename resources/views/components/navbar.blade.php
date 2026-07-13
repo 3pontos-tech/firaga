@@ -11,15 +11,18 @@
     $isColoredBg = !in_array($headerBg, ['bg-elevation-surface', '']);
 
     $navLinks = [
-        ['route' => 'home', 'label' => 'Home'],
-        ['route' => 'nossos-servicos', 'label' => 'Nossos Serviços'],
+        ['route' => 'home', 'label' => 'Home', 'primary' => 'Home'],
+        ['route' => 'nossos-servicos', 'label' => 'Nossos Serviços', 'primary' => 'Serviços'],
         ['route' => 'key-account', 'label' => 'Key Account'],
         ['route' => 'parcerias', 'label' => 'Parcerias'],
-        ['route' => 'trabalhe-conosco', 'label' => 'Trabalhe Conosco'],
-        ['route' => 'quem-somos', 'label' => 'Quem somos'],
-        ['route' => 'blog', 'label' => 'Blog'],
+        ['route' => 'trabalhe-conosco', 'label' => 'Trabalhe Conosco', 'primary' => 'Carreira'],
+        ['route' => 'quem-somos', 'label' => 'Quem somos', 'primary' => 'Quem somos'],
+        ['route' => 'blog', 'label' => 'Blog', 'primary' => 'Blog'],
         ['route' => 'code-capital', 'label' => 'Code Capital'],
     ];
+
+    // Primary links surfaced inline on desktop (short labels).
+    $primaryLinks = collect($navLinks)->filter(fn(array $link): bool => isset($link['primary']));
 @endphp
 
 <div
@@ -28,13 +31,31 @@
     x-effect="document.body.style.overflow = open ? 'hidden' : ''"
     class="h-full"
 >
-    <nav class="mx-auto flex h-full items-center justify-between px-4 sm:px-12 lg:px-24">
+    <nav class="relative mx-auto flex h-full items-center justify-between px-4 sm:px-12 lg:px-24">
         <x-logo />
+
+        <div class="absolute left-1/2 hidden -translate-x-1/2 items-center gap-8 lg:flex">
+            @foreach ($primaryLinks as $link)
+                @php $isActive = request()->routeIs($link['route']); @endphp
+                <a
+                    href="{{ route($link['route']) }}"
+                    @class ([
+                        'rounded-sm px-4 py-3 font-display font-semibold transition-colors',
+                        'bg-brand-primary text-text-light' => $isActive,
+                        'text-text-high hover:text-brand-primary' => !$isActive && !$isColoredBg,
+                        'text-text-light/80 hover:text-text-light' => !$isActive && $isColoredBg
+                    ])
+                    @if ($isActive) aria-current="page" @endif
+                >
+                    {{ $link['primary'] }}
+                </a>
+            @endforeach
+        </div>
 
         <button
             type="button"
             @click="open = !open"
-            class="text-brand-primary transition-opacity hover:opacity-80"
+            class="text-brand-primary transition-opacity hover:opacity-80 lg:hidden"
             :aria-expanded="open"
             aria-label="Menu"
         >
@@ -76,7 +97,7 @@
         @class ([
             $headerBg,
             $overlayThemeClass,
-            'fixed inset-x-0 bottom-0 z-40 overflow-y-auto border-t',
+            'fixed inset-x-0 bottom-0 z-40 overflow-y-auto border-t lg:hidden',
             'border-border-base' => !$isColoredBg,
             'border-text-light/20' => $isColoredBg
         ])
@@ -89,7 +110,7 @@
                     href="{{ route($link['route']) }}"
                     @click="open = false"
                     @class ([
-                        'border-b py-5 font-sans text-sm font-semibold transition-opacity hover:opacity-70',
+                        'border-b py-5 font-display font-semibold transition-opacity hover:opacity-70',
                         'border-border-base' => !$isColoredBg,
                         'border-text-light/20' => $isColoredBg,
                         'text-brand-primary' => !$isColoredBg && $isActive,
