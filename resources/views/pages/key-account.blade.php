@@ -85,10 +85,8 @@
                     class="mt-12"
                     data-reveal="up"
                     name="Felipe Rosa"
-                    role="Design"
-                    plan="Plano Gold"
+                    time="1 mês atrás"
                     avatar="https://i.pravatar.cc/80?img=12"
-                    metric="0% → 20% da renda investida"
                 >
                     Nunca achei que ia conseguir sair das dívidas. Em 5 meses com o
                     <span class="text-brand-primary font-bold">Matheus</span>, pela primeira vez na vida eu tenho
@@ -218,16 +216,14 @@
                     variant="centered"
                     class="bg-elevation-01dp border-border-base border p-4"
                     name="Isabelly Victória"
-                    plan="Plano Platinum"
+                    time="2 meses atrás"
                     avatar="https://lh3.googleusercontent.com/a-/ALV-UjWI5RyOf8Nhr9tlBG2g5XqtbTwqLIDu9ABSM1jlCBIxJ36Dn-ZiBw=w72-h72-p-rp-mo-br100"
-                    metric="0% → 20% da renda investida"
                 >
                     Quando falamos em organizar nossas finanças sempre imaginamos que é possível sozinho, mas garanto
                     que com a orientação certa o objetivo é alcançado muito mais rápido e de forma consciente.
                     <span class="text-brand-primary font-bold">
                         A consultoria é excepcional e traz clareza sobre gastos x investimentos x lazer.
                     </span>
-                    >
                 </x-testimonial>
 
                 <x-testimonial
@@ -235,9 +231,8 @@
                     variant="centered"
                     class="bg-elevation-01dp border-border-base border p-4"
                     name="Paulo Lima"
-                    plan="Plano Black"
+                    time="1 mês atrás"
                     avatar="https://lh3.googleusercontent.com/a-/ALV-UjV9yCw5Vw5oINtOnjLuCrpfCke-DHgX9lDXhRZayImkNc1AsaF_Pw=w72-h72-p-rp-mo-br100"
-                    metric="0% → 20% da renda investida"
                 >
                     O trabalho da Fire me surpreendeu, porque já entendo de finanças, investimentos até que
                     razoavelmente e pensei que seria mais uma empresa querendo vender qualquer coisa, mas aqui é um

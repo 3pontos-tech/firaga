@@ -1,12 +1,15 @@
 @props ([
     'variant' => 'default',
     'name',
-    'role' => null,
-    'plan' => null,
+    'time' => null,
     'avatar' => null,
     'avatarAlt' => '',
-    'metric' => null
+    'rating' => 5
 ])
+
+@php
+    $stars = max(0, min(5, (int) $rating));
+@endphp
 
 @if ($variant === 'centered')
     <div {{ $attributes->class(['flex flex-col gap-4 rounded-md']) }}>
@@ -16,60 +19,45 @@
             </div>
         @endif
 
-        <div class="flex items-center justify-between">
-            @if ($metric)
-                <x-fas-quote-left class="text-brand-primary size-4" />
-                <x-fr-text size="sm" class="text-brand-primary! font-semibold!">{{ $metric }}</x-fr-text>
-            @endif
-        </div>
-
-        <hr class="border-brand-primary w-full" />
-
         <x-fr-text class="text-text-high! font-medium! italic"> {{ $slot }} </x-fr-text>
 
-        <div class="flex flex-col items-center justify-center gap-2">
-            <x-fr-text class="text-text-high!">-- {{ $name }}</x-fr-text>
-            @if ($role || $plan)
-                <div class="flex items-center justify-center gap-2">
-                    @if ($role)
-                        <x-fr-text size="sm">{{ $role }}</x-fr-text>
-                    @endif
-                    @if ($role && $plan)
-                        <div class="bg-text-high size-1 rounded-full"></div>
-                    @endif
-                    @if ($plan)
-                        <x-fr-text size="sm" class="text-brand-primary!">{{ $plan }}</x-fr-text>
-                    @endif
-                </div>
-            @endif
+        <div class="flex items-center justify-between gap-4">
+            <div class="flex flex-col">
+                <x-fr-text size="sm" class="text-text-high! font-semibold!">{{ $name }}</x-fr-text>
+                @if ($time)
+                    <x-fr-text size="xs" class="text-text-low!">{{ $time }}</x-fr-text>
+                @endif
+            </div>
+
+            <div class="flex shrink-0 items-center gap-1">
+                @for ($i = 0; $i < $stars; $i++)
+                    <x-fas-star class="text-yellow-primary size-4 shrink-0" />
+                @endfor
+            </div>
         </div>
     </div>
 @else
-    <div {{ $attributes->class(['flex flex-col gap-3']) }}>
-        <div class="flex items-center justify-between">
-            @if ($metric)
-                <x-fas-quote-left class="text-brand-primary size-4" />
-                <x-fr-text size="sm" class="text-brand-primary! font-semibold!">{{ $metric }}</x-fr-text>
-            @endif
-        </div>
-
+    <div {{ $attributes->class(['flex flex-col gap-4']) }}>
         <x-fr-text class="text-text-high! font-medium! italic"> {{ $slot }} </x-fr-text>
 
-        <hr class="border-border-base w-full" />
+        <div class="flex items-center justify-between gap-4">
+            <div class="flex items-center gap-3">
+                @if ($avatar)
+                    <x-avatar :src="$avatar" :alt="$avatarAlt ?: $name" size="md" />
+                @endif
+                <div class="flex flex-col">
+                    <x-fr-text size="sm" class="text-text-high! font-semibold!">{{ $name }}</x-fr-text>
+                    @if ($time)
+                        <x-fr-text size="xs" class="text-text-low!">{{ $time }}</x-fr-text>
+                    @endif
+                </div>
+            </div>
 
-        <div class="flex items-center gap-2">
-            @if ($avatar)
-                <x-avatar :src="$avatar" :alt="$avatarAlt ?: $name" />
-            @endif
-            <x-fr-text size="sm">{{ $name }}</x-fr-text>
-            @if ($role)
-                <div class="bg-border-base size-1 rounded-full"></div>
-                <x-fr-text size="sm">{{ $role }}</x-fr-text>
-            @endif
-            @if ($plan)
-                <div class="bg-border-base size-1 rounded-full"></div>
-                <x-fr-text size="sm" class="text-brand-primary!">{{ $plan }}</x-fr-text>
-            @endif
+            <div class="flex shrink-0 items-center gap-1">
+                @for ($i = 0; $i < $stars; $i++)
+                    <x-fas-star class="text-yellow-primary size-4 shrink-0" />
+                @endfor
+            </div>
         </div>
     </div>
 @endif

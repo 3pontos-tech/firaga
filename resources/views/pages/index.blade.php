@@ -136,11 +136,13 @@
             data-reveal-stagger="120"
         >
             <div class="md:order-2 md:basis-1/3 md:self-stretch" data-reveal="left">
-                <img
-                    src="{{ asset('images/home_2_1x.webp') }}"
-                    alt="Imagem dos caras"
-                    class="h-50 w-auto md:h-full md:w-full md:object-cover"
-                />
+                <div class="relative aspect-569/422 w-full overflow-hidden md:aspect-auto md:h-full">
+                    <img
+                        src="{{ asset('images/home_2_1x.webp') }}"
+                        alt="Imagem dos caras"
+                        class="absolute top-1/2 left-1/2 h-[134.83%] w-[74.17%] -translate-x-1/2 -translate-y-1/2 -rotate-90 md:static md:h-full md:w-full md:translate-x-0 md:translate-y-0 md:rotate-0 md:object-cover"
+                    />
+                </div>
             </div>
 
             <div class="flex flex-col gap-8 md:order-1 md:basis-2/3 md:gap-16">
@@ -207,8 +209,7 @@
                 <x-testimonial
                     data-reveal="up"
                     name="Felipe Rosa"
-                    role="Design"
-                    plan="Plano Gold"
+                    time="1 mês atrás"
                     avatar="https://i.pravatar.cc/80?img=12"
                 >
                     Nunca achei que ia conseguir sair das dívidas. Em 5 meses com o Matheus, pela primeira vez na vida
@@ -218,7 +219,7 @@
         </div>
     </section>
 
-    <section class="section">
+    <section class="section mt-20">
         <div class="container grid grid-cols-1 items-center gap-8 md:grid-cols-2 md:gap-12 md:gap-x-28">
             <div class="flex flex-col items-center gap-8 md:items-start">
                 <x-fr-headline align="left-desk" data-reveal="up">
@@ -411,10 +412,8 @@
                     variant="centered"
                     class="bg-elevation-01dp border-border-base border p-4"
                     name="Emilly Monteiro Gomes"
-                    role="Design"
-                    plan="Plano Gold"
+                    time="2 meses atrás"
                     avatar="https://lh3.googleusercontent.com/a-/ALV-UjVOkOLWGbS9XPq1JU32VcUkJAH1Sa1b0JhIGRYjlRr8oYto8Fgi=w90-h90-p-rp-mo-br100"
-                    metric="0% → 20% da renda investida"
                 >
                     O atendimento da Firece é
                     <span class="text-brand-primary font-bold">atencioso, profissional e personalizado</span>, o que
@@ -427,10 +426,8 @@
                     variant="centered"
                     class="bg-elevation-01dp border-border-base border p-4"
                     name="Paulo Lima"
-                    role="Design"
-                    plan="Plano Gold"
+                    time="1 mês atrás"
                     avatar="https://lh3.googleusercontent.com/a/ACg8ocJZRAYVtNhUwcGWdv3MP2mP7RbRFQH4w-T08u78BprvC-AWNg=w90-h90-p-rp-mo-br100"
-                    metric="0% → 20% da renda investida"
                 >
                     Fechei a consultoria a três meses. Estou muito satisfeito, hoje tenho
                     <span class="text-brand-primary font-bold"
@@ -444,10 +441,8 @@
                     variant="centered"
                     class="bg-elevation-01dp border-border-base border p-4"
                     name="Mariana Shah Coury"
-                    role="Design"
-                    plan="Plano Gold"
+                    time="3 semanas atrás"
                     avatar="https://lh3.googleusercontent.com/a-/ALV-UjXRkXe2TX0jhbnpEfo6DRjqPHJLgWT-j_6uQDtEurYLwua9FPfA=w90-h90-p-rp-mo-br100"
-                    metric="0% → 20% da renda investida"
                 >
                     Os
                     <span class="text-brand-primary font-bold"
