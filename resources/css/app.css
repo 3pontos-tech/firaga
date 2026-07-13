@@ -27,7 +27,7 @@
     }
     @variant md {
         padding-inline: 32px;
-        max-width: 80rem;
+        max-width: 1336px;
     }
     @variant lg {
         padding-inline: 0;

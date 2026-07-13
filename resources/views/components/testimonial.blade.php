@@ -17,8 +17,8 @@
         @endif
 
         <div class="flex items-center justify-between">
-            <x-fas-quote-left class="text-brand-primary size-4" />
             @if ($metric)
+                <x-fas-quote-left class="text-brand-primary size-4" />
                 <x-fr-text size="sm" class="text-brand-primary! font-semibold!">{{ $metric }}</x-fr-text>
             @endif
         </div>
@@ -47,15 +47,15 @@
 @else
     <div {{ $attributes->class(['flex flex-col gap-3']) }}>
         <div class="flex items-center justify-between">
-            <x-fas-quote-left class="text-brand-primary size-4" />
             @if ($metric)
+                <x-fas-quote-left class="text-brand-primary size-4" />
                 <x-fr-text size="sm" class="text-brand-primary! font-semibold!">{{ $metric }}</x-fr-text>
             @endif
         </div>
 
-        <hr class="border-brand-primary w-full" />
-
         <x-fr-text class="text-text-high! font-medium! italic"> {{ $slot }} </x-fr-text>
+
+        <hr class="border-border-base w-full" />
 
         <div class="flex items-center gap-2">
             @if ($avatar)

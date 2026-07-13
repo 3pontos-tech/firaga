@@ -137,19 +137,20 @@
         >
             <div class="md:order-2 md:basis-1/3 md:self-stretch" data-reveal="left">
                 <img
-                    src="{{ asset('images/guys-looking-at-notebook.png') }}"
+                    src="{{ asset('images/home_2_1x.webp') }}"
                     alt="Imagem dos caras"
-                    class="h-50 w-auto md:h-full md:w-full md:rounded-lg md:object-cover"
+                    class="h-50 w-auto md:h-full md:w-full md:object-cover"
                 />
             </div>
 
-            <div class="flex flex-col gap-8 md:order-1 md:basis-2/3 md:gap-11">
+            <div class="flex flex-col gap-8 md:order-1 md:basis-2/3 md:gap-16">
                 <x-fr-headline align="left" data-reveal="up">
                     <x-slot:title>
-                        <mark>Independência para recomendar</mark> o que realmente faz sentido para você
+                        Por que a <mark>Firece</mark>?
                     </x-slot:title>
                     <x-slot:description>
-                        A <mark>Fire|ce</mark> não possui vínculo com bancos, seguradoras ou instituições financeiras.
+                        Em média, brasileiros perdem 23% da renda sem saber para onde foi. A <mark>Fire|ce</mark>
+                        mostra exatamente o que está acontecendo.
                     </x-slot:description>
                 </x-fr-headline>
 
@@ -161,16 +162,14 @@
                         class="flex flex-col gap-4 py-6 first:pt-0 last:pb-0 md:px-4 md:py-0 md:first:pl-0 md:last:pr-0"
                         data-reveal="up"
                     >
-                        <x-icon-box icon="heroicon-c-user" />
+                        <x-icon-box icon="heroicon-c-scale" />
                         <x-fr-headline align="left" size="sm" container-class="gap-2!">
                             <x-slot:title>
-                                Isso significa que
-                                <mark
-                                    >nossas recomendações não são feitas com base em metas comerciais, comissões ou
-                                    produtos específicos</mark
-                                >
+                                <mark>Orientação financeira</mark> sem conflito de interesse
                             </x-slot:title>
-                            <x-slot:description></x-slot:description>
+                            <x-slot:description>
+                                Recomendações sem metas comerciais, comissões ou produtos específicos para vender.
+                            </x-slot:description>
                         </x-fr-headline>
                     </div>
 
@@ -178,16 +177,14 @@
                         class="flex flex-col gap-4 py-6 first:pt-0 last:pb-0 md:px-4 md:py-0 md:first:pl-0 md:last:pr-0"
                         data-reveal="up"
                     >
-                        <x-icon-box icon="heroicon-c-user" />
+                        <x-icon-box icon="heroicon-c-adjustments-horizontal" />
                         <x-fr-headline align="left" size="sm" container-class="gap-2!">
                             <x-slot:title>
-                                Nosso compromisso é
-                                <mark
-                                    >construir estratégias alinhadas aos objetivos, momento de vida e realidade de cada
-                                    cliente</mark
-                                >
+                                Estratégias feitas para a <mark>sua realidade</mark>
                             </x-slot:title>
-                            <x-slot:description></x-slot:description>
+                            <x-slot:description>
+                                Estratégias alinhadas aos seus objetivos, momento de vida e realidade financeira.
+                            </x-slot:description>
                         </x-fr-headline>
                     </div>
 
@@ -195,16 +192,14 @@
                         class="flex flex-col gap-4 py-6 first:pt-0 last:pb-0 md:px-4 md:py-0 md:first:pl-0 md:last:pr-0"
                         data-reveal="up"
                     >
-                        <x-icon-box icon="heroicon-c-user" />
+                        <x-icon-box icon="fas-handshake" />
                         <x-fr-headline align="left" size="sm" container-class="gap-2!">
                             <x-slot:title>
-                                Porque
-                                <mark
-                                    >planejamento financeiro de verdade começa pela confiança em quem está do seu
-                                    lado</mark
-                                >.
+                                <mark>Planejamento financeiro</mark> baseado em confiança
                             </x-slot:title>
-                            <x-slot:description></x-slot:description>
+                            <x-slot:description>
+                                Planejamento financeiro começa com confiança em quem está caminhando ao seu lado.
+                            </x-slot:description>
                         </x-fr-headline>
                     </div>
                 </div>
@@ -215,11 +210,9 @@
                     role="Design"
                     plan="Plano Gold"
                     avatar="https://i.pravatar.cc/80?img=12"
-                    metric="0% → 20% da renda investida"
                 >
-                    Nunca achei que ia conseguir sair das dívidas. Em 5 meses com o
-                    <span class="text-brand-primary font-bold">Matheus</span>, pela primeira vez na vida eu tenho
-                    reserva de emergência.
+                    Nunca achei que ia conseguir sair das dívidas. Em 5 meses com o Matheus, pela primeira vez na vida
+                    eu tenho reserva de emergência.
                 </x-testimonial>
             </div>
         </div>
