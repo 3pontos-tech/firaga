@@ -93,7 +93,7 @@
         </div>
     </section>
 
-    <section class="section mt-20">
+    <section class="section">
         <div class="container flex flex-col items-center gap-8 text-center">
             <x-fr-heading size="lg" data-reveal="up"> Reconhece alguma dessas histórias?</x-fr-heading>
             <div class="grid grid-cols-1 items-start gap-3 text-left md:grid-cols-3 md:gap-6" data-reveal-stagger="100">
@@ -131,7 +131,7 @@
         </div>
     </section>
 
-    <section class="section dark bg-elevation-surface mt-20 px-4 py-20">
+    <section class="section dark bg-elevation-surface px-4 py-20">
         <div
             class="container flex flex-col gap-8 md:flex-row md:items-stretch md:gap-12 md:gap-x-28"
             data-reveal-stagger="120"
@@ -226,7 +226,7 @@
         </div>
     </section>
 
-    <section class="section mt-20">
+    <section class="section">
         <div class="container grid grid-cols-1 items-center gap-8">
             <x-fr-headline data-reveal="up">
                 <x-slot:title>
@@ -481,47 +481,19 @@
     </section>
 
     <x-cta-banner
-        cta-label="Descobrir meu plano"
+        cta-label="Fale com um consultor"
         cta-href="https://api.whatsapp.com/send/?phone=5511958397432&text=Visitei+o+site+da+Fire%7Cce+e+quero+mais+informa%C3%A7%C3%B5es&type=phone_number&app_absent=0"
         cta-target="_blank"
-        footer="O objetivo não é encontrar atalhos. É construir uma vida financeira mais organizada, segura e alinhada aos seus objetivos."
     >
         <x-slot:proof>
-            <x-social-proof variant="dark">Mais de 9.000 investidores já fazem parte</x-social-proof>
+            <x-social-proof variant="dark">Mais de 50 investidores já fazem parte</x-social-proof>
         </x-slot:proof>
         <x-slot:title>
-            O que muda quando existe planejamento financeiro?
+            Planejamento financeiro é o primeiro passo para todos os outros que você vai dar na sua vida.
         </x-slot:title>
         <x-slot:description>
-            Mais organização financeira - Clareza para tomar decisões importantes - Segurança para investir - Controle
-            sobre o próprio dinheiro - Construção patrimonial sustentável<br />
-            Mais tranquilidade para planejar o futuro
+            Se tem alguma dúvida que a consultoria vai ajudar sua vida, por que não testa? A primeira análise é
+            gratuita.
         </x-slot:description>
     </x-cta-banner>
-
-    <section class="section">
-        <div class="container flex flex-col items-center gap-8">
-            <x-fr-headline data-reveal="up">
-                <x-slot:header>
-                    <x-social-proof variant="high">Mais de 50 investidores já fazem parte</x-social-proof>
-                </x-slot:header>
-
-                <x-slot:title>
-                    <mark>Planejamento financeiro</mark>
-                    é o primeiro passo para todos os outros que você vai dar na sua vida.
-                </x-slot:title>
-                <x-slot:description>
-                    Se tem alguma dúvida que a consultoria vai ajudar sua vida, por que não testa?<br />
-                    A primeira análise é gratuita.
-                </x-slot:description>
-            </x-fr-headline>
-            <x-fr-button
-                tag="a"
-                href="https://api.whatsapp.com/send/?phone=5511958397432&text=Visitei+o+site+da+Fire%7Cce+e+quero+mais+informa%C3%A7%C3%B5es&type=phone_number&app_absent=0"
-                target="_blank"
-            >
-                Falar com um consultor
-            </x-fr-button>
-        </div>
-    </section>
 </x-layout.landing>

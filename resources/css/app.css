@@ -37,7 +37,7 @@
 @utility section {
     margin-block-start: var(--section-gap);
     @variant md {
-        margin-block-start: 180px;
+        margin-block-start: 80px;
     }
 }
 
