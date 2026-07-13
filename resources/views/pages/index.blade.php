@@ -16,7 +16,7 @@
         class="section-first flex min-h-[calc(100dvh-var(--header-height))] flex-col items-center gap-4 md:min-h-0"
     >
         <div
-            class="container flex flex-col items-center gap-8 md:flex-1 md:flex-row md:items-center md:justify-between md:gap-12"
+            class="container flex flex-col items-center md:flex-1 md:flex-row md:items-center md:justify-between"
             data-reveal-stagger="140"
         >
             <div class="flex w-full flex-col items-center gap-8 md:basis-3/5 md:items-start">
@@ -29,9 +29,12 @@
                         Sua próxima conquista começa com <mark>Planejamento Financeiro</mark>
                     </x-slot:title>
                     <x-slot:description>
-                        A <mark>Fire|ce</mark> ajuda a organizar sua vida financeira, controlar seu dinheiro com clareza
-                        e tomar decisões inteligentes, sem depender de produtos empurrados por bancos ou investimentos
-                        da moda.
+                        A Fire|ce ajuda a organizar sua vida financeira, controlar seu dinheiro com clareza e tomar
+                        decisões inteligentes, sem depender de produtos empurrados por bancos ou investimentos da moda.
+
+                        <x-logo-badge class="justify-center md:justify-start">
+                            Sem custo, sem compromisso, uma conversa rápida
+                        </x-logo-badge>
                     </x-slot:description>
                 </x-fr-headline>
 
@@ -43,29 +46,53 @@
                     >
                         Falar com um consultor
                     </x-fr-button>
-                    <x-logo-badge class="justify-center md:justify-start">
-                        Sem custo, sem compromisso, uma conversa rápida
-                    </x-logo-badge>
                 </div>
             </div>
 
             <div class="relative hidden w-full md:block md:min-h-160 md:basis-2/5" data-reveal="scale">
-                <div class="absolute inset-0 -z-1 rounded-lg bg-linear-to-b"></div>
-                <img
-                    src="{{ asset('images/hero-section-imagem.png') }}"
-                    alt="Imagem de homem"
-                    class="absolute inset-0 h-full w-full rounded-lg object-contain object-bottom"
-                />
+                <video
+                    class="absolute inset-0 h-full w-full rounded-lg object-cover"
+                    autoplay
+                    muted
+                    loop
+                    playsinline
+                    preload="auto"
+                    aria-hidden="true"
+                >
+                    <source src="{{ asset('video/firece-hero.mp4') }}" type="video/mp4" />
+                </video>
+
+                {{-- Recorte branco orgânico cobrindo a lateral esquerda do vídeo --}}
+                <svg
+                    class="text-elevation-surface pointer-events-none absolute inset-0 h-full w-full"
+                    viewBox="0 0 732 640"
+                    preserveAspectRatio="none"
+                    fill="currentColor"
+                    aria-hidden="true"
+                >
+                    <path
+                        d="M-8,-8 L1.4812,25.1051 L92.5537,237.094 C131.929,328.748 123.172,433.979 69.187,517.864 L8.54887,612.087 L-8,648 Z"
+                    />
+                </svg>
             </div>
         </div>
 
         <div class="relative mt-auto w-full md:hidden" data-reveal="scale">
-            <div class="absolute inset-0 top-10 -z-1 rounded-t-lg bg-linear-to-b"></div>
-            <img src="{{ asset('images/hero-section-imagem.png') }}" alt="Imagem de homem" class="w-full" />
+            <video
+                class="aspect-4/5 w-full rounded-lg object-cover"
+                autoplay
+                muted
+                loop
+                playsinline
+                preload="auto"
+                aria-hidden="true"
+            >
+                <source src="{{ asset('video/firece-hero.mp4') }}" type="video/mp4" />
+            </video>
         </div>
     </section>
 
-    <section class="section">
+    <section class="section mt-20">
         <div class="container flex flex-col items-center gap-8 text-center">
             <x-fr-heading size="lg" data-reveal="up"> Reconhece alguma dessas histórias? </x-fr-heading>
             <div class="grid grid-cols-1 items-start gap-3 text-left md:grid-cols-3 md:gap-6" data-reveal-stagger="100">
@@ -103,7 +130,7 @@
         </div>
     </section>
 
-    <section class="section dark bg-elevation-surface px-4 py-20">
+    <section class="section dark bg-elevation-surface mt-20 px-4 py-20">
         <div
             class="container flex flex-col gap-8 md:flex-row md:items-stretch md:gap-12 md:gap-x-28"
             data-reveal-stagger="120"
