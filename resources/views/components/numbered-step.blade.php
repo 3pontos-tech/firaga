@@ -1,14 +1,17 @@
-@props (['number', 'title' => null, 'showChevron' => false, 'inverted' => false])
+@props ([ 'number', 'title' => null, 'showChevron' => false, 'inverted' => false, 'lightText' => false ])
 
 @php
+    // lightText clareia título/descrição mantendo o número em brand-primary;
+    // inverted também torna o número claro.
+    $lightText = $lightText || $inverted;
     $numberColor = $inverted ? 'text-text-light' : 'text-brand-primary';
-    $chevronColor = $inverted ? 'text-text-light' : 'text-icon-medium';
-    $textColorClass = $inverted ? 'text-text-light!' : '';
+    $chevronColor = $lightText ? 'text-text-light' : 'text-icon-medium';
+    $textColorClass = $lightText ? 'text-text-light!' : '';
 @endphp
 
 <div {{ $attributes->class('flex flex-col gap-3') }}>
     <div class="flex items-center justify-between">
-        <p class="font-display text-xl font-medium {{ $numberColor }}">{{ $number }}</p>
+        <p class="font-display text-2xl font-medium {{ $numberColor }}">{{ $number }}</p>
 
         @if ($showChevron)
             <x-heroicon-c-chevron-right class="size-7 {{ $chevronColor }}" />

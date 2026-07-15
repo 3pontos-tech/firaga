@@ -11,30 +11,143 @@
     $isColoredBg = !in_array($headerBg, ['bg-elevation-surface', '']);
 
     $navLinks = [
-        ['route' => 'home', 'label' => 'Home'],
-        ['route' => 'nossos-servicos', 'label' => 'Nossos Serviços'],
+        ['route' => 'home', 'label' => 'Home', 'primary' => 'Home'],
+        ['route' => 'nossos-servicos', 'label' => 'Nossos Serviços', 'primary' => 'Serviços'],
         ['route' => 'key-account', 'label' => 'Key Account'],
         ['route' => 'parcerias', 'label' => 'Parcerias'],
-        ['route' => 'trabalhe-conosco', 'label' => 'Trabalhe Conosco'],
-        ['route' => 'quem-somos', 'label' => 'Quem somos'],
-        ['route' => 'blog', 'label' => 'Blog'],
+        ['route' => 'trabalhe-conosco', 'label' => 'Trabalhe Conosco', 'primary' => 'Carreira'],
+        ['route' => 'quem-somos', 'label' => 'Quem somos', 'primary' => 'Quem somos'],
+        ['route' => 'blog', 'label' => 'Blog', 'primary' => 'Blog'],
         ['route' => 'code-capital', 'label' => 'Code Capital'],
+    ];
+
+    // Primary links surfaced inline on desktop (short labels).
+    $primaryLinks = collect($navLinks)->filter(fn(array $link): bool => isset($link['primary']));
+
+    $submenuData = [
+        'home' => [
+            'tabs' => [
+                ['label' => 'Início', 'anchor' => '#hero'],
+                ['label' => 'Depoimentos', 'anchor' => '#depoimentos'],
+                ['label' => 'Por que Firece', 'anchor' => '#por-que-firece'],
+                ['label' => 'Processo', 'anchor' => '#processo'],
+                ['label' => 'Planos', 'anchor' => '#planos'],
+            ],
+            'services' => [
+                ['label' => 'Nossos Serviços', 'route' => 'nossos-servicos'],
+                ['label' => 'Key Account', 'route' => 'key-account'],
+                ['label' => 'Parcerias', 'route' => 'parcerias'],
+                ['label' => 'Code Capital', 'route' => 'code-capital'],
+            ],
+            'careers' => [['label' => 'Trabalhe Conosco', 'route' => 'trabalhe-conosco']],
+        ],
+        'nossos-servicos' => [
+            'tabs' => [
+                ['label' => 'Visão Geral', 'anchor' => '#visao-geral'],
+                ['label' => 'Serviços', 'anchor' => '#servicos'],
+            ],
+            'services' => [
+                ['label' => 'Nossos Serviços', 'route' => 'nossos-servicos'],
+                ['label' => 'Key Account', 'route' => 'key-account'],
+                ['label' => 'Parcerias', 'route' => 'parcerias'],
+                ['label' => 'Code Capital', 'route' => 'code-capital'],
+            ],
+            'careers' => [['label' => 'Trabalhe Conosco', 'route' => 'trabalhe-conosco']],
+        ],
+        'trabalhe-conosco' => [
+            'tabs' => [['label' => 'Vagas', 'anchor' => '#vagas'], ['label' => 'Cultura', 'anchor' => '#cultura']],
+            'services' => [
+                ['label' => 'Nossos Serviços', 'route' => 'nossos-servicos'],
+                ['label' => 'Key Account', 'route' => 'key-account'],
+                ['label' => 'Parcerias', 'route' => 'parcerias'],
+                ['label' => 'Code Capital', 'route' => 'code-capital'],
+            ],
+            'careers' => [['label' => 'Trabalhe Conosco', 'route' => 'trabalhe-conosco']],
+        ],
+        'quem-somos' => [
+            'tabs' => [['label' => 'Sobre nós', 'anchor' => '#sobre'], ['label' => 'Equipe', 'anchor' => '#equipe']],
+            'services' => [
+                ['label' => 'Nossos Serviços', 'route' => 'nossos-servicos'],
+                ['label' => 'Key Account', 'route' => 'key-account'],
+                ['label' => 'Parcerias', 'route' => 'parcerias'],
+                ['label' => 'Code Capital', 'route' => 'code-capital'],
+            ],
+            'careers' => [['label' => 'Trabalhe Conosco', 'route' => 'trabalhe-conosco']],
+        ],
+        'blog' => [
+            'tabs' => [
+                ['label' => 'Artigos', 'anchor' => '#artigos'],
+                ['label' => 'Categorias', 'anchor' => '#categorias'],
+            ],
+            'services' => [
+                ['label' => 'Nossos Serviços', 'route' => 'nossos-servicos'],
+                ['label' => 'Key Account', 'route' => 'key-account'],
+                ['label' => 'Parcerias', 'route' => 'parcerias'],
+                ['label' => 'Code Capital', 'route' => 'code-capital'],
+            ],
+            'careers' => [['label' => 'Trabalhe Conosco', 'route' => 'trabalhe-conosco']],
+        ],
     ];
 @endphp
 
 <div
-    x-data="{ open: false }"
-    @keydown.escape.window="open = false"
+    x-data="{
+        open: false,
+        activeSubmenu: null,
+        submenuTimeout: null,
+        showSubmenu(key) {
+            clearTimeout(this.submenuTimeout);
+            this.submenuTimeout = setTimeout(() => {
+                this.activeSubmenu = key;
+            }, 80);
+        },
+        hideSubmenu() {
+            clearTimeout(this.submenuTimeout);
+            this.submenuTimeout = setTimeout(() => {
+                this.activeSubmenu = null;
+            }, 120);
+        },
+        cancelHide() {
+            clearTimeout(this.submenuTimeout);
+        },
+    }"
+    @keydown.escape.window="
+        open = false;
+        activeSubmenu = null;
+    "
     x-effect="document.body.style.overflow = open ? 'hidden' : ''"
     class="h-full"
 >
-    <nav class="mx-auto flex h-full items-center justify-between px-4 sm:px-12 lg:px-24">
+    <nav class="relative mx-auto flex h-full items-center justify-between px-4 sm:px-12 lg:px-24">
         <x-logo />
+
+        <div class="absolute left-1/2 hidden -translate-x-1/2 items-center gap-8 lg:flex">
+            @foreach ($primaryLinks as $link)
+                @php $isActive = request()->routeIs($link['route']); @endphp
+                <a
+                    href="{{ route($link['route']) }}"
+                    @mouseenter="showSubmenu('{{ $link['route'] }}')"
+                    @mouseleave="hideSubmenu()"
+                    @class ([
+                        'rounded-sm px-4 py-3 font-display font-semibold transition-colors',
+                        'bg-brand-primary text-text-light' => $isActive,
+                        'text-text-high hover:text-brand-primary' => !$isActive && !$isColoredBg,
+                        'text-text-light/80 hover:text-text-light' => !$isActive && $isColoredBg
+                    ])
+                    @if ($isActive) aria-current="page" @endif
+                >
+                    {{ $link['primary'] }}
+                </a>
+            @endforeach
+        </div>
 
         <button
             type="button"
-            @click="open = !open"
-            class="text-brand-primary transition-opacity hover:opacity-80"
+            @click="
+                open = !open;
+                activeSubmenu = null;
+            "
+            class="text-brand-primary transition-opacity hover:opacity-80 lg:hidden"
             :aria-expanded="open"
             aria-label="Menu"
         >
@@ -64,6 +177,110 @@
         </button>
     </nav>
 
+    {{-- Desktop Submenu Panels --}}
+    @foreach ($submenuData as $key => $data)
+        <div
+            x-show="activeSubmenu === '{{ $key }}'"
+            x-cloak
+            x-transition:enter="transition duration-200 ease-out"
+            x-transition:enter-start="opacity-0"
+            x-transition:enter-end="opacity-100"
+            x-transition:leave="transition duration-150 ease-in"
+            x-transition:leave-start="opacity-100"
+            x-transition:leave-end="opacity-0"
+            @mouseenter="cancelHide()"
+            @mouseleave="hideSubmenu()"
+            @class ([
+                'fixed inset-x-0 z-50 mx-auto hidden max-w-[1336px] overflow-y-auto border lg:block',
+                $headerBg,
+                $overlayThemeClass,
+                'border-border-base' => !$isColoredBg,
+                'border-text-light/20' => $isColoredBg
+            ])
+            style="top: var(--header-height); max-height: 364px"
+        >
+            <div class="font-display flex items-start gap-8 px-8 py-8">
+                {{-- Column 1: Image + Text --}}
+                <div class="flex w-72 shrink-0 flex-col gap-3">
+                    <img
+                        src="{{ asset('images/firece-submenu.png') }}"
+                        alt="Firece"
+                        class="h-44 w-full rounded-lg object-cover"
+                    />
+                    <x-fr-heading level="3" class="text-base!"
+                        >Venha fazer parte da <span class="text-brand-primary">Firece</span></x-fr-heading
+                    >
+                    <x-fr-text size="md">
+                        Conte com a Firece para organizar suas finanças, planejar seus próximos passos e com mais
+                        segurança.
+                    </x-fr-text>
+                </div>
+
+                {{-- Column 2: Tabs --}}
+                <div class="flex flex-1 flex-col gap-1.5">
+                    <h4 class="text-text-high mb-2 text-base font-semibold">Navegação</h4>
+                    <hr class="border-border-base" />
+                    <div class="grid grid-flow-col grid-rows-4 gap-x-6">
+                        @foreach ($data['tabs'] as $tab)
+                            <div class="flex items-center justify-between gap-2">
+                                <a
+                                    href="{{ request()->routeIs($key) ? $tab['anchor'] : route($key) . $tab['anchor'] }}"
+                                    class="text-text-medium w-fit rounded-sm px-4 py-3 font-sans text-base font-medium transition-colors"
+                                    @click="activeSubmenu = null"
+                                >
+                                    {{ $tab['label'] }}
+                                </a>
+                                <x-heroicon-c-chevron-right class="text-brand-primary size-4 shrink-0" />
+                            </div>
+                        @endforeach
+                    </div>
+                </div>
+
+                {{-- Column 3: Services + Careers --}}
+                <div class="flex gap-8">
+                    <div class="flex flex-col gap-1.5">
+                        <h4 class="text-text-high mb-2 text-base font-semibold">Serviços</h4>
+                        <hr class="border-border-base" />
+                        <div>
+                            @foreach ($data['services'] as $service)
+                                <div class="flex items-center justify-between gap-2">
+                                    <a
+                                        href="{{ route($service['route']) }}"
+                                        class="text-text-medium w-fit rounded-sm px-4 py-3 font-sans text-base font-medium transition-colors"
+                                        @click="activeSubmenu = null"
+                                    >
+                                        {{ $service['label'] }}
+                                    </a>
+                                    <x-heroicon-c-chevron-right class="text-brand-primary size-4 shrink-0" />
+                                </div>
+                            @endforeach
+                        </div>
+                    </div>
+
+                    <div class="flex flex-col gap-1.5">
+                        <h4 class="text-text-high mb-2 text-base font-semibold">Carreiras</h4>
+                        <hr class="border-border-base" />
+                        <div>
+                            @foreach ($data['careers'] as $career)
+                                <div class="flex items-center justify-between gap-2">
+                                    <a
+                                        href="{{ route($career['route']) }}"
+                                        class="text-text-medium w-fit rounded-sm px-4 py-3 font-sans text-base font-medium transition-colors"
+                                        @click="activeSubmenu = null"
+                                    >
+                                        {{ $career['label'] }}
+                                    </a>
+                                    <x-heroicon-c-chevron-right class="text-brand-primary size-4 shrink-0" />
+                                </div>
+                            @endforeach
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    @endforeach
+
+    {{-- Mobile Menu Overlay --}}
     <div
         x-show="open"
         x-cloak
@@ -76,20 +293,21 @@
         @class ([
             $headerBg,
             $overlayThemeClass,
-            'fixed inset-x-0 bottom-0 z-40 overflow-y-auto border-t',
+            'fixed inset-x-0 bottom-0 z-40 overflow-y-auto border-t lg:hidden',
             'border-border-base' => !$isColoredBg,
             'border-text-light/20' => $isColoredBg
         ])
         style="top: var(--header-height)"
     >
-        <div class="mx-auto flex flex-col px-4 py-8 sm:px-12 lg:px-24">
-            @foreach ($navLinks as $link)
+        {{-- Level 1: Primary links --}}
+        <div x-show="!activeSubmenu" class="mx-auto flex flex-col px-4 py-8 sm:px-12 lg:px-24">
+            @foreach ($primaryLinks as $link)
                 @php $isActive = request()->routeIs($link['route']); @endphp
-                <a
-                    href="{{ route($link['route']) }}"
-                    @click="open = false"
+                <button
+                    type="button"
+                    @click="activeSubmenu = '{{ $link['route'] }}'"
                     @class ([
-                        'border-b py-5 font-sans text-sm font-semibold transition-opacity hover:opacity-70',
+                        'flex w-full items-center justify-between border-b py-5 font-display font-semibold transition-opacity',
                         'border-border-base' => !$isColoredBg,
                         'border-text-light/20' => $isColoredBg,
                         'text-brand-primary' => !$isColoredBg && $isActive,
@@ -98,9 +316,113 @@
                         'text-text-light/70' => $isColoredBg && !$isActive
                     ])
                 >
-                    {{ $link['label'] }}
-                </a>
+                    {{ $link['primary'] }}
+                    <x-heroicon-c-chevron-right class="text-brand-primary size-4 shrink-0" />
+                </button>
             @endforeach
         </div>
+
+        {{-- Level 2: Full-screen submenu per primary link --}}
+        @foreach ($submenuData as $key => $data)
+            <div
+                x-show="activeSubmenu === '{{ $key }}'"
+                x-cloak
+                class="mx-auto flex flex-col px-4 py-8 sm:px-12 lg:px-24"
+            >
+                <button
+                    type="button"
+                    @click="activeSubmenu = null"
+                    @class ([
+                        'mb-4 flex w-fit items-center gap-2 font-display font-semibold',
+                        'text-text-high' => !$isColoredBg,
+                        'text-text-light' => $isColoredBg
+                    ])
+                >
+                    <x-heroicon-c-arrow-left class="size-4 shrink-0" />
+                    Voltar
+                </button>
+
+                <div class="flex flex-col gap-6">
+                    {{-- Image + Text --}}
+                    <div class="flex flex-col gap-3">
+                        <img
+                            src="{{ asset('images/firece-submenu.png') }}"
+                            alt="Firece"
+                            class="h-40 w-full rounded-lg object-cover"
+                        />
+                        <x-fr-heading level="3" class="text-base!"
+                            >Venha fazer parte da <span class="text-brand-primary">Firece</span></x-fr-heading
+                        >
+                        <x-fr-text size="md">
+                            Conte com a Firece para organizar suas finanças, planejar seus próximos passos e com mais
+                            segurança.
+                        </x-fr-text>
+                    </div>
+
+                    {{-- Navegação --}}
+                    <div class="flex flex-col gap-1.5">
+                        <h4 class="text-text-high mb-2 text-base font-semibold">Navegação</h4>
+                        <hr class="border-border-base" />
+                        <div class="flex flex-col">
+                            @foreach ($data['tabs'] as $tab)
+                                <a
+                                    href="{{ request()->routeIs($key) ? $tab['anchor'] : route($key) . $tab['anchor'] }}"
+                                    class="text-text-medium flex items-center justify-between gap-2 rounded-sm px-4 py-3 font-sans text-base font-medium transition-colors"
+                                    @click="
+                                        open = false;
+                                        activeSubmenu = null;
+                                    "
+                                >
+                                    {{ $tab['label'] }}
+                                    <x-heroicon-c-chevron-right class="text-brand-primary size-4 shrink-0" />
+                                </a>
+                            @endforeach
+                        </div>
+                    </div>
+
+                    {{-- Serviços --}}
+                    <div class="flex flex-col gap-1.5">
+                        <h4 class="text-text-high mb-2 text-base font-semibold">Serviços</h4>
+                        <hr class="border-border-base" />
+                        <div class="flex flex-col">
+                            @foreach ($data['services'] as $service)
+                                <a
+                                    href="{{ route($service['route']) }}"
+                                    class="text-text-medium flex items-center justify-between gap-2 rounded-sm px-4 py-3 font-sans text-base font-medium transition-colors"
+                                    @click="
+                                        open = false;
+                                        activeSubmenu = null;
+                                    "
+                                >
+                                    {{ $service['label'] }}
+                                    <x-heroicon-c-chevron-right class="text-brand-primary size-4 shrink-0" />
+                                </a>
+                            @endforeach
+                        </div>
+                    </div>
+
+                    {{-- Carreiras --}}
+                    <div class="flex flex-col gap-1.5">
+                        <h4 class="text-text-high mb-2 text-base font-semibold">Carreiras</h4>
+                        <hr class="border-border-base" />
+                        <div class="flex flex-col">
+                            @foreach ($data['careers'] as $career)
+                                <a
+                                    href="{{ route($career['route']) }}"
+                                    class="text-text-medium flex items-center justify-between gap-2 rounded-sm px-4 py-3 font-sans text-base font-medium transition-colors"
+                                    @click="
+                                        open = false;
+                                        activeSubmenu = null;
+                                    "
+                                >
+                                    {{ $career['label'] }}
+                                    <x-heroicon-c-chevron-right class="text-brand-primary size-4 shrink-0" />
+                                </a>
+                            @endforeach
+                        </div>
+                    </div>
+                </div>
+            </div>
+        @endforeach
     </div>
 </div>
