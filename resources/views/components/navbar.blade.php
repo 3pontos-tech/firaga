@@ -119,7 +119,10 @@
     class="h-full"
 >
     <nav class="relative mx-auto flex h-full items-center justify-between px-4 sm:px-12 lg:px-24">
-        <x-logo />
+        <x-logo-with-text
+            size="sm"
+            class="[&_.st0]:text-brand-primary [&_.st1]:text-text-high !w-[94px] lg:!w-[212px]"
+        />
 
         <div class="absolute left-1/2 hidden -translate-x-1/2 items-center gap-8 lg:flex">
             @foreach ($primaryLinks as $link)
