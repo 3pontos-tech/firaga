@@ -479,4 +479,6 @@
             gratuita.
         </x-slot:description>
     </x-cta-banner>
+
+    <x-lead-quiz />
 </x-layout.landing>
