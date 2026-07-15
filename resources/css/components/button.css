@@ -99,6 +99,14 @@
     }
 }
 
+.fr-button-variant-success {
+    @apply text-text-light w-full bg-green-600 px-8 py-4 font-bold;
+
+    @variant md {
+        @apply w-auto;
+    }
+}
+
 /* Spinner */
 .fr-button-spinner {
     @apply absolute inline-flex items-center justify-center;

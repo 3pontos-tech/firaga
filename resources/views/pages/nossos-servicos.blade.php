@@ -8,7 +8,7 @@
     </x-slot:metatags>
 
     {{-- 1. HERO --}}
-    <section class="dark bg-elevation-surface pt-(--section-first-gap) pb-(--section-gap)">
+    <section class="dark bg-elevation-surface pt-(--section-first-gap) pb-(--section-gap) md:pt-27.5">
         <div class="container flex flex-col items-center gap-12">
             <x-fr-headline size="2xl" data-reveal="up">
                 <x-slot:title>
@@ -140,11 +140,11 @@
                 </div>
             </div>
 
-            <div class="hidden w-full md:block md:basis-1/2" data-reveal="scale">
+            <div class="hidden w-full md:block md:basis-1/2 md:self-stretch" data-reveal="scale">
                 <img
-                    src="{{ asset('images/planejamento-financeiro.webp') }}"
+                    src="{{ asset('images/planejamento-financeiro.png') }}"
                     alt="Consultor e cliente em uma sessão de planejamento financeiro"
-                    class="w-full"
+                    class="w-full md:h-full md:rounded-lg md:object-cover"
                 />
             </div>
         </div>
