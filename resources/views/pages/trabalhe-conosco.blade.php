@@ -51,7 +51,7 @@
                 </div>
             </div>
 
-            <div class="relative hidden w-full md:block md:min-h-160 md:basis-2/5" data-reveal="scale">
+            <div class="relative hidden w-full md:block md:min-h-115 md:basis-2/5" data-reveal="scale">
                 <img
                     src="{{ asset('images/servi_os_6_1x.webp') }}"
                     alt="Consultora Firece atendendo cliente"
