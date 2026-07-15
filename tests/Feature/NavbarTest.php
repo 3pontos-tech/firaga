@@ -23,3 +23,23 @@ it('destaca o link de serviços na página nossos serviços', function (): void 
         ->assertOk()
         ->assertSee('aria-current="page"', escape: false);
 });
+
+it('usa âncora relativa para os links de navegação quando já está na página correspondente', function (): void {
+    $this->get(route('home'))
+        ->assertOk()
+        ->assertSee('href="#hero"', escape: false);
+});
+
+it('usa link completo para os links de navegação de outra página', function (): void {
+    $this->get(route('nossos-servicos'))
+        ->assertOk()
+        ->assertSee('href="'.route('home').'#hero"', escape: false);
+});
+
+it('renderiza o drill-down mobile com os links principais e botão de voltar', function (): void {
+    $this->get('/')
+        ->assertOk()
+        ->assertSee("activeSubmenu = 'home'", escape: false)
+        ->assertSee('activeSubmenu = null', escape: false)
+        ->assertSee('Voltar');
+});

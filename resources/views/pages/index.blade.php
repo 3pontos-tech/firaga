@@ -13,7 +13,8 @@
     </x-slot:metatags>
 
     <section
-        class="section-first flex min-h-[calc(100dvh-var(--header-height))] flex-col items-center gap-4 md:min-h-0"
+        id="hero"
+        class="section-first flex min-h-[calc(100dvh-var(--header-height))] scroll-mt-(--header-height) flex-col items-center gap-4 md:min-h-0"
     >
         <div
             class="container flex flex-col items-center md:flex-1 md:flex-row md:items-center md:justify-between"
@@ -131,7 +132,7 @@
         </div>
     </section>
 
-    <section class="section dark bg-elevation-surface px-4 py-20">
+    <section id="por-que-firece" class="section dark bg-elevation-surface scroll-mt-(--header-height) px-4 py-20">
         <div
             class="container flex flex-col gap-8 md:flex-row md:items-stretch md:gap-12 md:gap-x-28"
             data-reveal-stagger="120"
@@ -226,7 +227,7 @@
         </div>
     </section>
 
-    <section class="section">
+    <section id="processo" class="section scroll-mt-(--header-height)">
         <div class="container grid grid-cols-1 items-center gap-8">
             <x-fr-headline data-reveal="up">
                 <x-slot:title>
@@ -314,7 +315,10 @@
         </div>
     </section>
 
-    <section class="section bg-elevation-01dp border-border-base border border-y p-8 md:p-16">
+    <section
+        id="planos"
+        class="section bg-elevation-01dp border-border-base scroll-mt-(--header-height) border border-y p-8 md:p-16"
+    >
         <div class="container flex flex-col gap-8">
             <x-fr-headline data-reveal="up">
                 <x-slot:title>
@@ -425,7 +429,7 @@
         </div>
     </section>
 
-    <section class="section">
+    <section id="depoimentos" class="section scroll-mt-(--header-height)">
         <div class="container flex flex-col gap-8">
             <x-fr-headline data-reveal="up">
                 <x-slot:title>
