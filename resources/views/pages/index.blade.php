@@ -214,15 +214,18 @@
                     </div>
                 </div>
 
-                <x-testimonial
-                    data-reveal="up"
-                    name="Felipe Rosa"
-                    time="1 mês atrás"
-                    avatar="https://i.pravatar.cc/80?img=12"
-                >
-                    Nunca achei que ia conseguir sair das dívidas. Em 5 meses com o Matheus, pela primeira vez na vida
-                    eu tenho reserva de emergência.
-                </x-testimonial>
+                @php ($featuredTestimonial = $testimonials->first())
+                @if ($featuredTestimonial)
+                    <x-testimonial
+                        data-reveal="up"
+                        :name="$featuredTestimonial->name"
+                        :time="$featuredTestimonial->posted_at->locale('pt_BR')->diffForHumans()"
+                        :avatar="$featuredTestimonial->getFirstMediaUrl('avatar')"
+                        :rating="$featuredTestimonial->rating"
+                    >
+                        {{ $featuredTestimonial->comment }}
+                    </x-testimonial>
+                @endif
             </div>
         </div>
     </section>
@@ -443,51 +446,19 @@
             </x-fr-headline>
 
             <div class="grid grid-cols-1 gap-8 md:grid-cols-3" data-reveal-stagger="140">
-                <x-testimonial
-                    data-reveal="up"
-                    variant="centered"
-                    class="bg-elevation-01dp border-border-base border p-4"
-                    name="Emilly Monteiro Gomes"
-                    time="2 meses atrás"
-                    avatar="https://lh3.googleusercontent.com/a-/ALV-UjVOkOLWGbS9XPq1JU32VcUkJAH1Sa1b0JhIGRYjlRr8oYto8Fgi=w90-h90-p-rp-mo-br100"
-                >
-                    O atendimento da Firece é
-                    <span class="text-brand-primary font-bold">atencioso, profissional e personalizado</span>, o que
-                    torna todo o processo mais tranquilo e eficiente. Tenho me sentido mais confiante em relação à minha
-                    vida financeira. Recomendo o trabalho com total segurança.
-                </x-testimonial>
-
-                <x-testimonial
-                    data-reveal="up"
-                    variant="centered"
-                    class="bg-elevation-01dp border-border-base border p-4"
-                    name="Paulo Lima"
-                    time="1 mês atrás"
-                    avatar="https://lh3.googleusercontent.com/a/ACg8ocJZRAYVtNhUwcGWdv3MP2mP7RbRFQH4w-T08u78BprvC-AWNg=w90-h90-p-rp-mo-br100"
-                >
-                    Fechei a consultoria a três meses. Estou muito satisfeito, hoje tenho
-                    <span class="text-brand-primary font-bold"
-                        >visão de todos meus gastos, estou conseguindo guardar parte do meu rendimento</span
-                    >, e tenho uma visão futura de como vai estar o meu dinheiro e alcançar os meus objetivos
-                    financeiro.
-                </x-testimonial>
-
-                <x-testimonial
-                    data-reveal="up"
-                    variant="centered"
-                    class="bg-elevation-01dp border-border-base border p-4"
-                    name="Mariana Shah Coury"
-                    time="3 semanas atrás"
-                    avatar="https://lh3.googleusercontent.com/a-/ALV-UjXRkXe2TX0jhbnpEfo6DRjqPHJLgWT-j_6uQDtEurYLwua9FPfA=w90-h90-p-rp-mo-br100"
-                >
-                    Os
-                    <span class="text-brand-primary font-bold"
-                        >insights sobre organização financeira, entendimento dos meus gastos e tomada de decisões mais
-                        conscientes</span
+                @foreach ($testimonials->skip(1) as $testimonial)
+                    <x-testimonial
+                        data-reveal="up"
+                        variant="centered"
+                        class="bg-elevation-01dp border-border-base border p-4"
+                        :name="$testimonial->name"
+                        :time="$testimonial->posted_at->locale('pt_BR')->diffForHumans()"
+                        :avatar="$testimonial->getFirstMediaUrl('avatar')"
+                        :rating="$testimonial->rating"
                     >
-                    foram extremamente valiosos e continuam fazendo sentido até hoje. Recomendo muito e agradeço de
-                    verdade pelo cuidado e dedicação.
-                </x-testimonial>
+                        {{ $testimonial->comment }}
+                    </x-testimonial>
+                @endforeach
             </div>
         </div>
     </section>

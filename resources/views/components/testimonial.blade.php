@@ -12,7 +12,13 @@
 @endphp
 
 @if ($variant === 'centered')
-    <div {{ $attributes->class(['flex flex-col gap-4 rounded-md']) }}>
+    <div
+        {{
+            $attributes->class([
+                'flex h-full flex-col gap-4 rounded-md',
+            ])
+        }}
+    >
         @if ($avatar)
             <div class="flex items-center justify-center">
                 <x-avatar :src="$avatar" :alt="$avatarAlt ?: $name" size="lg" />
@@ -20,6 +26,8 @@
         @endif
 
         <x-fr-text class="text-text-high! font-medium! italic"> {{ $slot }} </x-fr-text>
+
+        <hr class="border-border-base mt-auto" />
 
         <div class="flex items-center justify-between gap-4">
             <div class="flex flex-col">
@@ -37,8 +45,10 @@
         </div>
     </div>
 @else
-    <div {{ $attributes->class(['flex flex-col gap-4']) }}>
+    <div {{ $attributes->class(['flex h-full flex-col gap-4']) }}>
         <x-fr-text class="text-text-high! font-medium! italic"> {{ $slot }} </x-fr-text>
+
+        <hr class="border-border-base mt-auto" />
 
         <div class="flex items-center justify-between gap-4">
             <div class="flex items-center gap-3">

@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace App\Http\Controllers;
 
 use App\Models\CMS\Page;
+use App\Models\Testimonial;
 use Illuminate\Contracts\View\View;
 
 class PagesController extends Controller
@@ -23,6 +24,7 @@ class PagesController extends Controller
 
         return view('pages.index', [
             'page' => $page,
+            'testimonials' => Testimonial::query()->with('media')->latest('posted_at')->take(4)->get(),
         ]);
     }
 }
