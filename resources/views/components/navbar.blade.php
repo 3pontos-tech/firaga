@@ -23,11 +23,98 @@
 
     // Primary links surfaced inline on desktop (short labels).
     $primaryLinks = collect($navLinks)->filter(fn(array $link): bool => isset($link['primary']));
+
+    $submenuData = [
+        'home' => [
+            'tabs' => [
+                ['label' => 'Início', 'anchor' => '#hero'],
+                ['label' => 'Depoimentos', 'anchor' => '#depoimentos'],
+                ['label' => 'Por que Firece', 'anchor' => '#por-que-firece'],
+                ['label' => 'Processo', 'anchor' => '#processo'],
+                ['label' => 'Planos', 'anchor' => '#planos'],
+            ],
+            'services' => [
+                ['label' => 'Nossos Serviços', 'route' => 'nossos-servicos'],
+                ['label' => 'Key Account', 'route' => 'key-account'],
+                ['label' => 'Parcerias', 'route' => 'parcerias'],
+                ['label' => 'Code Capital', 'route' => 'code-capital'],
+            ],
+            'careers' => [['label' => 'Trabalhe Conosco', 'route' => 'trabalhe-conosco']],
+        ],
+        'nossos-servicos' => [
+            'tabs' => [
+                ['label' => 'Visão Geral', 'anchor' => '#visao-geral'],
+                ['label' => 'Serviços', 'anchor' => '#servicos'],
+            ],
+            'services' => [
+                ['label' => 'Nossos Serviços', 'route' => 'nossos-servicos'],
+                ['label' => 'Key Account', 'route' => 'key-account'],
+                ['label' => 'Parcerias', 'route' => 'parcerias'],
+                ['label' => 'Code Capital', 'route' => 'code-capital'],
+            ],
+            'careers' => [['label' => 'Trabalhe Conosco', 'route' => 'trabalhe-conosco']],
+        ],
+        'trabalhe-conosco' => [
+            'tabs' => [['label' => 'Vagas', 'anchor' => '#vagas'], ['label' => 'Cultura', 'anchor' => '#cultura']],
+            'services' => [
+                ['label' => 'Nossos Serviços', 'route' => 'nossos-servicos'],
+                ['label' => 'Key Account', 'route' => 'key-account'],
+                ['label' => 'Parcerias', 'route' => 'parcerias'],
+                ['label' => 'Code Capital', 'route' => 'code-capital'],
+            ],
+            'careers' => [['label' => 'Trabalhe Conosco', 'route' => 'trabalhe-conosco']],
+        ],
+        'quem-somos' => [
+            'tabs' => [['label' => 'Sobre nós', 'anchor' => '#sobre'], ['label' => 'Equipe', 'anchor' => '#equipe']],
+            'services' => [
+                ['label' => 'Nossos Serviços', 'route' => 'nossos-servicos'],
+                ['label' => 'Key Account', 'route' => 'key-account'],
+                ['label' => 'Parcerias', 'route' => 'parcerias'],
+                ['label' => 'Code Capital', 'route' => 'code-capital'],
+            ],
+            'careers' => [['label' => 'Trabalhe Conosco', 'route' => 'trabalhe-conosco']],
+        ],
+        'blog' => [
+            'tabs' => [
+                ['label' => 'Artigos', 'anchor' => '#artigos'],
+                ['label' => 'Categorias', 'anchor' => '#categorias'],
+            ],
+            'services' => [
+                ['label' => 'Nossos Serviços', 'route' => 'nossos-servicos'],
+                ['label' => 'Key Account', 'route' => 'key-account'],
+                ['label' => 'Parcerias', 'route' => 'parcerias'],
+                ['label' => 'Code Capital', 'route' => 'code-capital'],
+            ],
+            'careers' => [['label' => 'Trabalhe Conosco', 'route' => 'trabalhe-conosco']],
+        ],
+    ];
 @endphp
 
 <div
-    x-data="{ open: false }"
-    @keydown.escape.window="open = false"
+    x-data="{
+        open: false,
+        activeSubmenu: null,
+        submenuTimeout: null,
+        showSubmenu(key) {
+            clearTimeout(this.submenuTimeout);
+            this.submenuTimeout = setTimeout(() => {
+                this.activeSubmenu = key;
+            }, 80);
+        },
+        hideSubmenu() {
+            clearTimeout(this.submenuTimeout);
+            this.submenuTimeout = setTimeout(() => {
+                this.activeSubmenu = null;
+            }, 120);
+        },
+        cancelHide() {
+            clearTimeout(this.submenuTimeout);
+        },
+    }"
+    @keydown.escape.window="
+        open = false;
+        activeSubmenu = null;
+    "
     x-effect="document.body.style.overflow = open ? 'hidden' : ''"
     class="h-full"
 >
@@ -39,6 +126,8 @@
                 @php $isActive = request()->routeIs($link['route']); @endphp
                 <a
                     href="{{ route($link['route']) }}"
+                    @mouseenter="showSubmenu('{{ $link['route'] }}')"
+                    @mouseleave="hideSubmenu()"
                     @class ([
                         'rounded-sm px-4 py-3 font-display font-semibold transition-colors',
                         'bg-brand-primary text-text-light' => $isActive,
@@ -85,6 +174,110 @@
         </button>
     </nav>
 
+    {{-- Desktop Submenu Panels --}}
+    @foreach ($submenuData as $key => $data)
+        <div
+            x-show="activeSubmenu === '{{ $key }}'"
+            x-cloak
+            x-transition:enter="transition duration-200 ease-out"
+            x-transition:enter-start="opacity-0"
+            x-transition:enter-end="opacity-100"
+            x-transition:leave="transition duration-150 ease-in"
+            x-transition:leave-start="opacity-100"
+            x-transition:leave-end="opacity-0"
+            @mouseenter="cancelHide()"
+            @mouseleave="hideSubmenu()"
+            @class ([
+                'fixed inset-x-0 z-50 mx-auto hidden max-w-[1336px] overflow-y-auto border lg:block',
+                $headerBg,
+                $overlayThemeClass,
+                'border-border-base' => !$isColoredBg,
+                'border-text-light/20' => $isColoredBg
+            ])
+            style="top: var(--header-height); max-height: 364px"
+        >
+            <div class="font-display flex items-start gap-8 px-8 py-8">
+                {{-- Column 1: Image + Text --}}
+                <div class="flex w-72 shrink-0 flex-col gap-3">
+                    <img
+                        src="{{ asset('images/firece-submenu.png') }}"
+                        alt="Firece"
+                        class="h-44 w-full rounded-lg object-cover"
+                    />
+                    <x-fr-heading level="3" class="text-base!"
+                        >Venha fazer parte da <span class="text-brand-primary">Firece</span></x-fr-heading
+                    >
+                    <x-fr-text size="md">
+                        Conte com a Firece para organizar suas finanças, planejar seus próximos passos e com mais
+                        segurança.
+                    </x-fr-text>
+                </div>
+
+                {{-- Column 2: Tabs --}}
+                <div class="flex flex-1 flex-col gap-1.5">
+                    <h4 class="text-text-high mb-2 text-base font-semibold">Navegação</h4>
+                    <hr class="border-border-base" />
+                    <div class="grid grid-flow-col grid-rows-4 gap-x-6">
+                        @foreach ($data['tabs'] as $tab)
+                            <div class="flex items-center justify-between gap-2">
+                                <a
+                                    href="{{ $tab['anchor'] }}"
+                                    class="text-text-medium w-fit rounded-sm px-4 py-3 font-sans text-base font-medium transition-colors"
+                                    @click="activeSubmenu = null"
+                                >
+                                    {{ $tab['label'] }}
+                                </a>
+                                <x-heroicon-c-chevron-right class="text-brand-primary size-4 shrink-0" />
+                            </div>
+                        @endforeach
+                    </div>
+                </div>
+
+                {{-- Column 3: Services + Careers --}}
+                <div class="flex gap-8">
+                    <div class="flex flex-col gap-1.5">
+                        <h4 class="text-text-high mb-2 text-base font-semibold">Serviços</h4>
+                        <hr class="border-border-base" />
+                        <div>
+                            @foreach ($data['services'] as $service)
+                                <div class="flex items-center justify-between gap-2">
+                                    <a
+                                        href="{{ route($service['route']) }}"
+                                        class="text-text-medium w-fit rounded-sm px-4 py-3 font-sans text-base font-medium transition-colors"
+                                        @click="activeSubmenu = null"
+                                    >
+                                        {{ $service['label'] }}
+                                    </a>
+                                    <x-heroicon-c-chevron-right class="text-brand-primary size-4 shrink-0" />
+                                </div>
+                            @endforeach
+                        </div>
+                    </div>
+
+                    <div class="flex flex-col gap-1.5">
+                        <h4 class="text-text-high mb-2 text-base font-semibold">Carreiras</h4>
+                        <hr class="border-border-base" />
+                        <div>
+                            @foreach ($data['careers'] as $career)
+                                <div class="flex items-center justify-between gap-2">
+                                    <a
+                                        href="{{ route($career['route']) }}"
+                                        class="text-text-medium w-fit rounded-sm px-4 py-3 font-sans text-base font-medium transition-colors"
+                                        @click="activeSubmenu = null"
+                                    >
+                                        {{ $career['label'] }}
+                                    </a>
+                                    <x-heroicon-c-chevron-right class="text-brand-primary size-4 shrink-0" />
+                                </div>
+                            @endforeach
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    @endforeach
+
+    {{-- Mobile Menu Overlay --}}
     <div
         x-show="open"
         x-cloak
