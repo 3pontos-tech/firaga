@@ -59,7 +59,7 @@
         <div
             x-data="leadQuiz({ steps: @js($steps), phone: @js($phone), intro: @js($intro) })"
             data-reveal="up"
-            class="border-border-base bg-elevation-surface w-full max-w-xl rounded-md border p-6 text-left md:p-8"
+            class="border-border-base bg-elevation-surface w-full max-w-xl rounded-md border p-6 text-left"
         >
             <div class="flex flex-col gap-4">
                 <template x-for="(item, index) in history" :key="index">

@@ -166,7 +166,7 @@
                     data-reveal-stagger="140"
                 >
                     <div
-                        class="flex flex-col gap-4 py-6 first:pt-0 last:pb-0 md:px-4 md:py-0 md:first:pl-0 md:last:pr-0"
+                        class="flex flex-col gap-4 py-6 first:pt-0 last:pb-0 md:px-8 md:py-0 md:first:pl-0 md:last:pr-0"
                         data-reveal="up"
                     >
                         <x-icon-box icon="heroicon-c-scale" />
@@ -182,7 +182,7 @@
                     </div>
 
                     <div
-                        class="flex flex-col gap-4 py-6 first:pt-0 last:pb-0 md:px-4 md:py-0 md:first:pl-0 md:last:pr-0"
+                        class="flex flex-col gap-4 py-6 first:pt-0 last:pb-0 md:px-8 md:py-0 md:first:pl-0 md:last:pr-0"
                         data-reveal="up"
                     >
                         <x-icon-box icon="heroicon-c-adjustments-horizontal" />
@@ -198,7 +198,7 @@
                     </div>
 
                     <div
-                        class="flex flex-col gap-4 py-6 first:pt-0 last:pb-0 md:px-4 md:py-0 md:first:pl-0 md:last:pr-0"
+                        class="flex flex-col gap-4 py-6 first:pt-0 last:pb-0 md:px-8 md:py-0 md:first:pl-0 md:last:pr-0"
                         data-reveal="up"
                     >
                         <x-icon-box icon="fas-handshake" />
@@ -475,8 +475,9 @@
             Planejamento financeiro é o primeiro passo para todos os outros que você vai dar na sua vida.
         </x-slot:title>
         <x-slot:description>
-            Se tem alguma dúvida que a consultoria vai ajudar sua vida, por que não testa? A primeira análise é
-            gratuita.
+            Se tem alguma dúvida que a consultoria vai ajudar sua vida, por que não testa?
+            </br>
+            A primeira análise é gratuita.
         </x-slot:description>
     </x-cta-banner>
 
