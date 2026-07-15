@@ -20,25 +20,25 @@
                     <a
                         href="https://flaredigital.com.br/"
                         target="_blank"
-                        class="text-text-medium hover:text-text-high text-xxs transition-colors"
+                        class="text-text-medium hover:text-text-high text-xs transition-colors"
                         >Flare</a
                     >
                     <a
                         href="https://flammabeneficios.com/"
                         target="_blank"
-                        class="text-text-medium hover:text-text-high text-xxs transition-colors"
+                        class="text-text-medium hover:text-text-high text-xs transition-colors"
                         >Flamma</a
                     >
                     <a
                         href="https://api.whatsapp.com/send/?phone=5511958397432&text=Visitei+o+site+da+Fire%7Cce+e+quero+mais+informa%C3%A7%C3%B5es&type=phone_number&app_absent=0"
                         target="_blank"
-                        class="text-text-medium hover:text-text-high text-xxs transition-colors"
+                        class="text-text-medium hover:text-text-high text-xs transition-colors"
                         >Atendimento Premium</a
                     >
                     <a
                         href="https://api.whatsapp.com/send/?phone=5511958397432&text=Visitei+o+site+da+Fire%7Cce+e+quero+ser+avisado+sobre+a+EducaFire&type=phone_number&app_absent=0"
                         target="_blank"
-                        class="text-text-medium hover:text-text-high text-xxs transition-colors"
+                        class="text-text-medium hover:text-text-high text-xs transition-colors"
                         >Educa Fire</a
                     >
                 </div>
@@ -48,7 +48,7 @@
                     <a
                         href="https://www.linkedin.com/company/firece"
                         target="_blank"
-                        class="text-text-medium hover:text-text-high text-xxs flex items-center gap-2 transition-colors"
+                        class="text-text-medium hover:text-text-high flex items-center gap-2 text-xs transition-colors"
                     >
                         <x-fab-linkedin class="size-4 shrink-0" />
                         LinkedIn
@@ -56,7 +56,7 @@
                     <a
                         href="https://www.instagram.com/firece.oficial/"
                         target="_blank"
-                        class="text-text-medium hover:text-text-high text-xxs flex items-center gap-2 transition-colors"
+                        class="text-text-medium hover:text-text-high flex items-center gap-2 text-xs transition-colors"
                     >
                         <x-fab-instagram class="size-4 shrink-0" />
                         Instagram
@@ -67,12 +67,12 @@
                     <h3 class="text-text-high text-xxs font-bold">Contato</h3>
                     <a
                         href="mailto:contato@firece.com.br"
-                        class="text-text-medium hover:text-text-high text-xxs transition-colors"
+                        class="text-text-medium hover:text-text-high text-xs transition-colors"
                         >contato@firece.com.br</a
                     >
                     <a
                         href="tel:+5511987201303"
-                        class="text-text-medium hover:text-text-high text-xxs flex items-center gap-2 transition-colors"
+                        class="text-text-medium hover:text-text-high flex items-center gap-2 text-xs transition-colors"
                     >
                         <img src="{{ asset('images/brasil-flag.webp') }}" alt="Brasil" class="h-4 w-auto shrink-0" />
                         (11) 98720-1303
