@@ -132,18 +132,25 @@
         </div>
     </section>
 
-    <section id="por-que-firece" class="section dark bg-elevation-surface scroll-mt-(--header-height) px-4 py-20">
+    <section
+        id="por-que-firece"
+        class="section light bg-elevation-surface border-border-base scroll-mt-(--header-height) border-y px-4 py-20"
+    >
         <div
             class="container flex flex-col gap-8 md:flex-row md:items-stretch md:gap-12 md:gap-x-28"
             data-reveal-stagger="120"
         >
             <div class="md:order-2 md:basis-1/3 md:self-stretch" data-reveal="left">
-                <div class="relative aspect-569/422 w-full overflow-hidden md:aspect-auto md:h-full">
+                <div
+                    class="relative aspect-422/569 max-h-[290px] w-full overflow-hidden md:aspect-auto md:h-full md:max-h-none"
+                >
                     <img
-                        src="{{ asset('images/home_2_1x.webp') }}"
+                        src="{{ asset('images/arrow.webp') }}"
                         alt="Imagem dos caras"
-                        class="absolute top-1/2 left-1/2 h-[134.83%] w-[74.17%] -translate-x-1/2 -translate-y-1/2 -rotate-90 md:static md:h-full md:w-full md:translate-x-0 md:translate-y-0 md:rotate-0 md:object-cover"
+                        class="h-full w-full object-contain md:object-cover"
                     />
+
+                    <x-corner-brackets />
                 </div>
             </div>
 
@@ -250,15 +257,10 @@
                 data-reveal-stagger="140"
             >
                 <x-numbered-step
-                    class="rounded-tl-md rounded-tr-md p-8 md:rounded-tr-none md:rounded-bl-md"
-                    style="
-                        background:
-                            linear-gradient(270deg, rgba(253, 253, 253, 0) 0%, rgba(253, 253, 253, 0.12) 100%), #121213;
-                    "
+                    class="bg-elevation-01dp rounded-tl-md rounded-tr-md p-8 md:rounded-tr-none md:rounded-bl-md"
                     data-reveal="up"
                     number="01"
                     title="Diagnóstico financeiro"
-                    light-text
                 >
                     Entendemos sua realidade atual, hábitos financeiros, objetivos e desafios.
 
