@@ -64,18 +64,7 @@
                     <source src="{{ asset('video/firece-hero.mp4') }}" type="video/mp4" />
                 </video>
 
-                {{-- Recorte branco orgânico cobrindo a lateral esquerda do vídeo --}}
-                <svg
-                    class="text-elevation-surface pointer-events-none absolute inset-0 h-full w-full"
-                    viewBox="0 0 732 640"
-                    preserveAspectRatio="none"
-                    fill="currentColor"
-                    aria-hidden="true"
-                >
-                    <path
-                        d="M-8,-8 L1.4812,25.1051 L92.5537,237.094 C131.929,328.748 123.172,433.979 69.187,517.864 L8.54887,612.087 L-8,648 Z"
-                    />
-                </svg>
+                <x-organic-cutout />
             </div>
         </div>
 
