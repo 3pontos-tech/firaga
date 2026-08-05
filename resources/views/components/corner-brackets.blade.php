@@ -1,6 +1,5 @@
 @props (['size' => 'h-16 w-18 md:h-24 md:w-26', 'color' => 'border-brand-primary'])
 
-{{-- Cantos decorativos em L, ancorados nas bordas do container posicionado que os envolve. --}}
 <div
     {{
         $attributes->class(

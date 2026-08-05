@@ -1,6 +1,5 @@
 @props (['color' => 'text-elevation-surface'])
 
-{{-- Recorte orgânico que cobre a lateral esquerda de uma mídia dentro de um container posicionado. --}}
 <svg
     {{
         $attributes->class([

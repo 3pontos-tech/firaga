@@ -34,10 +34,8 @@ it('lays the quiz on the left and the photo with the organic cutout on the right
         ->and($section)
         ->toContain('text-elevation-surface');
 
-    // O card do chat não é mais centralizado com largura própria.
     expect($section)->not->toContain('max-w-xl');
 
-    // A foto vem depois do quiz no DOM, ou seja, à direita no desktop.
     expect(mb_strpos($section, 'leadQuiz({'))->toBeLessThan(mb_strpos($section, 'woman-with-phone.jpg'));
 });
 
