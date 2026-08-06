@@ -15,6 +15,18 @@ it('exibe a página nossos serviços', function (): void {
         ->assertSee('Educa Fire');
 });
 
+it('usa o mesmo espaçamento superior do hero em tablets e telas maiores', function (): void {
+    $response = $this->get(route('nossos-servicos'));
+
+    $response->assertOk();
+
+    preg_match('/<section[^>]*pt-\(--section-first-gap\)[^>]*>/', (string) $response->getContent(), $matches);
+
+    expect($matches)->not->toBeEmpty();
+
+    expect($matches[0])->toContain('sm:pt-27.5')->not->toMatch('/\bmd:pt-27\.5\b/');
+});
+
 it('mostra os três perfis de plano', function (): void {
     $this->get(route('nossos-servicos'))
         ->assertOk()

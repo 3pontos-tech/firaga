@@ -8,7 +8,7 @@
     </x-slot:metatags>
 
     {{-- 1. HERO --}}
-    <section class="dark bg-elevation-surface pt-(--section-first-gap) pb-(--section-gap) md:pt-27.5">
+    <section class="dark bg-elevation-surface pt-(--section-first-gap) pb-(--section-gap) sm:pt-27.5">
         <div class="container flex flex-col items-center gap-12">
             <x-fr-headline size="2xl" data-reveal="up">
                 <x-slot:title>
