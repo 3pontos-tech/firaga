@@ -12,6 +12,39 @@ it('renders the lead quiz section on the home page', function (): void {
         ->assertSee('Abrir conversa no WhatsApp');
 });
 
+it('lays the quiz on the left and the photo with the organic cutout on the right', function (): void {
+    $response = $this->get('/');
+
+    $response->assertOk();
+
+    preg_match('/<section[^>]*id="quiz".*?<\/section>/s', (string) $response->getContent(), $matches);
+
+    expect($matches)->not->toBeEmpty();
+
+    $section = $matches[0];
+
+    expect($section)
+        ->toContain('md:flex-row')
+        ->and($section)
+        ->toContain('md:basis-1/2')
+        ->and($section)
+        ->toContain('images/woman-with-phone.jpg')
+        ->and($section)
+        ->toContain('viewBox="0 0 732 640"')
+        ->and($section)
+        ->toContain('text-elevation-surface');
+
+    expect($section)->not->toContain('max-w-xl');
+
+    expect(mb_strpos($section, 'leadQuiz({'))->toBeLessThan(mb_strpos($section, 'woman-with-phone.jpg'));
+});
+
+it('reuses the same organic cutout on the hero video and on the quiz photo', function (): void {
+    $content = (string) $this->get('/')->assertOk()->getContent();
+
+    expect(mb_substr_count($content, 'viewBox="0 0 732 640"'))->toBe(2);
+});
+
 it('wires all 4 questions and the WhatsApp number into the Alpine quiz state', function (): void {
     // The quiz copy is rendered client-side by Alpine: step config only exists as JSON
     // inside x-data="leadQuiz(...)". Blade's @js() applies JSON_HEX_QUOT, so every
