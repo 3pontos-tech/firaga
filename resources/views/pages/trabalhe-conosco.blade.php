@@ -53,7 +53,7 @@
 
             <div class="relative hidden w-full md:block md:min-h-115 md:basis-2/5" data-reveal="scale">
                 <img
-                    src="{{ asset('images/servi_os_6_1x.webp') }}"
+                    src="{{ asset('images/two-girls-look.png') }}"
                     alt="Consultora Firece atendendo cliente"
                     class="absolute bottom-0 h-full w-full rounded-lg object-contain"
                 />
@@ -161,7 +161,7 @@
 
             <div class="relative hidden w-full md:block md:min-h-160 md:basis-2/5" data-reveal="scale">
                 <img
-                    src="{{ asset('images/trabalhe_conosco_1x.webp') }}"
+                    src="{{ asset('images/one-guy-look.png') }}"
                     alt="Time Firece"
                     class="absolute inset-0 h-full w-full rounded-lg object-contain object-bottom"
                 />
