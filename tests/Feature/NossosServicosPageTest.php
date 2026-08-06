@@ -27,6 +27,28 @@ it('usa o mesmo espaçamento superior do hero em tablets e telas maiores', funct
     expect($matches[0])->toContain('sm:pt-27.5')->not->toMatch('/\bmd:pt-27\.5\b/');
 });
 
+it('cobre a foto do atendimento premium com o mesmo recorte orgânico, em preto', function (): void {
+    $response = $this->get(route('nossos-servicos'));
+
+    $response->assertOk();
+
+    preg_match(
+        '/<section[^>]*\bdark\b[^>]*>(?:(?!<\/section>).)*man-walking-stair(?:(?!<\/section>).)*<\/section>/s',
+        (string) $response->getContent(),
+        $matches,
+    );
+
+    expect($matches)->not->toBeEmpty();
+
+    $section = $matches[0];
+
+    preg_match('/<div class="relative[^"]*"[^>]*>(?:(?!<\/div>).)*man-walking-stair.*?<\/svg>/s', $section, $wrapper);
+
+    expect($wrapper)->not->toBeEmpty();
+
+    expect($wrapper[0])->toContain('viewBox="0 0 732 640"')->toContain('text-elevation-surface');
+});
+
 it('mostra os três perfis de plano', function (): void {
     $this->get(route('nossos-servicos'))
         ->assertOk()
