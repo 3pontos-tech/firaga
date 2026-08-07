@@ -8,7 +8,7 @@
     </x-slot:metatags>
 
     {{-- 1. HERO --}}
-    <section class="dark bg-elevation-surface pt-(--section-first-gap) pb-(--section-gap) md:pt-27.5">
+    <section class="dark bg-elevation-surface pt-(--section-first-gap) pb-(--section-gap) sm:pt-27.5">
         <div class="container flex flex-col items-center gap-12">
             <x-fr-headline size="2xl" data-reveal="up">
                 <x-slot:title>
@@ -447,12 +447,14 @@
                 </x-fr-button>
             </div>
 
-            <div class="hidden md:block" data-reveal="left">
+            <div class="relative hidden md:block" data-reveal="left">
                 <img
-                    src="{{ asset('images/key-account-premium.webp') }}"
+                    src="{{ asset('images/man-walking-stair.jpg') }}"
                     alt="Pessoa no topo de uma escadaria"
-                    class="w-full md:w-[calc(100%_+_max(0px,50vw_-_44rem))] md:max-w-none"
+                    class="block w-full md:w-[calc(100%_+_max(0px,50vw_-_44rem))] md:max-w-none"
                 />
+
+                <x-organic-cutout />
             </div>
         </div>
     </section>
