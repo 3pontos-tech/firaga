@@ -10,19 +10,129 @@ it('exibe a página quem somos', function (): void {
         ->assertSee('Estratégia hoje')
         ->assertSee('O futuro que queremos construir')
         ->assertSee('O que sustenta nossa atuação')
-        ->assertSee('Confira nosso');
+        ->assertSee('em números')
+        ->assertSee('Conteúdo que');
+});
+
+it('exibe a seção de números da Fire|ce', function (): void {
+    $this->get('/quem-somos')
+        ->assertOk()
+        ->assertSee('em números')
+        ->assertSee('+2000')
+        ->assertSee('Clientes')
+        ->assertSee('50')
+        ->assertSee('Consultores ativos')
+        ->assertSee('+5000')
+        ->assertSee('Consultorias feitas');
+});
+
+it('não corta palavras no meio nos títulos dos pilares', function (): void {
+    $content = (string) $this->get('/quem-somos')->assertOk()->getContent();
+
+    foreach (
+        ['Educação', 'Transparência', 'Desenvolvimento contínuo', 'Compromisso com o cliente', 'Visão de longo prazo'] as $title
+    ) {
+        expect($content)->toContain('<h3 class="fr-heading text-sm break-normal">'.$title.'</h3>');
+    }
+});
+
+it('usa raio de 4px nos cards de números', function (): void {
+    $content = (string) $this->get('/quem-somos')->assertOk()->getContent();
+
+    preg_match_all('/<div\s+class="bg-brand-primary[^"]*text-center"/s', $content, $matches);
+
+    expect($matches[0])->toHaveCount(3);
+
+    expect($matches[0])->each->toContain('rounded-xs');
+});
+
+it('renomeia a seção do blog para "Conteúdo que transforma"', function (): void {
+    $content = (string) $this->get('/quem-somos')->assertOk()->getContent();
+
+    expect($content)
+        ->toContain('Conteúdo que <mark>transforma</mark>')
+        ->and($content)
+        ->toContain('Acesse os conteúdos que nossos especialistas prepararam')
+        ->and($content)
+        ->not->toContain('Confira nosso')
+        ->and($content)
+        ->not->toContain('na mídia');
+});
+
+it('serve o vídeo vertical no mobile e o horizontal no desktop', function (): void {
+    $content = (string) $this->get('/quem-somos')->assertOk()->getContent();
+
+    preg_match_all('/<video[^>]*>\s*<source[^>]*>/s', $content, $matches);
+
+    expect($matches[0])->toHaveCount(2);
+
+    [$mobile, $desktop] = $matches[0];
+
+    expect($mobile)
+        ->toContain('firece-day-vertical.mp4')
+        ->and($mobile)
+        ->toContain('firece-day-vertical-poster.jpg')
+        ->and($mobile)
+        ->toContain('aspect-9/16')
+        ->and($mobile)
+        ->toContain('md:hidden');
+
+    expect($desktop)
+        ->toContain('firece-day-horizontal.mp4')
+        ->and($desktop)
+        ->toContain('firece-day-horizontal-poster.jpg')
+        ->and($desktop)
+        ->toContain('aspect-video')
+        ->and($desktop)
+        ->toContain('md:block');
+
+    expect($matches[0])->each->toContain('preload="none"')->toContain('playsinline')->toContain('poster=');
+
+    expect(mb_strpos($content, '<video'))->toBeLessThan(mb_strpos($content, 'Conteúdo que'));
+});
+
+it('usa a tipografia do design system nos blocos de missão, visão e pilares', function (): void {
+    $content = (string) $this->get('/quem-somos')->assertOk()->getContent();
+
+    expect($content)
+        ->toContain('<h3 class="fr-heading text-md">Nossa Missão</h3>')
+        ->and($content)
+        ->toContain('<h3 class="fr-heading text-sm break-normal">Visão de longo prazo</h3>');
+
+    preg_match_all(
+        '/<(?:p|h3)[^>]*class="[^"]*"[^>]*>(?:01|02|Nossa Missão|Educação)<\/(?:p|h3)>/u',
+        $content,
+        $matches,
+    );
+
+    expect($matches[0])->not->toBeEmpty();
+
+    expect($matches[0])->each->toContain('fr-heading')->not->toContain('font-display');
+});
+
+it('pinta o primeiro card dos pilares com o gradiente sobre elevation-01', function (): void {
+    $content = (string) $this->get('/quem-somos')->assertOk()->getContent();
+
+    preg_match('/<div[^>]*class="dark[^"]*"[^>]*style="([^"]*)"[^>]*>/', $content, $matches);
+
+    expect($matches)->not->toBeEmpty();
+
+    $style = preg_replace('/\s+/', ' ', $matches[1]);
+
+    expect($style)
+        ->toContain('linear-gradient(270deg, rgba(253, 253, 253, 0) 0%, rgba(253, 253, 253, 0.12) 100%)')
+        ->and($style)
+        ->toContain('#121213');
+
+    expect($matches[0])->not->toContain('bg-elevation-surface');
 });
 
 it('mostra o link Quem somos na navegação', function (): void {
-    $this->get('/quem-somos')
-        ->assertOk()
-        ->assertSee(route('quem-somos'));
+    $this->get('/quem-somos')->assertOk()->assertSee(route('quem-somos'));
 });
 
 it('exibe os últimos posts publicados na seção de blog', function (): void {
     Post::factory()->create(['title' => 'Artigo Mais Recente', 'published_at' => now()]);
 
-    $this->get('/quem-somos')
-        ->assertOk()
-        ->assertSeeText('Artigo Mais Recente');
+    $this->get('/quem-somos')->assertOk()->assertSeeText('Artigo Mais Recente');
 });

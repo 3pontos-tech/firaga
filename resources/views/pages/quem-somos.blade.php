@@ -49,9 +49,9 @@
 
             <div class="grid grid-cols-1 gap-8 md:grid-cols-2 md:gap-12" data-reveal-stagger="140">
                 <div class="flex flex-col gap-4" data-reveal="up">
-                    <p class="font-display text-brand-primary text-xl md:text-7xl">01</p>
+                    <p class="fr-heading text-brand-primary! text-xl md:text-7xl">01</p>
                     <div class="flex flex-col gap-1">
-                        <p class="font-display text-text-high text-md">Nossa Missão</p>
+                        <h3 class="fr-heading text-md">Nossa Missão</h3>
                         <p class="text-text-medium font-sans text-xs leading-6 font-medium">Ampliar o acesso à educação financeira e ajudar pessoas, famílias e empresas a transformarem objetivos em estratégias por meio do planejamento financeiro.</p>
                     </div>
                     <hr class="border-border-base w-full" />
@@ -62,9 +62,9 @@
                 </div>
 
                 <div class="flex flex-col gap-4" data-reveal="up">
-                    <p class="font-display text-brand-primary text-xl md:text-7xl">02</p>
+                    <p class="fr-heading text-brand-primary! text-xl md:text-7xl">02</p>
                     <div class="flex flex-col gap-1">
-                        <p class="font-display text-text-high text-md">Nossa visão</p>
+                        <h3 class="fr-heading text-md">Nossa visão</h3>
                         <p class="text-text-medium font-sans text-xs leading-6 font-medium">Ser referência em planejamento e educação financeira no Brasil, ampliando o acesso à informação de qualidade para decisões financeiras mais conscientes.</p>
                     </div>
                     <hr class="border-border-base w-full" />
@@ -94,58 +94,126 @@
                 class="border-border-base divide-border-base grid grid-cols-1 divide-y overflow-hidden rounded-md border lg:grid-cols-5 lg:divide-x lg:divide-y-0"
                 data-reveal-stagger="120"
             >
-                <div class="dark bg-elevation-surface flex flex-col gap-2 p-8" data-reveal="up">
-                    <p class="font-display text-brand-primary text-xl md:text-3xl">01</p>
-                    <p class="font-display text-text-high text-md">Educação</p>
+                <div
+                    class="dark flex flex-col gap-2 p-8"
+                    style="
+                        background:
+                            linear-gradient(270deg, rgba(253, 253, 253, 0) 0%, rgba(253, 253, 253, 0.12) 100%), #121213;
+                    "
+                    data-reveal="up"
+                >
+                    <p class="fr-heading text-brand-primary! text-xl md:text-3xl">01</p>
+                    <h3 class="fr-heading text-sm break-normal">Educação</h3>
                     <p class="text-text-medium font-sans text-xs leading-6 font-medium">Acreditamos que o conhecimento transforma decisões e orienta escolhas financeiras mais conscientes.</p>
                 </div>
 
                 <div class="flex flex-col gap-2 p-8" data-reveal="up">
-                    <p class="font-display text-brand-primary text-xl md:text-3xl">02</p>
-                    <p class="font-display text-text-high text-md">Transparência</p>
+                    <p class="fr-heading text-brand-primary! text-xl md:text-3xl">02</p>
+                    <h3 class="fr-heading text-sm break-normal">Transparência</h3>
                     <p class="text-text-high font-sans text-xs leading-6 font-medium">Construímos relações baseadas em clareza, ética e confiança em cada etapa da jornada financeira.</p>
                 </div>
 
                 <div class="flex flex-col gap-2 p-8" data-reveal="up">
-                    <p class="font-display text-brand-primary text-xl md:text-3xl">03</p>
-                    <p class="font-display text-text-high text-md">Desenvolvimento contínuo</p>
+                    <p class="fr-heading text-brand-primary! text-xl md:text-3xl">03</p>
+                    <h3 class="fr-heading text-sm break-normal">Desenvolvimento contínuo</h3>
                     <p class="text-text-high font-sans text-xs leading-6 font-medium">Investimos constantemente na evolução dos nossos profissionais, da nossa metodologia e da experiência entregue.</p>
                 </div>
 
                 <div class="flex flex-col gap-2 p-8" data-reveal="up">
-                    <p class="font-display text-brand-primary text-xl md:text-3xl">04</p>
-                    <p class="font-display text-text-high text-md">Compromisso com o cliente</p>
+                    <p class="fr-heading text-brand-primary! text-xl md:text-3xl">04</p>
+                    <h3 class="fr-heading text-sm break-normal">Compromisso com o cliente</h3>
                     <p class="text-text-high font-sans text-xs leading-6 font-medium">Colocamos os objetivos de cada cliente no centro de todas as decisões, com atenção, estratégia e responsabilidade.</p>
                 </div>
 
                 <div class="flex flex-col gap-2 p-8" data-reveal="up">
-                    <p class="font-display text-brand-primary text-xl md:text-3xl">05</p>
-                    <p class="font-display text-text-high text-md">Visão de longo prazo</p>
+                    <p class="fr-heading text-brand-primary! text-xl md:text-3xl">05</p>
+                    <h3 class="fr-heading text-sm break-normal">Visão de longo prazo</h3>
                     <p class="text-text-high font-sans text-xs leading-6 font-medium">Valorizamos decisões conscientes e estratégias construídas para gerar resultados sustentáveis ao longo do tempo.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    {{-- 4. BLOG --}}
+    {{-- 4. FIRE|CE EM NÚMEROS --}}
+    @php
+        $stats = [
+            ['value' => '+2000', 'label' => 'Clientes', 'icon' => 'heroicon-o-user-group'],
+            ['value' => '50', 'label' => 'Consultores ativos', 'icon' => 'heroicon-o-identification'],
+            ['value' => '+5000', 'label' => 'Consultorias feitas', 'icon' => 'fas-handshake'],
+        ];
+    @endphp
+
     <section class="section">
         <div class="container flex flex-col gap-8">
             <x-fr-headline data-reveal="up">
                 <x-slot:title>
-                    Confira nosso <mark>Blog</mark>
+                    A Fire<mark>|</mark>ce em números
                 </x-slot:title>
-                <x-slot:description>
-                    Você aprende o jeito Firece de diagnosticar, planejar e acompanhar com casos reais desde o início
-                </x-slot:description>
             </x-fr-headline>
 
-            @if ($posts->isNotEmpty())
-                <div class="grid grid-cols-1 gap-8 md:grid-cols-3" data-reveal-stagger="140">
-                    @foreach ($posts as $post)
-                        <x-blog-card :post="$post" data-reveal="up" />
-                    @endforeach
-                </div>
-            @endif
+            <div class="grid grid-cols-1 gap-6 md:grid-cols-3" data-reveal-stagger="120">
+                @foreach ($stats as $stat)
+                    <div
+                        class="bg-brand-primary flex flex-col items-center gap-3 rounded-xs p-8 text-center"
+                        data-reveal="up"
+                    >
+                        <p class="fr-heading text-text-light! text-xl md:text-2xl">{{ $stat['value'] }}</p>
+
+                        <div class="flex items-center gap-2">
+                            <x-dynamic-component :component="$stat['icon']" class="text-icon-light size-5 shrink-0" />
+                            <x-fr-text size="sm" class="text-text-light!">{{ $stat['label'] }}</x-fr-text>
+                        </div>
+                    </div>
+                @endforeach
+            </div>
+        </div>
+    </section>
+
+    {{-- 5. CONTEÚDO QUE TRANSFORMA --}}
+    <section class="section">
+        <div class="container flex flex-col gap-12">
+            {{-- Vídeo institucional: vertical no mobile, horizontal no desktop --}}
+            <div class="dark" data-reveal="scale">
+                <video
+                    class="bg-elevation-surface aspect-9/16 w-full rounded-md object-cover md:hidden"
+                    poster="{{ asset('images/firece-day-vertical-poster.jpg') }}"
+                    controls
+                    playsinline
+                    preload="none"
+                >
+                    <source src="{{ asset('video/firece-day-vertical.mp4') }}" type="video/mp4" />
+                </video>
+
+                <video
+                    class="bg-elevation-surface hidden aspect-video w-full rounded-md object-cover md:block"
+                    poster="{{ asset('images/firece-day-horizontal-poster.jpg') }}"
+                    controls
+                    playsinline
+                    preload="none"
+                >
+                    <source src="{{ asset('video/firece-day-horizontal.mp4') }}" type="video/mp4" />
+                </video>
+            </div>
+
+            <div class="flex flex-col gap-8">
+                <x-fr-headline align="left" data-reveal="up">
+                    <x-slot:title>
+                        Conteúdo que <mark>transforma</mark>
+                    </x-slot:title>
+                    <x-slot:description>
+                        Acesse os conteúdos que nossos especialistas prepararam para você se organizar financeiramente,
+                        consolidar seu patrimônio ou aumentar seus rendimentos.
+                    </x-slot:description>
+                </x-fr-headline>
+
+                @if ($posts->isNotEmpty())
+                    <div class="grid grid-cols-1 gap-8 md:grid-cols-3" data-reveal-stagger="140">
+                        @foreach ($posts as $post)
+                            <x-blog-card :post="$post" data-reveal="up" />
+                        @endforeach
+                    </div>
+                @endif
+            </div>
         </div>
     </section>
 </x-layout.landing>
