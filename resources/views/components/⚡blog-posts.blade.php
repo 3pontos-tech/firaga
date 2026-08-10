@@ -27,7 +27,7 @@ new class extends Component
 };
 ?>
 
-<section class="section md:mt-20!">
+<section class="section">
     <div class="container flex flex-col gap-8">
         <x-fr-headline align="left-desk">
             <x-slot:title>
