@@ -117,7 +117,7 @@
                 ></textarea>
             </div>
 
-            <x-fr-button type="submit"> {{ $submitLabel }} </x-fr-button>
+            <x-fr-button type="submit" class="md:self-end"> {{ $submitLabel }} </x-fr-button>
         </form>
     </div>
 </section>

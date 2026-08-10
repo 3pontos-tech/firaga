@@ -4,15 +4,12 @@
     splashLogoClass="text-brand-primary"
 >
     <section class="section-first">
-        <div
-            class="container flex flex-col items-center gap-8 pt-8 pb-10 md:pt-20 md:pr-60 md:pb-16 md:pl-60"
-            data-reveal-stagger="140"
-        >
+        <div class="container flex flex-col items-center gap-8 pt-8 pb-10 md:pt-20 md:pb-16" data-reveal-stagger="140">
             <x-fr-headline size="2xl" data-reveal="up">
                 <x-slot:title>
                     A transformação se constrói com <mark>boas alianças</mark>
                 </x-slot:title>
-                <x-slot:description>
+                <x-slot:description class="md:px-60">
                     Não trabalhamos com parcerias de vitrine. Buscamos quem tem propósito alinhado e algo real a
                     construir junto e estamos prontos para investir de verdade nessa construção.
                 </x-slot:description>
@@ -26,7 +23,7 @@
         <img
             src="{{ asset('images/parcerias_1x.webp') }}"
             alt="Aperto de mãos representando uma parceria"
-            class="aspect-[393/328] w-full object-cover md:hidden"
+            class="aspect-[393/328] max-h-82 w-full object-cover md:hidden"
         />
 
         <div class="container mt-8 flex flex-col gap-8 md:mt-0 md:flex-row md:items-start md:gap-16">
@@ -73,12 +70,12 @@
                 </div>
             </div>
 
-            <div class="relative hidden w-full md:block md:min-h-160 md:basis-2/5" data-reveal="scale">
+            <div class="relative hidden w-full md:block md:min-h-160 md:basis-2/5 md:self-center" data-reveal="scale">
                 <div class="absolute top-0 left-0 -z-1 rounded-lg bg-linear-to-b"></div>
                 <img
                     src="{{ asset('images/parcerias_1x.webp') }}"
                     alt="Aperto de mãos representando uma parceria"
-                    class="absolute inset-0 h-full w-full rounded-lg object-contain object-top"
+                    class="absolute inset-0 h-full w-full rounded-lg object-contain object-center"
                 />
             </div>
         </div>
