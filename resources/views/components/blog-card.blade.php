@@ -19,7 +19,7 @@
     <article
         {{
             $attributes->class(
-                'border-border-base flex flex-col gap-4 rounded-none border p-4',
+                'border-border-base flex flex-col gap-2 rounded-none border p-3',
             )
         }}
     >
@@ -29,12 +29,12 @@
             class="h-56 w-full rounded-none object-cover md:h-64"
         />
 
-        <div class="flex flex-1 flex-col gap-3">
+        <div class="flex flex-1 flex-col">
             <h3 class="fr-heading fr-heading-size-sm">{!! $titleHtml !!}</h3>
             <x-fr-text size="sm" class="line-clamp-2">{{ $post->excerpt() }}</x-fr-text>
         </div>
 
-        <hr class="border-border-base" />
+        <hr class="border-border-base my-2" />
 
         <div class="flex items-center gap-3">
             @if ($postAuthor->getFirstMediaUrl('avatar'))
