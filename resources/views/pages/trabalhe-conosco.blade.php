@@ -3,7 +3,7 @@
     splashTo="var(--color-elevation-surface)"
     splashLogoClass="text-brand-primary"
 >
-    <section class="flex flex-col items-center gap-4 pt-8 pb-8 md:pt-8 md:pb-8">
+    <section id="hero" class="flex flex-col items-center gap-4 pt-8 pb-8 md:pt-8 md:pb-8">
         <div
             class="container flex flex-col items-center gap-8 md:flex-row md:items-center md:gap-16"
             data-reveal-stagger="140"
@@ -61,7 +61,7 @@
         </div>
     </section>
 
-    <section class="section flex flex-col items-center gap-8 md:mt-20!">
+    <section id="comece" class="section flex flex-col items-center gap-8 md:mt-20!">
         <div class="container flex max-w-3xl flex-col items-center gap-8">
             <x-fr-headline data-reveal="up">
                 <x-slot:title>
@@ -123,7 +123,7 @@
         </div>
     </section>
 
-    <section class="section md:mt-20!">
+    <section id="proposito" class="section md:mt-20!">
         <div class="container flex flex-col gap-8 md:flex-row md:items-center md:gap-16">
             <div class="flex flex-col gap-8 md:basis-3/5">
                 <x-fr-headline align="left" data-reveal="up">
@@ -170,6 +170,7 @@
     </section>
 
     <x-cta-banner
+        id="cta-banner"
         class="md:mt-20!"
         cta-label="Quero participar do programa"
         cta-href="https://forms.monday.com/forms/70a696032cb3a829f81b7735b8b6ab9f?r=use1"

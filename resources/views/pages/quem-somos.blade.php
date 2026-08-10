@@ -8,7 +8,7 @@
     </x-slot:metatags>
 
     {{-- 1. HERO --}}
-    <section class="section-first">
+    <section id="hero" class="section-first">
         <div
             class="container flex flex-col items-center gap-8 md:flex-row md:items-center md:justify-between md:gap-12"
             data-reveal-stagger="140"
@@ -35,7 +35,7 @@
         </div>
     </section>
 
-    <section class="section dark bg-elevation-surface py-20">
+    <section id="missao-visao-valores" class="section dark bg-elevation-surface py-20">
         <div class="container flex flex-col gap-8">
             <x-fr-headline data-reveal="up">
                 <x-slot:title>
@@ -78,7 +78,7 @@
     </section>
 
     {{-- 3. PILARES — O que sustenta nossa atuação --}}
-    <section class="section">
+    <section id="pilares" class="section">
         <div class="container flex flex-col gap-8">
             <x-fr-headline data-reveal="up">
                 <x-slot:title class="font-bold!">
@@ -143,7 +143,7 @@
         ];
     @endphp
 
-    <section class="section">
+    <section id="numeros" class="section">
         <div class="container flex flex-col gap-8">
             <x-fr-headline data-reveal="up">
                 <x-slot:title>
@@ -170,7 +170,7 @@
     </section>
 
     {{-- 5. CONTEÚDO QUE TRANSFORMA --}}
-    <section class="section">
+    <section id="conteudo" class="section">
         <div class="container flex flex-col gap-12">
             {{-- Vídeo institucional: vertical no mobile, horizontal no desktop --}}
             <div class="dark" data-reveal="scale">

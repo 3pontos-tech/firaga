@@ -8,7 +8,7 @@
     </x-slot:metatags>
 
     {{-- 1. HERO --}}
-    <section class="dark bg-elevation-surface pt-(--section-first-gap) pb-(--section-gap) sm:pt-27.5">
+    <section id="hero" class="dark bg-elevation-surface pt-(--section-first-gap) pb-(--section-gap) sm:pt-27.5">
         <div class="container flex flex-col items-center gap-12">
             <x-fr-headline size="2xl" data-reveal="up">
                 <x-slot:title>
@@ -40,7 +40,7 @@
     </section>
 
     {{-- 2. FLAMMA --}}
-    <section class="section">
+    <section id="flamma" class="section">
         <div class="container flex flex-col gap-8">
             <div class="mx-auto">
                 <img src="{{ asset('images/logos/flamma-logo.svg') }}" alt="Logo Flamma" class="h-9 w-auto" />
@@ -105,7 +105,7 @@
     </section>
 
     {{-- 4. PLANEJAMENTO FINANCEIRO --}}
-    <section class="section">
+    <section id="planejamento" class="section">
         <div class="container flex flex-col gap-8 md:flex-row md:items-center md:gap-16">
             <div class="flex flex-col gap-8 md:basis-1/2">
                 <x-fr-headline align="left" data-reveal="up">
@@ -325,7 +325,7 @@
     </section>
 
     {{-- 6. FLARE (IA) --}}
-    <section class="section">
+    <section id="flare" class="section">
         <div class="container">
             <div
                 class="to-yellow-primary relative overflow-hidden rounded-2xl bg-linear-to-r from-[#f3f1e7] p-8 md:p-16"
@@ -401,7 +401,7 @@
     </section>
 
     {{-- 7. KEY ACCOUNT --}}
-    <section class="section dark bg-elevation-surface overflow-hidden py-20">
+    <section id="premium" class="section dark bg-elevation-surface overflow-hidden py-20">
         <div class="container flex flex-col gap-8 md:grid md:grid-cols-2 md:items-center md:gap-16">
             <div class="flex flex-col gap-8">
                 <x-fr-headline align="left" data-reveal="up">
@@ -460,7 +460,7 @@
     </section>
 
     {{-- 8. EDUCA FIRE --}}
-    <section class="section">
+    <section id="educafire" class="section">
         <div class="container">
             <x-fr-headline data-reveal="up">
                 <x-slot:header>
