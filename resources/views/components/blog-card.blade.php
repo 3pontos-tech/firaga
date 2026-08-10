@@ -16,10 +16,11 @@
             )
             ->implode(' ');
     @endphp
-    <article
+    <a
+        href="{{ route('blog.show', $post) }}"
         {{
             $attributes->class(
-                'border-border-base flex flex-col gap-2 rounded-none border p-3',
+                'border-border-base hover:border-brand-primary flex flex-col gap-2 rounded-none border p-3 transition-colors',
             )
         }}
     >
@@ -47,13 +48,14 @@
                 @endif
             </div>
         </div>
-    </article>
+    </a>
 @else
     {{-- Listing card: horizontal on mobile (small image right, no avatar/description), vertical on desktop --}}
-    <article
+    <a
+        href="{{ route('blog.show', $post) }}"
         {{
             $attributes->class(
-                'border-border-base flex items-center gap-4 rounded-sm border p-4 md:flex-col md:items-stretch md:gap-3',
+                'border-border-base hover:border-brand-primary flex items-center gap-4 rounded-sm border p-4 transition-colors md:flex-col md:items-stretch md:gap-3',
             )
         }}
     >
@@ -87,5 +89,5 @@
                 </div>
             </div>
         </div>
-    </article>
+    </a>
 @endif

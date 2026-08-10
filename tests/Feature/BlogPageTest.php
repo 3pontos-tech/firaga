@@ -55,7 +55,7 @@ it('renders the featured card title and excerpt without a gap between them', fun
 
     $content = (string) $this->get(route('blog'))->assertSuccessful()->getContent();
 
-    preg_match('/<article[^>]*rounded-none[^>]*>.*?<\/article>/s', $content, $matches);
+    preg_match('/<a[^>]*rounded-none[^>]*>.*?<\/a>/s', $content, $matches);
 
     expect($matches)->not->toBeEmpty();
 
