@@ -23,7 +23,7 @@
             <div class="flex w-full flex-col items-center gap-8 md:basis-3/5 md:items-start">
                 <x-fr-headline size="2xl" align="left-desk" data-reveal="up">
                     <x-slot:header>
-                        <x-social-proof align="left-desk">Mais de 9.000 investidores já fazem parte</x-social-proof>
+                        <x-social-proof align="left-desk">Mais de 7.000 investidores já fazem parte</x-social-proof>
                     </x-slot:header>
 
                     <x-slot:title class="md:text-7xl!">
@@ -460,7 +460,7 @@
         cta-target="_blank"
     >
         <x-slot:proof>
-            <x-social-proof variant="dark">Mais de 50 investidores já fazem parte</x-social-proof>
+            <x-social-proof variant="dark">Mais de 2000 investidores já fazem parte</x-social-proof>
         </x-slot:proof>
         <x-slot:title>
             Planejamento financeiro é o primeiro passo para todos os outros que você vai dar na sua vida.

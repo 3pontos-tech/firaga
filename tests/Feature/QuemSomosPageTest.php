@@ -88,7 +88,9 @@ it('serve o vídeo vertical no mobile e o horizontal no desktop', function (): v
 
     expect($matches[0])->each->toContain('preload="none"')->toContain('playsinline')->toContain('poster=');
 
-    expect(mb_strpos($content, '<video'))->toBeLessThan(mb_strpos($content, 'Conteúdo que'));
+    expect(mb_strpos($content, '<video'))->toBeLessThan(
+        mb_strpos($content, 'Conteúdo que <mark>transforma</mark>'),
+    );
 });
 
 it('usa a tipografia do design system nos blocos de missão, visão e pilares', function (): void {
