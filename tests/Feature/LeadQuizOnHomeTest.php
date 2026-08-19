@@ -5,14 +5,14 @@ declare(strict_types=1);
 it('renders the lead quiz section on the home page', function (): void {
     $this->get('/')
         ->assertOk()
-        ->assertSee('3 perguntas, 30 segundos')
+        ->assertSee('Descubra o plano ideal para você em 30 segundos')
         ->assertSee('Responda abaixo e um consultor entra em contato no horário que você escolher')
-        ->assertSee('Firece')
+        ->assertSee('Fire|ce')
         ->assertSee('Perfeito! Vou te conectar agora com um consultor que trabalha com o seu perfil.')
         ->assertSee('Abrir conversa no WhatsApp');
 });
 
-it('lays the quiz on the left and the photo with the organic cutout on the right', function (): void {
+it('lays the quiz on the left and the photo in the Figma 841/590 frame on the right', function (): void {
     $response = $this->get('/');
 
     $response->assertOk();
@@ -26,23 +26,30 @@ it('lays the quiz on the left and the photo with the organic cutout on the right
     expect($section)
         ->toContain('md:flex-row')
         ->and($section)
-        ->toContain('md:basis-1/2')
+        ->toContain('md:basis-[51.3%]')
         ->and($section)
-        ->toContain('images/woman-with-phone.jpg')
+        ->toContain('md:basis-[46.9%]')
         ->and($section)
-        ->toContain('viewBox="0 0 732 640"')
+        ->toContain('images/home_imagem_3.webp')
         ->and($section)
-        ->toContain('text-elevation-surface');
+        ->toContain('aspect-841/590');
 
-    expect($section)->not->toContain('max-w-xl');
+    // A foto não é mais esticada até a altura do card do quiz.
+    expect($section)->not->toContain('max-w-xl')->not->toContain('absolute inset-0 h-full w-full');
 
-    expect(mb_strpos($section, 'leadQuiz({'))->toBeLessThan(mb_strpos($section, 'woman-with-phone.jpg'));
+    expect(mb_strpos($section, 'leadQuiz({'))->toBeLessThan(mb_strpos($section, 'home_imagem_3.webp'));
 });
 
-it('reuses the same organic cutout on the hero video and on the quiz photo', function (): void {
+it('does not overlay the organic cutout on a photo that already carries it in its alpha', function (): void {
     $content = (string) $this->get('/')->assertOk()->getContent();
 
-    expect(mb_substr_count($content, 'viewBox="0 0 732 640"'))->toBe(2);
+    preg_match('/<section[^>]*id="quiz".*?<\/section>/s', $content, $quiz);
+
+    expect($quiz)->not->toBeEmpty();
+    expect($quiz[0])->not->toContain('viewBox="0 0 732 640"');
+
+    // O vídeo do hero não tem canal alpha, então lá o SVG continua sendo necessário.
+    expect(mb_substr_count($content, 'viewBox="0 0 732 640"'))->toBe(1);
 });
 
 it('wires all 4 questions and the WhatsApp number into the Alpine quiz state', function (): void {

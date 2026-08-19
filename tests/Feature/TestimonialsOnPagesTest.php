@@ -4,21 +4,15 @@ declare(strict_types=1);
 
 use App\Models\Testimonial;
 
-it('renders the 4 most recent testimonials on the home page', function (): void {
+it('features only the most recent testimonial on the home page', function (): void {
     Testimonial::factory()->create(['name' => 'Mais recente', 'posted_at' => now()->subDay()]);
     Testimonial::factory()->create(['name' => 'Segundo mais recente', 'posted_at' => now()->subWeek()]);
-    Testimonial::factory()->create(['name' => 'Terceiro mais recente', 'posted_at' => now()->subMonth()]);
-    Testimonial::factory()->create(['name' => 'Quarto mais recente', 'posted_at' => now()->subMonths(2)]);
     Testimonial::factory()->create(['name' => 'Mais antigo', 'posted_at' => now()->subMonths(6)]);
 
     $this->get('/')
         ->assertOk()
-        ->assertSeeInOrder([
-            'Mais recente',
-            'Segundo mais recente',
-            'Terceiro mais recente',
-            'Quarto mais recente',
-        ])
+        ->assertSee('Mais recente')
+        ->assertDontSee('Segundo mais recente')
         ->assertDontSee('Mais antigo');
 });
 
