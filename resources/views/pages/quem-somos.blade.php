@@ -28,7 +28,7 @@
             <div class="hidden w-full md:block md:basis-2/5" data-reveal="scale">
                 <img
                     src="{{ asset('images/quem-somos-hero.webp') }}"
-                    alt="Equipe Firece"
+                    alt="Equipe Fire|ce"
                     class="mx-auto w-full max-w-[423px] md:mr-0 md:ml-auto"
                 />
             </div>

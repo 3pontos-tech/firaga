@@ -43,3 +43,15 @@ it('renderiza o drill-down mobile com os links principais e botão de voltar', f
         ->assertSee('activeSubmenu = null', escape: false)
         ->assertSee('Voltar');
 });
+
+it('pinta o "|" do logo com a cor do lettering quando o header é escuro', function (): void {
+    $this->get(route('nossos-servicos'))
+        ->assertOk()
+        ->assertSee('[&_.st2]:text-brand-primary dark:[&_.st2]:text-text-high', escape: false);
+});
+
+it('mantém o "|" do logo em uma classe própria no svg', function (): void {
+    expect(file_get_contents(public_path('images/logos/logo-with-text.svg')))
+        ->toContain('.st2 {')
+        ->toContain('<rect class="st2"');
+});

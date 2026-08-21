@@ -49,7 +49,7 @@
 
                         <x-arrow-block eyebrow="Corporativo" title="Empresas e RH corporativo.">
                             Quer oferecer educação financeira como benefício para sua equipe? A Flamma foi criada
-                            exatamente para isso e a Firece cuida de tudo.
+                            exatamente para isso e a Fire|ce cuida de tudo.
                         </x-arrow-block>
 
                         <x-arrow-block eyebrow="Expertise" title="Profissionais e especialistas de mercado.">
@@ -105,7 +105,7 @@
                     number="01"
                     title="Parceria comercial"
                 >
-                    Você indica clientes para a Firece e recebe por isso. Modelo simples, sem burocracia você foca no
+                    Você indica clientes para a Fire|ce e recebe por isso. Modelo simples, sem burocracia você foca no
                     relacionamento, a gente foca no atendimento. Ideal para quem tem audiência ou rede de contatos
                     qualificada.
 
@@ -126,8 +126,8 @@
                     number="02"
                     title="Projeto educacional conjunto"
                 >
-                    Co-criamos conteúdo, cursos, workshops ou programas de educação financeira com a sua marca. A Firece
-                    entra com metodologia, especialistas e estrutura você entra com canal e audiência.
+                    Co-criamos conteúdo, cursos, workshops ou programas de educação financeira com a sua marca. A
+                    Fire|ce entra com metodologia, especialistas e estrutura você entra com canal e audiência.
 
                     <x-slot:footer>
                         <div class="flex items-center gap-2">

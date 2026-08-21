@@ -42,7 +42,7 @@ it('cobre a foto do atendimento premium com o mesmo recorte orgânico, em preto'
 
     $section = $matches[0];
 
-    preg_match('/<div class="relative[^"]*"[^>]*>(?:(?!<\/div>).)*man-walking-stair.*?<\/svg>/s', $section, $wrapper);
+    preg_match('/<div[^>]*class="relative[^"]*"[^>]*>(?:(?!<\/div>).)*man-walking-stair.*?<\/svg>/s', $section, $wrapper);
 
     expect($wrapper)->not->toBeEmpty();
 
@@ -55,4 +55,34 @@ it('mostra os três perfis de plano', function (): void {
         ->assertSee('Perfil Gold')
         ->assertSee('Perfil Platinum')
         ->assertSee('Perfil Black');
+});
+
+it('aplica o gradiente da Flamma no destaque do título de benefício corporativo', function (): void {
+    $this->get(route('nossos-servicos'))
+        ->assertOk()
+        ->assertSee(
+            '<span class="from-flamma-primary to-flamma-secondary bg-linear-to-r bg-clip-text text-transparent">',
+            escape: false,
+        );
+});
+
+it('usa divisores na cor da marca nos cartões de plano claros', function (): void {
+    $response = $this->get(route('nossos-servicos'));
+
+    $response->assertOk();
+
+    expect(mb_substr_count((string) $response->getContent(), '<hr class="border-brand-primary" />'))->toBe(2);
+});
+
+it('mantém a foto do planejamento na proporção do design', function (): void {
+    $this->get(route('nossos-servicos'))
+        ->assertOk()
+        ->assertSee('aspect-538/596', escape: false);
+});
+
+it('recorta a foto do atendimento premium antes da borda da tela', function (): void {
+    $this->get(route('nossos-servicos'))
+        ->assertOk()
+        ->assertSee('md:w-[calc(100%_+_max(0px,50vw_-_46rem))]', escape: false)
+        ->assertSee('rounded-[20px]', escape: false);
 });

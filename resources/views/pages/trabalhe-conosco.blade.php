@@ -54,7 +54,7 @@
             <div class="relative hidden w-full md:block md:min-h-115 md:basis-2/5" data-reveal="scale">
                 <img
                     src="{{ asset('images/two-girls-look.png') }}"
-                    alt="Consultora Firece atendendo cliente"
+                    alt="Consultora Fire|ce atendendo cliente"
                     class="absolute bottom-0 h-full w-full rounded-lg object-contain"
                 />
             </div>
@@ -87,7 +87,7 @@
                     number="01"
                     title="Imersão na metodologia."
                 >
-                    Você aprende o jeito Firece de diagnosticar, planejar e acompanhar com casos reais desde o início.
+                    Você aprende o jeito Fire|ce de diagnosticar, planejar e acompanhar com casos reais desde o início.
 
                     <x-slot:footer>
                         <x-fr-text size="sm" class="text-brand-primary! font-semibold!"> Semanas 1–2 </x-fr-text>
@@ -152,7 +152,7 @@
                             A carreira tem altos e baixos. Buscamos quem se mantém firme.
                         </x-arrow-block>
 
-                        <x-arrow-block title="Alinhamento com os valores da Firece.">
+                        <x-arrow-block title="Alinhamento com os valores da Fire|ce.">
                             Transparência, impacto real, sem empurrar produto. É assim que trabalhamos.
                         </x-arrow-block>
                     </div>
@@ -162,7 +162,7 @@
             <div class="relative hidden w-full md:block md:min-h-160 md:basis-2/5" data-reveal="scale">
                 <img
                     src="{{ asset('images/one-guy-look.png') }}"
-                    alt="Time Firece"
+                    alt="Time Fire|ce"
                     class="absolute inset-0 h-full w-full rounded-lg object-contain object-bottom"
                 />
             </div>
@@ -185,7 +185,7 @@
         </x-slot:title>
 
         <x-slot:description>
-            O programa trainee da Firece foi criado para quem quer aprender na prática, desenvolver habilidades
+            O programa trainee da Fire|ce foi criado para quem quer aprender na prática, desenvolver habilidades
             consultivas e construir uma trajetória sólida no mercado financeiro com acompanhamento próximo desde o
             primeiro dia.
         </x-slot:description>

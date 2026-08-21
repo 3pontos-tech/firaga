@@ -12,7 +12,7 @@
                     Seu patrimônio merece mais do que organização
                 </x-slot:title>
                 <x-slot:description>
-                    O modelo de atendimento premium da Firece para quem exige personalização, estratégia avançada e
+                    O modelo de atendimento premium da Fire|ce para quem exige personalização, estratégia avançada e
                     confidencialidade em cada decisão.
                 </x-slot:description>
 

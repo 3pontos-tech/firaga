@@ -34,7 +34,7 @@ new class extends Component
                 Confira todos os <mark>nossos artigos</mark>
             </x-slot:title>
             <x-slot:description>
-                Você aprende o jeito Firece de diagnosticar, planejar e acompanhar com casos reais desde o início
+                Você aprende o jeito Fire|ce de diagnosticar, planejar e acompanhar com casos reais desde o início
             </x-slot:description>
         </x-fr-headline>
 

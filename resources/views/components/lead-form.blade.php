@@ -3,7 +3,7 @@
     'description' => 'Preencha abaixo e a gente entra em contato em até 2 dias úteis',
     'selectLabel' => 'Vaga de interesse',
     'selectOptions' => [],
-    'messageLabel' => 'Por que a Firece?',
+    'messageLabel' => 'Por que a Fire|ce?',
     'submitLabel' => 'Enviar'
 ])
 
