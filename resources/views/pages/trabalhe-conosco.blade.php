@@ -3,18 +3,18 @@
     splashTo="var(--color-elevation-surface)"
     splashLogoClass="text-brand-primary"
 >
-    <section id="hero" class="flex flex-col items-center gap-4 pt-8 pb-8 md:pt-8 md:pb-8">
+    <section id="hero" class="flex flex-col items-center gap-4 pt-8 pb-8 md:pt-20">
         <div
-            class="container flex flex-col items-center gap-8 md:flex-row md:items-center md:gap-16"
+            class="container flex flex-col items-center gap-8 md:flex-row md:items-center md:justify-between md:gap-16"
             data-reveal-stagger="140"
         >
-            <div class="flex w-full flex-col items-center gap-8 md:basis-3/5 md:items-start">
+            <div class="flex w-full flex-col items-center gap-8 md:basis-1/2 md:items-start">
                 <x-fr-headline size="2xl" align="left-desk" data-reveal="up">
                     <x-slot:header>
                         <x-logo-badge class="md:hidden"> Trabalhe conosco </x-logo-badge>
                     </x-slot:header>
 
-                    <x-slot:title class="sm:text-5xl! md:text-7xl!">
+                    <x-slot:title>
                         <mark>Transforme</mark> vidas começando pela sua
                     </x-slot:title>
                     <x-slot:description>
@@ -23,7 +23,7 @@
                     </x-slot:description>
 
                     <x-slot:footer>
-                        <div class="flex w-full max-w-xl flex-col gap-4">
+                        <div class="mt-4 flex w-full flex-col gap-4">
                             <hr class="border-border-base w-full" />
                             <x-stat-grid
                                 highlight
@@ -31,7 +31,7 @@
                                     [
        ['value' => '+10 anos', 'label' => 'DE MERCADO'],
        ['value' => '300%', 'label' => 'CRES. ANUAL'],
-       ['value' => '+7 mil', 'label' => 'CLIENTES'],
+       ['value' => '+2 mil', 'label' => 'CLIENTES'],
     ]
                                 "
                             />
@@ -39,9 +39,8 @@
                     </x-slot:footer>
                 </x-fr-headline>
 
-                <div class="relative hidden w-full md:block md:h-full md:basis-2/5" data-reveal="up">
+                <div class="hidden w-full md:block" data-reveal="up">
                     <x-fr-button
-                        tag="a"
                         rel="noopener noreferrer"
                         href="https://forms.monday.com/forms/70a696032cb3a829f81b7735b8b6ab9f?r=use1"
                         target="_blank"
@@ -51,23 +50,23 @@
                 </div>
             </div>
 
-            <div class="relative hidden w-full md:block md:min-h-115 md:basis-2/5" data-reveal="scale">
+            <div class="relative hidden w-full md:block md:min-h-130 md:basis-2/5" data-reveal="scale">
                 <img
-                    src="{{ asset('images/two-girls-look.png') }}"
+                    src="{{ asset('images/carreira-imagem_1.webp') }}"
                     alt="Consultora Fire|ce atendendo cliente"
-                    class="absolute bottom-0 h-full w-full rounded-lg object-contain"
+                    class="absolute bottom-0 h-full w-full rounded-xl object-contain"
                 />
             </div>
         </div>
     </section>
 
-    <section id="comece" class="section flex flex-col items-center gap-8 md:mt-20!">
-        <div class="container flex max-w-3xl flex-col items-center gap-8">
+    <section id="comece" class="section flex flex-col items-center gap-8">
+        <div class="container flex flex-col items-center gap-8">
             <x-fr-headline data-reveal="up">
                 <x-slot:title>
                     <mark>Comece sua carreira</mark> no mercado financeiro
                 </x-slot:title>
-                <x-slot:description>
+                <x-slot:description class="mx-auto max-w-[900px]!">
                     Se você sente que pode mais, mas ainda não encontrou o ambiente certo para evoluir, o Programa de
                     Trainee da Fire|ce 2026 pode ser o próximo passo estratégico da sua trajetória.<br />
                     Uma formação estruturada para quem quer construir carreira em consultoria financeira mesmo vindo de
@@ -78,11 +77,11 @@
 
         <div class="w-full md:container md:mx-auto">
             <div
-                class="border-border-base divide-border-base grid w-full grid-cols-1 divide-y md:grid-cols-3 md:gap-6 md:divide-y-0 md:border-y-0"
+                class="border-border-base divide-border-base grid w-full grid-cols-1 divide-y md:grid-cols-3 md:gap-8 md:divide-y-0 md:border-y-0"
                 data-reveal-stagger="140"
             >
                 <x-numbered-step
-                    class="md:border-border-base bg-elevation-01dp p-8 md:border"
+                    class="md:border-border-base bg-elevation-01dp gap-3! p-8 md:border"
                     data-reveal="up"
                     number="01"
                     title="Imersão na metodologia."
@@ -95,7 +94,7 @@
                 </x-numbered-step>
 
                 <x-numbered-step
-                    class="md:border-border-base bg-elevation-01dp p-8 md:border"
+                    class="md:border-border-base bg-elevation-01dp gap-3! p-8 md:border"
                     data-reveal="up"
                     number="02"
                     title="Primeiros atendimentos com mentoria."
@@ -108,7 +107,7 @@
                 </x-numbered-step>
 
                 <x-numbered-step
-                    class="md:border-border-base bg-elevation-01dp p-8 md:border"
+                    class="md:border-border-base bg-elevation-01dp gap-3! p-8 md:border"
                     data-reveal="up"
                     number="03"
                     title="Carteira própria e autonomia."
@@ -123,24 +122,24 @@
         </div>
     </section>
 
-    <section id="proposito" class="section md:mt-20!">
-        <div class="container flex flex-col gap-8 md:flex-row md:items-center md:gap-16">
-            <div class="flex flex-col gap-8 md:basis-3/5">
+    <section id="proposito" class="section">
+        <div class="container flex flex-col gap-8 md:flex-row md:items-center md:justify-between md:gap-16">
+            <div class="flex flex-col gap-8 md:basis-1/2">
                 <x-fr-headline align="left" data-reveal="up">
                     <x-slot:title>
                         Mais <mark>propósito</mark> do que currículo.
                     </x-slot:title>
                     <x-slot:description>
-                        Para qualquer vaga, o que mais importa é para quê você quer estar aqui. Experiência se constrói
-                        postura e propósito são suas.
+                        Para qualquer vaga, o que mais importa é <strong>para quê você quer estar aqui</strong>.
+                        Experiência se constrói postura e propósito são suas.
                     </x-slot:description>
                 </x-fr-headline>
 
-                <div class="flex flex-col gap-4" data-reveal="up">
-                    <x-fr-heading size="xs"> O que buscamos... </x-fr-heading>
+                <div class="flex flex-col gap-8" data-reveal="up">
+                    <x-fr-heading size="xs" class="font-medium!"> O que buscamos... </x-fr-heading>
 
                     <div class="flex flex-col gap-8" data-reveal-stagger="120">
-                        <x-arrow-block title="Orientado a resultado com propósito genuíno.">
+                        <x-arrow-block title="Orientado a resultado com propósito genuíno">
                             Você quer impactar a vida das pessoas, não só bater meta.
                         </x-arrow-block>
 
@@ -161,9 +160,9 @@
 
             <div class="relative hidden w-full md:block md:min-h-160 md:basis-2/5" data-reveal="scale">
                 <img
-                    src="{{ asset('images/one-guy-look.png') }}"
+                    src="{{ asset('images/carreira-imagem_2.webp') }}"
                     alt="Time Fire|ce"
-                    class="absolute inset-0 h-full w-full rounded-lg object-contain object-bottom"
+                    class="absolute inset-0 h-full w-full rounded-xl object-contain object-bottom"
                 />
             </div>
         </div>
@@ -171,7 +170,7 @@
 
     <x-cta-banner
         id="cta-banner"
-        class="md:mt-20!"
+        class="from-brand-primary to-brand-secondary bg-linear-to-b"
         cta-label="Quero participar do programa"
         cta-href="https://forms.monday.com/forms/70a696032cb3a829f81b7735b8b6ab9f?r=use1"
         footer="O crescimento profissional não acontece por acaso. Ele é construído com método, prática e acompanhamento."
