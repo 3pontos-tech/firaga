@@ -2,7 +2,8 @@
     'eyebrow' => null,
     'title' => null,
     'align' => 'top',
-    'iconColor' => 'text-brand-primary'
+    'iconColor' => 'text-brand-primary',
+    'iconSize' => 'size-5'
 ])
 
 <div
@@ -13,7 +14,7 @@
         ])
     }}
 >
-    <x-heroicon-c-arrow-right class="size-5 shrink-0 {{ $iconColor }}" />
+    <x-heroicon-c-arrow-right class="{{ $iconSize }} shrink-0 {{ $iconColor }}" />
 
     <div class="flex flex-col gap-2">
         @if (filled($eyebrow))

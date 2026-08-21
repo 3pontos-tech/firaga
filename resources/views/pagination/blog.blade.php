@@ -23,81 +23,89 @@
         $pages[] = '...';
     }
 
-    $boxBase = 'flex size-9 items-center justify-center rounded-xs border text-xs transition-colors';
+    $arrowBox =
+        'flex size-10 items-center justify-center rounded-xs border shadow-[-2px_4px_12px_rgba(24,24,24,0.08)] transition-colors';
+    $pageBox =
+        'font-display flex size-12 items-center justify-center rounded-xs border text-xs font-bold transition-colors';
+    $label = 'font-display text-xs font-bold';
 @endphp
 
 @if ($paginator->hasPages())
-    <div class="flex flex-col items-center gap-4 md:flex-row md:items-center md:justify-between">
-        <p class="text-xxs text-text-high hidden font-sans font-semibold md:block">
+    <div class="flex flex-col items-center gap-4 md:mt-7 md:flex-row md:items-center md:justify-between">
+        <p class="text-text-high hidden font-sans text-xs font-bold md:block">
             Exibindo {{ $paginator->count() }} {{ $paginator->count() === 1 ? 'resultado' : 'resultados' }}
         </p>
 
-        <div class="flex items-center gap-1.5">
-            {{-- First --}}
-            @if ($paginator->onFirstPage())
-                <span class="{{ $boxBase }} border-border-base text-text-low cursor-not-allowed">&laquo;</span>
-            @else
-                <button
-                    wire:click.prevent="gotoPage(1)"
-                    class="{{ $boxBase }} border-border-base text-text-high hover:bg-elevation-01dp"
-                >
-                    &laquo;
-                </button>
-            @endif
-
-            {{-- Back --}}
-            @if ($paginator->onFirstPage())
-                <span class="text-text-low hidden cursor-not-allowed px-2 text-xs md:block">Back</span>
-            @else
-                <button
-                    wire:click.prevent="previousPage()"
-                    class="text-text-high hidden px-2 text-xs transition-opacity hover:opacity-70 md:block"
-                >
-                    Back
-                </button>
-            @endif
-
-            {{-- Numbered pages --}}
-            @foreach ($pages as $page)
-                @if ($page === '...')
-                    <span class="{{ $boxBase }} border-border-base text-text-medium">&hellip;</span>
-                @elseif ($page === $current)
-                    <span class="{{ $boxBase }} border-brand-primary bg-brand-primary text-text-light font-semibold">
-                        {{ $page }}
+        <div class="flex items-center gap-4 md:gap-8">
+            {{-- First + Back --}}
+            <div @class (['flex items-center gap-4', 'opacity-50' => $paginator->onFirstPage()])>
+                @if ($paginator->onFirstPage())
+                    <span class="{{ $arrowBox }} border-border-base text-icon-low cursor-not-allowed">
+                        <x-heroicon-s-chevron-double-left class="size-5" />
                     </span>
+                    <span class="{{ $label }} text-text-high hidden cursor-not-allowed md:block">Back</span>
                 @else
                     <button
-                        wire:click.prevent="gotoPage({{ $page }})"
-                        class="{{ $boxBase }} border-border-base text-text-high hover:bg-elevation-01dp"
+                        wire:click.prevent="gotoPage(1)"
+                        class="{{ $arrowBox }} border-border-base text-icon-high hover:bg-elevation-01dp"
+                        aria-label="Primeira página"
                     >
-                        {{ $page }}
+                        <x-heroicon-s-chevron-double-left class="size-5" />
+                    </button>
+                    <button
+                        wire:click.prevent="previousPage()"
+                        class="{{ $label }} text-text-high hidden transition-opacity hover:opacity-70 md:block"
+                    >
+                        Back
                     </button>
                 @endif
-            @endforeach
+            </div>
 
-            {{-- Next --}}
-            @if ($paginator->hasMorePages())
-                <button
-                    wire:click.prevent="nextPage()"
-                    class="text-text-high hidden px-2 text-xs font-semibold transition-opacity hover:opacity-70 md:block"
-                >
-                    Next
-                </button>
-            @else
-                <span class="text-text-low hidden cursor-not-allowed px-2 text-xs font-semibold md:block">Next</span>
-            @endif
+            {{-- Numbered pages --}}
+            <div class="flex items-center gap-4">
+                @foreach ($pages as $page)
+                    @if ($page === '...')
+                        <span class="{{ $pageBox }} border-border-base text-text-medium">&hellip;</span>
+                    @elseif ($page === $current)
+                        <span
+                            class="{{ $pageBox }} border-brand-primary bg-brand-primary text-text-light shadow-[-2px_4px_12px_rgba(24,24,24,0.08)]"
+                        >
+                            {{ $page }}
+                        </span>
+                    @else
+                        <button
+                            wire:click.prevent="gotoPage({{ $page }})"
+                            class="{{ $pageBox }} border-border-base text-text-high hover:bg-elevation-01dp"
+                        >
+                            {{ $page }}
+                        </button>
+                    @endif
+                @endforeach
+            </div>
 
-            {{-- Last --}}
-            @if ($paginator->hasMorePages())
-                <button
-                    wire:click.prevent="gotoPage({{ $last }})"
-                    class="{{ $boxBase }} border-border-base text-text-high hover:bg-elevation-01dp"
-                >
-                    &raquo;
-                </button>
-            @else
-                <span class="{{ $boxBase }} border-border-base text-text-low cursor-not-allowed">&raquo;</span>
-            @endif
+            {{-- Next + Last --}}
+            <div @class (['flex items-center gap-4', 'opacity-50' => !$paginator->hasMorePages()])>
+                @if ($paginator->hasMorePages())
+                    <button
+                        wire:click.prevent="nextPage()"
+                        class="{{ $label }} text-text-high hidden transition-opacity hover:opacity-70 md:block"
+                    >
+                        Next
+                    </button>
+                    <button
+                        wire:click.prevent="gotoPage({{ $last }})"
+                        class="{{ $arrowBox }} border-border-base text-icon-high hover:bg-elevation-01dp"
+                        aria-label="Última página"
+                    >
+                        <x-heroicon-s-chevron-double-right class="size-5" />
+                    </button>
+                @else
+                    <span class="{{ $label }} text-text-high hidden cursor-not-allowed md:block">Next</span>
+                    <span class="{{ $arrowBox }} border-border-base text-icon-low cursor-not-allowed">
+                        <x-heroicon-s-chevron-double-right class="size-5" />
+                    </span>
+                @endif
+            </div>
         </div>
     </div>
 @endif

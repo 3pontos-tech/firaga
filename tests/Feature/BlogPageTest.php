@@ -85,3 +85,63 @@ it('renders without featured articles', function (): void {
 
     $this->get(route('blog'))->assertSuccessful();
 });
+
+it('renders the hero with the Figma title scale and copy', function (): void {
+    $content = (string) $this->get(route('blog'))->assertSuccessful()->getContent();
+
+    expect($content)
+        ->toContain('lg:text-7xl!')
+        ->toContain('consolidar seu patrimônio ou aumentar seus rendimentos');
+});
+
+it('renders listing cards with the Figma radius and padding', function (): void {
+    Post::factory()->create(['title' => 'Artigo Regular']);
+
+    $html = Livewire::test('blog-posts', ['excludedIds' => []])->html();
+
+    preg_match('/<a[^>]*md:flex-col[^>]*>/', $html, $card);
+
+    expect($card)->not->toBeEmpty();
+    expect($card[0])->toContain('rounded-xs')->toContain('p-3')->not->toContain('rounded-sm');
+});
+
+it('spaces the article grid columns by 54px as in Figma', function (): void {
+    Post::factory()->count(3)->create();
+
+    expect(Livewire::test('blog-posts', ['excludedIds' => []])->html())->toContain('md:gap-x-[54px]');
+});
+
+it('renders pagination boxes at the Figma sizes', function (): void {
+    Post::factory()->count(8)->create();
+
+    $html = Livewire::test('blog-posts', ['excludedIds' => []])->html();
+
+    expect(mb_substr_count($html, 'size-12'))->toBe(2);
+    expect(mb_substr_count($html, 'size-10'))->toBe(2);
+    expect($html)->toContain('Última página');
+});
+
+it('renders the newsletter banner with the Figma frame, radius and copy', function (): void {
+    $content = (string) $this->get(route('blog'))->assertSuccessful()->getContent();
+
+    expect($content)
+        ->toContain('md:rounded-md')
+        ->toContain('md:p-16')
+        ->toContain('md:max-w-[801px]')
+        ->toContain('md:max-w-[756px]')
+        ->toContain('md:gap-[29px]')
+        ->toContain('md:min-w-[185px]')
+        ->toContain('mercado financeiro, nacional e global');
+});
+
+it('positions the newsletter image by the asset own alpha mask, without a clip-path', function (): void {
+    $content = (string) $this->get(route('blog'))->assertSuccessful()->getContent();
+
+    expect($content)
+        ->toContain('blog-imagem_1.webp')
+        ->toContain('top-[4.9%]')
+        ->toContain('right-[2.32%]')
+        ->toContain('h-[91.75%]')
+        ->not->toContain('clipPathUnits')
+        ->not->toContain('newsletter-image-clip');
+});

@@ -39,7 +39,7 @@ new class extends Component
         </x-fr-headline>
 
         @if ($this->posts->isNotEmpty())
-            <div class="grid grid-cols-1 gap-8 md:grid-cols-3">
+            <div class="grid grid-cols-1 gap-8 md:grid-cols-3 md:gap-x-[54px]">
                 @foreach ($this->posts as $post)
                     <x-blog-card :post="$post" wire:key="post-{{ $post->id }}" />
                 @endforeach

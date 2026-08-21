@@ -440,11 +440,11 @@
 
     {{-- 7. KEY ACCOUNT --}}
     <section id="premium" class="section dark bg-elevation-surface overflow-hidden py-20">
-        <div class="container flex flex-col gap-8 md:grid md:grid-cols-2 md:items-center md:gap-16">
+        <div class="container flex flex-col gap-8 md:grid md:grid-cols-2 md:items-center md:gap-8">
             <div class="flex flex-col gap-8">
                 <x-fr-headline align="left" data-reveal="up">
                     <x-slot:header>
-                        <x-fr-text size="sm" class="text-text-high! font-semibold!"> Atendimento premium </x-fr-text>
+                        <x-fr-text size="sm" class="text-text-high! font-bold!"> Atendimento premium </x-fr-text>
                     </x-slot:header>
                     <x-slot:title>
                         Dê a atenção que seu
@@ -456,46 +456,55 @@
                     </x-slot:description>
                 </x-fr-headline>
 
-                <div class="flex flex-col gap-6" data-reveal="up">
-                    <x-fr-heading size="xs"> O que muda na sua vida: </x-fr-heading>
+                {{-- No Figma o título, os itens e o botão dividem um único stack de 16px --}}
+                <div class="flex flex-col gap-4" data-reveal="up">
+                    <x-fr-heading size="xs" class="font-medium!"> O que muda na sua vida: </x-fr-heading>
 
-                    <div class="flex flex-col gap-6" data-reveal-stagger="120">
-                        <x-arrow-block align="center" icon-color="text-text-high">
+                    <div class="flex flex-col gap-4" data-reveal-stagger="120">
+                        <x-arrow-block align="center" icon-color="text-text-high" icon-size="size-4">
                             Acompanhamento contínuo com revisões mensais do seu plano.
                         </x-arrow-block>
-                        <x-arrow-block align="center" icon-color="text-text-high">
+                        <x-arrow-block align="center" icon-color="text-text-high" icon-size="size-4">
                             Acesso direto ao seu consultor, em tempo integral.
                         </x-arrow-block>
-                        <x-arrow-block align="center" icon-color="text-text-high">
+                        <x-arrow-block align="center" icon-color="text-text-high" icon-size="size-4">
                             Estratégias exclusivas adaptadas ao seu momento de vida.
                         </x-arrow-block>
-                        <x-arrow-block align="center" icon-color="text-text-high">
+                        <x-arrow-block align="center" icon-color="text-text-high" icon-size="size-4">
                             Decisões financeiras com suporte em tempo real.
                         </x-arrow-block>
                     </div>
-                </div>
 
-                <x-fr-button
-                    variant="white"
-                    class="text-text-dark! md:self-start"
-                    data-reveal="up"
-                    href="{{ route('key-account') }}"
-                >
-                    Entrar em contato
-                </x-fr-button>
+                    <x-fr-button
+                        variant="white"
+                        class="text-text-dark! md:self-start"
+                        href="{{ route('key-account') }}"
+                    >
+                        Entrar em contato
+                    </x-fr-button>
+                </div>
             </div>
 
-            <div
-                class="relative hidden overflow-hidden rounded-[20px] md:block md:w-[calc(100%_+_max(0px,50vw_-_46rem))] md:max-w-none"
-                data-reveal="left"
-            >
+            {{--
+                874x509 é a moldura do Figma, e a curva é o path da própria máscara do
+                arquivo — não o x-organic-cutout genérico, que deformava com o container.
+            --}}
+            <div class="hidden md:block md:w-[calc(100%_+_max(0px,50vw_-_46.125rem))]" data-reveal="left">
+                <svg class="absolute size-0" aria-hidden="true" focusable="false">
+                    <defs>
+                        <clipPath id="key-account-image-clip" clipPathUnits="objectBoundingBox">
+                            <path
+                                d="M0.14434 0 C0.12662 0 0.11736 0.0362 0.12935 0.05861 C0.23359 0.25347 0.23449 0.55246 0.13143 0.74916 L0.03216 0.93861 C0.01976 0.96228 0.02955 1 0.04809 1 L0.97681 1 C0.98862 1 0.9982 0.9836 0.99824 0.96333 L0.99993 0.0369 C0.99997 0.01654 0.99037 0 0.97851 0 Z"
+                            />
+                        </clipPath>
+                    </defs>
+                </svg>
+
                 <img
                     src="{{ asset('images/man-walking-stair.jpg') }}"
                     alt="Pessoa no topo de uma escadaria"
-                    class="block w-full"
+                    class="aspect-874/509 w-full object-cover [clip-path:url(#key-account-image-clip)]"
                 />
-
-                <x-organic-cutout />
             </div>
         </div>
     </section>
