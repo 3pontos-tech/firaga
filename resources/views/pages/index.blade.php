@@ -25,7 +25,7 @@
                 <x-fr-headline size="2xl" align="left-desk" data-reveal="up">
                     <x-slot:header>
                         <x-social-proof align="left-desk" size="sm"
-                            >Mais de 7.000 pessoas já fazem parte.</x-social-proof
+                            >Mais de 2.000 pessoas já fazem parte.</x-social-proof
                         >
                     </x-slot:header>
 
@@ -496,7 +496,7 @@
         cta-target="_blank"
     >
         <x-slot:proof>
-            <x-social-proof variant="dark">Mais de 7000 pessoas já fazem parte</x-social-proof>
+            <x-social-proof variant="dark">Mais de 2000 pessoas já fazem parte</x-social-proof>
         </x-slot:proof>
         <x-slot:title>
             Planejamento financeiro é o primeiro passo para todos os outros que você vai dar na sua vida.

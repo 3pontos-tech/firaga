@@ -37,7 +37,7 @@
                     <div class="bg-border-base w-px self-stretch"></div>
 
                     <div class="flex flex-col items-start gap-2">
-                        <p class="font-display text-brand-primary text-md font-bold">+7 mil</p>
+                        <p class="font-display text-brand-primary text-md font-bold">+2 mil</p>
                         <p class="text-text-medium text-xxxs font-bold uppercase">Clientes</p>
                     </div>
                 </div>
