@@ -139,10 +139,7 @@ class PostResource extends Resource
             TextColumn::make('title')
                 ->label(__('filament.title'))
                 ->color('primary')
-                ->url(
-                    url: fn (Post $record): string => route('blog.show', ['post' => $record->slug]),
-                    shouldOpenInNewTab: true
-                )
+                ->url(fn (Post $record): string => EditPost::getUrl(['record' => $record]))
                 ->searchable(),
             TextColumn::make('status')
                 ->badge()
