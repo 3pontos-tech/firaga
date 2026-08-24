@@ -3,75 +3,90 @@
     splashTo="var(--color-elevation-surface)"
     splashLogoClass="text-brand-primary"
 >
-    <section class="section-first">
-        <div class="container flex flex-col items-center gap-8" data-reveal-stagger="140">
-            <x-fr-headline size="2xl" data-reveal="up">
-                <x-slot:header>
-                    <div class="flex w-full flex-col items-center justify-center gap-2">
-                        <x-logo-badge class="justify-center"> Nossos serviços </x-logo-badge>
-                    </div>
-                </x-slot:header>
+    <section id="hero" class="flex flex-col items-center gap-4 pt-8 pb-8 md:pt-20">
+        <div
+            class="container flex flex-col items-center gap-8 md:flex-row md:items-center md:justify-between md:gap-16"
+            data-reveal-stagger="140"
+        >
+            <div class="flex w-full flex-col items-center gap-8 md:basis-1/2 md:items-start">
+                <x-fr-headline size="2xl" align="left-desk" data-reveal="up">
+                    <x-slot:header>
+                        <x-logo-badge class="md:hidden"> Trabalhe conosco </x-logo-badge>
+                    </x-slot:header>
 
-                <x-slot:title>
-                    <mark>Transforme</mark> vidas começando pela sua
-                </x-slot:title>
-                <x-slot:description>
-                    O modelo de atendimento premium da Firece para quem exige personalização, estratégia avançada e
-                    confidencialidade em cada decisão.
-                </x-slot:description>
+                    <x-slot:title>
+                        <mark>Transforme</mark> vidas começando pela sua
+                    </x-slot:title>
+                    <x-slot:description>
+                        Se você tem experiência na área comercial, gosta do mercado financeiro e quer receber comissões
+                        sem limite, junte-se ao time de Planejadores Financeiros da Fire|ce.
+                    </x-slot:description>
 
-                <x-slot:actions class="my-4">
-                    <x-fr-button
-                        tag="a"
-                        href="https://api.whatsapp.com/send/?phone=5511958397432&text=Visitei+o+site+da+Fire%7Cce+e+quero+fazer+parte&type=phone_number&app_absent=0"
-                        target="_blank"
-                    >
-                        Quero fazer parte
-                    </x-fr-button>
-                </x-slot:actions>
-
-                <x-slot:footer>
-                    <x-stat-grid
-                        highlight
-                        :stats="
-                            [
+                    <x-slot:footer>
+                        <div class="mt-4 flex w-full flex-col gap-4">
+                            <hr class="border-border-base w-full" />
+                            <x-stat-grid
+                                highlight
+                                :stats="
+                                    [
        ['value' => '+10 anos', 'label' => 'DE MERCADO'],
        ['value' => '300%', 'label' => 'CRES. ANUAL'],
        ['value' => '+2 mil', 'label' => 'CLIENTES'],
     ]
-                        "
-                    />
-                </x-slot:footer>
-            </x-fr-headline>
+                                "
+                            />
+                        </div>
+                    </x-slot:footer>
+                </x-fr-headline>
+
+                <div class="hidden w-full md:block" data-reveal="up">
+                    <x-fr-button
+                        rel="noopener noreferrer"
+                        href="https://forms.monday.com/forms/70a696032cb3a829f81b7735b8b6ab9f?r=use1"
+                        target="_blank"
+                    >
+                        Enviar currículo
+                    </x-fr-button>
+                </div>
+            </div>
+
+            <div class="relative hidden w-full md:block md:min-h-130 md:basis-2/5" data-reveal="scale">
+                <img
+                    src="{{ asset('images/carreira-imagem_1.webp') }}"
+                    alt="Consultora Fire|ce atendendo cliente"
+                    class="absolute bottom-0 h-full w-full rounded-xl object-contain"
+                />
+            </div>
         </div>
     </section>
 
-    <section class="section flex flex-col items-center gap-8 pt-7">
+    <section id="comece" class="section flex flex-col items-center gap-8">
         <div class="container flex flex-col items-center gap-8">
             <x-fr-headline data-reveal="up">
                 <x-slot:title>
-                    <mark>Sem experiência?</mark> Esse é o ponto
+                    <mark>Comece sua carreira</mark> no mercado financeiro
                 </x-slot:title>
-                <x-slot:description>
-                    O programa trainee da Firece foi criado para quem está começando. Você aprende a metodologia, atende
-                    clientes reais e constrói sua carreira com suporte de quem já fez o caminho.
+                <x-slot:description class="mx-auto max-w-[900px]!">
+                    Se você sente que pode mais, mas ainda não encontrou o ambiente certo para evoluir, o Programa de
+                    Trainee da Fire|ce 2026 pode ser o próximo passo estratégico da sua trajetória.<br />
+                    Uma formação estruturada para quem quer construir carreira em consultoria financeira mesmo vindo de
+                    outra área.
                 </x-slot:description>
             </x-fr-headline>
         </div>
 
         <div class="w-full md:container md:mx-auto">
             <div
-                class="border-border-base divide-border-base grid w-full grid-cols-1 divide-y border-y md:grid-cols-3 md:gap-6 md:divide-y-0 md:border-y-0"
+                class="border-border-base divide-border-base grid w-full grid-cols-1 divide-y md:grid-cols-3 md:gap-8 md:divide-y-0 md:border-y-0"
                 data-reveal-stagger="140"
             >
                 <x-numbered-step
-                    class="md:border-border-base p-8 md:rounded-lg md:border"
+                    class="md:border-border-base bg-elevation-01dp gap-3! p-8 md:border"
                     data-reveal="up"
                     number="01"
-                    title="Imersão na metodologia"
-                    :show-chevron="false"
+                    title="Imersão na metodologia."
                 >
-                    Você aprende o jeito Firece de diagnosticar, planejar e acompanhar com casos reais desde o início
+                    Você aprende o jeito Fire|ce de diagnosticar, planejar e acompanhar com casos reais desde o início.
 
                     <x-slot:footer>
                         <x-fr-text size="sm" class="text-brand-primary! font-semibold!"> Semanas 1–2 </x-fr-text>
@@ -79,112 +94,85 @@
                 </x-numbered-step>
 
                 <x-numbered-step
-                    class="md:border-border-base p-8 md:rounded-lg md:border"
+                    class="md:border-border-base bg-elevation-01dp gap-3! p-8 md:border"
                     data-reveal="up"
                     number="02"
-                    title="Primeiros atendimentos com mentoria"
-                    :show-chevron="false"
+                    title="Primeiros atendimentos com mentoria."
                 >
                     Você atende com um consultor sênior ao lado. Aprende na prática, com suporte real.
 
                     <x-slot:footer>
-                        <x-fr-text size="sm" class="text-brand-primary!"> Mês 1–2 </x-fr-text>
+                        <x-fr-text size="sm" class="text-brand-primary! font-semibold!"> Mês 1–2 </x-fr-text>
                     </x-slot:footer>
                 </x-numbered-step>
 
                 <x-numbered-step
-                    class="md:border-border-base p-8 md:rounded-lg md:border"
+                    class="md:border-border-base bg-elevation-01dp gap-3! p-8 md:border"
                     data-reveal="up"
                     number="03"
-                    title="Carteira própria e autonomia"
-                    :show-chevron="false"
+                    title="Carteira própria e autonomia."
                 >
-                    Com a base construída, você assume sua carteira e cresce no ritmo que seu resultado permite
+                    Com a base construída, você assume sua carteira e cresce no ritmo que seu resultado permite.
 
                     <x-slot:footer>
-                        <x-fr-text size="sm" class="text-brand-primary!"> A partir do mês 3 </x-fr-text>
+                        <x-fr-text size="sm" class="text-brand-primary! font-semibold!"> A partir do mês 3 </x-fr-text>
                     </x-slot:footer>
                 </x-numbered-step>
             </div>
         </div>
-
-        <div class="container flex flex-col items-center gap-8">
-            <x-fr-button
-                tag="a"
-                href="https://api.whatsapp.com/send/?phone=5511958397432&text=Visitei+o+site+da+Fire%7Cce+e+quero+ser+trainee&type=phone_number&app_absent=0"
-                target="_blank"
-            >
-                Quero ser Trainee
-            </x-fr-button>
-        </div>
     </section>
 
-    <section class="section">
-        <div class="bg-brand-primary relative my-28 h-56 w-full overflow-hidden md:hidden">
-            <x-logo
-                class="text-brand-secondary absolute top-0 left-0 z-0 h-75! w-auto -translate-x-1/4 -translate-y-1/6"
-            />
-            <img
-                src="{{ asset('images/man-with-clock.png') }}"
-                alt="Imagem de homem"
-                class="absolute right-0 bottom-0 z-0 h-full w-auto object-cover"
-            />
-            <div
-                class="from-brand-primary/32 to-brand-secondary/24 pointer-events-none absolute inset-0 z-10 bg-linear-to-t"
-            ></div>
-        </div>
-
-        <div class="container flex flex-col gap-8 md:flex-row md:items-center md:gap-16">
-            <div class="flex flex-col gap-8 md:basis-3/5">
+    <section id="proposito" class="section">
+        <div class="container flex flex-col gap-8 md:flex-row md:items-center md:justify-between md:gap-16">
+            <div class="flex flex-col gap-8 md:basis-1/2">
                 <x-fr-headline align="left" data-reveal="up">
                     <x-slot:title>
-                        Mais <mark>propósito</mark> do que currículo
+                        Mais <mark>propósito</mark> do que currículo.
                     </x-slot:title>
                     <x-slot:description>
-                        Para qualquer vaga, o que mais importa é para quê você quer estar aqui. Experiência se constrói
-                        postura e propósito são suas.
+                        Para qualquer vaga, o que mais importa é <strong>para quê você quer estar aqui</strong>.
+                        Experiência se constrói postura e propósito são suas.
                     </x-slot:description>
                 </x-fr-headline>
 
-                <div class="flex flex-col gap-4" data-reveal="up">
-                    <x-fr-heading size="xs"> O que buscamos </x-fr-heading>
+                <div class="flex flex-col gap-8" data-reveal="up">
+                    <x-fr-heading size="xs" class="font-medium!"> O que buscamos... </x-fr-heading>
 
                     <div class="flex flex-col gap-8" data-reveal-stagger="120">
                         <x-arrow-block title="Orientado a resultado com propósito genuíno">
                             Você quer impactar a vida das pessoas, não só bater meta.
                         </x-arrow-block>
 
-                        <x-arrow-block title="Comunicação clara e escuta ativa">
-                            Sabe ouvir, criar confiança e explicar o complexo de forma simples
+                        <x-arrow-block title="Comunicação clara e escuta ativa.">
+                            Sabe ouvir, criar confiança e explicar o complexo de forma simples.
                         </x-arrow-block>
 
-                        <x-arrow-block title="Disciplina e consistência">
-                            A carreira tem altos e baixos. Buscamos quem se mantém firme
+                        <x-arrow-block title="Disciplina e consistência.">
+                            A carreira tem altos e baixos. Buscamos quem se mantém firme.
                         </x-arrow-block>
 
-                        <x-arrow-block title="Alinhamento com os valores da Firece">
-                            Transparência, impacto real, sem empurrar produto. É assim que trabalhamos
+                        <x-arrow-block title="Alinhamento com os valores da Fire|ce.">
+                            Transparência, impacto real, sem empurrar produto. É assim que trabalhamos.
                         </x-arrow-block>
                     </div>
                 </div>
             </div>
 
             <div class="relative hidden w-full md:block md:min-h-160 md:basis-2/5" data-reveal="scale">
-                <div
-                    class="from-brand-primary to-brand-secondary absolute inset-0 -z-1 rounded-lg bg-linear-to-b"
-                ></div>
                 <img
-                    src="{{ asset('images/man-with-clock.png') }}"
-                    alt="Imagem de homem"
-                    class="absolute inset-0 h-full w-full rounded-lg object-contain object-bottom"
+                    src="{{ asset('images/carreira-imagem_2.webp') }}"
+                    alt="Time Fire|ce"
+                    class="absolute inset-0 h-full w-full rounded-xl object-contain object-bottom"
                 />
             </div>
         </div>
     </section>
 
     <x-cta-banner
+        id="cta-banner"
+        class="from-brand-primary to-brand-secondary bg-linear-to-b"
         cta-label="Quero participar do programa"
-        cta-href="https://api.whatsapp.com/send/?phone=5511958397432&text=Visitei+o+site+da+Fire%7Cce+e+quero+ser+trainee&type=phone_number&app_absent=0"
+        cta-href="https://forms.monday.com/forms/70a696032cb3a829f81b7735b8b6ab9f?r=use1"
         footer="O crescimento profissional não acontece por acaso. Ele é construído com método, prática e acompanhamento."
     >
         <x-slot:proof>
@@ -196,88 +184,9 @@
         </x-slot:title>
 
         <x-slot:description>
-            O programa trainee da Firece foi criado para quem quer aprender na prática, desenvolver habilidades
+            O programa trainee da Fire|ce foi criado para quem quer aprender na prática, desenvolver habilidades
             consultivas e construir uma trajetória sólida no mercado financeiro com acompanhamento próximo desde o
             primeiro dia.
         </x-slot:description>
     </x-cta-banner>
-
-    {{--  TODO: substituir por depoimentos reais 
-
-        <section class="section dark bg-elevation-surface py-20">
-            <div class="container flex flex-col gap-8">
-                <x-fr-headline align="left" data-reveal="up">
-                    <x-slot:title>
-                        Eles começaram do mesmo lugar
-                    </x-slot:title>
-                    <x-slot:description>
-                        Para qualquer vaga, o que mais importa é para quê você quer estar aqui. Experiência se constrói
-                        postura e propósito são suas.
-                    </x-slot:description>
-                </x-fr-headline>
-
-                    <div class="grid grid-cols-1 gap-8 md:grid-cols-3" data-reveal-stagger="140">
-                        <x-testimonial
-                            data-reveal="up"
-                            variant="centered"
-                            class="bg-elevation-01dp border-border-base border p-4"
-                            name="Felipe Rosa"
-                            role="Design"
-                            plan="Plano Gold"
-                            avatar="https://i.pravatar.cc/80?img=12"
-                            metric="0% → 20% da renda investida"
-                        >
-                            Nunca achei que ia conseguir sair das dívidas. Em 5 meses com o
-                            <span class="text-brand-primary font-bold">Matheus</span>, pela primeira vez na vida eu tenho
-                            reserva de emergência.
-                        </x-testimonial>
-
-                        <x-testimonial
-                            data-reveal="up"
-                            variant="centered"
-                            class="bg-elevation-01dp border-border-base border p-4"
-                            name="Felipe Rosa"
-                            role="Design"
-                            plan="Plano Gold"
-                            avatar="https://i.pravatar.cc/80?img=12"
-                            metric="0% → 20% da renda investida"
-                        >
-                            Nunca achei que ia conseguir sair das dívidas. Em 5 meses com o
-                            <span class="text-brand-primary font-bold">Matheus</span>, pela primeira vez na vida eu tenho
-                            reserva de emergência.
-                        </x-testimonial>
-
-                        <x-testimonial
-                            data-reveal="up"
-                            variant="centered"
-                            class="bg-elevation-01dp border-border-base border p-4"
-                            name="Felipe Rosa"
-                            role="Design"
-                            plan="Plano Gold"
-                            avatar="https://i.pravatar.cc/80?img=12"
-                            metric="0% → 20% da renda investida"
-                        >
-                            Nunca achei que ia conseguir sair das dívidas. Em 5 meses com o
-                            <span class="text-brand-primary font-bold">Matheus</span>, pela primeira vez na vida eu tenho
-                            reserva de emergência.
-                        </x-testimonial>
-                    </div>
-            </div>
-            
-        </section>
-
-    --}}
-
-    <x-lead-form
-        :select-options="
-            [
-           'consultor-financeiro' => 'Consultor Financeiro',
-           'trainee' => 'Trainee',
-           'marketing' => 'Marketing',
-           'tecnologia' => 'Tecnologia',
-           'operacoes' => 'Operações',
-     ]
-        "
-        submit-label="Enviar currículo"
-    />
 </x-layout.landing>

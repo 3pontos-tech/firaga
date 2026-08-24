@@ -8,7 +8,11 @@
 ])
 
 <!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}" x-data @if ($theme) class="{{ $theme }}" @endif>
+<html
+    lang="{{ str_replace('_', '-', app()->getLocale()) }}"
+    x-data
+    class="scroll-smooth @if ($theme) {{ $theme }} @endif"
+>
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />

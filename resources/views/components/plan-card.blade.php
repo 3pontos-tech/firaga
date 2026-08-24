@@ -1,16 +1,32 @@
 @props ([
     'variant' => 'default',
-    'tagline' => null
+    'tagline' => null,
+    'contentGap' => 'sm'
 ])
 
 @php
+    $contentGapClass = match ($contentGap) {
+        'lg' => 'gap-8',
+        default => 'gap-4',
+    };
+
+    $isFilled = $variant === 'filled';
     $isHighlighted = $variant === 'highlighted';
+    $hasBrandHeader = $isHighlighted || $isFilled;
 
-    $wrapperClasses = $isHighlighted ? 'border-brand-primary' : 'border-border-base';
+    $wrapperClasses = match ($variant) {
+        'filled' => 'bg-brand-primary border-brand-primary',
+        'highlighted' => 'border-brand-primary',
+        default => 'border-border-base',
+    };
 
-    $headerClasses = $isHighlighted ? 'bg-brand-primary border-brand-primary' : 'bg-elevation-01dp border-border-base';
+    $headerClasses = match ($variant) {
+        'filled' => 'border-white/20',
+        'highlighted' => 'bg-brand-primary border-brand-primary',
+        default => 'bg-elevation-01dp border-border-base',
+    };
 
-    $taglineClasses = $isHighlighted ? 'text-text-light!' : '';
+    $taglineClasses = $hasBrandHeader ? 'text-text-light!' : '';
 @endphp
 
 <div
@@ -27,5 +43,5 @@
         </div>
     @endif
 
-    <div class="flex flex-col gap-4 p-8">{{ $slot }}</div>
+    <div class="flex flex-col {{ $contentGapClass }} p-6 md:p-8">{{ $slot }}</div>
 </div>

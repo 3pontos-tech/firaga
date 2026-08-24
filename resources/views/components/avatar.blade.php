@@ -3,6 +3,7 @@
 @php
     $sizeClass = match ($size) {
         'lg' => 'size-20',
+        'md' => 'size-9',
         default => 'size-8',
     };
 @endphp

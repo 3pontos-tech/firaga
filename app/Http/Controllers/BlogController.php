@@ -7,26 +7,25 @@ namespace App\Http\Controllers;
 use App\Enums\PostStatus;
 use App\Models\CMS\Post;
 use Illuminate\Contracts\View\View;
+use Illuminate\Support\Collection;
 
 class BlogController extends Controller
 {
     public function index(): View
     {
+        /** @var Collection<int, Post> $featured */
         $featured = Post::query()
             ->where('status', PostStatus::PUBLISHED)
             ->where('is_top_article', true)
             ->with(['author', 'categories'])
             ->latest('published_at')
-            ->first();
+            ->take(2)
+            ->get();
 
-        $posts = Post::query()
-            ->where('status', PostStatus::PUBLISHED)
-            ->when($featured, fn ($q) => $q->where('id', '!=', $featured->id))
-            ->with(['author', 'categories'])
-            ->latest('published_at')
-            ->paginate(5);
-
-        return view('pages.blog', ['featured' => $featured, 'posts' => $posts]);
+        return view('pages.blog', [
+            'featured' => $featured,
+            'excludedIds' => $featured->pluck('id')->all(),
+        ]);
     }
 
     public function show(Post $post): View
@@ -35,15 +34,16 @@ class BlogController extends Controller
 
         $post->load(['author', 'categories']);
 
-        $relatedPosts = $post->relatedPosts()
+        /** @var Collection<int, Post> $related */
+        $related = $post->relatedPosts()
             ->where('status', PostStatus::PUBLISHED)
             ->with(['author', 'categories'])
             ->latest('published_at')
-            ->take(6)
+            ->take(3)
             ->get();
 
-        if ($relatedPosts->isEmpty()) {
-            $relatedPosts = Post::query()
+        if ($related->isEmpty()) {
+            $related = Post::query()
                 ->where('status', PostStatus::PUBLISHED)
                 ->whereKeyNot($post->getKey())
                 ->with(['author', 'categories'])
@@ -52,6 +52,9 @@ class BlogController extends Controller
                 ->get();
         }
 
-        return view('pages.blog-show', ['post' => $post, 'relatedPosts' => $relatedPosts]);
+        return view('pages.blog-show', [
+            'post' => $post,
+            'related' => $related,
+        ]);
     }
 }

@@ -20,13 +20,13 @@
 /public/build
 /public/hot
 /public/css
-/public/fonts
 /public/js
+/public/fonts/filament
 /public/storage
 /storage/*.key
 /storage/pail
-/vendor
 /media-backup
+/vendor
 Homestead.json
 Homestead.yaml
 Thumbs.db
@@ -34,6 +34,7 @@ _ide_helper.php
 _ide_helper_models.php
 tests/Browser/Screenshots
 /.composer
+/media-backup
 
 === AI Agents ===
 

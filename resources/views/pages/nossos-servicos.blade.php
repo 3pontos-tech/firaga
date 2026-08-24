@@ -1,103 +1,75 @@
 <x-layout.landing headerTheme="dark" splashFrom="#09090a" splashTo="#09090a" splashLogoClass="text-brand-primary">
-    <section class="dark bg-elevation-surface pt-(--section-first-gap) pb-(--section-gap)">
-        <div class="container flex flex-col gap-8">
-            <x-fr-headline size="2xl">
-                <x-slot:header>
-                    <x-logo-badge> Nossos serviços</x-logo-badge>
-                </x-slot:header>
+    <x-slot:metatags>
+        <title>Nossos Serviços | {{ config('app.name') }}</title>
+        <meta
+            name="description"
+            content="Cada pessoa chega com uma situação diferente. Cada serviço da Fire|ce foi construído para uma fase específica da jornada financeira."
+        />
+    </x-slot:metatags>
+
+    {{-- 1. HERO --}}
+    <section id="hero" class="dark bg-elevation-surface pt-(--section-first-gap) pb-16 sm:pt-27.5">
+        <div class="container flex flex-col items-center gap-11">
+            <x-fr-headline size="md" data-reveal="up">
                 <x-slot:title>
-                    Qual é o seu próximo capítulo?
+                    <mark>Como podemos</mark> te ajudar?
                 </x-slot:title>
                 <x-slot:description>
                     Cada pessoa chega com uma situação diferente. Cada serviço foi construído para uma fase específica
-                    da jornada financeira
+                    da jornada financeira.
                 </x-slot:description>
             </x-fr-headline>
 
-            <div
-                class="divide-border-base border-border-base grid grid-cols-1 gap-3 divide-y border-y"
-                data-reveal-stagger="140"
-            >
-                <a
-                    href="#flamma"
-                    class="flex items-center justify-between gap-3 py-4 transition-opacity hover:opacity-70"
-                >
-                    <x-fr-text size="sm" class="text-text-high! font-semibold!">
-                        Bem-estar financeiro para equipes
-                    </x-fr-text>
-                    <x-heroicon-c-chevron-right class="text-brand-primary size-5 shrink-0" />
-                </a>
-                <a
-                    href="#planejamento"
-                    class="flex items-center justify-between gap-3 py-4 transition-opacity hover:opacity-70"
-                >
-                    <x-fr-text size="sm" class="text-text-high! font-semibold!">
-                        Quero organizar minha vida financeira
-                    </x-fr-text>
-                    <x-heroicon-c-chevron-right class="text-brand-primary size-5 shrink-0" />
-                </a>
-                <a
-                    href="#code-capital"
-                    class="flex items-center justify-between gap-3 py-4 transition-opacity hover:opacity-70"
-                >
-                    <x-fr-text size="sm" class="text-text-high! font-semibold!">
-                        Sou dev, PJ ou recebo em dólar
-                    </x-fr-text>
-                    <x-heroicon-c-chevron-right class="text-brand-primary size-5 shrink-0" />
-                </a>
-                <a
-                    href="#key-account"
-                    class="flex items-center justify-between gap-3 py-4 transition-opacity hover:opacity-70"
-                >
-                    <x-fr-text size="sm" class="text-text-high! font-semibold!">
-                        Tenho patrimônio e quero proteger
-                    </x-fr-text>
-                    <x-heroicon-c-chevron-right class="text-brand-primary size-5 shrink-0" />
-                </a>
-                <a
-                    href="#educafire"
-                    class="flex items-center justify-between gap-3 py-4 transition-opacity hover:opacity-70"
-                >
-                    <x-fr-text size="sm" class="text-text-high! font-semibold!">
-                        Quero ensinar finanças e ganhar com isso
-                    </x-fr-text>
-                    <x-heroicon-c-chevron-right class="text-brand-primary size-5 shrink-0" />
-                </a>
-                <a
-                    href="#parcerias"
-                    class="flex items-center justify-between gap-3 py-4 transition-opacity hover:opacity-70"
-                >
-                    <x-fr-text size="sm" class="text-text-high! font-semibold!">
-                        Quero ser parceiro da Firece
-                    </x-fr-text>
-                    <x-heroicon-c-chevron-right class="text-brand-primary size-5 shrink-0" />
-                </a>
+            <div class="border-border-base w-full border-t pt-4" data-reveal="up">
+                <div class="flex items-center justify-center gap-4 sm:gap-8">
+                    <div class="flex flex-col items-start gap-2">
+                        <p class="font-display text-brand-primary text-md font-bold">+10 anos</p>
+                        <p class="text-text-medium text-xxxs font-bold uppercase">De mercado</p>
+                    </div>
+
+                    <div class="bg-border-base w-px self-stretch"></div>
+
+                    <div class="flex flex-col items-start gap-2">
+                        <p class="font-display text-brand-primary text-md font-bold">300%</p>
+                        <p class="text-text-medium text-xxxs font-bold uppercase">Cres. anual</p>
+                    </div>
+
+                    <div class="bg-border-base w-px self-stretch"></div>
+
+                    <div class="flex flex-col items-start gap-2">
+                        <p class="font-display text-brand-primary text-md font-bold">+2 mil</p>
+                        <p class="text-text-medium text-xxxs font-bold uppercase">Clientes</p>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
-    <section id="flamma" class="section scroll-mt-24">
-        <div class="container flex flex-col gap-8">
-            <div class="mx-auto mb-2.5">
-                <img src="{{ asset('images/logos/flamma-logo.svg') }}" alt="Logo Flamma" class="h-9 w-auto" />
+    {{-- 2. FLAMMA --}}
+    <section id="flamma" class="section">
+        <div class="container flex flex-col gap-11">
+            <div class="mx-auto">
+                <img src="{{ asset('images/logos/flamma-logo.svg') }}" alt="Logo Flamma" class="h-8.5 w-auto" />
             </div>
-            <x-fr-headline>
+            <x-fr-headline data-reveal="up">
                 <x-slot:title>
                     Educação financeira pessoal como
-                    <mark>benefício corporativo</mark>
+                    <span class="from-flamma-primary to-flamma-secondary bg-linear-to-r bg-clip-text text-transparent">
+                        benefício corporativo
+                    </span>
                 </x-slot:title>
                 <x-slot:description>
-                    Com pacotes flexíveis, sua empresa garante orientação individualizada para os colaboradores,
-                    reduzindo o estresse financeiro, aumentando a produtividade e promovendo segurança e bem-estar no
-                    ambiente corporativo.
+                    Sua empresa garante orientação individualizada para os colaboradores, reduzindo o estresse
+                    financeiro, aumentando a produtividade e promovendo segurança e bem-estar no ambiente corporativo.
                 </x-slot:description>
             </x-fr-headline>
         </div>
     </section>
 
+    {{-- 3. COMO FUNCIONA --}}
     <section class="section from-flamma-primary to-flamma-secondary bg-linear-to-r py-20">
-        <div class="container flex flex-col gap-8 md:grid md:grid-cols-2 md:gap-x-12 md:gap-y-8">
-            <x-fr-headline size="2xl" align="left" class="md:self-end">
+        <div class="container flex flex-col items-center gap-8">
+            <x-fr-headline size="md" container-class="mx-auto max-w-[658px]" data-reveal="up">
                 <x-slot:title class="text-text-light!">
                     Como funciona?
                 </x-slot:title>
@@ -107,101 +79,101 @@
                 </x-slot:description>
             </x-fr-headline>
 
+            <x-fr-button
+                class="order-last md:order-none"
+                variant="white"
+                tag="a"
+                href="https://api.whatsapp.com/send/?phone=5511958397432&text=Visitei+o+site+da+Fire%7Cce+e+quero+mais+informa%C3%A7%C3%B5es&type=phone_number&app_absent=0"
+                target="_blank"
+            >
+                Descobrir meu plano
+            </x-fr-button>
+
             <div
-                class="border-border-base divide-border-base grid w-full grid-cols-1 divide-y border-y md:col-start-2 md:row-span-2 md:row-start-1"
+                class="grid w-full grid-cols-1 divide-y divide-[#d9d9d9] overflow-hidden rounded-md border border-white md:mt-12 md:grid-cols-2 md:divide-x lg:grid-cols-4 lg:divide-y-0"
                 data-reveal-stagger="140"
             >
-                <x-numbered-step class="py-8" data-reveal="up" number="01" title="Contratação" inverted>
-                    A empresa contrata pacotes de horas mensais, semestrais ou anuais disponíveis para todos os
-                    colaboradores.
+                <x-numbered-step class="p-4" data-reveal="up" number="01" title="Contratação" inverted>
+                    A empresa contrata pacotes de horas mensais, semestrais ou anuais para todos os colaboradores.
                 </x-numbered-step>
 
-                <x-numbered-step class="py-8" data-reveal="up" number="02" title="Agendamento" inverted>
+                <x-numbered-step class="p-4" data-reveal="up" number="02" title="Agendamento" inverted>
                     Cada colaborador agenda seu atendimento diretamente pela plataforma Flamma, quando quiser.
                 </x-numbered-step>
 
-                <x-numbered-step class="py-8" data-reveal="up" number="03" title="Atendimento" inverted>
+                <x-numbered-step class="p-4" data-reveal="up" number="03" title="Atendimento" inverted>
                     Sessões individuais de 60 minutos com consultores especializados, online ou presencial.
                 </x-numbered-step>
 
-                <x-numbered-step class="py-8" data-reveal="up" number="04" title="Relatórios de impacto" inverted>
+                <x-numbered-step class="p-4" data-reveal="up" number="04" title="Relatórios de impacto" inverted>
                     O RH acompanha a adesão e os resultados com relatórios consolidados de uso e evolução.
                 </x-numbered-step>
             </div>
-
-            <x-fr-button
-                variant="white"
-                class="md:self-start"
-                tag="a"
-                href="https://flammabeneficios.com/"
-                target="_blank"
-            >
-                Conheça o Flamma
-            </x-fr-button>
         </div>
     </section>
 
-    <section id="planejamento" class="section scroll-mt-24">
-        <div class="container flex flex-col gap-16 md:gap-32">
-            <div class="flex flex-col gap-8 md:flex-row md:items-center md:gap-16">
-                <div class="flex flex-col gap-8 md:basis-3/5">
-                    <x-fr-headline align="left">
-                        <x-slot:header>
-                            <x-fr-text size="sm" class="text-brand-primary! font-semibold!">
-                                Planejamento financeiro
-                            </x-fr-text>
-                        </x-slot:header>
-                        <x-slot:title>
-                            O ponto de partida de
-                            <mark>2.347 histórias</mark>
-                        </x-slot:title>
-                        <x-slot:description>
-                            O Planejamento Financeiro é onde tudo começa. Três encontros com um consultor dedicado que
-                            vai entender sua realidade dívidas, hábitos, objetivos e construir uma estratégia feita para
-                            você. Não para um perfil genérico. Para você.
-                        </x-slot:description>
-                    </x-fr-headline>
+    {{-- 4. PLANEJAMENTO FINANCEIRO --}}
+    <section id="planejamento" class="section">
+        <div class="container grid gap-8 md:grid-cols-[652fr_538fr] md:items-center md:gap-16 lg:gap-[9.15rem]">
+            <div class="flex flex-col gap-8">
+                <x-fr-headline align="left" data-reveal="up">
+                    <x-slot:header>
+                        <x-fr-text size="sm" class="text-brand-primary! font-semibold!">
+                            Planejamento financeiro
+                        </x-fr-text>
+                    </x-slot:header>
+                    <x-slot:title>
+                        O que muda na sua vida quando existe planejamento financeiro?
+                    </x-slot:title>
+                    <x-slot:description>
+                        O Planejamento Financeiro é onde tudo começa. Três encontros com um consultor dedicado que vai
+                        entender sua realidade dívidas, hábitos, objetivos e construir uma estratégia feita para você.
+                        Não para um perfil genérico. Para você.
+                    </x-slot:description>
+                </x-fr-headline>
 
-                    <div class="flex flex-col gap-4" data-reveal="up">
-                        <x-fr-heading size="xs"> O que buscamos</x-fr-heading>
+                <div class="flex flex-col gap-4" data-reveal="up">
+                    <x-fr-heading size="xs" class="sm:text-xs!">
+                        O que muda na sua vida quando existe planejamento financeiro?
+                    </x-fr-heading>
 
-                        <div class="flex flex-col gap-8" data-reveal-stagger="120">
-                            <x-arrow-block align="center">
-                                Você sabe, pela primeira vez, para onde vai cada real da sua renda
-                            </x-arrow-block>
-
-                            <x-arrow-block align="center">
-                                Tem um plano real para os próximos 12 meses com metas que cabem na sua realidade
-                            </x-arrow-block>
-
-                            <x-arrow-block align="center">
-                                Começa a construir reserva de emergência sem precisar ganhar mais
-                            </x-arrow-block>
-
-                            <x-arrow-block align="center">
-                                Toma decisões financeiras com clareza, não com ansiedade
-                            </x-arrow-block>
-                        </div>
+                    <div class="flex flex-col gap-8" data-reveal-stagger="120">
+                        <x-arrow-block align="center">Mais organização financeira.</x-arrow-block>
+                        <x-arrow-block align="center">Clareza para tomar decisões importantes.</x-arrow-block>
+                        <x-arrow-block align="center">Segurança para investir.</x-arrow-block>
+                        <x-arrow-block align="center">Controle sobre o próprio dinheiro.</x-arrow-block>
+                        <x-arrow-block align="center">Construção patrimonial sustentável.</x-arrow-block>
+                        <x-arrow-block align="center">Mais tranquilidade para planejar o futuro.</x-arrow-block>
                     </div>
-                </div>
-
-                <div class="relative hidden w-full md:block md:min-h-160 md:basis-2/5" data-reveal="scale">
-                    <div
-                        class="from-brand-primary to-brand-secondary absolute inset-0 -z-1 rounded-lg bg-linear-to-b"
-                    ></div>
-                    <img
-                        src="{{ asset('images/man-with-clock.png') }}"
-                        alt="Planejamento financeiro"
-                        class="absolute inset-0 h-full w-full rounded-lg object-contain object-bottom"
-                    />
                 </div>
             </div>
 
-            <div class="flex flex-col items-center gap-8" x-data="{ selected: 'gold' }">
-                <x-fr-text size="sm" class="text-brand-primary! font-semibold! md:hidden">
-                    Escolha seu momento
-                </x-fr-text>
+            <div class="hidden w-full md:block" data-reveal="scale">
+                <div class="relative aspect-538/596 w-full overflow-hidden rounded-lg">
+                    <img
+                        src="{{ asset('images/servicos-imagem_1.webp') }}"
+                        alt="Consultor e cliente em uma sessão de planejamento financeiro"
+                        class="h-full w-full object-cover object-bottom"
+                    />
+                </div>
+            </div>
+        </div>
+    </section>
 
+    {{-- 5. PLANOS --}}
+    <section id="planos" class="section bg-elevation-01dp scroll-mt-(--header-height) py-16">
+        <div class="container flex flex-col gap-8">
+            <x-fr-headline data-reveal="up">
+                <x-slot:title>
+                    Qual é o seu momento?
+                </x-slot:title>
+                <x-slot:description>
+                    Sem curso, sem palestra, sem planilha genérica. Um plano construído para a
+                    <mark>sua realidade</mark> e só para ela.
+                </x-slot:description>
+            </x-fr-headline>
+
+            <div class="flex flex-col items-center gap-8" x-data="{ selected: 'gold' }">
                 <div class="flex w-full md:hidden">
                     <button
                         class="w-full border-b pb-2 transition-colors"
@@ -242,39 +214,57 @@
                     </button>
                 </div>
 
-                <div class="grid w-full [grid-template-areas:'card'] md:grid-cols-3 md:gap-6">
+                <div
+                    class="grid w-full items-start [grid-template-areas:'card'] md:grid-cols-3 md:gap-8"
+                    data-reveal-stagger="140"
+                >
+                    {{-- Gold --}}
                     <div
                         class="transition-opacity duration-300 [grid-area:card] md:pointer-events-auto! md:opacity-100! md:[grid-area:auto]"
                         :class="selected === 'gold' ? 'opacity-100' : 'opacity-0 pointer-events-none'"
                     >
-                        <x-plan-card data-reveal="up" tagline="“Meu dinheiro some sem explicação”">
-                            <x-fr-heading>Perfil Gold</x-fr-heading>
-                            <x-fr-text>
-                                Para quem está começando a organizar sua vida finaceira e deseja mais tranquilidade.
-                            </x-fr-text>
-                            <x-fr-text size="sm" class="text-brand-primary! font-semibold!">Base</x-fr-text>
-
-                            <hr class="border-border-base" />
-
-                            <ul class="flex flex-col gap-4">
-                                <x-plan-feature featured>Organização Anual</x-plan-feature>
-                                <x-plan-feature>Mapa financeiro</x-plan-feature>
-                                <x-plan-feature>Construção de Reserva</x-plan-feature>
-                                <x-plan-feature>Planilha de fluxo de caixa</x-plan-feature>
-                                <x-plan-feature>Planilha de patrimônio</x-plan-feature>
-                            </ul>
+                        <x-plan-card
+                            data-reveal="up"
+                            variant="highlighted"
+                            content-gap="lg"
+                            tagline="“Meu dinheiro some sem explicação”"
+                        >
+                            <div class="flex flex-col gap-4">
+                                <x-fr-heading size="sm">Perfil Gold</x-fr-heading>
+                                <x-fr-text>
+                                    Para quem quer organizar as finanças do zero e finalmente respirar no fim do mês.
+                                </x-fr-text>
+                            </div>
 
                             <x-fr-button
+                                class="w-full!"
                                 variant="outline"
                                 tag="a"
                                 href="https://api.whatsapp.com/send/?phone=5511958397432&text=Visitei+o+site+da+Fire%7Cce+e+quero+mais+informa%C3%A7%C3%B5es+sobre+o+plano+gold&type=phone_number&app_absent=0"
                                 target="_blank"
                             >
-                                Esse sou eu
+                                Começar por aqui
                             </x-fr-button>
+
+                            <div class="flex flex-col gap-4">
+                                <hr class="border-brand-primary" />
+
+                                <x-fr-text size="sm" class="text-brand-primary! font-semibold!">
+                                    Dê o primeiro passo
+                                </x-fr-text>
+
+                                <ul class="flex flex-col gap-4">
+                                    <x-plan-feature featured>Organização Anual</x-plan-feature>
+                                    <x-plan-feature>Mapa financeiro</x-plan-feature>
+                                    <x-plan-feature>Construção de Reserva</x-plan-feature>
+                                    <x-plan-feature>Planilha de fluxo de caixa</x-plan-feature>
+                                    <x-plan-feature>Planilha de patrimônio</x-plan-feature>
+                                </ul>
+                            </div>
                         </x-plan-card>
                     </div>
 
+                    {{-- Platinum --}}
                     <div
                         class="transition-opacity duration-300 [grid-area:card] md:pointer-events-auto! md:opacity-100! md:[grid-area:auto]"
                         :class="selected === 'platinum' ? 'opacity-100' : 'opacity-0 pointer-events-none'"
@@ -282,377 +272,267 @@
                         <x-plan-card
                             data-reveal="up"
                             variant="highlighted"
-                            tagline="“Quero fazer meu dinheiro trabalhar por mim”"
+                            content-gap="lg"
+                            tagline="“Quero acelerar minha independência financeira”"
                         >
-                            <x-fr-heading>Perfil Platinum</x-fr-heading>
-                            <x-fr-text>
-                                Para quem quer clareza sobre o presente e confiança para planejar o futuro.
-                            </x-fr-text>
-                            <x-fr-text size="sm" class="text-brand-primary! font-semibold!">+Gold</x-fr-text>
-
-                            <hr class="border-border-base" />
-
-                            <ul class="flex flex-col gap-4">
-                                <x-plan-feature featured>Preenchimento de Fluxo de Caixa</x-plan-feature>
-                                <x-plan-feature>Diagnóstico de Carteira</x-plan-feature>
-                                <x-plan-feature>Estruturar aquisição de bens</x-plan-feature>
-                                <x-plan-feature>Parceiros de Investimento</x-plan-feature>
-                                <x-plan-feature>Custo Oportunidade</x-plan-feature>
-                            </ul>
+                            <div class="flex flex-col gap-4">
+                                <x-fr-heading size="sm">Perfil Platinum</x-fr-heading>
+                                <x-fr-text>
+                                    Para quem está começando a organizar sua vida financeira e deseja mais
+                                    tranquilidade.
+                                </x-fr-text>
+                            </div>
 
                             <x-fr-button
+                                class="w-full!"
+                                variant="outline"
                                 tag="a"
                                 href="https://api.whatsapp.com/send/?phone=5511958397432&text=Visitei+o+site+da+Fire%7Cce+e+quero+mais+informa%C3%A7%C3%B5es+sobre+o+plano+platinum&type=phone_number&app_absent=0"
                                 target="_blank"
                             >
-                                Esse sou eu
+                                Começar por aqui
                             </x-fr-button>
+
+                            <div class="flex flex-col gap-4">
+                                <hr class="border-brand-primary" />
+
+                                <x-fr-text size="sm" class="text-brand-primary! font-semibold!">
+                                    Tudo do Gold, e mais:
+                                </x-fr-text>
+
+                                <ul class="flex flex-col gap-4">
+                                    <x-plan-feature featured>Preenchimento de Fluxo de Caixa</x-plan-feature>
+                                    <x-plan-feature>Diagnóstico de Carteira</x-plan-feature>
+                                    <x-plan-feature>Estruturar aquisição de bens</x-plan-feature>
+                                    <x-plan-feature>Parceiros de Investimento</x-plan-feature>
+                                    <x-plan-feature>Custo Oportunidade</x-plan-feature>
+                                </ul>
+                            </div>
                         </x-plan-card>
                     </div>
 
+                    {{-- Black --}}
                     <div
                         class="transition-opacity duration-300 [grid-area:card] md:pointer-events-auto! md:opacity-100! md:[grid-area:auto]"
                         :class="selected === 'black' ? 'opacity-100' : 'opacity-0 pointer-events-none'"
                     >
-                        <x-plan-card data-reveal="up" tagline="“Quero acelerar minha independência financeira”">
-                            <x-fr-heading>Perfil Black</x-fr-heading>
-                            <x-fr-text>
-                                Para quem quer organizar as finanças do zero e finalmente respirar no fim do mês.
-                            </x-fr-text>
-                            <x-fr-text size="sm" class="text-brand-primary! font-semibold!">+Platinum</x-fr-text>
-
-                            <hr class="border-border-base" />
-
-                            <ul class="flex flex-col gap-4">
-                                <x-plan-feature featured>Revisão do Progresso</x-plan-feature>
-                                <x-plan-feature>Construção de Reserva Internacional</x-plan-feature>
-                                <x-plan-feature>Estratégias Exclusivas</x-plan-feature>
-                                <x-plan-feature>Carteiras Personalizadas</x-plan-feature>
-                                <x-plan-feature>Acompanhamento personalizado</x-plan-feature>
-                            </ul>
+                        <x-plan-card
+                            data-reveal="up"
+                            variant="filled"
+                            content-gap="lg"
+                            tagline="“Quero fazer meu dinheiro trabalhar por mim” "
+                        >
+                            <div class="flex flex-col gap-4">
+                                <x-fr-heading size="sm" class="text-text-light!">Perfil Black</x-fr-heading>
+                                <x-fr-text class="text-text-light!">
+                                    Para quem já alcançou a liberdade financeira e quer proteger e aumentar seu
+                                    patrimônio.
+                                </x-fr-text>
+                            </div>
 
                             <x-fr-button
-                                variant="outline"
+                                class="w-full!"
+                                variant="white"
                                 tag="a"
                                 href="https://api.whatsapp.com/send/?phone=5511958397432&text=Visitei+o+site+da+Fire%7Cce+e+quero+mais+informa%C3%A7%C3%B5es+sobre+o+plano+black&type=phone_number&app_absent=0"
                                 target="_blank"
                             >
-                                Esse sou eu
+                                Começar por aqui
                             </x-fr-button>
+
+                            <div class="flex flex-col gap-4">
+                                <hr class="border-white/30" />
+
+                                <x-fr-text size="sm" class="text-text-light! font-semibold!">
+                                    Tudo do Platinum, e mais:
+                                </x-fr-text>
+
+                                <ul class="flex flex-col gap-4">
+                                    <x-plan-feature featured inverted>Organização Anual</x-plan-feature>
+                                    <x-plan-feature inverted>Construção de Reserva Internacional</x-plan-feature>
+                                    <x-plan-feature inverted>Estratégias Exclusivas</x-plan-feature>
+                                    <x-plan-feature inverted>Carteiras Personalizadas</x-plan-feature>
+                                    <x-plan-feature inverted>Acompanhamento Personalizado</x-plan-feature>
+                                </ul>
+                            </div>
                         </x-plan-card>
                     </div>
                 </div>
             </div>
-
-            <x-testimonial
-                data-reveal="up"
-                name="Juliana Lopes"
-                role="Plano Gold"
-                avatar="https://lh3.googleusercontent.com/a-/ALV-UjVFnVWTd4QGn0sji9hI14-JJSG3CGbLuQocjLPoTBdPUgyYxEfW=w36-h36-p-rp-mo-br100"
-                metric="0% → 20% da renda investida"
-            >
-                Tem sido uma experiência transformadora, mudando completamente minha vida financeira e a forma como eu
-                cuido do meu dinheiro.
-                <span class="text-brand-primary font-bold"
-                    >Me sinto muito mais segura, organizada e no controle das minhas finanças!</span
-                >
-            </x-testimonial>
         </div>
     </section>
 
-    <section id="code-capital" class="section scroll-mt-24">
-        <div class="container flex flex-col gap-4 md:grid md:grid-cols-[3fr_2fr] md:gap-x-16 md:gap-y-0">
-            <x-fr-headline align="left" class="md:self-end">
-                <x-slot:header>
-                    <x-fr-text size="sm" class="text-brand-primary! font-semibold!"> Code Capital </x-fr-text>
-                </x-slot:header>
-                <x-slot:title>
-                    Você trabalha com tech. Seu plano também.
-                </x-slot:title>
-                <x-slot:description>
-                    Consultoria financeira especializada para profissionais do mercado de tecnologia. Porque a renda de
-                    quem trabalha com tech tem características únicas e merece uma estratégia à altura.
-                </x-slot:description>
-            </x-fr-headline>
+    {{-- 6. FLARE (IA) --}}
+    <section id="flare" class="section">
+        <div class="container">
+            <div
+                class="relative overflow-hidden rounded-2xl bg-linear-to-r from-[#f4f2ea] to-[#f1d12a] p-8 md:px-16 md:py-[4.375rem]"
+            >
+                {{-- Arcos concêntricos decorativos: domos que nascem na base do card --}}
+                <div
+                    class="pointer-events-none absolute -bottom-[11.5%] left-1/2 h-[123.5%] w-[89.2%] -translate-x-1/2 rounded-t-full bg-[#fdfdff]/15"
+                ></div>
+                <div
+                    class="pointer-events-none absolute bottom-0 left-1/2 h-[74%] w-[66.5%] -translate-x-1/2 rounded-t-full bg-[#fdfdff]/15"
+                ></div>
 
-            <div class="w-full md:col-start-2 md:row-span-2 md:row-start-1">
-                <div class="bg-elevation-01dp border-border-base text-xxxs rounded-sm border p-4 font-mono leading-7">
-                    <div class="mb-3 flex gap-1.5">
-                        <span class="size-3 rounded-full bg-red-300"></span>
-                        <span class="size-3 rounded-full bg-yellow-100"></span>
-                        <span class="size-3 rounded-full bg-green-300"></span>
+                <div class="relative flex flex-col gap-10 md:flex-row md:items-center md:justify-between md:gap-12">
+                    <div class="flex flex-col gap-4 md:basis-[52.6%]" data-reveal="up">
+                        <img
+                            src="{{ asset('images/logos/flare-logo.svg') }}"
+                            alt="Logo Flare"
+                            class="h-[22px] w-auto self-start"
+                        />
+                        <x-fr-headline align="left">
+                            <x-slot:title>
+                                Seu dinheiro organizado com IA
+                            </x-slot:title>
+                            <x-slot:description class="text-text-high!">
+                                Se você quer dar o primeiro passo para sua tranquilidade financeira ou entender como
+                                funciona uma consultoria, conheça o Flare, uma IA treinada pelos melhores consultores
+                                financeiros do país para te ajudar a começar.
+                            </x-slot:description>
+                        </x-fr-headline>
                     </div>
-                    <div class="flex flex-col gap-4">
-                        <p class="flex flex-wrap items-center gap-x-1">
-                            <span class="text-brand-primary">$</span>
-                            <span class="text-text-medium">Diagnóstico:</span>
-                            <span class="text-brand-primary">renda variável</span>
-                            <span class="inline-flex items-center gap-1 text-green-600">
-                                <x-heroicon-o-check class="size-3 shrink-0 text-green-600" />
-                                mapeada
-                            </span>
-                        </p>
-                        <p class="flex flex-wrap items-center gap-x-1">
-                            <span class="text-brand-primary">$</span>
-                            <span class="text-text-medium">Stock options:</span>
-                            <span class="text-brand-primary">estratégia de exercício</span>
-                            <span class="inline-flex items-center gap-1 text-green-600">
-                                <x-heroicon-o-check class="size-3 shrink-0 text-green-600" />
-                                definida
-                            </span>
-                        </p>
-                        <p class="flex flex-wrap items-center gap-x-1">
-                            <span class="text-brand-primary">$</span>
-                            <span class="text-text-medium">Câmbio:</span>
-                            <span class="text-brand-primary">Proteção USD/BRL</span>
-                            <span class="inline-flex items-center gap-1 text-green-600">
-                                <x-heroicon-o-check class="size-3 shrink-0 text-green-600" />
-                                estruturada
-                            </span>
-                        </p>
-                        <p class="flex flex-wrap items-center gap-x-1">
-                            <span class="text-brand-primary">$</span>
-                            <span class="text-text-medium">PLR + Bônus:</span>
-                            <span class="text-brand-primary">Alocação estratégica</span>
-                            <span class="text-green-600">planejada</span>
-                        </p>
+
+                    <div class="w-full rounded-md bg-white p-8 md:basis-[43.4%]" data-reveal="up">
+                        <form class="flex flex-col gap-8">
+                            @csrf
+                            <div class="flex flex-col gap-4">
+                                <x-fr-text class="text-text-high! font-bold!">Nome</x-fr-text>
+                                <input
+                                    type="text"
+                                    name="name"
+                                    placeholder="Digite seu nome"
+                                    class="border-border-base focus:border-brand-primary placeholder:text-text-medium w-full rounded-sm border p-4 focus:outline-none"
+                                />
+                            </div>
+                            <div class="flex flex-col gap-4">
+                                <x-fr-text class="text-text-high! font-bold!">E-mail</x-fr-text>
+                                <input
+                                    type="email"
+                                    name="email"
+                                    placeholder="exemplo@email.com"
+                                    class="border-border-base focus:border-brand-primary placeholder:text-text-medium w-full rounded-sm border p-4 focus:outline-none"
+                                />
+                            </div>
+                            <div class="flex flex-col gap-4">
+                                <x-fr-text class="text-text-high! font-bold!">Telefone</x-fr-text>
+                                <input
+                                    type="tel"
+                                    name="phone"
+                                    placeholder="(12) 9 0000-0000"
+                                    class="border-border-base focus:border-brand-primary placeholder:text-text-medium w-full rounded-sm border p-4 focus:outline-none"
+                                />
+                            </div>
+                            <button
+                                type="submit"
+                                class="font-display text-text-dark w-full rounded-sm bg-[#f1d12a] px-4 py-2.5 text-sm font-bold transition-opacity hover:opacity-90 md:w-auto md:self-end"
+                            >
+                                Me avise quando estiver disponível
+                            </button>
+                        </form>
                     </div>
                 </div>
             </div>
-
-            <x-fr-button class="mt-4 md:mt-0 md:self-start" href="{{ route('code-capital') }}">
-                Conhecer o code capital
-            </x-fr-button>
         </div>
     </section>
 
-    <section id="key-account" class="section metallic bg-elevation-surface scroll-mt-16 py-20">
-        <div class="container flex flex-col gap-8 md:flex-row md:items-start md:gap-16">
-            <div class="relative md:order-2 md:basis-2/5 md:self-stretch">
-                <div
-                    class="from-elevation-surface/0 to-elevation-surface/10 absolute inset-0 z-10 bg-linear-to-b md:hidden"
-                ></div>
-                <img
-                    src="{{ asset('images/guys-looking-at-notebook-but-gray.png') }}"
-                    alt="Key Account"
-                    class="h-50 w-auto md:h-full md:w-full md:rounded-lg md:object-cover"
-                    data-reveal="left"
-                />
-            </div>
-
-            <div class="flex flex-col gap-8 md:order-1 md:flex-1">
+    {{-- 7. KEY ACCOUNT --}}
+    <section id="premium" class="section dark bg-elevation-surface overflow-hidden py-20">
+        <div class="container flex flex-col gap-8 md:grid md:grid-cols-2 md:items-center md:gap-8">
+            <div class="flex flex-col gap-8">
                 <x-fr-headline align="left" data-reveal="up">
                     <x-slot:header>
-                        <x-fr-text size="sm" class="text-text-high! font-semibold!"> Key Account </x-fr-text>
+                        <x-fr-text size="sm" class="text-text-high! font-bold!"> Atendimento premium </x-fr-text>
                     </x-slot:header>
                     <x-slot:title>
-                        Não é uma consultoria, <mark>é uma parceria</mark>
+                        Dê a atenção que seu
+                        <span class="text-text-medium">patrimônio e seus investimentos</span> merecem.
                     </x-slot:title>
                     <x-slot:description>
-                        O <span class="text-text-high">Key Account</span> é para quem já passou pelo
-                        <span class="text-text-high">Planejamento</span> e quer ir além ou para quem, desde o início,
-                        precisa de acompanhamento contínuo e acesso direto ao seu consultor. É uma relação de longo
-                        prazo, não de três encontros.
+                        Se você acha que precisa proteger seus bens e aumentar seus rendimentos, o
+                        <span class="text-text-high">Key Account</span> é a solução ideal.
                     </x-slot:description>
                 </x-fr-headline>
 
+                {{-- No Figma o título, os itens e o botão dividem um único stack de 16px --}}
                 <div class="flex flex-col gap-4" data-reveal="up">
-                    <x-fr-heading size="xs"> O que muda na sua vida: </x-fr-heading>
+                    <x-fr-heading size="xs" class="font-medium!"> O que muda na sua vida: </x-fr-heading>
 
-                    <div class="flex flex-col gap-8" data-reveal-stagger="120">
-                        <x-arrow-block align="center" icon-color="text-text-high">
-                            Acompanhamento contínuo com revisões mensais do seu plano
+                    <div class="flex flex-col gap-4" data-reveal-stagger="120">
+                        <x-arrow-block align="center" icon-color="text-text-high" icon-size="size-4">
+                            Acompanhamento contínuo com revisões mensais do seu plano.
                         </x-arrow-block>
-
-                        <x-arrow-block align="center" icon-color="text-text-high">
-                            Acesso direto ao seu consultor sem fila, sem espera
+                        <x-arrow-block align="center" icon-color="text-text-high" icon-size="size-4">
+                            Acesso direto ao seu consultor, em tempo integral.
                         </x-arrow-block>
-
-                        <x-arrow-block align="center" icon-color="text-text-high">
-                            Estratégias exclusivas adaptadas ao seu momento de vida
+                        <x-arrow-block align="center" icon-color="text-text-high" icon-size="size-4">
+                            Estratégias exclusivas adaptadas ao seu momento de vida.
                         </x-arrow-block>
-
-                        <x-arrow-block align="center" icon-color="text-text-high">
-                            Decisões financeiras com suporte em tempo real
+                        <x-arrow-block align="center" icon-color="text-text-high" icon-size="size-4">
+                            Decisões financeiras com suporte em tempo real.
                         </x-arrow-block>
                     </div>
+
+                    <x-fr-button
+                        variant="white"
+                        class="text-text-dark! md:self-start"
+                        href="{{ route('key-account') }}"
+                    >
+                        Entrar em contato
+                    </x-fr-button>
                 </div>
+            </div>
 
-                <x-testimonial
-                    class="mt-12"
-                    data-reveal="up"
-                    name="Felipe Rosa"
-                    role="Design"
-                    plan="Plano Gold"
-                    avatar="https://i.pravatar.cc/80?img=12"
-                    metric="0% → 20% da renda investida"
-                >
-                    Nunca achei que ia conseguir sair das dívidas. Em 5 meses com o
-                    <span class="text-brand-primary font-bold">Matheus</span>, pela primeira vez na vida eu tenho
-                    reserva de emergência.
-                </x-testimonial>
+            {{--
+                874x509 é a moldura do Figma, e a curva é o path da própria máscara do
+                arquivo — não o x-organic-cutout genérico, que deformava com o container.
+            --}}
+            <div class="hidden md:block md:w-[calc(100%_+_max(0px,50vw_-_46.125rem))]" data-reveal="left">
+                <svg class="absolute size-0" aria-hidden="true" focusable="false">
+                    <defs>
+                        <clipPath id="key-account-image-clip" clipPathUnits="objectBoundingBox">
+                            <path
+                                d="M0.14434 0 C0.12662 0 0.11736 0.0362 0.12935 0.05861 C0.23359 0.25347 0.23449 0.55246 0.13143 0.74916 L0.03216 0.93861 C0.01976 0.96228 0.02955 1 0.04809 1 L0.97681 1 C0.98862 1 0.9982 0.9836 0.99824 0.96333 L0.99993 0.0369 C0.99997 0.01654 0.99037 0 0.97851 0 Z"
+                            />
+                        </clipPath>
+                    </defs>
+                </svg>
 
-                <x-fr-button data-reveal="up" href="{{ route('key-account') }}"> Saiba mais </x-fr-button>
+                <img
+                    src="{{ asset('images/man-walking-stair.jpg') }}"
+                    alt="Pessoa no topo de uma escadaria"
+                    class="aspect-874/509 w-full object-cover [clip-path:url(#key-account-image-clip)]"
+                />
             </div>
         </div>
     </section>
 
-    <section id="educafire" class="section scroll-mt-24">
+    {{-- 8. EDUCA FIRE --}}
+    <section id="educafire" class="section pb-20">
         <div class="container">
-            <x-fr-headline>
+            <x-fr-headline data-reveal="up">
                 <x-slot:header>
-                    <x-fr-text size="sm" class="text-brand-primary! font-semibold!"> Educafire </x-fr-text>
+                    <x-fr-text size="sm" class="text-brand-primary! font-semibold!"> Educa Fire </x-fr-text>
                 </x-slot:header>
                 <x-slot:title>
-                    Aprenda a <mark>transformar</mark> vidas com finanças.
+                    Aprenda a <mark>transformar vidas</mark> com finanças.
                 </x-slot:title>
-                <x-slot:description>
+                <x-slot:description class="text-text-high!">
                     O Educa Fire é para quem quer ir além aprender a ensinar finanças e construir liberdade financeira
-                    ajudando outras pessoas. Workshop, mentoria e formação com a metodologia Firece.
+                    ajudando outras pessoas. Workshop, mentoria e formação com a metodologia Fire|ce.
                 </x-slot:description>
                 <x-slot:actions>
                     <x-fr-button
-                        href="https://api.whatsapp.com/send/?phone=5511958397432&text=Visitei+o+site+da+Fire%7Cce+e+quero+mais+informa%C3%A7%C3%B5es+sobre+o+plano+black&type=phone_number&app_absent=0"
+                        tag="a"
+                        href="https://api.whatsapp.com/send/?phone=5511958397432&text=Visitei+o+site+da+Fire%7Cce+e+quero+ser+avisado+sobre+a+EducaFire&type=phone_number&app_absent=0"
                         target="_blank"
                     >
-                        Conhecer a EducaFire
+                        Me avise quando estiver disponível
                     </x-fr-button>
                 </x-slot:actions>
             </x-fr-headline>
-        </div>
-    </section>
-
-    <section id="parcerias" class="section bg-brand-primary scroll-mt-16 py-20">
-        <div class="container flex flex-col gap-8 md:grid md:grid-cols-2 md:gap-x-12 md:gap-y-8">
-            <x-fr-headline align="left" class="md:self-end" data-reveal="up">
-                <x-slot:header>
-                    <x-logo-badge class="text-text-light!"> Parcerias </x-logo-badge>
-                </x-slot:header>
-                <x-slot:title class="text-text-light!">
-                    Parcerias que geram impacto real
-                </x-slot:title>
-                <x-slot:description class="text-text-light!">
-                    Se você tem sinergia com a missão da Firece, existe um formato de parceria para você. Avaliamos cada
-                    oportunidade individualmente e investimos tempo e estrutura quando há alinhamento.
-                </x-slot:description>
-            </x-fr-headline>
-
-            <div
-                class="border-border-base divide-border-base grid w-full grid-cols-1 divide-y border-y md:col-start-2 md:row-span-2 md:row-start-1"
-                data-reveal-stagger="140"
-            >
-                <div class="flex flex-col gap-4 px-4 py-8" data-reveal="up">
-                    <x-fr-headline align="left" size="sm" container-class="gap-2!">
-                        <x-slot:title class="text-text-light!">
-                            Joint Ventures
-                        </x-slot:title>
-                        <x-slot:description class="text-text-light!">
-                            Projetos conjuntos com estrutura compartilhada e metas alinhadas
-                        </x-slot:description>
-                    </x-fr-headline>
-                </div>
-
-                <div class="flex flex-col gap-3 px-4 py-8" data-reveal="up">
-                    <x-fr-headline align="left" size="sm" container-class="gap-2!">
-                        <x-slot:title class="text-text-light!">
-                            Projetos Educacionais
-                        </x-slot:title>
-                        <x-slot:description class="text-text-light!">
-                            Co-criação de conteúdo, cursos e programas de educação financeira
-                        </x-slot:description>
-                    </x-fr-headline>
-                </div>
-
-                <div class="flex flex-col gap-3 px-4 py-8" data-reveal="up">
-                    <x-fr-headline align="left" size="sm" container-class="gap-2!">
-                        <x-slot:title class="text-text-light!">
-                            Atendimento
-                        </x-slot:title>
-                        <x-slot:description class="text-text-light!">
-                            Sessões individuais de 60 minutos com consultores especializados, online ou presencial.
-                        </x-slot:description>
-                    </x-fr-headline>
-                </div>
-
-                <div class="flex flex-col gap-3 px-4 py-8" data-reveal="up">
-                    <x-fr-headline align="left" size="sm" container-class="gap-2!">
-                        <x-slot:title class="text-text-light!">
-                            Parcerias Comerciais
-                        </x-slot:title>
-                        <x-slot:description class="text-text-light!">
-                            Modelos de afiliação e indicação com remuneração inteligente
-                        </x-slot:description>
-                    </x-fr-headline>
-                </div>
-            </div>
-
-            <x-fr-button variant="white" class="md:self-start" href="{{ route('parcerias') }}">
-                Saber mais sobre parcerias
-            </x-fr-button>
-        </div>
-    </section>
-
-    <section class="section">
-        <div class="container flex flex-col gap-8">
-            <x-fr-headline>
-                <x-slot:title>
-                    Qual situação mais se parece com a sua?
-                </x-slot:title>
-                <x-slot:description>
-                    Selecione e a gente te indica o caminho certo
-                </x-slot:description>
-            </x-fr-headline>
-
-            <div
-                class="divide-border-base border-border-base grid grid-cols-1 gap-3 divide-y border-y"
-                data-reveal-stagger="140"
-            >
-                <a
-                    href="#flamma"
-                    class="flex items-center justify-between gap-3 py-4 transition-opacity hover:opacity-70"
-                >
-                    <x-fr-text size="sm" class="text-text-high! font-semibold!">
-                        Represento uma empresa e quero cuidar do bem-estar financeiro do meu time
-                    </x-fr-text>
-                    <x-heroicon-c-chevron-right class="text-brand-primary size-5 shrink-0" />
-                </a>
-                <a
-                    href="#planejamento"
-                    class="flex items-center justify-between gap-3 py-4 transition-opacity hover:opacity-70"
-                >
-                    <x-fr-text size="sm" class="text-text-high! font-semibold!">
-                        Meu dinheiro some e não entendo para onde vai
-                    </x-fr-text>
-                    <x-heroicon-c-chevron-right class="text-brand-primary size-5 shrink-0" />
-                </a>
-                <a
-                    href="#code-capital"
-                    class="flex items-center justify-between gap-3 py-4 transition-opacity hover:opacity-70"
-                >
-                    <x-fr-text size="sm" class="text-text-high! font-semibold!">
-                        Sou dev, tenho CNPJ ou recebo em dólar e não sei como estruturar
-                    </x-fr-text>
-                    <x-heroicon-c-chevron-right class="text-brand-primary size-5 shrink-0" />
-                </a>
-                <a
-                    href="#key-account"
-                    class="flex items-center justify-between gap-3 py-4 transition-opacity hover:opacity-70"
-                >
-                    <x-fr-text size="sm" class="text-text-high! font-semibold!">
-                        Tenho patrimônio e preciso de uma estratégia mais sofisticada
-                    </x-fr-text>
-                    <x-heroicon-c-chevron-right class="text-brand-primary size-5 shrink-0" />
-                </a>
-                <a
-                    href="#educafire"
-                    class="flex items-center justify-between gap-3 py-4 transition-opacity hover:opacity-70"
-                >
-                    <x-fr-text size="sm" class="text-text-high! font-semibold!">
-                        Quero aprender a ensinar finanças e ganhar com isso
-                    </x-fr-text>
-                    <x-heroicon-c-chevron-right class="text-brand-primary size-5 shrink-0" />
-                </a>
-            </div>
         </div>
     </section>
 </x-layout.landing>

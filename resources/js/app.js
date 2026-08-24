@@ -30,6 +30,77 @@ document.addEventListener('alpine:init', () => {
     }));
 });
 
+// ---------- Lead Quiz (Alpine) ----------
+
+document.addEventListener('alpine:init', () => {
+    window.Alpine.data('leadQuiz', ({ steps, phone, intro }) => ({
+        steps,
+        phone,
+        intro,
+        current: 0,
+        input: '',
+        error: '',
+        answers: {},
+        history: [],
+
+        get activeStep() {
+            return this.steps[this.current] ?? null;
+        },
+
+        // Snapshotted (not reactively tied to `current`) so the outgoing step keeps
+        // showing its own question/options while it plays its leave transition.
+        get visibleStep() {
+            const step = this.activeStep;
+            return step ? { ...step, _key: this.current } : null;
+        },
+
+        get finished() {
+            return this.current >= this.steps.length;
+        },
+
+        get whatsappUrl() {
+            const lines = this.steps.map((step) => `${step.label}: ${this.answers[step.key] ?? ''}`);
+            const text = [this.intro, ...lines].join('\n');
+
+            return `https://api.whatsapp.com/send/?phone=${this.phone}&text=${encodeURIComponent(text)}&type=phone_number&app_absent=0`;
+        },
+
+        choose(option) {
+            this.answer(option);
+        },
+
+        submitText() {
+            const step = this.activeStep;
+            if (!step) return;
+
+            const value = this.input.trim();
+
+            if (!value) {
+                this.error = 'Preencha esse campo para continuar';
+                return;
+            }
+
+            if (step.type === 'email' && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value)) {
+                this.error = 'Digite um email válido';
+                return;
+            }
+
+            this.error = '';
+            this.answer(value);
+        },
+
+        answer(value) {
+            const step = this.activeStep;
+            if (!step) return;
+
+            this.answers[step.key] = value;
+            this.history.push({ question: step.question, answer: value });
+            this.input = '';
+            this.current++;
+        },
+    }));
+});
+
 // ---------- Reveal on scroll ----------
 
 (() => {

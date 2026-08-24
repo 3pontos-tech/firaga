@@ -3,6 +3,7 @@
 @php
     $height = match ($size) {
         'sm' => '16px',
+        'lg' => '40px',
         default => '22px',
     };
 

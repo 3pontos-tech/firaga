@@ -45,7 +45,7 @@ it('shows curated related posts and hides drafts among them', function (): void 
 
     $this->get('/blog/'.$post->slug)
         ->assertSuccessful()
-        ->assertSee('Leia também')
+        ->assertSee('Leia <mark>também</mark>', false)
         ->assertSee('Publicado Relacionado')
         ->assertSee('/blog/'.$publishedRelated->slug)
         ->assertDontSee('Rascunho Relacionado');
@@ -57,7 +57,7 @@ it('falls back to recent posts when none are curated', function (): void {
 
     $this->get('/blog/'.$post->slug)
         ->assertSuccessful()
-        ->assertSee('Leia também')
+        ->assertSee('Leia <mark>também</mark>', false)
         ->assertSee('Outro Artigo')
         ->assertSee('/blog/'.$other->slug);
 });
@@ -67,7 +67,7 @@ it('omits the related section when there are no other posts', function (): void 
 
     $this->get('/blog/'.$post->slug)
         ->assertSuccessful()
-        ->assertDontSee('Leia também');
+        ->assertDontSee('Leia <mark>também</mark>', false);
 });
 
 it('links posts on the blog index to their show pages', function (): void {

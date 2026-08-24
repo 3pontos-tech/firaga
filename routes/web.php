@@ -2,10 +2,13 @@
 
 declare(strict_types=1);
 
+use App\Enums\PostStatus;
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\MarketingLandingController;
 use App\Http\Controllers\PagesController;
+use App\Models\CMS\Post;
 use App\Models\Term;
+use App\Models\Testimonial;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Contracts\View\View;
 use Illuminate\Support\Facades\Route;
@@ -39,13 +42,24 @@ Route::domain(config('app.domain'))->group(function (): void {
     })->name('terms.show');
 
     Route::get('/', [PagesController::class, 'show'])->name('home');
-    Route::view('/key-account', 'pages.key-account')->name('key-account');
+    Route::get('/key-account', fn (): View => view('pages.key-account', [
+        // Skip the 4 most recent testimonials shown on the homepage so the two pages stay diversified.
+        'testimonials' => Testimonial::query()->with('media')->latest('posted_at')->skip(4)->take(3)->get(),
+    ]))->name('key-account');
     Route::view('/code-capital', 'pages.code-capital')->name('code-capital');
     Route::view('/nossos-servicos', 'pages.nossos-servicos')->name('nossos-servicos');
     Route::view('/trabalhe-conosco', 'pages.trabalhe-conosco')->name('trabalhe-conosco');
     Route::get('/blog', [BlogController::class, 'index'])->name('blog');
     Route::get('/blog/{post:slug}', [BlogController::class, 'show'])->name('blog.show');
     Route::view('/parcerias', 'pages.parcerias')->name('parcerias');
+    Route::get('/quem-somos', fn (): View => view('pages.quem-somos', [
+        'posts' => Post::query()
+            ->where('status', PostStatus::PUBLISHED)
+            ->with(['author', 'categories'])
+            ->latest('published_at')
+            ->take(3)
+            ->get(),
+    ]))->name('quem-somos');
 
     Route::get('/{page?}', [PagesController::class, 'show'])
         ->name('page.show')
