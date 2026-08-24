@@ -1,9 +1,15 @@
 @props ([
     'variant' => 'default',
-    'tagline' => null
+    'tagline' => null,
+    'contentGap' => 'sm'
 ])
 
 @php
+    $contentGapClass = match ($contentGap) {
+        'lg' => 'gap-8',
+        default => 'gap-4',
+    };
+
     $isFilled = $variant === 'filled';
     $isHighlighted = $variant === 'highlighted';
     $hasBrandHeader = $isHighlighted || $isFilled;
@@ -37,5 +43,5 @@
         </div>
     @endif
 
-    <div class="flex flex-col gap-4 p-8">{{ $slot }}</div>
+    <div class="flex flex-col {{ $contentGapClass }} p-6 md:p-8">{{ $slot }}</div>
 </div>

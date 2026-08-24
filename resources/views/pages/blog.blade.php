@@ -1,14 +1,14 @@
 <x-layout.landing>
     {{-- Hero --}}
-    <section class="section-first flex flex-col items-center gap-12">
-        <div class="container flex flex-col items-center gap-8">
+    <section class="section-first flex flex-col items-center gap-12 md:mt-20!">
+        <div class="container flex flex-col items-center gap-8 md:gap-20">
             <x-fr-headline size="3xl" data-reveal="up">
-                <x-slot:title>
+                <x-slot:title class="lg:text-7xl!">
                     Conteúdo que <mark>transforma</mark>
                 </x-slot:title>
-                <x-slot:description class="max-w-2xl">
-                    Acesse os conteúdos que nossos especialistas prepararam para você organizar suas finanças,
-                    potencializar seus investimentos e aumentar seus rendimentos.
+                <x-slot:description class="max-w-[784px]">
+                    Acesse os conteúdos que nossos especialistas prepararam para você se organizar financeiramente,
+                    consolidar seu patrimônio ou aumentar seus rendimentos.
                 </x-slot:description>
             </x-fr-headline>
 
@@ -27,5 +27,5 @@
     <livewire:blog-posts :excluded-ids="$excludedIds" />
 
     {{-- Newsletter --}}
-    <x-newsletter-banner class="md:mt-20!" />
+    <x-newsletter-banner />
 </x-layout.landing>

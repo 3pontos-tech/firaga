@@ -27,7 +27,7 @@ class TestimonialsSeeder extends Seeder
                 'name' => 'Emilly Monteiro Gomes',
                 'role' => 'Cliente Fire|ce',
                 'rating' => 5,
-                'comment' => 'O atendimento da Firece é atencioso, profissional e personalizado, o que torna todo o processo mais tranquilo e eficiente. Tenho me sentido mais confiante em relação à minha vida financeira. Recomendo o trabalho com total segurança.',
+                'comment' => 'O atendimento da Fire|ce é atencioso, profissional e personalizado, o que torna todo o processo mais tranquilo e eficiente. Tenho me sentido mais confiante em relação à minha vida financeira. Recomendo o trabalho com total segurança.',
                 'posted_at' => now()->subMonths(2),
                 'avatar' => 'https://lh3.googleusercontent.com/a-/ALV-UjVOkOLWGbS9XPq1JU32VcUkJAH1Sa1b0JhIGRYjlRr8oYto8Fgi=w90-h90-p-rp-mo-br100',
             ],

@@ -32,18 +32,18 @@ it('não corta palavras no meio nos títulos dos pilares', function (): void {
     foreach (
         ['Educação', 'Transparência', 'Desenvolvimento contínuo', 'Compromisso com o cliente', 'Visão de longo prazo'] as $title
     ) {
-        expect($content)->toContain('<h3 class="fr-heading text-sm break-normal">'.$title.'</h3>');
+        expect($content)->toContain('<h3 class="fr-heading text-md break-normal">'.$title.'</h3>');
     }
 });
 
-it('usa raio de 4px nos cards de números', function (): void {
+it('usa raio de 12px e borda clara nos cards de números', function (): void {
     $content = (string) $this->get('/quem-somos')->assertOk()->getContent();
 
     preg_match_all('/<div\s+class="bg-brand-primary[^"]*text-center"/s', $content, $matches);
 
     expect($matches[0])->toHaveCount(3);
 
-    expect($matches[0])->each->toContain('rounded-xs');
+    expect($matches[0])->each->toContain('rounded-md')->toContain('border-outline-light');
 });
 
 it('renomeia a seção do blog para "Conteúdo que transforma"', function (): void {
@@ -99,7 +99,7 @@ it('usa a tipografia do design system nos blocos de missão, visão e pilares', 
     expect($content)
         ->toContain('<h3 class="fr-heading text-md">Nossa Missão</h3>')
         ->and($content)
-        ->toContain('<h3 class="fr-heading text-sm break-normal">Visão de longo prazo</h3>');
+        ->toContain('<h3 class="fr-heading text-md break-normal">Visão de longo prazo</h3>');
 
     preg_match_all(
         '/<(?:p|h3)[^>]*class="[^"]*"[^>]*>(?:01|02|Nossa Missão|Educação)<\/(?:p|h3)>/u',
@@ -137,4 +137,56 @@ it('exibe os últimos posts publicados na seção de blog', function (): void {
     Post::factory()->create(['title' => 'Artigo Mais Recente', 'published_at' => now()]);
 
     $this->get('/quem-somos')->assertOk()->assertSeeText('Artigo Mais Recente');
+});
+
+it('recorta a arte do hero na proporção da coluna do design', function (): void {
+    $content = (string) $this->get('/quem-somos')->assertOk()->getContent();
+
+    preg_match('/<div[^>]*aspect-568\/561[^>]*>\s*<img[^>]*>/s', $content, $matches);
+
+    expect($matches)->not->toBeEmpty();
+
+    expect($matches[0])->toContain('max-w-[568px]')->toContain('overflow-hidden')->toContain('object-cover');
+});
+
+it('divide o hero em 57,5% de texto e 42,5% de imagem, sem gap no desktop', function (): void {
+    $content = (string) $this->get('/quem-somos')->assertOk()->getContent();
+
+    expect($content)
+        ->toContain('md:basis-[57.5%]')
+        ->and($content)
+        ->toContain('md:basis-[42.5%]')
+        ->and($content)
+        ->not->toContain('md:basis-3/5');
+});
+
+it('limita as descrições centralizadas a 800px', function (): void {
+    $content = (string) $this->get('/quem-somos')->assertOk()->getContent();
+
+    expect(mb_substr_count($content, 'max-w-[800px]!'))->toBe(2);
+});
+
+it('usa o número dos pilares em 36px em todos os breakpoints', function (): void {
+    $content = (string) $this->get('/quem-somos')->assertOk()->getContent();
+
+    preg_match_all('/<p class="fr-heading text-brand-primary! text-xl">0[1-5]<\/p>/', $content, $matches);
+
+    expect($matches[0])->toHaveCount(5);
+});
+
+it('usa Syne em 24px nos rótulos dos cards de números', function (): void {
+    $content = (string) $this->get('/quem-somos')->assertOk()->getContent();
+
+    foreach (['Clientes', 'Consultores ativos', 'Consultorias feitas'] as $label) {
+        expect($content)->toContain('<p class="fr-heading text-text-light! text-md leading-normal">'.$label.'</p>');
+    }
+});
+
+it('separa o vídeo do bloco de conteúdo em seções próprias', function (): void {
+    $content = (string) $this->get('/quem-somos')->assertOk()->getContent();
+
+    expect($content)
+        ->toContain('<section id="video" class="section">')
+        ->and($content)
+        ->toContain('<section id="conteudo" class="section">');
 });

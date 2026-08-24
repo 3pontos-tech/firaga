@@ -29,7 +29,7 @@
             'tabs' => [
                 ['label' => 'Início', 'anchor' => '#hero'],
                 ['label' => 'Depoimentos', 'anchor' => '#depoimentos'],
-                ['label' => 'Por que Firece', 'anchor' => '#por-que-firece'],
+                ['label' => 'Por que Fire|ce', 'anchor' => '#por-que-firece'],
                 ['label' => 'Processo', 'anchor' => '#processo'],
                 ['label' => 'Planos', 'anchor' => '#planos'],
             ],
@@ -124,9 +124,10 @@
     class="h-full"
 >
     <nav class="relative mx-auto flex h-full items-center justify-between px-4 sm:px-12 lg:px-24">
+        {{-- O "|" (.st2) acompanha a cor do lettering em headers escuros para não sumir no fundo preto --}}
         <x-logo-with-text
             size="sm"
-            class="[&_.st0]:text-brand-primary [&_.st1]:text-text-high !w-[94px] lg:!w-[212px]"
+            class="[&_.st0]:text-brand-primary [&_.st1]:text-text-high [&_.st2]:text-brand-primary dark:[&_.st2]:text-text-high !w-[94px] lg:!w-[212px]"
         />
 
         <div class="absolute left-1/2 hidden -translate-x-1/2 items-center gap-8 lg:flex">
@@ -212,14 +213,14 @@
                 <div class="flex w-72 shrink-0 flex-col gap-3">
                     <img
                         src="{{ asset('images/firece-submenu.png') }}"
-                        alt="Firece"
+                        alt="Fire|ce"
                         class="h-44 w-full rounded-lg object-cover"
                     />
                     <x-fr-heading level="3" class="text-base!"
-                        >Venha fazer parte da <span class="text-brand-primary">Firece</span></x-fr-heading
+                        >Venha fazer parte da <span class="text-brand-primary">Fire|ce</span></x-fr-heading
                     >
                     <x-fr-text size="md">
-                        Conte com a Firece para organizar suas finanças, planejar seus próximos passos e com mais
+                        Conte com a Fire|ce para organizar suas finanças, planejar seus próximos passos e com mais
                         segurança.
                     </x-fr-text>
                 </div>
@@ -355,14 +356,14 @@
                     <div class="flex flex-col gap-3">
                         <img
                             src="{{ asset('images/firece-submenu.png') }}"
-                            alt="Firece"
+                            alt="Fire|ce"
                             class="h-40 w-full rounded-lg object-cover"
                         />
                         <x-fr-heading level="3" class="text-base!"
-                            >Venha fazer parte da <span class="text-brand-primary">Firece</span></x-fr-heading
+                            >Venha fazer parte da <span class="text-brand-primary">Fire|ce</span></x-fr-heading
                         >
                         <x-fr-text size="md">
-                            Conte com a Firece para organizar suas finanças, planejar seus próximos passos e com mais
+                            Conte com a Fire|ce para organizar suas finanças, planejar seus próximos passos e com mais
                             segurança.
                         </x-fr-text>
                     </div>
