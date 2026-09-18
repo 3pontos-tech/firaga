@@ -23,21 +23,23 @@
     <title>@yield ('title', config('app.name'))</title>
     @vite (['resources/css/app.css', 'resources/js/app.js'])
 
-    <script>
-        (function (w, d, s, l, i) {
-            w[l] = w[l] || [];
-            w[l].push({
-                'gtm.start': new Date().getTime(),
-                event: 'gtm.js',
-            });
-            var f = d.getElementsByTagName(s)[0],
-                j = d.createElement(s),
-                dl = l != 'dataLayer' ? '&l=' + l : '';
-            j.async = true;
-            j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
-            f.parentNode.insertBefore(j, f);
-        })(window, document, 'script', 'dataLayer', 'GTM-KTVLGCHG');
-    </script>
+    @if (config('services.google_tag_manager.container_id'))
+        <script>
+            (function (w, d, s, l, i) {
+                w[l] = w[l] || [];
+                w[l].push({
+                    'gtm.start': new Date().getTime(),
+                    event: 'gtm.js',
+                });
+                var f = d.getElementsByTagName(s)[0],
+                    j = d.createElement(s),
+                    dl = l != 'dataLayer' ? '&l=' + l : '';
+                j.async = true;
+                j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+                f.parentNode.insertBefore(j, f);
+            })(window, document, 'script', 'dataLayer', '{{ config('services.google_tag_manager.container_id') }}');
+        </script>
+    @endif
 
     @if (config('services.posthog.api_key'))
         <script>
@@ -97,11 +99,16 @@
 <body
     class="bg-elevation-surface text-text-high grid min-h-dvh grid-cols-[1fr] grid-rows-[auto_1fr_auto] font-sans antialiased [grid-template-areas:'header''main''footer']"
 >
-    <x-splash :from="$splashFrom" :to="$splashTo" :logoClass="$splashLogoClass" />
+    @if (config('services.google_tag_manager.container_id'))
+        <noscript>
+            <iframe
+                src="https://www.googletagmanager.com/ns.html?id={{ config('services.google_tag_manager.container_id') }}"
+                class="hidden h-0 w-0"
+            ></iframe>
+        </noscript>
+    @endif
 
-    <noscript>
-        <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KTVLGCHG" class="hidden h-0 w-0"></iframe>
-    </noscript>
+    <x-splash :from="$splashFrom" :to="$splashTo" :logoClass="$splashLogoClass" />
 
     <header
         class="{{ $headerBg }} fixed inset-x-0 top-0 z-50 h-(--header-height) [grid-area:header] {{ $headerTheme }}"
