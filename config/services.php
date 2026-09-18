@@ -42,4 +42,8 @@ return [
         'host' => env('POSTHOG_HOST', 'https://us.i.posthog.com'),
     ],
 
+    'google_tag_manager' => [
+        'container_id' => env('GOOGLE_TAG_MANAGER_ID'),
+    ],
+
 ];
