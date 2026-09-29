@@ -9,6 +9,7 @@ use App\Http\Middleware\CaptureLeadAttribution;
 use Illuminate\Http\Client\RequestException;
 use Illuminate\Http\Client\Response;
 use Illuminate\Support\Collection;
+use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\Log;
 
 class UpsertContact
@@ -47,7 +48,16 @@ class UpsertContact
 
         $contactId = (string) $response->throw()->json('contact.id');
 
+        // A retry after a partial failure gets "new: false" for the contact this very
+        // submission created, so that fact is remembered to still write its first touch.
+        $createdKey = 'leads:created-contact:'.$lead->submissionId;
+
         if ($response->json('new') === true) {
+            Cache::put($createdKey, $contactId, now()->addDay());
+            $this->warnAboutIgnoredCustomFields($lead, sent: count($payload['customFields']), stored: count($response->json('contact.customFields', [])));
+        }
+
+        if (Cache::get($createdKey) === $contactId) {
             $this->writeFirstTouch($contactId, $lead);
         } else {
             Log::info('GoHighLevel contact already existed; kept its first-touch attribution.', [
@@ -81,6 +91,24 @@ class UpsertContact
         }
 
         $response->throw();
+    }
+
+    /**
+     * Unknown keys are dropped without any error, so on a brand-new contact (whose
+     * stored fields are exactly the ones just sent) a shorter list reveals a mapping
+     * divergence.
+     */
+    private function warnAboutIgnoredCustomFields(LeadData $lead, int $sent, int $stored): void
+    {
+        if ($stored >= $sent) {
+            return;
+        }
+
+        Log::warning('GoHighLevel ignored custom fields of the lead; run gohighlevel:check-custom-fields.', [
+            'submission_id' => $lead->submissionId,
+            'sent' => $sent,
+            'stored' => $stored,
+        ]);
     }
 
     private function logRejectedCustomFields(LeadData $lead, Response $response): void

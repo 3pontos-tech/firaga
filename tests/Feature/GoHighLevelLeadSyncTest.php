@@ -90,11 +90,11 @@ describe('contact', function (): void {
             && $request['phone'] === '+5511912345678'
             && !isset($request['tags'])
             && fieldsByKey($request['customFields']) === [
-                'situacao_financeira' => 'Tenho dívidas e quero sair delas',
+                'situao_financeira' => 'Tenho dívidas e quero sair delas',
                 'objetivo_financeiro' => 'Sair das dívidas nos próximos meses',
-                'melhor_horario' => 'Manhã (8h–12h)',
-                'pagina_de_origem' => '/nossos-servicos',
-                'botao_de_origem' => 'Quero o plano Gold',
+                'melhor_horrio' => 'Manhã (8h–12h)',
+                'pgina_de_origem' => '/nossos-servicos',
+                'boto_de_origem' => 'Quero o plano Gold',
             ]);
 
         Http::assertSent(fn (Request $request): bool => $request->method() === 'PUT'
@@ -103,7 +103,7 @@ describe('contact', function (): void {
             && fieldsByKey($request['customFields']) === [
                 'utm_source' => 'google',
                 'utm_campaign' => 'planejamento',
-                'gclid' => 'Cj0KCQjw_abc-123',
+                'google_click_id' => 'Cj0KCQjw_abc-123',
             ]);
 
         Http::assertSent(fn (Request $request): bool => $request->method() === 'POST'
@@ -165,7 +165,7 @@ describe('contact', function (): void {
     it('keeps the new contact when the account rejects the campaign custom fields', function (): void {
         Log::spy();
         Http::fake([
-            GHL.'/contacts/upsert' => Http::response(['new' => true, 'contact' => ['id' => 'contact-3']], 201),
+            GHL.'/contacts/upsert' => Http::response(['new' => true, 'contact' => ['id' => 'contact-3', 'customFields' => [['id' => 'a'], ['id' => 'b'], ['id' => 'c'], ['id' => 'd'], ['id' => 'e']]]], 201),
             GHL.'/contacts/contact-3' => Http::response(['message' => ['customFields.0 field not found']], 422),
             GHL.'/contacts/contact-3/tags' => Http::response(['tags' => []], 201),
         ]);
@@ -174,6 +174,41 @@ describe('contact', function (): void {
 
         Log::shouldHaveReceived('warning')->withArgs(fn (string $message): bool => str_contains($message, 'custom fields'))->once();
         Queue::assertPushed(CreateLeadOpportunity::class, fn (CreateLeadOpportunity $job): bool => $job->contactId === 'contact-3');
+    });
+    it('still writes the first touch when retrying a submission whose contact it created', function (): void {
+        Http::fake([
+            GHL.'/contacts/upsert' => Http::sequence()
+                ->push(['new' => true, 'contact' => ['id' => 'contact-4', 'customFields' => [['id' => 'a'], ['id' => 'b'], ['id' => 'c'], ['id' => 'd'], ['id' => 'e']]]], 201)
+                ->push(['new' => false, 'contact' => ['id' => 'contact-4']], 201),
+            GHL.'/contacts/contact-4' => Http::sequence()
+                ->push(['message' => 'Internal error'], 500)
+                ->push(['succeded' => true]),
+            GHL.'/contacts/contact-4/tags' => Http::response(['tags' => []], 201),
+        ]);
+
+        $job = new SyncLeadWithGoHighLevel(lead(['utm_source' => 'google']));
+
+        expect(fn () => runJob($job))->toThrow(RequestException::class);
+
+        runJob($job);
+
+        Http::assertSentCount(5);
+        Http::assertSent(fn (Request $request): bool => $request->method() === 'PUT' && fieldsByKey($request['customFields']) === ['utm_source' => 'google']);
+    });
+
+    it('warns when the API silently drops custom fields of a new contact', function (): void {
+        Log::spy();
+        Http::fake([
+            GHL.'/contacts/upsert' => Http::response(['new' => true, 'contact' => ['id' => 'contact-5', 'customFields' => [['id' => 'only-one', 'value' => 'x']]]], 201),
+            GHL.'/contacts/contact-5' => Http::response(['succeded' => true]),
+            GHL.'/contacts/contact-5/tags' => Http::response(['tags' => []], 201),
+        ]);
+
+        runJob(new SyncLeadWithGoHighLevel(lead()));
+
+        Log::shouldHaveReceived('warning')->withArgs(fn (string $message, array $context): bool => str_contains($message, 'ignored custom fields')
+            && $context['sent'] === 5
+            && $context['stored'] === 1)->once();
     });
 });
 
