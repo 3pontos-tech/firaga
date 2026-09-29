@@ -40,7 +40,7 @@ class UpsertContact
 
         $response = $this->client->request()->post('/contacts/upsert', $payload);
 
-        if ($response->clientError() && $payload['customFields'] !== []) {
+        if ($payload['customFields'] !== [] && $this->rejectsCustomFields($response)) {
             $this->logRejectedCustomFields($lead, $response);
 
             $response = $this->client->request()->post('/contacts/upsert', [...$payload, 'customFields' => []]);
@@ -84,7 +84,7 @@ class UpsertContact
             'customFields' => $this->customFields($lead, only: CaptureLeadAttribution::PARAMETERS),
         ]);
 
-        if ($response->clientError()) {
+        if ($this->rejectsCustomFields($response)) {
             $this->logRejectedCustomFields($lead, $response);
 
             return;
@@ -109,6 +109,16 @@ class UpsertContact
             'sent' => $sent,
             'stored' => $stored,
         ]);
+    }
+
+    /**
+     * Only a validation error that names the custom fields justifies syncing without
+     * them; any other 4xx (auth, rate limit, other fields) must fail so the queue retries.
+     */
+    private function rejectsCustomFields(Response $response): bool
+    {
+        return in_array($response->status(), [400, 422], true)
+            && str_contains(mb_strtolower($response->body()), 'customfield');
     }
 
     private function logRejectedCustomFields(LeadData $lead, Response $response): void

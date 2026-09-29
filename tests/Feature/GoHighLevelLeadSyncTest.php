@@ -213,6 +213,29 @@ describe('contact', function (): void {
 });
 
 describe('contact failures', function (): void {
+    it('does not drop the custom fields on client errors unrelated to them', function (int $status, array $body): void {
+        Http::fake([GHL.'/contacts/upsert' => Http::response($body, $status)]);
+
+        expect(fn () => runJob(new SyncLeadWithGoHighLevel(lead())))->toThrow(RequestException::class);
+
+        Http::assertSentCount(1);
+    })->with([
+        'token inválido' => [401, ['message' => 'Invalid JWT']],
+        'rate limit' => [429, ['message' => 'Too many requests']],
+        'outro campo inválido' => [422, ['message' => ['email must be an email']]],
+    ]);
+
+    it('lets the queue retry when writing the first touch hits an unrelated client error', function (): void {
+        Http::fake([
+            GHL.'/contacts/upsert' => Http::response(['new' => true, 'contact' => ['id' => 'contact-6', 'customFields' => [['id' => 'a'], ['id' => 'b'], ['id' => 'c'], ['id' => 'd'], ['id' => 'e']]]], 201),
+            GHL.'/contacts/contact-6' => Http::response(['message' => 'Too many requests'], 429),
+        ]);
+
+        expect(fn () => runJob(new SyncLeadWithGoHighLevel(lead())))->toThrow(RequestException::class);
+
+        Http::assertNotSent(fn (Request $request): bool => str_ends_with($request->url(), '/tags'));
+    });
+
     it('throws on API outage so the queue retries with backoff and a bounded number of attempts', function (): void {
         Http::fake([GHL.'/contacts/upsert' => Http::response(['message' => 'Service Unavailable'], 503)]);
 

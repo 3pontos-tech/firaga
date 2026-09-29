@@ -9,6 +9,7 @@ use App\Jobs\SyncLeadWithGoHighLevel;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\Log;
+use Throwable;
 
 class LeadController extends Controller
 {
@@ -31,8 +32,17 @@ class LeadController extends Controller
             ]);
         }
 
-        if (Cache::add('leads:submission:'.$lead->submissionId, true, now()->addDay())) {
-            dispatch(new SyncLeadWithGoHighLevel($lead));
+        $submissionKey = 'leads:submission:'.$lead->submissionId;
+
+        if (Cache::add($submissionKey, true, now()->addDay())) {
+            try {
+                dispatch(new SyncLeadWithGoHighLevel($lead));
+            } catch (Throwable $exception) {
+                // Frees the key so the browser's resend can still queue this lead.
+                Cache::forget($submissionKey);
+
+                throw $exception;
+            }
         }
 
         return response()->json(['status' => 'accepted'], 202);

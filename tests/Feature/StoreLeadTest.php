@@ -7,6 +7,8 @@ use App\Enums\FinancialGoal;
 use App\Enums\FinancialSituation;
 use App\Http\Middleware\CaptureLeadAttribution;
 use App\Jobs\SyncLeadWithGoHighLevel;
+use Illuminate\Contracts\Bus\Dispatcher;
+use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Queue;
@@ -110,4 +112,33 @@ it('accepts inline quiz submissions without a destination and without logging a 
 
     Queue::assertPushed(SyncLeadWithGoHighLevel::class);
     Log::shouldNotHaveReceived('warning');
+});
+
+it('frees the submission for a resend when queueing the sync fails', function (): void {
+    $payload = leadPayload();
+    $dispatcher = resolve(Dispatcher::class);
+
+    $this->mock(Dispatcher::class)->shouldReceive('dispatch')->once()->andThrow(new RuntimeException('Queue database unavailable'));
+
+    postJson(route('leads.store'), $payload)->assertServerError();
+
+    expect(Cache::has('leads:submission:'.$payload['submission_id']))->toBeFalse();
+
+    $this->instance(Dispatcher::class, $dispatcher);
+
+    postJson(route('leads.store'), $payload)->assertAccepted();
+
+    Queue::assertPushed(SyncLeadWithGoHighLevel::class, 1);
+});
+
+it('trims the configured lead tags and drops empty entries', function (): void {
+    putenv('GOHIGHLEVEL_LEAD_TAGS= firesite , ,lead-site-whatsapp ,');
+
+    try {
+        $services = require config_path('services.php');
+    } finally {
+        putenv('GOHIGHLEVEL_LEAD_TAGS');
+    }
+
+    expect($services['gohighlevel']['tags'])->toBe(['firesite', 'lead-site-whatsapp']);
 });
