@@ -21,5 +21,10 @@
     </source>
     <php>
         <env name="APP_ENV" value="testing"/>
+        <env name="GOHIGHLEVEL_API_TOKEN" value=""/>
+        <env name="GOHIGHLEVEL_LOCATION_ID" value=""/>
+        <env name="GOHIGHLEVEL_PIPELINE_ID" value=""/>
+        <env name="GOHIGHLEVEL_PIPELINE_STAGE_ID" value=""/>
+        <env name="GOHIGHLEVEL_CALENDAR_ID" value=""/>
     </php>
 </phpunit>

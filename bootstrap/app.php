@@ -2,6 +2,7 @@
 
 declare(strict_types=1);
 
+use App\Http\Middleware\CaptureLeadAttribution;
 use Illuminate\Foundation\Application;
 use Illuminate\Foundation\Configuration\Exceptions;
 use Illuminate\Foundation\Configuration\Middleware;
@@ -18,6 +19,12 @@ return Application::configure(basePath: dirname(__DIR__))
             TrustProxies::class,
             Monicahq\Cloudflare\Http\Middleware\TrustProxies::class
         );
+
+        $middleware->web(append: [CaptureLeadAttribution::class]);
+
+        // Public, unauthenticated lead endpoint: a page left open past the session
+        // lifetime would otherwise lose the lead to a CSRF mismatch.
+        $middleware->validateCsrfTokens(except: ['leads']);
     })
     ->withExceptions(function (Exceptions $exceptions): void {})
     ->create();

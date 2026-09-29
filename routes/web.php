@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 use App\Enums\PostStatus;
 use App\Http\Controllers\BlogController;
+use App\Http\Controllers\LeadController;
 use App\Http\Controllers\MarketingLandingController;
 use App\Http\Controllers\PagesController;
 use App\Models\CMS\Post;
@@ -18,6 +19,10 @@ if (app()->isLocal()) {
 }
 
 Route::view('/consultoria/sucesso', 'success')->name('payment.success');
+
+Route::post('/leads', [LeadController::class, 'store'])
+    ->middleware('throttle:10,1')
+    ->name('leads.store');
 
 Route::domain('lp.'.config('app.domain'))->group(function (): void {
 
