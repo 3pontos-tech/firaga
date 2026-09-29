@@ -38,6 +38,7 @@ class StoreLeadRequest extends FormRequest
             'origin_page' => ['nullable', 'string', 'max:2048'],
             'origin_label' => ['nullable', 'string', 'max:255'],
             'destination' => ['nullable', 'string', 'max:2048'],
+            'website' => ['nullable', 'string', 'max:255'],
         ];
     }
 
@@ -57,6 +58,14 @@ class StoreLeadRequest extends FormRequest
             'email.email' => 'Digite um email válido.',
             'phone.required' => 'Informe o seu telefone.',
         ];
+    }
+
+    /**
+     * The hidden "website" field is only ever filled by bots completing every input.
+     */
+    public function isFromBot(): bool
+    {
+        return $this->filled('website');
     }
 
     public function toLeadData(): LeadData

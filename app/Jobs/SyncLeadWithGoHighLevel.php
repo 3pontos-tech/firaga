@@ -41,7 +41,7 @@ class SyncLeadWithGoHighLevel implements ShouldQueue
     public function handle(GoHighLevelClient $client, UpsertContact $upsertContact): void
     {
         if (!$client->isConfigured()) {
-            Log::warning('GoHighLevel is not configured; lead was not synced.', $this->lead->summary());
+            Log::warning('GoHighLevel is not configured; lead was not synced.', $this->lead->logContext());
 
             return;
         }
@@ -54,8 +54,8 @@ class SyncLeadWithGoHighLevel implements ShouldQueue
 
     public function failed(?Throwable $exception): void
     {
-        Log::error('GoHighLevel contact sync failed after all retries; reprocess manually with the payload below.', [
-            'lead' => $this->lead->summary(),
+        Log::error('GoHighLevel contact sync failed after all retries; reprocess it from failed_jobs with php artisan queue:retry.', [
+            ...$this->lead->logContext(),
             'exception' => $exception?->getMessage(),
         ]);
     }

@@ -50,6 +50,19 @@ function lead(array $attribution = [], ContactWindow $availability = ContactWind
 }
 
 /**
+ * @param  array<string, mixed>  $context
+ */
+function withoutPersonalData(array $context): bool
+{
+    $logged = json_encode($context, JSON_UNESCAPED_UNICODE);
+
+    return !str_contains((string) $logged, 'gabriel@3pontos.com')
+        && !str_contains((string) $logged, '5511912345678')
+        && !str_contains((string) $logged, 'Gabriel')
+        && !str_contains((string) $logged, 'dívidas');
+}
+
+/**
  * Runs the job handler in-process, since Queue::fake() would capture dispatch_sync().
  */
 function runJob(object $job): void
@@ -252,13 +265,23 @@ describe('contact failures', function (): void {
         expect(fn () => runJob(new SyncLeadWithGoHighLevel(lead())))->toThrow(ConnectionException::class);
     });
 
-    it('logs the full payload for manual reprocessing once retries are exhausted', function (): void {
+    it('logs exhausted retries pointing to failed_jobs, without personal data', function (): void {
         Log::spy();
 
         new SyncLeadWithGoHighLevel(lead())->failed(new RuntimeException('boom'));
 
-        Log::shouldHaveReceived('error')->withArgs(fn (string $message, array $context): bool => $context['lead']['email'] === 'gabriel@3pontos.com'
-            && $context['lead']['goal'] === FinancialGoal::PayOffDebts->value)->once();
+        Log::shouldHaveReceived('error')->withArgs(fn (string $message, array $context): bool => str_contains($message, 'queue:retry')
+            && $context['submission_id'] === '6f1c1d9e-6a8f-4c5b-9f8e-2b0c2f3b8a11'
+            && withoutPersonalData($context))->once();
+    });
+
+    it('keeps personal data out of the logs of the follow-up jobs', function (): void {
+        Log::spy();
+
+        new CreateLeadOpportunity('contact-1', lead())->failed(new RuntimeException('boom'));
+        new CreateLeadAppointment('contact-1', lead(), CarbonImmutable::now())->failed(new RuntimeException('boom'));
+
+        Log::shouldHaveReceived('error')->withArgs(fn (string $message, array $context): bool => withoutPersonalData($context))->twice();
     });
 
     it('skips the sync and logs when the credentials are not configured', function (): void {
@@ -270,7 +293,8 @@ describe('contact failures', function (): void {
 
         Http::assertNothingSent();
         Queue::assertNothingPushed();
-        Log::shouldHaveReceived('warning')->withArgs(fn (string $message): bool => str_contains($message, 'not configured'))->once();
+        Log::shouldHaveReceived('warning')->withArgs(fn (string $message, array $context): bool => str_contains($message, 'not configured')
+            && withoutPersonalData($context))->once();
     });
 });
 

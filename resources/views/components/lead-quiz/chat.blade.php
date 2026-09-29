@@ -6,7 +6,21 @@
     Chat do fluxo de captura (Figma 7293-10811). Só marcação: o estado vem do
     x-data="leadQuiz(...)" do componente pai (seção inline da Home ou modal).
 --}}
-<div {{ $attributes->class('flex flex-col gap-8') }}>
+<div {{ $attributes->class('relative flex flex-col gap-8') }}>
+    {{--
+        Honeypot: fora da tela e fora da navegação por teclado, então pessoas nunca o
+        preenchem; robôs que completam todo input sim, e o backend descarta o lead.
+    --}}
+    <input
+        type="text"
+        name="website"
+        x-model="honeypot"
+        tabindex="-1"
+        autocomplete="off"
+        aria-hidden="true"
+        class="pointer-events-none absolute -left-[9999px] size-px opacity-0"
+    />
+
     <template x-for="(item, index) in history" :key="index">
         <div
             x-transition:enter="transition ease-out duration-300"

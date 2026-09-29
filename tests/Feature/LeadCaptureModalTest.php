@@ -70,3 +70,14 @@ it('asks for the phone with a tel input after the email step', function (): void
 
     expect($phone)->toMatchArray(['key' => 'phone', 'type' => 'tel', 'label' => 'Telefone']);
 });
+
+it('renders the honeypot out of sight and out of the keyboard flow in both quizzes', function (): void {
+    $content = (string) $this->get('/')->assertOk()->getContent();
+
+    preg_match_all('/<input\b[^>]*name="website"[^>]*>/s', $content, $honeypots);
+
+    // Um no quiz inline da Home e outro no modal.
+    expect($honeypots[0])->toHaveCount(2);
+
+    expect($honeypots[0])->each->toContain('tabindex="-1"')->toContain('autocomplete="off"')->toContain('aria-hidden="true"')->toContain('-left-[9999px]');
+});

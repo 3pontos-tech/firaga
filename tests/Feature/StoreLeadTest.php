@@ -142,3 +142,20 @@ it('trims the configured lead tags and drops empty entries', function (): void {
 
     expect($services['gohighlevel']['tags'])->toBe(['firesite', 'lead-site-whatsapp']);
 });
+
+it('drops submissions that filled the honeypot while answering exactly like a real lead', function (): void {
+    Log::spy();
+
+    postJson(route('leads.store'), leadPayload(['website' => 'https://spam.example']))
+        ->assertAccepted()
+        ->assertExactJson(['status' => 'accepted']);
+
+    Queue::assertNothingPushed();
+    Log::shouldHaveReceived('info')->withArgs(fn (string $message): bool => str_contains($message, 'honeypot'))->once();
+});
+
+it('queues submissions whose honeypot stayed empty', function (): void {
+    postJson(route('leads.store'), leadPayload(['website' => '']))->assertAccepted();
+
+    Queue::assertPushed(SyncLeadWithGoHighLevel::class);
+});

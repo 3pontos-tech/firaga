@@ -41,22 +41,18 @@ final readonly class LeadData
     }
 
     /**
-     * @return array<string, string>
+     * Log context without personal data (name, email, phone) or financial answers:
+     * the full payload of a failed job already lives in the failed_jobs table, from
+     * where it can be reprocessed with php artisan queue:retry.
+     *
+     * @return array{submission_id: string, context: string, origin_page: string|null}
      */
-    public function summary(): array
+    public function logContext(): array
     {
         return [
             'submission_id' => $this->submissionId,
             'context' => $this->context,
-            'situation' => $this->situation->value,
-            'goal' => $this->goal->value,
-            'availability' => $this->availability->value,
-            'first_name' => $this->firstName,
-            'email' => $this->email,
-            'phone' => $this->phone,
-            'origin_page' => (string) $this->originPage,
-            'origin_label' => (string) $this->originLabel,
-            ...$this->resolvedAttribution(),
+            'origin_page' => $this->originPage,
         ];
     }
 }

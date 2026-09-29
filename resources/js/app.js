@@ -74,6 +74,7 @@ document.addEventListener('alpine:init', () => {
         answers: {},
         labels: {},
         history: [],
+        honeypot: '',
         submissionId: uuid(),
         submitted: false,
         origin: { href: null, label: null, page: window.location.pathname, trigger: null },
@@ -196,6 +197,7 @@ document.addEventListener('alpine:init', () => {
                 origin_page: this.origin.page,
                 origin_label: this.context === 'modal' ? this.origin.label : 'Quiz da Home',
                 destination: this.context === 'modal' ? this.origin.href : null,
+                website: this.honeypot,
             };
 
             const retry = () => attempt < 2 && setTimeout(() => this.submit(attempt + 1), 2000);

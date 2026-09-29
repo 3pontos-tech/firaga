@@ -34,9 +34,9 @@ class CreateLeadOpportunity implements ShouldQueue
 
     public function failed(?Throwable $exception): void
     {
-        Log::error('GoHighLevel opportunity creation failed after all retries.', [
+        Log::error('GoHighLevel opportunity creation failed after all retries; reprocess it from failed_jobs with php artisan queue:retry.', [
             'contact_id' => $this->contactId,
-            'lead' => $this->lead->summary(),
+            ...$this->lead->logContext(),
             'exception' => $exception?->getMessage(),
         ]);
     }

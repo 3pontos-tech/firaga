@@ -21,6 +21,13 @@ class LeadController extends Controller
      */
     public function store(StoreLeadRequest $request): JsonResponse
     {
+        // Bots get the same 202 as people, so the honeypot is not revealed.
+        if ($request->isFromBot()) {
+            Log::info('Lead dropped by the honeypot.', ['submission_id' => $request->input('submission_id')]);
+
+            return response()->json(['status' => 'accepted'], 202);
+        }
+
         $lead = $request->toLeadData();
 
         if ($lead->context === 'modal' && !preg_match(self::WHATSAPP_DESTINATION_PATTERN, (string) $request->input('destination'))) {

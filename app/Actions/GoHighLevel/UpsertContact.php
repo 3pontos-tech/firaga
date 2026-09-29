@@ -126,7 +126,6 @@ class UpsertContact
         Log::warning('GoHighLevel rejected the lead custom fields; syncing the contact without them.', [
             'submission_id' => $lead->submissionId,
             'status' => $response->status(),
-            'response' => $response->json(),
         ]);
     }
 
