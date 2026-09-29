@@ -122,6 +122,8 @@
         <x-footer />
     </footer>
 
+    <x-lead-capture-modal />
+
     @livewireScripts
     @stack ('scripts')
 </body>
