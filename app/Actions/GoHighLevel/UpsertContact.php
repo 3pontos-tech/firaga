@@ -8,6 +8,7 @@ use App\Actions\Leads\LeadData;
 use App\Http\Middleware\CaptureLeadAttribution;
 use Illuminate\Http\Client\RequestException;
 use Illuminate\Http\Client\Response;
+use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\Log;
 
 class UpsertContact
@@ -15,84 +16,80 @@ class UpsertContact
     public function __construct(private readonly GoHighLevelClient $client) {}
 
     /**
-     * Creates the contact, or updates the existing one when the location rejects the
-     * creation as a duplicate (same email or phone), returning the contact id.
+     * Upserts through POST /contacts/upsert, which deduplicates by email or phone
+     * following the location's "Allow Duplicate Contact" setting, and returns the id.
+     *
+     * Returning contacts keep the campaign of their first touch: attribution fields and
+     * source are only written when the upsert created the contact, while quiz answers
+     * and the origin page are refreshed with the latest submission.
      *
      * @throws RequestException
      */
     public function handle(LeadData $lead): string
     {
+        $attributionKeys = CaptureLeadAttribution::PARAMETERS;
+
         $payload = [
             'locationId' => $this->client->locationId(),
             'firstName' => $lead->firstName,
             'email' => $lead->email,
             'phone' => $lead->phone,
-            'source' => config('services.gohighlevel.source'),
-            'tags' => $this->tags(),
-            'customFields' => $this->customFields($lead),
+            'customFields' => $this->customFields($lead, except: $attributionKeys),
         ];
 
-        $response = $this->client->request()->post('/contacts/', $payload);
-
-        if ($duplicateId = $this->duplicateContactId($response)) {
-            $this->update($duplicateId, $lead);
-
-            return $duplicateId;
-        }
+        $response = $this->client->request()->post('/contacts/upsert', $payload);
 
         if ($response->clientError() && $payload['customFields'] !== []) {
-            Log::warning('GoHighLevel rejected the lead custom fields; creating the contact without them.', [
-                'submission_id' => $lead->submissionId,
-                'status' => $response->status(),
-                'response' => $response->json(),
-            ]);
+            $this->logRejectedCustomFields($lead, $response);
 
-            $response = $this->client->request()->post('/contacts/', [...$payload, 'customFields' => []]);
+            $response = $this->client->request()->post('/contacts/upsert', [...$payload, 'customFields' => []]);
         }
 
-        return (string) $response->throw()->json('contact.id');
-    }
+        $contactId = (string) $response->throw()->json('contact.id');
 
-    /**
-     * Returning contacts keep the campaign of their first touch: attribution fields are
-     * left untouched and the new campaign is only logged, while quiz answers and the
-     * origin page are refreshed with the latest submission.
-     *
-     * @throws RequestException
-     */
-    private function update(string $contactId, LeadData $lead): void
-    {
-        $attributionKeys = CaptureLeadAttribution::PARAMETERS;
-
-        Log::info('GoHighLevel contact already exists; updating it instead of creating a duplicate.', [
-            'submission_id' => $lead->submissionId,
-            'contact_id' => $contactId,
-            'new_attribution' => $lead->resolvedAttribution(),
-        ]);
-
-        $customFields = $this->customFields($lead, except: $attributionKeys);
-
-        $this->client->request()->put('/contacts/'.$contactId, [
-            'firstName' => $lead->firstName,
-            'email' => $lead->email,
-            'phone' => $lead->phone,
-            'customFields' => $customFields,
-        ])->throw();
+        if ($response->json('new') === true) {
+            $this->writeFirstTouch($contactId, $lead);
+        } else {
+            Log::info('GoHighLevel contact already existed; kept its first-touch attribution.', [
+                'submission_id' => $lead->submissionId,
+                'contact_id' => $contactId,
+                'new_attribution' => $lead->resolvedAttribution(),
+            ]);
+        }
 
         if ($this->tags() !== []) {
             $this->client->request()->post(sprintf('/contacts/%s/tags', $contactId), ['tags' => $this->tags()])->throw();
         }
+
+        return $contactId;
     }
 
-    private function duplicateContactId(Response $response): ?string
+    /**
+     * @throws RequestException
+     */
+    private function writeFirstTouch(string $contactId, LeadData $lead): void
     {
-        if (!$response->clientError()) {
-            return null;
+        $response = $this->client->request()->put('/contacts/'.$contactId, [
+            'source' => config('services.gohighlevel.source'),
+            'customFields' => $this->customFields($lead, only: CaptureLeadAttribution::PARAMETERS),
+        ]);
+
+        if ($response->clientError()) {
+            $this->logRejectedCustomFields($lead, $response);
+
+            return;
         }
 
-        $contactId = $response->json('meta.contactId') ?? $response->json('meta.contact_id');
+        $response->throw();
+    }
 
-        return filled($contactId) ? (string) $contactId : null;
+    private function logRejectedCustomFields(LeadData $lead, Response $response): void
+    {
+        Log::warning('GoHighLevel rejected the lead custom fields; syncing the contact without them.', [
+            'submission_id' => $lead->submissionId,
+            'status' => $response->status(),
+            'response' => $response->json(),
+        ]);
     }
 
     /**
@@ -107,9 +104,10 @@ class UpsertContact
      * Empty values are omitted so absent click ids never overwrite fields with "".
      *
      * @param  list<string>  $except
-     * @return list<array{key: string, field_value: string}>
+     * @param  list<string>|null  $only
+     * @return list<array{key: string, fieldValue: string}>
      */
-    private function customFields(LeadData $lead, array $except = []): array
+    private function customFields(LeadData $lead, array $except = [], ?array $only = null): array
     {
         $values = [
             'situation' => $lead->situation->label(),
@@ -125,8 +123,9 @@ class UpsertContact
 
         return collect($mapping)
             ->except($except)
+            ->when($only !== null, fn (Collection $fields): Collection => $fields->only($only))
             ->filter(fn (string $key, string $field): bool => filled($values[$field] ?? null))
-            ->map(fn (string $key, string $field): array => ['key' => $key, 'field_value' => (string) $values[$field]])
+            ->map(fn (string $key, string $field): array => ['key' => $key, 'fieldValue' => (string) $values[$field]])
             ->values()
             ->all();
     }

@@ -32,9 +32,9 @@ class CreateOpportunity
         }
 
         $existing = $this->client->request()->get('/opportunities/search', [
-            'location_id' => $this->client->locationId(),
-            'pipeline_id' => $pipelineId,
-            'contact_id' => $contactId,
+            'locationId' => $this->client->locationId(),
+            'pipelineId' => $pipelineId,
+            'contactId' => $contactId,
             'status' => 'open',
         ])->throw()->json('opportunities', []);
 
