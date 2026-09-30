@@ -2,6 +2,9 @@
 
 declare(strict_types=1);
 
+use App\View\LeadQuiz;
+use Illuminate\Support\Js;
+
 it('renders the lead quiz section on the home page', function (): void {
     $this->get('/')
         ->assertOk()
@@ -52,17 +55,39 @@ it('does not overlay the organic cutout on a photo that already carries it in it
     expect(mb_substr_count($content, 'viewBox="0 0 732 640"'))->toBe(1);
 });
 
-it('wires all 4 questions and the WhatsApp number into the Alpine quiz state', function (): void {
+it('wires the shared 6-step capture flow and the WhatsApp number into the Alpine quiz state', function (): void {
     // The quiz copy is rendered client-side by Alpine: step config only exists as JSON
-    // inside x-data="leadQuiz(...)". Blade's @js() applies JSON_HEX_QUOT, so every
-    // double quote in the payload becomes the literal escape sequence \u0022
+    // inside x-data="leadQuiz(...)", encoded by Blade's @js() exactly like Js::from().
     $this->get('/')
         ->assertOk()
         ->assertSee('x-data="leadQuiz({', false)
-        ->assertSee('\u0022key\u0022:\u0022situation\u0022', false)
-        ->assertSee('\u0022key\u0022:\u0022availability\u0022', false)
-        ->assertSee('\u0022key\u0022:\u0022name\u0022', false)
-        ->assertSee('\u0022key\u0022:\u0022email\u0022', false)
-        ->assertSee('\u0022type\u0022:\u0022choice\u0022', false)
-        ->assertSee("phone: '5511958397432'", false);
+        ->assertSee('steps: '.Js::from(LeadQuiz::steps())->toHtml(), false)
+        ->assertSee("phone: '5511958397432'", false)
+        ->assertSee("context: 'inline'", false);
+});
+
+it('orders the steps as in the Figma flow, with the phone step appended after email', function (): void {
+    expect(array_column(LeadQuiz::steps(), 'key'))
+        ->toBe(['situation', 'goal', 'availability', 'name', 'email', 'phone']);
+});
+
+it('asks for the financial goal with the Figma copy', function (): void {
+    $goal = collect(LeadQuiz::steps())->firstWhere('key', 'goal');
+
+    expect($goal['question'])->toBe('Entendido! E qual é seu principal objetivo agora?')
+        ->and(array_column($goal['options'], 'label'))->toBe([
+            'Sair das dívidas nos próximos meses',
+            'Ter controle real dos meus gastos',
+            'Construir patrimônio e investir',
+        ]);
+});
+
+it('exempts the inline quiz final CTA from the WhatsApp interception', function (): void {
+    $content = (string) $this->get('/')->assertOk()->getContent();
+
+    preg_match('/<section[^>]*id="quiz".*?<\/section>/s', $content, $quiz);
+
+    expect($quiz[0])
+        ->toContain('data-lead-capture-exempt')
+        ->toContain('x-bind:href="whatsappUrl"');
 });
