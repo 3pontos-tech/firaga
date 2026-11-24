@@ -16,7 +16,7 @@
         "guava/filament-knowledge-base": "^3.3.2",
         "internachi/modular": "^3.0.2",
         "joaopaulolndev/filament-edit-profile": "^3.0.5",
-        "laravel/framework": "^12.73.0",
+        "laravel/framework": "^12.74.0",
         "laravel/tinker": "^2.11.1",
         "league/flysystem-sftp-v3": "^3.36.0",
         "monicahq/laravel-cloudflare": "^4.1.0",
